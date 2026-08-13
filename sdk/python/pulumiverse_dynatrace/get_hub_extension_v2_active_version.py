@@ -90,7 +90,7 @@ def get_hub_extension_v2_active_version(name: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_dynatrace as dynatrace
 
-    active_version = dynatrace.get_hub_extension_v2_active_version(name="com.dynatrace.extension.jmx-weblogic-cp")
+    active_version = dynatrace.get_hub_extension_v2_active_version(name="com.dynatrace.extension.wmi.iis")
     pulumi.export("activeVersion", active_version.active_version)
     ```
 
@@ -123,7 +123,7 @@ def get_hub_extension_v2_active_version_output(name: pulumi.Input[Optional[_buil
     import pulumi
     import pulumi_dynatrace as dynatrace
 
-    active_version = dynatrace.get_hub_extension_v2_active_version(name="com.dynatrace.extension.jmx-weblogic-cp")
+    active_version = dynatrace.get_hub_extension_v2_active_version(name="com.dynatrace.extension.wmi.iis")
     pulumi.export("activeVersion", active_version.active_version)
     ```
 

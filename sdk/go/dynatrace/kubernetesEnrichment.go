@@ -27,7 +27,7 @@ import (
 type KubernetesEnrichment struct {
 	pulumi.CustomResourceState
 
-	// Dynatrace allows to use metadata defined on Kubernetes nodes, namespaces, and pods to set security and cost allocation attributes and dimensions for metrics, events, log, spans, and entities associated with the respective Kubernetes resource.
+	// Kubernetes Telemetry Enrichment empowers you to effectively tag your telemetry data using Kubernetes namespace labels and annotations. Additionally, it enables you to tag it for cost allocation and permission purposes.
 	Rules KubernetesEnrichmentRulesPtrOutput `pulumi:"rules"`
 	// The scope of this setting (KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
 	Scope pulumi.StringPtrOutput `pulumi:"scope"`
@@ -63,14 +63,14 @@ func GetKubernetesEnrichment(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering KubernetesEnrichment resources.
 type kubernetesEnrichmentState struct {
-	// Dynatrace allows to use metadata defined on Kubernetes nodes, namespaces, and pods to set security and cost allocation attributes and dimensions for metrics, events, log, spans, and entities associated with the respective Kubernetes resource.
+	// Kubernetes Telemetry Enrichment empowers you to effectively tag your telemetry data using Kubernetes namespace labels and annotations. Additionally, it enables you to tag it for cost allocation and permission purposes.
 	Rules *KubernetesEnrichmentRules `pulumi:"rules"`
 	// The scope of this setting (KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
 	Scope *string `pulumi:"scope"`
 }
 
 type KubernetesEnrichmentState struct {
-	// Dynatrace allows to use metadata defined on Kubernetes nodes, namespaces, and pods to set security and cost allocation attributes and dimensions for metrics, events, log, spans, and entities associated with the respective Kubernetes resource.
+	// Kubernetes Telemetry Enrichment empowers you to effectively tag your telemetry data using Kubernetes namespace labels and annotations. Additionally, it enables you to tag it for cost allocation and permission purposes.
 	Rules KubernetesEnrichmentRulesPtrInput
 	// The scope of this setting (KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
 	Scope pulumi.StringPtrInput
@@ -81,7 +81,7 @@ func (KubernetesEnrichmentState) ElementType() reflect.Type {
 }
 
 type kubernetesEnrichmentArgs struct {
-	// Dynatrace allows to use metadata defined on Kubernetes nodes, namespaces, and pods to set security and cost allocation attributes and dimensions for metrics, events, log, spans, and entities associated with the respective Kubernetes resource.
+	// Kubernetes Telemetry Enrichment empowers you to effectively tag your telemetry data using Kubernetes namespace labels and annotations. Additionally, it enables you to tag it for cost allocation and permission purposes.
 	Rules *KubernetesEnrichmentRules `pulumi:"rules"`
 	// The scope of this setting (KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
 	Scope *string `pulumi:"scope"`
@@ -89,7 +89,7 @@ type kubernetesEnrichmentArgs struct {
 
 // The set of arguments for constructing a KubernetesEnrichment resource.
 type KubernetesEnrichmentArgs struct {
-	// Dynatrace allows to use metadata defined on Kubernetes nodes, namespaces, and pods to set security and cost allocation attributes and dimensions for metrics, events, log, spans, and entities associated with the respective Kubernetes resource.
+	// Kubernetes Telemetry Enrichment empowers you to effectively tag your telemetry data using Kubernetes namespace labels and annotations. Additionally, it enables you to tag it for cost allocation and permission purposes.
 	Rules KubernetesEnrichmentRulesPtrInput
 	// The scope of this setting (KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
 	Scope pulumi.StringPtrInput
@@ -182,7 +182,7 @@ func (o KubernetesEnrichmentOutput) ToKubernetesEnrichmentOutputWithContext(ctx 
 	return o
 }
 
-// Dynatrace allows to use metadata defined on Kubernetes nodes, namespaces, and pods to set security and cost allocation attributes and dimensions for metrics, events, log, spans, and entities associated with the respective Kubernetes resource.
+// Kubernetes Telemetry Enrichment empowers you to effectively tag your telemetry data using Kubernetes namespace labels and annotations. Additionally, it enables you to tag it for cost allocation and permission purposes.
 func (o KubernetesEnrichmentOutput) Rules() KubernetesEnrichmentRulesPtrOutput {
 	return o.ApplyT(func(v *KubernetesEnrichment) KubernetesEnrichmentRulesPtrOutput { return v.Rules }).(KubernetesEnrichmentRulesPtrOutput)
 }

@@ -14,13 +14,13 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Segment ID
+        /// Dynatrace Grail segment ID that scopes the DQL query to data within the segment.
         /// </summary>
         [Input("id", required: true)]
         public Input<string> Id { get; set; } = null!;
 
         /// <summary>
-        /// Segment Variables
+        /// Variables to parameterize the segment filter.
         /// </summary>
         [Input("variables")]
         public Input<Inputs.SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesGetArgs>? Variables { get; set; }

@@ -15,11 +15,11 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariable
     {
         /// <summary>
-        /// Variable Name
+        /// Name of the variable within the segment definition.
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// Variable Values
+        /// One or more values for the variable, enabling multi-value filter expansion.
         /// </summary>
         public readonly ImmutableArray<string> Values;
 

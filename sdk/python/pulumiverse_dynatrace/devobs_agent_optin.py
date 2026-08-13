@@ -25,7 +25,7 @@ class DevobsAgentOptinArgs:
         The set of arguments for constructing a DevobsAgentOptin resource.
 
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[_builtins.str] scope: The scope of this setting (PROCESS*GROUP, CLOUD*APPLICATION*NAMESPACE, KUBERNETES*CLUSTER). Omit this property if you want to cover the whole environment.
+        :param pulumi.Input[_builtins.str] scope: The scope of this setting (PROCESS*GROUP, CLOUD*APPLICATION, CLOUD*APPLICATION*NAMESPACE, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
         """
         pulumi.set(__self__, "enabled", enabled)
         if scope is not None:
@@ -47,7 +47,7 @@ class DevobsAgentOptinArgs:
     @pulumi.getter
     def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The scope of this setting (PROCESS*GROUP, CLOUD*APPLICATION*NAMESPACE, KUBERNETES*CLUSTER). Omit this property if you want to cover the whole environment.
+        The scope of this setting (PROCESS*GROUP, CLOUD*APPLICATION, CLOUD*APPLICATION*NAMESPACE, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
 
@@ -65,7 +65,7 @@ class _DevobsAgentOptinState:
         Input properties used for looking up and filtering DevobsAgentOptin resources.
 
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[_builtins.str] scope: The scope of this setting (PROCESS*GROUP, CLOUD*APPLICATION*NAMESPACE, KUBERNETES*CLUSTER). Omit this property if you want to cover the whole environment.
+        :param pulumi.Input[_builtins.str] scope: The scope of this setting (PROCESS*GROUP, CLOUD*APPLICATION, CLOUD*APPLICATION*NAMESPACE, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
         """
         if enabled is not None:
             pulumi.set(__self__, "enabled", enabled)
@@ -88,7 +88,7 @@ class _DevobsAgentOptinState:
     @pulumi.getter
     def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The scope of this setting (PROCESS*GROUP, CLOUD*APPLICATION*NAMESPACE, KUBERNETES*CLUSTER). Omit this property if you want to cover the whole environment.
+        The scope of this setting (PROCESS*GROUP, CLOUD*APPLICATION, CLOUD*APPLICATION*NAMESPACE, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
 
@@ -138,7 +138,7 @@ class DevobsAgentOptin(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[_builtins.str] scope: The scope of this setting (PROCESS*GROUP, CLOUD*APPLICATION*NAMESPACE, KUBERNETES*CLUSTER). Omit this property if you want to cover the whole environment.
+        :param pulumi.Input[_builtins.str] scope: The scope of this setting (PROCESS*GROUP, CLOUD*APPLICATION, CLOUD*APPLICATION*NAMESPACE, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
         """
         ...
     @overload
@@ -225,7 +225,7 @@ class DevobsAgentOptin(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[_builtins.str] scope: The scope of this setting (PROCESS*GROUP, CLOUD*APPLICATION*NAMESPACE, KUBERNETES*CLUSTER). Omit this property if you want to cover the whole environment.
+        :param pulumi.Input[_builtins.str] scope: The scope of this setting (PROCESS*GROUP, CLOUD*APPLICATION, CLOUD*APPLICATION*NAMESPACE, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -247,7 +247,7 @@ class DevobsAgentOptin(pulumi.CustomResource):
     @pulumi.getter
     def scope(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        The scope of this setting (PROCESS*GROUP, CLOUD*APPLICATION*NAMESPACE, KUBERNETES*CLUSTER). Omit this property if you want to cover the whole environment.
+        The scope of this setting (PROCESS*GROUP, CLOUD*APPLICATION, CLOUD*APPLICATION*NAMESPACE, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
 

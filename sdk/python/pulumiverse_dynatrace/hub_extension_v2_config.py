@@ -168,20 +168,17 @@ class HubExtensionV2Config(pulumi.CustomResource):
         import pulumiverse_dynatrace as dynatrace
 
         hosts = dynatrace.get_entities(type="HOST")
-        com_dynatrace_extension_jmx_weblogic_cp = dynatrace.HubExtensionV2Config("com_dynatrace_extension_jmx-weblogic-cp",
-            name="com.dynatrace.extension.jmx-weblogic-cp",
+        com_dynatrace_extension_wmi_iis = dynatrace.HubExtensionV2Config("com_dynatrace_extension_wmi_iis",
+            name="com.dynatrace.extension.wmi.iis",
             scope=hosts.entities[0].entity_id,
             value=json.dumps({
-                "activationContext": "LOCAL",
-                "activationTags": [],
                 "enabled": True,
                 "description": "my description",
-                "version": "2.1.1",
-                "featureSets": [
-                    "cache",
-                    "connections",
-                    "capacity",
-                ],
+                "version": "1.1.1",
+                "featureSets": ["IIS Extended Request Metrics"],
+                "vars": {},
+                "activationContext": "LOCAL",
+                "activationTags": [],
             }))
         ```
 
@@ -228,20 +225,17 @@ class HubExtensionV2Config(pulumi.CustomResource):
         import pulumiverse_dynatrace as dynatrace
 
         hosts = dynatrace.get_entities(type="HOST")
-        com_dynatrace_extension_jmx_weblogic_cp = dynatrace.HubExtensionV2Config("com_dynatrace_extension_jmx-weblogic-cp",
-            name="com.dynatrace.extension.jmx-weblogic-cp",
+        com_dynatrace_extension_wmi_iis = dynatrace.HubExtensionV2Config("com_dynatrace_extension_wmi_iis",
+            name="com.dynatrace.extension.wmi.iis",
             scope=hosts.entities[0].entity_id,
             value=json.dumps({
-                "activationContext": "LOCAL",
-                "activationTags": [],
                 "enabled": True,
                 "description": "my description",
-                "version": "2.1.1",
-                "featureSets": [
-                    "cache",
-                    "connections",
-                    "capacity",
-                ],
+                "version": "1.1.1",
+                "featureSets": ["IIS Extended Request Metrics"],
+                "vars": {},
+                "activationContext": "LOCAL",
+                "activationTags": [],
             }))
         ```
 

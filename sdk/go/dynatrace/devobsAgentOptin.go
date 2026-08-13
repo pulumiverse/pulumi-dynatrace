@@ -63,7 +63,7 @@ type DevobsAgentOptin struct {
 
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolOutput `pulumi:"enabled"`
-	// The scope of this setting (PROCESS*GROUP, CLOUD*APPLICATION*NAMESPACE, KUBERNETES*CLUSTER). Omit this property if you want to cover the whole environment.
+	// The scope of this setting (PROCESS*GROUP, CLOUD*APPLICATION, CLOUD*APPLICATION*NAMESPACE, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
 	Scope pulumi.StringPtrOutput `pulumi:"scope"`
 }
 
@@ -102,14 +102,14 @@ func GetDevobsAgentOptin(ctx *pulumi.Context,
 type devobsAgentOptinState struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled *bool `pulumi:"enabled"`
-	// The scope of this setting (PROCESS*GROUP, CLOUD*APPLICATION*NAMESPACE, KUBERNETES*CLUSTER). Omit this property if you want to cover the whole environment.
+	// The scope of this setting (PROCESS*GROUP, CLOUD*APPLICATION, CLOUD*APPLICATION*NAMESPACE, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
 	Scope *string `pulumi:"scope"`
 }
 
 type DevobsAgentOptinState struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolPtrInput
-	// The scope of this setting (PROCESS*GROUP, CLOUD*APPLICATION*NAMESPACE, KUBERNETES*CLUSTER). Omit this property if you want to cover the whole environment.
+	// The scope of this setting (PROCESS*GROUP, CLOUD*APPLICATION, CLOUD*APPLICATION*NAMESPACE, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
 	Scope pulumi.StringPtrInput
 }
 
@@ -120,7 +120,7 @@ func (DevobsAgentOptinState) ElementType() reflect.Type {
 type devobsAgentOptinArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`
-	// The scope of this setting (PROCESS*GROUP, CLOUD*APPLICATION*NAMESPACE, KUBERNETES*CLUSTER). Omit this property if you want to cover the whole environment.
+	// The scope of this setting (PROCESS*GROUP, CLOUD*APPLICATION, CLOUD*APPLICATION*NAMESPACE, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
 	Scope *string `pulumi:"scope"`
 }
 
@@ -128,7 +128,7 @@ type devobsAgentOptinArgs struct {
 type DevobsAgentOptinArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolInput
-	// The scope of this setting (PROCESS*GROUP, CLOUD*APPLICATION*NAMESPACE, KUBERNETES*CLUSTER). Omit this property if you want to cover the whole environment.
+	// The scope of this setting (PROCESS*GROUP, CLOUD*APPLICATION, CLOUD*APPLICATION*NAMESPACE, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
 	Scope pulumi.StringPtrInput
 }
 
@@ -224,7 +224,7 @@ func (o DevobsAgentOptinOutput) Enabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *DevobsAgentOptin) pulumi.BoolOutput { return v.Enabled }).(pulumi.BoolOutput)
 }
 
-// The scope of this setting (PROCESS*GROUP, CLOUD*APPLICATION*NAMESPACE, KUBERNETES*CLUSTER). Omit this property if you want to cover the whole environment.
+// The scope of this setting (PROCESS*GROUP, CLOUD*APPLICATION, CLOUD*APPLICATION*NAMESPACE, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
 func (o DevobsAgentOptinOutput) Scope() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DevobsAgentOptin) pulumi.StringPtrOutput { return v.Scope }).(pulumi.StringPtrOutput)
 }

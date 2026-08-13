@@ -52,7 +52,7 @@ export class SiteReliabilityGuardian extends pulumi.CustomResource {
     }
 
     /**
-     * Description
+     * Optional explanation of this guardian's purpose and scope.
      */
     declare public readonly description: pulumi.Output<string | undefined>;
     /**
@@ -60,11 +60,11 @@ export class SiteReliabilityGuardian extends pulumi.CustomResource {
      */
     declare public readonly eventKind: pulumi.Output<string | undefined>;
     /**
-     * Name
+     * Unique display name for this guardian.
      */
     declare public readonly name: pulumi.Output<string>;
     /**
-     * Objectives
+     * The validation criteria evaluated each time this guardian is executed.
      */
     declare public readonly objectives: pulumi.Output<outputs.SiteReliabilityGuardianObjectives>;
     /**
@@ -117,7 +117,7 @@ export class SiteReliabilityGuardian extends pulumi.CustomResource {
  */
 export interface SiteReliabilityGuardianState {
     /**
-     * Description
+     * Optional explanation of this guardian's purpose and scope.
      */
     description?: pulumi.Input<string | undefined>;
     /**
@@ -125,11 +125,11 @@ export interface SiteReliabilityGuardianState {
      */
     eventKind?: pulumi.Input<string | undefined>;
     /**
-     * Name
+     * Unique display name for this guardian.
      */
     name?: pulumi.Input<string | undefined>;
     /**
-     * Objectives
+     * The validation criteria evaluated each time this guardian is executed.
      */
     objectives?: pulumi.Input<inputs.SiteReliabilityGuardianObjectives | undefined>;
     /**
@@ -147,7 +147,7 @@ export interface SiteReliabilityGuardianState {
  */
 export interface SiteReliabilityGuardianArgs {
     /**
-     * Description
+     * Optional explanation of this guardian's purpose and scope.
      */
     description?: pulumi.Input<string | undefined>;
     /**
@@ -155,11 +155,11 @@ export interface SiteReliabilityGuardianArgs {
      */
     eventKind?: pulumi.Input<string | undefined>;
     /**
-     * Name
+     * Unique display name for this guardian.
      */
     name?: pulumi.Input<string | undefined>;
     /**
-     * Objectives
+     * The validation criteria evaluated each time this guardian is executed.
      */
     objectives: pulumi.Input<inputs.SiteReliabilityGuardianObjectives>;
     /**

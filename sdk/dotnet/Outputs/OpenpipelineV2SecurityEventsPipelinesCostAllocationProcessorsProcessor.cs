@@ -75,6 +75,10 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly string Id;
         /// <summary>
+        /// Inline lookup processor attributes
+        /// </summary>
+        public readonly Outputs.OpenpipelineV2SecurityEventsPipelinesCostAllocationProcessorsProcessorInlineLookup? InlineLookup;
+        /// <summary>
         /// [See our documentation](https://dt-url.net/bp234rv)
         /// </summary>
         public readonly string? Matcher;
@@ -123,7 +127,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly Outputs.OpenpipelineV2SecurityEventsPipelinesCostAllocationProcessorsProcessorTechnology? Technology;
         /// <summary>
-        /// Processor type. Possible values: `azureLogForwarding`, `Bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `Davis`, `Dql`, `Drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `Technology`, `valueMetric`
+        /// Processor type. Possible values: `azureLogForwarding`, `Bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `Davis`, `Dql`, `Drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `Technology`, `valueMetric`
         /// </summary>
         public readonly string Type;
         /// <summary>
@@ -162,6 +166,8 @@ namespace Pulumiverse.Dynatrace.Outputs
             Outputs.OpenpipelineV2SecurityEventsPipelinesCostAllocationProcessorsProcessorHistogramMetric? histogramMetric,
 
             string id,
+
+            Outputs.OpenpipelineV2SecurityEventsPipelinesCostAllocationProcessorsProcessorInlineLookup? inlineLookup,
 
             string? matcher,
 
@@ -206,6 +212,7 @@ namespace Pulumiverse.Dynatrace.Outputs
             GeoLookup = geoLookup;
             HistogramMetric = histogramMetric;
             Id = id;
+            InlineLookup = inlineLookup;
             Matcher = matcher;
             ProductAllocation = productAllocation;
             SampleData = sampleData;

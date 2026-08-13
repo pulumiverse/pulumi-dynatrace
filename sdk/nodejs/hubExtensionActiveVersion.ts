@@ -40,9 +40,9 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as dynatrace from "@pulumiverse/dynatrace";
  *
- * const jmx_weblogic_cp = new dynatrace.HubExtensionActiveVersion("jmx-weblogic-cp", {
- *     name: "com.dynatrace.extension.jmx-weblogic-cp",
- *     version: "2.1.1",
+ * const comDynatraceExtensionWmiIis = new dynatrace.HubExtensionActiveVersion("com_dynatrace_extension_wmi_iis", {
+ *     name: "com.dynatrace.extension.wmi.iis",
+ *     version: "2.0.1",
  * });
  * ```
  */

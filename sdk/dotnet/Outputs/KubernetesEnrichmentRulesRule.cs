@@ -15,11 +15,7 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class KubernetesEnrichmentRulesRule
     {
         /// <summary>
-        /// This setting is enabled (`True`) or disabled (`False`)
-        /// </summary>
-        public readonly bool? Enabled;
-        /// <summary>
-        /// Uses the key of the annotation or label as field name
+        /// Uses the key of the annotation or label as field name directly
         /// </summary>
         public readonly bool? PrimaryGrailTag;
         /// <summary>
@@ -27,18 +23,16 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly string Source;
         /// <summary>
-        /// Required when `PrimaryGrailTag` is omitted or `False`. Possible Values: `dt.cost.costcenter``, `dt.cost.product``, `dt.security_context
+        /// Possible values: `dt.cost.costcenter`, `dt.cost.product`, `dt.security_context`
         /// </summary>
         public readonly string? Target;
         /// <summary>
-        /// Possible Values: `ANNOTATION`, `LABEL`
+        /// Metadata type. Possible values: `ANNOTATION`, `LABEL`
         /// </summary>
         public readonly string Type;
 
         [OutputConstructor]
         private KubernetesEnrichmentRulesRule(
-            bool? enabled,
-
             bool? primaryGrailTag,
 
             string source,
@@ -47,7 +41,6 @@ namespace Pulumiverse.Dynatrace.Outputs
 
             string type)
         {
-            Enabled = enabled;
             PrimaryGrailTag = primaryGrailTag;
             Source = source;
             Target = target;

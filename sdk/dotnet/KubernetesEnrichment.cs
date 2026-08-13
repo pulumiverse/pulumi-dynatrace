@@ -29,7 +29,7 @@ namespace Pulumiverse.Dynatrace
     public partial class KubernetesEnrichment : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// Dynatrace allows to use metadata defined on Kubernetes nodes, namespaces, and pods to set security and cost allocation attributes and dimensions for metrics, events, log, spans, and entities associated with the respective Kubernetes resource.
+        /// Kubernetes Telemetry Enrichment empowers you to effectively tag your telemetry data using Kubernetes namespace labels and annotations. Additionally, it enables you to tag it for cost allocation and permission purposes.
         /// </summary>
         [Output("rules")]
         public Output<Outputs.KubernetesEnrichmentRules?> Rules { get; private set; } = null!;
@@ -88,7 +88,7 @@ namespace Pulumiverse.Dynatrace
     public sealed class KubernetesEnrichmentArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Dynatrace allows to use metadata defined on Kubernetes nodes, namespaces, and pods to set security and cost allocation attributes and dimensions for metrics, events, log, spans, and entities associated with the respective Kubernetes resource.
+        /// Kubernetes Telemetry Enrichment empowers you to effectively tag your telemetry data using Kubernetes namespace labels and annotations. Additionally, it enables you to tag it for cost allocation and permission purposes.
         /// </summary>
         [Input("rules")]
         public Input<Inputs.KubernetesEnrichmentRulesArgs>? Rules { get; set; }
@@ -108,7 +108,7 @@ namespace Pulumiverse.Dynatrace
     public sealed class KubernetesEnrichmentState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Dynatrace allows to use metadata defined on Kubernetes nodes, namespaces, and pods to set security and cost allocation attributes and dimensions for metrics, events, log, spans, and entities associated with the respective Kubernetes resource.
+        /// Kubernetes Telemetry Enrichment empowers you to effectively tag your telemetry data using Kubernetes namespace labels and annotations. Additionally, it enables you to tag it for cost allocation and permission purposes.
         /// </summary>
         [Input("rules")]
         public Input<Inputs.KubernetesEnrichmentRulesGetArgs>? Rules { get; set; }

@@ -21,7 +21,7 @@ import * as utilities from "./utilities";
  *
  * export = async () => {
  *     const activeVersion = await dynatrace.getHubExtensionV2ActiveVersion({
- *         name: "com.dynatrace.extension.jmx-weblogic-cp",
+ *         name: "com.dynatrace.extension.wmi.iis",
  *     });
  *     return {
  *         activeVersion: activeVersion.activeVersion,
@@ -80,7 +80,7 @@ export interface GetHubExtensionV2ActiveVersionResult {
  *
  * export = async () => {
  *     const activeVersion = await dynatrace.getHubExtensionV2ActiveVersion({
- *         name: "com.dynatrace.extension.jmx-weblogic-cp",
+ *         name: "com.dynatrace.extension.wmi.iis",
  *     });
  *     return {
  *         activeVersion: activeVersion.activeVersion,

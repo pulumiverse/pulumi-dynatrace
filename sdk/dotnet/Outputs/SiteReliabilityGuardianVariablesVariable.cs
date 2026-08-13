@@ -15,11 +15,11 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class SiteReliabilityGuardianVariablesVariable
     {
         /// <summary>
-        /// Value
+        /// Default value substituted for $name in DQL queries. Can be overridden at runtime via execution context.
         /// </summary>
         public readonly string Definition;
         /// <summary>
-        /// no documentation available
+        /// Alphanumeric/underscore identifier referenced in DQL queries as $name. Must be unique within the guardian.
         /// </summary>
         public readonly string Name;
 

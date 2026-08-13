@@ -64,20 +64,17 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as dynatrace from "@pulumiverse/dynatrace";
  *
- * const comDynatraceExtensionJmx_weblogic_cp = new dynatrace.HubExtensionConfig("com_dynatrace_extension_jmx-weblogic-cp", {
- *     name: "com.dynatrace.extension.jmx-weblogic-cp",
+ * const comDynatraceExtensionWmiIis = new dynatrace.HubExtensionConfig("com_dynatrace_extension_wmi_iis", {
+ *     name: "com.dynatrace.extension.wmi.iis",
  *     scope: "environment",
  *     value: JSON.stringify({
+ *         enabled: true,
+ *         description: "my description",
+ *         version: "1.1.1",
+ *         featureSets: ["IIS Extended Request Metrics"],
+ *         vars: {},
  *         activationContext: "LOCAL",
  *         activationTags: [],
- *         enabled: true,
- *         description: "jj",
- *         version: "2.0.4",
- *         featureSets: [
- *             "cache",
- *             "connections",
- *             "capacity",
- *         ],
  *     }),
  * });
  * ```

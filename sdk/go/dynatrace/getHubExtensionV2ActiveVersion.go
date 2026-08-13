@@ -34,7 +34,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			activeVersion, err := dynatrace.GetHubExtensionV2ActiveVersion(ctx, &dynatrace.GetHubExtensionV2ActiveVersionArgs{
-//				Name: "com.dynatrace.extension.jmx-weblogic-cp",
+//				Name: "com.dynatrace.extension.wmi.iis",
 //			}, nil)
 //			if err != nil {
 //				return err

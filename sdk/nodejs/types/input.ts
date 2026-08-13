@@ -9936,17 +9936,17 @@ export interface EndpointDetectionRulesRule {
      */
     condition?: pulumi.Input<string | undefined>;
     /**
-     * no documentation available
+     * No documentation available
      */
     description?: pulumi.Input<string | undefined>;
     /**
      * Specify attribute placeholders in curly braces, e.g. {http.route} or {rpc.method}.. Attribute value placeholders should be specified in curly braces, e.g. {http.route}, {rpc.method}. All attributes used in the placeholder are required for the rule to apply. If any of them is missing, the rule will not be applied and ruleset evaluation continues.
      *
-     * If the resolved endpoint name on a given span is empty, the request will be ignored.
+     *   If the resolved endpoint name on a given span is empty, the request will be ignored.
      */
     endpointNameTemplate?: pulumi.Input<string | undefined>;
     /**
-     * If condition matches. Possible Values: `DETECT_REQUEST_ON_ENDPOINT`, `SUPPRESS_REQUEST`
+     * If condition matches. Possible values: `DETECT_REQUEST_ON_ENDPOINT`, `SUPPRESS_REQUEST`
      */
     ifConditionMatches: pulumi.Input<string>;
     /**
@@ -15099,13 +15099,7 @@ export interface KubernetesEnrichmentRules {
 
 export interface KubernetesEnrichmentRulesRule {
     /**
-     * This setting is enabled (`true`) or disabled (`false`)
-     *
-     * @deprecated Attribute no longer exists in the schema.
-     */
-    enabled?: pulumi.Input<boolean | undefined>;
-    /**
-     * Uses the key of the annotation or label as field name
+     * Uses the key of the annotation or label as field name directly
      */
     primaryGrailTag?: pulumi.Input<boolean | undefined>;
     /**
@@ -15113,11 +15107,11 @@ export interface KubernetesEnrichmentRulesRule {
      */
     source: pulumi.Input<string>;
     /**
-     * Required when `primaryGrailTag` is omitted or `false`. Possible Values: ` dt.cost.costcenter``,  `dt.cost.product``, `dt.security_context
+     * Possible values: `dt.cost.costcenter`, `dt.cost.product`, `dt.security_context`
      */
     target?: pulumi.Input<string | undefined>;
     /**
-     * Possible Values: `ANNOTATION`, `LABEL`
+     * Metadata type. Possible values: `ANNOTATION`, `LABEL`
      */
     type: pulumi.Input<string>;
 }
@@ -33992,6 +33986,10 @@ export interface OpenpipelineV2BizeventsDataforwardingProcessingProcessorsProces
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2BizeventsDataforwardingProcessingProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -34040,7 +34038,7 @@ export interface OpenpipelineV2BizeventsDataforwardingProcessingProcessorsProces
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2BizeventsDataforwardingProcessingProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -34476,6 +34474,25 @@ export interface OpenpipelineV2BizeventsDataforwardingProcessingProcessorsProces
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2BizeventsDataforwardingProcessingProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2BizeventsDataforwardingProcessingProcessorsProcessorProductAllocation {
@@ -35278,6 +35295,10 @@ export interface OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcess
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -35326,7 +35347,7 @@ export interface OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcess
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -35762,6 +35783,25 @@ export interface OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcess
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorProductAllocation {
@@ -36613,6 +36653,10 @@ export interface OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcess
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -36661,7 +36705,7 @@ export interface OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcess
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -37097,6 +37141,25 @@ export interface OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcess
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorProductAllocation {
@@ -37884,6 +37947,10 @@ export interface OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcess
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -37932,7 +37999,7 @@ export interface OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcess
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -38368,6 +38435,25 @@ export interface OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcess
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorProductAllocation {
@@ -39155,6 +39241,10 @@ export interface OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessor {
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -39203,7 +39293,7 @@ export interface OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessor {
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -39639,6 +39729,25 @@ export interface OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorHistogr
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorProductAllocation {
@@ -40441,6 +40550,10 @@ export interface OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProce
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -40489,7 +40602,7 @@ export interface OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProce
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -40925,6 +41038,25 @@ export interface OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProce
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorProductAllocation {
@@ -41712,6 +41844,10 @@ export interface OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessor {
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -41760,7 +41896,7 @@ export interface OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessor {
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -42196,6 +42332,25 @@ export interface OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorHi
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorProductAllocation {
@@ -42983,6 +43138,10 @@ export interface OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProc
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -43031,7 +43190,7 @@ export interface OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProc
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -43467,6 +43626,25 @@ export interface OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProc
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorProductAllocation {
@@ -44254,6 +44432,10 @@ export interface OpenpipelineV2BizeventsPipelinesSecurityContextProcessorsProces
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2BizeventsPipelinesSecurityContextProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -44302,7 +44484,7 @@ export interface OpenpipelineV2BizeventsPipelinesSecurityContextProcessorsProces
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2BizeventsPipelinesSecurityContextProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -44738,6 +44920,25 @@ export interface OpenpipelineV2BizeventsPipelinesSecurityContextProcessorsProces
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2BizeventsPipelinesSecurityContextProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2BizeventsPipelinesSecurityContextProcessorsProcessorProductAllocation {
@@ -45525,6 +45726,10 @@ export interface OpenpipelineV2BizeventsPipelinesSmartscapeEdgeExtractionProcess
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2BizeventsPipelinesSmartscapeEdgeExtractionProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -45573,7 +45778,7 @@ export interface OpenpipelineV2BizeventsPipelinesSmartscapeEdgeExtractionProcess
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2BizeventsPipelinesSmartscapeEdgeExtractionProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -46009,6 +46214,25 @@ export interface OpenpipelineV2BizeventsPipelinesSmartscapeEdgeExtractionProcess
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2BizeventsPipelinesSmartscapeEdgeExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2BizeventsPipelinesSmartscapeEdgeExtractionProcessorsProcessorProductAllocation {
@@ -46796,6 +47020,10 @@ export interface OpenpipelineV2BizeventsPipelinesSmartscapeNodeExtractionProcess
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2BizeventsPipelinesSmartscapeNodeExtractionProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -46844,7 +47072,7 @@ export interface OpenpipelineV2BizeventsPipelinesSmartscapeNodeExtractionProcess
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2BizeventsPipelinesSmartscapeNodeExtractionProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -47280,6 +47508,25 @@ export interface OpenpipelineV2BizeventsPipelinesSmartscapeNodeExtractionProcess
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2BizeventsPipelinesSmartscapeNodeExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2BizeventsPipelinesSmartscapeNodeExtractionProcessorsProcessorProductAllocation {
@@ -48067,6 +48314,10 @@ export interface OpenpipelineV2BizeventsPipelinesStorageProcessorsProcessor {
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2BizeventsPipelinesStorageProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -48115,7 +48366,7 @@ export interface OpenpipelineV2BizeventsPipelinesStorageProcessorsProcessor {
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2BizeventsPipelinesStorageProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -48551,6 +48802,25 @@ export interface OpenpipelineV2BizeventsPipelinesStorageProcessorsProcessorHisto
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2BizeventsPipelinesStorageProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2BizeventsPipelinesStorageProcessorsProcessorProductAllocation {
@@ -49402,6 +49672,10 @@ export interface OpenpipelineV2DavisEventsDataforwardingProcessingProcessorsProc
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2DavisEventsDataforwardingProcessingProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -49450,7 +49724,7 @@ export interface OpenpipelineV2DavisEventsDataforwardingProcessingProcessorsProc
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2DavisEventsDataforwardingProcessingProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -49886,6 +50160,25 @@ export interface OpenpipelineV2DavisEventsDataforwardingProcessingProcessorsProc
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2DavisEventsDataforwardingProcessingProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2DavisEventsDataforwardingProcessingProcessorsProcessorProductAllocation {
@@ -50688,6 +50981,10 @@ export interface OpenpipelineV2DavisEventsIngestsourcesProcessingProcessorsProce
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2DavisEventsIngestsourcesProcessingProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -50736,7 +51033,7 @@ export interface OpenpipelineV2DavisEventsIngestsourcesProcessingProcessorsProce
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2DavisEventsIngestsourcesProcessingProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -51172,6 +51469,25 @@ export interface OpenpipelineV2DavisEventsIngestsourcesProcessingProcessorsProce
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2DavisEventsIngestsourcesProcessingProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2DavisEventsIngestsourcesProcessingProcessorsProcessorProductAllocation {
@@ -52023,6 +52339,10 @@ export interface OpenpipelineV2DavisEventsPipelinesCostAllocationProcessorsProce
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2DavisEventsPipelinesCostAllocationProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -52071,7 +52391,7 @@ export interface OpenpipelineV2DavisEventsPipelinesCostAllocationProcessorsProce
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2DavisEventsPipelinesCostAllocationProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -52507,6 +52827,25 @@ export interface OpenpipelineV2DavisEventsPipelinesCostAllocationProcessorsProce
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2DavisEventsPipelinesCostAllocationProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2DavisEventsPipelinesCostAllocationProcessorsProcessorProductAllocation {
@@ -53294,6 +53633,10 @@ export interface OpenpipelineV2DavisEventsPipelinesDataExtractionProcessorsProce
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2DavisEventsPipelinesDataExtractionProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -53342,7 +53685,7 @@ export interface OpenpipelineV2DavisEventsPipelinesDataExtractionProcessorsProce
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2DavisEventsPipelinesDataExtractionProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -53778,6 +54121,25 @@ export interface OpenpipelineV2DavisEventsPipelinesDataExtractionProcessorsProce
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2DavisEventsPipelinesDataExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2DavisEventsPipelinesDataExtractionProcessorsProcessorProductAllocation {
@@ -54565,6 +54927,10 @@ export interface OpenpipelineV2DavisEventsPipelinesDavisProcessorsProcessor {
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2DavisEventsPipelinesDavisProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -54613,7 +54979,7 @@ export interface OpenpipelineV2DavisEventsPipelinesDavisProcessorsProcessor {
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2DavisEventsPipelinesDavisProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -55049,6 +55415,25 @@ export interface OpenpipelineV2DavisEventsPipelinesDavisProcessorsProcessorHisto
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2DavisEventsPipelinesDavisProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2DavisEventsPipelinesDavisProcessorsProcessorProductAllocation {
@@ -55851,6 +56236,10 @@ export interface OpenpipelineV2DavisEventsPipelinesMetricExtractionProcessorsPro
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2DavisEventsPipelinesMetricExtractionProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -55899,7 +56288,7 @@ export interface OpenpipelineV2DavisEventsPipelinesMetricExtractionProcessorsPro
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2DavisEventsPipelinesMetricExtractionProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -56335,6 +56724,25 @@ export interface OpenpipelineV2DavisEventsPipelinesMetricExtractionProcessorsPro
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2DavisEventsPipelinesMetricExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2DavisEventsPipelinesMetricExtractionProcessorsProcessorProductAllocation {
@@ -57122,6 +57530,10 @@ export interface OpenpipelineV2DavisEventsPipelinesProcessingProcessorsProcessor
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2DavisEventsPipelinesProcessingProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -57170,7 +57582,7 @@ export interface OpenpipelineV2DavisEventsPipelinesProcessingProcessorsProcessor
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2DavisEventsPipelinesProcessingProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -57606,6 +58018,25 @@ export interface OpenpipelineV2DavisEventsPipelinesProcessingProcessorsProcessor
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2DavisEventsPipelinesProcessingProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2DavisEventsPipelinesProcessingProcessorsProcessorProductAllocation {
@@ -58393,6 +58824,10 @@ export interface OpenpipelineV2DavisEventsPipelinesProductAllocationProcessorsPr
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2DavisEventsPipelinesProductAllocationProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -58441,7 +58876,7 @@ export interface OpenpipelineV2DavisEventsPipelinesProductAllocationProcessorsPr
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2DavisEventsPipelinesProductAllocationProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -58877,6 +59312,25 @@ export interface OpenpipelineV2DavisEventsPipelinesProductAllocationProcessorsPr
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2DavisEventsPipelinesProductAllocationProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2DavisEventsPipelinesProductAllocationProcessorsProcessorProductAllocation {
@@ -59664,6 +60118,10 @@ export interface OpenpipelineV2DavisEventsPipelinesSecurityContextProcessorsProc
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2DavisEventsPipelinesSecurityContextProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -59712,7 +60170,7 @@ export interface OpenpipelineV2DavisEventsPipelinesSecurityContextProcessorsProc
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2DavisEventsPipelinesSecurityContextProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -60148,6 +60606,25 @@ export interface OpenpipelineV2DavisEventsPipelinesSecurityContextProcessorsProc
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2DavisEventsPipelinesSecurityContextProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2DavisEventsPipelinesSecurityContextProcessorsProcessorProductAllocation {
@@ -60935,6 +61412,10 @@ export interface OpenpipelineV2DavisEventsPipelinesSmartscapeEdgeExtractionProce
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2DavisEventsPipelinesSmartscapeEdgeExtractionProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -60983,7 +61464,7 @@ export interface OpenpipelineV2DavisEventsPipelinesSmartscapeEdgeExtractionProce
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2DavisEventsPipelinesSmartscapeEdgeExtractionProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -61419,6 +61900,25 @@ export interface OpenpipelineV2DavisEventsPipelinesSmartscapeEdgeExtractionProce
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2DavisEventsPipelinesSmartscapeEdgeExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2DavisEventsPipelinesSmartscapeEdgeExtractionProcessorsProcessorProductAllocation {
@@ -62206,6 +62706,10 @@ export interface OpenpipelineV2DavisEventsPipelinesSmartscapeNodeExtractionProce
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2DavisEventsPipelinesSmartscapeNodeExtractionProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -62254,7 +62758,7 @@ export interface OpenpipelineV2DavisEventsPipelinesSmartscapeNodeExtractionProce
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2DavisEventsPipelinesSmartscapeNodeExtractionProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -62690,6 +63194,25 @@ export interface OpenpipelineV2DavisEventsPipelinesSmartscapeNodeExtractionProce
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2DavisEventsPipelinesSmartscapeNodeExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2DavisEventsPipelinesSmartscapeNodeExtractionProcessorsProcessorProductAllocation {
@@ -63477,6 +64000,10 @@ export interface OpenpipelineV2DavisEventsPipelinesStorageProcessorsProcessor {
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2DavisEventsPipelinesStorageProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -63525,7 +64052,7 @@ export interface OpenpipelineV2DavisEventsPipelinesStorageProcessorsProcessor {
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2DavisEventsPipelinesStorageProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -63961,6 +64488,25 @@ export interface OpenpipelineV2DavisEventsPipelinesStorageProcessorsProcessorHis
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2DavisEventsPipelinesStorageProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2DavisEventsPipelinesStorageProcessorsProcessorProductAllocation {
@@ -64812,6 +65358,10 @@ export interface OpenpipelineV2DavisProblemsDataforwardingProcessingProcessorsPr
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2DavisProblemsDataforwardingProcessingProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -64860,7 +65410,7 @@ export interface OpenpipelineV2DavisProblemsDataforwardingProcessingProcessorsPr
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2DavisProblemsDataforwardingProcessingProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -65296,6 +65846,25 @@ export interface OpenpipelineV2DavisProblemsDataforwardingProcessingProcessorsPr
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2DavisProblemsDataforwardingProcessingProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2DavisProblemsDataforwardingProcessingProcessorsProcessorProductAllocation {
@@ -66098,6 +66667,10 @@ export interface OpenpipelineV2DavisProblemsIngestsourcesProcessingProcessorsPro
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2DavisProblemsIngestsourcesProcessingProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -66146,7 +66719,7 @@ export interface OpenpipelineV2DavisProblemsIngestsourcesProcessingProcessorsPro
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2DavisProblemsIngestsourcesProcessingProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -66582,6 +67155,25 @@ export interface OpenpipelineV2DavisProblemsIngestsourcesProcessingProcessorsPro
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2DavisProblemsIngestsourcesProcessingProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2DavisProblemsIngestsourcesProcessingProcessorsProcessorProductAllocation {
@@ -67433,6 +68025,10 @@ export interface OpenpipelineV2DavisProblemsPipelinesCostAllocationProcessorsPro
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2DavisProblemsPipelinesCostAllocationProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -67481,7 +68077,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesCostAllocationProcessorsPro
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2DavisProblemsPipelinesCostAllocationProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -67917,6 +68513,25 @@ export interface OpenpipelineV2DavisProblemsPipelinesCostAllocationProcessorsPro
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2DavisProblemsPipelinesCostAllocationProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2DavisProblemsPipelinesCostAllocationProcessorsProcessorProductAllocation {
@@ -68704,6 +69319,10 @@ export interface OpenpipelineV2DavisProblemsPipelinesDataExtractionProcessorsPro
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2DavisProblemsPipelinesDataExtractionProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -68752,7 +69371,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesDataExtractionProcessorsPro
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2DavisProblemsPipelinesDataExtractionProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -69188,6 +69807,25 @@ export interface OpenpipelineV2DavisProblemsPipelinesDataExtractionProcessorsPro
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2DavisProblemsPipelinesDataExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2DavisProblemsPipelinesDataExtractionProcessorsProcessorProductAllocation {
@@ -69975,6 +70613,10 @@ export interface OpenpipelineV2DavisProblemsPipelinesDavisProcessorsProcessor {
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2DavisProblemsPipelinesDavisProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -70023,7 +70665,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesDavisProcessorsProcessor {
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2DavisProblemsPipelinesDavisProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -70459,6 +71101,25 @@ export interface OpenpipelineV2DavisProblemsPipelinesDavisProcessorsProcessorHis
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2DavisProblemsPipelinesDavisProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2DavisProblemsPipelinesDavisProcessorsProcessorProductAllocation {
@@ -71261,6 +71922,10 @@ export interface OpenpipelineV2DavisProblemsPipelinesMetricExtractionProcessorsP
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2DavisProblemsPipelinesMetricExtractionProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -71309,7 +71974,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesMetricExtractionProcessorsP
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2DavisProblemsPipelinesMetricExtractionProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -71745,6 +72410,25 @@ export interface OpenpipelineV2DavisProblemsPipelinesMetricExtractionProcessorsP
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2DavisProblemsPipelinesMetricExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2DavisProblemsPipelinesMetricExtractionProcessorsProcessorProductAllocation {
@@ -72532,6 +73216,10 @@ export interface OpenpipelineV2DavisProblemsPipelinesProcessingProcessorsProcess
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2DavisProblemsPipelinesProcessingProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -72580,7 +73268,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesProcessingProcessorsProcess
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2DavisProblemsPipelinesProcessingProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -73016,6 +73704,25 @@ export interface OpenpipelineV2DavisProblemsPipelinesProcessingProcessorsProcess
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2DavisProblemsPipelinesProcessingProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2DavisProblemsPipelinesProcessingProcessorsProcessorProductAllocation {
@@ -73803,6 +74510,10 @@ export interface OpenpipelineV2DavisProblemsPipelinesProductAllocationProcessors
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2DavisProblemsPipelinesProductAllocationProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -73851,7 +74562,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesProductAllocationProcessors
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2DavisProblemsPipelinesProductAllocationProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -74287,6 +74998,25 @@ export interface OpenpipelineV2DavisProblemsPipelinesProductAllocationProcessors
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2DavisProblemsPipelinesProductAllocationProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2DavisProblemsPipelinesProductAllocationProcessorsProcessorProductAllocation {
@@ -75074,6 +75804,10 @@ export interface OpenpipelineV2DavisProblemsPipelinesSecurityContextProcessorsPr
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2DavisProblemsPipelinesSecurityContextProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -75122,7 +75856,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesSecurityContextProcessorsPr
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2DavisProblemsPipelinesSecurityContextProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -75558,6 +76292,25 @@ export interface OpenpipelineV2DavisProblemsPipelinesSecurityContextProcessorsPr
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2DavisProblemsPipelinesSecurityContextProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2DavisProblemsPipelinesSecurityContextProcessorsProcessorProductAllocation {
@@ -76345,6 +77098,10 @@ export interface OpenpipelineV2DavisProblemsPipelinesSmartscapeEdgeExtractionPro
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2DavisProblemsPipelinesSmartscapeEdgeExtractionProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -76393,7 +77150,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesSmartscapeEdgeExtractionPro
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2DavisProblemsPipelinesSmartscapeEdgeExtractionProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -76829,6 +77586,25 @@ export interface OpenpipelineV2DavisProblemsPipelinesSmartscapeEdgeExtractionPro
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2DavisProblemsPipelinesSmartscapeEdgeExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2DavisProblemsPipelinesSmartscapeEdgeExtractionProcessorsProcessorProductAllocation {
@@ -77616,6 +78392,10 @@ export interface OpenpipelineV2DavisProblemsPipelinesSmartscapeNodeExtractionPro
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2DavisProblemsPipelinesSmartscapeNodeExtractionProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -77664,7 +78444,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesSmartscapeNodeExtractionPro
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2DavisProblemsPipelinesSmartscapeNodeExtractionProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -78100,6 +78880,25 @@ export interface OpenpipelineV2DavisProblemsPipelinesSmartscapeNodeExtractionPro
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2DavisProblemsPipelinesSmartscapeNodeExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2DavisProblemsPipelinesSmartscapeNodeExtractionProcessorsProcessorProductAllocation {
@@ -78887,6 +79686,10 @@ export interface OpenpipelineV2DavisProblemsPipelinesStorageProcessorsProcessor 
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2DavisProblemsPipelinesStorageProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -78935,7 +79738,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesStorageProcessorsProcessor 
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2DavisProblemsPipelinesStorageProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -79371,6 +80174,25 @@ export interface OpenpipelineV2DavisProblemsPipelinesStorageProcessorsProcessorH
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2DavisProblemsPipelinesStorageProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2DavisProblemsPipelinesStorageProcessorsProcessorProductAllocation {
@@ -80222,6 +81044,10 @@ export interface OpenpipelineV2EventsDataforwardingProcessingProcessorsProcessor
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2EventsDataforwardingProcessingProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -80270,7 +81096,7 @@ export interface OpenpipelineV2EventsDataforwardingProcessingProcessorsProcessor
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2EventsDataforwardingProcessingProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -80706,6 +81532,25 @@ export interface OpenpipelineV2EventsDataforwardingProcessingProcessorsProcessor
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2EventsDataforwardingProcessingProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2EventsDataforwardingProcessingProcessorsProcessorProductAllocation {
@@ -81508,6 +82353,10 @@ export interface OpenpipelineV2EventsIngestsourcesProcessingProcessorsProcessor 
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2EventsIngestsourcesProcessingProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -81556,7 +82405,7 @@ export interface OpenpipelineV2EventsIngestsourcesProcessingProcessorsProcessor 
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2EventsIngestsourcesProcessingProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -81992,6 +82841,25 @@ export interface OpenpipelineV2EventsIngestsourcesProcessingProcessorsProcessorH
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2EventsIngestsourcesProcessingProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2EventsIngestsourcesProcessingProcessorsProcessorProductAllocation {
@@ -82843,6 +83711,10 @@ export interface OpenpipelineV2EventsPipelinesCostAllocationProcessorsProcessor 
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2EventsPipelinesCostAllocationProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -82891,7 +83763,7 @@ export interface OpenpipelineV2EventsPipelinesCostAllocationProcessorsProcessor 
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2EventsPipelinesCostAllocationProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -83327,6 +84199,25 @@ export interface OpenpipelineV2EventsPipelinesCostAllocationProcessorsProcessorH
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2EventsPipelinesCostAllocationProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2EventsPipelinesCostAllocationProcessorsProcessorProductAllocation {
@@ -84114,6 +85005,10 @@ export interface OpenpipelineV2EventsPipelinesDataExtractionProcessorsProcessor 
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2EventsPipelinesDataExtractionProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -84162,7 +85057,7 @@ export interface OpenpipelineV2EventsPipelinesDataExtractionProcessorsProcessor 
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2EventsPipelinesDataExtractionProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -84598,6 +85493,25 @@ export interface OpenpipelineV2EventsPipelinesDataExtractionProcessorsProcessorH
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2EventsPipelinesDataExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2EventsPipelinesDataExtractionProcessorsProcessorProductAllocation {
@@ -85385,6 +86299,10 @@ export interface OpenpipelineV2EventsPipelinesDavisProcessorsProcessor {
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2EventsPipelinesDavisProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -85433,7 +86351,7 @@ export interface OpenpipelineV2EventsPipelinesDavisProcessorsProcessor {
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2EventsPipelinesDavisProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -85869,6 +86787,25 @@ export interface OpenpipelineV2EventsPipelinesDavisProcessorsProcessorHistogramM
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2EventsPipelinesDavisProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2EventsPipelinesDavisProcessorsProcessorProductAllocation {
@@ -86671,6 +87608,10 @@ export interface OpenpipelineV2EventsPipelinesMetricExtractionProcessorsProcesso
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2EventsPipelinesMetricExtractionProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -86719,7 +87660,7 @@ export interface OpenpipelineV2EventsPipelinesMetricExtractionProcessorsProcesso
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2EventsPipelinesMetricExtractionProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -87155,6 +88096,25 @@ export interface OpenpipelineV2EventsPipelinesMetricExtractionProcessorsProcesso
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2EventsPipelinesMetricExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2EventsPipelinesMetricExtractionProcessorsProcessorProductAllocation {
@@ -87942,6 +88902,10 @@ export interface OpenpipelineV2EventsPipelinesProcessingProcessorsProcessor {
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2EventsPipelinesProcessingProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -87990,7 +88954,7 @@ export interface OpenpipelineV2EventsPipelinesProcessingProcessorsProcessor {
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2EventsPipelinesProcessingProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -88426,6 +89390,25 @@ export interface OpenpipelineV2EventsPipelinesProcessingProcessorsProcessorHisto
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2EventsPipelinesProcessingProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2EventsPipelinesProcessingProcessorsProcessorProductAllocation {
@@ -89213,6 +90196,10 @@ export interface OpenpipelineV2EventsPipelinesProductAllocationProcessorsProcess
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2EventsPipelinesProductAllocationProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -89261,7 +90248,7 @@ export interface OpenpipelineV2EventsPipelinesProductAllocationProcessorsProcess
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2EventsPipelinesProductAllocationProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -89697,6 +90684,25 @@ export interface OpenpipelineV2EventsPipelinesProductAllocationProcessorsProcess
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2EventsPipelinesProductAllocationProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2EventsPipelinesProductAllocationProcessorsProcessorProductAllocation {
@@ -90484,6 +91490,10 @@ export interface OpenpipelineV2EventsPipelinesSecurityContextProcessorsProcessor
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2EventsPipelinesSecurityContextProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -90532,7 +91542,7 @@ export interface OpenpipelineV2EventsPipelinesSecurityContextProcessorsProcessor
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2EventsPipelinesSecurityContextProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -90968,6 +91978,25 @@ export interface OpenpipelineV2EventsPipelinesSecurityContextProcessorsProcessor
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2EventsPipelinesSecurityContextProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2EventsPipelinesSecurityContextProcessorsProcessorProductAllocation {
@@ -91755,6 +92784,10 @@ export interface OpenpipelineV2EventsPipelinesSmartscapeEdgeExtractionProcessors
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2EventsPipelinesSmartscapeEdgeExtractionProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -91803,7 +92836,7 @@ export interface OpenpipelineV2EventsPipelinesSmartscapeEdgeExtractionProcessors
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2EventsPipelinesSmartscapeEdgeExtractionProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -92239,6 +93272,25 @@ export interface OpenpipelineV2EventsPipelinesSmartscapeEdgeExtractionProcessors
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2EventsPipelinesSmartscapeEdgeExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2EventsPipelinesSmartscapeEdgeExtractionProcessorsProcessorProductAllocation {
@@ -93026,6 +94078,10 @@ export interface OpenpipelineV2EventsPipelinesSmartscapeNodeExtractionProcessors
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2EventsPipelinesSmartscapeNodeExtractionProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -93074,7 +94130,7 @@ export interface OpenpipelineV2EventsPipelinesSmartscapeNodeExtractionProcessors
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2EventsPipelinesSmartscapeNodeExtractionProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -93510,6 +94566,25 @@ export interface OpenpipelineV2EventsPipelinesSmartscapeNodeExtractionProcessors
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2EventsPipelinesSmartscapeNodeExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2EventsPipelinesSmartscapeNodeExtractionProcessorsProcessorProductAllocation {
@@ -94297,6 +95372,10 @@ export interface OpenpipelineV2EventsPipelinesStorageProcessorsProcessor {
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2EventsPipelinesStorageProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -94345,7 +95424,7 @@ export interface OpenpipelineV2EventsPipelinesStorageProcessorsProcessor {
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2EventsPipelinesStorageProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -94781,6 +95860,25 @@ export interface OpenpipelineV2EventsPipelinesStorageProcessorsProcessorHistogra
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2EventsPipelinesStorageProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2EventsPipelinesStorageProcessorsProcessorProductAllocation {
@@ -95632,6 +96730,10 @@ export interface OpenpipelineV2EventsSdlcDataforwardingProcessingProcessorsProce
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2EventsSdlcDataforwardingProcessingProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -95680,7 +96782,7 @@ export interface OpenpipelineV2EventsSdlcDataforwardingProcessingProcessorsProce
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2EventsSdlcDataforwardingProcessingProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -96116,6 +97218,25 @@ export interface OpenpipelineV2EventsSdlcDataforwardingProcessingProcessorsProce
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2EventsSdlcDataforwardingProcessingProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2EventsSdlcDataforwardingProcessingProcessorsProcessorProductAllocation {
@@ -96918,6 +98039,10 @@ export interface OpenpipelineV2EventsSdlcIngestsourcesProcessingProcessorsProces
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2EventsSdlcIngestsourcesProcessingProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -96966,7 +98091,7 @@ export interface OpenpipelineV2EventsSdlcIngestsourcesProcessingProcessorsProces
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2EventsSdlcIngestsourcesProcessingProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -97402,6 +98527,25 @@ export interface OpenpipelineV2EventsSdlcIngestsourcesProcessingProcessorsProces
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2EventsSdlcIngestsourcesProcessingProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2EventsSdlcIngestsourcesProcessingProcessorsProcessorProductAllocation {
@@ -98253,6 +99397,10 @@ export interface OpenpipelineV2EventsSdlcPipelinesCostAllocationProcessorsProces
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2EventsSdlcPipelinesCostAllocationProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -98301,7 +99449,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesCostAllocationProcessorsProces
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2EventsSdlcPipelinesCostAllocationProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -98737,6 +99885,25 @@ export interface OpenpipelineV2EventsSdlcPipelinesCostAllocationProcessorsProces
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2EventsSdlcPipelinesCostAllocationProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2EventsSdlcPipelinesCostAllocationProcessorsProcessorProductAllocation {
@@ -99524,6 +100691,10 @@ export interface OpenpipelineV2EventsSdlcPipelinesDataExtractionProcessorsProces
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2EventsSdlcPipelinesDataExtractionProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -99572,7 +100743,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesDataExtractionProcessorsProces
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2EventsSdlcPipelinesDataExtractionProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -100008,6 +101179,25 @@ export interface OpenpipelineV2EventsSdlcPipelinesDataExtractionProcessorsProces
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2EventsSdlcPipelinesDataExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2EventsSdlcPipelinesDataExtractionProcessorsProcessorProductAllocation {
@@ -100795,6 +101985,10 @@ export interface OpenpipelineV2EventsSdlcPipelinesDavisProcessorsProcessor {
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2EventsSdlcPipelinesDavisProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -100843,7 +102037,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesDavisProcessorsProcessor {
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2EventsSdlcPipelinesDavisProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -101279,6 +102473,25 @@ export interface OpenpipelineV2EventsSdlcPipelinesDavisProcessorsProcessorHistog
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2EventsSdlcPipelinesDavisProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2EventsSdlcPipelinesDavisProcessorsProcessorProductAllocation {
@@ -102081,6 +103294,10 @@ export interface OpenpipelineV2EventsSdlcPipelinesMetricExtractionProcessorsProc
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2EventsSdlcPipelinesMetricExtractionProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -102129,7 +103346,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesMetricExtractionProcessorsProc
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2EventsSdlcPipelinesMetricExtractionProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -102565,6 +103782,25 @@ export interface OpenpipelineV2EventsSdlcPipelinesMetricExtractionProcessorsProc
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2EventsSdlcPipelinesMetricExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2EventsSdlcPipelinesMetricExtractionProcessorsProcessorProductAllocation {
@@ -103352,6 +104588,10 @@ export interface OpenpipelineV2EventsSdlcPipelinesProcessingProcessorsProcessor 
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2EventsSdlcPipelinesProcessingProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -103400,7 +104640,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesProcessingProcessorsProcessor 
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2EventsSdlcPipelinesProcessingProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -103836,6 +105076,25 @@ export interface OpenpipelineV2EventsSdlcPipelinesProcessingProcessorsProcessorH
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2EventsSdlcPipelinesProcessingProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2EventsSdlcPipelinesProcessingProcessorsProcessorProductAllocation {
@@ -104623,6 +105882,10 @@ export interface OpenpipelineV2EventsSdlcPipelinesProductAllocationProcessorsPro
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2EventsSdlcPipelinesProductAllocationProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -104671,7 +105934,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesProductAllocationProcessorsPro
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2EventsSdlcPipelinesProductAllocationProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -105107,6 +106370,25 @@ export interface OpenpipelineV2EventsSdlcPipelinesProductAllocationProcessorsPro
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2EventsSdlcPipelinesProductAllocationProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2EventsSdlcPipelinesProductAllocationProcessorsProcessorProductAllocation {
@@ -105894,6 +107176,10 @@ export interface OpenpipelineV2EventsSdlcPipelinesSecurityContextProcessorsProce
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2EventsSdlcPipelinesSecurityContextProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -105942,7 +107228,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesSecurityContextProcessorsProce
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2EventsSdlcPipelinesSecurityContextProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -106378,6 +107664,25 @@ export interface OpenpipelineV2EventsSdlcPipelinesSecurityContextProcessorsProce
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2EventsSdlcPipelinesSecurityContextProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2EventsSdlcPipelinesSecurityContextProcessorsProcessorProductAllocation {
@@ -107165,6 +108470,10 @@ export interface OpenpipelineV2EventsSdlcPipelinesSmartscapeEdgeExtractionProces
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2EventsSdlcPipelinesSmartscapeEdgeExtractionProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -107213,7 +108522,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesSmartscapeEdgeExtractionProces
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2EventsSdlcPipelinesSmartscapeEdgeExtractionProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -107649,6 +108958,25 @@ export interface OpenpipelineV2EventsSdlcPipelinesSmartscapeEdgeExtractionProces
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2EventsSdlcPipelinesSmartscapeEdgeExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2EventsSdlcPipelinesSmartscapeEdgeExtractionProcessorsProcessorProductAllocation {
@@ -108436,6 +109764,10 @@ export interface OpenpipelineV2EventsSdlcPipelinesSmartscapeNodeExtractionProces
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2EventsSdlcPipelinesSmartscapeNodeExtractionProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -108484,7 +109816,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesSmartscapeNodeExtractionProces
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2EventsSdlcPipelinesSmartscapeNodeExtractionProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -108920,6 +110252,25 @@ export interface OpenpipelineV2EventsSdlcPipelinesSmartscapeNodeExtractionProces
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2EventsSdlcPipelinesSmartscapeNodeExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2EventsSdlcPipelinesSmartscapeNodeExtractionProcessorsProcessorProductAllocation {
@@ -109707,6 +111058,10 @@ export interface OpenpipelineV2EventsSdlcPipelinesStorageProcessorsProcessor {
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2EventsSdlcPipelinesStorageProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -109755,7 +111110,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesStorageProcessorsProcessor {
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2EventsSdlcPipelinesStorageProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -110191,6 +111546,25 @@ export interface OpenpipelineV2EventsSdlcPipelinesStorageProcessorsProcessorHist
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2EventsSdlcPipelinesStorageProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2EventsSdlcPipelinesStorageProcessorsProcessorProductAllocation {
@@ -111042,6 +112416,10 @@ export interface OpenpipelineV2EventsSecurityDataforwardingProcessingProcessorsP
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2EventsSecurityDataforwardingProcessingProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -111090,7 +112468,7 @@ export interface OpenpipelineV2EventsSecurityDataforwardingProcessingProcessorsP
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2EventsSecurityDataforwardingProcessingProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -111526,6 +112904,25 @@ export interface OpenpipelineV2EventsSecurityDataforwardingProcessingProcessorsP
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2EventsSecurityDataforwardingProcessingProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2EventsSecurityDataforwardingProcessingProcessorsProcessorProductAllocation {
@@ -112328,6 +113725,10 @@ export interface OpenpipelineV2EventsSecurityIngestsourcesProcessingProcessorsPr
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2EventsSecurityIngestsourcesProcessingProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -112376,7 +113777,7 @@ export interface OpenpipelineV2EventsSecurityIngestsourcesProcessingProcessorsPr
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2EventsSecurityIngestsourcesProcessingProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -112812,6 +114213,25 @@ export interface OpenpipelineV2EventsSecurityIngestsourcesProcessingProcessorsPr
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2EventsSecurityIngestsourcesProcessingProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2EventsSecurityIngestsourcesProcessingProcessorsProcessorProductAllocation {
@@ -113663,6 +115083,10 @@ export interface OpenpipelineV2EventsSecurityPipelinesCostAllocationProcessorsPr
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2EventsSecurityPipelinesCostAllocationProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -113711,7 +115135,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesCostAllocationProcessorsPr
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2EventsSecurityPipelinesCostAllocationProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -114147,6 +115571,25 @@ export interface OpenpipelineV2EventsSecurityPipelinesCostAllocationProcessorsPr
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2EventsSecurityPipelinesCostAllocationProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2EventsSecurityPipelinesCostAllocationProcessorsProcessorProductAllocation {
@@ -114934,6 +116377,10 @@ export interface OpenpipelineV2EventsSecurityPipelinesDataExtractionProcessorsPr
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2EventsSecurityPipelinesDataExtractionProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -114982,7 +116429,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesDataExtractionProcessorsPr
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2EventsSecurityPipelinesDataExtractionProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -115418,6 +116865,25 @@ export interface OpenpipelineV2EventsSecurityPipelinesDataExtractionProcessorsPr
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2EventsSecurityPipelinesDataExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2EventsSecurityPipelinesDataExtractionProcessorsProcessorProductAllocation {
@@ -116205,6 +117671,10 @@ export interface OpenpipelineV2EventsSecurityPipelinesDavisProcessorsProcessor {
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2EventsSecurityPipelinesDavisProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -116253,7 +117723,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesDavisProcessorsProcessor {
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2EventsSecurityPipelinesDavisProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -116689,6 +118159,25 @@ export interface OpenpipelineV2EventsSecurityPipelinesDavisProcessorsProcessorHi
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2EventsSecurityPipelinesDavisProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2EventsSecurityPipelinesDavisProcessorsProcessorProductAllocation {
@@ -117491,6 +118980,10 @@ export interface OpenpipelineV2EventsSecurityPipelinesMetricExtractionProcessors
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2EventsSecurityPipelinesMetricExtractionProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -117539,7 +119032,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesMetricExtractionProcessors
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2EventsSecurityPipelinesMetricExtractionProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -117975,6 +119468,25 @@ export interface OpenpipelineV2EventsSecurityPipelinesMetricExtractionProcessors
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2EventsSecurityPipelinesMetricExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2EventsSecurityPipelinesMetricExtractionProcessorsProcessorProductAllocation {
@@ -118762,6 +120274,10 @@ export interface OpenpipelineV2EventsSecurityPipelinesProcessingProcessorsProces
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2EventsSecurityPipelinesProcessingProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -118810,7 +120326,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesProcessingProcessorsProces
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2EventsSecurityPipelinesProcessingProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -119246,6 +120762,25 @@ export interface OpenpipelineV2EventsSecurityPipelinesProcessingProcessorsProces
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2EventsSecurityPipelinesProcessingProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2EventsSecurityPipelinesProcessingProcessorsProcessorProductAllocation {
@@ -120033,6 +121568,10 @@ export interface OpenpipelineV2EventsSecurityPipelinesProductAllocationProcessor
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2EventsSecurityPipelinesProductAllocationProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -120081,7 +121620,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesProductAllocationProcessor
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2EventsSecurityPipelinesProductAllocationProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -120517,6 +122056,25 @@ export interface OpenpipelineV2EventsSecurityPipelinesProductAllocationProcessor
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2EventsSecurityPipelinesProductAllocationProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2EventsSecurityPipelinesProductAllocationProcessorsProcessorProductAllocation {
@@ -121304,6 +122862,10 @@ export interface OpenpipelineV2EventsSecurityPipelinesSecurityContextProcessorsP
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2EventsSecurityPipelinesSecurityContextProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -121352,7 +122914,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesSecurityContextProcessorsP
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2EventsSecurityPipelinesSecurityContextProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -121788,6 +123350,25 @@ export interface OpenpipelineV2EventsSecurityPipelinesSecurityContextProcessorsP
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2EventsSecurityPipelinesSecurityContextProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2EventsSecurityPipelinesSecurityContextProcessorsProcessorProductAllocation {
@@ -122575,6 +124156,10 @@ export interface OpenpipelineV2EventsSecurityPipelinesSmartscapeEdgeExtractionPr
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2EventsSecurityPipelinesSmartscapeEdgeExtractionProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -122623,7 +124208,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesSmartscapeEdgeExtractionPr
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2EventsSecurityPipelinesSmartscapeEdgeExtractionProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -123059,6 +124644,25 @@ export interface OpenpipelineV2EventsSecurityPipelinesSmartscapeEdgeExtractionPr
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2EventsSecurityPipelinesSmartscapeEdgeExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2EventsSecurityPipelinesSmartscapeEdgeExtractionProcessorsProcessorProductAllocation {
@@ -123846,6 +125450,10 @@ export interface OpenpipelineV2EventsSecurityPipelinesSmartscapeNodeExtractionPr
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2EventsSecurityPipelinesSmartscapeNodeExtractionProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -123894,7 +125502,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesSmartscapeNodeExtractionPr
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2EventsSecurityPipelinesSmartscapeNodeExtractionProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -124330,6 +125938,25 @@ export interface OpenpipelineV2EventsSecurityPipelinesSmartscapeNodeExtractionPr
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2EventsSecurityPipelinesSmartscapeNodeExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2EventsSecurityPipelinesSmartscapeNodeExtractionProcessorsProcessorProductAllocation {
@@ -125117,6 +126744,10 @@ export interface OpenpipelineV2EventsSecurityPipelinesStorageProcessorsProcessor
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2EventsSecurityPipelinesStorageProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -125165,7 +126796,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesStorageProcessorsProcessor
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2EventsSecurityPipelinesStorageProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -125601,6 +127232,25 @@ export interface OpenpipelineV2EventsSecurityPipelinesStorageProcessorsProcessor
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2EventsSecurityPipelinesStorageProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2EventsSecurityPipelinesStorageProcessorsProcessorProductAllocation {
@@ -126452,6 +128102,10 @@ export interface OpenpipelineV2LogsDataforwardingProcessingProcessorsProcessor {
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2LogsDataforwardingProcessingProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -126500,7 +128154,7 @@ export interface OpenpipelineV2LogsDataforwardingProcessingProcessorsProcessor {
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2LogsDataforwardingProcessingProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -126936,6 +128590,25 @@ export interface OpenpipelineV2LogsDataforwardingProcessingProcessorsProcessorHi
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2LogsDataforwardingProcessingProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2LogsDataforwardingProcessingProcessorsProcessorProductAllocation {
@@ -127738,6 +129411,10 @@ export interface OpenpipelineV2LogsIngestsourcesProcessingProcessorsProcessor {
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2LogsIngestsourcesProcessingProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -127786,7 +129463,7 @@ export interface OpenpipelineV2LogsIngestsourcesProcessingProcessorsProcessor {
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2LogsIngestsourcesProcessingProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -128222,6 +129899,25 @@ export interface OpenpipelineV2LogsIngestsourcesProcessingProcessorsProcessorHis
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2LogsIngestsourcesProcessingProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2LogsIngestsourcesProcessingProcessorsProcessorProductAllocation {
@@ -129073,6 +130769,10 @@ export interface OpenpipelineV2LogsPipelinesCostAllocationProcessorsProcessor {
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2LogsPipelinesCostAllocationProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -129121,7 +130821,7 @@ export interface OpenpipelineV2LogsPipelinesCostAllocationProcessorsProcessor {
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2LogsPipelinesCostAllocationProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -129557,6 +131257,25 @@ export interface OpenpipelineV2LogsPipelinesCostAllocationProcessorsProcessorHis
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2LogsPipelinesCostAllocationProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2LogsPipelinesCostAllocationProcessorsProcessorProductAllocation {
@@ -130344,6 +132063,10 @@ export interface OpenpipelineV2LogsPipelinesDataExtractionProcessorsProcessor {
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2LogsPipelinesDataExtractionProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -130392,7 +132115,7 @@ export interface OpenpipelineV2LogsPipelinesDataExtractionProcessorsProcessor {
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2LogsPipelinesDataExtractionProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -130828,6 +132551,25 @@ export interface OpenpipelineV2LogsPipelinesDataExtractionProcessorsProcessorHis
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2LogsPipelinesDataExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2LogsPipelinesDataExtractionProcessorsProcessorProductAllocation {
@@ -131615,6 +133357,10 @@ export interface OpenpipelineV2LogsPipelinesDavisProcessorsProcessor {
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2LogsPipelinesDavisProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -131663,7 +133409,7 @@ export interface OpenpipelineV2LogsPipelinesDavisProcessorsProcessor {
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2LogsPipelinesDavisProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -132099,6 +133845,25 @@ export interface OpenpipelineV2LogsPipelinesDavisProcessorsProcessorHistogramMet
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2LogsPipelinesDavisProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2LogsPipelinesDavisProcessorsProcessorProductAllocation {
@@ -132901,6 +134666,10 @@ export interface OpenpipelineV2LogsPipelinesMetricExtractionProcessorsProcessor 
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2LogsPipelinesMetricExtractionProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -132949,7 +134718,7 @@ export interface OpenpipelineV2LogsPipelinesMetricExtractionProcessorsProcessor 
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2LogsPipelinesMetricExtractionProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -133385,6 +135154,25 @@ export interface OpenpipelineV2LogsPipelinesMetricExtractionProcessorsProcessorH
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2LogsPipelinesMetricExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2LogsPipelinesMetricExtractionProcessorsProcessorProductAllocation {
@@ -134172,6 +135960,10 @@ export interface OpenpipelineV2LogsPipelinesProcessingProcessorsProcessor {
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2LogsPipelinesProcessingProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -134220,7 +136012,7 @@ export interface OpenpipelineV2LogsPipelinesProcessingProcessorsProcessor {
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2LogsPipelinesProcessingProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -134656,6 +136448,25 @@ export interface OpenpipelineV2LogsPipelinesProcessingProcessorsProcessorHistogr
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2LogsPipelinesProcessingProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2LogsPipelinesProcessingProcessorsProcessorProductAllocation {
@@ -135443,6 +137254,10 @@ export interface OpenpipelineV2LogsPipelinesProductAllocationProcessorsProcessor
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2LogsPipelinesProductAllocationProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -135491,7 +137306,7 @@ export interface OpenpipelineV2LogsPipelinesProductAllocationProcessorsProcessor
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2LogsPipelinesProductAllocationProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -135927,6 +137742,25 @@ export interface OpenpipelineV2LogsPipelinesProductAllocationProcessorsProcessor
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2LogsPipelinesProductAllocationProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2LogsPipelinesProductAllocationProcessorsProcessorProductAllocation {
@@ -136714,6 +138548,10 @@ export interface OpenpipelineV2LogsPipelinesSecurityContextProcessorsProcessor {
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2LogsPipelinesSecurityContextProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -136762,7 +138600,7 @@ export interface OpenpipelineV2LogsPipelinesSecurityContextProcessorsProcessor {
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2LogsPipelinesSecurityContextProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -137198,6 +139036,25 @@ export interface OpenpipelineV2LogsPipelinesSecurityContextProcessorsProcessorHi
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2LogsPipelinesSecurityContextProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2LogsPipelinesSecurityContextProcessorsProcessorProductAllocation {
@@ -137985,6 +139842,10 @@ export interface OpenpipelineV2LogsPipelinesSmartscapeEdgeExtractionProcessorsPr
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2LogsPipelinesSmartscapeEdgeExtractionProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -138033,7 +139894,7 @@ export interface OpenpipelineV2LogsPipelinesSmartscapeEdgeExtractionProcessorsPr
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2LogsPipelinesSmartscapeEdgeExtractionProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -138469,6 +140330,25 @@ export interface OpenpipelineV2LogsPipelinesSmartscapeEdgeExtractionProcessorsPr
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2LogsPipelinesSmartscapeEdgeExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2LogsPipelinesSmartscapeEdgeExtractionProcessorsProcessorProductAllocation {
@@ -139256,6 +141136,10 @@ export interface OpenpipelineV2LogsPipelinesSmartscapeNodeExtractionProcessorsPr
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2LogsPipelinesSmartscapeNodeExtractionProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -139304,7 +141188,7 @@ export interface OpenpipelineV2LogsPipelinesSmartscapeNodeExtractionProcessorsPr
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2LogsPipelinesSmartscapeNodeExtractionProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -139740,6 +141624,25 @@ export interface OpenpipelineV2LogsPipelinesSmartscapeNodeExtractionProcessorsPr
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2LogsPipelinesSmartscapeNodeExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2LogsPipelinesSmartscapeNodeExtractionProcessorsProcessorProductAllocation {
@@ -140527,6 +142430,10 @@ export interface OpenpipelineV2LogsPipelinesStorageProcessorsProcessor {
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2LogsPipelinesStorageProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -140575,7 +142482,7 @@ export interface OpenpipelineV2LogsPipelinesStorageProcessorsProcessor {
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2LogsPipelinesStorageProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -141011,6 +142918,25 @@ export interface OpenpipelineV2LogsPipelinesStorageProcessorsProcessorHistogramM
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2LogsPipelinesStorageProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2LogsPipelinesStorageProcessorsProcessorProductAllocation {
@@ -141862,6 +143788,10 @@ export interface OpenpipelineV2MetricsDataforwardingProcessingProcessorsProcesso
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2MetricsDataforwardingProcessingProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -141910,7 +143840,7 @@ export interface OpenpipelineV2MetricsDataforwardingProcessingProcessorsProcesso
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2MetricsDataforwardingProcessingProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -142346,6 +144276,25 @@ export interface OpenpipelineV2MetricsDataforwardingProcessingProcessorsProcesso
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2MetricsDataforwardingProcessingProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2MetricsDataforwardingProcessingProcessorsProcessorProductAllocation {
@@ -143148,6 +145097,10 @@ export interface OpenpipelineV2MetricsIngestsourcesProcessingProcessorsProcessor
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2MetricsIngestsourcesProcessingProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -143196,7 +145149,7 @@ export interface OpenpipelineV2MetricsIngestsourcesProcessingProcessorsProcessor
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2MetricsIngestsourcesProcessingProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -143632,6 +145585,25 @@ export interface OpenpipelineV2MetricsIngestsourcesProcessingProcessorsProcessor
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2MetricsIngestsourcesProcessingProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2MetricsIngestsourcesProcessingProcessorsProcessorProductAllocation {
@@ -144483,6 +146455,10 @@ export interface OpenpipelineV2MetricsPipelinesCostAllocationProcessorsProcessor
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2MetricsPipelinesCostAllocationProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -144531,7 +146507,7 @@ export interface OpenpipelineV2MetricsPipelinesCostAllocationProcessorsProcessor
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2MetricsPipelinesCostAllocationProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -144967,6 +146943,25 @@ export interface OpenpipelineV2MetricsPipelinesCostAllocationProcessorsProcessor
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2MetricsPipelinesCostAllocationProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2MetricsPipelinesCostAllocationProcessorsProcessorProductAllocation {
@@ -145754,6 +147749,10 @@ export interface OpenpipelineV2MetricsPipelinesDataExtractionProcessorsProcessor
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2MetricsPipelinesDataExtractionProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -145802,7 +147801,7 @@ export interface OpenpipelineV2MetricsPipelinesDataExtractionProcessorsProcessor
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2MetricsPipelinesDataExtractionProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -146238,6 +148237,25 @@ export interface OpenpipelineV2MetricsPipelinesDataExtractionProcessorsProcessor
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2MetricsPipelinesDataExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2MetricsPipelinesDataExtractionProcessorsProcessorProductAllocation {
@@ -147025,6 +149043,10 @@ export interface OpenpipelineV2MetricsPipelinesDavisProcessorsProcessor {
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2MetricsPipelinesDavisProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -147073,7 +149095,7 @@ export interface OpenpipelineV2MetricsPipelinesDavisProcessorsProcessor {
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2MetricsPipelinesDavisProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -147509,6 +149531,25 @@ export interface OpenpipelineV2MetricsPipelinesDavisProcessorsProcessorHistogram
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2MetricsPipelinesDavisProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2MetricsPipelinesDavisProcessorsProcessorProductAllocation {
@@ -148311,6 +150352,10 @@ export interface OpenpipelineV2MetricsPipelinesMetricExtractionProcessorsProcess
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2MetricsPipelinesMetricExtractionProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -148359,7 +150404,7 @@ export interface OpenpipelineV2MetricsPipelinesMetricExtractionProcessorsProcess
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2MetricsPipelinesMetricExtractionProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -148795,6 +150840,25 @@ export interface OpenpipelineV2MetricsPipelinesMetricExtractionProcessorsProcess
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2MetricsPipelinesMetricExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2MetricsPipelinesMetricExtractionProcessorsProcessorProductAllocation {
@@ -149582,6 +151646,10 @@ export interface OpenpipelineV2MetricsPipelinesProcessingProcessorsProcessor {
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2MetricsPipelinesProcessingProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -149630,7 +151698,7 @@ export interface OpenpipelineV2MetricsPipelinesProcessingProcessorsProcessor {
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2MetricsPipelinesProcessingProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -150066,6 +152134,25 @@ export interface OpenpipelineV2MetricsPipelinesProcessingProcessorsProcessorHist
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2MetricsPipelinesProcessingProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2MetricsPipelinesProcessingProcessorsProcessorProductAllocation {
@@ -150853,6 +152940,10 @@ export interface OpenpipelineV2MetricsPipelinesProductAllocationProcessorsProces
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2MetricsPipelinesProductAllocationProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -150901,7 +152992,7 @@ export interface OpenpipelineV2MetricsPipelinesProductAllocationProcessorsProces
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2MetricsPipelinesProductAllocationProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -151337,6 +153428,25 @@ export interface OpenpipelineV2MetricsPipelinesProductAllocationProcessorsProces
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2MetricsPipelinesProductAllocationProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2MetricsPipelinesProductAllocationProcessorsProcessorProductAllocation {
@@ -152124,6 +154234,10 @@ export interface OpenpipelineV2MetricsPipelinesSecurityContextProcessorsProcesso
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2MetricsPipelinesSecurityContextProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -152172,7 +154286,7 @@ export interface OpenpipelineV2MetricsPipelinesSecurityContextProcessorsProcesso
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2MetricsPipelinesSecurityContextProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -152608,6 +154722,25 @@ export interface OpenpipelineV2MetricsPipelinesSecurityContextProcessorsProcesso
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2MetricsPipelinesSecurityContextProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2MetricsPipelinesSecurityContextProcessorsProcessorProductAllocation {
@@ -153395,6 +155528,10 @@ export interface OpenpipelineV2MetricsPipelinesSmartscapeEdgeExtractionProcessor
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2MetricsPipelinesSmartscapeEdgeExtractionProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -153443,7 +155580,7 @@ export interface OpenpipelineV2MetricsPipelinesSmartscapeEdgeExtractionProcessor
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2MetricsPipelinesSmartscapeEdgeExtractionProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -153879,6 +156016,25 @@ export interface OpenpipelineV2MetricsPipelinesSmartscapeEdgeExtractionProcessor
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2MetricsPipelinesSmartscapeEdgeExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2MetricsPipelinesSmartscapeEdgeExtractionProcessorsProcessorProductAllocation {
@@ -154666,6 +156822,10 @@ export interface OpenpipelineV2MetricsPipelinesSmartscapeNodeExtractionProcessor
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2MetricsPipelinesSmartscapeNodeExtractionProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -154714,7 +156874,7 @@ export interface OpenpipelineV2MetricsPipelinesSmartscapeNodeExtractionProcessor
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2MetricsPipelinesSmartscapeNodeExtractionProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -155150,6 +157310,25 @@ export interface OpenpipelineV2MetricsPipelinesSmartscapeNodeExtractionProcessor
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2MetricsPipelinesSmartscapeNodeExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2MetricsPipelinesSmartscapeNodeExtractionProcessorsProcessorProductAllocation {
@@ -155937,6 +158116,10 @@ export interface OpenpipelineV2MetricsPipelinesStorageProcessorsProcessor {
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2MetricsPipelinesStorageProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -155985,7 +158168,7 @@ export interface OpenpipelineV2MetricsPipelinesStorageProcessorsProcessor {
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2MetricsPipelinesStorageProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -156421,6 +158604,25 @@ export interface OpenpipelineV2MetricsPipelinesStorageProcessorsProcessorHistogr
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2MetricsPipelinesStorageProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2MetricsPipelinesStorageProcessorsProcessorProductAllocation {
@@ -157272,6 +159474,10 @@ export interface OpenpipelineV2SecurityEventsDataforwardingProcessingProcessorsP
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2SecurityEventsDataforwardingProcessingProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -157320,7 +159526,7 @@ export interface OpenpipelineV2SecurityEventsDataforwardingProcessingProcessorsP
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2SecurityEventsDataforwardingProcessingProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -157756,6 +159962,25 @@ export interface OpenpipelineV2SecurityEventsDataforwardingProcessingProcessorsP
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2SecurityEventsDataforwardingProcessingProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2SecurityEventsDataforwardingProcessingProcessorsProcessorProductAllocation {
@@ -158558,6 +160783,10 @@ export interface OpenpipelineV2SecurityEventsIngestsourcesProcessingProcessorsPr
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2SecurityEventsIngestsourcesProcessingProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -158606,7 +160835,7 @@ export interface OpenpipelineV2SecurityEventsIngestsourcesProcessingProcessorsPr
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2SecurityEventsIngestsourcesProcessingProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -159042,6 +161271,25 @@ export interface OpenpipelineV2SecurityEventsIngestsourcesProcessingProcessorsPr
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2SecurityEventsIngestsourcesProcessingProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2SecurityEventsIngestsourcesProcessingProcessorsProcessorProductAllocation {
@@ -159893,6 +162141,10 @@ export interface OpenpipelineV2SecurityEventsPipelinesCostAllocationProcessorsPr
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2SecurityEventsPipelinesCostAllocationProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -159941,7 +162193,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesCostAllocationProcessorsPr
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2SecurityEventsPipelinesCostAllocationProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -160377,6 +162629,25 @@ export interface OpenpipelineV2SecurityEventsPipelinesCostAllocationProcessorsPr
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2SecurityEventsPipelinesCostAllocationProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2SecurityEventsPipelinesCostAllocationProcessorsProcessorProductAllocation {
@@ -161164,6 +163435,10 @@ export interface OpenpipelineV2SecurityEventsPipelinesDataExtractionProcessorsPr
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2SecurityEventsPipelinesDataExtractionProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -161212,7 +163487,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesDataExtractionProcessorsPr
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2SecurityEventsPipelinesDataExtractionProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -161648,6 +163923,25 @@ export interface OpenpipelineV2SecurityEventsPipelinesDataExtractionProcessorsPr
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2SecurityEventsPipelinesDataExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2SecurityEventsPipelinesDataExtractionProcessorsProcessorProductAllocation {
@@ -162435,6 +164729,10 @@ export interface OpenpipelineV2SecurityEventsPipelinesDavisProcessorsProcessor {
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2SecurityEventsPipelinesDavisProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -162483,7 +164781,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesDavisProcessorsProcessor {
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2SecurityEventsPipelinesDavisProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -162919,6 +165217,25 @@ export interface OpenpipelineV2SecurityEventsPipelinesDavisProcessorsProcessorHi
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2SecurityEventsPipelinesDavisProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2SecurityEventsPipelinesDavisProcessorsProcessorProductAllocation {
@@ -163721,6 +166038,10 @@ export interface OpenpipelineV2SecurityEventsPipelinesMetricExtractionProcessors
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2SecurityEventsPipelinesMetricExtractionProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -163769,7 +166090,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesMetricExtractionProcessors
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2SecurityEventsPipelinesMetricExtractionProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -164205,6 +166526,25 @@ export interface OpenpipelineV2SecurityEventsPipelinesMetricExtractionProcessors
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2SecurityEventsPipelinesMetricExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2SecurityEventsPipelinesMetricExtractionProcessorsProcessorProductAllocation {
@@ -164992,6 +167332,10 @@ export interface OpenpipelineV2SecurityEventsPipelinesProcessingProcessorsProces
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2SecurityEventsPipelinesProcessingProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -165040,7 +167384,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesProcessingProcessorsProces
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2SecurityEventsPipelinesProcessingProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -165476,6 +167820,25 @@ export interface OpenpipelineV2SecurityEventsPipelinesProcessingProcessorsProces
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2SecurityEventsPipelinesProcessingProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2SecurityEventsPipelinesProcessingProcessorsProcessorProductAllocation {
@@ -166263,6 +168626,10 @@ export interface OpenpipelineV2SecurityEventsPipelinesProductAllocationProcessor
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2SecurityEventsPipelinesProductAllocationProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -166311,7 +168678,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesProductAllocationProcessor
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2SecurityEventsPipelinesProductAllocationProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -166747,6 +169114,25 @@ export interface OpenpipelineV2SecurityEventsPipelinesProductAllocationProcessor
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2SecurityEventsPipelinesProductAllocationProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2SecurityEventsPipelinesProductAllocationProcessorsProcessorProductAllocation {
@@ -167534,6 +169920,10 @@ export interface OpenpipelineV2SecurityEventsPipelinesSecurityContextProcessorsP
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2SecurityEventsPipelinesSecurityContextProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -167582,7 +169972,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesSecurityContextProcessorsP
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2SecurityEventsPipelinesSecurityContextProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -168018,6 +170408,25 @@ export interface OpenpipelineV2SecurityEventsPipelinesSecurityContextProcessorsP
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2SecurityEventsPipelinesSecurityContextProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2SecurityEventsPipelinesSecurityContextProcessorsProcessorProductAllocation {
@@ -168805,6 +171214,10 @@ export interface OpenpipelineV2SecurityEventsPipelinesSmartscapeEdgeExtractionPr
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2SecurityEventsPipelinesSmartscapeEdgeExtractionProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -168853,7 +171266,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesSmartscapeEdgeExtractionPr
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2SecurityEventsPipelinesSmartscapeEdgeExtractionProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -169289,6 +171702,25 @@ export interface OpenpipelineV2SecurityEventsPipelinesSmartscapeEdgeExtractionPr
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2SecurityEventsPipelinesSmartscapeEdgeExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2SecurityEventsPipelinesSmartscapeEdgeExtractionProcessorsProcessorProductAllocation {
@@ -170076,6 +172508,10 @@ export interface OpenpipelineV2SecurityEventsPipelinesSmartscapeNodeExtractionPr
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2SecurityEventsPipelinesSmartscapeNodeExtractionProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -170124,7 +172560,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesSmartscapeNodeExtractionPr
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2SecurityEventsPipelinesSmartscapeNodeExtractionProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -170560,6 +172996,25 @@ export interface OpenpipelineV2SecurityEventsPipelinesSmartscapeNodeExtractionPr
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2SecurityEventsPipelinesSmartscapeNodeExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2SecurityEventsPipelinesSmartscapeNodeExtractionProcessorsProcessorProductAllocation {
@@ -171347,6 +173802,10 @@ export interface OpenpipelineV2SecurityEventsPipelinesStorageProcessorsProcessor
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2SecurityEventsPipelinesStorageProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -171395,7 +173854,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesStorageProcessorsProcessor
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2SecurityEventsPipelinesStorageProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -171831,6 +174290,25 @@ export interface OpenpipelineV2SecurityEventsPipelinesStorageProcessorsProcessor
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2SecurityEventsPipelinesStorageProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2SecurityEventsPipelinesStorageProcessorsProcessorProductAllocation {
@@ -172682,6 +175160,10 @@ export interface OpenpipelineV2SpansDataforwardingProcessingProcessorsProcessor 
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2SpansDataforwardingProcessingProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -172730,7 +175212,7 @@ export interface OpenpipelineV2SpansDataforwardingProcessingProcessorsProcessor 
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2SpansDataforwardingProcessingProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -173166,6 +175648,25 @@ export interface OpenpipelineV2SpansDataforwardingProcessingProcessorsProcessorH
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2SpansDataforwardingProcessingProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2SpansDataforwardingProcessingProcessorsProcessorProductAllocation {
@@ -173968,6 +176469,10 @@ export interface OpenpipelineV2SpansIngestsourcesProcessingProcessorsProcessor {
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2SpansIngestsourcesProcessingProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -174016,7 +176521,7 @@ export interface OpenpipelineV2SpansIngestsourcesProcessingProcessorsProcessor {
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2SpansIngestsourcesProcessingProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -174452,6 +176957,25 @@ export interface OpenpipelineV2SpansIngestsourcesProcessingProcessorsProcessorHi
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2SpansIngestsourcesProcessingProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2SpansIngestsourcesProcessingProcessorsProcessorProductAllocation {
@@ -175303,6 +177827,10 @@ export interface OpenpipelineV2SpansPipelinesCostAllocationProcessorsProcessor {
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2SpansPipelinesCostAllocationProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -175351,7 +177879,7 @@ export interface OpenpipelineV2SpansPipelinesCostAllocationProcessorsProcessor {
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2SpansPipelinesCostAllocationProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -175787,6 +178315,25 @@ export interface OpenpipelineV2SpansPipelinesCostAllocationProcessorsProcessorHi
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2SpansPipelinesCostAllocationProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2SpansPipelinesCostAllocationProcessorsProcessorProductAllocation {
@@ -176574,6 +179121,10 @@ export interface OpenpipelineV2SpansPipelinesDataExtractionProcessorsProcessor {
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2SpansPipelinesDataExtractionProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -176622,7 +179173,7 @@ export interface OpenpipelineV2SpansPipelinesDataExtractionProcessorsProcessor {
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2SpansPipelinesDataExtractionProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -177058,6 +179609,25 @@ export interface OpenpipelineV2SpansPipelinesDataExtractionProcessorsProcessorHi
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2SpansPipelinesDataExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2SpansPipelinesDataExtractionProcessorsProcessorProductAllocation {
@@ -177845,6 +180415,10 @@ export interface OpenpipelineV2SpansPipelinesDavisProcessorsProcessor {
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2SpansPipelinesDavisProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -177893,7 +180467,7 @@ export interface OpenpipelineV2SpansPipelinesDavisProcessorsProcessor {
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2SpansPipelinesDavisProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -178329,6 +180903,25 @@ export interface OpenpipelineV2SpansPipelinesDavisProcessorsProcessorHistogramMe
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2SpansPipelinesDavisProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2SpansPipelinesDavisProcessorsProcessorProductAllocation {
@@ -179131,6 +181724,10 @@ export interface OpenpipelineV2SpansPipelinesMetricExtractionProcessorsProcessor
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2SpansPipelinesMetricExtractionProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -179179,7 +181776,7 @@ export interface OpenpipelineV2SpansPipelinesMetricExtractionProcessorsProcessor
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2SpansPipelinesMetricExtractionProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -179615,6 +182212,25 @@ export interface OpenpipelineV2SpansPipelinesMetricExtractionProcessorsProcessor
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2SpansPipelinesMetricExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2SpansPipelinesMetricExtractionProcessorsProcessorProductAllocation {
@@ -180402,6 +183018,10 @@ export interface OpenpipelineV2SpansPipelinesProcessingProcessorsProcessor {
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2SpansPipelinesProcessingProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -180450,7 +183070,7 @@ export interface OpenpipelineV2SpansPipelinesProcessingProcessorsProcessor {
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2SpansPipelinesProcessingProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -180886,6 +183506,25 @@ export interface OpenpipelineV2SpansPipelinesProcessingProcessorsProcessorHistog
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2SpansPipelinesProcessingProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2SpansPipelinesProcessingProcessorsProcessorProductAllocation {
@@ -181673,6 +184312,10 @@ export interface OpenpipelineV2SpansPipelinesProductAllocationProcessorsProcesso
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2SpansPipelinesProductAllocationProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -181721,7 +184364,7 @@ export interface OpenpipelineV2SpansPipelinesProductAllocationProcessorsProcesso
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2SpansPipelinesProductAllocationProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -182157,6 +184800,25 @@ export interface OpenpipelineV2SpansPipelinesProductAllocationProcessorsProcesso
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2SpansPipelinesProductAllocationProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2SpansPipelinesProductAllocationProcessorsProcessorProductAllocation {
@@ -182944,6 +185606,10 @@ export interface OpenpipelineV2SpansPipelinesSecurityContextProcessorsProcessor 
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2SpansPipelinesSecurityContextProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -182992,7 +185658,7 @@ export interface OpenpipelineV2SpansPipelinesSecurityContextProcessorsProcessor 
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2SpansPipelinesSecurityContextProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -183428,6 +186094,25 @@ export interface OpenpipelineV2SpansPipelinesSecurityContextProcessorsProcessorH
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2SpansPipelinesSecurityContextProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2SpansPipelinesSecurityContextProcessorsProcessorProductAllocation {
@@ -184215,6 +186900,10 @@ export interface OpenpipelineV2SpansPipelinesSmartscapeEdgeExtractionProcessorsP
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2SpansPipelinesSmartscapeEdgeExtractionProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -184263,7 +186952,7 @@ export interface OpenpipelineV2SpansPipelinesSmartscapeEdgeExtractionProcessorsP
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2SpansPipelinesSmartscapeEdgeExtractionProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -184699,6 +187388,25 @@ export interface OpenpipelineV2SpansPipelinesSmartscapeEdgeExtractionProcessorsP
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2SpansPipelinesSmartscapeEdgeExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2SpansPipelinesSmartscapeEdgeExtractionProcessorsProcessorProductAllocation {
@@ -185486,6 +188194,10 @@ export interface OpenpipelineV2SpansPipelinesSmartscapeNodeExtractionProcessorsP
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2SpansPipelinesSmartscapeNodeExtractionProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -185534,7 +188246,7 @@ export interface OpenpipelineV2SpansPipelinesSmartscapeNodeExtractionProcessorsP
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2SpansPipelinesSmartscapeNodeExtractionProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -185970,6 +188682,25 @@ export interface OpenpipelineV2SpansPipelinesSmartscapeNodeExtractionProcessorsP
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2SpansPipelinesSmartscapeNodeExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2SpansPipelinesSmartscapeNodeExtractionProcessorsProcessorProductAllocation {
@@ -186757,6 +189488,10 @@ export interface OpenpipelineV2SpansPipelinesStorageProcessorsProcessor {
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2SpansPipelinesStorageProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -186805,7 +189540,7 @@ export interface OpenpipelineV2SpansPipelinesStorageProcessorsProcessor {
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2SpansPipelinesStorageProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -187241,6 +189976,25 @@ export interface OpenpipelineV2SpansPipelinesStorageProcessorsProcessorHistogram
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2SpansPipelinesStorageProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2SpansPipelinesStorageProcessorsProcessorProductAllocation {
@@ -188092,6 +190846,10 @@ export interface OpenpipelineV2SystemEventsDataforwardingProcessingProcessorsPro
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2SystemEventsDataforwardingProcessingProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -188140,7 +190898,7 @@ export interface OpenpipelineV2SystemEventsDataforwardingProcessingProcessorsPro
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2SystemEventsDataforwardingProcessingProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -188576,6 +191334,25 @@ export interface OpenpipelineV2SystemEventsDataforwardingProcessingProcessorsPro
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2SystemEventsDataforwardingProcessingProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2SystemEventsDataforwardingProcessingProcessorsProcessorProductAllocation {
@@ -189378,6 +192155,10 @@ export interface OpenpipelineV2SystemEventsIngestsourcesProcessingProcessorsProc
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2SystemEventsIngestsourcesProcessingProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -189426,7 +192207,7 @@ export interface OpenpipelineV2SystemEventsIngestsourcesProcessingProcessorsProc
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2SystemEventsIngestsourcesProcessingProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -189862,6 +192643,25 @@ export interface OpenpipelineV2SystemEventsIngestsourcesProcessingProcessorsProc
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2SystemEventsIngestsourcesProcessingProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2SystemEventsIngestsourcesProcessingProcessorsProcessorProductAllocation {
@@ -190713,6 +193513,10 @@ export interface OpenpipelineV2SystemEventsPipelinesCostAllocationProcessorsProc
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesCostAllocationProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -190761,7 +193565,7 @@ export interface OpenpipelineV2SystemEventsPipelinesCostAllocationProcessorsProc
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesCostAllocationProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -191197,6 +194001,25 @@ export interface OpenpipelineV2SystemEventsPipelinesCostAllocationProcessorsProc
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2SystemEventsPipelinesCostAllocationProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2SystemEventsPipelinesCostAllocationProcessorsProcessorProductAllocation {
@@ -191984,6 +194807,10 @@ export interface OpenpipelineV2SystemEventsPipelinesDataExtractionProcessorsProc
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesDataExtractionProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -192032,7 +194859,7 @@ export interface OpenpipelineV2SystemEventsPipelinesDataExtractionProcessorsProc
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesDataExtractionProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -192468,6 +195295,25 @@ export interface OpenpipelineV2SystemEventsPipelinesDataExtractionProcessorsProc
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2SystemEventsPipelinesDataExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2SystemEventsPipelinesDataExtractionProcessorsProcessorProductAllocation {
@@ -193255,6 +196101,10 @@ export interface OpenpipelineV2SystemEventsPipelinesDavisProcessorsProcessor {
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesDavisProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -193303,7 +196153,7 @@ export interface OpenpipelineV2SystemEventsPipelinesDavisProcessorsProcessor {
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesDavisProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -193739,6 +196589,25 @@ export interface OpenpipelineV2SystemEventsPipelinesDavisProcessorsProcessorHist
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2SystemEventsPipelinesDavisProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2SystemEventsPipelinesDavisProcessorsProcessorProductAllocation {
@@ -194541,6 +197410,10 @@ export interface OpenpipelineV2SystemEventsPipelinesMetricExtractionProcessorsPr
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesMetricExtractionProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -194589,7 +197462,7 @@ export interface OpenpipelineV2SystemEventsPipelinesMetricExtractionProcessorsPr
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesMetricExtractionProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -195025,6 +197898,25 @@ export interface OpenpipelineV2SystemEventsPipelinesMetricExtractionProcessorsPr
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2SystemEventsPipelinesMetricExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2SystemEventsPipelinesMetricExtractionProcessorsProcessorProductAllocation {
@@ -195812,6 +198704,10 @@ export interface OpenpipelineV2SystemEventsPipelinesProcessingProcessorsProcesso
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesProcessingProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -195860,7 +198756,7 @@ export interface OpenpipelineV2SystemEventsPipelinesProcessingProcessorsProcesso
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesProcessingProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -196296,6 +199192,25 @@ export interface OpenpipelineV2SystemEventsPipelinesProcessingProcessorsProcesso
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2SystemEventsPipelinesProcessingProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2SystemEventsPipelinesProcessingProcessorsProcessorProductAllocation {
@@ -197083,6 +199998,10 @@ export interface OpenpipelineV2SystemEventsPipelinesProductAllocationProcessorsP
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesProductAllocationProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -197131,7 +200050,7 @@ export interface OpenpipelineV2SystemEventsPipelinesProductAllocationProcessorsP
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesProductAllocationProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -197567,6 +200486,25 @@ export interface OpenpipelineV2SystemEventsPipelinesProductAllocationProcessorsP
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2SystemEventsPipelinesProductAllocationProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2SystemEventsPipelinesProductAllocationProcessorsProcessorProductAllocation {
@@ -198354,6 +201292,10 @@ export interface OpenpipelineV2SystemEventsPipelinesSecurityContextProcessorsPro
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesSecurityContextProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -198402,7 +201344,7 @@ export interface OpenpipelineV2SystemEventsPipelinesSecurityContextProcessorsPro
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesSecurityContextProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -198838,6 +201780,25 @@ export interface OpenpipelineV2SystemEventsPipelinesSecurityContextProcessorsPro
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2SystemEventsPipelinesSecurityContextProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2SystemEventsPipelinesSecurityContextProcessorsProcessorProductAllocation {
@@ -199625,6 +202586,10 @@ export interface OpenpipelineV2SystemEventsPipelinesSmartscapeEdgeExtractionProc
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesSmartscapeEdgeExtractionProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -199673,7 +202638,7 @@ export interface OpenpipelineV2SystemEventsPipelinesSmartscapeEdgeExtractionProc
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesSmartscapeEdgeExtractionProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -200109,6 +203074,25 @@ export interface OpenpipelineV2SystemEventsPipelinesSmartscapeEdgeExtractionProc
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2SystemEventsPipelinesSmartscapeEdgeExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2SystemEventsPipelinesSmartscapeEdgeExtractionProcessorsProcessorProductAllocation {
@@ -200896,6 +203880,10 @@ export interface OpenpipelineV2SystemEventsPipelinesSmartscapeNodeExtractionProc
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesSmartscapeNodeExtractionProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -200944,7 +203932,7 @@ export interface OpenpipelineV2SystemEventsPipelinesSmartscapeNodeExtractionProc
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesSmartscapeNodeExtractionProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -201380,6 +204368,25 @@ export interface OpenpipelineV2SystemEventsPipelinesSmartscapeNodeExtractionProc
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2SystemEventsPipelinesSmartscapeNodeExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2SystemEventsPipelinesSmartscapeNodeExtractionProcessorsProcessorProductAllocation {
@@ -202167,6 +205174,10 @@ export interface OpenpipelineV2SystemEventsPipelinesStorageProcessorsProcessor {
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesStorageProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -202215,7 +205226,7 @@ export interface OpenpipelineV2SystemEventsPipelinesStorageProcessorsProcessor {
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesStorageProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -202651,6 +205662,25 @@ export interface OpenpipelineV2SystemEventsPipelinesStorageProcessorsProcessorHi
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2SystemEventsPipelinesStorageProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2SystemEventsPipelinesStorageProcessorsProcessorProductAllocation {
@@ -203502,6 +206532,10 @@ export interface OpenpipelineV2UserEventsDataforwardingProcessingProcessorsProce
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2UserEventsDataforwardingProcessingProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -203550,7 +206584,7 @@ export interface OpenpipelineV2UserEventsDataforwardingProcessingProcessorsProce
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2UserEventsDataforwardingProcessingProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -203986,6 +207020,25 @@ export interface OpenpipelineV2UserEventsDataforwardingProcessingProcessorsProce
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2UserEventsDataforwardingProcessingProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2UserEventsDataforwardingProcessingProcessorsProcessorProductAllocation {
@@ -204788,6 +207841,10 @@ export interface OpenpipelineV2UserEventsIngestsourcesProcessingProcessorsProces
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2UserEventsIngestsourcesProcessingProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -204836,7 +207893,7 @@ export interface OpenpipelineV2UserEventsIngestsourcesProcessingProcessorsProces
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2UserEventsIngestsourcesProcessingProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -205272,6 +208329,25 @@ export interface OpenpipelineV2UserEventsIngestsourcesProcessingProcessorsProces
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2UserEventsIngestsourcesProcessingProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2UserEventsIngestsourcesProcessingProcessorsProcessorProductAllocation {
@@ -206123,6 +209199,10 @@ export interface OpenpipelineV2UserEventsPipelinesCostAllocationProcessorsProces
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2UserEventsPipelinesCostAllocationProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -206171,7 +209251,7 @@ export interface OpenpipelineV2UserEventsPipelinesCostAllocationProcessorsProces
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2UserEventsPipelinesCostAllocationProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -206607,6 +209687,25 @@ export interface OpenpipelineV2UserEventsPipelinesCostAllocationProcessorsProces
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2UserEventsPipelinesCostAllocationProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2UserEventsPipelinesCostAllocationProcessorsProcessorProductAllocation {
@@ -207394,6 +210493,10 @@ export interface OpenpipelineV2UserEventsPipelinesDataExtractionProcessorsProces
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2UserEventsPipelinesDataExtractionProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -207442,7 +210545,7 @@ export interface OpenpipelineV2UserEventsPipelinesDataExtractionProcessorsProces
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2UserEventsPipelinesDataExtractionProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -207878,6 +210981,25 @@ export interface OpenpipelineV2UserEventsPipelinesDataExtractionProcessorsProces
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2UserEventsPipelinesDataExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2UserEventsPipelinesDataExtractionProcessorsProcessorProductAllocation {
@@ -208665,6 +211787,10 @@ export interface OpenpipelineV2UserEventsPipelinesDavisProcessorsProcessor {
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2UserEventsPipelinesDavisProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -208713,7 +211839,7 @@ export interface OpenpipelineV2UserEventsPipelinesDavisProcessorsProcessor {
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2UserEventsPipelinesDavisProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -209149,6 +212275,25 @@ export interface OpenpipelineV2UserEventsPipelinesDavisProcessorsProcessorHistog
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2UserEventsPipelinesDavisProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2UserEventsPipelinesDavisProcessorsProcessorProductAllocation {
@@ -209951,6 +213096,10 @@ export interface OpenpipelineV2UserEventsPipelinesMetricExtractionProcessorsProc
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2UserEventsPipelinesMetricExtractionProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -209999,7 +213148,7 @@ export interface OpenpipelineV2UserEventsPipelinesMetricExtractionProcessorsProc
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2UserEventsPipelinesMetricExtractionProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -210435,6 +213584,25 @@ export interface OpenpipelineV2UserEventsPipelinesMetricExtractionProcessorsProc
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2UserEventsPipelinesMetricExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2UserEventsPipelinesMetricExtractionProcessorsProcessorProductAllocation {
@@ -211222,6 +214390,10 @@ export interface OpenpipelineV2UserEventsPipelinesProcessingProcessorsProcessor 
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2UserEventsPipelinesProcessingProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -211270,7 +214442,7 @@ export interface OpenpipelineV2UserEventsPipelinesProcessingProcessorsProcessor 
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2UserEventsPipelinesProcessingProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -211706,6 +214878,25 @@ export interface OpenpipelineV2UserEventsPipelinesProcessingProcessorsProcessorH
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2UserEventsPipelinesProcessingProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2UserEventsPipelinesProcessingProcessorsProcessorProductAllocation {
@@ -212493,6 +215684,10 @@ export interface OpenpipelineV2UserEventsPipelinesProductAllocationProcessorsPro
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2UserEventsPipelinesProductAllocationProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -212541,7 +215736,7 @@ export interface OpenpipelineV2UserEventsPipelinesProductAllocationProcessorsPro
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2UserEventsPipelinesProductAllocationProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -212977,6 +216172,25 @@ export interface OpenpipelineV2UserEventsPipelinesProductAllocationProcessorsPro
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2UserEventsPipelinesProductAllocationProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2UserEventsPipelinesProductAllocationProcessorsProcessorProductAllocation {
@@ -213764,6 +216978,10 @@ export interface OpenpipelineV2UserEventsPipelinesSecurityContextProcessorsProce
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2UserEventsPipelinesSecurityContextProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -213812,7 +217030,7 @@ export interface OpenpipelineV2UserEventsPipelinesSecurityContextProcessorsProce
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2UserEventsPipelinesSecurityContextProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -214248,6 +217466,25 @@ export interface OpenpipelineV2UserEventsPipelinesSecurityContextProcessorsProce
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2UserEventsPipelinesSecurityContextProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2UserEventsPipelinesSecurityContextProcessorsProcessorProductAllocation {
@@ -215035,6 +218272,10 @@ export interface OpenpipelineV2UserEventsPipelinesSmartscapeEdgeExtractionProces
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2UserEventsPipelinesSmartscapeEdgeExtractionProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -215083,7 +218324,7 @@ export interface OpenpipelineV2UserEventsPipelinesSmartscapeEdgeExtractionProces
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2UserEventsPipelinesSmartscapeEdgeExtractionProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -215519,6 +218760,25 @@ export interface OpenpipelineV2UserEventsPipelinesSmartscapeEdgeExtractionProces
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2UserEventsPipelinesSmartscapeEdgeExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2UserEventsPipelinesSmartscapeEdgeExtractionProcessorsProcessorProductAllocation {
@@ -216306,6 +219566,10 @@ export interface OpenpipelineV2UserEventsPipelinesSmartscapeNodeExtractionProces
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2UserEventsPipelinesSmartscapeNodeExtractionProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -216354,7 +219618,7 @@ export interface OpenpipelineV2UserEventsPipelinesSmartscapeNodeExtractionProces
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2UserEventsPipelinesSmartscapeNodeExtractionProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -216790,6 +220054,25 @@ export interface OpenpipelineV2UserEventsPipelinesSmartscapeNodeExtractionProces
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2UserEventsPipelinesSmartscapeNodeExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2UserEventsPipelinesSmartscapeNodeExtractionProcessorsProcessorProductAllocation {
@@ -217577,6 +220860,10 @@ export interface OpenpipelineV2UserEventsPipelinesStorageProcessorsProcessor {
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2UserEventsPipelinesStorageProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -217625,7 +220912,7 @@ export interface OpenpipelineV2UserEventsPipelinesStorageProcessorsProcessor {
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2UserEventsPipelinesStorageProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -218061,6 +221348,25 @@ export interface OpenpipelineV2UserEventsPipelinesStorageProcessorsProcessorHist
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2UserEventsPipelinesStorageProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2UserEventsPipelinesStorageProcessorsProcessorProductAllocation {
@@ -218912,6 +222218,10 @@ export interface OpenpipelineV2UsersessionsDataforwardingProcessingProcessorsPro
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2UsersessionsDataforwardingProcessingProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -218960,7 +222270,7 @@ export interface OpenpipelineV2UsersessionsDataforwardingProcessingProcessorsPro
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2UsersessionsDataforwardingProcessingProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -219396,6 +222706,25 @@ export interface OpenpipelineV2UsersessionsDataforwardingProcessingProcessorsPro
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2UsersessionsDataforwardingProcessingProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2UsersessionsDataforwardingProcessingProcessorsProcessorProductAllocation {
@@ -220198,6 +223527,10 @@ export interface OpenpipelineV2UsersessionsIngestsourcesProcessingProcessorsProc
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2UsersessionsIngestsourcesProcessingProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -220246,7 +223579,7 @@ export interface OpenpipelineV2UsersessionsIngestsourcesProcessingProcessorsProc
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2UsersessionsIngestsourcesProcessingProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -220682,6 +224015,25 @@ export interface OpenpipelineV2UsersessionsIngestsourcesProcessingProcessorsProc
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2UsersessionsIngestsourcesProcessingProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2UsersessionsIngestsourcesProcessingProcessorsProcessorProductAllocation {
@@ -221533,6 +224885,10 @@ export interface OpenpipelineV2UsersessionsPipelinesCostAllocationProcessorsProc
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2UsersessionsPipelinesCostAllocationProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -221581,7 +224937,7 @@ export interface OpenpipelineV2UsersessionsPipelinesCostAllocationProcessorsProc
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2UsersessionsPipelinesCostAllocationProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -222017,6 +225373,25 @@ export interface OpenpipelineV2UsersessionsPipelinesCostAllocationProcessorsProc
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2UsersessionsPipelinesCostAllocationProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2UsersessionsPipelinesCostAllocationProcessorsProcessorProductAllocation {
@@ -222804,6 +226179,10 @@ export interface OpenpipelineV2UsersessionsPipelinesDataExtractionProcessorsProc
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2UsersessionsPipelinesDataExtractionProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -222852,7 +226231,7 @@ export interface OpenpipelineV2UsersessionsPipelinesDataExtractionProcessorsProc
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2UsersessionsPipelinesDataExtractionProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -223288,6 +226667,25 @@ export interface OpenpipelineV2UsersessionsPipelinesDataExtractionProcessorsProc
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2UsersessionsPipelinesDataExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2UsersessionsPipelinesDataExtractionProcessorsProcessorProductAllocation {
@@ -224075,6 +227473,10 @@ export interface OpenpipelineV2UsersessionsPipelinesDavisProcessorsProcessor {
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2UsersessionsPipelinesDavisProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -224123,7 +227525,7 @@ export interface OpenpipelineV2UsersessionsPipelinesDavisProcessorsProcessor {
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2UsersessionsPipelinesDavisProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -224559,6 +227961,25 @@ export interface OpenpipelineV2UsersessionsPipelinesDavisProcessorsProcessorHist
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2UsersessionsPipelinesDavisProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2UsersessionsPipelinesDavisProcessorsProcessorProductAllocation {
@@ -225361,6 +228782,10 @@ export interface OpenpipelineV2UsersessionsPipelinesMetricExtractionProcessorsPr
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2UsersessionsPipelinesMetricExtractionProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -225409,7 +228834,7 @@ export interface OpenpipelineV2UsersessionsPipelinesMetricExtractionProcessorsPr
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2UsersessionsPipelinesMetricExtractionProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -225845,6 +229270,25 @@ export interface OpenpipelineV2UsersessionsPipelinesMetricExtractionProcessorsPr
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2UsersessionsPipelinesMetricExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2UsersessionsPipelinesMetricExtractionProcessorsProcessorProductAllocation {
@@ -226632,6 +230076,10 @@ export interface OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcesso
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -226680,7 +230128,7 @@ export interface OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcesso
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -227116,6 +230564,25 @@ export interface OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcesso
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorProductAllocation {
@@ -227903,6 +231370,10 @@ export interface OpenpipelineV2UsersessionsPipelinesProductAllocationProcessorsP
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2UsersessionsPipelinesProductAllocationProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -227951,7 +231422,7 @@ export interface OpenpipelineV2UsersessionsPipelinesProductAllocationProcessorsP
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2UsersessionsPipelinesProductAllocationProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -228387,6 +231858,25 @@ export interface OpenpipelineV2UsersessionsPipelinesProductAllocationProcessorsP
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2UsersessionsPipelinesProductAllocationProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2UsersessionsPipelinesProductAllocationProcessorsProcessorProductAllocation {
@@ -229174,6 +232664,10 @@ export interface OpenpipelineV2UsersessionsPipelinesSecurityContextProcessorsPro
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2UsersessionsPipelinesSecurityContextProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -229222,7 +232716,7 @@ export interface OpenpipelineV2UsersessionsPipelinesSecurityContextProcessorsPro
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2UsersessionsPipelinesSecurityContextProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -229658,6 +233152,25 @@ export interface OpenpipelineV2UsersessionsPipelinesSecurityContextProcessorsPro
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2UsersessionsPipelinesSecurityContextProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2UsersessionsPipelinesSecurityContextProcessorsProcessorProductAllocation {
@@ -230445,6 +233958,10 @@ export interface OpenpipelineV2UsersessionsPipelinesSmartscapeEdgeExtractionProc
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2UsersessionsPipelinesSmartscapeEdgeExtractionProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -230493,7 +234010,7 @@ export interface OpenpipelineV2UsersessionsPipelinesSmartscapeEdgeExtractionProc
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2UsersessionsPipelinesSmartscapeEdgeExtractionProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -230929,6 +234446,25 @@ export interface OpenpipelineV2UsersessionsPipelinesSmartscapeEdgeExtractionProc
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2UsersessionsPipelinesSmartscapeEdgeExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2UsersessionsPipelinesSmartscapeEdgeExtractionProcessorsProcessorProductAllocation {
@@ -231716,6 +235252,10 @@ export interface OpenpipelineV2UsersessionsPipelinesSmartscapeNodeExtractionProc
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2UsersessionsPipelinesSmartscapeNodeExtractionProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -231764,7 +235304,7 @@ export interface OpenpipelineV2UsersessionsPipelinesSmartscapeNodeExtractionProc
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2UsersessionsPipelinesSmartscapeNodeExtractionProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -232200,6 +235740,25 @@ export interface OpenpipelineV2UsersessionsPipelinesSmartscapeNodeExtractionProc
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2UsersessionsPipelinesSmartscapeNodeExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2UsersessionsPipelinesSmartscapeNodeExtractionProcessorsProcessorProductAllocation {
@@ -232987,6 +236546,10 @@ export interface OpenpipelineV2UsersessionsPipelinesStorageProcessorsProcessor {
      */
     id: pulumi.Input<string>;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: pulumi.Input<inputs.OpenpipelineV2UsersessionsPipelinesStorageProcessorsProcessorInlineLookup | undefined>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: pulumi.Input<string | undefined>;
@@ -233035,7 +236598,7 @@ export interface OpenpipelineV2UsersessionsPipelinesStorageProcessorsProcessor {
      */
     technology?: pulumi.Input<inputs.OpenpipelineV2UsersessionsPipelinesStorageProcessorsProcessorTechnology | undefined>;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: pulumi.Input<string>;
     /**
@@ -233471,6 +237034,25 @@ export interface OpenpipelineV2UsersessionsPipelinesStorageProcessorsProcessorHi
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: pulumi.Input<string | undefined>;
+}
+
+export interface OpenpipelineV2UsersessionsPipelinesStorageProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: pulumi.Input<string>;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: pulumi.Input<string>;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: pulumi.Input<string>;
 }
 
 export interface OpenpipelineV2UsersessionsPipelinesStorageProcessorsProcessorProductAllocation {
@@ -242174,23 +245756,23 @@ export interface SiteReliabilityGuardianObjectives {
 
 export interface SiteReliabilityGuardianObjectivesObjective {
     /**
-     * Enable auto adaptive threshold
+     * Dynamically computes thresholds from 30 days of history.
      */
     autoAdaptiveThresholdEnabled?: pulumi.Input<boolean | undefined>;
     /**
-     * Comparison operator. Possible values: `GREATER_THAN_OR_EQUAL`, `LESS_THAN_OR_EQUAL`
+     * Pass/fail direction: use ≥ when higher values are better, ≤ when lower values are better. Possible values: `GREATER_THAN_OR_EQUAL`, `LESS_THAN_OR_EQUAL`
      */
     comparisonOperator: pulumi.Input<string>;
     /**
-     * no documentation available
+     * Optional short explanation of what this objective measures.
      */
     description?: pulumi.Input<string | undefined>;
     /**
-     * Display Unit
+     * Optional unit conversion and decimal formatting applied when displaying the DQL result in the UI.
      */
     displayUnit?: pulumi.Input<inputs.SiteReliabilityGuardianObjectivesObjectiveDisplayUnit | undefined>;
     /**
-     * DQL query
+     * DQL query to execute. The first numeric result becomes the objective value. Supports $variable interpolation.
      */
     dqlQuery?: pulumi.Input<string | undefined>;
     /**
@@ -242198,11 +245780,11 @@ export interface SiteReliabilityGuardianObjectivesObjective {
      */
     links?: pulumi.Input<inputs.SiteReliabilityGuardianObjectivesObjectiveLinks | undefined>;
     /**
-     * Objective name
+     * Unique name within this guardian. Included in every emitted validation event as the objective identifier.
      */
     name: pulumi.Input<string>;
     /**
-     * Objective type. Possible values: `DQL`, `REFERENCE_SLO`
+     * How the objective value is computed: via a DQL query or an existing SLO metric. Possible values: `DQL`, `REFERENCE_SLO`
      */
     objectiveType: pulumi.Input<string>;
     /**
@@ -242210,30 +245792,30 @@ export interface SiteReliabilityGuardianObjectivesObjective {
      */
     referenceSlo?: pulumi.Input<string | undefined>;
     /**
-     * no documentation available
+     * Optional Grail segments to scope the DQL query to specific data.
      */
     segments?: pulumi.Input<inputs.SiteReliabilityGuardianObjectivesObjectiveSegments | undefined>;
     /**
-     * no documentation available
+     * Hard pass/fail threshold. Missing this value yields FAIL. If unset with no warning, status is always INFO.
      */
     target?: pulumi.Input<number | undefined>;
     /**
-     * no documentation available
+     * Soft threshold. Results between warning and target yield WARNING. When set alone, yields PASS or WARNING.
      */
     warning?: pulumi.Input<number | undefined>;
 }
 
 export interface SiteReliabilityGuardianObjectivesObjectiveDisplayUnit {
     /**
-     * Base Unit
+     * Unit the DQL query returns its result in. Source unit for conversion.
      */
     base: pulumi.Input<string>;
     /**
-     * Decimals
+     * Number of decimal places (0-4) used when formatting the displayed value.
      */
     decimals: pulumi.Input<number>;
     /**
-     * display as unit
+     * Unit to display the value in after conversion. Use Default to show the base unit as-is.
      */
     display: pulumi.Input<string>;
 }
@@ -242259,11 +245841,11 @@ export interface SiteReliabilityGuardianObjectivesObjectiveSegments {
 
 export interface SiteReliabilityGuardianObjectivesObjectiveSegmentsSegment {
     /**
-     * Segment ID
+     * Dynatrace Grail segment ID that scopes the DQL query to data within the segment.
      */
     id: pulumi.Input<string>;
     /**
-     * Segment Variables
+     * Variables to parameterize the segment filter.
      */
     variables?: pulumi.Input<inputs.SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariables | undefined>;
 }
@@ -242274,11 +245856,11 @@ export interface SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariab
 
 export interface SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariable {
     /**
-     * Variable Name
+     * Name of the variable within the segment definition.
      */
     name: pulumi.Input<string>;
     /**
-     * Variable Values
+     * One or more values for the variable, enabling multi-value filter expansion.
      */
     values?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
@@ -242289,11 +245871,11 @@ export interface SiteReliabilityGuardianVariables {
 
 export interface SiteReliabilityGuardianVariablesVariable {
     /**
-     * Value
+     * Default value substituted for $name in DQL queries. Can be overridden at runtime via execution context.
      */
     definition: pulumi.Input<string>;
     /**
-     * no documentation available
+     * Alphanumeric/underscore identifier referenced in DQL queries as $name. Must be unique within the guardian.
      */
     name: pulumi.Input<string>;
 }

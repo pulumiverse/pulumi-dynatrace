@@ -30,13 +30,13 @@ import (
 type SiteReliabilityGuardian struct {
 	pulumi.CustomResourceState
 
-	// Description
+	// Optional explanation of this guardian's purpose and scope.
 	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// If set to null/'BIZ*EVENT' validation events stored as bizevents in Grail. If set to 'SDLC*EVENT' validation events stored as SDLC events. Possible values: `BIZ_EVENT`, `SDLC_EVENT`
 	EventKind pulumi.StringPtrOutput `pulumi:"eventKind"`
-	// Name
+	// Unique display name for this guardian.
 	Name pulumi.StringOutput `pulumi:"name"`
-	// Objectives
+	// The validation criteria evaluated each time this guardian is executed.
 	Objectives SiteReliabilityGuardianObjectivesOutput `pulumi:"objectives"`
 	// Define key/value pairs that further describe this guardian.
 	Tags pulumi.StringArrayOutput `pulumi:"tags"`
@@ -77,13 +77,13 @@ func GetSiteReliabilityGuardian(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering SiteReliabilityGuardian resources.
 type siteReliabilityGuardianState struct {
-	// Description
+	// Optional explanation of this guardian's purpose and scope.
 	Description *string `pulumi:"description"`
 	// If set to null/'BIZ*EVENT' validation events stored as bizevents in Grail. If set to 'SDLC*EVENT' validation events stored as SDLC events. Possible values: `BIZ_EVENT`, `SDLC_EVENT`
 	EventKind *string `pulumi:"eventKind"`
-	// Name
+	// Unique display name for this guardian.
 	Name *string `pulumi:"name"`
-	// Objectives
+	// The validation criteria evaluated each time this guardian is executed.
 	Objectives *SiteReliabilityGuardianObjectives `pulumi:"objectives"`
 	// Define key/value pairs that further describe this guardian.
 	Tags []string `pulumi:"tags"`
@@ -92,13 +92,13 @@ type siteReliabilityGuardianState struct {
 }
 
 type SiteReliabilityGuardianState struct {
-	// Description
+	// Optional explanation of this guardian's purpose and scope.
 	Description pulumi.StringPtrInput
 	// If set to null/'BIZ*EVENT' validation events stored as bizevents in Grail. If set to 'SDLC*EVENT' validation events stored as SDLC events. Possible values: `BIZ_EVENT`, `SDLC_EVENT`
 	EventKind pulumi.StringPtrInput
-	// Name
+	// Unique display name for this guardian.
 	Name pulumi.StringPtrInput
-	// Objectives
+	// The validation criteria evaluated each time this guardian is executed.
 	Objectives SiteReliabilityGuardianObjectivesPtrInput
 	// Define key/value pairs that further describe this guardian.
 	Tags pulumi.StringArrayInput
@@ -111,13 +111,13 @@ func (SiteReliabilityGuardianState) ElementType() reflect.Type {
 }
 
 type siteReliabilityGuardianArgs struct {
-	// Description
+	// Optional explanation of this guardian's purpose and scope.
 	Description *string `pulumi:"description"`
 	// If set to null/'BIZ*EVENT' validation events stored as bizevents in Grail. If set to 'SDLC*EVENT' validation events stored as SDLC events. Possible values: `BIZ_EVENT`, `SDLC_EVENT`
 	EventKind *string `pulumi:"eventKind"`
-	// Name
+	// Unique display name for this guardian.
 	Name *string `pulumi:"name"`
-	// Objectives
+	// The validation criteria evaluated each time this guardian is executed.
 	Objectives SiteReliabilityGuardianObjectives `pulumi:"objectives"`
 	// Define key/value pairs that further describe this guardian.
 	Tags []string `pulumi:"tags"`
@@ -127,13 +127,13 @@ type siteReliabilityGuardianArgs struct {
 
 // The set of arguments for constructing a SiteReliabilityGuardian resource.
 type SiteReliabilityGuardianArgs struct {
-	// Description
+	// Optional explanation of this guardian's purpose and scope.
 	Description pulumi.StringPtrInput
 	// If set to null/'BIZ*EVENT' validation events stored as bizevents in Grail. If set to 'SDLC*EVENT' validation events stored as SDLC events. Possible values: `BIZ_EVENT`, `SDLC_EVENT`
 	EventKind pulumi.StringPtrInput
-	// Name
+	// Unique display name for this guardian.
 	Name pulumi.StringPtrInput
-	// Objectives
+	// The validation criteria evaluated each time this guardian is executed.
 	Objectives SiteReliabilityGuardianObjectivesInput
 	// Define key/value pairs that further describe this guardian.
 	Tags pulumi.StringArrayInput
@@ -228,7 +228,7 @@ func (o SiteReliabilityGuardianOutput) ToSiteReliabilityGuardianOutputWithContex
 	return o
 }
 
-// Description
+// Optional explanation of this guardian's purpose and scope.
 func (o SiteReliabilityGuardianOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *SiteReliabilityGuardian) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
@@ -238,12 +238,12 @@ func (o SiteReliabilityGuardianOutput) EventKind() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *SiteReliabilityGuardian) pulumi.StringPtrOutput { return v.EventKind }).(pulumi.StringPtrOutput)
 }
 
-// Name
+// Unique display name for this guardian.
 func (o SiteReliabilityGuardianOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *SiteReliabilityGuardian) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
-// Objectives
+// The validation criteria evaluated each time this guardian is executed.
 func (o SiteReliabilityGuardianOutput) Objectives() SiteReliabilityGuardianObjectivesOutput {
 	return o.ApplyT(func(v *SiteReliabilityGuardian) SiteReliabilityGuardianObjectivesOutput { return v.Objectives }).(SiteReliabilityGuardianObjectivesOutput)
 }

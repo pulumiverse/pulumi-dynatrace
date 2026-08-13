@@ -25,8 +25,9 @@ class DevobsGitOnpremArgs:
         """
         The set of arguments for constructing a DevobsGitOnprem resource.
 
-        :param pulumi.Input[_builtins.str] git_provider: Possible Values: `AzureOnPrem`, `BitbucketOnPrem`, `GithubOnPrem`, `GitlabOnPrem`
-        :param pulumi.Input[_builtins.str] url: An HTTP/HTTPS URL of your server
+        :param pulumi.Input[_builtins.str] git_provider: The git service provider for this server. Possible values: `AzureOnPrem`, `BitbucketOnPrem`, `GithubOnPrem`, `GitlabOnPrem`
+        :param pulumi.Input[_builtins.str] url: An HTTPS URL of your server (HTTP not supported)
+               Provide only the base URL of the server, not a path to a specific project or repository (For instance, https://git.example.com)
         :param pulumi.Input[_builtins.bool] include_credentials: If turned on, requests to your Gitlab server will have the `credentials` option set to `include`. Otherwise, it will be set to `omit`.
         """
         pulumi.set(__self__, "git_provider", git_provider)
@@ -38,7 +39,7 @@ class DevobsGitOnpremArgs:
     @pulumi.getter(name="gitProvider")
     def git_provider(self) -> pulumi.Input[_builtins.str]:
         """
-        Possible Values: `AzureOnPrem`, `BitbucketOnPrem`, `GithubOnPrem`, `GitlabOnPrem`
+        The git service provider for this server. Possible values: `AzureOnPrem`, `BitbucketOnPrem`, `GithubOnPrem`, `GitlabOnPrem`
         """
         return pulumi.get(self, "git_provider")
 
@@ -50,7 +51,8 @@ class DevobsGitOnpremArgs:
     @pulumi.getter
     def url(self) -> pulumi.Input[_builtins.str]:
         """
-        An HTTP/HTTPS URL of your server
+        An HTTPS URL of your server (HTTP not supported)
+        Provide only the base URL of the server, not a path to a specific project or repository (For instance, https://git.example.com)
         """
         return pulumi.get(self, "url")
 
@@ -80,9 +82,10 @@ class _DevobsGitOnpremState:
         """
         Input properties used for looking up and filtering DevobsGitOnprem resources.
 
-        :param pulumi.Input[_builtins.str] git_provider: Possible Values: `AzureOnPrem`, `BitbucketOnPrem`, `GithubOnPrem`, `GitlabOnPrem`
+        :param pulumi.Input[_builtins.str] git_provider: The git service provider for this server. Possible values: `AzureOnPrem`, `BitbucketOnPrem`, `GithubOnPrem`, `GitlabOnPrem`
         :param pulumi.Input[_builtins.bool] include_credentials: If turned on, requests to your Gitlab server will have the `credentials` option set to `include`. Otherwise, it will be set to `omit`.
-        :param pulumi.Input[_builtins.str] url: An HTTP/HTTPS URL of your server
+        :param pulumi.Input[_builtins.str] url: An HTTPS URL of your server (HTTP not supported)
+               Provide only the base URL of the server, not a path to a specific project or repository (For instance, https://git.example.com)
         """
         if git_provider is not None:
             pulumi.set(__self__, "git_provider", git_provider)
@@ -95,7 +98,7 @@ class _DevobsGitOnpremState:
     @pulumi.getter(name="gitProvider")
     def git_provider(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Possible Values: `AzureOnPrem`, `BitbucketOnPrem`, `GithubOnPrem`, `GitlabOnPrem`
+        The git service provider for this server. Possible values: `AzureOnPrem`, `BitbucketOnPrem`, `GithubOnPrem`, `GitlabOnPrem`
         """
         return pulumi.get(self, "git_provider")
 
@@ -119,7 +122,8 @@ class _DevobsGitOnpremState:
     @pulumi.getter
     def url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        An HTTP/HTTPS URL of your server
+        An HTTPS URL of your server (HTTP not supported)
+        Provide only the base URL of the server, not a path to a specific project or repository (For instance, https://git.example.com)
         """
         return pulumi.get(self, "url")
 
@@ -167,9 +171,10 @@ class DevobsGitOnprem(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.str] git_provider: Possible Values: `AzureOnPrem`, `BitbucketOnPrem`, `GithubOnPrem`, `GitlabOnPrem`
+        :param pulumi.Input[_builtins.str] git_provider: The git service provider for this server. Possible values: `AzureOnPrem`, `BitbucketOnPrem`, `GithubOnPrem`, `GitlabOnPrem`
         :param pulumi.Input[_builtins.bool] include_credentials: If turned on, requests to your Gitlab server will have the `credentials` option set to `include`. Otherwise, it will be set to `omit`.
-        :param pulumi.Input[_builtins.str] url: An HTTP/HTTPS URL of your server
+        :param pulumi.Input[_builtins.str] url: An HTTPS URL of your server (HTTP not supported)
+               Provide only the base URL of the server, not a path to a specific project or repository (For instance, https://git.example.com)
         """
         ...
     @overload
@@ -258,9 +263,10 @@ class DevobsGitOnprem(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.str] git_provider: Possible Values: `AzureOnPrem`, `BitbucketOnPrem`, `GithubOnPrem`, `GitlabOnPrem`
+        :param pulumi.Input[_builtins.str] git_provider: The git service provider for this server. Possible values: `AzureOnPrem`, `BitbucketOnPrem`, `GithubOnPrem`, `GitlabOnPrem`
         :param pulumi.Input[_builtins.bool] include_credentials: If turned on, requests to your Gitlab server will have the `credentials` option set to `include`. Otherwise, it will be set to `omit`.
-        :param pulumi.Input[_builtins.str] url: An HTTP/HTTPS URL of your server
+        :param pulumi.Input[_builtins.str] url: An HTTPS URL of your server (HTTP not supported)
+               Provide only the base URL of the server, not a path to a specific project or repository (For instance, https://git.example.com)
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -275,7 +281,7 @@ class DevobsGitOnprem(pulumi.CustomResource):
     @pulumi.getter(name="gitProvider")
     def git_provider(self) -> pulumi.Output[_builtins.str]:
         """
-        Possible Values: `AzureOnPrem`, `BitbucketOnPrem`, `GithubOnPrem`, `GitlabOnPrem`
+        The git service provider for this server. Possible values: `AzureOnPrem`, `BitbucketOnPrem`, `GithubOnPrem`, `GitlabOnPrem`
         """
         return pulumi.get(self, "git_provider")
 
@@ -291,7 +297,8 @@ class DevobsGitOnprem(pulumi.CustomResource):
     @pulumi.getter
     def url(self) -> pulumi.Output[_builtins.str]:
         """
-        An HTTP/HTTPS URL of your server
+        An HTTPS URL of your server (HTTP not supported)
+        Provide only the base URL of the server, not a path to a specific project or repository (For instance, https://git.example.com)
         """
         return pulumi.get(self, "url")
 

@@ -20,7 +20,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<string>? Condition { get; set; }
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
@@ -28,13 +28,13 @@ namespace Pulumiverse.Dynatrace.Inputs
         /// <summary>
         /// Specify attribute placeholders in curly braces, e.g. {http.route} or {rpc.method}.. Attribute value placeholders should be specified in curly braces, e.g. {http.route}, {rpc.method}. All attributes used in the placeholder are required for the rule to apply. If any of them is missing, the rule will not be applied and ruleset evaluation continues.
         /// 
-        /// If the resolved endpoint name on a given span is empty, the request will be ignored.
+        ///   If the resolved endpoint name on a given span is empty, the request will be ignored.
         /// </summary>
         [Input("endpointNameTemplate")]
         public Input<string>? EndpointNameTemplate { get; set; }
 
         /// <summary>
-        /// If condition matches. Possible Values: `DETECT_REQUEST_ON_ENDPOINT`, `SUPPRESS_REQUEST`
+        /// If condition matches. Possible values: `DETECT_REQUEST_ON_ENDPOINT`, `SUPPRESS_REQUEST`
         /// </summary>
         [Input("ifConditionMatches", required: true)]
         public Input<string> IfConditionMatches { get; set; } = null!;

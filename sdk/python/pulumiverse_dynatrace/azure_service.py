@@ -243,12 +243,12 @@ class AzureService(pulumi.CustomResource):
                 "value": "string",
             }])
         supported_services = dynatrace.get_azure_supported_services(excepts=["AZURE_STORAGE_ACCOUNT"])
-        t_erraformsample_services: list[Any] = []
-        for range in [{"key": k, "value": v} for [k, v] in enumerate(supported_services.services)]:
-            t_erraformsample_services.append(dynatrace.AzureService(f"TERRAFORM_SAMPLE_services-{range['key']}",
+        t_erraformsample_services: list[dynatrace.AzureService] = []
+        for t_erraformsample_services_range in [{"key": k, "value": v} for [k, v] in enumerate(supported_services.services)]:
+            t_erraformsample_services.append(dynatrace.AzureService(f"TERRAFORM_SAMPLE_services-{t_erraformsample_services_range['key']}",
                 credentials_id=terrafor_m__sample.id,
                 use_recommended_metrics=True,
-                name=range["key"]))
+                name=t_erraformsample_services_range["key"]))
         ```
 
         If you want to configure a different set of metrics for a specific service, a separate resource `AzureService` will be necessary for that. That allows you to configure the `metric` blocks according to your wishes.
@@ -343,12 +343,12 @@ class AzureService(pulumi.CustomResource):
                 "value": "string",
             }])
         supported_services = dynatrace.get_azure_supported_services(excepts=["AZURE_STORAGE_ACCOUNT"])
-        t_erraformsample_services: list[Any] = []
-        for range in [{"key": k, "value": v} for [k, v] in enumerate(supported_services.services)]:
-            t_erraformsample_services.append(dynatrace.AzureService(f"TERRAFORM_SAMPLE_services-{range['key']}",
+        t_erraformsample_services: list[dynatrace.AzureService] = []
+        for t_erraformsample_services_range in [{"key": k, "value": v} for [k, v] in enumerate(supported_services.services)]:
+            t_erraformsample_services.append(dynatrace.AzureService(f"TERRAFORM_SAMPLE_services-{t_erraformsample_services_range['key']}",
                 credentials_id=terrafor_m__sample.id,
                 use_recommended_metrics=True,
-                name=range["key"]))
+                name=t_erraformsample_services_range["key"]))
         ```
 
         If you want to configure a different set of metrics for a specific service, a separate resource `AzureService` will be necessary for that. That allows you to configure the `metric` blocks according to your wishes.

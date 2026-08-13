@@ -57,10 +57,10 @@ namespace Pulumiverse.Dynatrace
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var jmx_weblogic_cp = new Dynatrace.HubExtensionActiveVersion("jmx-weblogic-cp", new()
+    ///     var comDynatraceExtensionWmiIis = new Dynatrace.HubExtensionActiveVersion("com_dynatrace_extension_wmi_iis", new()
     ///     {
-    ///         Name = "com.dynatrace.extension.jmx-weblogic-cp",
-    ///         Version = "2.1.1",
+    ///         Name = "com.dynatrace.extension.wmi.iis",
+    ///         Version = "2.0.1",
     ///     });
     /// 
     /// });

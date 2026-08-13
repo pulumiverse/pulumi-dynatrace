@@ -240,12 +240,12 @@ class AwsService(pulumi.CustomResource):
             },
             remove_defaults=True)
         supported_services = dynatrace.get_aws_supported_services()
-        t_erraformsample_services: list[Any] = []
-        for range in [{"key": k, "value": v} for [k, v] in enumerate(supported_services.services)]:
-            t_erraformsample_services.append(dynatrace.AwsService(f"TERRAFORM_SAMPLE_services-{range['key']}",
+        t_erraformsample_services: list[dynatrace.AwsService] = []
+        for t_erraformsample_services_range in [{"key": k, "value": v} for [k, v] in enumerate(supported_services.services)]:
+            t_erraformsample_services.append(dynatrace.AwsService(f"TERRAFORM_SAMPLE_services-{t_erraformsample_services_range['key']}",
                 credentials_id=terrafor_m__sample.id,
                 use_recommended_metrics=True,
-                name=range["key"]))
+                name=t_erraformsample_services_range["key"]))
         ```
 
         If you want to configure a different set of metrics for a specific service, a separate resource `AwsService` will be necessary for that. That allows you to configure the `metric` blocks according to your wishes.
@@ -328,12 +328,12 @@ class AwsService(pulumi.CustomResource):
             },
             remove_defaults=True)
         supported_services = dynatrace.get_aws_supported_services()
-        t_erraformsample_services: list[Any] = []
-        for range in [{"key": k, "value": v} for [k, v] in enumerate(supported_services.services)]:
-            t_erraformsample_services.append(dynatrace.AwsService(f"TERRAFORM_SAMPLE_services-{range['key']}",
+        t_erraformsample_services: list[dynatrace.AwsService] = []
+        for t_erraformsample_services_range in [{"key": k, "value": v} for [k, v] in enumerate(supported_services.services)]:
+            t_erraformsample_services.append(dynatrace.AwsService(f"TERRAFORM_SAMPLE_services-{t_erraformsample_services_range['key']}",
                 credentials_id=terrafor_m__sample.id,
                 use_recommended_metrics=True,
-                name=range["key"]))
+                name=t_erraformsample_services_range["key"]))
         ```
 
         If you want to configure a different set of metrics for a specific service, a separate resource `AwsService` will be necessary for that. That allows you to configure the `metric` blocks according to your wishes.

@@ -15,23 +15,23 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class SiteReliabilityGuardianObjectivesObjective
     {
         /// <summary>
-        /// Enable auto adaptive threshold
+        /// Dynamically computes thresholds from 30 days of history.
         /// </summary>
         public readonly bool? AutoAdaptiveThresholdEnabled;
         /// <summary>
-        /// Comparison operator. Possible values: `GREATER_THAN_OR_EQUAL`, `LESS_THAN_OR_EQUAL`
+        /// Pass/fail direction: use ≥ when higher values are better, ≤ when lower values are better. Possible values: `GREATER_THAN_OR_EQUAL`, `LESS_THAN_OR_EQUAL`
         /// </summary>
         public readonly string ComparisonOperator;
         /// <summary>
-        /// no documentation available
+        /// Optional short explanation of what this objective measures.
         /// </summary>
         public readonly string? Description;
         /// <summary>
-        /// Display Unit
+        /// Optional unit conversion and decimal formatting applied when displaying the DQL result in the UI.
         /// </summary>
         public readonly Outputs.SiteReliabilityGuardianObjectivesObjectiveDisplayUnit? DisplayUnit;
         /// <summary>
-        /// DQL query
+        /// DQL query to execute. The first numeric result becomes the objective value. Supports $variable interpolation.
         /// </summary>
         public readonly string? DqlQuery;
         /// <summary>
@@ -39,11 +39,11 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly Outputs.SiteReliabilityGuardianObjectivesObjectiveLinks? Links;
         /// <summary>
-        /// Objective name
+        /// Unique name within this guardian. Included in every emitted validation event as the objective identifier.
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// Objective type. Possible values: `DQL`, `REFERENCE_SLO`
+        /// How the objective value is computed: via a DQL query or an existing SLO metric. Possible values: `DQL`, `REFERENCE_SLO`
         /// </summary>
         public readonly string ObjectiveType;
         /// <summary>
@@ -51,15 +51,15 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly string? ReferenceSlo;
         /// <summary>
-        /// no documentation available
+        /// Optional Grail segments to scope the DQL query to specific data.
         /// </summary>
         public readonly Outputs.SiteReliabilityGuardianObjectivesObjectiveSegments? Segments;
         /// <summary>
-        /// no documentation available
+        /// Hard pass/fail threshold. Missing this value yields FAIL. If unset with no warning, status is always INFO.
         /// </summary>
         public readonly double? Target;
         /// <summary>
-        /// no documentation available
+        /// Soft threshold. Results between warning and target yield WARNING. When set alone, yields PASS or WARNING.
         /// </summary>
         public readonly double? Warning;
 

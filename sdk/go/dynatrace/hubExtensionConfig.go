@@ -108,23 +108,22 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			tmpJSON0, err := json.Marshal(map[string]interface{}{
+//				"enabled":     true,
+//				"description": "my description",
+//				"version":     "1.1.1",
+//				"featureSets": []string{
+//					"IIS Extended Request Metrics",
+//				},
+//				"vars":              map[string]interface{}{},
 //				"activationContext": "LOCAL",
 //				"activationTags":    []interface{}{},
-//				"enabled":           true,
-//				"description":       "jj",
-//				"version":           "2.0.4",
-//				"featureSets": []string{
-//					"cache",
-//					"connections",
-//					"capacity",
-//				},
 //			})
 //			if err != nil {
 //				return err
 //			}
 //			json0 := string(tmpJSON0)
-//			_, err = dynatrace.NewHubExtensionConfig(ctx, "com_dynatrace_extension_jmx-weblogic-cp", &dynatrace.HubExtensionConfigArgs{
-//				Name:  pulumi.String("com.dynatrace.extension.jmx-weblogic-cp"),
+//			_, err = dynatrace.NewHubExtensionConfig(ctx, "com_dynatrace_extension_wmi_iis", &dynatrace.HubExtensionConfigArgs{
+//				Name:  pulumi.String("com.dynatrace.extension.wmi.iis"),
 //				Scope: pulumi.String("environment"),
 //				Value: pulumi.String(json0),
 //			})

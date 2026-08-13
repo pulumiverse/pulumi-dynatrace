@@ -19,17 +19,17 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly string? Condition;
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         public readonly string? Description;
         /// <summary>
         /// Specify attribute placeholders in curly braces, e.g. {http.route} or {rpc.method}.. Attribute value placeholders should be specified in curly braces, e.g. {http.route}, {rpc.method}. All attributes used in the placeholder are required for the rule to apply. If any of them is missing, the rule will not be applied and ruleset evaluation continues.
         /// 
-        /// If the resolved endpoint name on a given span is empty, the request will be ignored.
+        ///   If the resolved endpoint name on a given span is empty, the request will be ignored.
         /// </summary>
         public readonly string? EndpointNameTemplate;
         /// <summary>
-        /// If condition matches. Possible Values: `DETECT_REQUEST_ON_ENDPOINT`, `SUPPRESS_REQUEST`
+        /// If condition matches. Possible values: `DETECT_REQUEST_ON_ENDPOINT`, `SUPPRESS_REQUEST`
         /// </summary>
         public readonly string IfConditionMatches;
         /// <summary>

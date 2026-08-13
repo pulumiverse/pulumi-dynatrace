@@ -14,7 +14,7 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariableArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Variable Name
+        /// Name of the variable within the segment definition.
         /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
@@ -23,7 +23,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         private InputList<string>? _values;
 
         /// <summary>
-        /// Variable Values
+        /// One or more values for the variable, enabling multi-value filter expansion.
         /// </summary>
         public InputList<string> Values
         {

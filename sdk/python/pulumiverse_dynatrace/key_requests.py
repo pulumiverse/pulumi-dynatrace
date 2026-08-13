@@ -25,7 +25,7 @@ class KeyRequestsArgs:
         """
         The set of arguments for constructing a KeyRequests resource.
 
-        :param pulumi.Input[_builtins.str] service: ID of Dynatrace Service, eg. SERVICE-123ABC45678EFGH
+        :param pulumi.Input[_builtins.str] service: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] key_request_ids: The ids of the key requests
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] names: The names of the key requests
         """
@@ -39,7 +39,7 @@ class KeyRequestsArgs:
     @pulumi.getter
     def service(self) -> pulumi.Input[_builtins.str]:
         """
-        ID of Dynatrace Service, eg. SERVICE-123ABC45678EFGH
+        The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         """
         return pulumi.get(self, "service")
 
@@ -83,7 +83,7 @@ class _KeyRequestsState:
 
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] key_request_ids: The ids of the key requests
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] names: The names of the key requests
-        :param pulumi.Input[_builtins.str] service: ID of Dynatrace Service, eg. SERVICE-123ABC45678EFGH
+        :param pulumi.Input[_builtins.str] service: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         """
         if key_request_ids is not None:
             pulumi.set(__self__, "key_request_ids", key_request_ids)
@@ -120,7 +120,7 @@ class _KeyRequestsState:
     @pulumi.getter
     def service(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        ID of Dynatrace Service, eg. SERVICE-123ABC45678EFGH
+        The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         """
         return pulumi.get(self, "service")
 
@@ -154,12 +154,23 @@ class KeyRequests(pulumi.CustomResource):
 
         The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        example = dynatrace.KeyRequests("example",
+            service="SERVICE-0000000000000000",
+            names=["my-request-name"])
+        ```
+
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] key_request_ids: The ids of the key requests
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] names: The names of the key requests
-        :param pulumi.Input[_builtins.str] service: ID of Dynatrace Service, eg. SERVICE-123ABC45678EFGH
+        :param pulumi.Input[_builtins.str] service: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         """
         ...
     @overload
@@ -181,6 +192,17 @@ class KeyRequests(pulumi.CustomResource):
         - `terraform-provider-dynatrace -export KeyRequests` downloads all existing key request configuration
 
         The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        example = dynatrace.KeyRequests("example",
+            service="SERVICE-0000000000000000",
+            names=["my-request-name"])
+        ```
 
 
         :param str resource_name: The name of the resource.
@@ -237,7 +259,7 @@ class KeyRequests(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] key_request_ids: The ids of the key requests
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] names: The names of the key requests
-        :param pulumi.Input[_builtins.str] service: ID of Dynatrace Service, eg. SERVICE-123ABC45678EFGH
+        :param pulumi.Input[_builtins.str] service: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -268,7 +290,7 @@ class KeyRequests(pulumi.CustomResource):
     @pulumi.getter
     def service(self) -> pulumi.Output[_builtins.str]:
         """
-        ID of Dynatrace Service, eg. SERVICE-123ABC45678EFGH
+        The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         """
         return pulumi.get(self, "service")
 

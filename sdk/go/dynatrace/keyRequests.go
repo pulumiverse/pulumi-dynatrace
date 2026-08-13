@@ -25,6 +25,35 @@ import (
 // - `terraform-provider-dynatrace -export KeyRequests` downloads all existing key request configuration
 //
 // The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+//
+// ## Resource Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := dynatrace.NewKeyRequests(ctx, "example", &dynatrace.KeyRequestsArgs{
+//				Service: pulumi.String("SERVICE-0000000000000000"),
+//				Names: pulumi.StringArray{
+//					pulumi.String("my-request-name"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type KeyRequests struct {
 	pulumi.CustomResourceState
 
@@ -32,7 +61,7 @@ type KeyRequests struct {
 	KeyRequestIds pulumi.StringMapOutput `pulumi:"keyRequestIds"`
 	// The names of the key requests
 	Names pulumi.StringArrayOutput `pulumi:"names"`
-	// ID of Dynatrace Service, eg. SERVICE-123ABC45678EFGH
+	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
 	Service pulumi.StringOutput `pulumi:"service"`
 }
 
@@ -73,7 +102,7 @@ type keyRequestsState struct {
 	KeyRequestIds map[string]string `pulumi:"keyRequestIds"`
 	// The names of the key requests
 	Names []string `pulumi:"names"`
-	// ID of Dynatrace Service, eg. SERVICE-123ABC45678EFGH
+	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
 	Service *string `pulumi:"service"`
 }
 
@@ -82,7 +111,7 @@ type KeyRequestsState struct {
 	KeyRequestIds pulumi.StringMapInput
 	// The names of the key requests
 	Names pulumi.StringArrayInput
-	// ID of Dynatrace Service, eg. SERVICE-123ABC45678EFGH
+	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
 	Service pulumi.StringPtrInput
 }
 
@@ -95,7 +124,7 @@ type keyRequestsArgs struct {
 	KeyRequestIds map[string]string `pulumi:"keyRequestIds"`
 	// The names of the key requests
 	Names []string `pulumi:"names"`
-	// ID of Dynatrace Service, eg. SERVICE-123ABC45678EFGH
+	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
 	Service string `pulumi:"service"`
 }
 
@@ -105,7 +134,7 @@ type KeyRequestsArgs struct {
 	KeyRequestIds pulumi.StringMapInput
 	// The names of the key requests
 	Names pulumi.StringArrayInput
-	// ID of Dynatrace Service, eg. SERVICE-123ABC45678EFGH
+	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
 	Service pulumi.StringInput
 }
 
@@ -206,7 +235,7 @@ func (o KeyRequestsOutput) Names() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *KeyRequests) pulumi.StringArrayOutput { return v.Names }).(pulumi.StringArrayOutput)
 }
 
-// ID of Dynatrace Service, eg. SERVICE-123ABC45678EFGH
+// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
 func (o KeyRequestsOutput) Service() pulumi.StringOutput {
 	return o.ApplyT(func(v *KeyRequests) pulumi.StringOutput { return v.Service }).(pulumi.StringOutput)
 }

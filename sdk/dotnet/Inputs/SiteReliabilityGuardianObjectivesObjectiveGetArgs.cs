@@ -14,31 +14,31 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class SiteReliabilityGuardianObjectivesObjectiveGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Enable auto adaptive threshold
+        /// Dynamically computes thresholds from 30 days of history.
         /// </summary>
         [Input("autoAdaptiveThresholdEnabled")]
         public Input<bool>? AutoAdaptiveThresholdEnabled { get; set; }
 
         /// <summary>
-        /// Comparison operator. Possible values: `GREATER_THAN_OR_EQUAL`, `LESS_THAN_OR_EQUAL`
+        /// Pass/fail direction: use ≥ when higher values are better, ≤ when lower values are better. Possible values: `GREATER_THAN_OR_EQUAL`, `LESS_THAN_OR_EQUAL`
         /// </summary>
         [Input("comparisonOperator", required: true)]
         public Input<string> ComparisonOperator { get; set; } = null!;
 
         /// <summary>
-        /// no documentation available
+        /// Optional short explanation of what this objective measures.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// Display Unit
+        /// Optional unit conversion and decimal formatting applied when displaying the DQL result in the UI.
         /// </summary>
         [Input("displayUnit")]
         public Input<Inputs.SiteReliabilityGuardianObjectivesObjectiveDisplayUnitGetArgs>? DisplayUnit { get; set; }
 
         /// <summary>
-        /// DQL query
+        /// DQL query to execute. The first numeric result becomes the objective value. Supports $variable interpolation.
         /// </summary>
         [Input("dqlQuery")]
         public Input<string>? DqlQuery { get; set; }
@@ -50,13 +50,13 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<Inputs.SiteReliabilityGuardianObjectivesObjectiveLinksGetArgs>? Links { get; set; }
 
         /// <summary>
-        /// Objective name
+        /// Unique name within this guardian. Included in every emitted validation event as the objective identifier.
         /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
 
         /// <summary>
-        /// Objective type. Possible values: `DQL`, `REFERENCE_SLO`
+        /// How the objective value is computed: via a DQL query or an existing SLO metric. Possible values: `DQL`, `REFERENCE_SLO`
         /// </summary>
         [Input("objectiveType", required: true)]
         public Input<string> ObjectiveType { get; set; } = null!;
@@ -68,19 +68,19 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<string>? ReferenceSlo { get; set; }
 
         /// <summary>
-        /// no documentation available
+        /// Optional Grail segments to scope the DQL query to specific data.
         /// </summary>
         [Input("segments")]
         public Input<Inputs.SiteReliabilityGuardianObjectivesObjectiveSegmentsGetArgs>? Segments { get; set; }
 
         /// <summary>
-        /// no documentation available
+        /// Hard pass/fail threshold. Missing this value yields FAIL. If unset with no warning, status is always INFO.
         /// </summary>
         [Input("target")]
         public Input<double>? Target { get; set; }
 
         /// <summary>
-        /// no documentation available
+        /// Soft threshold. Results between warning and target yield WARNING. When set alone, yields PASS or WARNING.
         /// </summary>
         [Input("warning")]
         public Input<double>? Warning { get; set; }

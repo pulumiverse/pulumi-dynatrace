@@ -24,6 +24,28 @@ namespace Pulumiverse.Dynatrace
     /// - `terraform-provider-dynatrace -export dynatrace.KeyRequests` downloads all existing key request configuration
     /// 
     /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// 
+    /// ## Resource Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var example = new Dynatrace.KeyRequests("example", new()
+    ///     {
+    ///         Service = "SERVICE-0000000000000000",
+    ///         Names = new[]
+    ///         {
+    ///             "my-request-name",
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [DynatraceResourceType("dynatrace:index/keyRequests:KeyRequests")]
     public partial class KeyRequests : global::Pulumi.CustomResource
@@ -41,7 +63,7 @@ namespace Pulumiverse.Dynatrace
         public Output<ImmutableArray<string>> Names { get; private set; } = null!;
 
         /// <summary>
-        /// ID of Dynatrace Service, eg. SERVICE-123ABC45678EFGH
+        /// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         /// </summary>
         [Output("service")]
         public Output<string> Service { get; private set; } = null!;
@@ -118,7 +140,7 @@ namespace Pulumiverse.Dynatrace
         }
 
         /// <summary>
-        /// ID of Dynatrace Service, eg. SERVICE-123ABC45678EFGH
+        /// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         /// </summary>
         [Input("service", required: true)]
         public Input<string> Service { get; set; } = null!;
@@ -156,7 +178,7 @@ namespace Pulumiverse.Dynatrace
         }
 
         /// <summary>
-        /// ID of Dynatrace Service, eg. SERVICE-123ABC45678EFGH
+        /// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         /// </summary>
         [Input("service")]
         public Input<string>? Service { get; set; }

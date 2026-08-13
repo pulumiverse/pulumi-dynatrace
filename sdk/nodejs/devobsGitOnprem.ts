@@ -60,7 +60,7 @@ export class DevobsGitOnprem extends pulumi.CustomResource {
     }
 
     /**
-     * Possible Values: `AzureOnPrem`, `BitbucketOnPrem`, `GithubOnPrem`, `GitlabOnPrem`
+     * The git service provider for this server. Possible values: `AzureOnPrem`, `BitbucketOnPrem`, `GithubOnPrem`, `GitlabOnPrem`
      */
     declare public readonly gitProvider: pulumi.Output<string>;
     /**
@@ -68,7 +68,8 @@ export class DevobsGitOnprem extends pulumi.CustomResource {
      */
     declare public readonly includeCredentials: pulumi.Output<boolean | undefined>;
     /**
-     * An HTTP/HTTPS URL of your server
+     * An HTTPS URL of your server (HTTP not supported)
+     * Provide only the base URL of the server, not a path to a specific project or repository (For instance, https://git.example.com)
      */
     declare public readonly url: pulumi.Output<string>;
 
@@ -110,7 +111,7 @@ export class DevobsGitOnprem extends pulumi.CustomResource {
  */
 export interface DevobsGitOnpremState {
     /**
-     * Possible Values: `AzureOnPrem`, `BitbucketOnPrem`, `GithubOnPrem`, `GitlabOnPrem`
+     * The git service provider for this server. Possible values: `AzureOnPrem`, `BitbucketOnPrem`, `GithubOnPrem`, `GitlabOnPrem`
      */
     gitProvider?: pulumi.Input<string | undefined>;
     /**
@@ -118,7 +119,8 @@ export interface DevobsGitOnpremState {
      */
     includeCredentials?: pulumi.Input<boolean | undefined>;
     /**
-     * An HTTP/HTTPS URL of your server
+     * An HTTPS URL of your server (HTTP not supported)
+     * Provide only the base URL of the server, not a path to a specific project or repository (For instance, https://git.example.com)
      */
     url?: pulumi.Input<string | undefined>;
 }
@@ -128,7 +130,7 @@ export interface DevobsGitOnpremState {
  */
 export interface DevobsGitOnpremArgs {
     /**
-     * Possible Values: `AzureOnPrem`, `BitbucketOnPrem`, `GithubOnPrem`, `GitlabOnPrem`
+     * The git service provider for this server. Possible values: `AzureOnPrem`, `BitbucketOnPrem`, `GithubOnPrem`, `GitlabOnPrem`
      */
     gitProvider: pulumi.Input<string>;
     /**
@@ -136,7 +138,8 @@ export interface DevobsGitOnpremArgs {
      */
     includeCredentials?: pulumi.Input<boolean | undefined>;
     /**
-     * An HTTP/HTTPS URL of your server
+     * An HTTPS URL of your server (HTTP not supported)
+     * Provide only the base URL of the server, not a path to a specific project or repository (For instance, https://git.example.com)
      */
     url: pulumi.Input<string>;
 }

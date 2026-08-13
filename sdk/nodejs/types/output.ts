@@ -9936,17 +9936,17 @@ export interface EndpointDetectionRulesRule {
      */
     condition?: string;
     /**
-     * no documentation available
+     * No documentation available
      */
     description?: string;
     /**
      * Specify attribute placeholders in curly braces, e.g. {http.route} or {rpc.method}.. Attribute value placeholders should be specified in curly braces, e.g. {http.route}, {rpc.method}. All attributes used in the placeholder are required for the rule to apply. If any of them is missing, the rule will not be applied and ruleset evaluation continues.
      *
-     * If the resolved endpoint name on a given span is empty, the request will be ignored.
+     *   If the resolved endpoint name on a given span is empty, the request will be ignored.
      */
     endpointNameTemplate?: string;
     /**
-     * If condition matches. Possible Values: `DETECT_REQUEST_ON_ENDPOINT`, `SUPPRESS_REQUEST`
+     * If condition matches. Possible values: `DETECT_REQUEST_ON_ENDPOINT`, `SUPPRESS_REQUEST`
      */
     ifConditionMatches: string;
     /**
@@ -15545,13 +15545,7 @@ export interface KubernetesEnrichmentRules {
 
 export interface KubernetesEnrichmentRulesRule {
     /**
-     * This setting is enabled (`true`) or disabled (`false`)
-     *
-     * @deprecated Attribute no longer exists in the schema.
-     */
-    enabled?: boolean;
-    /**
-     * Uses the key of the annotation or label as field name
+     * Uses the key of the annotation or label as field name directly
      */
     primaryGrailTag?: boolean;
     /**
@@ -15559,11 +15553,11 @@ export interface KubernetesEnrichmentRulesRule {
      */
     source: string;
     /**
-     * Required when `primaryGrailTag` is omitted or `false`. Possible Values: ` dt.cost.costcenter``,  `dt.cost.product``, `dt.security_context
+     * Possible values: `dt.cost.costcenter`, `dt.cost.product`, `dt.security_context`
      */
     target?: string;
     /**
-     * Possible Values: `ANNOTATION`, `LABEL`
+     * Metadata type. Possible values: `ANNOTATION`, `LABEL`
      */
     type: string;
 }
@@ -34438,6 +34432,10 @@ export interface OpenpipelineV2BizeventsDataforwardingProcessingProcessorsProces
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2BizeventsDataforwardingProcessingProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -34486,7 +34484,7 @@ export interface OpenpipelineV2BizeventsDataforwardingProcessingProcessorsProces
      */
     technology?: outputs.OpenpipelineV2BizeventsDataforwardingProcessingProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -34922,6 +34920,25 @@ export interface OpenpipelineV2BizeventsDataforwardingProcessingProcessorsProces
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2BizeventsDataforwardingProcessingProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2BizeventsDataforwardingProcessingProcessorsProcessorProductAllocation {
@@ -35724,6 +35741,10 @@ export interface OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcess
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -35772,7 +35793,7 @@ export interface OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcess
      */
     technology?: outputs.OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -36208,6 +36229,25 @@ export interface OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcess
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorProductAllocation {
@@ -37059,6 +37099,10 @@ export interface OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcess
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -37107,7 +37151,7 @@ export interface OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcess
      */
     technology?: outputs.OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -37543,6 +37587,25 @@ export interface OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcess
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorProductAllocation {
@@ -38330,6 +38393,10 @@ export interface OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcess
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -38378,7 +38445,7 @@ export interface OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcess
      */
     technology?: outputs.OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -38814,6 +38881,25 @@ export interface OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcess
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorProductAllocation {
@@ -39601,6 +39687,10 @@ export interface OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessor {
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -39649,7 +39739,7 @@ export interface OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessor {
      */
     technology?: outputs.OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -40085,6 +40175,25 @@ export interface OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorHistogr
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorProductAllocation {
@@ -40887,6 +40996,10 @@ export interface OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProce
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -40935,7 +41048,7 @@ export interface OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProce
      */
     technology?: outputs.OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -41371,6 +41484,25 @@ export interface OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProce
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorProductAllocation {
@@ -42158,6 +42290,10 @@ export interface OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessor {
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -42206,7 +42342,7 @@ export interface OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessor {
      */
     technology?: outputs.OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -42642,6 +42778,25 @@ export interface OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorHi
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorProductAllocation {
@@ -43429,6 +43584,10 @@ export interface OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProc
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -43477,7 +43636,7 @@ export interface OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProc
      */
     technology?: outputs.OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -43913,6 +44072,25 @@ export interface OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProc
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorProductAllocation {
@@ -44700,6 +44878,10 @@ export interface OpenpipelineV2BizeventsPipelinesSecurityContextProcessorsProces
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2BizeventsPipelinesSecurityContextProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -44748,7 +44930,7 @@ export interface OpenpipelineV2BizeventsPipelinesSecurityContextProcessorsProces
      */
     technology?: outputs.OpenpipelineV2BizeventsPipelinesSecurityContextProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -45184,6 +45366,25 @@ export interface OpenpipelineV2BizeventsPipelinesSecurityContextProcessorsProces
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2BizeventsPipelinesSecurityContextProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2BizeventsPipelinesSecurityContextProcessorsProcessorProductAllocation {
@@ -45971,6 +46172,10 @@ export interface OpenpipelineV2BizeventsPipelinesSmartscapeEdgeExtractionProcess
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2BizeventsPipelinesSmartscapeEdgeExtractionProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -46019,7 +46224,7 @@ export interface OpenpipelineV2BizeventsPipelinesSmartscapeEdgeExtractionProcess
      */
     technology?: outputs.OpenpipelineV2BizeventsPipelinesSmartscapeEdgeExtractionProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -46455,6 +46660,25 @@ export interface OpenpipelineV2BizeventsPipelinesSmartscapeEdgeExtractionProcess
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2BizeventsPipelinesSmartscapeEdgeExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2BizeventsPipelinesSmartscapeEdgeExtractionProcessorsProcessorProductAllocation {
@@ -47242,6 +47466,10 @@ export interface OpenpipelineV2BizeventsPipelinesSmartscapeNodeExtractionProcess
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2BizeventsPipelinesSmartscapeNodeExtractionProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -47290,7 +47518,7 @@ export interface OpenpipelineV2BizeventsPipelinesSmartscapeNodeExtractionProcess
      */
     technology?: outputs.OpenpipelineV2BizeventsPipelinesSmartscapeNodeExtractionProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -47726,6 +47954,25 @@ export interface OpenpipelineV2BizeventsPipelinesSmartscapeNodeExtractionProcess
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2BizeventsPipelinesSmartscapeNodeExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2BizeventsPipelinesSmartscapeNodeExtractionProcessorsProcessorProductAllocation {
@@ -48513,6 +48760,10 @@ export interface OpenpipelineV2BizeventsPipelinesStorageProcessorsProcessor {
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2BizeventsPipelinesStorageProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -48561,7 +48812,7 @@ export interface OpenpipelineV2BizeventsPipelinesStorageProcessorsProcessor {
      */
     technology?: outputs.OpenpipelineV2BizeventsPipelinesStorageProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -48997,6 +49248,25 @@ export interface OpenpipelineV2BizeventsPipelinesStorageProcessorsProcessorHisto
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2BizeventsPipelinesStorageProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2BizeventsPipelinesStorageProcessorsProcessorProductAllocation {
@@ -49848,6 +50118,10 @@ export interface OpenpipelineV2DavisEventsDataforwardingProcessingProcessorsProc
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2DavisEventsDataforwardingProcessingProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -49896,7 +50170,7 @@ export interface OpenpipelineV2DavisEventsDataforwardingProcessingProcessorsProc
      */
     technology?: outputs.OpenpipelineV2DavisEventsDataforwardingProcessingProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -50332,6 +50606,25 @@ export interface OpenpipelineV2DavisEventsDataforwardingProcessingProcessorsProc
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2DavisEventsDataforwardingProcessingProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2DavisEventsDataforwardingProcessingProcessorsProcessorProductAllocation {
@@ -51134,6 +51427,10 @@ export interface OpenpipelineV2DavisEventsIngestsourcesProcessingProcessorsProce
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2DavisEventsIngestsourcesProcessingProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -51182,7 +51479,7 @@ export interface OpenpipelineV2DavisEventsIngestsourcesProcessingProcessorsProce
      */
     technology?: outputs.OpenpipelineV2DavisEventsIngestsourcesProcessingProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -51618,6 +51915,25 @@ export interface OpenpipelineV2DavisEventsIngestsourcesProcessingProcessorsProce
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2DavisEventsIngestsourcesProcessingProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2DavisEventsIngestsourcesProcessingProcessorsProcessorProductAllocation {
@@ -52469,6 +52785,10 @@ export interface OpenpipelineV2DavisEventsPipelinesCostAllocationProcessorsProce
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2DavisEventsPipelinesCostAllocationProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -52517,7 +52837,7 @@ export interface OpenpipelineV2DavisEventsPipelinesCostAllocationProcessorsProce
      */
     technology?: outputs.OpenpipelineV2DavisEventsPipelinesCostAllocationProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -52953,6 +53273,25 @@ export interface OpenpipelineV2DavisEventsPipelinesCostAllocationProcessorsProce
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2DavisEventsPipelinesCostAllocationProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2DavisEventsPipelinesCostAllocationProcessorsProcessorProductAllocation {
@@ -53740,6 +54079,10 @@ export interface OpenpipelineV2DavisEventsPipelinesDataExtractionProcessorsProce
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2DavisEventsPipelinesDataExtractionProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -53788,7 +54131,7 @@ export interface OpenpipelineV2DavisEventsPipelinesDataExtractionProcessorsProce
      */
     technology?: outputs.OpenpipelineV2DavisEventsPipelinesDataExtractionProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -54224,6 +54567,25 @@ export interface OpenpipelineV2DavisEventsPipelinesDataExtractionProcessorsProce
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2DavisEventsPipelinesDataExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2DavisEventsPipelinesDataExtractionProcessorsProcessorProductAllocation {
@@ -55011,6 +55373,10 @@ export interface OpenpipelineV2DavisEventsPipelinesDavisProcessorsProcessor {
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2DavisEventsPipelinesDavisProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -55059,7 +55425,7 @@ export interface OpenpipelineV2DavisEventsPipelinesDavisProcessorsProcessor {
      */
     technology?: outputs.OpenpipelineV2DavisEventsPipelinesDavisProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -55495,6 +55861,25 @@ export interface OpenpipelineV2DavisEventsPipelinesDavisProcessorsProcessorHisto
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2DavisEventsPipelinesDavisProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2DavisEventsPipelinesDavisProcessorsProcessorProductAllocation {
@@ -56297,6 +56682,10 @@ export interface OpenpipelineV2DavisEventsPipelinesMetricExtractionProcessorsPro
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2DavisEventsPipelinesMetricExtractionProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -56345,7 +56734,7 @@ export interface OpenpipelineV2DavisEventsPipelinesMetricExtractionProcessorsPro
      */
     technology?: outputs.OpenpipelineV2DavisEventsPipelinesMetricExtractionProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -56781,6 +57170,25 @@ export interface OpenpipelineV2DavisEventsPipelinesMetricExtractionProcessorsPro
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2DavisEventsPipelinesMetricExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2DavisEventsPipelinesMetricExtractionProcessorsProcessorProductAllocation {
@@ -57568,6 +57976,10 @@ export interface OpenpipelineV2DavisEventsPipelinesProcessingProcessorsProcessor
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2DavisEventsPipelinesProcessingProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -57616,7 +58028,7 @@ export interface OpenpipelineV2DavisEventsPipelinesProcessingProcessorsProcessor
      */
     technology?: outputs.OpenpipelineV2DavisEventsPipelinesProcessingProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -58052,6 +58464,25 @@ export interface OpenpipelineV2DavisEventsPipelinesProcessingProcessorsProcessor
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2DavisEventsPipelinesProcessingProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2DavisEventsPipelinesProcessingProcessorsProcessorProductAllocation {
@@ -58839,6 +59270,10 @@ export interface OpenpipelineV2DavisEventsPipelinesProductAllocationProcessorsPr
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2DavisEventsPipelinesProductAllocationProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -58887,7 +59322,7 @@ export interface OpenpipelineV2DavisEventsPipelinesProductAllocationProcessorsPr
      */
     technology?: outputs.OpenpipelineV2DavisEventsPipelinesProductAllocationProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -59323,6 +59758,25 @@ export interface OpenpipelineV2DavisEventsPipelinesProductAllocationProcessorsPr
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2DavisEventsPipelinesProductAllocationProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2DavisEventsPipelinesProductAllocationProcessorsProcessorProductAllocation {
@@ -60110,6 +60564,10 @@ export interface OpenpipelineV2DavisEventsPipelinesSecurityContextProcessorsProc
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2DavisEventsPipelinesSecurityContextProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -60158,7 +60616,7 @@ export interface OpenpipelineV2DavisEventsPipelinesSecurityContextProcessorsProc
      */
     technology?: outputs.OpenpipelineV2DavisEventsPipelinesSecurityContextProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -60594,6 +61052,25 @@ export interface OpenpipelineV2DavisEventsPipelinesSecurityContextProcessorsProc
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2DavisEventsPipelinesSecurityContextProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2DavisEventsPipelinesSecurityContextProcessorsProcessorProductAllocation {
@@ -61381,6 +61858,10 @@ export interface OpenpipelineV2DavisEventsPipelinesSmartscapeEdgeExtractionProce
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2DavisEventsPipelinesSmartscapeEdgeExtractionProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -61429,7 +61910,7 @@ export interface OpenpipelineV2DavisEventsPipelinesSmartscapeEdgeExtractionProce
      */
     technology?: outputs.OpenpipelineV2DavisEventsPipelinesSmartscapeEdgeExtractionProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -61865,6 +62346,25 @@ export interface OpenpipelineV2DavisEventsPipelinesSmartscapeEdgeExtractionProce
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2DavisEventsPipelinesSmartscapeEdgeExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2DavisEventsPipelinesSmartscapeEdgeExtractionProcessorsProcessorProductAllocation {
@@ -62652,6 +63152,10 @@ export interface OpenpipelineV2DavisEventsPipelinesSmartscapeNodeExtractionProce
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2DavisEventsPipelinesSmartscapeNodeExtractionProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -62700,7 +63204,7 @@ export interface OpenpipelineV2DavisEventsPipelinesSmartscapeNodeExtractionProce
      */
     technology?: outputs.OpenpipelineV2DavisEventsPipelinesSmartscapeNodeExtractionProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -63136,6 +63640,25 @@ export interface OpenpipelineV2DavisEventsPipelinesSmartscapeNodeExtractionProce
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2DavisEventsPipelinesSmartscapeNodeExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2DavisEventsPipelinesSmartscapeNodeExtractionProcessorsProcessorProductAllocation {
@@ -63923,6 +64446,10 @@ export interface OpenpipelineV2DavisEventsPipelinesStorageProcessorsProcessor {
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2DavisEventsPipelinesStorageProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -63971,7 +64498,7 @@ export interface OpenpipelineV2DavisEventsPipelinesStorageProcessorsProcessor {
      */
     technology?: outputs.OpenpipelineV2DavisEventsPipelinesStorageProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -64407,6 +64934,25 @@ export interface OpenpipelineV2DavisEventsPipelinesStorageProcessorsProcessorHis
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2DavisEventsPipelinesStorageProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2DavisEventsPipelinesStorageProcessorsProcessorProductAllocation {
@@ -65258,6 +65804,10 @@ export interface OpenpipelineV2DavisProblemsDataforwardingProcessingProcessorsPr
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2DavisProblemsDataforwardingProcessingProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -65306,7 +65856,7 @@ export interface OpenpipelineV2DavisProblemsDataforwardingProcessingProcessorsPr
      */
     technology?: outputs.OpenpipelineV2DavisProblemsDataforwardingProcessingProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -65742,6 +66292,25 @@ export interface OpenpipelineV2DavisProblemsDataforwardingProcessingProcessorsPr
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2DavisProblemsDataforwardingProcessingProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2DavisProblemsDataforwardingProcessingProcessorsProcessorProductAllocation {
@@ -66544,6 +67113,10 @@ export interface OpenpipelineV2DavisProblemsIngestsourcesProcessingProcessorsPro
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2DavisProblemsIngestsourcesProcessingProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -66592,7 +67165,7 @@ export interface OpenpipelineV2DavisProblemsIngestsourcesProcessingProcessorsPro
      */
     technology?: outputs.OpenpipelineV2DavisProblemsIngestsourcesProcessingProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -67028,6 +67601,25 @@ export interface OpenpipelineV2DavisProblemsIngestsourcesProcessingProcessorsPro
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2DavisProblemsIngestsourcesProcessingProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2DavisProblemsIngestsourcesProcessingProcessorsProcessorProductAllocation {
@@ -67879,6 +68471,10 @@ export interface OpenpipelineV2DavisProblemsPipelinesCostAllocationProcessorsPro
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2DavisProblemsPipelinesCostAllocationProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -67927,7 +68523,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesCostAllocationProcessorsPro
      */
     technology?: outputs.OpenpipelineV2DavisProblemsPipelinesCostAllocationProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -68363,6 +68959,25 @@ export interface OpenpipelineV2DavisProblemsPipelinesCostAllocationProcessorsPro
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2DavisProblemsPipelinesCostAllocationProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2DavisProblemsPipelinesCostAllocationProcessorsProcessorProductAllocation {
@@ -69150,6 +69765,10 @@ export interface OpenpipelineV2DavisProblemsPipelinesDataExtractionProcessorsPro
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2DavisProblemsPipelinesDataExtractionProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -69198,7 +69817,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesDataExtractionProcessorsPro
      */
     technology?: outputs.OpenpipelineV2DavisProblemsPipelinesDataExtractionProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -69634,6 +70253,25 @@ export interface OpenpipelineV2DavisProblemsPipelinesDataExtractionProcessorsPro
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2DavisProblemsPipelinesDataExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2DavisProblemsPipelinesDataExtractionProcessorsProcessorProductAllocation {
@@ -70421,6 +71059,10 @@ export interface OpenpipelineV2DavisProblemsPipelinesDavisProcessorsProcessor {
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2DavisProblemsPipelinesDavisProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -70469,7 +71111,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesDavisProcessorsProcessor {
      */
     technology?: outputs.OpenpipelineV2DavisProblemsPipelinesDavisProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -70905,6 +71547,25 @@ export interface OpenpipelineV2DavisProblemsPipelinesDavisProcessorsProcessorHis
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2DavisProblemsPipelinesDavisProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2DavisProblemsPipelinesDavisProcessorsProcessorProductAllocation {
@@ -71707,6 +72368,10 @@ export interface OpenpipelineV2DavisProblemsPipelinesMetricExtractionProcessorsP
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2DavisProblemsPipelinesMetricExtractionProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -71755,7 +72420,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesMetricExtractionProcessorsP
      */
     technology?: outputs.OpenpipelineV2DavisProblemsPipelinesMetricExtractionProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -72191,6 +72856,25 @@ export interface OpenpipelineV2DavisProblemsPipelinesMetricExtractionProcessorsP
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2DavisProblemsPipelinesMetricExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2DavisProblemsPipelinesMetricExtractionProcessorsProcessorProductAllocation {
@@ -72978,6 +73662,10 @@ export interface OpenpipelineV2DavisProblemsPipelinesProcessingProcessorsProcess
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2DavisProblemsPipelinesProcessingProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -73026,7 +73714,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesProcessingProcessorsProcess
      */
     technology?: outputs.OpenpipelineV2DavisProblemsPipelinesProcessingProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -73462,6 +74150,25 @@ export interface OpenpipelineV2DavisProblemsPipelinesProcessingProcessorsProcess
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2DavisProblemsPipelinesProcessingProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2DavisProblemsPipelinesProcessingProcessorsProcessorProductAllocation {
@@ -74249,6 +74956,10 @@ export interface OpenpipelineV2DavisProblemsPipelinesProductAllocationProcessors
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2DavisProblemsPipelinesProductAllocationProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -74297,7 +75008,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesProductAllocationProcessors
      */
     technology?: outputs.OpenpipelineV2DavisProblemsPipelinesProductAllocationProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -74733,6 +75444,25 @@ export interface OpenpipelineV2DavisProblemsPipelinesProductAllocationProcessors
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2DavisProblemsPipelinesProductAllocationProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2DavisProblemsPipelinesProductAllocationProcessorsProcessorProductAllocation {
@@ -75520,6 +76250,10 @@ export interface OpenpipelineV2DavisProblemsPipelinesSecurityContextProcessorsPr
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2DavisProblemsPipelinesSecurityContextProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -75568,7 +76302,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesSecurityContextProcessorsPr
      */
     technology?: outputs.OpenpipelineV2DavisProblemsPipelinesSecurityContextProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -76004,6 +76738,25 @@ export interface OpenpipelineV2DavisProblemsPipelinesSecurityContextProcessorsPr
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2DavisProblemsPipelinesSecurityContextProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2DavisProblemsPipelinesSecurityContextProcessorsProcessorProductAllocation {
@@ -76791,6 +77544,10 @@ export interface OpenpipelineV2DavisProblemsPipelinesSmartscapeEdgeExtractionPro
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2DavisProblemsPipelinesSmartscapeEdgeExtractionProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -76839,7 +77596,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesSmartscapeEdgeExtractionPro
      */
     technology?: outputs.OpenpipelineV2DavisProblemsPipelinesSmartscapeEdgeExtractionProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -77275,6 +78032,25 @@ export interface OpenpipelineV2DavisProblemsPipelinesSmartscapeEdgeExtractionPro
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2DavisProblemsPipelinesSmartscapeEdgeExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2DavisProblemsPipelinesSmartscapeEdgeExtractionProcessorsProcessorProductAllocation {
@@ -78062,6 +78838,10 @@ export interface OpenpipelineV2DavisProblemsPipelinesSmartscapeNodeExtractionPro
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2DavisProblemsPipelinesSmartscapeNodeExtractionProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -78110,7 +78890,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesSmartscapeNodeExtractionPro
      */
     technology?: outputs.OpenpipelineV2DavisProblemsPipelinesSmartscapeNodeExtractionProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -78546,6 +79326,25 @@ export interface OpenpipelineV2DavisProblemsPipelinesSmartscapeNodeExtractionPro
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2DavisProblemsPipelinesSmartscapeNodeExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2DavisProblemsPipelinesSmartscapeNodeExtractionProcessorsProcessorProductAllocation {
@@ -79333,6 +80132,10 @@ export interface OpenpipelineV2DavisProblemsPipelinesStorageProcessorsProcessor 
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2DavisProblemsPipelinesStorageProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -79381,7 +80184,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesStorageProcessorsProcessor 
      */
     technology?: outputs.OpenpipelineV2DavisProblemsPipelinesStorageProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -79817,6 +80620,25 @@ export interface OpenpipelineV2DavisProblemsPipelinesStorageProcessorsProcessorH
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2DavisProblemsPipelinesStorageProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2DavisProblemsPipelinesStorageProcessorsProcessorProductAllocation {
@@ -80668,6 +81490,10 @@ export interface OpenpipelineV2EventsDataforwardingProcessingProcessorsProcessor
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2EventsDataforwardingProcessingProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -80716,7 +81542,7 @@ export interface OpenpipelineV2EventsDataforwardingProcessingProcessorsProcessor
      */
     technology?: outputs.OpenpipelineV2EventsDataforwardingProcessingProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -81152,6 +81978,25 @@ export interface OpenpipelineV2EventsDataforwardingProcessingProcessorsProcessor
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2EventsDataforwardingProcessingProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2EventsDataforwardingProcessingProcessorsProcessorProductAllocation {
@@ -81954,6 +82799,10 @@ export interface OpenpipelineV2EventsIngestsourcesProcessingProcessorsProcessor 
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2EventsIngestsourcesProcessingProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -82002,7 +82851,7 @@ export interface OpenpipelineV2EventsIngestsourcesProcessingProcessorsProcessor 
      */
     technology?: outputs.OpenpipelineV2EventsIngestsourcesProcessingProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -82438,6 +83287,25 @@ export interface OpenpipelineV2EventsIngestsourcesProcessingProcessorsProcessorH
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2EventsIngestsourcesProcessingProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2EventsIngestsourcesProcessingProcessorsProcessorProductAllocation {
@@ -83289,6 +84157,10 @@ export interface OpenpipelineV2EventsPipelinesCostAllocationProcessorsProcessor 
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2EventsPipelinesCostAllocationProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -83337,7 +84209,7 @@ export interface OpenpipelineV2EventsPipelinesCostAllocationProcessorsProcessor 
      */
     technology?: outputs.OpenpipelineV2EventsPipelinesCostAllocationProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -83773,6 +84645,25 @@ export interface OpenpipelineV2EventsPipelinesCostAllocationProcessorsProcessorH
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2EventsPipelinesCostAllocationProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2EventsPipelinesCostAllocationProcessorsProcessorProductAllocation {
@@ -84560,6 +85451,10 @@ export interface OpenpipelineV2EventsPipelinesDataExtractionProcessorsProcessor 
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2EventsPipelinesDataExtractionProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -84608,7 +85503,7 @@ export interface OpenpipelineV2EventsPipelinesDataExtractionProcessorsProcessor 
      */
     technology?: outputs.OpenpipelineV2EventsPipelinesDataExtractionProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -85044,6 +85939,25 @@ export interface OpenpipelineV2EventsPipelinesDataExtractionProcessorsProcessorH
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2EventsPipelinesDataExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2EventsPipelinesDataExtractionProcessorsProcessorProductAllocation {
@@ -85831,6 +86745,10 @@ export interface OpenpipelineV2EventsPipelinesDavisProcessorsProcessor {
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2EventsPipelinesDavisProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -85879,7 +86797,7 @@ export interface OpenpipelineV2EventsPipelinesDavisProcessorsProcessor {
      */
     technology?: outputs.OpenpipelineV2EventsPipelinesDavisProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -86315,6 +87233,25 @@ export interface OpenpipelineV2EventsPipelinesDavisProcessorsProcessorHistogramM
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2EventsPipelinesDavisProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2EventsPipelinesDavisProcessorsProcessorProductAllocation {
@@ -87117,6 +88054,10 @@ export interface OpenpipelineV2EventsPipelinesMetricExtractionProcessorsProcesso
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2EventsPipelinesMetricExtractionProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -87165,7 +88106,7 @@ export interface OpenpipelineV2EventsPipelinesMetricExtractionProcessorsProcesso
      */
     technology?: outputs.OpenpipelineV2EventsPipelinesMetricExtractionProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -87601,6 +88542,25 @@ export interface OpenpipelineV2EventsPipelinesMetricExtractionProcessorsProcesso
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2EventsPipelinesMetricExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2EventsPipelinesMetricExtractionProcessorsProcessorProductAllocation {
@@ -88388,6 +89348,10 @@ export interface OpenpipelineV2EventsPipelinesProcessingProcessorsProcessor {
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2EventsPipelinesProcessingProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -88436,7 +89400,7 @@ export interface OpenpipelineV2EventsPipelinesProcessingProcessorsProcessor {
      */
     technology?: outputs.OpenpipelineV2EventsPipelinesProcessingProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -88872,6 +89836,25 @@ export interface OpenpipelineV2EventsPipelinesProcessingProcessorsProcessorHisto
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2EventsPipelinesProcessingProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2EventsPipelinesProcessingProcessorsProcessorProductAllocation {
@@ -89659,6 +90642,10 @@ export interface OpenpipelineV2EventsPipelinesProductAllocationProcessorsProcess
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2EventsPipelinesProductAllocationProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -89707,7 +90694,7 @@ export interface OpenpipelineV2EventsPipelinesProductAllocationProcessorsProcess
      */
     technology?: outputs.OpenpipelineV2EventsPipelinesProductAllocationProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -90143,6 +91130,25 @@ export interface OpenpipelineV2EventsPipelinesProductAllocationProcessorsProcess
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2EventsPipelinesProductAllocationProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2EventsPipelinesProductAllocationProcessorsProcessorProductAllocation {
@@ -90930,6 +91936,10 @@ export interface OpenpipelineV2EventsPipelinesSecurityContextProcessorsProcessor
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2EventsPipelinesSecurityContextProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -90978,7 +91988,7 @@ export interface OpenpipelineV2EventsPipelinesSecurityContextProcessorsProcessor
      */
     technology?: outputs.OpenpipelineV2EventsPipelinesSecurityContextProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -91414,6 +92424,25 @@ export interface OpenpipelineV2EventsPipelinesSecurityContextProcessorsProcessor
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2EventsPipelinesSecurityContextProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2EventsPipelinesSecurityContextProcessorsProcessorProductAllocation {
@@ -92201,6 +93230,10 @@ export interface OpenpipelineV2EventsPipelinesSmartscapeEdgeExtractionProcessors
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2EventsPipelinesSmartscapeEdgeExtractionProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -92249,7 +93282,7 @@ export interface OpenpipelineV2EventsPipelinesSmartscapeEdgeExtractionProcessors
      */
     technology?: outputs.OpenpipelineV2EventsPipelinesSmartscapeEdgeExtractionProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -92685,6 +93718,25 @@ export interface OpenpipelineV2EventsPipelinesSmartscapeEdgeExtractionProcessors
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2EventsPipelinesSmartscapeEdgeExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2EventsPipelinesSmartscapeEdgeExtractionProcessorsProcessorProductAllocation {
@@ -93472,6 +94524,10 @@ export interface OpenpipelineV2EventsPipelinesSmartscapeNodeExtractionProcessors
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2EventsPipelinesSmartscapeNodeExtractionProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -93520,7 +94576,7 @@ export interface OpenpipelineV2EventsPipelinesSmartscapeNodeExtractionProcessors
      */
     technology?: outputs.OpenpipelineV2EventsPipelinesSmartscapeNodeExtractionProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -93956,6 +95012,25 @@ export interface OpenpipelineV2EventsPipelinesSmartscapeNodeExtractionProcessors
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2EventsPipelinesSmartscapeNodeExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2EventsPipelinesSmartscapeNodeExtractionProcessorsProcessorProductAllocation {
@@ -94743,6 +95818,10 @@ export interface OpenpipelineV2EventsPipelinesStorageProcessorsProcessor {
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2EventsPipelinesStorageProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -94791,7 +95870,7 @@ export interface OpenpipelineV2EventsPipelinesStorageProcessorsProcessor {
      */
     technology?: outputs.OpenpipelineV2EventsPipelinesStorageProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -95227,6 +96306,25 @@ export interface OpenpipelineV2EventsPipelinesStorageProcessorsProcessorHistogra
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2EventsPipelinesStorageProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2EventsPipelinesStorageProcessorsProcessorProductAllocation {
@@ -96078,6 +97176,10 @@ export interface OpenpipelineV2EventsSdlcDataforwardingProcessingProcessorsProce
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2EventsSdlcDataforwardingProcessingProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -96126,7 +97228,7 @@ export interface OpenpipelineV2EventsSdlcDataforwardingProcessingProcessorsProce
      */
     technology?: outputs.OpenpipelineV2EventsSdlcDataforwardingProcessingProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -96562,6 +97664,25 @@ export interface OpenpipelineV2EventsSdlcDataforwardingProcessingProcessorsProce
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2EventsSdlcDataforwardingProcessingProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2EventsSdlcDataforwardingProcessingProcessorsProcessorProductAllocation {
@@ -97364,6 +98485,10 @@ export interface OpenpipelineV2EventsSdlcIngestsourcesProcessingProcessorsProces
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2EventsSdlcIngestsourcesProcessingProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -97412,7 +98537,7 @@ export interface OpenpipelineV2EventsSdlcIngestsourcesProcessingProcessorsProces
      */
     technology?: outputs.OpenpipelineV2EventsSdlcIngestsourcesProcessingProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -97848,6 +98973,25 @@ export interface OpenpipelineV2EventsSdlcIngestsourcesProcessingProcessorsProces
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2EventsSdlcIngestsourcesProcessingProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2EventsSdlcIngestsourcesProcessingProcessorsProcessorProductAllocation {
@@ -98699,6 +99843,10 @@ export interface OpenpipelineV2EventsSdlcPipelinesCostAllocationProcessorsProces
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2EventsSdlcPipelinesCostAllocationProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -98747,7 +99895,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesCostAllocationProcessorsProces
      */
     technology?: outputs.OpenpipelineV2EventsSdlcPipelinesCostAllocationProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -99183,6 +100331,25 @@ export interface OpenpipelineV2EventsSdlcPipelinesCostAllocationProcessorsProces
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2EventsSdlcPipelinesCostAllocationProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2EventsSdlcPipelinesCostAllocationProcessorsProcessorProductAllocation {
@@ -99970,6 +101137,10 @@ export interface OpenpipelineV2EventsSdlcPipelinesDataExtractionProcessorsProces
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2EventsSdlcPipelinesDataExtractionProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -100018,7 +101189,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesDataExtractionProcessorsProces
      */
     technology?: outputs.OpenpipelineV2EventsSdlcPipelinesDataExtractionProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -100454,6 +101625,25 @@ export interface OpenpipelineV2EventsSdlcPipelinesDataExtractionProcessorsProces
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2EventsSdlcPipelinesDataExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2EventsSdlcPipelinesDataExtractionProcessorsProcessorProductAllocation {
@@ -101241,6 +102431,10 @@ export interface OpenpipelineV2EventsSdlcPipelinesDavisProcessorsProcessor {
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2EventsSdlcPipelinesDavisProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -101289,7 +102483,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesDavisProcessorsProcessor {
      */
     technology?: outputs.OpenpipelineV2EventsSdlcPipelinesDavisProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -101725,6 +102919,25 @@ export interface OpenpipelineV2EventsSdlcPipelinesDavisProcessorsProcessorHistog
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2EventsSdlcPipelinesDavisProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2EventsSdlcPipelinesDavisProcessorsProcessorProductAllocation {
@@ -102527,6 +103740,10 @@ export interface OpenpipelineV2EventsSdlcPipelinesMetricExtractionProcessorsProc
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2EventsSdlcPipelinesMetricExtractionProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -102575,7 +103792,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesMetricExtractionProcessorsProc
      */
     technology?: outputs.OpenpipelineV2EventsSdlcPipelinesMetricExtractionProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -103011,6 +104228,25 @@ export interface OpenpipelineV2EventsSdlcPipelinesMetricExtractionProcessorsProc
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2EventsSdlcPipelinesMetricExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2EventsSdlcPipelinesMetricExtractionProcessorsProcessorProductAllocation {
@@ -103798,6 +105034,10 @@ export interface OpenpipelineV2EventsSdlcPipelinesProcessingProcessorsProcessor 
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2EventsSdlcPipelinesProcessingProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -103846,7 +105086,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesProcessingProcessorsProcessor 
      */
     technology?: outputs.OpenpipelineV2EventsSdlcPipelinesProcessingProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -104282,6 +105522,25 @@ export interface OpenpipelineV2EventsSdlcPipelinesProcessingProcessorsProcessorH
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2EventsSdlcPipelinesProcessingProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2EventsSdlcPipelinesProcessingProcessorsProcessorProductAllocation {
@@ -105069,6 +106328,10 @@ export interface OpenpipelineV2EventsSdlcPipelinesProductAllocationProcessorsPro
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2EventsSdlcPipelinesProductAllocationProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -105117,7 +106380,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesProductAllocationProcessorsPro
      */
     technology?: outputs.OpenpipelineV2EventsSdlcPipelinesProductAllocationProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -105553,6 +106816,25 @@ export interface OpenpipelineV2EventsSdlcPipelinesProductAllocationProcessorsPro
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2EventsSdlcPipelinesProductAllocationProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2EventsSdlcPipelinesProductAllocationProcessorsProcessorProductAllocation {
@@ -106340,6 +107622,10 @@ export interface OpenpipelineV2EventsSdlcPipelinesSecurityContextProcessorsProce
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2EventsSdlcPipelinesSecurityContextProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -106388,7 +107674,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesSecurityContextProcessorsProce
      */
     technology?: outputs.OpenpipelineV2EventsSdlcPipelinesSecurityContextProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -106824,6 +108110,25 @@ export interface OpenpipelineV2EventsSdlcPipelinesSecurityContextProcessorsProce
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2EventsSdlcPipelinesSecurityContextProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2EventsSdlcPipelinesSecurityContextProcessorsProcessorProductAllocation {
@@ -107611,6 +108916,10 @@ export interface OpenpipelineV2EventsSdlcPipelinesSmartscapeEdgeExtractionProces
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2EventsSdlcPipelinesSmartscapeEdgeExtractionProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -107659,7 +108968,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesSmartscapeEdgeExtractionProces
      */
     technology?: outputs.OpenpipelineV2EventsSdlcPipelinesSmartscapeEdgeExtractionProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -108095,6 +109404,25 @@ export interface OpenpipelineV2EventsSdlcPipelinesSmartscapeEdgeExtractionProces
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2EventsSdlcPipelinesSmartscapeEdgeExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2EventsSdlcPipelinesSmartscapeEdgeExtractionProcessorsProcessorProductAllocation {
@@ -108882,6 +110210,10 @@ export interface OpenpipelineV2EventsSdlcPipelinesSmartscapeNodeExtractionProces
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2EventsSdlcPipelinesSmartscapeNodeExtractionProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -108930,7 +110262,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesSmartscapeNodeExtractionProces
      */
     technology?: outputs.OpenpipelineV2EventsSdlcPipelinesSmartscapeNodeExtractionProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -109366,6 +110698,25 @@ export interface OpenpipelineV2EventsSdlcPipelinesSmartscapeNodeExtractionProces
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2EventsSdlcPipelinesSmartscapeNodeExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2EventsSdlcPipelinesSmartscapeNodeExtractionProcessorsProcessorProductAllocation {
@@ -110153,6 +111504,10 @@ export interface OpenpipelineV2EventsSdlcPipelinesStorageProcessorsProcessor {
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2EventsSdlcPipelinesStorageProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -110201,7 +111556,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesStorageProcessorsProcessor {
      */
     technology?: outputs.OpenpipelineV2EventsSdlcPipelinesStorageProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -110637,6 +111992,25 @@ export interface OpenpipelineV2EventsSdlcPipelinesStorageProcessorsProcessorHist
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2EventsSdlcPipelinesStorageProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2EventsSdlcPipelinesStorageProcessorsProcessorProductAllocation {
@@ -111488,6 +112862,10 @@ export interface OpenpipelineV2EventsSecurityDataforwardingProcessingProcessorsP
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2EventsSecurityDataforwardingProcessingProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -111536,7 +112914,7 @@ export interface OpenpipelineV2EventsSecurityDataforwardingProcessingProcessorsP
      */
     technology?: outputs.OpenpipelineV2EventsSecurityDataforwardingProcessingProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -111972,6 +113350,25 @@ export interface OpenpipelineV2EventsSecurityDataforwardingProcessingProcessorsP
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2EventsSecurityDataforwardingProcessingProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2EventsSecurityDataforwardingProcessingProcessorsProcessorProductAllocation {
@@ -112774,6 +114171,10 @@ export interface OpenpipelineV2EventsSecurityIngestsourcesProcessingProcessorsPr
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2EventsSecurityIngestsourcesProcessingProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -112822,7 +114223,7 @@ export interface OpenpipelineV2EventsSecurityIngestsourcesProcessingProcessorsPr
      */
     technology?: outputs.OpenpipelineV2EventsSecurityIngestsourcesProcessingProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -113258,6 +114659,25 @@ export interface OpenpipelineV2EventsSecurityIngestsourcesProcessingProcessorsPr
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2EventsSecurityIngestsourcesProcessingProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2EventsSecurityIngestsourcesProcessingProcessorsProcessorProductAllocation {
@@ -114109,6 +115529,10 @@ export interface OpenpipelineV2EventsSecurityPipelinesCostAllocationProcessorsPr
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2EventsSecurityPipelinesCostAllocationProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -114157,7 +115581,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesCostAllocationProcessorsPr
      */
     technology?: outputs.OpenpipelineV2EventsSecurityPipelinesCostAllocationProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -114593,6 +116017,25 @@ export interface OpenpipelineV2EventsSecurityPipelinesCostAllocationProcessorsPr
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2EventsSecurityPipelinesCostAllocationProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2EventsSecurityPipelinesCostAllocationProcessorsProcessorProductAllocation {
@@ -115380,6 +116823,10 @@ export interface OpenpipelineV2EventsSecurityPipelinesDataExtractionProcessorsPr
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2EventsSecurityPipelinesDataExtractionProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -115428,7 +116875,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesDataExtractionProcessorsPr
      */
     technology?: outputs.OpenpipelineV2EventsSecurityPipelinesDataExtractionProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -115864,6 +117311,25 @@ export interface OpenpipelineV2EventsSecurityPipelinesDataExtractionProcessorsPr
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2EventsSecurityPipelinesDataExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2EventsSecurityPipelinesDataExtractionProcessorsProcessorProductAllocation {
@@ -116651,6 +118117,10 @@ export interface OpenpipelineV2EventsSecurityPipelinesDavisProcessorsProcessor {
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2EventsSecurityPipelinesDavisProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -116699,7 +118169,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesDavisProcessorsProcessor {
      */
     technology?: outputs.OpenpipelineV2EventsSecurityPipelinesDavisProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -117135,6 +118605,25 @@ export interface OpenpipelineV2EventsSecurityPipelinesDavisProcessorsProcessorHi
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2EventsSecurityPipelinesDavisProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2EventsSecurityPipelinesDavisProcessorsProcessorProductAllocation {
@@ -117937,6 +119426,10 @@ export interface OpenpipelineV2EventsSecurityPipelinesMetricExtractionProcessors
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2EventsSecurityPipelinesMetricExtractionProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -117985,7 +119478,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesMetricExtractionProcessors
      */
     technology?: outputs.OpenpipelineV2EventsSecurityPipelinesMetricExtractionProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -118421,6 +119914,25 @@ export interface OpenpipelineV2EventsSecurityPipelinesMetricExtractionProcessors
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2EventsSecurityPipelinesMetricExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2EventsSecurityPipelinesMetricExtractionProcessorsProcessorProductAllocation {
@@ -119208,6 +120720,10 @@ export interface OpenpipelineV2EventsSecurityPipelinesProcessingProcessorsProces
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2EventsSecurityPipelinesProcessingProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -119256,7 +120772,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesProcessingProcessorsProces
      */
     technology?: outputs.OpenpipelineV2EventsSecurityPipelinesProcessingProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -119692,6 +121208,25 @@ export interface OpenpipelineV2EventsSecurityPipelinesProcessingProcessorsProces
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2EventsSecurityPipelinesProcessingProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2EventsSecurityPipelinesProcessingProcessorsProcessorProductAllocation {
@@ -120479,6 +122014,10 @@ export interface OpenpipelineV2EventsSecurityPipelinesProductAllocationProcessor
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2EventsSecurityPipelinesProductAllocationProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -120527,7 +122066,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesProductAllocationProcessor
      */
     technology?: outputs.OpenpipelineV2EventsSecurityPipelinesProductAllocationProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -120963,6 +122502,25 @@ export interface OpenpipelineV2EventsSecurityPipelinesProductAllocationProcessor
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2EventsSecurityPipelinesProductAllocationProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2EventsSecurityPipelinesProductAllocationProcessorsProcessorProductAllocation {
@@ -121750,6 +123308,10 @@ export interface OpenpipelineV2EventsSecurityPipelinesSecurityContextProcessorsP
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2EventsSecurityPipelinesSecurityContextProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -121798,7 +123360,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesSecurityContextProcessorsP
      */
     technology?: outputs.OpenpipelineV2EventsSecurityPipelinesSecurityContextProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -122234,6 +123796,25 @@ export interface OpenpipelineV2EventsSecurityPipelinesSecurityContextProcessorsP
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2EventsSecurityPipelinesSecurityContextProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2EventsSecurityPipelinesSecurityContextProcessorsProcessorProductAllocation {
@@ -123021,6 +124602,10 @@ export interface OpenpipelineV2EventsSecurityPipelinesSmartscapeEdgeExtractionPr
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2EventsSecurityPipelinesSmartscapeEdgeExtractionProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -123069,7 +124654,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesSmartscapeEdgeExtractionPr
      */
     technology?: outputs.OpenpipelineV2EventsSecurityPipelinesSmartscapeEdgeExtractionProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -123505,6 +125090,25 @@ export interface OpenpipelineV2EventsSecurityPipelinesSmartscapeEdgeExtractionPr
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2EventsSecurityPipelinesSmartscapeEdgeExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2EventsSecurityPipelinesSmartscapeEdgeExtractionProcessorsProcessorProductAllocation {
@@ -124292,6 +125896,10 @@ export interface OpenpipelineV2EventsSecurityPipelinesSmartscapeNodeExtractionPr
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2EventsSecurityPipelinesSmartscapeNodeExtractionProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -124340,7 +125948,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesSmartscapeNodeExtractionPr
      */
     technology?: outputs.OpenpipelineV2EventsSecurityPipelinesSmartscapeNodeExtractionProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -124776,6 +126384,25 @@ export interface OpenpipelineV2EventsSecurityPipelinesSmartscapeNodeExtractionPr
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2EventsSecurityPipelinesSmartscapeNodeExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2EventsSecurityPipelinesSmartscapeNodeExtractionProcessorsProcessorProductAllocation {
@@ -125563,6 +127190,10 @@ export interface OpenpipelineV2EventsSecurityPipelinesStorageProcessorsProcessor
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2EventsSecurityPipelinesStorageProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -125611,7 +127242,7 @@ export interface OpenpipelineV2EventsSecurityPipelinesStorageProcessorsProcessor
      */
     technology?: outputs.OpenpipelineV2EventsSecurityPipelinesStorageProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -126047,6 +127678,25 @@ export interface OpenpipelineV2EventsSecurityPipelinesStorageProcessorsProcessor
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2EventsSecurityPipelinesStorageProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2EventsSecurityPipelinesStorageProcessorsProcessorProductAllocation {
@@ -126898,6 +128548,10 @@ export interface OpenpipelineV2LogsDataforwardingProcessingProcessorsProcessor {
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2LogsDataforwardingProcessingProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -126946,7 +128600,7 @@ export interface OpenpipelineV2LogsDataforwardingProcessingProcessorsProcessor {
      */
     technology?: outputs.OpenpipelineV2LogsDataforwardingProcessingProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -127382,6 +129036,25 @@ export interface OpenpipelineV2LogsDataforwardingProcessingProcessorsProcessorHi
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2LogsDataforwardingProcessingProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2LogsDataforwardingProcessingProcessorsProcessorProductAllocation {
@@ -128184,6 +129857,10 @@ export interface OpenpipelineV2LogsIngestsourcesProcessingProcessorsProcessor {
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2LogsIngestsourcesProcessingProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -128232,7 +129909,7 @@ export interface OpenpipelineV2LogsIngestsourcesProcessingProcessorsProcessor {
      */
     technology?: outputs.OpenpipelineV2LogsIngestsourcesProcessingProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -128668,6 +130345,25 @@ export interface OpenpipelineV2LogsIngestsourcesProcessingProcessorsProcessorHis
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2LogsIngestsourcesProcessingProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2LogsIngestsourcesProcessingProcessorsProcessorProductAllocation {
@@ -129519,6 +131215,10 @@ export interface OpenpipelineV2LogsPipelinesCostAllocationProcessorsProcessor {
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2LogsPipelinesCostAllocationProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -129567,7 +131267,7 @@ export interface OpenpipelineV2LogsPipelinesCostAllocationProcessorsProcessor {
      */
     technology?: outputs.OpenpipelineV2LogsPipelinesCostAllocationProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -130003,6 +131703,25 @@ export interface OpenpipelineV2LogsPipelinesCostAllocationProcessorsProcessorHis
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2LogsPipelinesCostAllocationProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2LogsPipelinesCostAllocationProcessorsProcessorProductAllocation {
@@ -130790,6 +132509,10 @@ export interface OpenpipelineV2LogsPipelinesDataExtractionProcessorsProcessor {
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2LogsPipelinesDataExtractionProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -130838,7 +132561,7 @@ export interface OpenpipelineV2LogsPipelinesDataExtractionProcessorsProcessor {
      */
     technology?: outputs.OpenpipelineV2LogsPipelinesDataExtractionProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -131274,6 +132997,25 @@ export interface OpenpipelineV2LogsPipelinesDataExtractionProcessorsProcessorHis
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2LogsPipelinesDataExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2LogsPipelinesDataExtractionProcessorsProcessorProductAllocation {
@@ -132061,6 +133803,10 @@ export interface OpenpipelineV2LogsPipelinesDavisProcessorsProcessor {
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2LogsPipelinesDavisProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -132109,7 +133855,7 @@ export interface OpenpipelineV2LogsPipelinesDavisProcessorsProcessor {
      */
     technology?: outputs.OpenpipelineV2LogsPipelinesDavisProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -132545,6 +134291,25 @@ export interface OpenpipelineV2LogsPipelinesDavisProcessorsProcessorHistogramMet
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2LogsPipelinesDavisProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2LogsPipelinesDavisProcessorsProcessorProductAllocation {
@@ -133347,6 +135112,10 @@ export interface OpenpipelineV2LogsPipelinesMetricExtractionProcessorsProcessor 
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2LogsPipelinesMetricExtractionProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -133395,7 +135164,7 @@ export interface OpenpipelineV2LogsPipelinesMetricExtractionProcessorsProcessor 
      */
     technology?: outputs.OpenpipelineV2LogsPipelinesMetricExtractionProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -133831,6 +135600,25 @@ export interface OpenpipelineV2LogsPipelinesMetricExtractionProcessorsProcessorH
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2LogsPipelinesMetricExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2LogsPipelinesMetricExtractionProcessorsProcessorProductAllocation {
@@ -134618,6 +136406,10 @@ export interface OpenpipelineV2LogsPipelinesProcessingProcessorsProcessor {
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2LogsPipelinesProcessingProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -134666,7 +136458,7 @@ export interface OpenpipelineV2LogsPipelinesProcessingProcessorsProcessor {
      */
     technology?: outputs.OpenpipelineV2LogsPipelinesProcessingProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -135102,6 +136894,25 @@ export interface OpenpipelineV2LogsPipelinesProcessingProcessorsProcessorHistogr
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2LogsPipelinesProcessingProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2LogsPipelinesProcessingProcessorsProcessorProductAllocation {
@@ -135889,6 +137700,10 @@ export interface OpenpipelineV2LogsPipelinesProductAllocationProcessorsProcessor
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2LogsPipelinesProductAllocationProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -135937,7 +137752,7 @@ export interface OpenpipelineV2LogsPipelinesProductAllocationProcessorsProcessor
      */
     technology?: outputs.OpenpipelineV2LogsPipelinesProductAllocationProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -136373,6 +138188,25 @@ export interface OpenpipelineV2LogsPipelinesProductAllocationProcessorsProcessor
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2LogsPipelinesProductAllocationProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2LogsPipelinesProductAllocationProcessorsProcessorProductAllocation {
@@ -137160,6 +138994,10 @@ export interface OpenpipelineV2LogsPipelinesSecurityContextProcessorsProcessor {
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2LogsPipelinesSecurityContextProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -137208,7 +139046,7 @@ export interface OpenpipelineV2LogsPipelinesSecurityContextProcessorsProcessor {
      */
     technology?: outputs.OpenpipelineV2LogsPipelinesSecurityContextProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -137644,6 +139482,25 @@ export interface OpenpipelineV2LogsPipelinesSecurityContextProcessorsProcessorHi
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2LogsPipelinesSecurityContextProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2LogsPipelinesSecurityContextProcessorsProcessorProductAllocation {
@@ -138431,6 +140288,10 @@ export interface OpenpipelineV2LogsPipelinesSmartscapeEdgeExtractionProcessorsPr
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2LogsPipelinesSmartscapeEdgeExtractionProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -138479,7 +140340,7 @@ export interface OpenpipelineV2LogsPipelinesSmartscapeEdgeExtractionProcessorsPr
      */
     technology?: outputs.OpenpipelineV2LogsPipelinesSmartscapeEdgeExtractionProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -138915,6 +140776,25 @@ export interface OpenpipelineV2LogsPipelinesSmartscapeEdgeExtractionProcessorsPr
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2LogsPipelinesSmartscapeEdgeExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2LogsPipelinesSmartscapeEdgeExtractionProcessorsProcessorProductAllocation {
@@ -139702,6 +141582,10 @@ export interface OpenpipelineV2LogsPipelinesSmartscapeNodeExtractionProcessorsPr
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2LogsPipelinesSmartscapeNodeExtractionProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -139750,7 +141634,7 @@ export interface OpenpipelineV2LogsPipelinesSmartscapeNodeExtractionProcessorsPr
      */
     technology?: outputs.OpenpipelineV2LogsPipelinesSmartscapeNodeExtractionProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -140186,6 +142070,25 @@ export interface OpenpipelineV2LogsPipelinesSmartscapeNodeExtractionProcessorsPr
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2LogsPipelinesSmartscapeNodeExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2LogsPipelinesSmartscapeNodeExtractionProcessorsProcessorProductAllocation {
@@ -140973,6 +142876,10 @@ export interface OpenpipelineV2LogsPipelinesStorageProcessorsProcessor {
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2LogsPipelinesStorageProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -141021,7 +142928,7 @@ export interface OpenpipelineV2LogsPipelinesStorageProcessorsProcessor {
      */
     technology?: outputs.OpenpipelineV2LogsPipelinesStorageProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -141457,6 +143364,25 @@ export interface OpenpipelineV2LogsPipelinesStorageProcessorsProcessorHistogramM
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2LogsPipelinesStorageProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2LogsPipelinesStorageProcessorsProcessorProductAllocation {
@@ -142308,6 +144234,10 @@ export interface OpenpipelineV2MetricsDataforwardingProcessingProcessorsProcesso
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2MetricsDataforwardingProcessingProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -142356,7 +144286,7 @@ export interface OpenpipelineV2MetricsDataforwardingProcessingProcessorsProcesso
      */
     technology?: outputs.OpenpipelineV2MetricsDataforwardingProcessingProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -142792,6 +144722,25 @@ export interface OpenpipelineV2MetricsDataforwardingProcessingProcessorsProcesso
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2MetricsDataforwardingProcessingProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2MetricsDataforwardingProcessingProcessorsProcessorProductAllocation {
@@ -143594,6 +145543,10 @@ export interface OpenpipelineV2MetricsIngestsourcesProcessingProcessorsProcessor
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2MetricsIngestsourcesProcessingProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -143642,7 +145595,7 @@ export interface OpenpipelineV2MetricsIngestsourcesProcessingProcessorsProcessor
      */
     technology?: outputs.OpenpipelineV2MetricsIngestsourcesProcessingProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -144078,6 +146031,25 @@ export interface OpenpipelineV2MetricsIngestsourcesProcessingProcessorsProcessor
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2MetricsIngestsourcesProcessingProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2MetricsIngestsourcesProcessingProcessorsProcessorProductAllocation {
@@ -144929,6 +146901,10 @@ export interface OpenpipelineV2MetricsPipelinesCostAllocationProcessorsProcessor
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2MetricsPipelinesCostAllocationProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -144977,7 +146953,7 @@ export interface OpenpipelineV2MetricsPipelinesCostAllocationProcessorsProcessor
      */
     technology?: outputs.OpenpipelineV2MetricsPipelinesCostAllocationProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -145413,6 +147389,25 @@ export interface OpenpipelineV2MetricsPipelinesCostAllocationProcessorsProcessor
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2MetricsPipelinesCostAllocationProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2MetricsPipelinesCostAllocationProcessorsProcessorProductAllocation {
@@ -146200,6 +148195,10 @@ export interface OpenpipelineV2MetricsPipelinesDataExtractionProcessorsProcessor
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2MetricsPipelinesDataExtractionProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -146248,7 +148247,7 @@ export interface OpenpipelineV2MetricsPipelinesDataExtractionProcessorsProcessor
      */
     technology?: outputs.OpenpipelineV2MetricsPipelinesDataExtractionProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -146684,6 +148683,25 @@ export interface OpenpipelineV2MetricsPipelinesDataExtractionProcessorsProcessor
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2MetricsPipelinesDataExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2MetricsPipelinesDataExtractionProcessorsProcessorProductAllocation {
@@ -147471,6 +149489,10 @@ export interface OpenpipelineV2MetricsPipelinesDavisProcessorsProcessor {
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2MetricsPipelinesDavisProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -147519,7 +149541,7 @@ export interface OpenpipelineV2MetricsPipelinesDavisProcessorsProcessor {
      */
     technology?: outputs.OpenpipelineV2MetricsPipelinesDavisProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -147955,6 +149977,25 @@ export interface OpenpipelineV2MetricsPipelinesDavisProcessorsProcessorHistogram
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2MetricsPipelinesDavisProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2MetricsPipelinesDavisProcessorsProcessorProductAllocation {
@@ -148757,6 +150798,10 @@ export interface OpenpipelineV2MetricsPipelinesMetricExtractionProcessorsProcess
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2MetricsPipelinesMetricExtractionProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -148805,7 +150850,7 @@ export interface OpenpipelineV2MetricsPipelinesMetricExtractionProcessorsProcess
      */
     technology?: outputs.OpenpipelineV2MetricsPipelinesMetricExtractionProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -149241,6 +151286,25 @@ export interface OpenpipelineV2MetricsPipelinesMetricExtractionProcessorsProcess
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2MetricsPipelinesMetricExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2MetricsPipelinesMetricExtractionProcessorsProcessorProductAllocation {
@@ -150028,6 +152092,10 @@ export interface OpenpipelineV2MetricsPipelinesProcessingProcessorsProcessor {
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2MetricsPipelinesProcessingProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -150076,7 +152144,7 @@ export interface OpenpipelineV2MetricsPipelinesProcessingProcessorsProcessor {
      */
     technology?: outputs.OpenpipelineV2MetricsPipelinesProcessingProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -150512,6 +152580,25 @@ export interface OpenpipelineV2MetricsPipelinesProcessingProcessorsProcessorHist
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2MetricsPipelinesProcessingProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2MetricsPipelinesProcessingProcessorsProcessorProductAllocation {
@@ -151299,6 +153386,10 @@ export interface OpenpipelineV2MetricsPipelinesProductAllocationProcessorsProces
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2MetricsPipelinesProductAllocationProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -151347,7 +153438,7 @@ export interface OpenpipelineV2MetricsPipelinesProductAllocationProcessorsProces
      */
     technology?: outputs.OpenpipelineV2MetricsPipelinesProductAllocationProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -151783,6 +153874,25 @@ export interface OpenpipelineV2MetricsPipelinesProductAllocationProcessorsProces
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2MetricsPipelinesProductAllocationProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2MetricsPipelinesProductAllocationProcessorsProcessorProductAllocation {
@@ -152570,6 +154680,10 @@ export interface OpenpipelineV2MetricsPipelinesSecurityContextProcessorsProcesso
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2MetricsPipelinesSecurityContextProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -152618,7 +154732,7 @@ export interface OpenpipelineV2MetricsPipelinesSecurityContextProcessorsProcesso
      */
     technology?: outputs.OpenpipelineV2MetricsPipelinesSecurityContextProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -153054,6 +155168,25 @@ export interface OpenpipelineV2MetricsPipelinesSecurityContextProcessorsProcesso
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2MetricsPipelinesSecurityContextProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2MetricsPipelinesSecurityContextProcessorsProcessorProductAllocation {
@@ -153841,6 +155974,10 @@ export interface OpenpipelineV2MetricsPipelinesSmartscapeEdgeExtractionProcessor
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2MetricsPipelinesSmartscapeEdgeExtractionProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -153889,7 +156026,7 @@ export interface OpenpipelineV2MetricsPipelinesSmartscapeEdgeExtractionProcessor
      */
     technology?: outputs.OpenpipelineV2MetricsPipelinesSmartscapeEdgeExtractionProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -154325,6 +156462,25 @@ export interface OpenpipelineV2MetricsPipelinesSmartscapeEdgeExtractionProcessor
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2MetricsPipelinesSmartscapeEdgeExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2MetricsPipelinesSmartscapeEdgeExtractionProcessorsProcessorProductAllocation {
@@ -155112,6 +157268,10 @@ export interface OpenpipelineV2MetricsPipelinesSmartscapeNodeExtractionProcessor
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2MetricsPipelinesSmartscapeNodeExtractionProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -155160,7 +157320,7 @@ export interface OpenpipelineV2MetricsPipelinesSmartscapeNodeExtractionProcessor
      */
     technology?: outputs.OpenpipelineV2MetricsPipelinesSmartscapeNodeExtractionProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -155596,6 +157756,25 @@ export interface OpenpipelineV2MetricsPipelinesSmartscapeNodeExtractionProcessor
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2MetricsPipelinesSmartscapeNodeExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2MetricsPipelinesSmartscapeNodeExtractionProcessorsProcessorProductAllocation {
@@ -156383,6 +158562,10 @@ export interface OpenpipelineV2MetricsPipelinesStorageProcessorsProcessor {
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2MetricsPipelinesStorageProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -156431,7 +158614,7 @@ export interface OpenpipelineV2MetricsPipelinesStorageProcessorsProcessor {
      */
     technology?: outputs.OpenpipelineV2MetricsPipelinesStorageProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -156867,6 +159050,25 @@ export interface OpenpipelineV2MetricsPipelinesStorageProcessorsProcessorHistogr
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2MetricsPipelinesStorageProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2MetricsPipelinesStorageProcessorsProcessorProductAllocation {
@@ -157718,6 +159920,10 @@ export interface OpenpipelineV2SecurityEventsDataforwardingProcessingProcessorsP
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2SecurityEventsDataforwardingProcessingProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -157766,7 +159972,7 @@ export interface OpenpipelineV2SecurityEventsDataforwardingProcessingProcessorsP
      */
     technology?: outputs.OpenpipelineV2SecurityEventsDataforwardingProcessingProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -158202,6 +160408,25 @@ export interface OpenpipelineV2SecurityEventsDataforwardingProcessingProcessorsP
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2SecurityEventsDataforwardingProcessingProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2SecurityEventsDataforwardingProcessingProcessorsProcessorProductAllocation {
@@ -159004,6 +161229,10 @@ export interface OpenpipelineV2SecurityEventsIngestsourcesProcessingProcessorsPr
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2SecurityEventsIngestsourcesProcessingProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -159052,7 +161281,7 @@ export interface OpenpipelineV2SecurityEventsIngestsourcesProcessingProcessorsPr
      */
     technology?: outputs.OpenpipelineV2SecurityEventsIngestsourcesProcessingProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -159488,6 +161717,25 @@ export interface OpenpipelineV2SecurityEventsIngestsourcesProcessingProcessorsPr
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2SecurityEventsIngestsourcesProcessingProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2SecurityEventsIngestsourcesProcessingProcessorsProcessorProductAllocation {
@@ -160339,6 +162587,10 @@ export interface OpenpipelineV2SecurityEventsPipelinesCostAllocationProcessorsPr
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2SecurityEventsPipelinesCostAllocationProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -160387,7 +162639,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesCostAllocationProcessorsPr
      */
     technology?: outputs.OpenpipelineV2SecurityEventsPipelinesCostAllocationProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -160823,6 +163075,25 @@ export interface OpenpipelineV2SecurityEventsPipelinesCostAllocationProcessorsPr
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2SecurityEventsPipelinesCostAllocationProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2SecurityEventsPipelinesCostAllocationProcessorsProcessorProductAllocation {
@@ -161610,6 +163881,10 @@ export interface OpenpipelineV2SecurityEventsPipelinesDataExtractionProcessorsPr
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2SecurityEventsPipelinesDataExtractionProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -161658,7 +163933,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesDataExtractionProcessorsPr
      */
     technology?: outputs.OpenpipelineV2SecurityEventsPipelinesDataExtractionProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -162094,6 +164369,25 @@ export interface OpenpipelineV2SecurityEventsPipelinesDataExtractionProcessorsPr
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2SecurityEventsPipelinesDataExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2SecurityEventsPipelinesDataExtractionProcessorsProcessorProductAllocation {
@@ -162881,6 +165175,10 @@ export interface OpenpipelineV2SecurityEventsPipelinesDavisProcessorsProcessor {
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2SecurityEventsPipelinesDavisProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -162929,7 +165227,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesDavisProcessorsProcessor {
      */
     technology?: outputs.OpenpipelineV2SecurityEventsPipelinesDavisProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -163365,6 +165663,25 @@ export interface OpenpipelineV2SecurityEventsPipelinesDavisProcessorsProcessorHi
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2SecurityEventsPipelinesDavisProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2SecurityEventsPipelinesDavisProcessorsProcessorProductAllocation {
@@ -164167,6 +166484,10 @@ export interface OpenpipelineV2SecurityEventsPipelinesMetricExtractionProcessors
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2SecurityEventsPipelinesMetricExtractionProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -164215,7 +166536,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesMetricExtractionProcessors
      */
     technology?: outputs.OpenpipelineV2SecurityEventsPipelinesMetricExtractionProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -164651,6 +166972,25 @@ export interface OpenpipelineV2SecurityEventsPipelinesMetricExtractionProcessors
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2SecurityEventsPipelinesMetricExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2SecurityEventsPipelinesMetricExtractionProcessorsProcessorProductAllocation {
@@ -165438,6 +167778,10 @@ export interface OpenpipelineV2SecurityEventsPipelinesProcessingProcessorsProces
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2SecurityEventsPipelinesProcessingProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -165486,7 +167830,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesProcessingProcessorsProces
      */
     technology?: outputs.OpenpipelineV2SecurityEventsPipelinesProcessingProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -165922,6 +168266,25 @@ export interface OpenpipelineV2SecurityEventsPipelinesProcessingProcessorsProces
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2SecurityEventsPipelinesProcessingProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2SecurityEventsPipelinesProcessingProcessorsProcessorProductAllocation {
@@ -166709,6 +169072,10 @@ export interface OpenpipelineV2SecurityEventsPipelinesProductAllocationProcessor
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2SecurityEventsPipelinesProductAllocationProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -166757,7 +169124,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesProductAllocationProcessor
      */
     technology?: outputs.OpenpipelineV2SecurityEventsPipelinesProductAllocationProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -167193,6 +169560,25 @@ export interface OpenpipelineV2SecurityEventsPipelinesProductAllocationProcessor
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2SecurityEventsPipelinesProductAllocationProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2SecurityEventsPipelinesProductAllocationProcessorsProcessorProductAllocation {
@@ -167980,6 +170366,10 @@ export interface OpenpipelineV2SecurityEventsPipelinesSecurityContextProcessorsP
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2SecurityEventsPipelinesSecurityContextProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -168028,7 +170418,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesSecurityContextProcessorsP
      */
     technology?: outputs.OpenpipelineV2SecurityEventsPipelinesSecurityContextProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -168464,6 +170854,25 @@ export interface OpenpipelineV2SecurityEventsPipelinesSecurityContextProcessorsP
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2SecurityEventsPipelinesSecurityContextProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2SecurityEventsPipelinesSecurityContextProcessorsProcessorProductAllocation {
@@ -169251,6 +171660,10 @@ export interface OpenpipelineV2SecurityEventsPipelinesSmartscapeEdgeExtractionPr
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2SecurityEventsPipelinesSmartscapeEdgeExtractionProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -169299,7 +171712,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesSmartscapeEdgeExtractionPr
      */
     technology?: outputs.OpenpipelineV2SecurityEventsPipelinesSmartscapeEdgeExtractionProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -169735,6 +172148,25 @@ export interface OpenpipelineV2SecurityEventsPipelinesSmartscapeEdgeExtractionPr
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2SecurityEventsPipelinesSmartscapeEdgeExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2SecurityEventsPipelinesSmartscapeEdgeExtractionProcessorsProcessorProductAllocation {
@@ -170522,6 +172954,10 @@ export interface OpenpipelineV2SecurityEventsPipelinesSmartscapeNodeExtractionPr
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2SecurityEventsPipelinesSmartscapeNodeExtractionProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -170570,7 +173006,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesSmartscapeNodeExtractionPr
      */
     technology?: outputs.OpenpipelineV2SecurityEventsPipelinesSmartscapeNodeExtractionProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -171006,6 +173442,25 @@ export interface OpenpipelineV2SecurityEventsPipelinesSmartscapeNodeExtractionPr
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2SecurityEventsPipelinesSmartscapeNodeExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2SecurityEventsPipelinesSmartscapeNodeExtractionProcessorsProcessorProductAllocation {
@@ -171793,6 +174248,10 @@ export interface OpenpipelineV2SecurityEventsPipelinesStorageProcessorsProcessor
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2SecurityEventsPipelinesStorageProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -171841,7 +174300,7 @@ export interface OpenpipelineV2SecurityEventsPipelinesStorageProcessorsProcessor
      */
     technology?: outputs.OpenpipelineV2SecurityEventsPipelinesStorageProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -172277,6 +174736,25 @@ export interface OpenpipelineV2SecurityEventsPipelinesStorageProcessorsProcessor
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2SecurityEventsPipelinesStorageProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2SecurityEventsPipelinesStorageProcessorsProcessorProductAllocation {
@@ -173128,6 +175606,10 @@ export interface OpenpipelineV2SpansDataforwardingProcessingProcessorsProcessor 
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2SpansDataforwardingProcessingProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -173176,7 +175658,7 @@ export interface OpenpipelineV2SpansDataforwardingProcessingProcessorsProcessor 
      */
     technology?: outputs.OpenpipelineV2SpansDataforwardingProcessingProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -173612,6 +176094,25 @@ export interface OpenpipelineV2SpansDataforwardingProcessingProcessorsProcessorH
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2SpansDataforwardingProcessingProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2SpansDataforwardingProcessingProcessorsProcessorProductAllocation {
@@ -174414,6 +176915,10 @@ export interface OpenpipelineV2SpansIngestsourcesProcessingProcessorsProcessor {
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2SpansIngestsourcesProcessingProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -174462,7 +176967,7 @@ export interface OpenpipelineV2SpansIngestsourcesProcessingProcessorsProcessor {
      */
     technology?: outputs.OpenpipelineV2SpansIngestsourcesProcessingProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -174898,6 +177403,25 @@ export interface OpenpipelineV2SpansIngestsourcesProcessingProcessorsProcessorHi
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2SpansIngestsourcesProcessingProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2SpansIngestsourcesProcessingProcessorsProcessorProductAllocation {
@@ -175749,6 +178273,10 @@ export interface OpenpipelineV2SpansPipelinesCostAllocationProcessorsProcessor {
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2SpansPipelinesCostAllocationProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -175797,7 +178325,7 @@ export interface OpenpipelineV2SpansPipelinesCostAllocationProcessorsProcessor {
      */
     technology?: outputs.OpenpipelineV2SpansPipelinesCostAllocationProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -176233,6 +178761,25 @@ export interface OpenpipelineV2SpansPipelinesCostAllocationProcessorsProcessorHi
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2SpansPipelinesCostAllocationProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2SpansPipelinesCostAllocationProcessorsProcessorProductAllocation {
@@ -177020,6 +179567,10 @@ export interface OpenpipelineV2SpansPipelinesDataExtractionProcessorsProcessor {
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2SpansPipelinesDataExtractionProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -177068,7 +179619,7 @@ export interface OpenpipelineV2SpansPipelinesDataExtractionProcessorsProcessor {
      */
     technology?: outputs.OpenpipelineV2SpansPipelinesDataExtractionProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -177504,6 +180055,25 @@ export interface OpenpipelineV2SpansPipelinesDataExtractionProcessorsProcessorHi
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2SpansPipelinesDataExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2SpansPipelinesDataExtractionProcessorsProcessorProductAllocation {
@@ -178291,6 +180861,10 @@ export interface OpenpipelineV2SpansPipelinesDavisProcessorsProcessor {
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2SpansPipelinesDavisProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -178339,7 +180913,7 @@ export interface OpenpipelineV2SpansPipelinesDavisProcessorsProcessor {
      */
     technology?: outputs.OpenpipelineV2SpansPipelinesDavisProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -178775,6 +181349,25 @@ export interface OpenpipelineV2SpansPipelinesDavisProcessorsProcessorHistogramMe
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2SpansPipelinesDavisProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2SpansPipelinesDavisProcessorsProcessorProductAllocation {
@@ -179577,6 +182170,10 @@ export interface OpenpipelineV2SpansPipelinesMetricExtractionProcessorsProcessor
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2SpansPipelinesMetricExtractionProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -179625,7 +182222,7 @@ export interface OpenpipelineV2SpansPipelinesMetricExtractionProcessorsProcessor
      */
     technology?: outputs.OpenpipelineV2SpansPipelinesMetricExtractionProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -180061,6 +182658,25 @@ export interface OpenpipelineV2SpansPipelinesMetricExtractionProcessorsProcessor
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2SpansPipelinesMetricExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2SpansPipelinesMetricExtractionProcessorsProcessorProductAllocation {
@@ -180848,6 +183464,10 @@ export interface OpenpipelineV2SpansPipelinesProcessingProcessorsProcessor {
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2SpansPipelinesProcessingProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -180896,7 +183516,7 @@ export interface OpenpipelineV2SpansPipelinesProcessingProcessorsProcessor {
      */
     technology?: outputs.OpenpipelineV2SpansPipelinesProcessingProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -181332,6 +183952,25 @@ export interface OpenpipelineV2SpansPipelinesProcessingProcessorsProcessorHistog
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2SpansPipelinesProcessingProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2SpansPipelinesProcessingProcessorsProcessorProductAllocation {
@@ -182119,6 +184758,10 @@ export interface OpenpipelineV2SpansPipelinesProductAllocationProcessorsProcesso
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2SpansPipelinesProductAllocationProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -182167,7 +184810,7 @@ export interface OpenpipelineV2SpansPipelinesProductAllocationProcessorsProcesso
      */
     technology?: outputs.OpenpipelineV2SpansPipelinesProductAllocationProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -182603,6 +185246,25 @@ export interface OpenpipelineV2SpansPipelinesProductAllocationProcessorsProcesso
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2SpansPipelinesProductAllocationProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2SpansPipelinesProductAllocationProcessorsProcessorProductAllocation {
@@ -183390,6 +186052,10 @@ export interface OpenpipelineV2SpansPipelinesSecurityContextProcessorsProcessor 
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2SpansPipelinesSecurityContextProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -183438,7 +186104,7 @@ export interface OpenpipelineV2SpansPipelinesSecurityContextProcessorsProcessor 
      */
     technology?: outputs.OpenpipelineV2SpansPipelinesSecurityContextProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -183874,6 +186540,25 @@ export interface OpenpipelineV2SpansPipelinesSecurityContextProcessorsProcessorH
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2SpansPipelinesSecurityContextProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2SpansPipelinesSecurityContextProcessorsProcessorProductAllocation {
@@ -184661,6 +187346,10 @@ export interface OpenpipelineV2SpansPipelinesSmartscapeEdgeExtractionProcessorsP
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2SpansPipelinesSmartscapeEdgeExtractionProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -184709,7 +187398,7 @@ export interface OpenpipelineV2SpansPipelinesSmartscapeEdgeExtractionProcessorsP
      */
     technology?: outputs.OpenpipelineV2SpansPipelinesSmartscapeEdgeExtractionProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -185145,6 +187834,25 @@ export interface OpenpipelineV2SpansPipelinesSmartscapeEdgeExtractionProcessorsP
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2SpansPipelinesSmartscapeEdgeExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2SpansPipelinesSmartscapeEdgeExtractionProcessorsProcessorProductAllocation {
@@ -185932,6 +188640,10 @@ export interface OpenpipelineV2SpansPipelinesSmartscapeNodeExtractionProcessorsP
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2SpansPipelinesSmartscapeNodeExtractionProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -185980,7 +188692,7 @@ export interface OpenpipelineV2SpansPipelinesSmartscapeNodeExtractionProcessorsP
      */
     technology?: outputs.OpenpipelineV2SpansPipelinesSmartscapeNodeExtractionProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -186416,6 +189128,25 @@ export interface OpenpipelineV2SpansPipelinesSmartscapeNodeExtractionProcessorsP
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2SpansPipelinesSmartscapeNodeExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2SpansPipelinesSmartscapeNodeExtractionProcessorsProcessorProductAllocation {
@@ -187203,6 +189934,10 @@ export interface OpenpipelineV2SpansPipelinesStorageProcessorsProcessor {
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2SpansPipelinesStorageProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -187251,7 +189986,7 @@ export interface OpenpipelineV2SpansPipelinesStorageProcessorsProcessor {
      */
     technology?: outputs.OpenpipelineV2SpansPipelinesStorageProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -187687,6 +190422,25 @@ export interface OpenpipelineV2SpansPipelinesStorageProcessorsProcessorHistogram
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2SpansPipelinesStorageProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2SpansPipelinesStorageProcessorsProcessorProductAllocation {
@@ -188538,6 +191292,10 @@ export interface OpenpipelineV2SystemEventsDataforwardingProcessingProcessorsPro
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2SystemEventsDataforwardingProcessingProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -188586,7 +191344,7 @@ export interface OpenpipelineV2SystemEventsDataforwardingProcessingProcessorsPro
      */
     technology?: outputs.OpenpipelineV2SystemEventsDataforwardingProcessingProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -189022,6 +191780,25 @@ export interface OpenpipelineV2SystemEventsDataforwardingProcessingProcessorsPro
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2SystemEventsDataforwardingProcessingProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2SystemEventsDataforwardingProcessingProcessorsProcessorProductAllocation {
@@ -189824,6 +192601,10 @@ export interface OpenpipelineV2SystemEventsIngestsourcesProcessingProcessorsProc
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2SystemEventsIngestsourcesProcessingProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -189872,7 +192653,7 @@ export interface OpenpipelineV2SystemEventsIngestsourcesProcessingProcessorsProc
      */
     technology?: outputs.OpenpipelineV2SystemEventsIngestsourcesProcessingProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -190308,6 +193089,25 @@ export interface OpenpipelineV2SystemEventsIngestsourcesProcessingProcessorsProc
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2SystemEventsIngestsourcesProcessingProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2SystemEventsIngestsourcesProcessingProcessorsProcessorProductAllocation {
@@ -191159,6 +193959,10 @@ export interface OpenpipelineV2SystemEventsPipelinesCostAllocationProcessorsProc
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2SystemEventsPipelinesCostAllocationProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -191207,7 +194011,7 @@ export interface OpenpipelineV2SystemEventsPipelinesCostAllocationProcessorsProc
      */
     technology?: outputs.OpenpipelineV2SystemEventsPipelinesCostAllocationProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -191643,6 +194447,25 @@ export interface OpenpipelineV2SystemEventsPipelinesCostAllocationProcessorsProc
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2SystemEventsPipelinesCostAllocationProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2SystemEventsPipelinesCostAllocationProcessorsProcessorProductAllocation {
@@ -192430,6 +195253,10 @@ export interface OpenpipelineV2SystemEventsPipelinesDataExtractionProcessorsProc
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2SystemEventsPipelinesDataExtractionProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -192478,7 +195305,7 @@ export interface OpenpipelineV2SystemEventsPipelinesDataExtractionProcessorsProc
      */
     technology?: outputs.OpenpipelineV2SystemEventsPipelinesDataExtractionProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -192914,6 +195741,25 @@ export interface OpenpipelineV2SystemEventsPipelinesDataExtractionProcessorsProc
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2SystemEventsPipelinesDataExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2SystemEventsPipelinesDataExtractionProcessorsProcessorProductAllocation {
@@ -193701,6 +196547,10 @@ export interface OpenpipelineV2SystemEventsPipelinesDavisProcessorsProcessor {
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2SystemEventsPipelinesDavisProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -193749,7 +196599,7 @@ export interface OpenpipelineV2SystemEventsPipelinesDavisProcessorsProcessor {
      */
     technology?: outputs.OpenpipelineV2SystemEventsPipelinesDavisProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -194185,6 +197035,25 @@ export interface OpenpipelineV2SystemEventsPipelinesDavisProcessorsProcessorHist
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2SystemEventsPipelinesDavisProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2SystemEventsPipelinesDavisProcessorsProcessorProductAllocation {
@@ -194987,6 +197856,10 @@ export interface OpenpipelineV2SystemEventsPipelinesMetricExtractionProcessorsPr
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2SystemEventsPipelinesMetricExtractionProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -195035,7 +197908,7 @@ export interface OpenpipelineV2SystemEventsPipelinesMetricExtractionProcessorsPr
      */
     technology?: outputs.OpenpipelineV2SystemEventsPipelinesMetricExtractionProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -195471,6 +198344,25 @@ export interface OpenpipelineV2SystemEventsPipelinesMetricExtractionProcessorsPr
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2SystemEventsPipelinesMetricExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2SystemEventsPipelinesMetricExtractionProcessorsProcessorProductAllocation {
@@ -196258,6 +199150,10 @@ export interface OpenpipelineV2SystemEventsPipelinesProcessingProcessorsProcesso
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2SystemEventsPipelinesProcessingProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -196306,7 +199202,7 @@ export interface OpenpipelineV2SystemEventsPipelinesProcessingProcessorsProcesso
      */
     technology?: outputs.OpenpipelineV2SystemEventsPipelinesProcessingProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -196742,6 +199638,25 @@ export interface OpenpipelineV2SystemEventsPipelinesProcessingProcessorsProcesso
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2SystemEventsPipelinesProcessingProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2SystemEventsPipelinesProcessingProcessorsProcessorProductAllocation {
@@ -197529,6 +200444,10 @@ export interface OpenpipelineV2SystemEventsPipelinesProductAllocationProcessorsP
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2SystemEventsPipelinesProductAllocationProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -197577,7 +200496,7 @@ export interface OpenpipelineV2SystemEventsPipelinesProductAllocationProcessorsP
      */
     technology?: outputs.OpenpipelineV2SystemEventsPipelinesProductAllocationProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -198013,6 +200932,25 @@ export interface OpenpipelineV2SystemEventsPipelinesProductAllocationProcessorsP
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2SystemEventsPipelinesProductAllocationProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2SystemEventsPipelinesProductAllocationProcessorsProcessorProductAllocation {
@@ -198800,6 +201738,10 @@ export interface OpenpipelineV2SystemEventsPipelinesSecurityContextProcessorsPro
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2SystemEventsPipelinesSecurityContextProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -198848,7 +201790,7 @@ export interface OpenpipelineV2SystemEventsPipelinesSecurityContextProcessorsPro
      */
     technology?: outputs.OpenpipelineV2SystemEventsPipelinesSecurityContextProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -199284,6 +202226,25 @@ export interface OpenpipelineV2SystemEventsPipelinesSecurityContextProcessorsPro
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2SystemEventsPipelinesSecurityContextProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2SystemEventsPipelinesSecurityContextProcessorsProcessorProductAllocation {
@@ -200071,6 +203032,10 @@ export interface OpenpipelineV2SystemEventsPipelinesSmartscapeEdgeExtractionProc
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2SystemEventsPipelinesSmartscapeEdgeExtractionProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -200119,7 +203084,7 @@ export interface OpenpipelineV2SystemEventsPipelinesSmartscapeEdgeExtractionProc
      */
     technology?: outputs.OpenpipelineV2SystemEventsPipelinesSmartscapeEdgeExtractionProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -200555,6 +203520,25 @@ export interface OpenpipelineV2SystemEventsPipelinesSmartscapeEdgeExtractionProc
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2SystemEventsPipelinesSmartscapeEdgeExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2SystemEventsPipelinesSmartscapeEdgeExtractionProcessorsProcessorProductAllocation {
@@ -201342,6 +204326,10 @@ export interface OpenpipelineV2SystemEventsPipelinesSmartscapeNodeExtractionProc
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2SystemEventsPipelinesSmartscapeNodeExtractionProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -201390,7 +204378,7 @@ export interface OpenpipelineV2SystemEventsPipelinesSmartscapeNodeExtractionProc
      */
     technology?: outputs.OpenpipelineV2SystemEventsPipelinesSmartscapeNodeExtractionProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -201826,6 +204814,25 @@ export interface OpenpipelineV2SystemEventsPipelinesSmartscapeNodeExtractionProc
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2SystemEventsPipelinesSmartscapeNodeExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2SystemEventsPipelinesSmartscapeNodeExtractionProcessorsProcessorProductAllocation {
@@ -202613,6 +205620,10 @@ export interface OpenpipelineV2SystemEventsPipelinesStorageProcessorsProcessor {
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2SystemEventsPipelinesStorageProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -202661,7 +205672,7 @@ export interface OpenpipelineV2SystemEventsPipelinesStorageProcessorsProcessor {
      */
     technology?: outputs.OpenpipelineV2SystemEventsPipelinesStorageProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -203097,6 +206108,25 @@ export interface OpenpipelineV2SystemEventsPipelinesStorageProcessorsProcessorHi
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2SystemEventsPipelinesStorageProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2SystemEventsPipelinesStorageProcessorsProcessorProductAllocation {
@@ -203948,6 +206978,10 @@ export interface OpenpipelineV2UserEventsDataforwardingProcessingProcessorsProce
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2UserEventsDataforwardingProcessingProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -203996,7 +207030,7 @@ export interface OpenpipelineV2UserEventsDataforwardingProcessingProcessorsProce
      */
     technology?: outputs.OpenpipelineV2UserEventsDataforwardingProcessingProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -204432,6 +207466,25 @@ export interface OpenpipelineV2UserEventsDataforwardingProcessingProcessorsProce
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2UserEventsDataforwardingProcessingProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2UserEventsDataforwardingProcessingProcessorsProcessorProductAllocation {
@@ -205234,6 +208287,10 @@ export interface OpenpipelineV2UserEventsIngestsourcesProcessingProcessorsProces
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2UserEventsIngestsourcesProcessingProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -205282,7 +208339,7 @@ export interface OpenpipelineV2UserEventsIngestsourcesProcessingProcessorsProces
      */
     technology?: outputs.OpenpipelineV2UserEventsIngestsourcesProcessingProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -205718,6 +208775,25 @@ export interface OpenpipelineV2UserEventsIngestsourcesProcessingProcessorsProces
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2UserEventsIngestsourcesProcessingProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2UserEventsIngestsourcesProcessingProcessorsProcessorProductAllocation {
@@ -206569,6 +209645,10 @@ export interface OpenpipelineV2UserEventsPipelinesCostAllocationProcessorsProces
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2UserEventsPipelinesCostAllocationProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -206617,7 +209697,7 @@ export interface OpenpipelineV2UserEventsPipelinesCostAllocationProcessorsProces
      */
     technology?: outputs.OpenpipelineV2UserEventsPipelinesCostAllocationProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -207053,6 +210133,25 @@ export interface OpenpipelineV2UserEventsPipelinesCostAllocationProcessorsProces
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2UserEventsPipelinesCostAllocationProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2UserEventsPipelinesCostAllocationProcessorsProcessorProductAllocation {
@@ -207840,6 +210939,10 @@ export interface OpenpipelineV2UserEventsPipelinesDataExtractionProcessorsProces
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2UserEventsPipelinesDataExtractionProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -207888,7 +210991,7 @@ export interface OpenpipelineV2UserEventsPipelinesDataExtractionProcessorsProces
      */
     technology?: outputs.OpenpipelineV2UserEventsPipelinesDataExtractionProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -208324,6 +211427,25 @@ export interface OpenpipelineV2UserEventsPipelinesDataExtractionProcessorsProces
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2UserEventsPipelinesDataExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2UserEventsPipelinesDataExtractionProcessorsProcessorProductAllocation {
@@ -209111,6 +212233,10 @@ export interface OpenpipelineV2UserEventsPipelinesDavisProcessorsProcessor {
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2UserEventsPipelinesDavisProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -209159,7 +212285,7 @@ export interface OpenpipelineV2UserEventsPipelinesDavisProcessorsProcessor {
      */
     technology?: outputs.OpenpipelineV2UserEventsPipelinesDavisProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -209595,6 +212721,25 @@ export interface OpenpipelineV2UserEventsPipelinesDavisProcessorsProcessorHistog
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2UserEventsPipelinesDavisProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2UserEventsPipelinesDavisProcessorsProcessorProductAllocation {
@@ -210397,6 +213542,10 @@ export interface OpenpipelineV2UserEventsPipelinesMetricExtractionProcessorsProc
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2UserEventsPipelinesMetricExtractionProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -210445,7 +213594,7 @@ export interface OpenpipelineV2UserEventsPipelinesMetricExtractionProcessorsProc
      */
     technology?: outputs.OpenpipelineV2UserEventsPipelinesMetricExtractionProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -210881,6 +214030,25 @@ export interface OpenpipelineV2UserEventsPipelinesMetricExtractionProcessorsProc
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2UserEventsPipelinesMetricExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2UserEventsPipelinesMetricExtractionProcessorsProcessorProductAllocation {
@@ -211668,6 +214836,10 @@ export interface OpenpipelineV2UserEventsPipelinesProcessingProcessorsProcessor 
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2UserEventsPipelinesProcessingProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -211716,7 +214888,7 @@ export interface OpenpipelineV2UserEventsPipelinesProcessingProcessorsProcessor 
      */
     technology?: outputs.OpenpipelineV2UserEventsPipelinesProcessingProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -212152,6 +215324,25 @@ export interface OpenpipelineV2UserEventsPipelinesProcessingProcessorsProcessorH
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2UserEventsPipelinesProcessingProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2UserEventsPipelinesProcessingProcessorsProcessorProductAllocation {
@@ -212939,6 +216130,10 @@ export interface OpenpipelineV2UserEventsPipelinesProductAllocationProcessorsPro
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2UserEventsPipelinesProductAllocationProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -212987,7 +216182,7 @@ export interface OpenpipelineV2UserEventsPipelinesProductAllocationProcessorsPro
      */
     technology?: outputs.OpenpipelineV2UserEventsPipelinesProductAllocationProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -213423,6 +216618,25 @@ export interface OpenpipelineV2UserEventsPipelinesProductAllocationProcessorsPro
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2UserEventsPipelinesProductAllocationProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2UserEventsPipelinesProductAllocationProcessorsProcessorProductAllocation {
@@ -214210,6 +217424,10 @@ export interface OpenpipelineV2UserEventsPipelinesSecurityContextProcessorsProce
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2UserEventsPipelinesSecurityContextProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -214258,7 +217476,7 @@ export interface OpenpipelineV2UserEventsPipelinesSecurityContextProcessorsProce
      */
     technology?: outputs.OpenpipelineV2UserEventsPipelinesSecurityContextProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -214694,6 +217912,25 @@ export interface OpenpipelineV2UserEventsPipelinesSecurityContextProcessorsProce
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2UserEventsPipelinesSecurityContextProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2UserEventsPipelinesSecurityContextProcessorsProcessorProductAllocation {
@@ -215481,6 +218718,10 @@ export interface OpenpipelineV2UserEventsPipelinesSmartscapeEdgeExtractionProces
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2UserEventsPipelinesSmartscapeEdgeExtractionProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -215529,7 +218770,7 @@ export interface OpenpipelineV2UserEventsPipelinesSmartscapeEdgeExtractionProces
      */
     technology?: outputs.OpenpipelineV2UserEventsPipelinesSmartscapeEdgeExtractionProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -215965,6 +219206,25 @@ export interface OpenpipelineV2UserEventsPipelinesSmartscapeEdgeExtractionProces
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2UserEventsPipelinesSmartscapeEdgeExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2UserEventsPipelinesSmartscapeEdgeExtractionProcessorsProcessorProductAllocation {
@@ -216752,6 +220012,10 @@ export interface OpenpipelineV2UserEventsPipelinesSmartscapeNodeExtractionProces
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2UserEventsPipelinesSmartscapeNodeExtractionProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -216800,7 +220064,7 @@ export interface OpenpipelineV2UserEventsPipelinesSmartscapeNodeExtractionProces
      */
     technology?: outputs.OpenpipelineV2UserEventsPipelinesSmartscapeNodeExtractionProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -217236,6 +220500,25 @@ export interface OpenpipelineV2UserEventsPipelinesSmartscapeNodeExtractionProces
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2UserEventsPipelinesSmartscapeNodeExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2UserEventsPipelinesSmartscapeNodeExtractionProcessorsProcessorProductAllocation {
@@ -218023,6 +221306,10 @@ export interface OpenpipelineV2UserEventsPipelinesStorageProcessorsProcessor {
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2UserEventsPipelinesStorageProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -218071,7 +221358,7 @@ export interface OpenpipelineV2UserEventsPipelinesStorageProcessorsProcessor {
      */
     technology?: outputs.OpenpipelineV2UserEventsPipelinesStorageProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -218507,6 +221794,25 @@ export interface OpenpipelineV2UserEventsPipelinesStorageProcessorsProcessorHist
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2UserEventsPipelinesStorageProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2UserEventsPipelinesStorageProcessorsProcessorProductAllocation {
@@ -219358,6 +222664,10 @@ export interface OpenpipelineV2UsersessionsDataforwardingProcessingProcessorsPro
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2UsersessionsDataforwardingProcessingProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -219406,7 +222716,7 @@ export interface OpenpipelineV2UsersessionsDataforwardingProcessingProcessorsPro
      */
     technology?: outputs.OpenpipelineV2UsersessionsDataforwardingProcessingProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -219842,6 +223152,25 @@ export interface OpenpipelineV2UsersessionsDataforwardingProcessingProcessorsPro
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2UsersessionsDataforwardingProcessingProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2UsersessionsDataforwardingProcessingProcessorsProcessorProductAllocation {
@@ -220644,6 +223973,10 @@ export interface OpenpipelineV2UsersessionsIngestsourcesProcessingProcessorsProc
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2UsersessionsIngestsourcesProcessingProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -220692,7 +224025,7 @@ export interface OpenpipelineV2UsersessionsIngestsourcesProcessingProcessorsProc
      */
     technology?: outputs.OpenpipelineV2UsersessionsIngestsourcesProcessingProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -221128,6 +224461,25 @@ export interface OpenpipelineV2UsersessionsIngestsourcesProcessingProcessorsProc
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2UsersessionsIngestsourcesProcessingProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2UsersessionsIngestsourcesProcessingProcessorsProcessorProductAllocation {
@@ -221979,6 +225331,10 @@ export interface OpenpipelineV2UsersessionsPipelinesCostAllocationProcessorsProc
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2UsersessionsPipelinesCostAllocationProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -222027,7 +225383,7 @@ export interface OpenpipelineV2UsersessionsPipelinesCostAllocationProcessorsProc
      */
     technology?: outputs.OpenpipelineV2UsersessionsPipelinesCostAllocationProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -222463,6 +225819,25 @@ export interface OpenpipelineV2UsersessionsPipelinesCostAllocationProcessorsProc
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2UsersessionsPipelinesCostAllocationProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2UsersessionsPipelinesCostAllocationProcessorsProcessorProductAllocation {
@@ -223250,6 +226625,10 @@ export interface OpenpipelineV2UsersessionsPipelinesDataExtractionProcessorsProc
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2UsersessionsPipelinesDataExtractionProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -223298,7 +226677,7 @@ export interface OpenpipelineV2UsersessionsPipelinesDataExtractionProcessorsProc
      */
     technology?: outputs.OpenpipelineV2UsersessionsPipelinesDataExtractionProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -223734,6 +227113,25 @@ export interface OpenpipelineV2UsersessionsPipelinesDataExtractionProcessorsProc
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2UsersessionsPipelinesDataExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2UsersessionsPipelinesDataExtractionProcessorsProcessorProductAllocation {
@@ -224521,6 +227919,10 @@ export interface OpenpipelineV2UsersessionsPipelinesDavisProcessorsProcessor {
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2UsersessionsPipelinesDavisProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -224569,7 +227971,7 @@ export interface OpenpipelineV2UsersessionsPipelinesDavisProcessorsProcessor {
      */
     technology?: outputs.OpenpipelineV2UsersessionsPipelinesDavisProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -225005,6 +228407,25 @@ export interface OpenpipelineV2UsersessionsPipelinesDavisProcessorsProcessorHist
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2UsersessionsPipelinesDavisProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2UsersessionsPipelinesDavisProcessorsProcessorProductAllocation {
@@ -225807,6 +229228,10 @@ export interface OpenpipelineV2UsersessionsPipelinesMetricExtractionProcessorsPr
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2UsersessionsPipelinesMetricExtractionProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -225855,7 +229280,7 @@ export interface OpenpipelineV2UsersessionsPipelinesMetricExtractionProcessorsPr
      */
     technology?: outputs.OpenpipelineV2UsersessionsPipelinesMetricExtractionProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -226291,6 +229716,25 @@ export interface OpenpipelineV2UsersessionsPipelinesMetricExtractionProcessorsPr
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2UsersessionsPipelinesMetricExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2UsersessionsPipelinesMetricExtractionProcessorsProcessorProductAllocation {
@@ -227078,6 +230522,10 @@ export interface OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcesso
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -227126,7 +230574,7 @@ export interface OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcesso
      */
     technology?: outputs.OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -227562,6 +231010,25 @@ export interface OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcesso
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorProductAllocation {
@@ -228349,6 +231816,10 @@ export interface OpenpipelineV2UsersessionsPipelinesProductAllocationProcessorsP
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2UsersessionsPipelinesProductAllocationProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -228397,7 +231868,7 @@ export interface OpenpipelineV2UsersessionsPipelinesProductAllocationProcessorsP
      */
     technology?: outputs.OpenpipelineV2UsersessionsPipelinesProductAllocationProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -228833,6 +232304,25 @@ export interface OpenpipelineV2UsersessionsPipelinesProductAllocationProcessorsP
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2UsersessionsPipelinesProductAllocationProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2UsersessionsPipelinesProductAllocationProcessorsProcessorProductAllocation {
@@ -229620,6 +233110,10 @@ export interface OpenpipelineV2UsersessionsPipelinesSecurityContextProcessorsPro
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2UsersessionsPipelinesSecurityContextProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -229668,7 +233162,7 @@ export interface OpenpipelineV2UsersessionsPipelinesSecurityContextProcessorsPro
      */
     technology?: outputs.OpenpipelineV2UsersessionsPipelinesSecurityContextProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -230104,6 +233598,25 @@ export interface OpenpipelineV2UsersessionsPipelinesSecurityContextProcessorsPro
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2UsersessionsPipelinesSecurityContextProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2UsersessionsPipelinesSecurityContextProcessorsProcessorProductAllocation {
@@ -230891,6 +234404,10 @@ export interface OpenpipelineV2UsersessionsPipelinesSmartscapeEdgeExtractionProc
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2UsersessionsPipelinesSmartscapeEdgeExtractionProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -230939,7 +234456,7 @@ export interface OpenpipelineV2UsersessionsPipelinesSmartscapeEdgeExtractionProc
      */
     technology?: outputs.OpenpipelineV2UsersessionsPipelinesSmartscapeEdgeExtractionProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -231375,6 +234892,25 @@ export interface OpenpipelineV2UsersessionsPipelinesSmartscapeEdgeExtractionProc
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2UsersessionsPipelinesSmartscapeEdgeExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2UsersessionsPipelinesSmartscapeEdgeExtractionProcessorsProcessorProductAllocation {
@@ -232162,6 +235698,10 @@ export interface OpenpipelineV2UsersessionsPipelinesSmartscapeNodeExtractionProc
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2UsersessionsPipelinesSmartscapeNodeExtractionProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -232210,7 +235750,7 @@ export interface OpenpipelineV2UsersessionsPipelinesSmartscapeNodeExtractionProc
      */
     technology?: outputs.OpenpipelineV2UsersessionsPipelinesSmartscapeNodeExtractionProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -232646,6 +236186,25 @@ export interface OpenpipelineV2UsersessionsPipelinesSmartscapeNodeExtractionProc
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2UsersessionsPipelinesSmartscapeNodeExtractionProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2UsersessionsPipelinesSmartscapeNodeExtractionProcessorsProcessorProductAllocation {
@@ -233433,6 +236992,10 @@ export interface OpenpipelineV2UsersessionsPipelinesStorageProcessorsProcessor {
      */
     id: string;
     /**
+     * Inline lookup processor attributes
+     */
+    inlineLookup?: outputs.OpenpipelineV2UsersessionsPipelinesStorageProcessorsProcessorInlineLookup;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     matcher?: string;
@@ -233481,7 +237044,7 @@ export interface OpenpipelineV2UsersessionsPipelinesStorageProcessorsProcessor {
      */
     technology?: outputs.OpenpipelineV2UsersessionsPipelinesStorageProcessorsProcessorTechnology;
     /**
-     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+     * Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
      */
     type: string;
     /**
@@ -233917,6 +237480,25 @@ export interface OpenpipelineV2UsersessionsPipelinesStorageProcessorsProcessorHi
      * Strategy for field extraction. Possible values: `equals`, `startsWith`
      */
     strategy?: string;
+}
+
+export interface OpenpipelineV2UsersessionsPipelinesStorageProcessorsProcessorInlineLookup {
+    /**
+     * The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+     */
+    defaultValue?: string;
+    /**
+     * The field key to write the matched lookup value to.
+     */
+    destinationField: string;
+    /**
+     * The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+     */
+    inlineLookupTable: string;
+    /**
+     * The field key whose value is looked up in the lookup table.
+     */
+    sourceField: string;
 }
 
 export interface OpenpipelineV2UsersessionsPipelinesStorageProcessorsProcessorProductAllocation {
@@ -242620,23 +246202,23 @@ export interface SiteReliabilityGuardianObjectives {
 
 export interface SiteReliabilityGuardianObjectivesObjective {
     /**
-     * Enable auto adaptive threshold
+     * Dynamically computes thresholds from 30 days of history.
      */
     autoAdaptiveThresholdEnabled?: boolean;
     /**
-     * Comparison operator. Possible values: `GREATER_THAN_OR_EQUAL`, `LESS_THAN_OR_EQUAL`
+     * Pass/fail direction: use ≥ when higher values are better, ≤ when lower values are better. Possible values: `GREATER_THAN_OR_EQUAL`, `LESS_THAN_OR_EQUAL`
      */
     comparisonOperator: string;
     /**
-     * no documentation available
+     * Optional short explanation of what this objective measures.
      */
     description?: string;
     /**
-     * Display Unit
+     * Optional unit conversion and decimal formatting applied when displaying the DQL result in the UI.
      */
     displayUnit?: outputs.SiteReliabilityGuardianObjectivesObjectiveDisplayUnit;
     /**
-     * DQL query
+     * DQL query to execute. The first numeric result becomes the objective value. Supports $variable interpolation.
      */
     dqlQuery?: string;
     /**
@@ -242644,11 +246226,11 @@ export interface SiteReliabilityGuardianObjectivesObjective {
      */
     links?: outputs.SiteReliabilityGuardianObjectivesObjectiveLinks;
     /**
-     * Objective name
+     * Unique name within this guardian. Included in every emitted validation event as the objective identifier.
      */
     name: string;
     /**
-     * Objective type. Possible values: `DQL`, `REFERENCE_SLO`
+     * How the objective value is computed: via a DQL query or an existing SLO metric. Possible values: `DQL`, `REFERENCE_SLO`
      */
     objectiveType: string;
     /**
@@ -242656,30 +246238,30 @@ export interface SiteReliabilityGuardianObjectivesObjective {
      */
     referenceSlo?: string;
     /**
-     * no documentation available
+     * Optional Grail segments to scope the DQL query to specific data.
      */
     segments?: outputs.SiteReliabilityGuardianObjectivesObjectiveSegments;
     /**
-     * no documentation available
+     * Hard pass/fail threshold. Missing this value yields FAIL. If unset with no warning, status is always INFO.
      */
     target?: number;
     /**
-     * no documentation available
+     * Soft threshold. Results between warning and target yield WARNING. When set alone, yields PASS or WARNING.
      */
     warning?: number;
 }
 
 export interface SiteReliabilityGuardianObjectivesObjectiveDisplayUnit {
     /**
-     * Base Unit
+     * Unit the DQL query returns its result in. Source unit for conversion.
      */
     base: string;
     /**
-     * Decimals
+     * Number of decimal places (0-4) used when formatting the displayed value.
      */
     decimals: number;
     /**
-     * display as unit
+     * Unit to display the value in after conversion. Use Default to show the base unit as-is.
      */
     display: string;
 }
@@ -242705,11 +246287,11 @@ export interface SiteReliabilityGuardianObjectivesObjectiveSegments {
 
 export interface SiteReliabilityGuardianObjectivesObjectiveSegmentsSegment {
     /**
-     * Segment ID
+     * Dynatrace Grail segment ID that scopes the DQL query to data within the segment.
      */
     id: string;
     /**
-     * Segment Variables
+     * Variables to parameterize the segment filter.
      */
     variables?: outputs.SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariables;
 }
@@ -242720,11 +246302,11 @@ export interface SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariab
 
 export interface SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariablesVariable {
     /**
-     * Variable Name
+     * Name of the variable within the segment definition.
      */
     name: string;
     /**
-     * Variable Values
+     * One or more values for the variable, enabling multi-value filter expansion.
      */
     values?: string[];
 }
@@ -242735,11 +246317,11 @@ export interface SiteReliabilityGuardianVariables {
 
 export interface SiteReliabilityGuardianVariablesVariable {
     /**
-     * Value
+     * Default value substituted for $name in DQL queries. Can be overridden at runtime via execution context.
      */
     definition: string;
     /**
-     * no documentation available
+     * Alphanumeric/underscore identifier referenced in DQL queries as $name. Must be unique within the guardian.
      */
     name: string;
 }

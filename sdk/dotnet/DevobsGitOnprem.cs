@@ -48,7 +48,7 @@ namespace Pulumiverse.Dynatrace
     public partial class DevobsGitOnprem : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// Possible Values: `AzureOnPrem`, `BitbucketOnPrem`, `GithubOnPrem`, `GitlabOnPrem`
+        /// The git service provider for this server. Possible values: `AzureOnPrem`, `BitbucketOnPrem`, `GithubOnPrem`, `GitlabOnPrem`
         /// </summary>
         [Output("gitProvider")]
         public Output<string> GitProvider { get; private set; } = null!;
@@ -60,7 +60,8 @@ namespace Pulumiverse.Dynatrace
         public Output<bool?> IncludeCredentials { get; private set; } = null!;
 
         /// <summary>
-        /// An HTTP/HTTPS URL of your server
+        /// An HTTPS URL of your server (HTTP not supported)
+        /// Provide only the base URL of the server, not a path to a specific project or repository (For instance, https://git.example.com)
         /// </summary>
         [Output("url")]
         public Output<string> Url { get; private set; } = null!;
@@ -113,7 +114,7 @@ namespace Pulumiverse.Dynatrace
     public sealed class DevobsGitOnpremArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Possible Values: `AzureOnPrem`, `BitbucketOnPrem`, `GithubOnPrem`, `GitlabOnPrem`
+        /// The git service provider for this server. Possible values: `AzureOnPrem`, `BitbucketOnPrem`, `GithubOnPrem`, `GitlabOnPrem`
         /// </summary>
         [Input("gitProvider", required: true)]
         public Input<string> GitProvider { get; set; } = null!;
@@ -125,7 +126,8 @@ namespace Pulumiverse.Dynatrace
         public Input<bool>? IncludeCredentials { get; set; }
 
         /// <summary>
-        /// An HTTP/HTTPS URL of your server
+        /// An HTTPS URL of your server (HTTP not supported)
+        /// Provide only the base URL of the server, not a path to a specific project or repository (For instance, https://git.example.com)
         /// </summary>
         [Input("url", required: true)]
         public Input<string> Url { get; set; } = null!;
@@ -139,7 +141,7 @@ namespace Pulumiverse.Dynatrace
     public sealed class DevobsGitOnpremState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Possible Values: `AzureOnPrem`, `BitbucketOnPrem`, `GithubOnPrem`, `GitlabOnPrem`
+        /// The git service provider for this server. Possible values: `AzureOnPrem`, `BitbucketOnPrem`, `GithubOnPrem`, `GitlabOnPrem`
         /// </summary>
         [Input("gitProvider")]
         public Input<string>? GitProvider { get; set; }
@@ -151,7 +153,8 @@ namespace Pulumiverse.Dynatrace
         public Input<bool>? IncludeCredentials { get; set; }
 
         /// <summary>
-        /// An HTTP/HTTPS URL of your server
+        /// An HTTPS URL of your server (HTTP not supported)
+        /// Provide only the base URL of the server, not a path to a specific project or repository (For instance, https://git.example.com)
         /// </summary>
         [Input("url")]
         public Input<string>? Url { get; set; }

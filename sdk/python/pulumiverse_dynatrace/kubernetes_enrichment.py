@@ -26,7 +26,7 @@ class KubernetesEnrichmentArgs:
         """
         The set of arguments for constructing a KubernetesEnrichment resource.
 
-        :param pulumi.Input['KubernetesEnrichmentRulesArgs'] rules: Dynatrace allows to use metadata defined on Kubernetes nodes, namespaces, and pods to set security and cost allocation attributes and dimensions for metrics, events, log, spans, and entities associated with the respective Kubernetes resource.
+        :param pulumi.Input['KubernetesEnrichmentRulesArgs'] rules: Kubernetes Telemetry Enrichment empowers you to effectively tag your telemetry data using Kubernetes namespace labels and annotations. Additionally, it enables you to tag it for cost allocation and permission purposes.
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
         """
         if rules is not None:
@@ -38,7 +38,7 @@ class KubernetesEnrichmentArgs:
     @pulumi.getter
     def rules(self) -> pulumi.Input[Optional['KubernetesEnrichmentRulesArgs']]:
         """
-        Dynatrace allows to use metadata defined on Kubernetes nodes, namespaces, and pods to set security and cost allocation attributes and dimensions for metrics, events, log, spans, and entities associated with the respective Kubernetes resource.
+        Kubernetes Telemetry Enrichment empowers you to effectively tag your telemetry data using Kubernetes namespace labels and annotations. Additionally, it enables you to tag it for cost allocation and permission purposes.
         """
         return pulumi.get(self, "rules")
 
@@ -67,7 +67,7 @@ class _KubernetesEnrichmentState:
         """
         Input properties used for looking up and filtering KubernetesEnrichment resources.
 
-        :param pulumi.Input['KubernetesEnrichmentRulesArgs'] rules: Dynatrace allows to use metadata defined on Kubernetes nodes, namespaces, and pods to set security and cost allocation attributes and dimensions for metrics, events, log, spans, and entities associated with the respective Kubernetes resource.
+        :param pulumi.Input['KubernetesEnrichmentRulesArgs'] rules: Kubernetes Telemetry Enrichment empowers you to effectively tag your telemetry data using Kubernetes namespace labels and annotations. Additionally, it enables you to tag it for cost allocation and permission purposes.
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
         """
         if rules is not None:
@@ -79,7 +79,7 @@ class _KubernetesEnrichmentState:
     @pulumi.getter
     def rules(self) -> pulumi.Input[Optional['KubernetesEnrichmentRulesArgs']]:
         """
-        Dynatrace allows to use metadata defined on Kubernetes nodes, namespaces, and pods to set security and cost allocation attributes and dimensions for metrics, events, log, spans, and entities associated with the respective Kubernetes resource.
+        Kubernetes Telemetry Enrichment empowers you to effectively tag your telemetry data using Kubernetes namespace labels and annotations. Additionally, it enables you to tag it for cost allocation and permission purposes.
         """
         return pulumi.get(self, "rules")
 
@@ -127,7 +127,7 @@ class KubernetesEnrichment(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['KubernetesEnrichmentRulesArgs', 'KubernetesEnrichmentRulesArgsDict']] rules: Dynatrace allows to use metadata defined on Kubernetes nodes, namespaces, and pods to set security and cost allocation attributes and dimensions for metrics, events, log, spans, and entities associated with the respective Kubernetes resource.
+        :param pulumi.Input[Union['KubernetesEnrichmentRulesArgs', 'KubernetesEnrichmentRulesArgsDict']] rules: Kubernetes Telemetry Enrichment empowers you to effectively tag your telemetry data using Kubernetes namespace labels and annotations. Additionally, it enables you to tag it for cost allocation and permission purposes.
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
         """
         ...
@@ -199,7 +199,7 @@ class KubernetesEnrichment(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['KubernetesEnrichmentRulesArgs', 'KubernetesEnrichmentRulesArgsDict']] rules: Dynatrace allows to use metadata defined on Kubernetes nodes, namespaces, and pods to set security and cost allocation attributes and dimensions for metrics, events, log, spans, and entities associated with the respective Kubernetes resource.
+        :param pulumi.Input[Union['KubernetesEnrichmentRulesArgs', 'KubernetesEnrichmentRulesArgsDict']] rules: Kubernetes Telemetry Enrichment empowers you to effectively tag your telemetry data using Kubernetes namespace labels and annotations. Additionally, it enables you to tag it for cost allocation and permission purposes.
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -214,7 +214,7 @@ class KubernetesEnrichment(pulumi.CustomResource):
     @pulumi.getter
     def rules(self) -> pulumi.Output[Optional['outputs.KubernetesEnrichmentRules']]:
         """
-        Dynatrace allows to use metadata defined on Kubernetes nodes, namespaces, and pods to set security and cost allocation attributes and dimensions for metrics, events, log, spans, and entities associated with the respective Kubernetes resource.
+        Kubernetes Telemetry Enrichment empowers you to effectively tag your telemetry data using Kubernetes namespace labels and annotations. Additionally, it enables you to tag it for cost allocation and permission purposes.
         """
         return pulumi.get(self, "rules")
 
