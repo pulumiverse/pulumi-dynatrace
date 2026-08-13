@@ -86,12 +86,8 @@ type GetLambdaAgentVersionResult struct {
 }
 
 func GetLambdaAgentVersionOutput(ctx *pulumi.Context, args GetLambdaAgentVersionOutputArgs, opts ...pulumi.InvokeOption) GetLambdaAgentVersionResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetLambdaAgentVersionResultOutput, error) {
-			args := v.(GetLambdaAgentVersionArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("dynatrace:index/getLambdaAgentVersion:getLambdaAgentVersion", args, GetLambdaAgentVersionResultOutput{}, options).(GetLambdaAgentVersionResultOutput), nil
-		}).(GetLambdaAgentVersionResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("dynatrace:index/getLambdaAgentVersion:getLambdaAgentVersion", args, GetLambdaAgentVersionResultOutput{}, options).(GetLambdaAgentVersionResultOutput)
 }
 
 // A collection of arguments for invoking getLambdaAgentVersion.

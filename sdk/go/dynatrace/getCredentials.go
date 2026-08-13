@@ -45,12 +45,8 @@ type LookupCredentialsResult struct {
 }
 
 func LookupCredentialsOutput(ctx *pulumi.Context, args LookupCredentialsOutputArgs, opts ...pulumi.InvokeOption) LookupCredentialsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupCredentialsResultOutput, error) {
-			args := v.(LookupCredentialsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("dynatrace:index/getCredentials:getCredentials", args, LookupCredentialsResultOutput{}, options).(LookupCredentialsResultOutput), nil
-		}).(LookupCredentialsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("dynatrace:index/getCredentials:getCredentials", args, LookupCredentialsResultOutput{}, options).(LookupCredentialsResultOutput)
 }
 
 // A collection of arguments for invoking getCredentials.

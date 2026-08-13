@@ -57,10 +57,8 @@ type GetGeoCountriesResult struct {
 }
 
 func GetGeoCountriesOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetGeoCountriesResultOutput {
-	return pulumi.ToOutput(0).ApplyT(func(int) (GetGeoCountriesResultOutput, error) {
-		options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-		return ctx.InvokeOutput("dynatrace:index/getGeoCountries:getGeoCountries", nil, GetGeoCountriesResultOutput{}, options).(GetGeoCountriesResultOutput), nil
-	}).(GetGeoCountriesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("dynatrace:index/getGeoCountries:getGeoCountries", nil, GetGeoCountriesResultOutput{}, options).(GetGeoCountriesResultOutput)
 }
 
 // A collection of values returned by getGeoCountries.

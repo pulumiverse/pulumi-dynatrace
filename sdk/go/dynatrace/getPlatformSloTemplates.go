@@ -57,10 +57,8 @@ type GetPlatformSloTemplatesResult struct {
 }
 
 func GetPlatformSloTemplatesOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetPlatformSloTemplatesResultOutput {
-	return pulumi.ToOutput(0).ApplyT(func(int) (GetPlatformSloTemplatesResultOutput, error) {
-		options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-		return ctx.InvokeOutput("dynatrace:index/getPlatformSloTemplates:getPlatformSloTemplates", nil, GetPlatformSloTemplatesResultOutput{}, options).(GetPlatformSloTemplatesResultOutput), nil
-	}).(GetPlatformSloTemplatesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("dynatrace:index/getPlatformSloTemplates:getPlatformSloTemplates", nil, GetPlatformSloTemplatesResultOutput{}, options).(GetPlatformSloTemplatesResultOutput)
 }
 
 // A collection of values returned by getPlatformSloTemplates.

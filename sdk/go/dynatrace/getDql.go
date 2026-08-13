@@ -145,12 +145,8 @@ type GetDqlResult struct {
 }
 
 func GetDqlOutput(ctx *pulumi.Context, args GetDqlOutputArgs, opts ...pulumi.InvokeOption) GetDqlResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDqlResultOutput, error) {
-			args := v.(GetDqlArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("dynatrace:index/getDql:getDql", args, GetDqlResultOutput{}, options).(GetDqlResultOutput), nil
-		}).(GetDqlResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("dynatrace:index/getDql:getDql", args, GetDqlResultOutput{}, options).(GetDqlResultOutput)
 }
 
 // A collection of arguments for invoking getDql.

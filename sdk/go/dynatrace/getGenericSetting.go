@@ -76,12 +76,8 @@ type LookupGenericSettingResult struct {
 }
 
 func LookupGenericSettingOutput(ctx *pulumi.Context, args LookupGenericSettingOutputArgs, opts ...pulumi.InvokeOption) LookupGenericSettingResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupGenericSettingResultOutput, error) {
-			args := v.(LookupGenericSettingArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("dynatrace:index/getGenericSetting:getGenericSetting", args, LookupGenericSettingResultOutput{}, options).(LookupGenericSettingResultOutput), nil
-		}).(LookupGenericSettingResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("dynatrace:index/getGenericSetting:getGenericSetting", args, LookupGenericSettingResultOutput{}, options).(LookupGenericSettingResultOutput)
 }
 
 // A collection of arguments for invoking getGenericSetting.

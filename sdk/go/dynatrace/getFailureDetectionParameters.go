@@ -66,12 +66,8 @@ type LookupFailureDetectionParametersResult struct {
 }
 
 func LookupFailureDetectionParametersOutput(ctx *pulumi.Context, args LookupFailureDetectionParametersOutputArgs, opts ...pulumi.InvokeOption) LookupFailureDetectionParametersResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupFailureDetectionParametersResultOutput, error) {
-			args := v.(LookupFailureDetectionParametersArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("dynatrace:index/getFailureDetectionParameters:getFailureDetectionParameters", args, LookupFailureDetectionParametersResultOutput{}, options).(LookupFailureDetectionParametersResultOutput), nil
-		}).(LookupFailureDetectionParametersResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("dynatrace:index/getFailureDetectionParameters:getFailureDetectionParameters", args, LookupFailureDetectionParametersResultOutput{}, options).(LookupFailureDetectionParametersResultOutput)
 }
 
 // A collection of arguments for invoking getFailureDetectionParameters.

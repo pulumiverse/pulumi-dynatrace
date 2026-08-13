@@ -54,12 +54,8 @@ type LookupSyntheticLocationResult struct {
 }
 
 func LookupSyntheticLocationOutput(ctx *pulumi.Context, args LookupSyntheticLocationOutputArgs, opts ...pulumi.InvokeOption) LookupSyntheticLocationResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupSyntheticLocationResultOutput, error) {
-			args := v.(LookupSyntheticLocationArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("dynatrace:index/getSyntheticLocation:getSyntheticLocation", args, LookupSyntheticLocationResultOutput{}, options).(LookupSyntheticLocationResultOutput), nil
-		}).(LookupSyntheticLocationResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("dynatrace:index/getSyntheticLocation:getSyntheticLocation", args, LookupSyntheticLocationResultOutput{}, options).(LookupSyntheticLocationResultOutput)
 }
 
 // A collection of arguments for invoking getSyntheticLocation.

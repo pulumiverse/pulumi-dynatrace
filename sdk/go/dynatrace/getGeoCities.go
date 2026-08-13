@@ -75,12 +75,8 @@ type GetGeoCitiesResult struct {
 }
 
 func GetGeoCitiesOutput(ctx *pulumi.Context, args GetGeoCitiesOutputArgs, opts ...pulumi.InvokeOption) GetGeoCitiesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetGeoCitiesResultOutput, error) {
-			args := v.(GetGeoCitiesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("dynatrace:index/getGeoCities:getGeoCities", args, GetGeoCitiesResultOutput{}, options).(GetGeoCitiesResultOutput), nil
-		}).(GetGeoCitiesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("dynatrace:index/getGeoCities:getGeoCities", args, GetGeoCitiesResultOutput{}, options).(GetGeoCitiesResultOutput)
 }
 
 // A collection of arguments for invoking getGeoCities.
