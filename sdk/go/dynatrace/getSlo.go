@@ -90,12 +90,8 @@ type LookupSloResult struct {
 }
 
 func LookupSloOutput(ctx *pulumi.Context, args LookupSloOutputArgs, opts ...pulumi.InvokeOption) LookupSloResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupSloResultOutput, error) {
-			args := v.(LookupSloArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("dynatrace:index/getSlo:getSlo", args, LookupSloResultOutput{}, options).(LookupSloResultOutput), nil
-		}).(LookupSloResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("dynatrace:index/getSlo:getSlo", args, LookupSloResultOutput{}, options).(LookupSloResultOutput)
 }
 
 // A collection of arguments for invoking getSlo.

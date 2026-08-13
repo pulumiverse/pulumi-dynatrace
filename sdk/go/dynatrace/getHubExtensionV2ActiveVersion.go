@@ -72,12 +72,8 @@ type GetHubExtensionV2ActiveVersionResult struct {
 }
 
 func GetHubExtensionV2ActiveVersionOutput(ctx *pulumi.Context, args GetHubExtensionV2ActiveVersionOutputArgs, opts ...pulumi.InvokeOption) GetHubExtensionV2ActiveVersionResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetHubExtensionV2ActiveVersionResultOutput, error) {
-			args := v.(GetHubExtensionV2ActiveVersionArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("dynatrace:index/getHubExtensionV2ActiveVersion:getHubExtensionV2ActiveVersion", args, GetHubExtensionV2ActiveVersionResultOutput{}, options).(GetHubExtensionV2ActiveVersionResultOutput), nil
-		}).(GetHubExtensionV2ActiveVersionResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("dynatrace:index/getHubExtensionV2ActiveVersion:getHubExtensionV2ActiveVersion", args, GetHubExtensionV2ActiveVersionResultOutput{}, options).(GetHubExtensionV2ActiveVersionResultOutput)
 }
 
 // A collection of arguments for invoking getHubExtensionV2ActiveVersion.

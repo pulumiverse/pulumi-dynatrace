@@ -71,12 +71,8 @@ type GetHubItemsResult struct {
 }
 
 func GetHubItemsOutput(ctx *pulumi.Context, args GetHubItemsOutputArgs, opts ...pulumi.InvokeOption) GetHubItemsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetHubItemsResultOutput, error) {
-			args := v.(GetHubItemsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("dynatrace:index/getHubItems:getHubItems", args, GetHubItemsResultOutput{}, options).(GetHubItemsResultOutput), nil
-		}).(GetHubItemsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("dynatrace:index/getHubItems:getHubItems", args, GetHubItemsResultOutput{}, options).(GetHubItemsResultOutput)
 }
 
 // A collection of arguments for invoking getHubItems.

@@ -64,12 +64,8 @@ type LookupUpdateWindowsResult struct {
 }
 
 func LookupUpdateWindowsOutput(ctx *pulumi.Context, args LookupUpdateWindowsOutputArgs, opts ...pulumi.InvokeOption) LookupUpdateWindowsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupUpdateWindowsResultOutput, error) {
-			args := v.(LookupUpdateWindowsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("dynatrace:index/getUpdateWindows:getUpdateWindows", args, LookupUpdateWindowsResultOutput{}, options).(LookupUpdateWindowsResultOutput), nil
-		}).(LookupUpdateWindowsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("dynatrace:index/getUpdateWindows:getUpdateWindows", args, LookupUpdateWindowsResultOutput{}, options).(LookupUpdateWindowsResultOutput)
 }
 
 // A collection of arguments for invoking getUpdateWindows.

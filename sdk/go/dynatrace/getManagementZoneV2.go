@@ -41,12 +41,8 @@ type LookupManagementZoneV2Result struct {
 }
 
 func LookupManagementZoneV2Output(ctx *pulumi.Context, args LookupManagementZoneV2OutputArgs, opts ...pulumi.InvokeOption) LookupManagementZoneV2ResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupManagementZoneV2ResultOutput, error) {
-			args := v.(LookupManagementZoneV2Args)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("dynatrace:index/getManagementZoneV2:getManagementZoneV2", args, LookupManagementZoneV2ResultOutput{}, options).(LookupManagementZoneV2ResultOutput), nil
-		}).(LookupManagementZoneV2ResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("dynatrace:index/getManagementZoneV2:getManagementZoneV2", args, LookupManagementZoneV2ResultOutput{}, options).(LookupManagementZoneV2ResultOutput)
 }
 
 // A collection of arguments for invoking getManagementZoneV2.

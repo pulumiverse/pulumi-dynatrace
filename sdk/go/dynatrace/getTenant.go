@@ -31,10 +31,8 @@ type GetTenantResult struct {
 }
 
 func GetTenantOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetTenantResultOutput {
-	return pulumi.ToOutput(0).ApplyT(func(int) (GetTenantResultOutput, error) {
-		options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-		return ctx.InvokeOutput("dynatrace:index/getTenant:getTenant", nil, GetTenantResultOutput{}, options).(GetTenantResultOutput), nil
-	}).(GetTenantResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("dynatrace:index/getTenant:getTenant", nil, GetTenantResultOutput{}, options).(GetTenantResultOutput)
 }
 
 // A collection of values returned by getTenant.

@@ -83,12 +83,8 @@ type LookupPlatformSloResult struct {
 }
 
 func LookupPlatformSloOutput(ctx *pulumi.Context, args LookupPlatformSloOutputArgs, opts ...pulumi.InvokeOption) LookupPlatformSloResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupPlatformSloResultOutput, error) {
-			args := v.(LookupPlatformSloArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("dynatrace:index/getPlatformSlo:getPlatformSlo", args, LookupPlatformSloResultOutput{}, options).(LookupPlatformSloResultOutput), nil
-		}).(LookupPlatformSloResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("dynatrace:index/getPlatformSlo:getPlatformSlo", args, LookupPlatformSloResultOutput{}, options).(LookupPlatformSloResultOutput)
 }
 
 // A collection of arguments for invoking getPlatformSlo.

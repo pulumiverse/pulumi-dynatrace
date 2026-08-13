@@ -39,12 +39,8 @@ type LookupAwsCredentialsResult struct {
 }
 
 func LookupAwsCredentialsOutput(ctx *pulumi.Context, args LookupAwsCredentialsOutputArgs, opts ...pulumi.InvokeOption) LookupAwsCredentialsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupAwsCredentialsResultOutput, error) {
-			args := v.(LookupAwsCredentialsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("dynatrace:index/getAwsCredentials:getAwsCredentials", args, LookupAwsCredentialsResultOutput{}, options).(LookupAwsCredentialsResultOutput), nil
-		}).(LookupAwsCredentialsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("dynatrace:index/getAwsCredentials:getAwsCredentials", args, LookupAwsCredentialsResultOutput{}, options).(LookupAwsCredentialsResultOutput)
 }
 
 // A collection of arguments for invoking getAwsCredentials.
