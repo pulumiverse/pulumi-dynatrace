@@ -133,12 +133,8 @@ type LookupIamServiceUserResult struct {
 }
 
 func LookupIamServiceUserOutput(ctx *pulumi.Context, args LookupIamServiceUserOutputArgs, opts ...pulumi.InvokeOption) LookupIamServiceUserResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupIamServiceUserResultOutput, error) {
-			args := v.(LookupIamServiceUserArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("dynatrace:index/getIamServiceUser:getIamServiceUser", args, LookupIamServiceUserResultOutput{}, options).(LookupIamServiceUserResultOutput), nil
-		}).(LookupIamServiceUserResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("dynatrace:index/getIamServiceUser:getIamServiceUser", args, LookupIamServiceUserResultOutput{}, options).(LookupIamServiceUserResultOutput)
 }
 
 // A collection of arguments for invoking getIamServiceUser.

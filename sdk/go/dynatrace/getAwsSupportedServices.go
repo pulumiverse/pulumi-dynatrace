@@ -43,12 +43,8 @@ type GetAwsSupportedServicesResult struct {
 }
 
 func GetAwsSupportedServicesOutput(ctx *pulumi.Context, args GetAwsSupportedServicesOutputArgs, opts ...pulumi.InvokeOption) GetAwsSupportedServicesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetAwsSupportedServicesResultOutput, error) {
-			args := v.(GetAwsSupportedServicesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("dynatrace:index/getAwsSupportedServices:getAwsSupportedServices", args, GetAwsSupportedServicesResultOutput{}, options).(GetAwsSupportedServicesResultOutput), nil
-		}).(GetAwsSupportedServicesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("dynatrace:index/getAwsSupportedServices:getAwsSupportedServices", args, GetAwsSupportedServicesResultOutput{}, options).(GetAwsSupportedServicesResultOutput)
 }
 
 // A collection of arguments for invoking getAwsSupportedServices.

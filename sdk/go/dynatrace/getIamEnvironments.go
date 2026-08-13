@@ -103,12 +103,8 @@ type GetIamEnvironmentsResult struct {
 }
 
 func GetIamEnvironmentsOutput(ctx *pulumi.Context, args GetIamEnvironmentsOutputArgs, opts ...pulumi.InvokeOption) GetIamEnvironmentsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetIamEnvironmentsResultOutput, error) {
-			args := v.(GetIamEnvironmentsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("dynatrace:index/getIamEnvironments:getIamEnvironments", args, GetIamEnvironmentsResultOutput{}, options).(GetIamEnvironmentsResultOutput), nil
-		}).(GetIamEnvironmentsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("dynatrace:index/getIamEnvironments:getIamEnvironments", args, GetIamEnvironmentsResultOutput{}, options).(GetIamEnvironmentsResultOutput)
 }
 
 // A collection of arguments for invoking getIamEnvironments.

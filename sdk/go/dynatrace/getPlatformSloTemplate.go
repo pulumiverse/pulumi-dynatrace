@@ -41,12 +41,8 @@ type GetPlatformSloTemplateResult struct {
 }
 
 func GetPlatformSloTemplateOutput(ctx *pulumi.Context, args GetPlatformSloTemplateOutputArgs, opts ...pulumi.InvokeOption) GetPlatformSloTemplateResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetPlatformSloTemplateResultOutput, error) {
-			args := v.(GetPlatformSloTemplateArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("dynatrace:index/getPlatformSloTemplate:getPlatformSloTemplate", args, GetPlatformSloTemplateResultOutput{}, options).(GetPlatformSloTemplateResultOutput), nil
-		}).(GetPlatformSloTemplateResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("dynatrace:index/getPlatformSloTemplate:getPlatformSloTemplate", args, GetPlatformSloTemplateResultOutput{}, options).(GetPlatformSloTemplateResultOutput)
 }
 
 // A collection of arguments for invoking getPlatformSloTemplate.

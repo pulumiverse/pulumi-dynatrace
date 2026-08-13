@@ -69,12 +69,8 @@ type GetGeoRegionsResult struct {
 }
 
 func GetGeoRegionsOutput(ctx *pulumi.Context, args GetGeoRegionsOutputArgs, opts ...pulumi.InvokeOption) GetGeoRegionsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetGeoRegionsResultOutput, error) {
-			args := v.(GetGeoRegionsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("dynatrace:index/getGeoRegions:getGeoRegions", args, GetGeoRegionsResultOutput{}, options).(GetGeoRegionsResultOutput), nil
-		}).(GetGeoRegionsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("dynatrace:index/getGeoRegions:getGeoRegions", args, GetGeoRegionsResultOutput{}, options).(GetGeoRegionsResultOutput)
 }
 
 // A collection of arguments for invoking getGeoRegions.

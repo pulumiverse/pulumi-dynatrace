@@ -55,10 +55,8 @@ type LookupRemoteEnvironmentsResult struct {
 }
 
 func LookupRemoteEnvironmentsOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) LookupRemoteEnvironmentsResultOutput {
-	return pulumi.ToOutput(0).ApplyT(func(int) (LookupRemoteEnvironmentsResultOutput, error) {
-		options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-		return ctx.InvokeOutput("dynatrace:index/getRemoteEnvironments:getRemoteEnvironments", nil, LookupRemoteEnvironmentsResultOutput{}, options).(LookupRemoteEnvironmentsResultOutput), nil
-	}).(LookupRemoteEnvironmentsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("dynatrace:index/getRemoteEnvironments:getRemoteEnvironments", nil, LookupRemoteEnvironmentsResultOutput{}, options).(LookupRemoteEnvironmentsResultOutput)
 }
 
 // A collection of values returned by getRemoteEnvironments.

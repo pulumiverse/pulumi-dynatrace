@@ -55,10 +55,8 @@ type GetApplicationDetectionRulesResult struct {
 }
 
 func GetApplicationDetectionRulesOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetApplicationDetectionRulesResultOutput {
-	return pulumi.ToOutput(0).ApplyT(func(int) (GetApplicationDetectionRulesResultOutput, error) {
-		options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-		return ctx.InvokeOutput("dynatrace:index/getApplicationDetectionRules:getApplicationDetectionRules", nil, GetApplicationDetectionRulesResultOutput{}, options).(GetApplicationDetectionRulesResultOutput), nil
-	}).(GetApplicationDetectionRulesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("dynatrace:index/getApplicationDetectionRules:getApplicationDetectionRules", nil, GetApplicationDetectionRulesResultOutput{}, options).(GetApplicationDetectionRulesResultOutput)
 }
 
 // A collection of values returned by getApplicationDetectionRules.
