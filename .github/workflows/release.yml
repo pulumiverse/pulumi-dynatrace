@@ -221,6 +221,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v7
         with:
+          registry-url: https://registry.npmjs.org
           node-version: ${{matrix.nodeversion}}
       - name: Setup DotNet
         uses: actions/setup-dotnet@v6
