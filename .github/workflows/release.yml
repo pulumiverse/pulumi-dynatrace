@@ -264,7 +264,12 @@ jobs:
           packages-dir: ${{github.workspace}}/sdk/python/bin/dist
       - if: ${{ matrix.language == 'nodejs' && env.PUBLISH_NPM == 'true' }}
         name: Publish NPM package
-        run: npm publish --access public
+        uses: JS-DevTools/npm-publish@v4.1.5
+        with:
+          access: "public"
+          token: ${{ env.NPM_TOKEN }}
+          package: ${{github.workspace}}/sdk/nodejs/bin/package.json
+          provenance: true
       - if: ${{ matrix.language == 'dotnet' && env.PUBLISH_NUGET == 'true' }}
         name: publish nuget package
         run: |
