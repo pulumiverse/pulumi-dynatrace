@@ -259,9 +259,11 @@ jobs:
       #   run: ./ci-scripts/ci/publish-tfgen-package ${{ github.workspace }}
       - if: ${{ matrix.language == 'python' && env.PUBLISH_PYPI == 'true' }}
         name: Publish package to PyPI
-        uses: pypa/gh-action-pypi-publish@v1.14.1
+        uses: pypa/gh-action-pypi-publish@v1.8.10
         with:
-          packages-dir: ${{github.workspace}}/sdk/python/bin/dist
+          user: ${{ env.PYPI_USERNAME }}
+          password: ${{ env.PYPI_PASSWORD }}
+          packages_dir: ${{github.workspace}}/sdk/python/bin/dist
       - if: ${{ matrix.language == 'nodejs' && env.PUBLISH_NPM == 'true' }}
         name: Publish NPM package
         uses: JS-DevTools/npm-publish@v4.1.5
