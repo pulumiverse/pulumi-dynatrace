@@ -74,6 +74,8 @@ class MobileNotifications(pulumi.CustomResource):
                  enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
+        > This resource API endpoint has been deprecated.
+
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
 
         ## Dynatrace Documentation
@@ -100,6 +102,8 @@ class MobileNotifications(pulumi.CustomResource):
                  args: MobileNotificationsArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        > This resource API endpoint has been deprecated.
+
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
 
         ## Dynatrace Documentation

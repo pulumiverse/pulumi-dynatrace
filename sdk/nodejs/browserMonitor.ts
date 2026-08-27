@@ -225,7 +225,7 @@ export class BrowserMonitor extends pulumi.CustomResource {
     /**
      * A list of locations from which the monitor is executed.
      *
-     * To specify a location, use its entity ID.
+     *   To specify a location, use its entity ID.
      */
     declare public readonly locations: pulumi.Output<string[] | undefined>;
     /**
@@ -243,7 +243,7 @@ export class BrowserMonitor extends pulumi.CustomResource {
     /**
      * A set of tags assigned to the monitor.
      *
-     * You can specify only the value of the tag here and the `CONTEXTLESS` context and source 'USER' will be added automatically.
+     *   You can specify only the value of the tag here and the `CONTEXTLESS` context and source 'USER' will be added automatically.
      */
     declare public readonly tags: pulumi.Output<outputs.BrowserMonitorTag[] | undefined>;
 
@@ -315,7 +315,7 @@ export interface BrowserMonitorState {
     /**
      * A list of locations from which the monitor is executed.
      *
-     * To specify a location, use its entity ID.
+     *   To specify a location, use its entity ID.
      */
     locations?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
@@ -333,7 +333,7 @@ export interface BrowserMonitorState {
     /**
      * A set of tags assigned to the monitor.
      *
-     * You can specify only the value of the tag here and the `CONTEXTLESS` context and source 'USER' will be added automatically.
+     *   You can specify only the value of the tag here and the `CONTEXTLESS` context and source 'USER' will be added automatically.
      */
     tags?: pulumi.Input<pulumi.Input<inputs.BrowserMonitorTag>[] | undefined>;
 }
@@ -361,7 +361,7 @@ export interface BrowserMonitorArgs {
     /**
      * A list of locations from which the monitor is executed.
      *
-     * To specify a location, use its entity ID.
+     *   To specify a location, use its entity ID.
      */
     locations?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
@@ -379,7 +379,7 @@ export interface BrowserMonitorArgs {
     /**
      * A set of tags assigned to the monitor.
      *
-     * You can specify only the value of the tag here and the `CONTEXTLESS` context and source 'USER' will be added automatically.
+     *   You can specify only the value of the tag here and the `CONTEXTLESS` context and source 'USER' will be added automatically.
      */
     tags?: pulumi.Input<pulumi.Input<inputs.BrowserMonitorTag>[] | undefined>;
 }

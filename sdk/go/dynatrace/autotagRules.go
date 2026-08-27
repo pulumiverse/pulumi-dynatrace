@@ -49,7 +49,7 @@ import (
 //			// Do not execute `pulumi up` in parallel when several modules contain
 //			// `dynatrace_autotag_rules` referring to the same `dynatrace_autotag_v2`.
 //			_, err = dynatrace.NewAutotagRules(ctx, "sample", &dynatrace.AutotagRulesArgs{
-//				AutoTagId: sample.ID(),
+//				AutoTagId: sample.ID().ToIDOutput().ToStringOutput(),
 //				Rules: &dynatrace.AutotagRulesRulesArgs{
 //					Rules: dynatrace.AutotagRulesRulesRuleArray{
 //						&dynatrace.AutotagRulesRulesRuleArgs{

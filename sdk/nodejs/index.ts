@@ -945,11 +945,6 @@ export type GitlabConnection = import("./gitlabConnection").GitlabConnection;
 export const GitlabConnection: typeof import("./gitlabConnection").GitlabConnection = null as any;
 utilities.lazyLoad(exports, ["GitlabConnection"], () => require("./gitlabConnection"));
 
-export { GoldenStateArgs, GoldenStateState } from "./goldenState";
-export type GoldenState = import("./goldenState").GoldenState;
-export const GoldenState: typeof import("./goldenState").GoldenState = null as any;
-utilities.lazyLoad(exports, ["GoldenState"], () => require("./goldenState"));
-
 export { GrailMetricsAllowallArgs, GrailMetricsAllowallState } from "./grailMetricsAllowall";
 export type GrailMetricsAllowall = import("./grailMetricsAllowall").GrailMetricsAllowall;
 export const GrailMetricsAllowall: typeof import("./grailMetricsAllowall").GrailMetricsAllowall = null as any;
@@ -2303,6 +2298,11 @@ export type SyntheticLocation = import("./syntheticLocation").SyntheticLocation;
 export const SyntheticLocation: typeof import("./syntheticLocation").SyntheticLocation = null as any;
 utilities.lazyLoad(exports, ["SyntheticLocation"], () => require("./syntheticLocation"));
 
+export { SyntheticPrimaryGrailTagsArgs, SyntheticPrimaryGrailTagsState } from "./syntheticPrimaryGrailTags";
+export type SyntheticPrimaryGrailTags = import("./syntheticPrimaryGrailTags").SyntheticPrimaryGrailTags;
+export const SyntheticPrimaryGrailTags: typeof import("./syntheticPrimaryGrailTags").SyntheticPrimaryGrailTags = null as any;
+utilities.lazyLoad(exports, ["SyntheticPrimaryGrailTags"], () => require("./syntheticPrimaryGrailTags"));
+
 export { TokenSettingsArgs, TokenSettingsState } from "./tokenSettings";
 export type TokenSettings = import("./tokenSettings").TokenSettings;
 export const TokenSettings: typeof import("./tokenSettings").TokenSettings = null as any;
@@ -2812,8 +2812,6 @@ const _module = {
                 return new GithubConnection(name, <any>undefined, { urn })
             case "dynatrace:index/gitlabConnection:GitlabConnection":
                 return new GitlabConnection(name, <any>undefined, { urn })
-            case "dynatrace:index/goldenState:GoldenState":
-                return new GoldenState(name, <any>undefined, { urn })
             case "dynatrace:index/grailMetricsAllowall:GrailMetricsAllowall":
                 return new GrailMetricsAllowall(name, <any>undefined, { urn })
             case "dynatrace:index/grailMetricsAllowlist:GrailMetricsAllowlist":
@@ -3354,6 +3352,8 @@ const _module = {
                 return new SyntheticAvailability(name, <any>undefined, { urn })
             case "dynatrace:index/syntheticLocation:SyntheticLocation":
                 return new SyntheticLocation(name, <any>undefined, { urn })
+            case "dynatrace:index/syntheticPrimaryGrailTags:SyntheticPrimaryGrailTags":
+                return new SyntheticPrimaryGrailTags(name, <any>undefined, { urn })
             case "dynatrace:index/tokenSettings:TokenSettings":
                 return new TokenSettings(name, <any>undefined, { urn })
             case "dynatrace:index/transactionStartFilters:TransactionStartFilters":
@@ -3583,7 +3583,6 @@ pulumi.runtime.registerResourceModule("dynatrace", "index/genericTypes", _module
 pulumi.runtime.registerResourceModule("dynatrace", "index/geolocation", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/githubConnection", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/gitlabConnection", _module)
-pulumi.runtime.registerResourceModule("dynatrace", "index/goldenState", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/grailMetricsAllowall", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/grailMetricsAllowlist", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/grailSecurityContext", _module)
@@ -3854,6 +3853,7 @@ pulumi.runtime.registerResourceModule("dynatrace", "index/spanEntryPoint", _modu
 pulumi.runtime.registerResourceModule("dynatrace", "index/spanEvents", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/syntheticAvailability", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/syntheticLocation", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/syntheticPrimaryGrailTags", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/tokenSettings", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/transactionStartFilters", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/trelloNotification", _module)

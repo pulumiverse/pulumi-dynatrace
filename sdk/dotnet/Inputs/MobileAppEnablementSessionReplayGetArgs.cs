@@ -26,10 +26,22 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<bool>? FullSessionReplay { get; set; }
 
         /// <summary>
+        /// Enable New Session Replay Experience
+        /// </summary>
+        [Input("fullSessionReplayOnGrail")]
+        public Input<bool>? FullSessionReplayOnGrail { get; set; }
+
+        /// <summary>
         /// Capture screen recordings that replay the user actions preceding all detected crashes. Before enabling, Dynatrace checks your system against the [prerequisites for Session Replay](https://dt-url.net/t23s0ppi).
         /// </summary>
         [Input("onCrash", required: true)]
         public Input<bool> OnCrash { get; set; } = null!;
+
+        /// <summary>
+        /// Enable New Session Replay on Crashes Experience
+        /// </summary>
+        [Input("onCrashOnGrail")]
+        public Input<bool>? OnCrashOnGrail { get; set; }
 
         public MobileAppEnablementSessionReplayGetArgs()
         {

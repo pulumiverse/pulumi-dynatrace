@@ -45,16 +45,52 @@ import (
 // - `terraform-provider-dynatrace -export AutomationWorkflowSlack` downloads existing Slack for Workflows configuration
 //
 // The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+//
+// ## Resource Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := dynatrace.NewAutomationWorkflowSlack(ctx, "default", &dynatrace.AutomationWorkflowSlackArgs{
+//				Name:  pulumi.String("#name#"),
+//				Token: pulumi.String("#######"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			_, err = dynatrace.NewAutomationWorkflowSlack(ctx, "external_approval", &dynatrace.AutomationWorkflowSlackArgs{
+//				Name:             pulumi.String("#name#"),
+//				Token:            pulumi.String("#######"),
+//				ExternalApproval: pulumi.Bool(true),
+//				SigningSecret:    pulumi.String("#######"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type AutomationWorkflowSlack struct {
 	pulumi.CustomResourceState
 
-	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
-	//
-	// Deprecated: This resource is no longer ordered, please remove this attribute from the configuration
-	InsertAfter pulumi.StringOutput `pulumi:"insertAfter"`
-	// The name of the Slack connection
+	// Accept external approvals can enable Slack users to directly respond to approval request.
+	ExternalApproval pulumi.BoolPtrOutput `pulumi:"externalApproval"`
+	// Provide a unique and clearly identifiable connection name to your Slack App.
 	Name pulumi.StringOutput `pulumi:"name"`
-	// The bot token obtained from the Slack App Management UI
+	// The signing secret obtained from the Slack App Management UI.
+	SigningSecret pulumi.StringPtrOutput `pulumi:"signingSecret"`
+	// The bot token obtained from the Slack App Management UI.
 	Token pulumi.StringOutput `pulumi:"token"`
 }
 
@@ -68,10 +104,14 @@ func NewAutomationWorkflowSlack(ctx *pulumi.Context,
 	if args.Token == nil {
 		return nil, errors.New("invalid value for required argument 'Token'")
 	}
+	if args.SigningSecret != nil {
+		args.SigningSecret = pulumi.ToSecret(args.SigningSecret).(pulumi.StringPtrInput)
+	}
 	if args.Token != nil {
 		args.Token = pulumi.ToSecret(args.Token).(pulumi.StringInput)
 	}
 	secrets := pulumi.AdditionalSecretOutputs([]string{
+		"signingSecret",
 		"token",
 	})
 	opts = append(opts, secrets)
@@ -98,24 +138,24 @@ func GetAutomationWorkflowSlack(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering AutomationWorkflowSlack resources.
 type automationWorkflowSlackState struct {
-	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
-	//
-	// Deprecated: This resource is no longer ordered, please remove this attribute from the configuration
-	InsertAfter *string `pulumi:"insertAfter"`
-	// The name of the Slack connection
+	// Accept external approvals can enable Slack users to directly respond to approval request.
+	ExternalApproval *bool `pulumi:"externalApproval"`
+	// Provide a unique and clearly identifiable connection name to your Slack App.
 	Name *string `pulumi:"name"`
-	// The bot token obtained from the Slack App Management UI
+	// The signing secret obtained from the Slack App Management UI.
+	SigningSecret *string `pulumi:"signingSecret"`
+	// The bot token obtained from the Slack App Management UI.
 	Token *string `pulumi:"token"`
 }
 
 type AutomationWorkflowSlackState struct {
-	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
-	//
-	// Deprecated: This resource is no longer ordered, please remove this attribute from the configuration
-	InsertAfter pulumi.StringPtrInput
-	// The name of the Slack connection
+	// Accept external approvals can enable Slack users to directly respond to approval request.
+	ExternalApproval pulumi.BoolPtrInput
+	// Provide a unique and clearly identifiable connection name to your Slack App.
 	Name pulumi.StringPtrInput
-	// The bot token obtained from the Slack App Management UI
+	// The signing secret obtained from the Slack App Management UI.
+	SigningSecret pulumi.StringPtrInput
+	// The bot token obtained from the Slack App Management UI.
 	Token pulumi.StringPtrInput
 }
 
@@ -124,25 +164,25 @@ func (AutomationWorkflowSlackState) ElementType() reflect.Type {
 }
 
 type automationWorkflowSlackArgs struct {
-	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
-	//
-	// Deprecated: This resource is no longer ordered, please remove this attribute from the configuration
-	InsertAfter *string `pulumi:"insertAfter"`
-	// The name of the Slack connection
+	// Accept external approvals can enable Slack users to directly respond to approval request.
+	ExternalApproval *bool `pulumi:"externalApproval"`
+	// Provide a unique and clearly identifiable connection name to your Slack App.
 	Name *string `pulumi:"name"`
-	// The bot token obtained from the Slack App Management UI
+	// The signing secret obtained from the Slack App Management UI.
+	SigningSecret *string `pulumi:"signingSecret"`
+	// The bot token obtained from the Slack App Management UI.
 	Token string `pulumi:"token"`
 }
 
 // The set of arguments for constructing a AutomationWorkflowSlack resource.
 type AutomationWorkflowSlackArgs struct {
-	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
-	//
-	// Deprecated: This resource is no longer ordered, please remove this attribute from the configuration
-	InsertAfter pulumi.StringPtrInput
-	// The name of the Slack connection
+	// Accept external approvals can enable Slack users to directly respond to approval request.
+	ExternalApproval pulumi.BoolPtrInput
+	// Provide a unique and clearly identifiable connection name to your Slack App.
 	Name pulumi.StringPtrInput
-	// The bot token obtained from the Slack App Management UI
+	// The signing secret obtained from the Slack App Management UI.
+	SigningSecret pulumi.StringPtrInput
+	// The bot token obtained from the Slack App Management UI.
 	Token pulumi.StringInput
 }
 
@@ -233,19 +273,22 @@ func (o AutomationWorkflowSlackOutput) ToAutomationWorkflowSlackOutputWithContex
 	return o
 }
 
-// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
-//
-// Deprecated: This resource is no longer ordered, please remove this attribute from the configuration
-func (o AutomationWorkflowSlackOutput) InsertAfter() pulumi.StringOutput {
-	return o.ApplyT(func(v *AutomationWorkflowSlack) pulumi.StringOutput { return v.InsertAfter }).(pulumi.StringOutput)
+// Accept external approvals can enable Slack users to directly respond to approval request.
+func (o AutomationWorkflowSlackOutput) ExternalApproval() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *AutomationWorkflowSlack) pulumi.BoolPtrOutput { return v.ExternalApproval }).(pulumi.BoolPtrOutput)
 }
 
-// The name of the Slack connection
+// Provide a unique and clearly identifiable connection name to your Slack App.
 func (o AutomationWorkflowSlackOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutomationWorkflowSlack) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
-// The bot token obtained from the Slack App Management UI
+// The signing secret obtained from the Slack App Management UI.
+func (o AutomationWorkflowSlackOutput) SigningSecret() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutomationWorkflowSlack) pulumi.StringPtrOutput { return v.SigningSecret }).(pulumi.StringPtrOutput)
+}
+
+// The bot token obtained from the Slack App Management UI.
 func (o AutomationWorkflowSlackOutput) Token() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutomationWorkflowSlack) pulumi.StringOutput { return v.Token }).(pulumi.StringOutput)
 }

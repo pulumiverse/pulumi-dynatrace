@@ -52,10 +52,40 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<string>? EntityTagsMatch { get; set; }
 
         /// <summary>
-        /// If set to `True` closing a problem also is considered an event that triggers the execution
+        /// If set to `True` closing a problem also is considered an event that triggers the execution.
         /// </summary>
         [Input("onProblemClose")]
         public Input<bool>? OnProblemClose { get; set; }
+
+        /// <summary>
+        /// Minimum problem duration in minutes before the trigger fires. Possible values: `5`, `10`, `15`, `30`, `60`, `120`, `240`, `1440`, `10080`
+        /// </summary>
+        [Input("problemOpenDuration")]
+        public Input<int>? ProblemOpenDuration { get; set; }
+
+        /// <summary>
+        /// Triggers only for problems whose severity is this value or more severe. Possible values: `1` (critical) to `5` (informational). Lower numbers are more severe, so 3 matches severities 1, 2, and 3
+        /// </summary>
+        [Input("severityThreshold")]
+        public Input<int>? SeverityThreshold { get; set; }
+
+        /// <summary>
+        /// Problem state to trigger on. Possible values: `Open` (active only), `open-and-close` (both phases), or `Close` (closure only). When unset, falls back to `OnProblemClose`
+        /// </summary>
+        [Input("triggerOn")]
+        public Input<string>? TriggerOn { get; set; }
+
+        [Input("triggerOnUpdateFields")]
+        private InputList<string>? _triggerOnUpdateFields;
+
+        /// <summary>
+        /// Problem event fields tracked for value changes. Changes to any selected field cause re-triggering. Possible values: `dt.davis.affected_users_count`, `dt.davis.impact_level`, `event.category`, `event.severity`, `RootCauseEntityId`, `smartscape.affected_entities`
+        /// </summary>
+        public InputList<string> TriggerOnUpdateFields
+        {
+            get => _triggerOnUpdateFields ?? (_triggerOnUpdateFields = new InputList<string>());
+            set => _triggerOnUpdateFields = value;
+        }
 
         public AutomationWorkflowTriggerEventConfigDavisProblemArgs()
         {

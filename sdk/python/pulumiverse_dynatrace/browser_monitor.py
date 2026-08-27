@@ -39,13 +39,13 @@ class BrowserMonitorArgs:
         :param pulumi.Input[_builtins.bool] enabled: The monitor is enabled (`true`) or disabled (`false`).
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] locations: A list of locations from which the monitor is executed.
                
-               To specify a location, use its entity ID.
+                 To specify a location, use its entity ID.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] manually_assigned_apps: A set of manually assigned applications.
         :param pulumi.Input[_builtins.str] name: The name of the monitor.
         :param pulumi.Input['BrowserMonitorScriptArgs'] script: The Browser Script
         :param pulumi.Input[Sequence[pulumi.Input['BrowserMonitorTagArgs']]] tags: A set of tags assigned to the monitor.
                
-               You can specify only the value of the tag here and the `CONTEXTLESS` context and source 'USER' will be added automatically.
+                 You can specify only the value of the tag here and the `CONTEXTLESS` context and source 'USER' will be added automatically.
         """
         pulumi.set(__self__, "frequency", frequency)
         pulumi.set(__self__, "key_performance_metrics", key_performance_metrics)
@@ -118,7 +118,7 @@ class BrowserMonitorArgs:
         """
         A list of locations from which the monitor is executed.
 
-        To specify a location, use its entity ID.
+          To specify a location, use its entity ID.
         """
         return pulumi.get(self, "locations")
 
@@ -168,7 +168,7 @@ class BrowserMonitorArgs:
         """
         A set of tags assigned to the monitor.
 
-        You can specify only the value of the tag here and the `CONTEXTLESS` context and source 'USER' will be added automatically.
+          You can specify only the value of the tag here and the `CONTEXTLESS` context and source 'USER' will be added automatically.
         """
         return pulumi.get(self, "tags")
 
@@ -198,13 +198,13 @@ class _BrowserMonitorState:
         :param pulumi.Input['BrowserMonitorKeyPerformanceMetricsArgs'] key_performance_metrics: The key performance metrics configuration
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] locations: A list of locations from which the monitor is executed.
                
-               To specify a location, use its entity ID.
+                 To specify a location, use its entity ID.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] manually_assigned_apps: A set of manually assigned applications.
         :param pulumi.Input[_builtins.str] name: The name of the monitor.
         :param pulumi.Input['BrowserMonitorScriptArgs'] script: The Browser Script
         :param pulumi.Input[Sequence[pulumi.Input['BrowserMonitorTagArgs']]] tags: A set of tags assigned to the monitor.
                
-               You can specify only the value of the tag here and the `CONTEXTLESS` context and source 'USER' will be added automatically.
+                 You can specify only the value of the tag here and the `CONTEXTLESS` context and source 'USER' will be added automatically.
         """
         if anomaly_detection is not None:
             pulumi.set(__self__, "anomaly_detection", anomaly_detection)
@@ -279,7 +279,7 @@ class _BrowserMonitorState:
         """
         A list of locations from which the monitor is executed.
 
-        To specify a location, use its entity ID.
+          To specify a location, use its entity ID.
         """
         return pulumi.get(self, "locations")
 
@@ -329,7 +329,7 @@ class _BrowserMonitorState:
         """
         A set of tags assigned to the monitor.
 
-        You can specify only the value of the tag here and the `CONTEXTLESS` context and source 'USER' will be added automatically.
+          You can specify only the value of the tag here and the `CONTEXTLESS` context and source 'USER' will be added automatically.
         """
         return pulumi.get(self, "tags")
 
@@ -530,13 +530,13 @@ class BrowserMonitor(pulumi.CustomResource):
         :param pulumi.Input[Union['BrowserMonitorKeyPerformanceMetricsArgs', 'BrowserMonitorKeyPerformanceMetricsArgsDict']] key_performance_metrics: The key performance metrics configuration
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] locations: A list of locations from which the monitor is executed.
                
-               To specify a location, use its entity ID.
+                 To specify a location, use its entity ID.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] manually_assigned_apps: A set of manually assigned applications.
         :param pulumi.Input[_builtins.str] name: The name of the monitor.
         :param pulumi.Input[Union['BrowserMonitorScriptArgs', 'BrowserMonitorScriptArgsDict']] script: The Browser Script
         :param pulumi.Input[Sequence[pulumi.Input[Union['BrowserMonitorTagArgs', 'BrowserMonitorTagArgsDict']]]] tags: A set of tags assigned to the monitor.
                
-               You can specify only the value of the tag here and the `CONTEXTLESS` context and source 'USER' will be added automatically.
+                 You can specify only the value of the tag here and the `CONTEXTLESS` context and source 'USER' will be added automatically.
         """
         ...
     @overload
@@ -790,13 +790,13 @@ class BrowserMonitor(pulumi.CustomResource):
         :param pulumi.Input[Union['BrowserMonitorKeyPerformanceMetricsArgs', 'BrowserMonitorKeyPerformanceMetricsArgsDict']] key_performance_metrics: The key performance metrics configuration
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] locations: A list of locations from which the monitor is executed.
                
-               To specify a location, use its entity ID.
+                 To specify a location, use its entity ID.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] manually_assigned_apps: A set of manually assigned applications.
         :param pulumi.Input[_builtins.str] name: The name of the monitor.
         :param pulumi.Input[Union['BrowserMonitorScriptArgs', 'BrowserMonitorScriptArgsDict']] script: The Browser Script
         :param pulumi.Input[Sequence[pulumi.Input[Union['BrowserMonitorTagArgs', 'BrowserMonitorTagArgsDict']]]] tags: A set of tags assigned to the monitor.
                
-               You can specify only the value of the tag here and the `CONTEXTLESS` context and source 'USER' will be added automatically.
+                 You can specify only the value of the tag here and the `CONTEXTLESS` context and source 'USER' will be added automatically.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -851,7 +851,7 @@ class BrowserMonitor(pulumi.CustomResource):
         """
         A list of locations from which the monitor is executed.
 
-        To specify a location, use its entity ID.
+          To specify a location, use its entity ID.
         """
         return pulumi.get(self, "locations")
 
@@ -885,7 +885,7 @@ class BrowserMonitor(pulumi.CustomResource):
         """
         A set of tags assigned to the monitor.
 
-        You can specify only the value of the tag here and the `CONTEXTLESS` context and source 'USER' will be added automatically.
+          You can specify only the value of the tag here and the `CONTEXTLESS` context and source 'USER' will be added automatically.
         """
         return pulumi.get(self, "tags")
 

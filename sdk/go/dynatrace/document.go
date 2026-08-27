@@ -42,7 +42,7 @@ import (
 //				"version":   13,
 //				"variables": []interface{}{},
 //				"tiles": map[string]interface{}{
-//					"0": map[string]interface{}{
+//					"0": map[string]string{
 //						"type":    "markdown",
 //						"title":   "",
 //						"content": "![Image of a Dashboard](https://dt-cdn.net/wp-content/uploads/2022/09/pic1____Dashboard-Preset___PNG.png)",
@@ -151,20 +151,20 @@ import (
 //						},
 //					},
 //				},
-//				"layouts": map[string]interface{}{
-//					"0": map[string]interface{}{
+//				"layouts": map[string]map[string]int{
+//					"0": map[string]int{
 //						"x": 0,
 //						"y": 0,
 //						"w": 24,
 //						"h": 14,
 //					},
-//					"1": map[string]interface{}{
+//					"1": map[string]int{
 //						"x": 0,
 //						"y": 14,
 //						"w": 9,
 //						"h": 6,
 //					},
-//					"2": map[string]interface{}{
+//					"2": map[string]int{
 //						"x": 15,
 //						"y": 14,
 //						"w": 9,

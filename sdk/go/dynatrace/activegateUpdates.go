@@ -25,13 +25,66 @@ import (
 // - `terraform-provider-dynatrace -export ActivegateUpdates` downloads existing Activegate updates configuration
 //
 // The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+//
+// ## Resource Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			exampleUpdateWindows, err := dynatrace.NewUpdateWindows(ctx, "example", &dynatrace.UpdateWindowsArgs{
+//				Name:       pulumi.String("#name#"),
+//				Enabled:    pulumi.Bool(true),
+//				Recurrence: pulumi.String("ONCE"),
+//				OnceRecurrence: &dynatrace.UpdateWindowsOnceRecurrenceArgs{
+//					RecurrenceRange: &dynatrace.UpdateWindowsOnceRecurrenceRecurrenceRangeArgs{
+//						End:   pulumi.String("2023-02-15T04:00:00Z"),
+//						Start: pulumi.String("2023-02-15T02:00:00Z"),
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			_, err = dynatrace.NewActivegateUpdates(ctx, "example", &dynatrace.ActivegateUpdatesArgs{
+//				Scope:         pulumi.String("environment"),
+//				TargetVersion: pulumi.String("latest"),
+//				UpdateMode:    pulumi.String("AUTOMATIC_DURING_UW"),
+//				UpdateWindows: &dynatrace.ActivegateUpdatesUpdateWindowsArgs{
+//					UpdateWindows: dynatrace.ActivegateUpdatesUpdateWindowsUpdateWindowArray{
+//						&dynatrace.ActivegateUpdatesUpdateWindowsUpdateWindowArgs{
+//							UpdateWindow: exampleUpdateWindows.ID().ToIDOutput().ToStringOutput(),
+//						},
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type ActivegateUpdates struct {
 	pulumi.CustomResourceState
 
-	// Automatic updates at earliest convenience
-	AutoUpdate pulumi.BoolOutput `pulumi:"autoUpdate"`
 	// The scope of this setting (ENVIRONMENT*ACTIVE*GATE). Omit this property if you want to cover the whole environment.
 	Scope pulumi.StringPtrOutput `pulumi:"scope"`
+	// Target version
+	TargetVersion pulumi.StringOutput `pulumi:"targetVersion"`
+	// Update mode. Possible values: `AUTOMATIC`, `AUTOMATIC_DURING_UW`, `MANUAL`
+	UpdateMode pulumi.StringOutput `pulumi:"updateMode"`
+	// Update windows
+	UpdateWindows ActivegateUpdatesUpdateWindowsPtrOutput `pulumi:"updateWindows"`
 }
 
 // NewActivegateUpdates registers a new resource with the given unique name, arguments, and options.
@@ -41,8 +94,11 @@ func NewActivegateUpdates(ctx *pulumi.Context,
 		return nil, errors.New("missing one or more required arguments")
 	}
 
-	if args.AutoUpdate == nil {
-		return nil, errors.New("invalid value for required argument 'AutoUpdate'")
+	if args.TargetVersion == nil {
+		return nil, errors.New("invalid value for required argument 'TargetVersion'")
+	}
+	if args.UpdateMode == nil {
+		return nil, errors.New("invalid value for required argument 'UpdateMode'")
 	}
 	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource ActivegateUpdates
@@ -67,17 +123,25 @@ func GetActivegateUpdates(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering ActivegateUpdates resources.
 type activegateUpdatesState struct {
-	// Automatic updates at earliest convenience
-	AutoUpdate *bool `pulumi:"autoUpdate"`
 	// The scope of this setting (ENVIRONMENT*ACTIVE*GATE). Omit this property if you want to cover the whole environment.
 	Scope *string `pulumi:"scope"`
+	// Target version
+	TargetVersion *string `pulumi:"targetVersion"`
+	// Update mode. Possible values: `AUTOMATIC`, `AUTOMATIC_DURING_UW`, `MANUAL`
+	UpdateMode *string `pulumi:"updateMode"`
+	// Update windows
+	UpdateWindows *ActivegateUpdatesUpdateWindows `pulumi:"updateWindows"`
 }
 
 type ActivegateUpdatesState struct {
-	// Automatic updates at earliest convenience
-	AutoUpdate pulumi.BoolPtrInput
 	// The scope of this setting (ENVIRONMENT*ACTIVE*GATE). Omit this property if you want to cover the whole environment.
 	Scope pulumi.StringPtrInput
+	// Target version
+	TargetVersion pulumi.StringPtrInput
+	// Update mode. Possible values: `AUTOMATIC`, `AUTOMATIC_DURING_UW`, `MANUAL`
+	UpdateMode pulumi.StringPtrInput
+	// Update windows
+	UpdateWindows ActivegateUpdatesUpdateWindowsPtrInput
 }
 
 func (ActivegateUpdatesState) ElementType() reflect.Type {
@@ -85,18 +149,26 @@ func (ActivegateUpdatesState) ElementType() reflect.Type {
 }
 
 type activegateUpdatesArgs struct {
-	// Automatic updates at earliest convenience
-	AutoUpdate bool `pulumi:"autoUpdate"`
 	// The scope of this setting (ENVIRONMENT*ACTIVE*GATE). Omit this property if you want to cover the whole environment.
 	Scope *string `pulumi:"scope"`
+	// Target version
+	TargetVersion string `pulumi:"targetVersion"`
+	// Update mode. Possible values: `AUTOMATIC`, `AUTOMATIC_DURING_UW`, `MANUAL`
+	UpdateMode string `pulumi:"updateMode"`
+	// Update windows
+	UpdateWindows *ActivegateUpdatesUpdateWindows `pulumi:"updateWindows"`
 }
 
 // The set of arguments for constructing a ActivegateUpdates resource.
 type ActivegateUpdatesArgs struct {
-	// Automatic updates at earliest convenience
-	AutoUpdate pulumi.BoolInput
 	// The scope of this setting (ENVIRONMENT*ACTIVE*GATE). Omit this property if you want to cover the whole environment.
 	Scope pulumi.StringPtrInput
+	// Target version
+	TargetVersion pulumi.StringInput
+	// Update mode. Possible values: `AUTOMATIC`, `AUTOMATIC_DURING_UW`, `MANUAL`
+	UpdateMode pulumi.StringInput
+	// Update windows
+	UpdateWindows ActivegateUpdatesUpdateWindowsPtrInput
 }
 
 func (ActivegateUpdatesArgs) ElementType() reflect.Type {
@@ -186,14 +258,24 @@ func (o ActivegateUpdatesOutput) ToActivegateUpdatesOutputWithContext(ctx contex
 	return o
 }
 
-// Automatic updates at earliest convenience
-func (o ActivegateUpdatesOutput) AutoUpdate() pulumi.BoolOutput {
-	return o.ApplyT(func(v *ActivegateUpdates) pulumi.BoolOutput { return v.AutoUpdate }).(pulumi.BoolOutput)
-}
-
 // The scope of this setting (ENVIRONMENT*ACTIVE*GATE). Omit this property if you want to cover the whole environment.
 func (o ActivegateUpdatesOutput) Scope() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ActivegateUpdates) pulumi.StringPtrOutput { return v.Scope }).(pulumi.StringPtrOutput)
+}
+
+// Target version
+func (o ActivegateUpdatesOutput) TargetVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v *ActivegateUpdates) pulumi.StringOutput { return v.TargetVersion }).(pulumi.StringOutput)
+}
+
+// Update mode. Possible values: `AUTOMATIC`, `AUTOMATIC_DURING_UW`, `MANUAL`
+func (o ActivegateUpdatesOutput) UpdateMode() pulumi.StringOutput {
+	return o.ApplyT(func(v *ActivegateUpdates) pulumi.StringOutput { return v.UpdateMode }).(pulumi.StringOutput)
+}
+
+// Update windows
+func (o ActivegateUpdatesOutput) UpdateWindows() ActivegateUpdatesUpdateWindowsPtrOutput {
+	return o.ApplyT(func(v *ActivegateUpdates) ActivegateUpdatesUpdateWindowsPtrOutput { return v.UpdateWindows }).(ActivegateUpdatesUpdateWindowsPtrOutput)
 }
 
 type ActivegateUpdatesArrayOutput struct{ *pulumi.OutputState }

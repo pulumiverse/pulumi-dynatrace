@@ -88,11 +88,11 @@ import (
 //				CloudVendorType: pulumi.String("gcp"),
 //				GcpConnection: &dynatrace.OpenpipelineV2SecurityEventsDataforwardingGcpConnectionArgs{
 //					BucketName:   pulumi.String("my-bucket"),
-//					ConnectionId: connection.ID(),
+//					ConnectionId: connection.ID().ToIDOutput().ToStringOutput(),
 //				},
 //				DataForwardingType: pulumi.String("processed"),
 //				Pipelines: pulumi.StringArray{
-//					pipeline.ID(),
+//					pipeline.ID().ToIDOutput().ToStringOutput(),
 //				},
 //				BulkPattern: pulumi.String("<YYYYMMDD>/<HH>/<HHmmss.SSSS>_<bulk-id>.json.gz"),
 //				Processing: &dynatrace.OpenpipelineV2SecurityEventsDataforwardingProcessingArgs{

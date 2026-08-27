@@ -83,8 +83,8 @@ import (
 //				DashboardPresetsList: &dynatrace.DashboardsPresetsDashboardPresetsListArgs{
 //					DashboardPresets: dynatrace.DashboardsPresetsDashboardPresetsListDashboardPresetArray{
 //						&dynatrace.DashboardsPresetsDashboardPresetsListDashboardPresetArgs{
-//							DashboardPreset: dashboard.ID(),
-//							UserGroup:       group.ID(),
+//							DashboardPreset: dashboard.ID().ToIDOutput().ToStringOutput(),
+//							UserGroup:       group.ID().ToIDOutput().ToStringOutput(),
 //						},
 //					},
 //				},

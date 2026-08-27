@@ -28,7 +28,7 @@ import (
 type LimitOutboundConnections struct {
 	pulumi.CustomResourceState
 
-	// no documentation available
+	// No documentation available
 	AllowedOutboundConnections LimitOutboundConnectionsAllowedOutboundConnectionsOutput `pulumi:"allowedOutboundConnections"`
 }
 
@@ -65,12 +65,12 @@ func GetLimitOutboundConnections(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering LimitOutboundConnections resources.
 type limitOutboundConnectionsState struct {
-	// no documentation available
+	// No documentation available
 	AllowedOutboundConnections *LimitOutboundConnectionsAllowedOutboundConnections `pulumi:"allowedOutboundConnections"`
 }
 
 type LimitOutboundConnectionsState struct {
-	// no documentation available
+	// No documentation available
 	AllowedOutboundConnections LimitOutboundConnectionsAllowedOutboundConnectionsPtrInput
 }
 
@@ -79,13 +79,13 @@ func (LimitOutboundConnectionsState) ElementType() reflect.Type {
 }
 
 type limitOutboundConnectionsArgs struct {
-	// no documentation available
+	// No documentation available
 	AllowedOutboundConnections LimitOutboundConnectionsAllowedOutboundConnections `pulumi:"allowedOutboundConnections"`
 }
 
 // The set of arguments for constructing a LimitOutboundConnections resource.
 type LimitOutboundConnectionsArgs struct {
-	// no documentation available
+	// No documentation available
 	AllowedOutboundConnections LimitOutboundConnectionsAllowedOutboundConnectionsInput
 }
 
@@ -176,7 +176,7 @@ func (o LimitOutboundConnectionsOutput) ToLimitOutboundConnectionsOutputWithCont
 	return o
 }
 
-// no documentation available
+// No documentation available
 func (o LimitOutboundConnectionsOutput) AllowedOutboundConnections() LimitOutboundConnectionsAllowedOutboundConnectionsOutput {
 	return o.ApplyT(func(v *LimitOutboundConnections) LimitOutboundConnectionsAllowedOutboundConnectionsOutput {
 		return v.AllowedOutboundConnections

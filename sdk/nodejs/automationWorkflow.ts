@@ -128,6 +128,8 @@ import * as utilities from "./utilities";
  *                     },
  *                     entityTagsMatch: "all",
  *                     onProblemClose: false,
+ *                     triggerOn: "open",
+ *                     maintenanceWindowTriggerBehavior: "inside",
  *                     customFilter: "matchesPhrase(custom.event.type, \"DEPLOY\")",
  *                 },
  *             },
@@ -209,6 +211,10 @@ export class AutomationWorkflow extends pulumi.CustomResource {
      */
     declare public readonly tasks: pulumi.Output<outputs.AutomationWorkflowTasks>;
     /**
+     * Execution throttling state for the workflow. Server-computed - see `isLimitHit`. Set only to reset an active throttle
+     */
+    declare public readonly throttle: pulumi.Output<outputs.AutomationWorkflowThrottle>;
+    /**
      * The title / name of the workflow
      */
     declare public readonly title: pulumi.Output<string>;
@@ -220,6 +226,10 @@ export class AutomationWorkflow extends pulumi.CustomResource {
      * The type of the workflow. Possible values are `STANDARD` and `SIMPLE`. Defaults to `STANDARD`. Workflows of type `SIMPLE` are allowed to contain only one action
      */
     declare public readonly type: pulumi.Output<string | undefined>;
+    /**
+     * Timestamp of the earliest schedule that was skipped and not yet acknowledged
+     */
+    declare public /*out*/ readonly unacknowledgedSkippedScheduleAt: pulumi.Output<string>;
 
     /**
      * Create a AutomationWorkflow resource with the given unique name, arguments, and options.
@@ -245,9 +255,11 @@ export class AutomationWorkflow extends pulumi.CustomResource {
             resourceInputs["private"] = state?.private;
             resourceInputs["result"] = state?.result;
             resourceInputs["tasks"] = state?.tasks;
+            resourceInputs["throttle"] = state?.throttle;
             resourceInputs["title"] = state?.title;
             resourceInputs["trigger"] = state?.trigger;
             resourceInputs["type"] = state?.type;
+            resourceInputs["unacknowledgedSkippedScheduleAt"] = state?.unacknowledgedSkippedScheduleAt;
         } else {
             const args = argsOrState as AutomationWorkflowArgs | undefined;
             if (args?.tasks === undefined && !opts.urn) {
@@ -267,9 +279,11 @@ export class AutomationWorkflow extends pulumi.CustomResource {
             resourceInputs["private"] = args?.private;
             resourceInputs["result"] = args?.result;
             resourceInputs["tasks"] = args?.tasks;
+            resourceInputs["throttle"] = args?.throttle;
             resourceInputs["title"] = args?.title;
             resourceInputs["trigger"] = args?.trigger;
             resourceInputs["type"] = args?.type;
+            resourceInputs["unacknowledgedSkippedScheduleAt"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(AutomationWorkflow.__pulumiType, name, resourceInputs, opts);
@@ -325,6 +339,10 @@ export interface AutomationWorkflowState {
      */
     tasks?: pulumi.Input<inputs.AutomationWorkflowTasks | undefined>;
     /**
+     * Execution throttling state for the workflow. Server-computed - see `isLimitHit`. Set only to reset an active throttle
+     */
+    throttle?: pulumi.Input<inputs.AutomationWorkflowThrottle | undefined>;
+    /**
      * The title / name of the workflow
      */
     title?: pulumi.Input<string | undefined>;
@@ -336,6 +354,10 @@ export interface AutomationWorkflowState {
      * The type of the workflow. Possible values are `STANDARD` and `SIMPLE`. Defaults to `STANDARD`. Workflows of type `SIMPLE` are allowed to contain only one action
      */
     type?: pulumi.Input<string | undefined>;
+    /**
+     * Timestamp of the earliest schedule that was skipped and not yet acknowledged
+     */
+    unacknowledgedSkippedScheduleAt?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -386,6 +408,10 @@ export interface AutomationWorkflowArgs {
      * The tasks to run for every execution of this workflow. Note: the order in which tasks are declared in HCL does not determine their layout - positions are not assigned incrementally based on declaration order. Set `position` explicitly on each task if you need a deterministic layout
      */
     tasks: pulumi.Input<inputs.AutomationWorkflowTasks>;
+    /**
+     * Execution throttling state for the workflow. Server-computed - see `isLimitHit`. Set only to reset an active throttle
+     */
+    throttle?: pulumi.Input<inputs.AutomationWorkflowThrottle | undefined>;
     /**
      * The title / name of the workflow
      */

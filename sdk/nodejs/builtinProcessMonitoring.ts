@@ -39,6 +39,7 @@ import * as utilities from "./utilities";
  *     nodeNodegyp: false,
  *     cmdForeverbinmonitor: false,
  *     jmcActivegatecommandlinetool: false,
+ *     pySupervisord: false,
  * });
  * ```
  */
@@ -115,7 +116,7 @@ export class BuiltinProcessMonitoring extends pulumi.CustomResource {
      */
     declare public readonly exeAgentworker: pulumi.Output<boolean | undefined>;
     /**
-     * Rule id: 79 - Do not monitor processes if EXE name equals 'ansible'
+     * Rule id: 79 - Do not monitor processes if Python script equals 'ansible'
      */
     declare public readonly exeAnsible: pulumi.Output<boolean | undefined>;
     /**
@@ -127,11 +128,11 @@ export class BuiltinProcessMonitoring extends pulumi.CustomResource {
      */
     declare public readonly exeAuditbeat: pulumi.Output<boolean | undefined>;
     /**
-     * Rule id: 81 - Do not monitor processes if EXE name equals 'aws'
+     * Rule id: 81 - Do not monitor processes if Python script equals 'aws'
      */
     declare public readonly exeAws: pulumi.Output<boolean | undefined>;
     /**
-     * Rule id: 82 - Do not monitor processes if EXE name equals 'az'
+     * Rule id: 82 - Do not monitor processes if Python script equals 'az'
      */
     declare public readonly exeAz: pulumi.Output<boolean | undefined>;
     /**
@@ -155,7 +156,7 @@ export class BuiltinProcessMonitoring extends pulumi.CustomResource {
      */
     declare public readonly exeCcuploader: pulumi.Output<boolean | undefined>;
     /**
-     * Rule id: 78 - Do not monitor processes if EXE name equals 'conda'
+     * Rule id: 78 - Do not monitor processes if Python script equals 'conda'
      */
     declare public readonly exeConda: pulumi.Output<boolean | undefined>;
     /**
@@ -179,7 +180,7 @@ export class BuiltinProcessMonitoring extends pulumi.CustomResource {
      */
     declare public readonly exeFunctionbeat: pulumi.Output<boolean | undefined>;
     /**
-     * Rule id: 83 - Do not monitor processes if EXE name equals 'gcloud'
+     * Rule id: 83 - Do not monitor processes if Python script equals 'gcloud'
      */
     declare public readonly exeGcloud: pulumi.Output<boolean | undefined>;
     /**
@@ -191,7 +192,7 @@ export class BuiltinProcessMonitoring extends pulumi.CustomResource {
      */
     declare public readonly exeGrootfs: pulumi.Output<boolean | undefined>;
     /**
-     * Rule id: 74 - Do not monitor processes if EXE name equals 'hatch'
+     * Rule id: 74 - Do not monitor processes if Python script equals 'hatch'
      */
     declare public readonly exeHatch: pulumi.Output<boolean | undefined>;
     /**
@@ -203,7 +204,7 @@ export class BuiltinProcessMonitoring extends pulumi.CustomResource {
      */
     declare public readonly exeInfluxd: pulumi.Output<boolean | undefined>;
     /**
-     * Rule id: 77 - Do not monitor processes if EXE name equals 'jupyter'
+     * Rule id: 77 - Do not monitor processes if Python script equals 'jupyter'
      */
     declare public readonly exeJupyter: pulumi.Output<boolean | undefined>;
     /**
@@ -231,7 +232,7 @@ export class BuiltinProcessMonitoring extends pulumi.CustomResource {
      */
     declare public readonly exeOpenhandlecollector: pulumi.Output<boolean | undefined>;
     /**
-     * Rule id: 80 - Do not monitor processes if EXE name equals 'openstack'
+     * Rule id: 80 - Do not monitor processes if Python script equals 'openstack'
      */
     declare public readonly exeOpenstack: pulumi.Output<boolean | undefined>;
     /**
@@ -247,7 +248,7 @@ export class BuiltinProcessMonitoring extends pulumi.CustomResource {
      */
     declare public readonly exePhpcgi: pulumi.Output<boolean | undefined>;
     /**
-     * Rule id: 73 - Do not monitor processes if EXE name equals 'pip'
+     * Rule id: 73 - Do not monitor processes if Python script equals 'pip'
      */
     declare public readonly exePip: pulumi.Output<boolean | undefined>;
     /**
@@ -311,7 +312,7 @@ export class BuiltinProcessMonitoring extends pulumi.CustomResource {
      */
     declare public readonly exeW3wp: pulumi.Output<boolean | undefined>;
     /**
-     * Rule id: 75 - Do not monitor processes if EXE name equals 'wheel'
+     * Rule id: 75 - Do not monitor processes if Python script equals 'wheel'
      */
     declare public readonly exeWheel: pulumi.Output<boolean | undefined>;
     /**
@@ -319,7 +320,7 @@ export class BuiltinProcessMonitoring extends pulumi.CustomResource {
      */
     declare public readonly exeYq: pulumi.Output<boolean | undefined>;
     /**
-     * Rule id: 76 - Do not monitor processes if EXE name equals 'yum'
+     * Rule id: 76 - Do not monitor processes if Python script equals 'yum'
      */
     declare public readonly exeYum: pulumi.Output<boolean | undefined>;
     /**
@@ -398,6 +399,10 @@ export class BuiltinProcessMonitoring extends pulumi.CustomResource {
      * (v1.274) Rule id: 1 - Do not monitor processes if PHP script exists
      */
     declare public readonly phpScript: pulumi.Output<boolean | undefined>;
+    /**
+     * Rule id: 86 - Do not monitor processes if Python script contains 'supervisord'
+     */
+    declare public readonly pySupervisord: pulumi.Output<boolean | undefined>;
 
     /**
      * Create a BuiltinProcessMonitoring resource with the given unique name, arguments, and options.
@@ -494,6 +499,7 @@ export class BuiltinProcessMonitoring extends pulumi.CustomResource {
             resourceInputs["nodeTypescript"] = state?.nodeTypescript;
             resourceInputs["nodeYarn"] = state?.nodeYarn;
             resourceInputs["phpScript"] = state?.phpScript;
+            resourceInputs["pySupervisord"] = state?.pySupervisord;
         } else {
             const args = argsOrState as BuiltinProcessMonitoringArgs | undefined;
             resourceInputs["aspnetcore"] = args?.aspnetcore;
@@ -578,6 +584,7 @@ export class BuiltinProcessMonitoring extends pulumi.CustomResource {
             resourceInputs["nodeTypescript"] = args?.nodeTypescript;
             resourceInputs["nodeYarn"] = args?.nodeYarn;
             resourceInputs["phpScript"] = args?.phpScript;
+            resourceInputs["pySupervisord"] = args?.pySupervisord;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(BuiltinProcessMonitoring.__pulumiType, name, resourceInputs, opts);
@@ -633,7 +640,7 @@ export interface BuiltinProcessMonitoringState {
      */
     exeAgentworker?: pulumi.Input<boolean | undefined>;
     /**
-     * Rule id: 79 - Do not monitor processes if EXE name equals 'ansible'
+     * Rule id: 79 - Do not monitor processes if Python script equals 'ansible'
      */
     exeAnsible?: pulumi.Input<boolean | undefined>;
     /**
@@ -645,11 +652,11 @@ export interface BuiltinProcessMonitoringState {
      */
     exeAuditbeat?: pulumi.Input<boolean | undefined>;
     /**
-     * Rule id: 81 - Do not monitor processes if EXE name equals 'aws'
+     * Rule id: 81 - Do not monitor processes if Python script equals 'aws'
      */
     exeAws?: pulumi.Input<boolean | undefined>;
     /**
-     * Rule id: 82 - Do not monitor processes if EXE name equals 'az'
+     * Rule id: 82 - Do not monitor processes if Python script equals 'az'
      */
     exeAz?: pulumi.Input<boolean | undefined>;
     /**
@@ -673,7 +680,7 @@ export interface BuiltinProcessMonitoringState {
      */
     exeCcuploader?: pulumi.Input<boolean | undefined>;
     /**
-     * Rule id: 78 - Do not monitor processes if EXE name equals 'conda'
+     * Rule id: 78 - Do not monitor processes if Python script equals 'conda'
      */
     exeConda?: pulumi.Input<boolean | undefined>;
     /**
@@ -697,7 +704,7 @@ export interface BuiltinProcessMonitoringState {
      */
     exeFunctionbeat?: pulumi.Input<boolean | undefined>;
     /**
-     * Rule id: 83 - Do not monitor processes if EXE name equals 'gcloud'
+     * Rule id: 83 - Do not monitor processes if Python script equals 'gcloud'
      */
     exeGcloud?: pulumi.Input<boolean | undefined>;
     /**
@@ -709,7 +716,7 @@ export interface BuiltinProcessMonitoringState {
      */
     exeGrootfs?: pulumi.Input<boolean | undefined>;
     /**
-     * Rule id: 74 - Do not monitor processes if EXE name equals 'hatch'
+     * Rule id: 74 - Do not monitor processes if Python script equals 'hatch'
      */
     exeHatch?: pulumi.Input<boolean | undefined>;
     /**
@@ -721,7 +728,7 @@ export interface BuiltinProcessMonitoringState {
      */
     exeInfluxd?: pulumi.Input<boolean | undefined>;
     /**
-     * Rule id: 77 - Do not monitor processes if EXE name equals 'jupyter'
+     * Rule id: 77 - Do not monitor processes if Python script equals 'jupyter'
      */
     exeJupyter?: pulumi.Input<boolean | undefined>;
     /**
@@ -749,7 +756,7 @@ export interface BuiltinProcessMonitoringState {
      */
     exeOpenhandlecollector?: pulumi.Input<boolean | undefined>;
     /**
-     * Rule id: 80 - Do not monitor processes if EXE name equals 'openstack'
+     * Rule id: 80 - Do not monitor processes if Python script equals 'openstack'
      */
     exeOpenstack?: pulumi.Input<boolean | undefined>;
     /**
@@ -765,7 +772,7 @@ export interface BuiltinProcessMonitoringState {
      */
     exePhpcgi?: pulumi.Input<boolean | undefined>;
     /**
-     * Rule id: 73 - Do not monitor processes if EXE name equals 'pip'
+     * Rule id: 73 - Do not monitor processes if Python script equals 'pip'
      */
     exePip?: pulumi.Input<boolean | undefined>;
     /**
@@ -829,7 +836,7 @@ export interface BuiltinProcessMonitoringState {
      */
     exeW3wp?: pulumi.Input<boolean | undefined>;
     /**
-     * Rule id: 75 - Do not monitor processes if EXE name equals 'wheel'
+     * Rule id: 75 - Do not monitor processes if Python script equals 'wheel'
      */
     exeWheel?: pulumi.Input<boolean | undefined>;
     /**
@@ -837,7 +844,7 @@ export interface BuiltinProcessMonitoringState {
      */
     exeYq?: pulumi.Input<boolean | undefined>;
     /**
-     * Rule id: 76 - Do not monitor processes if EXE name equals 'yum'
+     * Rule id: 76 - Do not monitor processes if Python script equals 'yum'
      */
     exeYum?: pulumi.Input<boolean | undefined>;
     /**
@@ -916,6 +923,10 @@ export interface BuiltinProcessMonitoringState {
      * (v1.274) Rule id: 1 - Do not monitor processes if PHP script exists
      */
     phpScript?: pulumi.Input<boolean | undefined>;
+    /**
+     * Rule id: 86 - Do not monitor processes if Python script contains 'supervisord'
+     */
+    pySupervisord?: pulumi.Input<boolean | undefined>;
 }
 
 /**
@@ -967,7 +978,7 @@ export interface BuiltinProcessMonitoringArgs {
      */
     exeAgentworker?: pulumi.Input<boolean | undefined>;
     /**
-     * Rule id: 79 - Do not monitor processes if EXE name equals 'ansible'
+     * Rule id: 79 - Do not monitor processes if Python script equals 'ansible'
      */
     exeAnsible?: pulumi.Input<boolean | undefined>;
     /**
@@ -979,11 +990,11 @@ export interface BuiltinProcessMonitoringArgs {
      */
     exeAuditbeat?: pulumi.Input<boolean | undefined>;
     /**
-     * Rule id: 81 - Do not monitor processes if EXE name equals 'aws'
+     * Rule id: 81 - Do not monitor processes if Python script equals 'aws'
      */
     exeAws?: pulumi.Input<boolean | undefined>;
     /**
-     * Rule id: 82 - Do not monitor processes if EXE name equals 'az'
+     * Rule id: 82 - Do not monitor processes if Python script equals 'az'
      */
     exeAz?: pulumi.Input<boolean | undefined>;
     /**
@@ -1007,7 +1018,7 @@ export interface BuiltinProcessMonitoringArgs {
      */
     exeCcuploader?: pulumi.Input<boolean | undefined>;
     /**
-     * Rule id: 78 - Do not monitor processes if EXE name equals 'conda'
+     * Rule id: 78 - Do not monitor processes if Python script equals 'conda'
      */
     exeConda?: pulumi.Input<boolean | undefined>;
     /**
@@ -1031,7 +1042,7 @@ export interface BuiltinProcessMonitoringArgs {
      */
     exeFunctionbeat?: pulumi.Input<boolean | undefined>;
     /**
-     * Rule id: 83 - Do not monitor processes if EXE name equals 'gcloud'
+     * Rule id: 83 - Do not monitor processes if Python script equals 'gcloud'
      */
     exeGcloud?: pulumi.Input<boolean | undefined>;
     /**
@@ -1043,7 +1054,7 @@ export interface BuiltinProcessMonitoringArgs {
      */
     exeGrootfs?: pulumi.Input<boolean | undefined>;
     /**
-     * Rule id: 74 - Do not monitor processes if EXE name equals 'hatch'
+     * Rule id: 74 - Do not monitor processes if Python script equals 'hatch'
      */
     exeHatch?: pulumi.Input<boolean | undefined>;
     /**
@@ -1055,7 +1066,7 @@ export interface BuiltinProcessMonitoringArgs {
      */
     exeInfluxd?: pulumi.Input<boolean | undefined>;
     /**
-     * Rule id: 77 - Do not monitor processes if EXE name equals 'jupyter'
+     * Rule id: 77 - Do not monitor processes if Python script equals 'jupyter'
      */
     exeJupyter?: pulumi.Input<boolean | undefined>;
     /**
@@ -1083,7 +1094,7 @@ export interface BuiltinProcessMonitoringArgs {
      */
     exeOpenhandlecollector?: pulumi.Input<boolean | undefined>;
     /**
-     * Rule id: 80 - Do not monitor processes if EXE name equals 'openstack'
+     * Rule id: 80 - Do not monitor processes if Python script equals 'openstack'
      */
     exeOpenstack?: pulumi.Input<boolean | undefined>;
     /**
@@ -1099,7 +1110,7 @@ export interface BuiltinProcessMonitoringArgs {
      */
     exePhpcgi?: pulumi.Input<boolean | undefined>;
     /**
-     * Rule id: 73 - Do not monitor processes if EXE name equals 'pip'
+     * Rule id: 73 - Do not monitor processes if Python script equals 'pip'
      */
     exePip?: pulumi.Input<boolean | undefined>;
     /**
@@ -1163,7 +1174,7 @@ export interface BuiltinProcessMonitoringArgs {
      */
     exeW3wp?: pulumi.Input<boolean | undefined>;
     /**
-     * Rule id: 75 - Do not monitor processes if EXE name equals 'wheel'
+     * Rule id: 75 - Do not monitor processes if Python script equals 'wheel'
      */
     exeWheel?: pulumi.Input<boolean | undefined>;
     /**
@@ -1171,7 +1182,7 @@ export interface BuiltinProcessMonitoringArgs {
      */
     exeYq?: pulumi.Input<boolean | undefined>;
     /**
-     * Rule id: 76 - Do not monitor processes if EXE name equals 'yum'
+     * Rule id: 76 - Do not monitor processes if Python script equals 'yum'
      */
     exeYum?: pulumi.Input<boolean | undefined>;
     /**
@@ -1250,4 +1261,8 @@ export interface BuiltinProcessMonitoringArgs {
      * (v1.274) Rule id: 1 - Do not monitor processes if PHP script exists
      */
     phpScript?: pulumi.Input<boolean | undefined>;
+    /**
+     * Rule id: 86 - Do not monitor processes if Python script contains 'supervisord'
+     */
+    pySupervisord?: pulumi.Input<boolean | undefined>;
 }

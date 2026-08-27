@@ -38,6 +38,24 @@ import * as utilities from "./utilities";
  * - `terraform-provider-dynatrace -export dynatrace.AutomationWorkflowSlack` downloads existing Slack for Workflows configuration
  *
  * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ *
+ * ## Resource Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ *
+ * const _default = new dynatrace.AutomationWorkflowSlack("default", {
+ *     name: "#name#",
+ *     token: "#######",
+ * });
+ * const externalApproval = new dynatrace.AutomationWorkflowSlack("external_approval", {
+ *     name: "#name#",
+ *     token: "#######",
+ *     externalApproval: true,
+ *     signingSecret: "#######",
+ * });
+ * ```
  */
 export class AutomationWorkflowSlack extends pulumi.CustomResource {
     /**
@@ -68,17 +86,19 @@ export class AutomationWorkflowSlack extends pulumi.CustomResource {
     }
 
     /**
-     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
-     *
-     * @deprecated This resource is no longer ordered, please remove this attribute from the configuration
+     * Accept external approvals can enable Slack users to directly respond to approval request.
      */
-    declare public readonly insertAfter: pulumi.Output<string>;
+    declare public readonly externalApproval: pulumi.Output<boolean | undefined>;
     /**
-     * The name of the Slack connection
+     * Provide a unique and clearly identifiable connection name to your Slack App.
      */
     declare public readonly name: pulumi.Output<string>;
     /**
-     * The bot token obtained from the Slack App Management UI
+     * The signing secret obtained from the Slack App Management UI.
+     */
+    declare public readonly signingSecret: pulumi.Output<string | undefined>;
+    /**
+     * The bot token obtained from the Slack App Management UI.
      */
     declare public readonly token: pulumi.Output<string>;
 
@@ -95,20 +115,22 @@ export class AutomationWorkflowSlack extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AutomationWorkflowSlackState | undefined;
-            resourceInputs["insertAfter"] = state?.insertAfter;
+            resourceInputs["externalApproval"] = state?.externalApproval;
             resourceInputs["name"] = state?.name;
+            resourceInputs["signingSecret"] = state?.signingSecret;
             resourceInputs["token"] = state?.token;
         } else {
             const args = argsOrState as AutomationWorkflowSlackArgs | undefined;
             if (args?.token === undefined && !opts.urn) {
                 throw new Error("Missing required property 'token'");
             }
-            resourceInputs["insertAfter"] = args?.insertAfter;
+            resourceInputs["externalApproval"] = args?.externalApproval;
             resourceInputs["name"] = args?.name;
+            resourceInputs["signingSecret"] = args?.signingSecret ? pulumi.secret(args.signingSecret) : undefined;
             resourceInputs["token"] = args?.token ? pulumi.secret(args.token) : undefined;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
-        const secretOpts = { additionalSecretOutputs: ["token"] };
+        const secretOpts = { additionalSecretOutputs: ["signingSecret", "token"] };
         opts = pulumi.mergeOptions(opts, secretOpts);
         super(AutomationWorkflowSlack.__pulumiType, name, resourceInputs, opts);
     }
@@ -119,17 +141,19 @@ export class AutomationWorkflowSlack extends pulumi.CustomResource {
  */
 export interface AutomationWorkflowSlackState {
     /**
-     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
-     *
-     * @deprecated This resource is no longer ordered, please remove this attribute from the configuration
+     * Accept external approvals can enable Slack users to directly respond to approval request.
      */
-    insertAfter?: pulumi.Input<string | undefined>;
+    externalApproval?: pulumi.Input<boolean | undefined>;
     /**
-     * The name of the Slack connection
+     * Provide a unique and clearly identifiable connection name to your Slack App.
      */
     name?: pulumi.Input<string | undefined>;
     /**
-     * The bot token obtained from the Slack App Management UI
+     * The signing secret obtained from the Slack App Management UI.
+     */
+    signingSecret?: pulumi.Input<string | undefined>;
+    /**
+     * The bot token obtained from the Slack App Management UI.
      */
     token?: pulumi.Input<string | undefined>;
 }
@@ -139,17 +163,19 @@ export interface AutomationWorkflowSlackState {
  */
 export interface AutomationWorkflowSlackArgs {
     /**
-     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
-     *
-     * @deprecated This resource is no longer ordered, please remove this attribute from the configuration
+     * Accept external approvals can enable Slack users to directly respond to approval request.
      */
-    insertAfter?: pulumi.Input<string | undefined>;
+    externalApproval?: pulumi.Input<boolean | undefined>;
     /**
-     * The name of the Slack connection
+     * Provide a unique and clearly identifiable connection name to your Slack App.
      */
     name?: pulumi.Input<string | undefined>;
     /**
-     * The bot token obtained from the Slack App Management UI
+     * The signing secret obtained from the Slack App Management UI.
+     */
+    signingSecret?: pulumi.Input<string | undefined>;
+    /**
+     * The bot token obtained from the Slack App Management UI.
      */
     token: pulumi.Input<string>;
 }

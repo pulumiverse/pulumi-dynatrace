@@ -15,10 +15,10 @@ namespace Pulumiverse.Dynatrace.Inputs
     {
         /// <summary>
         /// Every **X** days:
-        /// * `1` = every day,
-        /// * `2` = every two days,
-        /// * `3` = every three days,
-        /// * etc.
+        ///  * `1` = every day,
+        ///  * `2` = every two days,
+        ///  * `3` = every three days,
+        ///  * etc.
         /// </summary>
         [Input("every", required: true)]
         public Input<int> Every { get; set; } = null!;

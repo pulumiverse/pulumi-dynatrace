@@ -13,6 +13,455 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type DataPrivacyUserTracking struct {
+	// When enabled, Dynatrace places a [persistent cookie](https://dt-url.net/313o0p4n) on all end-user devices to identify returning users.
+	PersistentCookieEnabled bool `pulumi:"persistentCookieEnabled"`
+}
+
+// DataPrivacyUserTrackingInput is an input type that accepts DataPrivacyUserTrackingArgs and DataPrivacyUserTrackingOutput values.
+// You can construct a concrete instance of `DataPrivacyUserTrackingInput` via:
+//
+//	DataPrivacyUserTrackingArgs{...}
+type DataPrivacyUserTrackingInput interface {
+	pulumi.Input
+
+	ToDataPrivacyUserTrackingOutput() DataPrivacyUserTrackingOutput
+	ToDataPrivacyUserTrackingOutputWithContext(context.Context) DataPrivacyUserTrackingOutput
+}
+
+type DataPrivacyUserTrackingArgs struct {
+	// When enabled, Dynatrace places a [persistent cookie](https://dt-url.net/313o0p4n) on all end-user devices to identify returning users.
+	PersistentCookieEnabled pulumi.BoolInput `pulumi:"persistentCookieEnabled"`
+}
+
+func (DataPrivacyUserTrackingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DataPrivacyUserTracking)(nil)).Elem()
+}
+
+func (i DataPrivacyUserTrackingArgs) ToDataPrivacyUserTrackingOutput() DataPrivacyUserTrackingOutput {
+	return i.ToDataPrivacyUserTrackingOutputWithContext(context.Background())
+}
+
+func (i DataPrivacyUserTrackingArgs) ToDataPrivacyUserTrackingOutputWithContext(ctx context.Context) DataPrivacyUserTrackingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DataPrivacyUserTrackingOutput)
+}
+
+func (i DataPrivacyUserTrackingArgs) ToDataPrivacyUserTrackingPtrOutput() DataPrivacyUserTrackingPtrOutput {
+	return i.ToDataPrivacyUserTrackingPtrOutputWithContext(context.Background())
+}
+
+func (i DataPrivacyUserTrackingArgs) ToDataPrivacyUserTrackingPtrOutputWithContext(ctx context.Context) DataPrivacyUserTrackingPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DataPrivacyUserTrackingOutput).ToDataPrivacyUserTrackingPtrOutputWithContext(ctx)
+}
+
+// DataPrivacyUserTrackingPtrInput is an input type that accepts DataPrivacyUserTrackingArgs, DataPrivacyUserTrackingPtr and DataPrivacyUserTrackingPtrOutput values.
+// You can construct a concrete instance of `DataPrivacyUserTrackingPtrInput` via:
+//
+//	        DataPrivacyUserTrackingArgs{...}
+//
+//	or:
+//
+//	        nil
+type DataPrivacyUserTrackingPtrInput interface {
+	pulumi.Input
+
+	ToDataPrivacyUserTrackingPtrOutput() DataPrivacyUserTrackingPtrOutput
+	ToDataPrivacyUserTrackingPtrOutputWithContext(context.Context) DataPrivacyUserTrackingPtrOutput
+}
+
+type dataPrivacyUserTrackingPtrType DataPrivacyUserTrackingArgs
+
+func DataPrivacyUserTrackingPtr(v *DataPrivacyUserTrackingArgs) DataPrivacyUserTrackingPtrInput {
+	return (*dataPrivacyUserTrackingPtrType)(v)
+}
+
+func (*dataPrivacyUserTrackingPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DataPrivacyUserTracking)(nil)).Elem()
+}
+
+func (i *dataPrivacyUserTrackingPtrType) ToDataPrivacyUserTrackingPtrOutput() DataPrivacyUserTrackingPtrOutput {
+	return i.ToDataPrivacyUserTrackingPtrOutputWithContext(context.Background())
+}
+
+func (i *dataPrivacyUserTrackingPtrType) ToDataPrivacyUserTrackingPtrOutputWithContext(ctx context.Context) DataPrivacyUserTrackingPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DataPrivacyUserTrackingPtrOutput)
+}
+
+type DataPrivacyUserTrackingOutput struct{ *pulumi.OutputState }
+
+func (DataPrivacyUserTrackingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DataPrivacyUserTracking)(nil)).Elem()
+}
+
+func (o DataPrivacyUserTrackingOutput) ToDataPrivacyUserTrackingOutput() DataPrivacyUserTrackingOutput {
+	return o
+}
+
+func (o DataPrivacyUserTrackingOutput) ToDataPrivacyUserTrackingOutputWithContext(ctx context.Context) DataPrivacyUserTrackingOutput {
+	return o
+}
+
+func (o DataPrivacyUserTrackingOutput) ToDataPrivacyUserTrackingPtrOutput() DataPrivacyUserTrackingPtrOutput {
+	return o.ToDataPrivacyUserTrackingPtrOutputWithContext(context.Background())
+}
+
+func (o DataPrivacyUserTrackingOutput) ToDataPrivacyUserTrackingPtrOutputWithContext(ctx context.Context) DataPrivacyUserTrackingPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DataPrivacyUserTracking) *DataPrivacyUserTracking {
+		return &v
+	}).(DataPrivacyUserTrackingPtrOutput)
+}
+
+// When enabled, Dynatrace places a [persistent cookie](https://dt-url.net/313o0p4n) on all end-user devices to identify returning users.
+func (o DataPrivacyUserTrackingOutput) PersistentCookieEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v DataPrivacyUserTracking) bool { return v.PersistentCookieEnabled }).(pulumi.BoolOutput)
+}
+
+type DataPrivacyUserTrackingPtrOutput struct{ *pulumi.OutputState }
+
+func (DataPrivacyUserTrackingPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DataPrivacyUserTracking)(nil)).Elem()
+}
+
+func (o DataPrivacyUserTrackingPtrOutput) ToDataPrivacyUserTrackingPtrOutput() DataPrivacyUserTrackingPtrOutput {
+	return o
+}
+
+func (o DataPrivacyUserTrackingPtrOutput) ToDataPrivacyUserTrackingPtrOutputWithContext(ctx context.Context) DataPrivacyUserTrackingPtrOutput {
+	return o
+}
+
+func (o DataPrivacyUserTrackingPtrOutput) Elem() DataPrivacyUserTrackingOutput {
+	return o.ApplyT(func(v *DataPrivacyUserTracking) DataPrivacyUserTracking {
+		if v != nil {
+			return *v
+		}
+		var ret DataPrivacyUserTracking
+		return ret
+	}).(DataPrivacyUserTrackingOutput)
+}
+
+// When enabled, Dynatrace places a [persistent cookie](https://dt-url.net/313o0p4n) on all end-user devices to identify returning users.
+func (o DataPrivacyUserTrackingPtrOutput) PersistentCookieEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DataPrivacyUserTracking) *bool {
+		if v == nil {
+			return nil
+		}
+		return &v.PersistentCookieEnabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+type DatabaseAnomaliesDbConnectFailures struct {
+	// Number of failed database connections during any **eval_period** minutes period to trigger an alert
+	ConnectionFailsCount *int `pulumi:"connectionFailsCount"`
+	// The *X* minutes time period during which the **connection*fails*count** is evaluated
+	EvalPeriod *int `pulumi:"evalPeriod"`
+}
+
+// DatabaseAnomaliesDbConnectFailuresInput is an input type that accepts DatabaseAnomaliesDbConnectFailuresArgs and DatabaseAnomaliesDbConnectFailuresOutput values.
+// You can construct a concrete instance of `DatabaseAnomaliesDbConnectFailuresInput` via:
+//
+//	DatabaseAnomaliesDbConnectFailuresArgs{...}
+type DatabaseAnomaliesDbConnectFailuresInput interface {
+	pulumi.Input
+
+	ToDatabaseAnomaliesDbConnectFailuresOutput() DatabaseAnomaliesDbConnectFailuresOutput
+	ToDatabaseAnomaliesDbConnectFailuresOutputWithContext(context.Context) DatabaseAnomaliesDbConnectFailuresOutput
+}
+
+type DatabaseAnomaliesDbConnectFailuresArgs struct {
+	// Number of failed database connections during any **eval_period** minutes period to trigger an alert
+	ConnectionFailsCount pulumi.IntPtrInput `pulumi:"connectionFailsCount"`
+	// The *X* minutes time period during which the **connection*fails*count** is evaluated
+	EvalPeriod pulumi.IntPtrInput `pulumi:"evalPeriod"`
+}
+
+func (DatabaseAnomaliesDbConnectFailuresArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DatabaseAnomaliesDbConnectFailures)(nil)).Elem()
+}
+
+func (i DatabaseAnomaliesDbConnectFailuresArgs) ToDatabaseAnomaliesDbConnectFailuresOutput() DatabaseAnomaliesDbConnectFailuresOutput {
+	return i.ToDatabaseAnomaliesDbConnectFailuresOutputWithContext(context.Background())
+}
+
+func (i DatabaseAnomaliesDbConnectFailuresArgs) ToDatabaseAnomaliesDbConnectFailuresOutputWithContext(ctx context.Context) DatabaseAnomaliesDbConnectFailuresOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatabaseAnomaliesDbConnectFailuresOutput)
+}
+
+func (i DatabaseAnomaliesDbConnectFailuresArgs) ToDatabaseAnomaliesDbConnectFailuresPtrOutput() DatabaseAnomaliesDbConnectFailuresPtrOutput {
+	return i.ToDatabaseAnomaliesDbConnectFailuresPtrOutputWithContext(context.Background())
+}
+
+func (i DatabaseAnomaliesDbConnectFailuresArgs) ToDatabaseAnomaliesDbConnectFailuresPtrOutputWithContext(ctx context.Context) DatabaseAnomaliesDbConnectFailuresPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatabaseAnomaliesDbConnectFailuresOutput).ToDatabaseAnomaliesDbConnectFailuresPtrOutputWithContext(ctx)
+}
+
+// DatabaseAnomaliesDbConnectFailuresPtrInput is an input type that accepts DatabaseAnomaliesDbConnectFailuresArgs, DatabaseAnomaliesDbConnectFailuresPtr and DatabaseAnomaliesDbConnectFailuresPtrOutput values.
+// You can construct a concrete instance of `DatabaseAnomaliesDbConnectFailuresPtrInput` via:
+//
+//	        DatabaseAnomaliesDbConnectFailuresArgs{...}
+//
+//	or:
+//
+//	        nil
+type DatabaseAnomaliesDbConnectFailuresPtrInput interface {
+	pulumi.Input
+
+	ToDatabaseAnomaliesDbConnectFailuresPtrOutput() DatabaseAnomaliesDbConnectFailuresPtrOutput
+	ToDatabaseAnomaliesDbConnectFailuresPtrOutputWithContext(context.Context) DatabaseAnomaliesDbConnectFailuresPtrOutput
+}
+
+type databaseAnomaliesDbConnectFailuresPtrType DatabaseAnomaliesDbConnectFailuresArgs
+
+func DatabaseAnomaliesDbConnectFailuresPtr(v *DatabaseAnomaliesDbConnectFailuresArgs) DatabaseAnomaliesDbConnectFailuresPtrInput {
+	return (*databaseAnomaliesDbConnectFailuresPtrType)(v)
+}
+
+func (*databaseAnomaliesDbConnectFailuresPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DatabaseAnomaliesDbConnectFailures)(nil)).Elem()
+}
+
+func (i *databaseAnomaliesDbConnectFailuresPtrType) ToDatabaseAnomaliesDbConnectFailuresPtrOutput() DatabaseAnomaliesDbConnectFailuresPtrOutput {
+	return i.ToDatabaseAnomaliesDbConnectFailuresPtrOutputWithContext(context.Background())
+}
+
+func (i *databaseAnomaliesDbConnectFailuresPtrType) ToDatabaseAnomaliesDbConnectFailuresPtrOutputWithContext(ctx context.Context) DatabaseAnomaliesDbConnectFailuresPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatabaseAnomaliesDbConnectFailuresPtrOutput)
+}
+
+type DatabaseAnomaliesDbConnectFailuresOutput struct{ *pulumi.OutputState }
+
+func (DatabaseAnomaliesDbConnectFailuresOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DatabaseAnomaliesDbConnectFailures)(nil)).Elem()
+}
+
+func (o DatabaseAnomaliesDbConnectFailuresOutput) ToDatabaseAnomaliesDbConnectFailuresOutput() DatabaseAnomaliesDbConnectFailuresOutput {
+	return o
+}
+
+func (o DatabaseAnomaliesDbConnectFailuresOutput) ToDatabaseAnomaliesDbConnectFailuresOutputWithContext(ctx context.Context) DatabaseAnomaliesDbConnectFailuresOutput {
+	return o
+}
+
+func (o DatabaseAnomaliesDbConnectFailuresOutput) ToDatabaseAnomaliesDbConnectFailuresPtrOutput() DatabaseAnomaliesDbConnectFailuresPtrOutput {
+	return o.ToDatabaseAnomaliesDbConnectFailuresPtrOutputWithContext(context.Background())
+}
+
+func (o DatabaseAnomaliesDbConnectFailuresOutput) ToDatabaseAnomaliesDbConnectFailuresPtrOutputWithContext(ctx context.Context) DatabaseAnomaliesDbConnectFailuresPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DatabaseAnomaliesDbConnectFailures) *DatabaseAnomaliesDbConnectFailures {
+		return &v
+	}).(DatabaseAnomaliesDbConnectFailuresPtrOutput)
+}
+
+// Number of failed database connections during any **eval_period** minutes period to trigger an alert
+func (o DatabaseAnomaliesDbConnectFailuresOutput) ConnectionFailsCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v DatabaseAnomaliesDbConnectFailures) *int { return v.ConnectionFailsCount }).(pulumi.IntPtrOutput)
+}
+
+// The *X* minutes time period during which the **connection*fails*count** is evaluated
+func (o DatabaseAnomaliesDbConnectFailuresOutput) EvalPeriod() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v DatabaseAnomaliesDbConnectFailures) *int { return v.EvalPeriod }).(pulumi.IntPtrOutput)
+}
+
+type DatabaseAnomaliesDbConnectFailuresPtrOutput struct{ *pulumi.OutputState }
+
+func (DatabaseAnomaliesDbConnectFailuresPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DatabaseAnomaliesDbConnectFailures)(nil)).Elem()
+}
+
+func (o DatabaseAnomaliesDbConnectFailuresPtrOutput) ToDatabaseAnomaliesDbConnectFailuresPtrOutput() DatabaseAnomaliesDbConnectFailuresPtrOutput {
+	return o
+}
+
+func (o DatabaseAnomaliesDbConnectFailuresPtrOutput) ToDatabaseAnomaliesDbConnectFailuresPtrOutputWithContext(ctx context.Context) DatabaseAnomaliesDbConnectFailuresPtrOutput {
+	return o
+}
+
+func (o DatabaseAnomaliesDbConnectFailuresPtrOutput) Elem() DatabaseAnomaliesDbConnectFailuresOutput {
+	return o.ApplyT(func(v *DatabaseAnomaliesDbConnectFailures) DatabaseAnomaliesDbConnectFailures {
+		if v != nil {
+			return *v
+		}
+		var ret DatabaseAnomaliesDbConnectFailures
+		return ret
+	}).(DatabaseAnomaliesDbConnectFailuresOutput)
+}
+
+// Number of failed database connections during any **eval_period** minutes period to trigger an alert
+func (o DatabaseAnomaliesDbConnectFailuresPtrOutput) ConnectionFailsCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DatabaseAnomaliesDbConnectFailures) *int {
+		if v == nil {
+			return nil
+		}
+		return v.ConnectionFailsCount
+	}).(pulumi.IntPtrOutput)
+}
+
+// The *X* minutes time period during which the **connection*fails*count** is evaluated
+func (o DatabaseAnomaliesDbConnectFailuresPtrOutput) EvalPeriod() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DatabaseAnomaliesDbConnectFailures) *int {
+		if v == nil {
+			return nil
+		}
+		return v.EvalPeriod
+	}).(pulumi.IntPtrOutput)
+}
+
+type DatabaseAnomaliesFailureRate struct {
+	// Parameters of failure rate increase auto-detection. Example: If the expected error rate is 1.5%, and you set an absolute increase of 1%, and a relative increase of 50%, the thresholds will be:  Absolute: 1.5% + **1%** = 2.5%  Relative: 1.5% + 1.5% * **50%** = 2.25%
+	Auto *DatabaseAnomaliesFailureRateAuto `pulumi:"auto"`
+	// Fixed thresholds for failure rate increase detection
+	Thresholds *DatabaseAnomaliesFailureRateThresholds `pulumi:"thresholds"`
+}
+
+// DatabaseAnomaliesFailureRateInput is an input type that accepts DatabaseAnomaliesFailureRateArgs and DatabaseAnomaliesFailureRateOutput values.
+// You can construct a concrete instance of `DatabaseAnomaliesFailureRateInput` via:
+//
+//	DatabaseAnomaliesFailureRateArgs{...}
+type DatabaseAnomaliesFailureRateInput interface {
+	pulumi.Input
+
+	ToDatabaseAnomaliesFailureRateOutput() DatabaseAnomaliesFailureRateOutput
+	ToDatabaseAnomaliesFailureRateOutputWithContext(context.Context) DatabaseAnomaliesFailureRateOutput
+}
+
+type DatabaseAnomaliesFailureRateArgs struct {
+	// Parameters of failure rate increase auto-detection. Example: If the expected error rate is 1.5%, and you set an absolute increase of 1%, and a relative increase of 50%, the thresholds will be:  Absolute: 1.5% + **1%** = 2.5%  Relative: 1.5% + 1.5% * **50%** = 2.25%
+	Auto DatabaseAnomaliesFailureRateAutoPtrInput `pulumi:"auto"`
+	// Fixed thresholds for failure rate increase detection
+	Thresholds DatabaseAnomaliesFailureRateThresholdsPtrInput `pulumi:"thresholds"`
+}
+
+func (DatabaseAnomaliesFailureRateArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DatabaseAnomaliesFailureRate)(nil)).Elem()
+}
+
+func (i DatabaseAnomaliesFailureRateArgs) ToDatabaseAnomaliesFailureRateOutput() DatabaseAnomaliesFailureRateOutput {
+	return i.ToDatabaseAnomaliesFailureRateOutputWithContext(context.Background())
+}
+
+func (i DatabaseAnomaliesFailureRateArgs) ToDatabaseAnomaliesFailureRateOutputWithContext(ctx context.Context) DatabaseAnomaliesFailureRateOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatabaseAnomaliesFailureRateOutput)
+}
+
+func (i DatabaseAnomaliesFailureRateArgs) ToDatabaseAnomaliesFailureRatePtrOutput() DatabaseAnomaliesFailureRatePtrOutput {
+	return i.ToDatabaseAnomaliesFailureRatePtrOutputWithContext(context.Background())
+}
+
+func (i DatabaseAnomaliesFailureRateArgs) ToDatabaseAnomaliesFailureRatePtrOutputWithContext(ctx context.Context) DatabaseAnomaliesFailureRatePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatabaseAnomaliesFailureRateOutput).ToDatabaseAnomaliesFailureRatePtrOutputWithContext(ctx)
+}
+
+// DatabaseAnomaliesFailureRatePtrInput is an input type that accepts DatabaseAnomaliesFailureRateArgs, DatabaseAnomaliesFailureRatePtr and DatabaseAnomaliesFailureRatePtrOutput values.
+// You can construct a concrete instance of `DatabaseAnomaliesFailureRatePtrInput` via:
+//
+//	        DatabaseAnomaliesFailureRateArgs{...}
+//
+//	or:
+//
+//	        nil
+type DatabaseAnomaliesFailureRatePtrInput interface {
+	pulumi.Input
+
+	ToDatabaseAnomaliesFailureRatePtrOutput() DatabaseAnomaliesFailureRatePtrOutput
+	ToDatabaseAnomaliesFailureRatePtrOutputWithContext(context.Context) DatabaseAnomaliesFailureRatePtrOutput
+}
+
+type databaseAnomaliesFailureRatePtrType DatabaseAnomaliesFailureRateArgs
+
+func DatabaseAnomaliesFailureRatePtr(v *DatabaseAnomaliesFailureRateArgs) DatabaseAnomaliesFailureRatePtrInput {
+	return (*databaseAnomaliesFailureRatePtrType)(v)
+}
+
+func (*databaseAnomaliesFailureRatePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DatabaseAnomaliesFailureRate)(nil)).Elem()
+}
+
+func (i *databaseAnomaliesFailureRatePtrType) ToDatabaseAnomaliesFailureRatePtrOutput() DatabaseAnomaliesFailureRatePtrOutput {
+	return i.ToDatabaseAnomaliesFailureRatePtrOutputWithContext(context.Background())
+}
+
+func (i *databaseAnomaliesFailureRatePtrType) ToDatabaseAnomaliesFailureRatePtrOutputWithContext(ctx context.Context) DatabaseAnomaliesFailureRatePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatabaseAnomaliesFailureRatePtrOutput)
+}
+
+type DatabaseAnomaliesFailureRateOutput struct{ *pulumi.OutputState }
+
+func (DatabaseAnomaliesFailureRateOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DatabaseAnomaliesFailureRate)(nil)).Elem()
+}
+
+func (o DatabaseAnomaliesFailureRateOutput) ToDatabaseAnomaliesFailureRateOutput() DatabaseAnomaliesFailureRateOutput {
+	return o
+}
+
+func (o DatabaseAnomaliesFailureRateOutput) ToDatabaseAnomaliesFailureRateOutputWithContext(ctx context.Context) DatabaseAnomaliesFailureRateOutput {
+	return o
+}
+
+func (o DatabaseAnomaliesFailureRateOutput) ToDatabaseAnomaliesFailureRatePtrOutput() DatabaseAnomaliesFailureRatePtrOutput {
+	return o.ToDatabaseAnomaliesFailureRatePtrOutputWithContext(context.Background())
+}
+
+func (o DatabaseAnomaliesFailureRateOutput) ToDatabaseAnomaliesFailureRatePtrOutputWithContext(ctx context.Context) DatabaseAnomaliesFailureRatePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DatabaseAnomaliesFailureRate) *DatabaseAnomaliesFailureRate {
+		return &v
+	}).(DatabaseAnomaliesFailureRatePtrOutput)
+}
+
+// Parameters of failure rate increase auto-detection. Example: If the expected error rate is 1.5%, and you set an absolute increase of 1%, and a relative increase of 50%, the thresholds will be:  Absolute: 1.5% + **1%** = 2.5%  Relative: 1.5% + 1.5% * **50%** = 2.25%
+func (o DatabaseAnomaliesFailureRateOutput) Auto() DatabaseAnomaliesFailureRateAutoPtrOutput {
+	return o.ApplyT(func(v DatabaseAnomaliesFailureRate) *DatabaseAnomaliesFailureRateAuto { return v.Auto }).(DatabaseAnomaliesFailureRateAutoPtrOutput)
+}
+
+// Fixed thresholds for failure rate increase detection
+func (o DatabaseAnomaliesFailureRateOutput) Thresholds() DatabaseAnomaliesFailureRateThresholdsPtrOutput {
+	return o.ApplyT(func(v DatabaseAnomaliesFailureRate) *DatabaseAnomaliesFailureRateThresholds { return v.Thresholds }).(DatabaseAnomaliesFailureRateThresholdsPtrOutput)
+}
+
+type DatabaseAnomaliesFailureRatePtrOutput struct{ *pulumi.OutputState }
+
+func (DatabaseAnomaliesFailureRatePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DatabaseAnomaliesFailureRate)(nil)).Elem()
+}
+
+func (o DatabaseAnomaliesFailureRatePtrOutput) ToDatabaseAnomaliesFailureRatePtrOutput() DatabaseAnomaliesFailureRatePtrOutput {
+	return o
+}
+
+func (o DatabaseAnomaliesFailureRatePtrOutput) ToDatabaseAnomaliesFailureRatePtrOutputWithContext(ctx context.Context) DatabaseAnomaliesFailureRatePtrOutput {
+	return o
+}
+
+func (o DatabaseAnomaliesFailureRatePtrOutput) Elem() DatabaseAnomaliesFailureRateOutput {
+	return o.ApplyT(func(v *DatabaseAnomaliesFailureRate) DatabaseAnomaliesFailureRate {
+		if v != nil {
+			return *v
+		}
+		var ret DatabaseAnomaliesFailureRate
+		return ret
+	}).(DatabaseAnomaliesFailureRateOutput)
+}
+
+// Parameters of failure rate increase auto-detection. Example: If the expected error rate is 1.5%, and you set an absolute increase of 1%, and a relative increase of 50%, the thresholds will be:  Absolute: 1.5% + **1%** = 2.5%  Relative: 1.5% + 1.5% * **50%** = 2.25%
+func (o DatabaseAnomaliesFailureRatePtrOutput) Auto() DatabaseAnomaliesFailureRateAutoPtrOutput {
+	return o.ApplyT(func(v *DatabaseAnomaliesFailureRate) *DatabaseAnomaliesFailureRateAuto {
+		if v == nil {
+			return nil
+		}
+		return v.Auto
+	}).(DatabaseAnomaliesFailureRateAutoPtrOutput)
+}
+
+// Fixed thresholds for failure rate increase detection
+func (o DatabaseAnomaliesFailureRatePtrOutput) Thresholds() DatabaseAnomaliesFailureRateThresholdsPtrOutput {
+	return o.ApplyT(func(v *DatabaseAnomaliesFailureRate) *DatabaseAnomaliesFailureRateThresholds {
+		if v == nil {
+			return nil
+		}
+		return v.Thresholds
+	}).(DatabaseAnomaliesFailureRateThresholdsPtrOutput)
+}
+
 type DatabaseAnomaliesFailureRateAuto struct {
 	// Absolute increase of failing service calls to trigger an alert, %
 	Absolute int `pulumi:"absolute"`
@@ -49207,13 +49656,13 @@ type HttpMonitorTagTag struct {
 	Context string `pulumi:"context"`
 	// The key of the tag.
 	//
-	// Custom tags have the tag value here.
+	//   Custom tags have the tag value here.
 	Key string `pulumi:"key"`
 	// The source of the tag. Supported values are `USER`, `RULE_BASED` and `AUTO`.
 	Source *string `pulumi:"source"`
 	// The value of the tag.
 	//
-	// Not applicable to custom tags.
+	//   Not applicable to custom tags.
 	Value *string `pulumi:"value"`
 }
 
@@ -49233,13 +49682,13 @@ type HttpMonitorTagTagArgs struct {
 	Context pulumi.StringInput `pulumi:"context"`
 	// The key of the tag.
 	//
-	// Custom tags have the tag value here.
+	//   Custom tags have the tag value here.
 	Key pulumi.StringInput `pulumi:"key"`
 	// The source of the tag. Supported values are `USER`, `RULE_BASED` and `AUTO`.
 	Source pulumi.StringPtrInput `pulumi:"source"`
 	// The value of the tag.
 	//
-	// Not applicable to custom tags.
+	//   Not applicable to custom tags.
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -49301,7 +49750,7 @@ func (o HttpMonitorTagTagOutput) Context() pulumi.StringOutput {
 
 // The key of the tag.
 //
-// Custom tags have the tag value here.
+//	Custom tags have the tag value here.
 func (o HttpMonitorTagTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v HttpMonitorTagTag) string { return v.Key }).(pulumi.StringOutput)
 }
@@ -49313,7 +49762,7 @@ func (o HttpMonitorTagTagOutput) Source() pulumi.StringPtrOutput {
 
 // The value of the tag.
 //
-// Not applicable to custom tags.
+//	Not applicable to custom tags.
 func (o HttpMonitorTagTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v HttpMonitorTagTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -76221,409 +76670,13 @@ func (o ManagementZoneRuleConditionOsArchArrayOutput) Index(i pulumi.IntInput) M
 	}).(ManagementZoneRuleConditionOsArchOutput)
 }
 
-type ManagementZoneRuleConditionOsType struct {
-	// Reverses the operator. For example it turns the **begins with** into **does not begin with**
-	Negate *bool `pulumi:"negate"`
-	// Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
-	Operator string `pulumi:"operator"`
-	// Any attributes that aren't yet supported by this provider
-	Unknowns *string `pulumi:"unknowns"`
-	// The value to compare to. Possible values are AIX, DARWIN, HPUX, LINUX, SOLARIS, WINDOWS and ZOS.
-	Value *string `pulumi:"value"`
-}
-
-// ManagementZoneRuleConditionOsTypeInput is an input type that accepts ManagementZoneRuleConditionOsTypeArgs and ManagementZoneRuleConditionOsTypeOutput values.
-// You can construct a concrete instance of `ManagementZoneRuleConditionOsTypeInput` via:
-//
-//	ManagementZoneRuleConditionOsTypeArgs{...}
-type ManagementZoneRuleConditionOsTypeInput interface {
-	pulumi.Input
-
-	ToManagementZoneRuleConditionOsTypeOutput() ManagementZoneRuleConditionOsTypeOutput
-	ToManagementZoneRuleConditionOsTypeOutputWithContext(context.Context) ManagementZoneRuleConditionOsTypeOutput
-}
-
-type ManagementZoneRuleConditionOsTypeArgs struct {
-	// Reverses the operator. For example it turns the **begins with** into **does not begin with**
-	Negate pulumi.BoolPtrInput `pulumi:"negate"`
-	// Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
-	Operator pulumi.StringInput `pulumi:"operator"`
-	// Any attributes that aren't yet supported by this provider
-	Unknowns pulumi.StringPtrInput `pulumi:"unknowns"`
-	// The value to compare to. Possible values are AIX, DARWIN, HPUX, LINUX, SOLARIS, WINDOWS and ZOS.
-	Value pulumi.StringPtrInput `pulumi:"value"`
-}
-
-func (ManagementZoneRuleConditionOsTypeArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*ManagementZoneRuleConditionOsType)(nil)).Elem()
-}
-
-func (i ManagementZoneRuleConditionOsTypeArgs) ToManagementZoneRuleConditionOsTypeOutput() ManagementZoneRuleConditionOsTypeOutput {
-	return i.ToManagementZoneRuleConditionOsTypeOutputWithContext(context.Background())
-}
-
-func (i ManagementZoneRuleConditionOsTypeArgs) ToManagementZoneRuleConditionOsTypeOutputWithContext(ctx context.Context) ManagementZoneRuleConditionOsTypeOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ManagementZoneRuleConditionOsTypeOutput)
-}
-
-// ManagementZoneRuleConditionOsTypeArrayInput is an input type that accepts ManagementZoneRuleConditionOsTypeArray and ManagementZoneRuleConditionOsTypeArrayOutput values.
-// You can construct a concrete instance of `ManagementZoneRuleConditionOsTypeArrayInput` via:
-//
-//	ManagementZoneRuleConditionOsTypeArray{ ManagementZoneRuleConditionOsTypeArgs{...} }
-type ManagementZoneRuleConditionOsTypeArrayInput interface {
-	pulumi.Input
-
-	ToManagementZoneRuleConditionOsTypeArrayOutput() ManagementZoneRuleConditionOsTypeArrayOutput
-	ToManagementZoneRuleConditionOsTypeArrayOutputWithContext(context.Context) ManagementZoneRuleConditionOsTypeArrayOutput
-}
-
-type ManagementZoneRuleConditionOsTypeArray []ManagementZoneRuleConditionOsTypeInput
-
-func (ManagementZoneRuleConditionOsTypeArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ManagementZoneRuleConditionOsType)(nil)).Elem()
-}
-
-func (i ManagementZoneRuleConditionOsTypeArray) ToManagementZoneRuleConditionOsTypeArrayOutput() ManagementZoneRuleConditionOsTypeArrayOutput {
-	return i.ToManagementZoneRuleConditionOsTypeArrayOutputWithContext(context.Background())
-}
-
-func (i ManagementZoneRuleConditionOsTypeArray) ToManagementZoneRuleConditionOsTypeArrayOutputWithContext(ctx context.Context) ManagementZoneRuleConditionOsTypeArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ManagementZoneRuleConditionOsTypeArrayOutput)
-}
-
-type ManagementZoneRuleConditionOsTypeOutput struct{ *pulumi.OutputState }
-
-func (ManagementZoneRuleConditionOsTypeOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*ManagementZoneRuleConditionOsType)(nil)).Elem()
-}
-
-func (o ManagementZoneRuleConditionOsTypeOutput) ToManagementZoneRuleConditionOsTypeOutput() ManagementZoneRuleConditionOsTypeOutput {
-	return o
-}
-
-func (o ManagementZoneRuleConditionOsTypeOutput) ToManagementZoneRuleConditionOsTypeOutputWithContext(ctx context.Context) ManagementZoneRuleConditionOsTypeOutput {
-	return o
-}
-
-// Reverses the operator. For example it turns the **begins with** into **does not begin with**
-func (o ManagementZoneRuleConditionOsTypeOutput) Negate() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v ManagementZoneRuleConditionOsType) *bool { return v.Negate }).(pulumi.BoolPtrOutput)
-}
-
-// Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
-func (o ManagementZoneRuleConditionOsTypeOutput) Operator() pulumi.StringOutput {
-	return o.ApplyT(func(v ManagementZoneRuleConditionOsType) string { return v.Operator }).(pulumi.StringOutput)
-}
-
-// Any attributes that aren't yet supported by this provider
-func (o ManagementZoneRuleConditionOsTypeOutput) Unknowns() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ManagementZoneRuleConditionOsType) *string { return v.Unknowns }).(pulumi.StringPtrOutput)
-}
-
-// The value to compare to. Possible values are AIX, DARWIN, HPUX, LINUX, SOLARIS, WINDOWS and ZOS.
-func (o ManagementZoneRuleConditionOsTypeOutput) Value() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ManagementZoneRuleConditionOsType) *string { return v.Value }).(pulumi.StringPtrOutput)
-}
-
-type ManagementZoneRuleConditionOsTypeArrayOutput struct{ *pulumi.OutputState }
-
-func (ManagementZoneRuleConditionOsTypeArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ManagementZoneRuleConditionOsType)(nil)).Elem()
-}
-
-func (o ManagementZoneRuleConditionOsTypeArrayOutput) ToManagementZoneRuleConditionOsTypeArrayOutput() ManagementZoneRuleConditionOsTypeArrayOutput {
-	return o
-}
-
-func (o ManagementZoneRuleConditionOsTypeArrayOutput) ToManagementZoneRuleConditionOsTypeArrayOutputWithContext(ctx context.Context) ManagementZoneRuleConditionOsTypeArrayOutput {
-	return o
-}
-
-func (o ManagementZoneRuleConditionOsTypeArrayOutput) Index(i pulumi.IntInput) ManagementZoneRuleConditionOsTypeOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ManagementZoneRuleConditionOsType {
-		return vs[0].([]ManagementZoneRuleConditionOsType)[vs[1].(int)]
-	}).(ManagementZoneRuleConditionOsTypeOutput)
-}
-
-type ManagementZoneRuleConditionOsarchitectureComparison struct {
-	// Reverses the operator. For example it turns the **begins with** into **does not begin with**
-	Negate *bool `pulumi:"negate"`
-	// Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
-	Operator string `pulumi:"operator"`
-	// if specified, needs to be OS_ARCHITECTURE
-	//
-	// Deprecated: The value of the attribute type is implicit, therefore shouldn't get specified
-	Type *string `pulumi:"type"`
-	// Any attributes that aren't yet supported by this provider
-	Unknowns *string `pulumi:"unknowns"`
-	// The value to compare to. Possible values are ARM, IA64, PARISC, PPC, PPCLE, S390, SPARC, X86 and ZOS.
-	Value *string `pulumi:"value"`
-}
-
-// ManagementZoneRuleConditionOsarchitectureComparisonInput is an input type that accepts ManagementZoneRuleConditionOsarchitectureComparisonArgs and ManagementZoneRuleConditionOsarchitectureComparisonOutput values.
-// You can construct a concrete instance of `ManagementZoneRuleConditionOsarchitectureComparisonInput` via:
-//
-//	ManagementZoneRuleConditionOsarchitectureComparisonArgs{...}
-type ManagementZoneRuleConditionOsarchitectureComparisonInput interface {
-	pulumi.Input
-
-	ToManagementZoneRuleConditionOsarchitectureComparisonOutput() ManagementZoneRuleConditionOsarchitectureComparisonOutput
-	ToManagementZoneRuleConditionOsarchitectureComparisonOutputWithContext(context.Context) ManagementZoneRuleConditionOsarchitectureComparisonOutput
-}
-
-type ManagementZoneRuleConditionOsarchitectureComparisonArgs struct {
-	// Reverses the operator. For example it turns the **begins with** into **does not begin with**
-	Negate pulumi.BoolPtrInput `pulumi:"negate"`
-	// Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
-	Operator pulumi.StringInput `pulumi:"operator"`
-	// if specified, needs to be OS_ARCHITECTURE
-	//
-	// Deprecated: The value of the attribute type is implicit, therefore shouldn't get specified
-	Type pulumi.StringPtrInput `pulumi:"type"`
-	// Any attributes that aren't yet supported by this provider
-	Unknowns pulumi.StringPtrInput `pulumi:"unknowns"`
-	// The value to compare to. Possible values are ARM, IA64, PARISC, PPC, PPCLE, S390, SPARC, X86 and ZOS.
-	Value pulumi.StringPtrInput `pulumi:"value"`
-}
-
-func (ManagementZoneRuleConditionOsarchitectureComparisonArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*ManagementZoneRuleConditionOsarchitectureComparison)(nil)).Elem()
-}
-
-func (i ManagementZoneRuleConditionOsarchitectureComparisonArgs) ToManagementZoneRuleConditionOsarchitectureComparisonOutput() ManagementZoneRuleConditionOsarchitectureComparisonOutput {
-	return i.ToManagementZoneRuleConditionOsarchitectureComparisonOutputWithContext(context.Background())
-}
-
-func (i ManagementZoneRuleConditionOsarchitectureComparisonArgs) ToManagementZoneRuleConditionOsarchitectureComparisonOutputWithContext(ctx context.Context) ManagementZoneRuleConditionOsarchitectureComparisonOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ManagementZoneRuleConditionOsarchitectureComparisonOutput)
-}
-
-// ManagementZoneRuleConditionOsarchitectureComparisonArrayInput is an input type that accepts ManagementZoneRuleConditionOsarchitectureComparisonArray and ManagementZoneRuleConditionOsarchitectureComparisonArrayOutput values.
-// You can construct a concrete instance of `ManagementZoneRuleConditionOsarchitectureComparisonArrayInput` via:
-//
-//	ManagementZoneRuleConditionOsarchitectureComparisonArray{ ManagementZoneRuleConditionOsarchitectureComparisonArgs{...} }
-type ManagementZoneRuleConditionOsarchitectureComparisonArrayInput interface {
-	pulumi.Input
-
-	ToManagementZoneRuleConditionOsarchitectureComparisonArrayOutput() ManagementZoneRuleConditionOsarchitectureComparisonArrayOutput
-	ToManagementZoneRuleConditionOsarchitectureComparisonArrayOutputWithContext(context.Context) ManagementZoneRuleConditionOsarchitectureComparisonArrayOutput
-}
-
-type ManagementZoneRuleConditionOsarchitectureComparisonArray []ManagementZoneRuleConditionOsarchitectureComparisonInput
-
-func (ManagementZoneRuleConditionOsarchitectureComparisonArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ManagementZoneRuleConditionOsarchitectureComparison)(nil)).Elem()
-}
-
-func (i ManagementZoneRuleConditionOsarchitectureComparisonArray) ToManagementZoneRuleConditionOsarchitectureComparisonArrayOutput() ManagementZoneRuleConditionOsarchitectureComparisonArrayOutput {
-	return i.ToManagementZoneRuleConditionOsarchitectureComparisonArrayOutputWithContext(context.Background())
-}
-
-func (i ManagementZoneRuleConditionOsarchitectureComparisonArray) ToManagementZoneRuleConditionOsarchitectureComparisonArrayOutputWithContext(ctx context.Context) ManagementZoneRuleConditionOsarchitectureComparisonArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ManagementZoneRuleConditionOsarchitectureComparisonArrayOutput)
-}
-
-type ManagementZoneRuleConditionOsarchitectureComparisonOutput struct{ *pulumi.OutputState }
-
-func (ManagementZoneRuleConditionOsarchitectureComparisonOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*ManagementZoneRuleConditionOsarchitectureComparison)(nil)).Elem()
-}
-
-func (o ManagementZoneRuleConditionOsarchitectureComparisonOutput) ToManagementZoneRuleConditionOsarchitectureComparisonOutput() ManagementZoneRuleConditionOsarchitectureComparisonOutput {
-	return o
-}
-
-func (o ManagementZoneRuleConditionOsarchitectureComparisonOutput) ToManagementZoneRuleConditionOsarchitectureComparisonOutputWithContext(ctx context.Context) ManagementZoneRuleConditionOsarchitectureComparisonOutput {
-	return o
-}
-
-// Reverses the operator. For example it turns the **begins with** into **does not begin with**
-func (o ManagementZoneRuleConditionOsarchitectureComparisonOutput) Negate() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v ManagementZoneRuleConditionOsarchitectureComparison) *bool { return v.Negate }).(pulumi.BoolPtrOutput)
-}
-
-// Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
-func (o ManagementZoneRuleConditionOsarchitectureComparisonOutput) Operator() pulumi.StringOutput {
-	return o.ApplyT(func(v ManagementZoneRuleConditionOsarchitectureComparison) string { return v.Operator }).(pulumi.StringOutput)
-}
-
-// if specified, needs to be OS_ARCHITECTURE
-//
-// Deprecated: The value of the attribute type is implicit, therefore shouldn't get specified
-func (o ManagementZoneRuleConditionOsarchitectureComparisonOutput) Type() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ManagementZoneRuleConditionOsarchitectureComparison) *string { return v.Type }).(pulumi.StringPtrOutput)
-}
-
-// Any attributes that aren't yet supported by this provider
-func (o ManagementZoneRuleConditionOsarchitectureComparisonOutput) Unknowns() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ManagementZoneRuleConditionOsarchitectureComparison) *string { return v.Unknowns }).(pulumi.StringPtrOutput)
-}
-
-// The value to compare to. Possible values are ARM, IA64, PARISC, PPC, PPCLE, S390, SPARC, X86 and ZOS.
-func (o ManagementZoneRuleConditionOsarchitectureComparisonOutput) Value() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ManagementZoneRuleConditionOsarchitectureComparison) *string { return v.Value }).(pulumi.StringPtrOutput)
-}
-
-type ManagementZoneRuleConditionOsarchitectureComparisonArrayOutput struct{ *pulumi.OutputState }
-
-func (ManagementZoneRuleConditionOsarchitectureComparisonArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ManagementZoneRuleConditionOsarchitectureComparison)(nil)).Elem()
-}
-
-func (o ManagementZoneRuleConditionOsarchitectureComparisonArrayOutput) ToManagementZoneRuleConditionOsarchitectureComparisonArrayOutput() ManagementZoneRuleConditionOsarchitectureComparisonArrayOutput {
-	return o
-}
-
-func (o ManagementZoneRuleConditionOsarchitectureComparisonArrayOutput) ToManagementZoneRuleConditionOsarchitectureComparisonArrayOutputWithContext(ctx context.Context) ManagementZoneRuleConditionOsarchitectureComparisonArrayOutput {
-	return o
-}
-
-func (o ManagementZoneRuleConditionOsarchitectureComparisonArrayOutput) Index(i pulumi.IntInput) ManagementZoneRuleConditionOsarchitectureComparisonOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ManagementZoneRuleConditionOsarchitectureComparison {
-		return vs[0].([]ManagementZoneRuleConditionOsarchitectureComparison)[vs[1].(int)]
-	}).(ManagementZoneRuleConditionOsarchitectureComparisonOutput)
-}
-
-type ManagementZoneRuleConditionOstypeComparison struct {
-	// Reverses the operator. For example it turns the **begins with** into **does not begin with**
-	Negate *bool `pulumi:"negate"`
-	// Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
-	Operator string `pulumi:"operator"`
-	// if specified, needs to be OS_TYPE
-	//
-	// Deprecated: The value of the attribute type is implicit, therefore shouldn't get specified
-	Type *string `pulumi:"type"`
-	// Any attributes that aren't yet supported by this provider
-	Unknowns *string `pulumi:"unknowns"`
-	// The value to compare to. Possible values are AIX, DARWIN, HPUX, LINUX, SOLARIS, WINDOWS and ZOS.
-	Value *string `pulumi:"value"`
-}
-
-// ManagementZoneRuleConditionOstypeComparisonInput is an input type that accepts ManagementZoneRuleConditionOstypeComparisonArgs and ManagementZoneRuleConditionOstypeComparisonOutput values.
-// You can construct a concrete instance of `ManagementZoneRuleConditionOstypeComparisonInput` via:
-//
-//	ManagementZoneRuleConditionOstypeComparisonArgs{...}
-type ManagementZoneRuleConditionOstypeComparisonInput interface {
-	pulumi.Input
-
-	ToManagementZoneRuleConditionOstypeComparisonOutput() ManagementZoneRuleConditionOstypeComparisonOutput
-	ToManagementZoneRuleConditionOstypeComparisonOutputWithContext(context.Context) ManagementZoneRuleConditionOstypeComparisonOutput
-}
-
-type ManagementZoneRuleConditionOstypeComparisonArgs struct {
-	// Reverses the operator. For example it turns the **begins with** into **does not begin with**
-	Negate pulumi.BoolPtrInput `pulumi:"negate"`
-	// Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
-	Operator pulumi.StringInput `pulumi:"operator"`
-	// if specified, needs to be OS_TYPE
-	//
-	// Deprecated: The value of the attribute type is implicit, therefore shouldn't get specified
-	Type pulumi.StringPtrInput `pulumi:"type"`
-	// Any attributes that aren't yet supported by this provider
-	Unknowns pulumi.StringPtrInput `pulumi:"unknowns"`
-	// The value to compare to. Possible values are AIX, DARWIN, HPUX, LINUX, SOLARIS, WINDOWS and ZOS.
-	Value pulumi.StringPtrInput `pulumi:"value"`
-}
-
-func (ManagementZoneRuleConditionOstypeComparisonArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*ManagementZoneRuleConditionOstypeComparison)(nil)).Elem()
-}
-
-func (i ManagementZoneRuleConditionOstypeComparisonArgs) ToManagementZoneRuleConditionOstypeComparisonOutput() ManagementZoneRuleConditionOstypeComparisonOutput {
-	return i.ToManagementZoneRuleConditionOstypeComparisonOutputWithContext(context.Background())
-}
-
-func (i ManagementZoneRuleConditionOstypeComparisonArgs) ToManagementZoneRuleConditionOstypeComparisonOutputWithContext(ctx context.Context) ManagementZoneRuleConditionOstypeComparisonOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ManagementZoneRuleConditionOstypeComparisonOutput)
-}
-
-// ManagementZoneRuleConditionOstypeComparisonArrayInput is an input type that accepts ManagementZoneRuleConditionOstypeComparisonArray and ManagementZoneRuleConditionOstypeComparisonArrayOutput values.
-// You can construct a concrete instance of `ManagementZoneRuleConditionOstypeComparisonArrayInput` via:
-//
-//	ManagementZoneRuleConditionOstypeComparisonArray{ ManagementZoneRuleConditionOstypeComparisonArgs{...} }
-type ManagementZoneRuleConditionOstypeComparisonArrayInput interface {
-	pulumi.Input
-
-	ToManagementZoneRuleConditionOstypeComparisonArrayOutput() ManagementZoneRuleConditionOstypeComparisonArrayOutput
-	ToManagementZoneRuleConditionOstypeComparisonArrayOutputWithContext(context.Context) ManagementZoneRuleConditionOstypeComparisonArrayOutput
-}
-
-type ManagementZoneRuleConditionOstypeComparisonArray []ManagementZoneRuleConditionOstypeComparisonInput
-
-func (ManagementZoneRuleConditionOstypeComparisonArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ManagementZoneRuleConditionOstypeComparison)(nil)).Elem()
-}
-
-func (i ManagementZoneRuleConditionOstypeComparisonArray) ToManagementZoneRuleConditionOstypeComparisonArrayOutput() ManagementZoneRuleConditionOstypeComparisonArrayOutput {
-	return i.ToManagementZoneRuleConditionOstypeComparisonArrayOutputWithContext(context.Background())
-}
-
-func (i ManagementZoneRuleConditionOstypeComparisonArray) ToManagementZoneRuleConditionOstypeComparisonArrayOutputWithContext(ctx context.Context) ManagementZoneRuleConditionOstypeComparisonArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ManagementZoneRuleConditionOstypeComparisonArrayOutput)
-}
-
-type ManagementZoneRuleConditionOstypeComparisonOutput struct{ *pulumi.OutputState }
-
-func (ManagementZoneRuleConditionOstypeComparisonOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*ManagementZoneRuleConditionOstypeComparison)(nil)).Elem()
-}
-
-func (o ManagementZoneRuleConditionOstypeComparisonOutput) ToManagementZoneRuleConditionOstypeComparisonOutput() ManagementZoneRuleConditionOstypeComparisonOutput {
-	return o
-}
-
-func (o ManagementZoneRuleConditionOstypeComparisonOutput) ToManagementZoneRuleConditionOstypeComparisonOutputWithContext(ctx context.Context) ManagementZoneRuleConditionOstypeComparisonOutput {
-	return o
-}
-
-// Reverses the operator. For example it turns the **begins with** into **does not begin with**
-func (o ManagementZoneRuleConditionOstypeComparisonOutput) Negate() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v ManagementZoneRuleConditionOstypeComparison) *bool { return v.Negate }).(pulumi.BoolPtrOutput)
-}
-
-// Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
-func (o ManagementZoneRuleConditionOstypeComparisonOutput) Operator() pulumi.StringOutput {
-	return o.ApplyT(func(v ManagementZoneRuleConditionOstypeComparison) string { return v.Operator }).(pulumi.StringOutput)
-}
-
-// if specified, needs to be OS_TYPE
-//
-// Deprecated: The value of the attribute type is implicit, therefore shouldn't get specified
-func (o ManagementZoneRuleConditionOstypeComparisonOutput) Type() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ManagementZoneRuleConditionOstypeComparison) *string { return v.Type }).(pulumi.StringPtrOutput)
-}
-
-// Any attributes that aren't yet supported by this provider
-func (o ManagementZoneRuleConditionOstypeComparisonOutput) Unknowns() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ManagementZoneRuleConditionOstypeComparison) *string { return v.Unknowns }).(pulumi.StringPtrOutput)
-}
-
-// The value to compare to. Possible values are AIX, DARWIN, HPUX, LINUX, SOLARIS, WINDOWS and ZOS.
-func (o ManagementZoneRuleConditionOstypeComparisonOutput) Value() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ManagementZoneRuleConditionOstypeComparison) *string { return v.Value }).(pulumi.StringPtrOutput)
-}
-
-type ManagementZoneRuleConditionOstypeComparisonArrayOutput struct{ *pulumi.OutputState }
-
-func (ManagementZoneRuleConditionOstypeComparisonArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ManagementZoneRuleConditionOstypeComparison)(nil)).Elem()
-}
-
-func (o ManagementZoneRuleConditionOstypeComparisonArrayOutput) ToManagementZoneRuleConditionOstypeComparisonArrayOutput() ManagementZoneRuleConditionOstypeComparisonArrayOutput {
-	return o
-}
-
-func (o ManagementZoneRuleConditionOstypeComparisonArrayOutput) ToManagementZoneRuleConditionOstypeComparisonArrayOutputWithContext(ctx context.Context) ManagementZoneRuleConditionOstypeComparisonArrayOutput {
-	return o
-}
-
-func (o ManagementZoneRuleConditionOstypeComparisonArrayOutput) Index(i pulumi.IntInput) ManagementZoneRuleConditionOstypeComparisonOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ManagementZoneRuleConditionOstypeComparison {
-		return vs[0].([]ManagementZoneRuleConditionOstypeComparison)[vs[1].(int)]
-	}).(ManagementZoneRuleConditionOstypeComparisonOutput)
-}
-
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*DataPrivacyUserTrackingInput)(nil)).Elem(), DataPrivacyUserTrackingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DataPrivacyUserTrackingPtrInput)(nil)).Elem(), DataPrivacyUserTrackingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseAnomaliesDbConnectFailuresInput)(nil)).Elem(), DatabaseAnomaliesDbConnectFailuresArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseAnomaliesDbConnectFailuresPtrInput)(nil)).Elem(), DatabaseAnomaliesDbConnectFailuresArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseAnomaliesFailureRateInput)(nil)).Elem(), DatabaseAnomaliesFailureRateArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseAnomaliesFailureRatePtrInput)(nil)).Elem(), DatabaseAnomaliesFailureRateArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseAnomaliesFailureRateAutoInput)(nil)).Elem(), DatabaseAnomaliesFailureRateAutoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseAnomaliesFailureRateAutoPtrInput)(nil)).Elem(), DatabaseAnomaliesFailureRateAutoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseAnomaliesFailureRateThresholdsInput)(nil)).Elem(), DatabaseAnomaliesFailureRateThresholdsArgs{})
@@ -77606,12 +77659,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionMobilePlatformComparisonArrayInput)(nil)).Elem(), ManagementZoneRuleConditionMobilePlatformComparisonArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionOsArchInput)(nil)).Elem(), ManagementZoneRuleConditionOsArchArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionOsArchArrayInput)(nil)).Elem(), ManagementZoneRuleConditionOsArchArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionOsTypeInput)(nil)).Elem(), ManagementZoneRuleConditionOsTypeArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionOsTypeArrayInput)(nil)).Elem(), ManagementZoneRuleConditionOsTypeArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionOsarchitectureComparisonInput)(nil)).Elem(), ManagementZoneRuleConditionOsarchitectureComparisonArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionOsarchitectureComparisonArrayInput)(nil)).Elem(), ManagementZoneRuleConditionOsarchitectureComparisonArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionOstypeComparisonInput)(nil)).Elem(), ManagementZoneRuleConditionOstypeComparisonArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionOstypeComparisonArrayInput)(nil)).Elem(), ManagementZoneRuleConditionOstypeComparisonArray{})
+	pulumi.RegisterOutputType(DataPrivacyUserTrackingOutput{})
+	pulumi.RegisterOutputType(DataPrivacyUserTrackingPtrOutput{})
+	pulumi.RegisterOutputType(DatabaseAnomaliesDbConnectFailuresOutput{})
+	pulumi.RegisterOutputType(DatabaseAnomaliesDbConnectFailuresPtrOutput{})
+	pulumi.RegisterOutputType(DatabaseAnomaliesFailureRateOutput{})
+	pulumi.RegisterOutputType(DatabaseAnomaliesFailureRatePtrOutput{})
 	pulumi.RegisterOutputType(DatabaseAnomaliesFailureRateAutoOutput{})
 	pulumi.RegisterOutputType(DatabaseAnomaliesFailureRateAutoPtrOutput{})
 	pulumi.RegisterOutputType(DatabaseAnomaliesFailureRateThresholdsOutput{})
@@ -78594,10 +78647,4 @@ func init() {
 	pulumi.RegisterOutputType(ManagementZoneRuleConditionMobilePlatformComparisonArrayOutput{})
 	pulumi.RegisterOutputType(ManagementZoneRuleConditionOsArchOutput{})
 	pulumi.RegisterOutputType(ManagementZoneRuleConditionOsArchArrayOutput{})
-	pulumi.RegisterOutputType(ManagementZoneRuleConditionOsTypeOutput{})
-	pulumi.RegisterOutputType(ManagementZoneRuleConditionOsTypeArrayOutput{})
-	pulumi.RegisterOutputType(ManagementZoneRuleConditionOsarchitectureComparisonOutput{})
-	pulumi.RegisterOutputType(ManagementZoneRuleConditionOsarchitectureComparisonArrayOutput{})
-	pulumi.RegisterOutputType(ManagementZoneRuleConditionOstypeComparisonOutput{})
-	pulumi.RegisterOutputType(ManagementZoneRuleConditionOstypeComparisonArrayOutput{})
 }

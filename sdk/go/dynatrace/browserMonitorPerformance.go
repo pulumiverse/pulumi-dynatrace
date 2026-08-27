@@ -116,11 +116,11 @@ import (
 //			}
 //			_, err = dynatrace.NewBrowserMonitorPerformance(ctx, "performance", &dynatrace.BrowserMonitorPerformanceArgs{
 //				Enabled: pulumi.Bool(true),
-//				Scope:   monitor.ID(),
+//				Scope:   monitor.ID().ToIDOutput().ToStringOutput(),
 //				Thresholds: &dynatrace.BrowserMonitorPerformanceThresholdsArgs{
 //					Thresholds: dynatrace.BrowserMonitorPerformanceThresholdsThresholdArray{
 //						&dynatrace.BrowserMonitorPerformanceThresholdsThresholdArgs{
-//							Event:     monitor.ID(),
+//							Event:     monitor.ID().ToIDOutput().ToStringOutput(),
 //							Threshold: pulumi.Float64(10),
 //						},
 //					},

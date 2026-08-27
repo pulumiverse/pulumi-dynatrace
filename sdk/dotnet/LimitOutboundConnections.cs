@@ -29,7 +29,7 @@ namespace Pulumiverse.Dynatrace
     public partial class LimitOutboundConnections : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Output("allowedOutboundConnections")]
         public Output<Outputs.LimitOutboundConnectionsAllowedOutboundConnections> AllowedOutboundConnections { get; private set; } = null!;
@@ -82,7 +82,7 @@ namespace Pulumiverse.Dynatrace
     public sealed class LimitOutboundConnectionsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("allowedOutboundConnections", required: true)]
         public Input<Inputs.LimitOutboundConnectionsAllowedOutboundConnectionsArgs> AllowedOutboundConnections { get; set; } = null!;
@@ -96,7 +96,7 @@ namespace Pulumiverse.Dynatrace
     public sealed class LimitOutboundConnectionsState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("allowedOutboundConnections")]
         public Input<Inputs.LimitOutboundConnectionsAllowedOutboundConnectionsGetArgs>? AllowedOutboundConnections { get; set; }

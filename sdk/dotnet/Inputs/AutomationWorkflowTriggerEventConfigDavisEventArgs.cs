@@ -38,16 +38,28 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<string>? EntityTagsMatch { get; set; }
 
         /// <summary>
+        /// Specifies when to trigger based on maintenance window status. Possible values: `Always`, `Inside`, `Outside`. Default: `Always`
+        /// </summary>
+        [Input("maintenanceWindowTriggerBehavior")]
+        public Input<string>? MaintenanceWindowTriggerBehavior { get; set; }
+
+        /// <summary>
         /// The Davis Events to match on
         /// </summary>
         [Input("names")]
         public Input<Inputs.AutomationWorkflowTriggerEventConfigDavisEventNamesArgs>? Names { get; set; }
 
         /// <summary>
-        /// If set to `True` closing a problem also is considered an event that triggers the execution
+        /// If set to `True` closing a problem also is considered an event that triggers the execution.
         /// </summary>
         [Input("onProblemClose")]
         public Input<bool>? OnProblemClose { get; set; }
+
+        /// <summary>
+        /// Event state to trigger on. Possible values: `Open` (active only), `open-and-close` (both phases), or `Close` (closure only). When unset, falls back to `OnProblemClose`
+        /// </summary>
+        [Input("triggerOn")]
+        public Input<string>? TriggerOn { get; set; }
 
         [Input("types")]
         private InputList<string>? _types;

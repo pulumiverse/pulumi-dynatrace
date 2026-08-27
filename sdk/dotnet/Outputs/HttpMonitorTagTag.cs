@@ -20,8 +20,8 @@ namespace Pulumiverse.Dynatrace.Outputs
         public readonly string Context;
         /// <summary>
         /// The key of the tag.
-        /// 
-        /// Custom tags have the tag value here.
+        ///   
+        ///   Custom tags have the tag value here.
         /// </summary>
         public readonly string Key;
         /// <summary>
@@ -30,8 +30,8 @@ namespace Pulumiverse.Dynatrace.Outputs
         public readonly string? Source;
         /// <summary>
         /// The value of the tag.
-        /// 
-        /// Not applicable to custom tags.
+        ///   
+        ///   Not applicable to custom tags.
         /// </summary>
         public readonly string? Value;
 

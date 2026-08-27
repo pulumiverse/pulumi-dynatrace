@@ -22,32 +22,43 @@ __all__ = ['AppMonitoringArgs', 'AppMonitoring']
 class AppMonitoringArgs:
     def __init__(__self__, *,
                  default_log_level: pulumi.Input[_builtins.str],
-                 app_monitoring: pulumi.Input[Optional['AppMonitoringAppMonitoringArgs']] = None,
-                 default_trace_level: pulumi.Input[Optional[_builtins.str]] = None):
+                 default_trace_level: pulumi.Input[_builtins.str],
+                 app_monitoring: pulumi.Input[Optional['AppMonitoringAppMonitoringArgs']] = None):
         """
         The set of arguments for constructing a AppMonitoring resource.
 
-        :param pulumi.Input[_builtins.str] default_log_level: Possible Values: `debug`, `error`, `info`, `off`, `warn`
+        :param pulumi.Input[_builtins.str] default_log_level: Default log level. Possible values: `debug`, `error`, `info`, `off`, `warn`
+        :param pulumi.Input[_builtins.str] default_trace_level: App function traces. Possible values: `off`, `on`
         :param pulumi.Input['AppMonitoringAppMonitoringArgs'] app_monitoring: You can override the default monitoring setting for each app separately
-        :param pulumi.Input[_builtins.str] default_trace_level: Possible Values: `off`, `on`
         """
         pulumi.set(__self__, "default_log_level", default_log_level)
+        pulumi.set(__self__, "default_trace_level", default_trace_level)
         if app_monitoring is not None:
             pulumi.set(__self__, "app_monitoring", app_monitoring)
-        if default_trace_level is not None:
-            pulumi.set(__self__, "default_trace_level", default_trace_level)
 
     @_builtins.property
     @pulumi.getter(name="defaultLogLevel")
     def default_log_level(self) -> pulumi.Input[_builtins.str]:
         """
-        Possible Values: `debug`, `error`, `info`, `off`, `warn`
+        Default log level. Possible values: `debug`, `error`, `info`, `off`, `warn`
         """
         return pulumi.get(self, "default_log_level")
 
     @default_log_level.setter
     def default_log_level(self, value: pulumi.Input[_builtins.str]):
         pulumi.set(self, "default_log_level", value)
+
+    @_builtins.property
+    @pulumi.getter(name="defaultTraceLevel")
+    def default_trace_level(self) -> pulumi.Input[_builtins.str]:
+        """
+        App function traces. Possible values: `off`, `on`
+        """
+        return pulumi.get(self, "default_trace_level")
+
+    @default_trace_level.setter
+    def default_trace_level(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "default_trace_level", value)
 
     @_builtins.property
     @pulumi.getter(name="appMonitoring")
@@ -61,18 +72,6 @@ class AppMonitoringArgs:
     def app_monitoring(self, value: pulumi.Input[Optional['AppMonitoringAppMonitoringArgs']]):
         pulumi.set(self, "app_monitoring", value)
 
-    @_builtins.property
-    @pulumi.getter(name="defaultTraceLevel")
-    def default_trace_level(self) -> pulumi.Input[Optional[_builtins.str]]:
-        """
-        Possible Values: `off`, `on`
-        """
-        return pulumi.get(self, "default_trace_level")
-
-    @default_trace_level.setter
-    def default_trace_level(self, value: pulumi.Input[Optional[_builtins.str]]):
-        pulumi.set(self, "default_trace_level", value)
-
 
 @pulumi.input_type
 class _AppMonitoringState:
@@ -84,8 +83,8 @@ class _AppMonitoringState:
         Input properties used for looking up and filtering AppMonitoring resources.
 
         :param pulumi.Input['AppMonitoringAppMonitoringArgs'] app_monitoring: You can override the default monitoring setting for each app separately
-        :param pulumi.Input[_builtins.str] default_log_level: Possible Values: `debug`, `error`, `info`, `off`, `warn`
-        :param pulumi.Input[_builtins.str] default_trace_level: Possible Values: `off`, `on`
+        :param pulumi.Input[_builtins.str] default_log_level: Default log level. Possible values: `debug`, `error`, `info`, `off`, `warn`
+        :param pulumi.Input[_builtins.str] default_trace_level: App function traces. Possible values: `off`, `on`
         """
         if app_monitoring is not None:
             pulumi.set(__self__, "app_monitoring", app_monitoring)
@@ -110,7 +109,7 @@ class _AppMonitoringState:
     @pulumi.getter(name="defaultLogLevel")
     def default_log_level(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Possible Values: `debug`, `error`, `info`, `off`, `warn`
+        Default log level. Possible values: `debug`, `error`, `info`, `off`, `warn`
         """
         return pulumi.get(self, "default_log_level")
 
@@ -122,7 +121,7 @@ class _AppMonitoringState:
     @pulumi.getter(name="defaultTraceLevel")
     def default_trace_level(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Possible Values: `off`, `on`
+        App function traces. Possible values: `off`, `on`
         """
         return pulumi.get(self, "default_trace_level")
 
@@ -160,8 +159,8 @@ class AppMonitoring(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['AppMonitoringAppMonitoringArgs', 'AppMonitoringAppMonitoringArgsDict']] app_monitoring: You can override the default monitoring setting for each app separately
-        :param pulumi.Input[_builtins.str] default_log_level: Possible Values: `debug`, `error`, `info`, `off`, `warn`
-        :param pulumi.Input[_builtins.str] default_trace_level: Possible Values: `off`, `on`
+        :param pulumi.Input[_builtins.str] default_log_level: Default log level. Possible values: `debug`, `error`, `info`, `off`, `warn`
+        :param pulumi.Input[_builtins.str] default_trace_level: App function traces. Possible values: `off`, `on`
         """
         ...
     @overload
@@ -216,6 +215,8 @@ class AppMonitoring(pulumi.CustomResource):
             if default_log_level is None and not opts.urn:
                 raise TypeError("Missing required property 'default_log_level'")
             __props__.__dict__["default_log_level"] = default_log_level
+            if default_trace_level is None and not opts.urn:
+                raise TypeError("Missing required property 'default_trace_level'")
             __props__.__dict__["default_trace_level"] = default_trace_level
         super(AppMonitoring, __self__).__init__(
             'dynatrace:index/appMonitoring:AppMonitoring',
@@ -238,8 +239,8 @@ class AppMonitoring(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['AppMonitoringAppMonitoringArgs', 'AppMonitoringAppMonitoringArgsDict']] app_monitoring: You can override the default monitoring setting for each app separately
-        :param pulumi.Input[_builtins.str] default_log_level: Possible Values: `debug`, `error`, `info`, `off`, `warn`
-        :param pulumi.Input[_builtins.str] default_trace_level: Possible Values: `off`, `on`
+        :param pulumi.Input[_builtins.str] default_log_level: Default log level. Possible values: `debug`, `error`, `info`, `off`, `warn`
+        :param pulumi.Input[_builtins.str] default_trace_level: App function traces. Possible values: `off`, `on`
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -262,15 +263,15 @@ class AppMonitoring(pulumi.CustomResource):
     @pulumi.getter(name="defaultLogLevel")
     def default_log_level(self) -> pulumi.Output[_builtins.str]:
         """
-        Possible Values: `debug`, `error`, `info`, `off`, `warn`
+        Default log level. Possible values: `debug`, `error`, `info`, `off`, `warn`
         """
         return pulumi.get(self, "default_log_level")
 
     @_builtins.property
     @pulumi.getter(name="defaultTraceLevel")
-    def default_trace_level(self) -> pulumi.Output[Optional[_builtins.str]]:
+    def default_trace_level(self) -> pulumi.Output[_builtins.str]:
         """
-        Possible Values: `off`, `on`
+        App function traces. Possible values: `off`, `on`
         """
         return pulumi.get(self, "default_trace_level")
 

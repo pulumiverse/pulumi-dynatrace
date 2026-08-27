@@ -50,6 +50,7 @@ namespace Pulumiverse.Dynatrace
     ///         NodeNodegyp = false,
     ///         CmdForeverbinmonitor = false,
     ///         JmcActivegatecommandlinetool = false,
+    ///         PySupervisord = false,
     ///     });
     /// 
     /// });
@@ -125,7 +126,7 @@ namespace Pulumiverse.Dynatrace
         public Output<bool?> ExeAgentworker { get; private set; } = null!;
 
         /// <summary>
-        /// Rule id: 79 - Do not monitor processes if EXE name equals 'ansible'
+        /// Rule id: 79 - Do not monitor processes if Python script equals 'ansible'
         /// </summary>
         [Output("exeAnsible")]
         public Output<bool?> ExeAnsible { get; private set; } = null!;
@@ -143,13 +144,13 @@ namespace Pulumiverse.Dynatrace
         public Output<bool?> ExeAuditbeat { get; private set; } = null!;
 
         /// <summary>
-        /// Rule id: 81 - Do not monitor processes if EXE name equals 'aws'
+        /// Rule id: 81 - Do not monitor processes if Python script equals 'aws'
         /// </summary>
         [Output("exeAws")]
         public Output<bool?> ExeAws { get; private set; } = null!;
 
         /// <summary>
-        /// Rule id: 82 - Do not monitor processes if EXE name equals 'az'
+        /// Rule id: 82 - Do not monitor processes if Python script equals 'az'
         /// </summary>
         [Output("exeAz")]
         public Output<bool?> ExeAz { get; private set; } = null!;
@@ -185,7 +186,7 @@ namespace Pulumiverse.Dynatrace
         public Output<bool?> ExeCcuploader { get; private set; } = null!;
 
         /// <summary>
-        /// Rule id: 78 - Do not monitor processes if EXE name equals 'conda'
+        /// Rule id: 78 - Do not monitor processes if Python script equals 'conda'
         /// </summary>
         [Output("exeConda")]
         public Output<bool?> ExeConda { get; private set; } = null!;
@@ -221,7 +222,7 @@ namespace Pulumiverse.Dynatrace
         public Output<bool?> ExeFunctionbeat { get; private set; } = null!;
 
         /// <summary>
-        /// Rule id: 83 - Do not monitor processes if EXE name equals 'gcloud'
+        /// Rule id: 83 - Do not monitor processes if Python script equals 'gcloud'
         /// </summary>
         [Output("exeGcloud")]
         public Output<bool?> ExeGcloud { get; private set; } = null!;
@@ -239,7 +240,7 @@ namespace Pulumiverse.Dynatrace
         public Output<bool?> ExeGrootfs { get; private set; } = null!;
 
         /// <summary>
-        /// Rule id: 74 - Do not monitor processes if EXE name equals 'hatch'
+        /// Rule id: 74 - Do not monitor processes if Python script equals 'hatch'
         /// </summary>
         [Output("exeHatch")]
         public Output<bool?> ExeHatch { get; private set; } = null!;
@@ -257,7 +258,7 @@ namespace Pulumiverse.Dynatrace
         public Output<bool?> ExeInfluxd { get; private set; } = null!;
 
         /// <summary>
-        /// Rule id: 77 - Do not monitor processes if EXE name equals 'jupyter'
+        /// Rule id: 77 - Do not monitor processes if Python script equals 'jupyter'
         /// </summary>
         [Output("exeJupyter")]
         public Output<bool?> ExeJupyter { get; private set; } = null!;
@@ -299,7 +300,7 @@ namespace Pulumiverse.Dynatrace
         public Output<bool?> ExeOpenhandlecollector { get; private set; } = null!;
 
         /// <summary>
-        /// Rule id: 80 - Do not monitor processes if EXE name equals 'openstack'
+        /// Rule id: 80 - Do not monitor processes if Python script equals 'openstack'
         /// </summary>
         [Output("exeOpenstack")]
         public Output<bool?> ExeOpenstack { get; private set; } = null!;
@@ -323,7 +324,7 @@ namespace Pulumiverse.Dynatrace
         public Output<bool?> ExePhpcgi { get; private set; } = null!;
 
         /// <summary>
-        /// Rule id: 73 - Do not monitor processes if EXE name equals 'pip'
+        /// Rule id: 73 - Do not monitor processes if Python script equals 'pip'
         /// </summary>
         [Output("exePip")]
         public Output<bool?> ExePip { get; private set; } = null!;
@@ -419,7 +420,7 @@ namespace Pulumiverse.Dynatrace
         public Output<bool?> ExeW3wp { get; private set; } = null!;
 
         /// <summary>
-        /// Rule id: 75 - Do not monitor processes if EXE name equals 'wheel'
+        /// Rule id: 75 - Do not monitor processes if Python script equals 'wheel'
         /// </summary>
         [Output("exeWheel")]
         public Output<bool?> ExeWheel { get; private set; } = null!;
@@ -431,7 +432,7 @@ namespace Pulumiverse.Dynatrace
         public Output<bool?> ExeYq { get; private set; } = null!;
 
         /// <summary>
-        /// Rule id: 76 - Do not monitor processes if EXE name equals 'yum'
+        /// Rule id: 76 - Do not monitor processes if Python script equals 'yum'
         /// </summary>
         [Output("exeYum")]
         public Output<bool?> ExeYum { get; private set; } = null!;
@@ -550,6 +551,12 @@ namespace Pulumiverse.Dynatrace
         [Output("phpScript")]
         public Output<bool?> PhpScript { get; private set; } = null!;
 
+        /// <summary>
+        /// Rule id: 86 - Do not monitor processes if Python script contains 'supervisord'
+        /// </summary>
+        [Output("pySupervisord")]
+        public Output<bool?> PySupervisord { get; private set; } = null!;
+
 
         /// <summary>
         /// Create a BuiltinProcessMonitoring resource with the given unique name, arguments, and options.
@@ -664,7 +671,7 @@ namespace Pulumiverse.Dynatrace
         public Input<bool>? ExeAgentworker { get; set; }
 
         /// <summary>
-        /// Rule id: 79 - Do not monitor processes if EXE name equals 'ansible'
+        /// Rule id: 79 - Do not monitor processes if Python script equals 'ansible'
         /// </summary>
         [Input("exeAnsible")]
         public Input<bool>? ExeAnsible { get; set; }
@@ -682,13 +689,13 @@ namespace Pulumiverse.Dynatrace
         public Input<bool>? ExeAuditbeat { get; set; }
 
         /// <summary>
-        /// Rule id: 81 - Do not monitor processes if EXE name equals 'aws'
+        /// Rule id: 81 - Do not monitor processes if Python script equals 'aws'
         /// </summary>
         [Input("exeAws")]
         public Input<bool>? ExeAws { get; set; }
 
         /// <summary>
-        /// Rule id: 82 - Do not monitor processes if EXE name equals 'az'
+        /// Rule id: 82 - Do not monitor processes if Python script equals 'az'
         /// </summary>
         [Input("exeAz")]
         public Input<bool>? ExeAz { get; set; }
@@ -724,7 +731,7 @@ namespace Pulumiverse.Dynatrace
         public Input<bool>? ExeCcuploader { get; set; }
 
         /// <summary>
-        /// Rule id: 78 - Do not monitor processes if EXE name equals 'conda'
+        /// Rule id: 78 - Do not monitor processes if Python script equals 'conda'
         /// </summary>
         [Input("exeConda")]
         public Input<bool>? ExeConda { get; set; }
@@ -760,7 +767,7 @@ namespace Pulumiverse.Dynatrace
         public Input<bool>? ExeFunctionbeat { get; set; }
 
         /// <summary>
-        /// Rule id: 83 - Do not monitor processes if EXE name equals 'gcloud'
+        /// Rule id: 83 - Do not monitor processes if Python script equals 'gcloud'
         /// </summary>
         [Input("exeGcloud")]
         public Input<bool>? ExeGcloud { get; set; }
@@ -778,7 +785,7 @@ namespace Pulumiverse.Dynatrace
         public Input<bool>? ExeGrootfs { get; set; }
 
         /// <summary>
-        /// Rule id: 74 - Do not monitor processes if EXE name equals 'hatch'
+        /// Rule id: 74 - Do not monitor processes if Python script equals 'hatch'
         /// </summary>
         [Input("exeHatch")]
         public Input<bool>? ExeHatch { get; set; }
@@ -796,7 +803,7 @@ namespace Pulumiverse.Dynatrace
         public Input<bool>? ExeInfluxd { get; set; }
 
         /// <summary>
-        /// Rule id: 77 - Do not monitor processes if EXE name equals 'jupyter'
+        /// Rule id: 77 - Do not monitor processes if Python script equals 'jupyter'
         /// </summary>
         [Input("exeJupyter")]
         public Input<bool>? ExeJupyter { get; set; }
@@ -838,7 +845,7 @@ namespace Pulumiverse.Dynatrace
         public Input<bool>? ExeOpenhandlecollector { get; set; }
 
         /// <summary>
-        /// Rule id: 80 - Do not monitor processes if EXE name equals 'openstack'
+        /// Rule id: 80 - Do not monitor processes if Python script equals 'openstack'
         /// </summary>
         [Input("exeOpenstack")]
         public Input<bool>? ExeOpenstack { get; set; }
@@ -862,7 +869,7 @@ namespace Pulumiverse.Dynatrace
         public Input<bool>? ExePhpcgi { get; set; }
 
         /// <summary>
-        /// Rule id: 73 - Do not monitor processes if EXE name equals 'pip'
+        /// Rule id: 73 - Do not monitor processes if Python script equals 'pip'
         /// </summary>
         [Input("exePip")]
         public Input<bool>? ExePip { get; set; }
@@ -958,7 +965,7 @@ namespace Pulumiverse.Dynatrace
         public Input<bool>? ExeW3wp { get; set; }
 
         /// <summary>
-        /// Rule id: 75 - Do not monitor processes if EXE name equals 'wheel'
+        /// Rule id: 75 - Do not monitor processes if Python script equals 'wheel'
         /// </summary>
         [Input("exeWheel")]
         public Input<bool>? ExeWheel { get; set; }
@@ -970,7 +977,7 @@ namespace Pulumiverse.Dynatrace
         public Input<bool>? ExeYq { get; set; }
 
         /// <summary>
-        /// Rule id: 76 - Do not monitor processes if EXE name equals 'yum'
+        /// Rule id: 76 - Do not monitor processes if Python script equals 'yum'
         /// </summary>
         [Input("exeYum")]
         public Input<bool>? ExeYum { get; set; }
@@ -1088,6 +1095,12 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         [Input("phpScript")]
         public Input<bool>? PhpScript { get; set; }
+
+        /// <summary>
+        /// Rule id: 86 - Do not monitor processes if Python script contains 'supervisord'
+        /// </summary>
+        [Input("pySupervisord")]
+        public Input<bool>? PySupervisord { get; set; }
 
         public BuiltinProcessMonitoringArgs()
         {
@@ -1164,7 +1177,7 @@ namespace Pulumiverse.Dynatrace
         public Input<bool>? ExeAgentworker { get; set; }
 
         /// <summary>
-        /// Rule id: 79 - Do not monitor processes if EXE name equals 'ansible'
+        /// Rule id: 79 - Do not monitor processes if Python script equals 'ansible'
         /// </summary>
         [Input("exeAnsible")]
         public Input<bool>? ExeAnsible { get; set; }
@@ -1182,13 +1195,13 @@ namespace Pulumiverse.Dynatrace
         public Input<bool>? ExeAuditbeat { get; set; }
 
         /// <summary>
-        /// Rule id: 81 - Do not monitor processes if EXE name equals 'aws'
+        /// Rule id: 81 - Do not monitor processes if Python script equals 'aws'
         /// </summary>
         [Input("exeAws")]
         public Input<bool>? ExeAws { get; set; }
 
         /// <summary>
-        /// Rule id: 82 - Do not monitor processes if EXE name equals 'az'
+        /// Rule id: 82 - Do not monitor processes if Python script equals 'az'
         /// </summary>
         [Input("exeAz")]
         public Input<bool>? ExeAz { get; set; }
@@ -1224,7 +1237,7 @@ namespace Pulumiverse.Dynatrace
         public Input<bool>? ExeCcuploader { get; set; }
 
         /// <summary>
-        /// Rule id: 78 - Do not monitor processes if EXE name equals 'conda'
+        /// Rule id: 78 - Do not monitor processes if Python script equals 'conda'
         /// </summary>
         [Input("exeConda")]
         public Input<bool>? ExeConda { get; set; }
@@ -1260,7 +1273,7 @@ namespace Pulumiverse.Dynatrace
         public Input<bool>? ExeFunctionbeat { get; set; }
 
         /// <summary>
-        /// Rule id: 83 - Do not monitor processes if EXE name equals 'gcloud'
+        /// Rule id: 83 - Do not monitor processes if Python script equals 'gcloud'
         /// </summary>
         [Input("exeGcloud")]
         public Input<bool>? ExeGcloud { get; set; }
@@ -1278,7 +1291,7 @@ namespace Pulumiverse.Dynatrace
         public Input<bool>? ExeGrootfs { get; set; }
 
         /// <summary>
-        /// Rule id: 74 - Do not monitor processes if EXE name equals 'hatch'
+        /// Rule id: 74 - Do not monitor processes if Python script equals 'hatch'
         /// </summary>
         [Input("exeHatch")]
         public Input<bool>? ExeHatch { get; set; }
@@ -1296,7 +1309,7 @@ namespace Pulumiverse.Dynatrace
         public Input<bool>? ExeInfluxd { get; set; }
 
         /// <summary>
-        /// Rule id: 77 - Do not monitor processes if EXE name equals 'jupyter'
+        /// Rule id: 77 - Do not monitor processes if Python script equals 'jupyter'
         /// </summary>
         [Input("exeJupyter")]
         public Input<bool>? ExeJupyter { get; set; }
@@ -1338,7 +1351,7 @@ namespace Pulumiverse.Dynatrace
         public Input<bool>? ExeOpenhandlecollector { get; set; }
 
         /// <summary>
-        /// Rule id: 80 - Do not monitor processes if EXE name equals 'openstack'
+        /// Rule id: 80 - Do not monitor processes if Python script equals 'openstack'
         /// </summary>
         [Input("exeOpenstack")]
         public Input<bool>? ExeOpenstack { get; set; }
@@ -1362,7 +1375,7 @@ namespace Pulumiverse.Dynatrace
         public Input<bool>? ExePhpcgi { get; set; }
 
         /// <summary>
-        /// Rule id: 73 - Do not monitor processes if EXE name equals 'pip'
+        /// Rule id: 73 - Do not monitor processes if Python script equals 'pip'
         /// </summary>
         [Input("exePip")]
         public Input<bool>? ExePip { get; set; }
@@ -1458,7 +1471,7 @@ namespace Pulumiverse.Dynatrace
         public Input<bool>? ExeW3wp { get; set; }
 
         /// <summary>
-        /// Rule id: 75 - Do not monitor processes if EXE name equals 'wheel'
+        /// Rule id: 75 - Do not monitor processes if Python script equals 'wheel'
         /// </summary>
         [Input("exeWheel")]
         public Input<bool>? ExeWheel { get; set; }
@@ -1470,7 +1483,7 @@ namespace Pulumiverse.Dynatrace
         public Input<bool>? ExeYq { get; set; }
 
         /// <summary>
-        /// Rule id: 76 - Do not monitor processes if EXE name equals 'yum'
+        /// Rule id: 76 - Do not monitor processes if Python script equals 'yum'
         /// </summary>
         [Input("exeYum")]
         public Input<bool>? ExeYum { get; set; }
@@ -1588,6 +1601,12 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         [Input("phpScript")]
         public Input<bool>? PhpScript { get; set; }
+
+        /// <summary>
+        /// Rule id: 86 - Do not monitor processes if Python script contains 'supervisord'
+        /// </summary>
+        [Input("pySupervisord")]
+        public Input<bool>? PySupervisord { get; set; }
 
         public BuiltinProcessMonitoringState()
         {

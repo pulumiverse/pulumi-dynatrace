@@ -72,6 +72,8 @@ namespace Pulumiverse.Dynatrace
 
         /// <summary>
         /// Toggle the switch in order to enable or disable availability metric monitoring for this policy. Availability metrics produce custom metrics. Refer to [documentation](https://dt-url.net/vl03xzk) for consumption examples. Each monitored service consumes one custom metric.
+        /// 
+        ///   **The feature can't be configured on hosts in Discovery mode**
         /// </summary>
         [Output("monitoring")]
         public Output<bool> Monitoring { get; private set; } = null!;
@@ -96,6 +98,21 @@ namespace Pulumiverse.Dynatrace
 
         /// <summary>
         /// This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
+        /// 
+        ///   - `$eq(failed)` – Matches services that are in failed state.
+        /// 
+        ///   Available logic operations:
+        ///  - `$not($eq(active))` – Matches services with state different from active.
+        ///  - `$or($eq(inactive),$eq(failed))` – Matches services that are either in inactive or failed state.
+        /// 
+        ///   Use one of the following values as a parameter for this condition:
+        /// 
+        ///   - `Reloading`
+        ///  - `Activating`
+        ///  - `Deactivating`
+        ///  - `Failed`
+        ///  - `Inactive`
+        ///  - `Active`
         /// </summary>
         [Output("statusConditionLinux")]
         public Output<string?> StatusConditionLinux { get; private set; } = null!;
@@ -103,27 +120,27 @@ namespace Pulumiverse.Dynatrace
         /// <summary>
         /// This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
         /// 
-        /// - `$eq(paused)` – Matches services that are in paused state.
+        ///   - `$eq(paused)` – Matches services that are in paused state.
         /// 
-        /// Available logic operations:
-        /// - `$not($eq(paused))` – Matches services that are in state different from paused.
-        /// - `$or($eq(paused),$eq(running))` – Matches services that are either in paused or running state.
+        ///   Available logic operations:
+        ///  - `$not($eq(paused))` – Matches services that are in state different from paused.
+        ///  - `$or($eq(paused),$eq(running))` – Matches services that are either in paused or running state.
         /// 
-        /// Use one of the following values as a parameter for this condition:
+        ///   Use one of the following values as a parameter for this condition:
         /// 
-        /// - `Running`
-        /// - `Stopped`
-        /// - `StartPending`
-        /// - `StopPending`
-        /// - `ContinuePending`
-        /// - `PausePending`
-        /// - `Paused`
+        ///   - `Running`
+        ///  - `Stopped`
+        ///  - `StartPending`
+        ///  - `StopPending`
+        ///  - `ContinuePending`
+        ///  - `PausePending`
+        ///  - `Paused`
         /// </summary>
         [Output("statusConditionWindows")]
         public Output<string?> StatusConditionWindows { get; private set; } = null!;
 
         /// <summary>
-        /// Possible Values: `LINUX`, `WINDOWS`
+        /// System. Possible values: `LINUX`, `WINDOWS`
         /// </summary>
         [Output("system")]
         public Output<string> System { get; private set; } = null!;
@@ -219,6 +236,8 @@ namespace Pulumiverse.Dynatrace
 
         /// <summary>
         /// Toggle the switch in order to enable or disable availability metric monitoring for this policy. Availability metrics produce custom metrics. Refer to [documentation](https://dt-url.net/vl03xzk) for consumption examples. Each monitored service consumes one custom metric.
+        /// 
+        ///   **The feature can't be configured on hosts in Discovery mode**
         /// </summary>
         [Input("monitoring", required: true)]
         public Input<bool> Monitoring { get; set; } = null!;
@@ -243,6 +262,21 @@ namespace Pulumiverse.Dynatrace
 
         /// <summary>
         /// This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
+        /// 
+        ///   - `$eq(failed)` – Matches services that are in failed state.
+        /// 
+        ///   Available logic operations:
+        ///  - `$not($eq(active))` – Matches services with state different from active.
+        ///  - `$or($eq(inactive),$eq(failed))` – Matches services that are either in inactive or failed state.
+        /// 
+        ///   Use one of the following values as a parameter for this condition:
+        /// 
+        ///   - `Reloading`
+        ///  - `Activating`
+        ///  - `Deactivating`
+        ///  - `Failed`
+        ///  - `Inactive`
+        ///  - `Active`
         /// </summary>
         [Input("statusConditionLinux")]
         public Input<string>? StatusConditionLinux { get; set; }
@@ -250,27 +284,27 @@ namespace Pulumiverse.Dynatrace
         /// <summary>
         /// This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
         /// 
-        /// - `$eq(paused)` – Matches services that are in paused state.
+        ///   - `$eq(paused)` – Matches services that are in paused state.
         /// 
-        /// Available logic operations:
-        /// - `$not($eq(paused))` – Matches services that are in state different from paused.
-        /// - `$or($eq(paused),$eq(running))` – Matches services that are either in paused or running state.
+        ///   Available logic operations:
+        ///  - `$not($eq(paused))` – Matches services that are in state different from paused.
+        ///  - `$or($eq(paused),$eq(running))` – Matches services that are either in paused or running state.
         /// 
-        /// Use one of the following values as a parameter for this condition:
+        ///   Use one of the following values as a parameter for this condition:
         /// 
-        /// - `Running`
-        /// - `Stopped`
-        /// - `StartPending`
-        /// - `StopPending`
-        /// - `ContinuePending`
-        /// - `PausePending`
-        /// - `Paused`
+        ///   - `Running`
+        ///  - `Stopped`
+        ///  - `StartPending`
+        ///  - `StopPending`
+        ///  - `ContinuePending`
+        ///  - `PausePending`
+        ///  - `Paused`
         /// </summary>
         [Input("statusConditionWindows")]
         public Input<string>? StatusConditionWindows { get; set; }
 
         /// <summary>
-        /// Possible Values: `LINUX`, `WINDOWS`
+        /// System. Possible values: `LINUX`, `WINDOWS`
         /// </summary>
         [Input("system", required: true)]
         public Input<string> System { get; set; } = null!;
@@ -327,6 +361,8 @@ namespace Pulumiverse.Dynatrace
 
         /// <summary>
         /// Toggle the switch in order to enable or disable availability metric monitoring for this policy. Availability metrics produce custom metrics. Refer to [documentation](https://dt-url.net/vl03xzk) for consumption examples. Each monitored service consumes one custom metric.
+        /// 
+        ///   **The feature can't be configured on hosts in Discovery mode**
         /// </summary>
         [Input("monitoring")]
         public Input<bool>? Monitoring { get; set; }
@@ -351,6 +387,21 @@ namespace Pulumiverse.Dynatrace
 
         /// <summary>
         /// This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
+        /// 
+        ///   - `$eq(failed)` – Matches services that are in failed state.
+        /// 
+        ///   Available logic operations:
+        ///  - `$not($eq(active))` – Matches services with state different from active.
+        ///  - `$or($eq(inactive),$eq(failed))` – Matches services that are either in inactive or failed state.
+        /// 
+        ///   Use one of the following values as a parameter for this condition:
+        /// 
+        ///   - `Reloading`
+        ///  - `Activating`
+        ///  - `Deactivating`
+        ///  - `Failed`
+        ///  - `Inactive`
+        ///  - `Active`
         /// </summary>
         [Input("statusConditionLinux")]
         public Input<string>? StatusConditionLinux { get; set; }
@@ -358,27 +409,27 @@ namespace Pulumiverse.Dynatrace
         /// <summary>
         /// This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
         /// 
-        /// - `$eq(paused)` – Matches services that are in paused state.
+        ///   - `$eq(paused)` – Matches services that are in paused state.
         /// 
-        /// Available logic operations:
-        /// - `$not($eq(paused))` – Matches services that are in state different from paused.
-        /// - `$or($eq(paused),$eq(running))` – Matches services that are either in paused or running state.
+        ///   Available logic operations:
+        ///  - `$not($eq(paused))` – Matches services that are in state different from paused.
+        ///  - `$or($eq(paused),$eq(running))` – Matches services that are either in paused or running state.
         /// 
-        /// Use one of the following values as a parameter for this condition:
+        ///   Use one of the following values as a parameter for this condition:
         /// 
-        /// - `Running`
-        /// - `Stopped`
-        /// - `StartPending`
-        /// - `StopPending`
-        /// - `ContinuePending`
-        /// - `PausePending`
-        /// - `Paused`
+        ///   - `Running`
+        ///  - `Stopped`
+        ///  - `StartPending`
+        ///  - `StopPending`
+        ///  - `ContinuePending`
+        ///  - `PausePending`
+        ///  - `Paused`
         /// </summary>
         [Input("statusConditionWindows")]
         public Input<string>? StatusConditionWindows { get; set; }
 
         /// <summary>
-        /// Possible Values: `LINUX`, `WINDOWS`
+        /// System. Possible values: `LINUX`, `WINDOWS`
         /// </summary>
         [Input("system")]
         public Input<string>? System { get; set; }

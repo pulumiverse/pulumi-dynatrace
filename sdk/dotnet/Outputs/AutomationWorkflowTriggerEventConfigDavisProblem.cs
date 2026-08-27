@@ -32,9 +32,25 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly string? EntityTagsMatch;
         /// <summary>
-        /// If set to `True` closing a problem also is considered an event that triggers the execution
+        /// If set to `True` closing a problem also is considered an event that triggers the execution.
         /// </summary>
         public readonly bool? OnProblemClose;
+        /// <summary>
+        /// Minimum problem duration in minutes before the trigger fires. Possible values: `5`, `10`, `15`, `30`, `60`, `120`, `240`, `1440`, `10080`
+        /// </summary>
+        public readonly int? ProblemOpenDuration;
+        /// <summary>
+        /// Triggers only for problems whose severity is this value or more severe. Possible values: `1` (critical) to `5` (informational). Lower numbers are more severe, so 3 matches severities 1, 2, and 3
+        /// </summary>
+        public readonly int? SeverityThreshold;
+        /// <summary>
+        /// Problem state to trigger on. Possible values: `Open` (active only), `open-and-close` (both phases), or `Close` (closure only). When unset, falls back to `OnProblemClose`
+        /// </summary>
+        public readonly string? TriggerOn;
+        /// <summary>
+        /// Problem event fields tracked for value changes. Changes to any selected field cause re-triggering. Possible values: `dt.davis.affected_users_count`, `dt.davis.impact_level`, `event.category`, `event.severity`, `RootCauseEntityId`, `smartscape.affected_entities`
+        /// </summary>
+        public readonly ImmutableArray<string> TriggerOnUpdateFields;
 
         [OutputConstructor]
         private AutomationWorkflowTriggerEventConfigDavisProblem(
@@ -48,7 +64,15 @@ namespace Pulumiverse.Dynatrace.Outputs
 
             string? entityTagsMatch,
 
-            bool? onProblemClose)
+            bool? onProblemClose,
+
+            int? problemOpenDuration,
+
+            int? severityThreshold,
+
+            string? triggerOn,
+
+            ImmutableArray<string> triggerOnUpdateFields)
         {
             AnalysisReady = analysisReady;
             Categories = categories;
@@ -56,6 +80,10 @@ namespace Pulumiverse.Dynatrace.Outputs
             EntityTags = entityTags;
             EntityTagsMatch = entityTagsMatch;
             OnProblemClose = onProblemClose;
+            ProblemOpenDuration = problemOpenDuration;
+            SeverityThreshold = severityThreshold;
+            TriggerOn = triggerOn;
+            TriggerOnUpdateFields = triggerOnUpdateFields;
         }
     }
 }

@@ -13,35 +13,56 @@ if sys.version_info >= (3, 11):
 else:
     from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
+from . import outputs
+from ._inputs import *
 
 __all__ = ['ActivegateUpdatesArgs', 'ActivegateUpdates']
 
 @pulumi.input_type
 class ActivegateUpdatesArgs:
     def __init__(__self__, *,
-                 auto_update: pulumi.Input[_builtins.bool],
-                 scope: pulumi.Input[Optional[_builtins.str]] = None):
+                 target_version: pulumi.Input[_builtins.str],
+                 update_mode: pulumi.Input[_builtins.str],
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 update_windows: pulumi.Input[Optional['ActivegateUpdatesUpdateWindowsArgs']] = None):
         """
         The set of arguments for constructing a ActivegateUpdates resource.
 
-        :param pulumi.Input[_builtins.bool] auto_update: Automatic updates at earliest convenience
+        :param pulumi.Input[_builtins.str] target_version: Target version
+        :param pulumi.Input[_builtins.str] update_mode: Update mode. Possible values: `AUTOMATIC`, `AUTOMATIC_DURING_UW`, `MANUAL`
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (ENVIRONMENT*ACTIVE*GATE). Omit this property if you want to cover the whole environment.
+        :param pulumi.Input['ActivegateUpdatesUpdateWindowsArgs'] update_windows: Update windows
         """
-        pulumi.set(__self__, "auto_update", auto_update)
+        pulumi.set(__self__, "target_version", target_version)
+        pulumi.set(__self__, "update_mode", update_mode)
         if scope is not None:
             pulumi.set(__self__, "scope", scope)
+        if update_windows is not None:
+            pulumi.set(__self__, "update_windows", update_windows)
 
     @_builtins.property
-    @pulumi.getter(name="autoUpdate")
-    def auto_update(self) -> pulumi.Input[_builtins.bool]:
+    @pulumi.getter(name="targetVersion")
+    def target_version(self) -> pulumi.Input[_builtins.str]:
         """
-        Automatic updates at earliest convenience
+        Target version
         """
-        return pulumi.get(self, "auto_update")
+        return pulumi.get(self, "target_version")
 
-    @auto_update.setter
-    def auto_update(self, value: pulumi.Input[_builtins.bool]):
-        pulumi.set(self, "auto_update", value)
+    @target_version.setter
+    def target_version(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "target_version", value)
+
+    @_builtins.property
+    @pulumi.getter(name="updateMode")
+    def update_mode(self) -> pulumi.Input[_builtins.str]:
+        """
+        Update mode. Possible values: `AUTOMATIC`, `AUTOMATIC_DURING_UW`, `MANUAL`
+        """
+        return pulumi.get(self, "update_mode")
+
+    @update_mode.setter
+    def update_mode(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "update_mode", value)
 
     @_builtins.property
     @pulumi.getter
@@ -54,35 +75,43 @@ class ActivegateUpdatesArgs:
     @scope.setter
     def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
+
+    @_builtins.property
+    @pulumi.getter(name="updateWindows")
+    def update_windows(self) -> pulumi.Input[Optional['ActivegateUpdatesUpdateWindowsArgs']]:
+        """
+        Update windows
+        """
+        return pulumi.get(self, "update_windows")
+
+    @update_windows.setter
+    def update_windows(self, value: pulumi.Input[Optional['ActivegateUpdatesUpdateWindowsArgs']]):
+        pulumi.set(self, "update_windows", value)
 
 
 @pulumi.input_type
 class _ActivegateUpdatesState:
     def __init__(__self__, *,
-                 auto_update: pulumi.Input[Optional[_builtins.bool]] = None,
-                 scope: pulumi.Input[Optional[_builtins.str]] = None):
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 update_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 update_windows: pulumi.Input[Optional['ActivegateUpdatesUpdateWindowsArgs']] = None):
         """
         Input properties used for looking up and filtering ActivegateUpdates resources.
 
-        :param pulumi.Input[_builtins.bool] auto_update: Automatic updates at earliest convenience
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (ENVIRONMENT*ACTIVE*GATE). Omit this property if you want to cover the whole environment.
+        :param pulumi.Input[_builtins.str] target_version: Target version
+        :param pulumi.Input[_builtins.str] update_mode: Update mode. Possible values: `AUTOMATIC`, `AUTOMATIC_DURING_UW`, `MANUAL`
+        :param pulumi.Input['ActivegateUpdatesUpdateWindowsArgs'] update_windows: Update windows
         """
-        if auto_update is not None:
-            pulumi.set(__self__, "auto_update", auto_update)
         if scope is not None:
             pulumi.set(__self__, "scope", scope)
-
-    @_builtins.property
-    @pulumi.getter(name="autoUpdate")
-    def auto_update(self) -> pulumi.Input[Optional[_builtins.bool]]:
-        """
-        Automatic updates at earliest convenience
-        """
-        return pulumi.get(self, "auto_update")
-
-    @auto_update.setter
-    def auto_update(self, value: pulumi.Input[Optional[_builtins.bool]]):
-        pulumi.set(self, "auto_update", value)
+        if target_version is not None:
+            pulumi.set(__self__, "target_version", target_version)
+        if update_mode is not None:
+            pulumi.set(__self__, "update_mode", update_mode)
+        if update_windows is not None:
+            pulumi.set(__self__, "update_windows", update_windows)
 
     @_builtins.property
     @pulumi.getter
@@ -95,6 +124,42 @@ class _ActivegateUpdatesState:
     @scope.setter
     def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
+
+    @_builtins.property
+    @pulumi.getter(name="targetVersion")
+    def target_version(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Target version
+        """
+        return pulumi.get(self, "target_version")
+
+    @target_version.setter
+    def target_version(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "target_version", value)
+
+    @_builtins.property
+    @pulumi.getter(name="updateMode")
+    def update_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Update mode. Possible values: `AUTOMATIC`, `AUTOMATIC_DURING_UW`, `MANUAL`
+        """
+        return pulumi.get(self, "update_mode")
+
+    @update_mode.setter
+    def update_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "update_mode", value)
+
+    @_builtins.property
+    @pulumi.getter(name="updateWindows")
+    def update_windows(self) -> pulumi.Input[Optional['ActivegateUpdatesUpdateWindowsArgs']]:
+        """
+        Update windows
+        """
+        return pulumi.get(self, "update_windows")
+
+    @update_windows.setter
+    def update_windows(self, value: pulumi.Input[Optional['ActivegateUpdatesUpdateWindowsArgs']]):
+        pulumi.set(self, "update_windows", value)
 
 
 @pulumi.type_token("dynatrace:index/activegateUpdates:ActivegateUpdates")
@@ -103,8 +168,10 @@ class ActivegateUpdates(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 auto_update: pulumi.Input[Optional[_builtins.bool]] = None,
                  scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 update_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 update_windows: pulumi.Input[Optional[Union['ActivegateUpdatesUpdateWindowsArgs', 'ActivegateUpdatesUpdateWindowsArgsDict']]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -121,11 +188,40 @@ class ActivegateUpdates(pulumi.CustomResource):
 
         The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        example_update_windows = dynatrace.UpdateWindows("example",
+            name="#name#",
+            enabled=True,
+            recurrence="ONCE",
+            once_recurrence={
+                "recurrence_range": {
+                    "end": "2023-02-15T04:00:00Z",
+                    "start": "2023-02-15T02:00:00Z",
+                },
+            })
+        example = dynatrace.ActivegateUpdates("example",
+            scope="environment",
+            target_version="latest",
+            update_mode="AUTOMATIC_DURING_UW",
+            update_windows={
+                "update_windows": [{
+                    "update_window": example_update_windows.id,
+                }],
+            })
+        ```
+
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.bool] auto_update: Automatic updates at earliest convenience
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (ENVIRONMENT*ACTIVE*GATE). Omit this property if you want to cover the whole environment.
+        :param pulumi.Input[_builtins.str] target_version: Target version
+        :param pulumi.Input[_builtins.str] update_mode: Update mode. Possible values: `AUTOMATIC`, `AUTOMATIC_DURING_UW`, `MANUAL`
+        :param pulumi.Input[Union['ActivegateUpdatesUpdateWindowsArgs', 'ActivegateUpdatesUpdateWindowsArgsDict']] update_windows: Update windows
         """
         ...
     @overload
@@ -148,6 +244,33 @@ class ActivegateUpdates(pulumi.CustomResource):
 
         The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        example_update_windows = dynatrace.UpdateWindows("example",
+            name="#name#",
+            enabled=True,
+            recurrence="ONCE",
+            once_recurrence={
+                "recurrence_range": {
+                    "end": "2023-02-15T04:00:00Z",
+                    "start": "2023-02-15T02:00:00Z",
+                },
+            })
+        example = dynatrace.ActivegateUpdates("example",
+            scope="environment",
+            target_version="latest",
+            update_mode="AUTOMATIC_DURING_UW",
+            update_windows={
+                "update_windows": [{
+                    "update_window": example_update_windows.id,
+                }],
+            })
+        ```
+
 
         :param str resource_name: The name of the resource.
         :param ActivegateUpdatesArgs args: The arguments to use to populate this resource's properties.
@@ -164,8 +287,10 @@ class ActivegateUpdates(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 auto_update: pulumi.Input[Optional[_builtins.bool]] = None,
                  scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 update_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 update_windows: pulumi.Input[Optional[Union['ActivegateUpdatesUpdateWindowsArgs', 'ActivegateUpdatesUpdateWindowsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -175,10 +300,14 @@ class ActivegateUpdates(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = ActivegateUpdatesArgs.__new__(ActivegateUpdatesArgs)
 
-            if auto_update is None and not opts.urn:
-                raise TypeError("Missing required property 'auto_update'")
-            __props__.__dict__["auto_update"] = auto_update
             __props__.__dict__["scope"] = scope
+            if target_version is None and not opts.urn:
+                raise TypeError("Missing required property 'target_version'")
+            __props__.__dict__["target_version"] = target_version
+            if update_mode is None and not opts.urn:
+                raise TypeError("Missing required property 'update_mode'")
+            __props__.__dict__["update_mode"] = update_mode
+            __props__.__dict__["update_windows"] = update_windows
         super(ActivegateUpdates, __self__).__init__(
             'dynatrace:index/activegateUpdates:ActivegateUpdates',
             resource_name,
@@ -189,8 +318,10 @@ class ActivegateUpdates(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            auto_update: pulumi.Input[Optional[_builtins.bool]] = None,
-            scope: pulumi.Input[Optional[_builtins.str]] = None) -> 'ActivegateUpdates':
+            scope: pulumi.Input[Optional[_builtins.str]] = None,
+            target_version: pulumi.Input[Optional[_builtins.str]] = None,
+            update_mode: pulumi.Input[Optional[_builtins.str]] = None,
+            update_windows: pulumi.Input[Optional[Union['ActivegateUpdatesUpdateWindowsArgs', 'ActivegateUpdatesUpdateWindowsArgsDict']]] = None) -> 'ActivegateUpdates':
         """
         Get an existing ActivegateUpdates resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -198,24 +329,20 @@ class ActivegateUpdates(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.bool] auto_update: Automatic updates at earliest convenience
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (ENVIRONMENT*ACTIVE*GATE). Omit this property if you want to cover the whole environment.
+        :param pulumi.Input[_builtins.str] target_version: Target version
+        :param pulumi.Input[_builtins.str] update_mode: Update mode. Possible values: `AUTOMATIC`, `AUTOMATIC_DURING_UW`, `MANUAL`
+        :param pulumi.Input[Union['ActivegateUpdatesUpdateWindowsArgs', 'ActivegateUpdatesUpdateWindowsArgsDict']] update_windows: Update windows
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
         __props__ = _ActivegateUpdatesState.__new__(_ActivegateUpdatesState)
 
-        __props__.__dict__["auto_update"] = auto_update
         __props__.__dict__["scope"] = scope
+        __props__.__dict__["target_version"] = target_version
+        __props__.__dict__["update_mode"] = update_mode
+        __props__.__dict__["update_windows"] = update_windows
         return ActivegateUpdates(resource_name, opts=opts, __props__=__props__)
-
-    @_builtins.property
-    @pulumi.getter(name="autoUpdate")
-    def auto_update(self) -> pulumi.Output[_builtins.bool]:
-        """
-        Automatic updates at earliest convenience
-        """
-        return pulumi.get(self, "auto_update")
 
     @_builtins.property
     @pulumi.getter
@@ -224,4 +351,28 @@ class ActivegateUpdates(pulumi.CustomResource):
         The scope of this setting (ENVIRONMENT*ACTIVE*GATE). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
+
+    @_builtins.property
+    @pulumi.getter(name="targetVersion")
+    def target_version(self) -> pulumi.Output[_builtins.str]:
+        """
+        Target version
+        """
+        return pulumi.get(self, "target_version")
+
+    @_builtins.property
+    @pulumi.getter(name="updateMode")
+    def update_mode(self) -> pulumi.Output[_builtins.str]:
+        """
+        Update mode. Possible values: `AUTOMATIC`, `AUTOMATIC_DURING_UW`, `MANUAL`
+        """
+        return pulumi.get(self, "update_mode")
+
+    @_builtins.property
+    @pulumi.getter(name="updateWindows")
+    def update_windows(self) -> pulumi.Output[Optional['outputs.ActivegateUpdatesUpdateWindows']]:
+        """
+        Update windows
+        """
+        return pulumi.get(self, "update_windows")
 

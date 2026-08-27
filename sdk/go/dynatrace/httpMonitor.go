@@ -148,7 +148,7 @@ import (
 //									Headers: dynatrace.HttpMonitorScriptRequestConfigurationHeadersHeaderArray{
 //										&dynatrace.HttpMonitorScriptRequestConfigurationHeadersHeaderArgs{
 //											Name: pulumi.String("Authorization"),
-//											Value: credentialsVault.ID().ApplyT(func(id string) (string, error) {
+//											Value: credentialsVault.ID().ApplyT(func(id pulumi.ID) (string, error) {
 //												return fmt.Sprintf("Bearer {%v|token}", id), nil
 //											}).(pulumi.StringOutput),
 //										},
@@ -219,7 +219,7 @@ import (
 //									Headers: dynatrace.HttpMonitorScriptRequestConfigurationHeadersHeaderArray{
 //										&dynatrace.HttpMonitorScriptRequestConfigurationHeadersHeaderArgs{
 //											Name: pulumi.String("Authorization"),
-//											Value: credentialsVault.ID().ApplyT(func(id string) (string, error) {
+//											Value: credentialsVault.ID().ApplyT(func(id pulumi.ID) (string, error) {
 //												return fmt.Sprintf("Bearer {%v|token}", id), nil
 //											}).(pulumi.StringOutput),
 //										},
@@ -287,7 +287,7 @@ import (
 //									Headers: dynatrace.HttpMonitorScriptRequestConfigurationHeadersHeaderArray{
 //										&dynatrace.HttpMonitorScriptRequestConfigurationHeadersHeaderArgs{
 //											Name: pulumi.String("Authorization"),
-//											Value: credentialsVault.ID().ApplyT(func(id string) (string, error) {
+//											Value: credentialsVault.ID().ApplyT(func(id pulumi.ID) (string, error) {
 //												return fmt.Sprintf("Bearer {%v|token}", id), nil
 //											}).(pulumi.StringOutput),
 //										},
@@ -357,7 +357,7 @@ import (
 //									Headers: dynatrace.HttpMonitorScriptRequestConfigurationHeadersHeaderArray{
 //										&dynatrace.HttpMonitorScriptRequestConfigurationHeadersHeaderArgs{
 //											Name: pulumi.String("Authorization"),
-//											Value: credentialsVault.ID().ApplyT(func(id string) (string, error) {
+//											Value: credentialsVault.ID().ApplyT(func(id pulumi.ID) (string, error) {
 //												return fmt.Sprintf("Bearer {%v|token}", id), nil
 //											}).(pulumi.StringOutput),
 //										},
@@ -427,7 +427,7 @@ import (
 //									Headers: dynatrace.HttpMonitorScriptRequestConfigurationHeadersHeaderArray{
 //										&dynatrace.HttpMonitorScriptRequestConfigurationHeadersHeaderArgs{
 //											Name: pulumi.String("Authorization"),
-//											Value: credentialsVault.ID().ApplyT(func(id string) (string, error) {
+//											Value: credentialsVault.ID().ApplyT(func(id pulumi.ID) (string, error) {
 //												return fmt.Sprintf("Bearer {%v|token}", id), nil
 //											}).(pulumi.StringOutput),
 //										},
@@ -478,7 +478,7 @@ import (
 // api.setValue(\"service_status\", payload);
 // `),
 //
-//		Url: credentialsVault.ID().ApplyT(func(id string) (string, error) {
+//		Url: credentialsVault.ID().ApplyT(func(id pulumi.ID) (string, error) {
 //			return fmt.Sprintf("https://manage.office.com/api/v1.0/{%v|token}/ServiceComms/CurrentStatus", id), nil
 //		}).(pulumi.StringOutput),
 //		Configuration: &dynatrace.HttpMonitorScriptRequestConfigurationArgs{
@@ -488,7 +488,7 @@ import (
 //				Headers: dynatrace.HttpMonitorScriptRequestConfigurationHeadersHeaderArray{
 //					&dynatrace.HttpMonitorScriptRequestConfigurationHeadersHeaderArgs{
 //						Name: pulumi.String("Authorization"),
-//						Value: credentialsVault.ID().ApplyT(func(id string) (string, error) {
+//						Value: credentialsVault.ID().ApplyT(func(id pulumi.ID) (string, error) {
 //							return fmt.Sprintf("Bearer {%v|token}", id), nil
 //						}).(pulumi.StringOutput),
 //					},
@@ -542,7 +542,7 @@ import (
 //										},
 //										&dynatrace.HttpMonitorScriptRequestConfigurationHeadersHeaderArgs{
 //											Name: pulumi.String("Authorization"),
-//											Value: credentialsVault.ID().ApplyT(func(id string) (string, error) {
+//											Value: credentialsVault.ID().ApplyT(func(id pulumi.ID) (string, error) {
 //												return fmt.Sprintf("Api-Token {%v|token}", id), nil
 //											}).(pulumi.StringOutput),
 //										},

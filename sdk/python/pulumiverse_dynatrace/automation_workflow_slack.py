@@ -20,29 +20,30 @@ __all__ = ['AutomationWorkflowSlackArgs', 'AutomationWorkflowSlack']
 class AutomationWorkflowSlackArgs:
     def __init__(__self__, *,
                  token: pulumi.Input[_builtins.str],
-                 insert_after: pulumi.Input[Optional[_builtins.str]] = None,
-                 name: pulumi.Input[Optional[_builtins.str]] = None):
+                 external_approval: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 signing_secret: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a AutomationWorkflowSlack resource.
 
-        :param pulumi.Input[_builtins.str] token: The bot token obtained from the Slack App Management UI
-        :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
-        :param pulumi.Input[_builtins.str] name: The name of the Slack connection
+        :param pulumi.Input[_builtins.str] token: The bot token obtained from the Slack App Management UI.
+        :param pulumi.Input[_builtins.bool] external_approval: Accept external approvals can enable Slack users to directly respond to approval request.
+        :param pulumi.Input[_builtins.str] name: Provide a unique and clearly identifiable connection name to your Slack App.
+        :param pulumi.Input[_builtins.str] signing_secret: The signing secret obtained from the Slack App Management UI.
         """
         pulumi.set(__self__, "token", token)
-        if insert_after is not None:
-            warnings.warn("""This resource is no longer ordered, please remove this attribute from the configuration""", DeprecationWarning)
-            pulumi.log.warn("""insert_after is deprecated: This resource is no longer ordered, please remove this attribute from the configuration""")
-        if insert_after is not None:
-            pulumi.set(__self__, "insert_after", insert_after)
+        if external_approval is not None:
+            pulumi.set(__self__, "external_approval", external_approval)
         if name is not None:
             pulumi.set(__self__, "name", name)
+        if signing_secret is not None:
+            pulumi.set(__self__, "signing_secret", signing_secret)
 
     @_builtins.property
     @pulumi.getter
     def token(self) -> pulumi.Input[_builtins.str]:
         """
-        The bot token obtained from the Slack App Management UI
+        The bot token obtained from the Slack App Management UI.
         """
         return pulumi.get(self, "token")
 
@@ -51,72 +52,83 @@ class AutomationWorkflowSlackArgs:
         pulumi.set(self, "token", value)
 
     @_builtins.property
-    @pulumi.getter(name="insertAfter")
-    @_utilities.deprecated("""This resource is no longer ordered, please remove this attribute from the configuration""")
-    def insert_after(self) -> pulumi.Input[Optional[_builtins.str]]:
+    @pulumi.getter(name="externalApproval")
+    def external_approval(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
-        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+        Accept external approvals can enable Slack users to directly respond to approval request.
         """
-        return pulumi.get(self, "insert_after")
+        return pulumi.get(self, "external_approval")
 
-    @insert_after.setter
-    def insert_after(self, value: pulumi.Input[Optional[_builtins.str]]):
-        pulumi.set(self, "insert_after", value)
+    @external_approval.setter
+    def external_approval(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "external_approval", value)
 
     @_builtins.property
     @pulumi.getter
     def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The name of the Slack connection
+        Provide a unique and clearly identifiable connection name to your Slack App.
         """
         return pulumi.get(self, "name")
 
     @name.setter
     def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="signingSecret")
+    def signing_secret(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The signing secret obtained from the Slack App Management UI.
+        """
+        return pulumi.get(self, "signing_secret")
+
+    @signing_secret.setter
+    def signing_secret(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "signing_secret", value)
 
 
 @pulumi.input_type
 class _AutomationWorkflowSlackState:
     def __init__(__self__, *,
-                 insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 external_approval: pulumi.Input[Optional[_builtins.bool]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
+                 signing_secret: pulumi.Input[Optional[_builtins.str]] = None,
                  token: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AutomationWorkflowSlack resources.
 
-        :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
-        :param pulumi.Input[_builtins.str] name: The name of the Slack connection
-        :param pulumi.Input[_builtins.str] token: The bot token obtained from the Slack App Management UI
+        :param pulumi.Input[_builtins.bool] external_approval: Accept external approvals can enable Slack users to directly respond to approval request.
+        :param pulumi.Input[_builtins.str] name: Provide a unique and clearly identifiable connection name to your Slack App.
+        :param pulumi.Input[_builtins.str] signing_secret: The signing secret obtained from the Slack App Management UI.
+        :param pulumi.Input[_builtins.str] token: The bot token obtained from the Slack App Management UI.
         """
-        if insert_after is not None:
-            warnings.warn("""This resource is no longer ordered, please remove this attribute from the configuration""", DeprecationWarning)
-            pulumi.log.warn("""insert_after is deprecated: This resource is no longer ordered, please remove this attribute from the configuration""")
-        if insert_after is not None:
-            pulumi.set(__self__, "insert_after", insert_after)
+        if external_approval is not None:
+            pulumi.set(__self__, "external_approval", external_approval)
         if name is not None:
             pulumi.set(__self__, "name", name)
+        if signing_secret is not None:
+            pulumi.set(__self__, "signing_secret", signing_secret)
         if token is not None:
             pulumi.set(__self__, "token", token)
 
     @_builtins.property
-    @pulumi.getter(name="insertAfter")
-    @_utilities.deprecated("""This resource is no longer ordered, please remove this attribute from the configuration""")
-    def insert_after(self) -> pulumi.Input[Optional[_builtins.str]]:
+    @pulumi.getter(name="externalApproval")
+    def external_approval(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
-        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+        Accept external approvals can enable Slack users to directly respond to approval request.
         """
-        return pulumi.get(self, "insert_after")
+        return pulumi.get(self, "external_approval")
 
-    @insert_after.setter
-    def insert_after(self, value: pulumi.Input[Optional[_builtins.str]]):
-        pulumi.set(self, "insert_after", value)
+    @external_approval.setter
+    def external_approval(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "external_approval", value)
 
     @_builtins.property
     @pulumi.getter
     def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The name of the Slack connection
+        Provide a unique and clearly identifiable connection name to your Slack App.
         """
         return pulumi.get(self, "name")
 
@@ -125,10 +137,22 @@ class _AutomationWorkflowSlackState:
         pulumi.set(self, "name", value)
 
     @_builtins.property
+    @pulumi.getter(name="signingSecret")
+    def signing_secret(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The signing secret obtained from the Slack App Management UI.
+        """
+        return pulumi.get(self, "signing_secret")
+
+    @signing_secret.setter
+    def signing_secret(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "signing_secret", value)
+
+    @_builtins.property
     @pulumi.getter
     def token(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The bot token obtained from the Slack App Management UI
+        The bot token obtained from the Slack App Management UI.
         """
         return pulumi.get(self, "token")
 
@@ -143,8 +167,9 @@ class AutomationWorkflowSlack(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 external_approval: pulumi.Input[Optional[_builtins.bool]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
+                 signing_secret: pulumi.Input[Optional[_builtins.str]] = None,
                  token: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -182,12 +207,29 @@ class AutomationWorkflowSlack(pulumi.CustomResource):
 
         The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        default = dynatrace.AutomationWorkflowSlack("default",
+            name="#name#",
+            token="#######")
+        external_approval = dynatrace.AutomationWorkflowSlack("external_approval",
+            name="#name#",
+            token="#######",
+            external_approval=True,
+            signing_secret="#######")
+        ```
+
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
-        :param pulumi.Input[_builtins.str] name: The name of the Slack connection
-        :param pulumi.Input[_builtins.str] token: The bot token obtained from the Slack App Management UI
+        :param pulumi.Input[_builtins.bool] external_approval: Accept external approvals can enable Slack users to directly respond to approval request.
+        :param pulumi.Input[_builtins.str] name: Provide a unique and clearly identifiable connection name to your Slack App.
+        :param pulumi.Input[_builtins.str] signing_secret: The signing secret obtained from the Slack App Management UI.
+        :param pulumi.Input[_builtins.str] token: The bot token obtained from the Slack App Management UI.
         """
         ...
     @overload
@@ -230,6 +272,22 @@ class AutomationWorkflowSlack(pulumi.CustomResource):
 
         The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        default = dynatrace.AutomationWorkflowSlack("default",
+            name="#name#",
+            token="#######")
+        external_approval = dynatrace.AutomationWorkflowSlack("external_approval",
+            name="#name#",
+            token="#######",
+            external_approval=True,
+            signing_secret="#######")
+        ```
+
 
         :param str resource_name: The name of the resource.
         :param AutomationWorkflowSlackArgs args: The arguments to use to populate this resource's properties.
@@ -246,8 +304,9 @@ class AutomationWorkflowSlack(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 external_approval: pulumi.Input[Optional[_builtins.bool]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
+                 signing_secret: pulumi.Input[Optional[_builtins.str]] = None,
                  token: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -258,12 +317,13 @@ class AutomationWorkflowSlack(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = AutomationWorkflowSlackArgs.__new__(AutomationWorkflowSlackArgs)
 
-            __props__.__dict__["insert_after"] = insert_after
+            __props__.__dict__["external_approval"] = external_approval
             __props__.__dict__["name"] = name
+            __props__.__dict__["signing_secret"] = None if signing_secret is None else pulumi.Output.secret(signing_secret)
             if token is None and not opts.urn:
                 raise TypeError("Missing required property 'token'")
             __props__.__dict__["token"] = None if token is None else pulumi.Output.secret(token)
-        secret_opts = pulumi.ResourceOptions(additional_secret_outputs=["token"])
+        secret_opts = pulumi.ResourceOptions(additional_secret_outputs=["signingSecret", "token"])
         opts = pulumi.ResourceOptions.merge(opts, secret_opts)
         super(AutomationWorkflowSlack, __self__).__init__(
             'dynatrace:index/automationWorkflowSlack:AutomationWorkflowSlack',
@@ -275,8 +335,9 @@ class AutomationWorkflowSlack(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+            external_approval: pulumi.Input[Optional[_builtins.bool]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
+            signing_secret: pulumi.Input[Optional[_builtins.str]] = None,
             token: pulumi.Input[Optional[_builtins.str]] = None) -> 'AutomationWorkflowSlack':
         """
         Get an existing AutomationWorkflowSlack resource's state with the given name, id, and optional extra
@@ -285,41 +346,50 @@ class AutomationWorkflowSlack(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
-        :param pulumi.Input[_builtins.str] name: The name of the Slack connection
-        :param pulumi.Input[_builtins.str] token: The bot token obtained from the Slack App Management UI
+        :param pulumi.Input[_builtins.bool] external_approval: Accept external approvals can enable Slack users to directly respond to approval request.
+        :param pulumi.Input[_builtins.str] name: Provide a unique and clearly identifiable connection name to your Slack App.
+        :param pulumi.Input[_builtins.str] signing_secret: The signing secret obtained from the Slack App Management UI.
+        :param pulumi.Input[_builtins.str] token: The bot token obtained from the Slack App Management UI.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
         __props__ = _AutomationWorkflowSlackState.__new__(_AutomationWorkflowSlackState)
 
-        __props__.__dict__["insert_after"] = insert_after
+        __props__.__dict__["external_approval"] = external_approval
         __props__.__dict__["name"] = name
+        __props__.__dict__["signing_secret"] = signing_secret
         __props__.__dict__["token"] = token
         return AutomationWorkflowSlack(resource_name, opts=opts, __props__=__props__)
 
     @_builtins.property
-    @pulumi.getter(name="insertAfter")
-    @_utilities.deprecated("""This resource is no longer ordered, please remove this attribute from the configuration""")
-    def insert_after(self) -> pulumi.Output[_builtins.str]:
+    @pulumi.getter(name="externalApproval")
+    def external_approval(self) -> pulumi.Output[Optional[_builtins.bool]]:
         """
-        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+        Accept external approvals can enable Slack users to directly respond to approval request.
         """
-        return pulumi.get(self, "insert_after")
+        return pulumi.get(self, "external_approval")
 
     @_builtins.property
     @pulumi.getter
     def name(self) -> pulumi.Output[_builtins.str]:
         """
-        The name of the Slack connection
+        Provide a unique and clearly identifiable connection name to your Slack App.
         """
         return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter(name="signingSecret")
+    def signing_secret(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        The signing secret obtained from the Slack App Management UI.
+        """
+        return pulumi.get(self, "signing_secret")
 
     @_builtins.property
     @pulumi.getter
     def token(self) -> pulumi.Output[_builtins.str]:
         """
-        The bot token obtained from the Slack App Management UI
+        The bot token obtained from the Slack App Management UI.
         """
         return pulumi.get(self, "token")
 

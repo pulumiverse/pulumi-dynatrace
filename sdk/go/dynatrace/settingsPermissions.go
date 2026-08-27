@@ -74,7 +74,7 @@ import (
 //			userIamUser, err := dynatrace.NewIamUser(ctx, "user", &dynatrace.IamUserArgs{
 //				Email: pulumi.String("#name#@example.com"),
 //				Groups: pulumi.StringArray{
-//					group.ID(),
+//					group.ID().ToIDOutput().ToStringOutput(),
 //				},
 //			})
 //			if err != nil {
@@ -82,7 +82,7 @@ import (
 //			}
 //			// because the UID is not returned for the resource, we need data
 //			user := dynatrace.GetIamUserOutput(ctx, dynatrace.GetIamUserOutputArgs{
-//				Email: userIamUser.ID(),
+//				Email: userIamUser.ID().ToIDOutput().ToStringOutput(),
 //			}, nil)
 //			connection, err := dynatrace.NewGithubConnection(ctx, "connection", &dynatrace.GithubConnectionArgs{
 //				Name:  pulumi.String("#name#"),
@@ -93,14 +93,12 @@ import (
 //				return err
 //			}
 //			_, err = dynatrace.NewSettingsPermissions(ctx, "permission", &dynatrace.SettingsPermissionsArgs{
-//				SettingsObjectId: connection.ID(),
+//				SettingsObjectId: connection.ID().ToIDOutput().ToStringOutput(),
 //				AllUsers:         pulumi.String("none"),
 //				Users: &dynatrace.SettingsPermissionsUsersArgs{
 //					Users: dynatrace.SettingsPermissionsUsersUserArray{
 //						&dynatrace.SettingsPermissionsUsersUserArgs{
-//							Uid: user.ApplyT(func(user dynatrace.GetIamUserResult) (*string, error) {
-//								return user.Uid, nil
-//							}).(pulumi.StringPtrOutput),
+//							Uid:    user.Uid(),
 //							Access: pulumi.String("write"),
 //						},
 //					},
@@ -108,7 +106,7 @@ import (
 //				Groups: &dynatrace.SettingsPermissionsGroupsArgs{
 //					Groups: dynatrace.SettingsPermissionsGroupsGroupArray{
 //						&dynatrace.SettingsPermissionsGroupsGroupArgs{
-//							Id:     group.ID(),
+//							Id:     group.ID().ToIDOutput().ToStringOutput(),
 //							Access: pulumi.String("read"),
 //						},
 //					},

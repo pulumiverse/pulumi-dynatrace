@@ -22,15 +22,22 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// (Field has overlap with `dynatrace.WebApplication`) This setting is enabled (`True`) or disabled (`False`)
         /// </summary>
         public readonly bool Enabled;
+        /// <summary>
+        /// Enable New Session Replay Experience
+        /// </summary>
+        public readonly bool? EnabledOnGrail;
 
         [OutputConstructor]
         private WebAppEnablementSessionReplay(
             int costAndTrafficControl,
 
-            bool enabled)
+            bool enabled,
+
+            bool? enabledOnGrail)
         {
             CostAndTrafficControl = costAndTrafficControl;
             Enabled = enabled;
+            EnabledOnGrail = enabledOnGrail;
         }
     }
 }

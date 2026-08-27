@@ -33,6 +33,7 @@ class AutomationWorkflowArgs:
                  owner_type: pulumi.Input[Optional[_builtins.str]] = None,
                  private: pulumi.Input[Optional[_builtins.bool]] = None,
                  result: pulumi.Input[Optional[_builtins.str]] = None,
+                 throttle: pulumi.Input[Optional['AutomationWorkflowThrottleArgs']] = None,
                  trigger: pulumi.Input[Optional['AutomationWorkflowTriggerArgs']] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None):
         """
@@ -50,6 +51,7 @@ class AutomationWorkflowArgs:
         :param pulumi.Input[_builtins.str] owner_type: The type of the owner. Possible values are `USER` and `GROUP`
         :param pulumi.Input[_builtins.bool] private: Defines whether this workflow is private to the owner or not. Default is `true`
         :param pulumi.Input[_builtins.str] result: The result of the workflow
+        :param pulumi.Input['AutomationWorkflowThrottleArgs'] throttle: Execution throttling state for the workflow. Server-computed - see `is_limit_hit`. Set only to reset an active throttle
         :param pulumi.Input['AutomationWorkflowTriggerArgs'] trigger: Configures how executions of the workflows are getting triggered. If no trigger is specified it means the workflow is getting manually triggered
         :param pulumi.Input[_builtins.str] type: The type of the workflow. Possible values are `STANDARD` and `SIMPLE`. Defaults to `STANDARD`. Workflows of type `SIMPLE` are allowed to contain only one action
         """
@@ -75,6 +77,8 @@ class AutomationWorkflowArgs:
             pulumi.set(__self__, "private", private)
         if result is not None:
             pulumi.set(__self__, "result", result)
+        if throttle is not None:
+            pulumi.set(__self__, "throttle", throttle)
         if trigger is not None:
             pulumi.set(__self__, "trigger", trigger)
         if type is not None:
@@ -226,6 +230,18 @@ class AutomationWorkflowArgs:
 
     @_builtins.property
     @pulumi.getter
+    def throttle(self) -> pulumi.Input[Optional['AutomationWorkflowThrottleArgs']]:
+        """
+        Execution throttling state for the workflow. Server-computed - see `is_limit_hit`. Set only to reset an active throttle
+        """
+        return pulumi.get(self, "throttle")
+
+    @throttle.setter
+    def throttle(self, value: pulumi.Input[Optional['AutomationWorkflowThrottleArgs']]):
+        pulumi.set(self, "throttle", value)
+
+    @_builtins.property
+    @pulumi.getter
     def trigger(self) -> pulumi.Input[Optional['AutomationWorkflowTriggerArgs']]:
         """
         Configures how executions of the workflows are getting triggered. If no trigger is specified it means the workflow is getting manually triggered
@@ -263,9 +279,11 @@ class _AutomationWorkflowState:
                  private: pulumi.Input[Optional[_builtins.bool]] = None,
                  result: pulumi.Input[Optional[_builtins.str]] = None,
                  tasks: pulumi.Input[Optional['AutomationWorkflowTasksArgs']] = None,
+                 throttle: pulumi.Input[Optional['AutomationWorkflowThrottleArgs']] = None,
                  title: pulumi.Input[Optional[_builtins.str]] = None,
                  trigger: pulumi.Input[Optional['AutomationWorkflowTriggerArgs']] = None,
-                 type: pulumi.Input[Optional[_builtins.str]] = None):
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
+                 unacknowledged_skipped_schedule_at: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AutomationWorkflow resources.
 
@@ -280,9 +298,11 @@ class _AutomationWorkflowState:
         :param pulumi.Input[_builtins.bool] private: Defines whether this workflow is private to the owner or not. Default is `true`
         :param pulumi.Input[_builtins.str] result: The result of the workflow
         :param pulumi.Input['AutomationWorkflowTasksArgs'] tasks: The tasks to run for every execution of this workflow. Note: the order in which tasks are declared in HCL does not determine their layout - positions are not assigned incrementally based on declaration order. Set `position` explicitly on each task if you need a deterministic layout
+        :param pulumi.Input['AutomationWorkflowThrottleArgs'] throttle: Execution throttling state for the workflow. Server-computed - see `is_limit_hit`. Set only to reset an active throttle
         :param pulumi.Input[_builtins.str] title: The title / name of the workflow
         :param pulumi.Input['AutomationWorkflowTriggerArgs'] trigger: Configures how executions of the workflows are getting triggered. If no trigger is specified it means the workflow is getting manually triggered
         :param pulumi.Input[_builtins.str] type: The type of the workflow. Possible values are `STANDARD` and `SIMPLE`. Defaults to `STANDARD`. Workflows of type `SIMPLE` are allowed to contain only one action
+        :param pulumi.Input[_builtins.str] unacknowledged_skipped_schedule_at: Timestamp of the earliest schedule that was skipped and not yet acknowledged
         """
         if actor is not None:
             pulumi.set(__self__, "actor", actor)
@@ -306,12 +326,16 @@ class _AutomationWorkflowState:
             pulumi.set(__self__, "result", result)
         if tasks is not None:
             pulumi.set(__self__, "tasks", tasks)
+        if throttle is not None:
+            pulumi.set(__self__, "throttle", throttle)
         if title is not None:
             pulumi.set(__self__, "title", title)
         if trigger is not None:
             pulumi.set(__self__, "trigger", trigger)
         if type is not None:
             pulumi.set(__self__, "type", type)
+        if unacknowledged_skipped_schedule_at is not None:
+            pulumi.set(__self__, "unacknowledged_skipped_schedule_at", unacknowledged_skipped_schedule_at)
 
     @_builtins.property
     @pulumi.getter
@@ -447,6 +471,18 @@ class _AutomationWorkflowState:
 
     @_builtins.property
     @pulumi.getter
+    def throttle(self) -> pulumi.Input[Optional['AutomationWorkflowThrottleArgs']]:
+        """
+        Execution throttling state for the workflow. Server-computed - see `is_limit_hit`. Set only to reset an active throttle
+        """
+        return pulumi.get(self, "throttle")
+
+    @throttle.setter
+    def throttle(self, value: pulumi.Input[Optional['AutomationWorkflowThrottleArgs']]):
+        pulumi.set(self, "throttle", value)
+
+    @_builtins.property
+    @pulumi.getter
     def title(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The title / name of the workflow
@@ -481,6 +517,18 @@ class _AutomationWorkflowState:
     def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
+    @_builtins.property
+    @pulumi.getter(name="unacknowledgedSkippedScheduleAt")
+    def unacknowledged_skipped_schedule_at(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Timestamp of the earliest schedule that was skipped and not yet acknowledged
+        """
+        return pulumi.get(self, "unacknowledged_skipped_schedule_at")
+
+    @unacknowledged_skipped_schedule_at.setter
+    def unacknowledged_skipped_schedule_at(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "unacknowledged_skipped_schedule_at", value)
+
 
 @pulumi.type_token("dynatrace:index/automationWorkflow:AutomationWorkflow")
 class AutomationWorkflow(pulumi.CustomResource):
@@ -499,6 +547,7 @@ class AutomationWorkflow(pulumi.CustomResource):
                  private: pulumi.Input[Optional[_builtins.bool]] = None,
                  result: pulumi.Input[Optional[_builtins.str]] = None,
                  tasks: pulumi.Input[Optional[Union['AutomationWorkflowTasksArgs', 'AutomationWorkflowTasksArgsDict']]] = None,
+                 throttle: pulumi.Input[Optional[Union['AutomationWorkflowThrottleArgs', 'AutomationWorkflowThrottleArgsDict']]] = None,
                  title: pulumi.Input[Optional[_builtins.str]] = None,
                  trigger: pulumi.Input[Optional[Union['AutomationWorkflowTriggerArgs', 'AutomationWorkflowTriggerArgsDict']]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
@@ -626,6 +675,8 @@ class AutomationWorkflow(pulumi.CustomResource):
                             },
                             "entity_tags_match": "all",
                             "on_problem_close": False,
+                            "trigger_on": "open",
+                            "maintenance_window_trigger_behavior": "inside",
                             "custom_filter": "matchesPhrase(custom.event.type, \\"DEPLOY\\")",
                         },
                     },
@@ -647,6 +698,7 @@ class AutomationWorkflow(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] private: Defines whether this workflow is private to the owner or not. Default is `true`
         :param pulumi.Input[_builtins.str] result: The result of the workflow
         :param pulumi.Input[Union['AutomationWorkflowTasksArgs', 'AutomationWorkflowTasksArgsDict']] tasks: The tasks to run for every execution of this workflow. Note: the order in which tasks are declared in HCL does not determine their layout - positions are not assigned incrementally based on declaration order. Set `position` explicitly on each task if you need a deterministic layout
+        :param pulumi.Input[Union['AutomationWorkflowThrottleArgs', 'AutomationWorkflowThrottleArgsDict']] throttle: Execution throttling state for the workflow. Server-computed - see `is_limit_hit`. Set only to reset an active throttle
         :param pulumi.Input[_builtins.str] title: The title / name of the workflow
         :param pulumi.Input[Union['AutomationWorkflowTriggerArgs', 'AutomationWorkflowTriggerArgsDict']] trigger: Configures how executions of the workflows are getting triggered. If no trigger is specified it means the workflow is getting manually triggered
         :param pulumi.Input[_builtins.str] type: The type of the workflow. Possible values are `STANDARD` and `SIMPLE`. Defaults to `STANDARD`. Workflows of type `SIMPLE` are allowed to contain only one action
@@ -780,6 +832,8 @@ class AutomationWorkflow(pulumi.CustomResource):
                             },
                             "entity_tags_match": "all",
                             "on_problem_close": False,
+                            "trigger_on": "open",
+                            "maintenance_window_trigger_behavior": "inside",
                             "custom_filter": "matchesPhrase(custom.event.type, \\"DEPLOY\\")",
                         },
                     },
@@ -814,6 +868,7 @@ class AutomationWorkflow(pulumi.CustomResource):
                  private: pulumi.Input[Optional[_builtins.bool]] = None,
                  result: pulumi.Input[Optional[_builtins.str]] = None,
                  tasks: pulumi.Input[Optional[Union['AutomationWorkflowTasksArgs', 'AutomationWorkflowTasksArgsDict']]] = None,
+                 throttle: pulumi.Input[Optional[Union['AutomationWorkflowThrottleArgs', 'AutomationWorkflowThrottleArgsDict']]] = None,
                  title: pulumi.Input[Optional[_builtins.str]] = None,
                  trigger: pulumi.Input[Optional[Union['AutomationWorkflowTriggerArgs', 'AutomationWorkflowTriggerArgsDict']]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
@@ -839,11 +894,13 @@ class AutomationWorkflow(pulumi.CustomResource):
             if tasks is None and not opts.urn:
                 raise TypeError("Missing required property 'tasks'")
             __props__.__dict__["tasks"] = tasks
+            __props__.__dict__["throttle"] = throttle
             if title is None and not opts.urn:
                 raise TypeError("Missing required property 'title'")
             __props__.__dict__["title"] = title
             __props__.__dict__["trigger"] = trigger
             __props__.__dict__["type"] = type
+            __props__.__dict__["unacknowledged_skipped_schedule_at"] = None
         super(AutomationWorkflow, __self__).__init__(
             'dynatrace:index/automationWorkflow:AutomationWorkflow',
             resource_name,
@@ -865,9 +922,11 @@ class AutomationWorkflow(pulumi.CustomResource):
             private: pulumi.Input[Optional[_builtins.bool]] = None,
             result: pulumi.Input[Optional[_builtins.str]] = None,
             tasks: pulumi.Input[Optional[Union['AutomationWorkflowTasksArgs', 'AutomationWorkflowTasksArgsDict']]] = None,
+            throttle: pulumi.Input[Optional[Union['AutomationWorkflowThrottleArgs', 'AutomationWorkflowThrottleArgsDict']]] = None,
             title: pulumi.Input[Optional[_builtins.str]] = None,
             trigger: pulumi.Input[Optional[Union['AutomationWorkflowTriggerArgs', 'AutomationWorkflowTriggerArgsDict']]] = None,
-            type: pulumi.Input[Optional[_builtins.str]] = None) -> 'AutomationWorkflow':
+            type: pulumi.Input[Optional[_builtins.str]] = None,
+            unacknowledged_skipped_schedule_at: pulumi.Input[Optional[_builtins.str]] = None) -> 'AutomationWorkflow':
         """
         Get an existing AutomationWorkflow resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -886,9 +945,11 @@ class AutomationWorkflow(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] private: Defines whether this workflow is private to the owner or not. Default is `true`
         :param pulumi.Input[_builtins.str] result: The result of the workflow
         :param pulumi.Input[Union['AutomationWorkflowTasksArgs', 'AutomationWorkflowTasksArgsDict']] tasks: The tasks to run for every execution of this workflow. Note: the order in which tasks are declared in HCL does not determine their layout - positions are not assigned incrementally based on declaration order. Set `position` explicitly on each task if you need a deterministic layout
+        :param pulumi.Input[Union['AutomationWorkflowThrottleArgs', 'AutomationWorkflowThrottleArgsDict']] throttle: Execution throttling state for the workflow. Server-computed - see `is_limit_hit`. Set only to reset an active throttle
         :param pulumi.Input[_builtins.str] title: The title / name of the workflow
         :param pulumi.Input[Union['AutomationWorkflowTriggerArgs', 'AutomationWorkflowTriggerArgsDict']] trigger: Configures how executions of the workflows are getting triggered. If no trigger is specified it means the workflow is getting manually triggered
         :param pulumi.Input[_builtins.str] type: The type of the workflow. Possible values are `STANDARD` and `SIMPLE`. Defaults to `STANDARD`. Workflows of type `SIMPLE` are allowed to contain only one action
+        :param pulumi.Input[_builtins.str] unacknowledged_skipped_schedule_at: Timestamp of the earliest schedule that was skipped and not yet acknowledged
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -905,9 +966,11 @@ class AutomationWorkflow(pulumi.CustomResource):
         __props__.__dict__["private"] = private
         __props__.__dict__["result"] = result
         __props__.__dict__["tasks"] = tasks
+        __props__.__dict__["throttle"] = throttle
         __props__.__dict__["title"] = title
         __props__.__dict__["trigger"] = trigger
         __props__.__dict__["type"] = type
+        __props__.__dict__["unacknowledged_skipped_schedule_at"] = unacknowledged_skipped_schedule_at
         return AutomationWorkflow(resource_name, opts=opts, __props__=__props__)
 
     @_builtins.property
@@ -1000,6 +1063,14 @@ class AutomationWorkflow(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter
+    def throttle(self) -> pulumi.Output['outputs.AutomationWorkflowThrottle']:
+        """
+        Execution throttling state for the workflow. Server-computed - see `is_limit_hit`. Set only to reset an active throttle
+        """
+        return pulumi.get(self, "throttle")
+
+    @_builtins.property
+    @pulumi.getter
     def title(self) -> pulumi.Output[_builtins.str]:
         """
         The title / name of the workflow
@@ -1021,4 +1092,12 @@ class AutomationWorkflow(pulumi.CustomResource):
         The type of the workflow. Possible values are `STANDARD` and `SIMPLE`. Defaults to `STANDARD`. Workflows of type `SIMPLE` are allowed to contain only one action
         """
         return pulumi.get(self, "type")
+
+    @_builtins.property
+    @pulumi.getter(name="unacknowledgedSkippedScheduleAt")
+    def unacknowledged_skipped_schedule_at(self) -> pulumi.Output[_builtins.str]:
+        """
+        Timestamp of the earliest schedule that was skipped and not yet acknowledged
+        """
+        return pulumi.get(self, "unacknowledged_skipped_schedule_at")
 

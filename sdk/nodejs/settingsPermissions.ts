@@ -71,7 +71,7 @@ import * as utilities from "./utilities";
  *     allUsers: "none",
  *     users: {
  *         users: [{
- *             uid: user.apply(user => user.uid),
+ *             uid: user.uid,
  *             access: "write",
  *         }],
  *     },

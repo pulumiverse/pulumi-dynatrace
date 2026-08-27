@@ -45,15 +45,15 @@ import (
 //			tmpJSON0, err := json.Marshal(map[string]interface{}{
 //				"version":   1,
 //				"variables": []interface{}{},
-//				"tiles": map[string]interface{}{
-//					"0": map[string]interface{}{
+//				"tiles": map[string]map[string]string{
+//					"0": map[string]string{
 //						"type":    "markdown",
 //						"title":   "",
 //						"content": "Dashboard content",
 //					},
 //				},
-//				"layouts": map[string]interface{}{
-//					"0": map[string]interface{}{
+//				"layouts": map[string]map[string]int{
+//					"0": map[string]int{
 //						"x": 0,
 //						"y": 0,
 //						"w": 24,
@@ -88,16 +88,16 @@ import (
 //				return err
 //			}
 //			_, err = dynatrace.NewDirectShares(ctx, "this", &dynatrace.DirectSharesArgs{
-//				DocumentId: thisDocument.ID(),
+//				DocumentId: thisDocument.ID().ToIDOutput().ToStringOutput(),
 //				Access:     pulumi.String("read-write"),
 //				Recipients: &dynatrace.DirectSharesRecipientsArgs{
 //					Recipients: dynatrace.DirectSharesRecipientsRecipientArray{
 //						&dynatrace.DirectSharesRecipientsRecipientArgs{
-//							Id:   sampleServiceUser.ID(),
+//							Id:   sampleServiceUser.ID().ToIDOutput().ToStringOutput(),
 //							Type: pulumi.String("user"),
 //						},
 //						&dynatrace.DirectSharesRecipientsRecipientArgs{
-//							Id:   sampleGroup.ID(),
+//							Id:   sampleGroup.ID().ToIDOutput().ToStringOutput(),
 //							Type: pulumi.String("group"),
 //						},
 //					},

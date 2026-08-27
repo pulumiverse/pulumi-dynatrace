@@ -106,15 +106,14 @@ namespace Pulumiverse.Dynatrace
     ///                     ["Action"] = "sts:AssumeRoleWithWebIdentity",
     ///                     ["Condition"] = new Dictionary&lt;string, object?&gt;
     ///                     {
-    ///                         ["StringEquals"] = Output.Tuple(dynatrace_oidc_provider.Url, test_aws_connection.Id, dynatrace_oidc_provider.Url).Apply(values =&gt;
+    ///                         ["StringEquals"] = Output.Tuple(dynatrace_oidc_provider.Url, test_aws_connection.Id).Apply(values =&gt;
     ///                         {
-    ///                             var dynatrace-oidc-providerUrl = values.Item1;
+    ///                             var url = values.Item1;
     ///                             var id = values.Item2;
-    ///                             var dynatrace-oidc-providerUrl1 = values.Item3;
     ///                             return 
     ///                             {
-    ///                                 { $"{dynatrace_oidc_providerUrl}:sub", $"dt:connection-id/{id}" },
-    ///                                 { $"{dynatrace_oidc_providerUrl1}:aud", "&lt;TENANT_URL&gt;/app-id/dynatrace.aws.connector" },
+    ///                                 { $"{url}:sub", $"dt:connection-id/{id}" },
+    ///                                 { $"{url}:aud", "&lt;TENANT_URL&gt;/app-id/dynatrace.aws.connector" },
     ///                             };
     ///                         }),
     ///                     },

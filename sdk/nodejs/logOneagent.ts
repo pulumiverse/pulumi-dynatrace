@@ -48,6 +48,10 @@ export class LogOneagent extends pulumi.CustomResource {
     }
 
     /**
+     * Specifies the granularity at which binary log files are detected. 'Per log source' applies binary detection at the log source level, 'Per log file' evaluates each log file individually. Possible values: `BinaryPerLogFile`, `BinaryPerLogSource`
+     */
+    declare public readonly binaryDetectionMode: pulumi.Output<string | undefined>;
+    /**
      * Enables automatic detection of timezone in container's logs if it is not explicitly defined in content or configured.
      */
     declare public readonly containerTimezoneHeuristicEnabled: pulumi.Output<boolean>;
@@ -72,7 +76,7 @@ export class LogOneagent extends pulumi.CustomResource {
      */
     declare public readonly iisdetectionEnabled: pulumi.Output<boolean>;
     /**
-     * Allows detection of logs written to mounted network storage drives. Applies only to Linux hosts. For other OSes it's always enabled.
+     * Allows detection of logs written to mounted network storage drives. Applies only to Linux hosts. For Windows operating system it's always enabled.
      */
     declare public readonly logScannerLinuxNfsEnabled: pulumi.Output<boolean>;
     /**
@@ -84,7 +88,7 @@ export class LogOneagent extends pulumi.CustomResource {
      */
     declare public readonly minBinaryDetectionLimitBytes: pulumi.Output<number>;
     /**
-     * Enabling this option may affect your licensing costs. For more details, see [documentation](https://dt-url.net/4l02yi8).
+     * Enabling this option may affect your licensing costs. For more details, see [documentation](https://dt-url.net/7v02z76).
      */
     declare public readonly monitorOwnLogsEnabled: pulumi.Output<boolean>;
     /**
@@ -121,6 +125,7 @@ export class LogOneagent extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as LogOneagentState | undefined;
+            resourceInputs["binaryDetectionMode"] = state?.binaryDetectionMode;
             resourceInputs["containerTimezoneHeuristicEnabled"] = state?.containerTimezoneHeuristicEnabled;
             resourceInputs["containersLogsDetectionEnabled"] = state?.containersLogsDetectionEnabled;
             resourceInputs["dateSearchLimitBytes"] = state?.dateSearchLimitBytes;
@@ -180,6 +185,7 @@ export class LogOneagent extends pulumi.CustomResource {
             if (args?.systemLogsDetectionEnabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'systemLogsDetectionEnabled'");
             }
+            resourceInputs["binaryDetectionMode"] = args?.binaryDetectionMode;
             resourceInputs["containerTimezoneHeuristicEnabled"] = args?.containerTimezoneHeuristicEnabled;
             resourceInputs["containersLogsDetectionEnabled"] = args?.containersLogsDetectionEnabled;
             resourceInputs["dateSearchLimitBytes"] = args?.dateSearchLimitBytes;
@@ -206,6 +212,10 @@ export class LogOneagent extends pulumi.CustomResource {
  */
 export interface LogOneagentState {
     /**
+     * Specifies the granularity at which binary log files are detected. 'Per log source' applies binary detection at the log source level, 'Per log file' evaluates each log file individually. Possible values: `BinaryPerLogFile`, `BinaryPerLogSource`
+     */
+    binaryDetectionMode?: pulumi.Input<string | undefined>;
+    /**
      * Enables automatic detection of timezone in container's logs if it is not explicitly defined in content or configured.
      */
     containerTimezoneHeuristicEnabled?: pulumi.Input<boolean | undefined>;
@@ -230,7 +240,7 @@ export interface LogOneagentState {
      */
     iisdetectionEnabled?: pulumi.Input<boolean | undefined>;
     /**
-     * Allows detection of logs written to mounted network storage drives. Applies only to Linux hosts. For other OSes it's always enabled.
+     * Allows detection of logs written to mounted network storage drives. Applies only to Linux hosts. For Windows operating system it's always enabled.
      */
     logScannerLinuxNfsEnabled?: pulumi.Input<boolean | undefined>;
     /**
@@ -242,7 +252,7 @@ export interface LogOneagentState {
      */
     minBinaryDetectionLimitBytes?: pulumi.Input<number | undefined>;
     /**
-     * Enabling this option may affect your licensing costs. For more details, see [documentation](https://dt-url.net/4l02yi8).
+     * Enabling this option may affect your licensing costs. For more details, see [documentation](https://dt-url.net/7v02z76).
      */
     monitorOwnLogsEnabled?: pulumi.Input<boolean | undefined>;
     /**
@@ -272,6 +282,10 @@ export interface LogOneagentState {
  */
 export interface LogOneagentArgs {
     /**
+     * Specifies the granularity at which binary log files are detected. 'Per log source' applies binary detection at the log source level, 'Per log file' evaluates each log file individually. Possible values: `BinaryPerLogFile`, `BinaryPerLogSource`
+     */
+    binaryDetectionMode?: pulumi.Input<string | undefined>;
+    /**
      * Enables automatic detection of timezone in container's logs if it is not explicitly defined in content or configured.
      */
     containerTimezoneHeuristicEnabled: pulumi.Input<boolean>;
@@ -296,7 +310,7 @@ export interface LogOneagentArgs {
      */
     iisdetectionEnabled: pulumi.Input<boolean>;
     /**
-     * Allows detection of logs written to mounted network storage drives. Applies only to Linux hosts. For other OSes it's always enabled.
+     * Allows detection of logs written to mounted network storage drives. Applies only to Linux hosts. For Windows operating system it's always enabled.
      */
     logScannerLinuxNfsEnabled: pulumi.Input<boolean>;
     /**
@@ -308,7 +322,7 @@ export interface LogOneagentArgs {
      */
     minBinaryDetectionLimitBytes: pulumi.Input<number>;
     /**
-     * Enabling this option may affect your licensing costs. For more details, see [documentation](https://dt-url.net/4l02yi8).
+     * Enabling this option may affect your licensing costs. For more details, see [documentation](https://dt-url.net/7v02z76).
      */
     monitorOwnLogsEnabled: pulumi.Input<boolean>;
     /**

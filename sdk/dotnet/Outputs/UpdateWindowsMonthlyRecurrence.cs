@@ -16,10 +16,10 @@ namespace Pulumiverse.Dynatrace.Outputs
     {
         /// <summary>
         /// Every **X** months:
-        /// * `1` = every month,
-        /// * `2` = every two months,
-        /// * `3` = every three months,
-        /// * etc.
+        ///  * `1` = every month,
+        ///  * `2` = every two months,
+        ///  * `3` = every three months,
+        ///  * etc.
         /// </summary>
         public readonly int Every;
         /// <summary>
