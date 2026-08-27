@@ -5,6 +5,8 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 /**
+ * > This resource API endpoint has been deprecated.
+ *
  * > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
  *
  * ## Dynatrace Documentation

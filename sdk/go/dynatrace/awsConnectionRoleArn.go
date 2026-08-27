@@ -97,25 +97,24 @@ import (
 //			}
 //			exampleRole, err := iam.NewRole(ctx, "example_role", &iam.RoleArgs{
 //				Name: pulumi.String("#name#"),
-//				AssumeRolePolicy: pulumi.All(dynatrace_oidc_provider.Arn, dynatrace_oidc_provider.Url, test_aws_connection.ID(), dynatrace_oidc_provider.Url).ApplyT(func(_args []interface{}) (string, error) {
+//				AssumeRolePolicy: pulumi.All(dynatrace_oidc_provider.Arn, dynatrace_oidc_provider.Url, test_aws_connection.ID()).ApplyT(func(_args []interface{}) (string, error) {
 //					arn := _args[0].(string)
-//					dynatrace - oidc - providerUrl := _args[1].(string)
-//					id := _args[2].(string)
-//					dynatrace - oidc - providerUrl1 := _args[3].(string)
+//					url := _args[1].(string)
+//					id := _args[2].(pulumi.ID)
 //					var _zero string
 //					tmpJSON0, err := json.Marshal(map[string]interface{}{
 //						"Version": "2012-10-17",
 //						"Statement": []map[string]interface{}{
 //							map[string]interface{}{
 //								"Effect": "Allow",
-//								"Principal": map[string]interface{}{
+//								"Principal": map[string]string{
 //									"Federated": arn,
 //								},
 //								"Action": "sts:AssumeRoleWithWebIdentity",
-//								"Condition": map[string]interface{}{
+//								"Condition": map[string]map[string]string{
 //									"StringEquals": map[string]string{
-//										fmt.Sprintf("%v:sub", dynatrace_oidc_providerUrl):  fmt.Sprintf("dt:connection-id/%v", id),
-//										fmt.Sprintf("%v:aud", dynatrace_oidc_providerUrl1): "<TENANT_URL>/app-id/dynatrace.aws.connector",
+//										fmt.Sprintf("%v:sub", url): fmt.Sprintf("dt:connection-id/%v", id),
+//										fmt.Sprintf("%v:aud", url): "<TENANT_URL>/app-id/dynatrace.aws.connector",
 //									},
 //								},
 //							},
@@ -132,7 +131,7 @@ import (
 //				return err
 //			}
 //			_, err = dynatrace.NewAwsConnectionRoleArn(ctx, "test-aws-connection-arn", &dynatrace.AwsConnectionRoleArnArgs{
-//				AwsConnectionId: test_aws_connection.ID(),
+//				AwsConnectionId: test_aws_connection.ID().ToIDOutput().ToStringOutput(),
 //				RoleArn:         exampleRole.Arn,
 //			})
 //			if err != nil {

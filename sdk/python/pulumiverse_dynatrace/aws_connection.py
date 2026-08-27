@@ -209,12 +209,11 @@ class AwsConnection(pulumi.CustomResource):
                     "Action": "sts:AssumeRoleWithWebIdentity",
                     "Condition": {
                         "StringEquals": pulumi.Output.all(
-                            dynatrace-oidc-providerUrl=dynatrace_oidc_provider.url,
-                            id=test_aws_connection.id,
-                            dynatrace-oidc-providerUrl1=dynatrace_oidc_provider.url
+                            url=dynatrace_oidc_provider.url,
+                            id=test_aws_connection.id
         ).apply(lambda resolved_outputs: {
-                            f"{resolved_outputs['dynatrace-oidc-providerUrl']}:sub": f"dt:connection-id/{resolved_outputs['id']}",
-                            f"{resolved_outputs['dynatrace-oidc-providerUrl1']}:aud": "<TENANT_URL>/app-id/dynatrace.aws.connector",
+                            f"{resolved_outputs['url']}:sub": f"dt:connection-id/{resolved_outputs['id']}",
+                            f"{resolved_outputs['url']}:aud": "<TENANT_URL>/app-id/dynatrace.aws.connector",
                         })
         ,
                     },
@@ -305,12 +304,11 @@ class AwsConnection(pulumi.CustomResource):
                     "Action": "sts:AssumeRoleWithWebIdentity",
                     "Condition": {
                         "StringEquals": pulumi.Output.all(
-                            dynatrace-oidc-providerUrl=dynatrace_oidc_provider.url,
-                            id=test_aws_connection.id,
-                            dynatrace-oidc-providerUrl1=dynatrace_oidc_provider.url
+                            url=dynatrace_oidc_provider.url,
+                            id=test_aws_connection.id
         ).apply(lambda resolved_outputs: {
-                            f"{resolved_outputs['dynatrace-oidc-providerUrl']}:sub": f"dt:connection-id/{resolved_outputs['id']}",
-                            f"{resolved_outputs['dynatrace-oidc-providerUrl1']}:aud": "<TENANT_URL>/app-id/dynatrace.aws.connector",
+                            f"{resolved_outputs['url']}:sub": f"dt:connection-id/{resolved_outputs['id']}",
+                            f"{resolved_outputs['url']}:aud": "<TENANT_URL>/app-id/dynatrace.aws.connector",
                         })
         ,
                     },

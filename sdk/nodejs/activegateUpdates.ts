@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
@@ -18,6 +20,35 @@ import * as utilities from "./utilities";
  * - `terraform-provider-dynatrace -export dynatrace.ActivegateUpdates` downloads existing Activegate updates configuration
  *
  * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ *
+ * ## Resource Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ *
+ * const exampleUpdateWindows = new dynatrace.UpdateWindows("example", {
+ *     name: "#name#",
+ *     enabled: true,
+ *     recurrence: "ONCE",
+ *     onceRecurrence: {
+ *         recurrenceRange: {
+ *             end: "2023-02-15T04:00:00Z",
+ *             start: "2023-02-15T02:00:00Z",
+ *         },
+ *     },
+ * });
+ * const example = new dynatrace.ActivegateUpdates("example", {
+ *     scope: "environment",
+ *     targetVersion: "latest",
+ *     updateMode: "AUTOMATIC_DURING_UW",
+ *     updateWindows: {
+ *         updateWindows: [{
+ *             updateWindow: exampleUpdateWindows.id,
+ *         }],
+ *     },
+ * });
+ * ```
  */
 export class ActivegateUpdates extends pulumi.CustomResource {
     /**
@@ -48,13 +79,21 @@ export class ActivegateUpdates extends pulumi.CustomResource {
     }
 
     /**
-     * Automatic updates at earliest convenience
-     */
-    declare public readonly autoUpdate: pulumi.Output<boolean>;
-    /**
      * The scope of this setting (ENVIRONMENT*ACTIVE*GATE). Omit this property if you want to cover the whole environment.
      */
     declare public readonly scope: pulumi.Output<string | undefined>;
+    /**
+     * Target version
+     */
+    declare public readonly targetVersion: pulumi.Output<string>;
+    /**
+     * Update mode. Possible values: `AUTOMATIC`, `AUTOMATIC_DURING_UW`, `MANUAL`
+     */
+    declare public readonly updateMode: pulumi.Output<string>;
+    /**
+     * Update windows
+     */
+    declare public readonly updateWindows: pulumi.Output<outputs.ActivegateUpdatesUpdateWindows | undefined>;
 
     /**
      * Create a ActivegateUpdates resource with the given unique name, arguments, and options.
@@ -69,15 +108,22 @@ export class ActivegateUpdates extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ActivegateUpdatesState | undefined;
-            resourceInputs["autoUpdate"] = state?.autoUpdate;
             resourceInputs["scope"] = state?.scope;
+            resourceInputs["targetVersion"] = state?.targetVersion;
+            resourceInputs["updateMode"] = state?.updateMode;
+            resourceInputs["updateWindows"] = state?.updateWindows;
         } else {
             const args = argsOrState as ActivegateUpdatesArgs | undefined;
-            if (args?.autoUpdate === undefined && !opts.urn) {
-                throw new Error("Missing required property 'autoUpdate'");
+            if (args?.targetVersion === undefined && !opts.urn) {
+                throw new Error("Missing required property 'targetVersion'");
             }
-            resourceInputs["autoUpdate"] = args?.autoUpdate;
+            if (args?.updateMode === undefined && !opts.urn) {
+                throw new Error("Missing required property 'updateMode'");
+            }
             resourceInputs["scope"] = args?.scope;
+            resourceInputs["targetVersion"] = args?.targetVersion;
+            resourceInputs["updateMode"] = args?.updateMode;
+            resourceInputs["updateWindows"] = args?.updateWindows;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ActivegateUpdates.__pulumiType, name, resourceInputs, opts);
@@ -89,13 +135,21 @@ export class ActivegateUpdates extends pulumi.CustomResource {
  */
 export interface ActivegateUpdatesState {
     /**
-     * Automatic updates at earliest convenience
-     */
-    autoUpdate?: pulumi.Input<boolean | undefined>;
-    /**
      * The scope of this setting (ENVIRONMENT*ACTIVE*GATE). Omit this property if you want to cover the whole environment.
      */
     scope?: pulumi.Input<string | undefined>;
+    /**
+     * Target version
+     */
+    targetVersion?: pulumi.Input<string | undefined>;
+    /**
+     * Update mode. Possible values: `AUTOMATIC`, `AUTOMATIC_DURING_UW`, `MANUAL`
+     */
+    updateMode?: pulumi.Input<string | undefined>;
+    /**
+     * Update windows
+     */
+    updateWindows?: pulumi.Input<inputs.ActivegateUpdatesUpdateWindows | undefined>;
 }
 
 /**
@@ -103,11 +157,19 @@ export interface ActivegateUpdatesState {
  */
 export interface ActivegateUpdatesArgs {
     /**
-     * Automatic updates at earliest convenience
-     */
-    autoUpdate: pulumi.Input<boolean>;
-    /**
      * The scope of this setting (ENVIRONMENT*ACTIVE*GATE). Omit this property if you want to cover the whole environment.
      */
     scope?: pulumi.Input<string | undefined>;
+    /**
+     * Target version
+     */
+    targetVersion: pulumi.Input<string>;
+    /**
+     * Update mode. Possible values: `AUTOMATIC`, `AUTOMATIC_DURING_UW`, `MANUAL`
+     */
+    updateMode: pulumi.Input<string>;
+    /**
+     * Update windows
+     */
+    updateWindows?: pulumi.Input<inputs.ActivegateUpdatesUpdateWindows | undefined>;
 }

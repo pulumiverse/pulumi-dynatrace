@@ -16,38 +16,51 @@ namespace Pulumiverse.Dynatrace.Outputs
     {
         /// <summary>
         /// This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
+        /// 
+        ///   - `$match(ip?tables*)` – Matches string with wildcards: `*` any number (including zero) of characters and `?` exactly one character.
+        ///  - `$contains(ssh)` – Matches if `Ssh` appears anywhere in the service's property value.
+        ///  - `$eq(sshd)` – Matches if `Sshd` matches the service's property value exactly.
+        ///  - `$prefix(ss)` – Matches if `Ss` matches the prefix of the service's property value.
+        ///  - `$suffix(hd)` – Matches if `Hd` matches the suffix of the service's property value.
+        /// 
+        ///   Available logic operations:
+        ///  - `$not($eq(sshd))` – Matches if the service's property value is different from `Sshd`.
+        ///  - `$and($prefix(ss),$suffix(hd))` – Matches if service's property value starts with `Ss` and ends with `Hd`.
+        ///  - `$or($prefix(ss),$suffix(hd))` – Matches if service's property value starts with `Ss` or ends with `Hd`.
+        /// 
+        ///   Brackets **(** and **)** that are part of the matched property **must be escaped with a tilde (~)**
         /// </summary>
         public readonly string? Condition;
         /// <summary>
-        /// Custom metadata
+        /// Resource attribute
         /// </summary>
         public readonly Outputs.OsServicesDetectionConditionsWindowsDetectionConditionsWindowHostMetadataCondition? HostMetadataCondition;
         /// <summary>
-        /// Possible Values: `DisplayName`, `Manufacturer`, `Path`, `ServiceName`, `StartupType`
+        /// Service property. Possible values: `DisplayName`, `Manufacturer`, `Path`, `ServiceName`, `StartupType`
         /// </summary>
         public readonly string? Property;
         /// <summary>
-        /// Possible Values: `RuleTypeHost`, `RuleTypeOsService`
+        /// Rule scope. Possible values: `RuleTypeHost`, `RuleTypeOsService`
         /// </summary>
         public readonly string? RuleType;
         /// <summary>
         /// This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
         /// 
-        /// - `$eq(manual)` – Matches services that are started manually.
+        ///   - `$eq(manual)` – Matches services that are started manually.
         /// 
-        /// Available logic operations:
-        /// - `$not($eq(auto))` – Matches services with startup type different from Automatic.
-        /// - `$or($eq(auto),$eq(manual))` – Matches if service's startup type is either Automatic or Manual.
+        ///   Available logic operations:
+        ///  - `$not($eq(auto))` – Matches services with startup type different from Automatic.
+        ///  - `$or($eq(auto),$eq(manual))` – Matches if service's startup type is either Automatic or Manual.
         /// 
-        /// Use one of the following values as a parameter for this condition:
+        ///   Use one of the following values as a parameter for this condition:
         /// 
-        /// - `Manual` for Manual
-        /// - `ManualTrigger` for Manual (Trigger Start)
-        /// - `Auto` for Automatic
-        /// - `AutoDelay` for Automatic (Delayed Start)
-        /// - `AutoTrigger` for Automatic (Trigger Start)
-        /// - `AutoDelayTrigger` for Automatic (Delayed Start, Trigger Start)
-        /// - `Disabled` for Disabled
+        ///   - `Manual` for Manual
+        ///  - `ManualTrigger` for Manual (Trigger Start)
+        ///  - `Auto` for Automatic
+        ///  - `AutoDelay` for Automatic (Delayed Start)
+        ///  - `AutoTrigger` for Automatic (Trigger Start)
+        ///  - `AutoDelayTrigger` for Automatic (Delayed Start, Trigger Start)
+        ///  - `Disabled` for Disabled
         /// </summary>
         public readonly string? StartupCondition;
 

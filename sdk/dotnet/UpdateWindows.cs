@@ -29,7 +29,7 @@ namespace Pulumiverse.Dynatrace
     public partial class UpdateWindows : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Output("dailyRecurrence")]
         public Output<Outputs.UpdateWindowsDailyRecurrence?> DailyRecurrence { get; private set; } = null!;
@@ -41,7 +41,7 @@ namespace Pulumiverse.Dynatrace
         public Output<bool> Enabled { get; private set; } = null!;
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Output("monthlyRecurrence")]
         public Output<Outputs.UpdateWindowsMonthlyRecurrence?> MonthlyRecurrence { get; private set; } = null!;
@@ -53,19 +53,19 @@ namespace Pulumiverse.Dynatrace
         public Output<string> Name { get; private set; } = null!;
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Output("onceRecurrence")]
         public Output<Outputs.UpdateWindowsOnceRecurrence?> OnceRecurrence { get; private set; } = null!;
 
         /// <summary>
-        /// Possible Values: `MONTHLY`, `ONCE`, `DAILY`, `WEEKLY`
+        /// Recurrence. Possible values: `DAILY`, `MONTHLY`, `ONCE`, `WEEKLY`
         /// </summary>
         [Output("recurrence")]
         public Output<string> Recurrence { get; private set; } = null!;
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Output("weeklyRecurrence")]
         public Output<Outputs.UpdateWindowsWeeklyRecurrence?> WeeklyRecurrence { get; private set; } = null!;
@@ -118,7 +118,7 @@ namespace Pulumiverse.Dynatrace
     public sealed class UpdateWindowsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("dailyRecurrence")]
         public Input<Inputs.UpdateWindowsDailyRecurrenceArgs>? DailyRecurrence { get; set; }
@@ -130,7 +130,7 @@ namespace Pulumiverse.Dynatrace
         public Input<bool> Enabled { get; set; } = null!;
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("monthlyRecurrence")]
         public Input<Inputs.UpdateWindowsMonthlyRecurrenceArgs>? MonthlyRecurrence { get; set; }
@@ -142,19 +142,19 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("onceRecurrence")]
         public Input<Inputs.UpdateWindowsOnceRecurrenceArgs>? OnceRecurrence { get; set; }
 
         /// <summary>
-        /// Possible Values: `MONTHLY`, `ONCE`, `DAILY`, `WEEKLY`
+        /// Recurrence. Possible values: `DAILY`, `MONTHLY`, `ONCE`, `WEEKLY`
         /// </summary>
         [Input("recurrence", required: true)]
         public Input<string> Recurrence { get; set; } = null!;
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("weeklyRecurrence")]
         public Input<Inputs.UpdateWindowsWeeklyRecurrenceArgs>? WeeklyRecurrence { get; set; }
@@ -168,7 +168,7 @@ namespace Pulumiverse.Dynatrace
     public sealed class UpdateWindowsState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("dailyRecurrence")]
         public Input<Inputs.UpdateWindowsDailyRecurrenceGetArgs>? DailyRecurrence { get; set; }
@@ -180,7 +180,7 @@ namespace Pulumiverse.Dynatrace
         public Input<bool>? Enabled { get; set; }
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("monthlyRecurrence")]
         public Input<Inputs.UpdateWindowsMonthlyRecurrenceGetArgs>? MonthlyRecurrence { get; set; }
@@ -192,19 +192,19 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("onceRecurrence")]
         public Input<Inputs.UpdateWindowsOnceRecurrenceGetArgs>? OnceRecurrence { get; set; }
 
         /// <summary>
-        /// Possible Values: `MONTHLY`, `ONCE`, `DAILY`, `WEEKLY`
+        /// Recurrence. Possible values: `DAILY`, `MONTHLY`, `ONCE`, `WEEKLY`
         /// </summary>
         [Input("recurrence")]
         public Input<string>? Recurrence { get; set; }
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("weeklyRecurrence")]
         public Input<Inputs.UpdateWindowsWeeklyRecurrenceGetArgs>? WeeklyRecurrence { get; set; }

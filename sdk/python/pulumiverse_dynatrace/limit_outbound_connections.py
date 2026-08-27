@@ -25,7 +25,7 @@ class LimitOutboundConnectionsArgs:
         """
         The set of arguments for constructing a LimitOutboundConnections resource.
 
-        :param pulumi.Input['LimitOutboundConnectionsAllowedOutboundConnectionsArgs'] allowed_outbound_connections: no documentation available
+        :param pulumi.Input['LimitOutboundConnectionsAllowedOutboundConnectionsArgs'] allowed_outbound_connections: No documentation available
         """
         pulumi.set(__self__, "allowed_outbound_connections", allowed_outbound_connections)
 
@@ -33,7 +33,7 @@ class LimitOutboundConnectionsArgs:
     @pulumi.getter(name="allowedOutboundConnections")
     def allowed_outbound_connections(self) -> pulumi.Input['LimitOutboundConnectionsAllowedOutboundConnectionsArgs']:
         """
-        no documentation available
+        No documentation available
         """
         return pulumi.get(self, "allowed_outbound_connections")
 
@@ -49,7 +49,7 @@ class _LimitOutboundConnectionsState:
         """
         Input properties used for looking up and filtering LimitOutboundConnections resources.
 
-        :param pulumi.Input['LimitOutboundConnectionsAllowedOutboundConnectionsArgs'] allowed_outbound_connections: no documentation available
+        :param pulumi.Input['LimitOutboundConnectionsAllowedOutboundConnectionsArgs'] allowed_outbound_connections: No documentation available
         """
         if allowed_outbound_connections is not None:
             pulumi.set(__self__, "allowed_outbound_connections", allowed_outbound_connections)
@@ -58,7 +58,7 @@ class _LimitOutboundConnectionsState:
     @pulumi.getter(name="allowedOutboundConnections")
     def allowed_outbound_connections(self) -> pulumi.Input[Optional['LimitOutboundConnectionsAllowedOutboundConnectionsArgs']]:
         """
-        no documentation available
+        No documentation available
         """
         return pulumi.get(self, "allowed_outbound_connections")
 
@@ -93,7 +93,7 @@ class LimitOutboundConnections(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['LimitOutboundConnectionsAllowedOutboundConnectionsArgs', 'LimitOutboundConnectionsAllowedOutboundConnectionsArgsDict']] allowed_outbound_connections: no documentation available
+        :param pulumi.Input[Union['LimitOutboundConnectionsAllowedOutboundConnectionsArgs', 'LimitOutboundConnectionsAllowedOutboundConnectionsArgsDict']] allowed_outbound_connections: No documentation available
         """
         ...
     @overload
@@ -163,7 +163,7 @@ class LimitOutboundConnections(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['LimitOutboundConnectionsAllowedOutboundConnectionsArgs', 'LimitOutboundConnectionsAllowedOutboundConnectionsArgsDict']] allowed_outbound_connections: no documentation available
+        :param pulumi.Input[Union['LimitOutboundConnectionsAllowedOutboundConnectionsArgs', 'LimitOutboundConnectionsAllowedOutboundConnectionsArgsDict']] allowed_outbound_connections: No documentation available
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -176,7 +176,7 @@ class LimitOutboundConnections(pulumi.CustomResource):
     @pulumi.getter(name="allowedOutboundConnections")
     def allowed_outbound_connections(self) -> pulumi.Output['outputs.LimitOutboundConnectionsAllowedOutboundConnections']:
         """
-        no documentation available
+        No documentation available
         """
         return pulumi.get(self, "allowed_outbound_connections")
 

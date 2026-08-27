@@ -13,6 +13,1028 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettings struct {
+	// Blur enabled/disabled
+	Blur *bool `pulumi:"blur"`
+	// Change enabled/disabled
+	Change *bool `pulumi:"change"`
+	// Click enabled/disabled
+	Click *bool `pulumi:"click"`
+	// MouseUp enabled/disabled
+	Mouseup *bool `pulumi:"mouseup"`
+	// TouchEnd enabled/disabled
+	TouchEnd *bool `pulumi:"touchEnd"`
+	// TouchStart enabled/disabled
+	TouchStart *bool `pulumi:"touchStart"`
+}
+
+// WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsInput is an input type that accepts WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsArgs and WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutput values.
+// You can construct a concrete instance of `WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsInput` via:
+//
+//	WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsArgs{...}
+type WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsInput interface {
+	pulumi.Input
+
+	ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutput() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutput
+	ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutputWithContext(context.Context) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutput
+}
+
+type WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsArgs struct {
+	// Blur enabled/disabled
+	Blur pulumi.BoolPtrInput `pulumi:"blur"`
+	// Change enabled/disabled
+	Change pulumi.BoolPtrInput `pulumi:"change"`
+	// Click enabled/disabled
+	Click pulumi.BoolPtrInput `pulumi:"click"`
+	// MouseUp enabled/disabled
+	Mouseup pulumi.BoolPtrInput `pulumi:"mouseup"`
+	// TouchEnd enabled/disabled
+	TouchEnd pulumi.BoolPtrInput `pulumi:"touchEnd"`
+	// TouchStart enabled/disabled
+	TouchStart pulumi.BoolPtrInput `pulumi:"touchStart"`
+}
+
+func (WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettings)(nil)).Elem()
+}
+
+func (i WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsArgs) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutput() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutput {
+	return i.ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutputWithContext(context.Background())
+}
+
+func (i WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsArgs) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutput)
+}
+
+func (i WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsArgs) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput {
+	return i.ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutputWithContext(context.Background())
+}
+
+func (i WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsArgs) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutput).ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutputWithContext(ctx)
+}
+
+// WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrInput is an input type that accepts WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsArgs, WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtr and WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput values.
+// You can construct a concrete instance of `WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrInput` via:
+//
+//	        WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsArgs{...}
+//
+//	or:
+//
+//	        nil
+type WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrInput interface {
+	pulumi.Input
+
+	ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput
+	ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutputWithContext(context.Context) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput
+}
+
+type webApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrType WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsArgs
+
+func WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtr(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsArgs) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrInput {
+	return (*webApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrType)(v)
+}
+
+func (*webApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettings)(nil)).Elem()
+}
+
+func (i *webApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrType) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput {
+	return i.ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutputWithContext(context.Background())
+}
+
+func (i *webApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrType) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput)
+}
+
+type WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettings)(nil)).Elem()
+}
+
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutput) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutput() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutput) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutput) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput {
+	return o.ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutputWithContext(context.Background())
+}
+
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutput) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettings) *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettings {
+		return &v
+	}).(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput)
+}
+
+// Blur enabled/disabled
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutput) Blur() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettings) *bool {
+		return v.Blur
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Change enabled/disabled
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutput) Change() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettings) *bool {
+		return v.Change
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Click enabled/disabled
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutput) Click() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettings) *bool {
+		return v.Click
+	}).(pulumi.BoolPtrOutput)
+}
+
+// MouseUp enabled/disabled
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutput) Mouseup() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettings) *bool {
+		return v.Mouseup
+	}).(pulumi.BoolPtrOutput)
+}
+
+// TouchEnd enabled/disabled
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutput) TouchEnd() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettings) *bool {
+		return v.TouchEnd
+	}).(pulumi.BoolPtrOutput)
+}
+
+// TouchStart enabled/disabled
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutput) TouchStart() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettings) *bool {
+		return v.TouchStart
+	}).(pulumi.BoolPtrOutput)
+}
+
+type WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettings)(nil)).Elem()
+}
+
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput) Elem() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettings) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettings {
+		if v != nil {
+			return *v
+		}
+		var ret WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettings
+		return ret
+	}).(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutput)
+}
+
+// Blur enabled/disabled
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput) Blur() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettings) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.Blur
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Change enabled/disabled
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput) Change() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettings) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.Change
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Click enabled/disabled
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput) Click() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettings) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.Click
+	}).(pulumi.BoolPtrOutput)
+}
+
+// MouseUp enabled/disabled
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput) Mouseup() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettings) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.Mouseup
+	}).(pulumi.BoolPtrOutput)
+}
+
+// TouchEnd enabled/disabled
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput) TouchEnd() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettings) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.TouchEnd
+	}).(pulumi.BoolPtrOutput)
+}
+
+// TouchStart enabled/disabled
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput) TouchStart() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettings) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.TouchStart
+	}).(pulumi.BoolPtrOutput)
+}
+
+type WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings struct {
+	// Additional events to be captured globally as user input.
+	AdditionalEventCapturedAsUserInput *string `pulumi:"additionalEventCapturedAsUserInput"`
+	// Change enabled/disabled
+	Change *bool `pulumi:"change"`
+	// Click enabled/disabled
+	Click *bool `pulumi:"click"`
+	// DoubleClick enabled/disabled
+	Doubleclick *bool `pulumi:"doubleclick"`
+	// KeyDown enabled/disabled
+	Keydown *bool `pulumi:"keydown"`
+	// KeyUp enabled/disabled
+	Keyup *bool `pulumi:"keyup"`
+	// MouseDown enabled/disabled
+	Mousedown *bool `pulumi:"mousedown"`
+	// MouseUp enabled/disabled
+	Mouseup *bool `pulumi:"mouseup"`
+	// Scroll enabled/disabled
+	Scroll *bool `pulumi:"scroll"`
+	// TouchEnd enabled/disabled
+	TouchEnd *bool `pulumi:"touchEnd"`
+	// TouchStart enabled/disabled
+	TouchStart *bool `pulumi:"touchStart"`
+}
+
+// WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsInput is an input type that accepts WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsArgs and WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput values.
+// You can construct a concrete instance of `WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsInput` via:
+//
+//	WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsArgs{...}
+type WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsInput interface {
+	pulumi.Input
+
+	ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput
+	ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutputWithContext(context.Context) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput
+}
+
+type WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsArgs struct {
+	// Additional events to be captured globally as user input.
+	AdditionalEventCapturedAsUserInput pulumi.StringPtrInput `pulumi:"additionalEventCapturedAsUserInput"`
+	// Change enabled/disabled
+	Change pulumi.BoolPtrInput `pulumi:"change"`
+	// Click enabled/disabled
+	Click pulumi.BoolPtrInput `pulumi:"click"`
+	// DoubleClick enabled/disabled
+	Doubleclick pulumi.BoolPtrInput `pulumi:"doubleclick"`
+	// KeyDown enabled/disabled
+	Keydown pulumi.BoolPtrInput `pulumi:"keydown"`
+	// KeyUp enabled/disabled
+	Keyup pulumi.BoolPtrInput `pulumi:"keyup"`
+	// MouseDown enabled/disabled
+	Mousedown pulumi.BoolPtrInput `pulumi:"mousedown"`
+	// MouseUp enabled/disabled
+	Mouseup pulumi.BoolPtrInput `pulumi:"mouseup"`
+	// Scroll enabled/disabled
+	Scroll pulumi.BoolPtrInput `pulumi:"scroll"`
+	// TouchEnd enabled/disabled
+	TouchEnd pulumi.BoolPtrInput `pulumi:"touchEnd"`
+	// TouchStart enabled/disabled
+	TouchStart pulumi.BoolPtrInput `pulumi:"touchStart"`
+}
+
+func (WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings)(nil)).Elem()
+}
+
+func (i WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsArgs) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput {
+	return i.ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutputWithContext(context.Background())
+}
+
+func (i WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsArgs) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput)
+}
+
+func (i WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsArgs) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput {
+	return i.ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutputWithContext(context.Background())
+}
+
+func (i WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsArgs) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput).ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutputWithContext(ctx)
+}
+
+// WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrInput is an input type that accepts WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsArgs, WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtr and WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput values.
+// You can construct a concrete instance of `WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrInput` via:
+//
+//	        WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsArgs{...}
+//
+//	or:
+//
+//	        nil
+type WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrInput interface {
+	pulumi.Input
+
+	ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput
+	ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutputWithContext(context.Context) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput
+}
+
+type webApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrType WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsArgs
+
+func WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtr(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsArgs) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrInput {
+	return (*webApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrType)(v)
+}
+
+func (*webApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings)(nil)).Elem()
+}
+
+func (i *webApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrType) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput {
+	return i.ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutputWithContext(context.Background())
+}
+
+func (i *webApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrType) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput)
+}
+
+type WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings)(nil)).Elem()
+}
+
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput {
+	return o.ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutputWithContext(context.Background())
+}
+
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings) *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings {
+		return &v
+	}).(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput)
+}
+
+// Additional events to be captured globally as user input.
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput) AdditionalEventCapturedAsUserInput() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings) *string {
+		return v.AdditionalEventCapturedAsUserInput
+	}).(pulumi.StringPtrOutput)
+}
+
+// Change enabled/disabled
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput) Change() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings) *bool {
+		return v.Change
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Click enabled/disabled
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput) Click() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings) *bool {
+		return v.Click
+	}).(pulumi.BoolPtrOutput)
+}
+
+// DoubleClick enabled/disabled
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput) Doubleclick() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings) *bool {
+		return v.Doubleclick
+	}).(pulumi.BoolPtrOutput)
+}
+
+// KeyDown enabled/disabled
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput) Keydown() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings) *bool {
+		return v.Keydown
+	}).(pulumi.BoolPtrOutput)
+}
+
+// KeyUp enabled/disabled
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput) Keyup() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings) *bool {
+		return v.Keyup
+	}).(pulumi.BoolPtrOutput)
+}
+
+// MouseDown enabled/disabled
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput) Mousedown() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings) *bool {
+		return v.Mousedown
+	}).(pulumi.BoolPtrOutput)
+}
+
+// MouseUp enabled/disabled
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput) Mouseup() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings) *bool {
+		return v.Mouseup
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Scroll enabled/disabled
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput) Scroll() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings) *bool {
+		return v.Scroll
+	}).(pulumi.BoolPtrOutput)
+}
+
+// TouchEnd enabled/disabled
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput) TouchEnd() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings) *bool {
+		return v.TouchEnd
+	}).(pulumi.BoolPtrOutput)
+}
+
+// TouchStart enabled/disabled
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput) TouchStart() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings) *bool {
+		return v.TouchStart
+	}).(pulumi.BoolPtrOutput)
+}
+
+type WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings)(nil)).Elem()
+}
+
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput) Elem() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings {
+		if v != nil {
+			return *v
+		}
+		var ret WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings
+		return ret
+	}).(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput)
+}
+
+// Additional events to be captured globally as user input.
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput) AdditionalEventCapturedAsUserInput() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings) *string {
+		if v == nil {
+			return nil
+		}
+		return v.AdditionalEventCapturedAsUserInput
+	}).(pulumi.StringPtrOutput)
+}
+
+// Change enabled/disabled
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput) Change() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.Change
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Click enabled/disabled
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput) Click() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.Click
+	}).(pulumi.BoolPtrOutput)
+}
+
+// DoubleClick enabled/disabled
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput) Doubleclick() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.Doubleclick
+	}).(pulumi.BoolPtrOutput)
+}
+
+// KeyDown enabled/disabled
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput) Keydown() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.Keydown
+	}).(pulumi.BoolPtrOutput)
+}
+
+// KeyUp enabled/disabled
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput) Keyup() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.Keyup
+	}).(pulumi.BoolPtrOutput)
+}
+
+// MouseDown enabled/disabled
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput) Mousedown() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.Mousedown
+	}).(pulumi.BoolPtrOutput)
+}
+
+// MouseUp enabled/disabled
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput) Mouseup() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.Mouseup
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Scroll enabled/disabled
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput) Scroll() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.Scroll
+	}).(pulumi.BoolPtrOutput)
+}
+
+// TouchEnd enabled/disabled
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput) TouchEnd() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.TouchEnd
+	}).(pulumi.BoolPtrOutput)
+}
+
+// TouchStart enabled/disabled
+func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput) TouchStart() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.TouchStart
+	}).(pulumi.BoolPtrOutput)
+}
+
+type WebApplicationMonitoringSettingsBrowserRestrictionSettings struct {
+	// The mode of the list of browser restrictions. Possible values area `EXCLUDE` and `INCLUDE`.
+	Mode string `pulumi:"mode"`
+	// A list of browser restrictions
+	Restrictions *WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictions `pulumi:"restrictions"`
+}
+
+// WebApplicationMonitoringSettingsBrowserRestrictionSettingsInput is an input type that accepts WebApplicationMonitoringSettingsBrowserRestrictionSettingsArgs and WebApplicationMonitoringSettingsBrowserRestrictionSettingsOutput values.
+// You can construct a concrete instance of `WebApplicationMonitoringSettingsBrowserRestrictionSettingsInput` via:
+//
+//	WebApplicationMonitoringSettingsBrowserRestrictionSettingsArgs{...}
+type WebApplicationMonitoringSettingsBrowserRestrictionSettingsInput interface {
+	pulumi.Input
+
+	ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsOutput() WebApplicationMonitoringSettingsBrowserRestrictionSettingsOutput
+	ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsOutputWithContext(context.Context) WebApplicationMonitoringSettingsBrowserRestrictionSettingsOutput
+}
+
+type WebApplicationMonitoringSettingsBrowserRestrictionSettingsArgs struct {
+	// The mode of the list of browser restrictions. Possible values area `EXCLUDE` and `INCLUDE`.
+	Mode pulumi.StringInput `pulumi:"mode"`
+	// A list of browser restrictions
+	Restrictions WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrInput `pulumi:"restrictions"`
+}
+
+func (WebApplicationMonitoringSettingsBrowserRestrictionSettingsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationMonitoringSettingsBrowserRestrictionSettings)(nil)).Elem()
+}
+
+func (i WebApplicationMonitoringSettingsBrowserRestrictionSettingsArgs) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsOutput() WebApplicationMonitoringSettingsBrowserRestrictionSettingsOutput {
+	return i.ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsOutputWithContext(context.Background())
+}
+
+func (i WebApplicationMonitoringSettingsBrowserRestrictionSettingsArgs) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsBrowserRestrictionSettingsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsBrowserRestrictionSettingsOutput)
+}
+
+func (i WebApplicationMonitoringSettingsBrowserRestrictionSettingsArgs) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutput() WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutput {
+	return i.ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutputWithContext(context.Background())
+}
+
+func (i WebApplicationMonitoringSettingsBrowserRestrictionSettingsArgs) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsBrowserRestrictionSettingsOutput).ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutputWithContext(ctx)
+}
+
+// WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrInput is an input type that accepts WebApplicationMonitoringSettingsBrowserRestrictionSettingsArgs, WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtr and WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutput values.
+// You can construct a concrete instance of `WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrInput` via:
+//
+//	        WebApplicationMonitoringSettingsBrowserRestrictionSettingsArgs{...}
+//
+//	or:
+//
+//	        nil
+type WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrInput interface {
+	pulumi.Input
+
+	ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutput() WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutput
+	ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutputWithContext(context.Context) WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutput
+}
+
+type webApplicationMonitoringSettingsBrowserRestrictionSettingsPtrType WebApplicationMonitoringSettingsBrowserRestrictionSettingsArgs
+
+func WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtr(v *WebApplicationMonitoringSettingsBrowserRestrictionSettingsArgs) WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrInput {
+	return (*webApplicationMonitoringSettingsBrowserRestrictionSettingsPtrType)(v)
+}
+
+func (*webApplicationMonitoringSettingsBrowserRestrictionSettingsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebApplicationMonitoringSettingsBrowserRestrictionSettings)(nil)).Elem()
+}
+
+func (i *webApplicationMonitoringSettingsBrowserRestrictionSettingsPtrType) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutput() WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutput {
+	return i.ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutputWithContext(context.Background())
+}
+
+func (i *webApplicationMonitoringSettingsBrowserRestrictionSettingsPtrType) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutput)
+}
+
+type WebApplicationMonitoringSettingsBrowserRestrictionSettingsOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationMonitoringSettingsBrowserRestrictionSettingsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationMonitoringSettingsBrowserRestrictionSettings)(nil)).Elem()
+}
+
+func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsOutput) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsOutput() WebApplicationMonitoringSettingsBrowserRestrictionSettingsOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsOutput) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsBrowserRestrictionSettingsOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsOutput) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutput() WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutput {
+	return o.ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutputWithContext(context.Background())
+}
+
+func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsOutput) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebApplicationMonitoringSettingsBrowserRestrictionSettings) *WebApplicationMonitoringSettingsBrowserRestrictionSettings {
+		return &v
+	}).(WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutput)
+}
+
+// The mode of the list of browser restrictions. Possible values area `EXCLUDE` and `INCLUDE`.
+func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsOutput) Mode() pulumi.StringOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsBrowserRestrictionSettings) string { return v.Mode }).(pulumi.StringOutput)
+}
+
+// A list of browser restrictions
+func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsOutput) Restrictions() WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsBrowserRestrictionSettings) *WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictions {
+		return v.Restrictions
+	}).(WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput)
+}
+
+type WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebApplicationMonitoringSettingsBrowserRestrictionSettings)(nil)).Elem()
+}
+
+func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutput) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutput() WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutput) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutput) Elem() WebApplicationMonitoringSettingsBrowserRestrictionSettingsOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsBrowserRestrictionSettings) WebApplicationMonitoringSettingsBrowserRestrictionSettings {
+		if v != nil {
+			return *v
+		}
+		var ret WebApplicationMonitoringSettingsBrowserRestrictionSettings
+		return ret
+	}).(WebApplicationMonitoringSettingsBrowserRestrictionSettingsOutput)
+}
+
+// The mode of the list of browser restrictions. Possible values area `EXCLUDE` and `INCLUDE`.
+func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutput) Mode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsBrowserRestrictionSettings) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Mode
+	}).(pulumi.StringPtrOutput)
+}
+
+// A list of browser restrictions
+func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutput) Restrictions() WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsBrowserRestrictionSettings) *WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictions {
+		if v == nil {
+			return nil
+		}
+		return v.Restrictions
+	}).(WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput)
+}
+
+type WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictions struct {
+	// Browser exclusion rules for the browsers that are to be excluded
+	Restrictions []WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestriction `pulumi:"restrictions"`
+}
+
+// WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsInput is an input type that accepts WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsArgs and WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsOutput values.
+// You can construct a concrete instance of `WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsInput` via:
+//
+//	WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsArgs{...}
+type WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsInput interface {
+	pulumi.Input
+
+	ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsOutput() WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsOutput
+	ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsOutputWithContext(context.Context) WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsOutput
+}
+
+type WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsArgs struct {
+	// Browser exclusion rules for the browsers that are to be excluded
+	Restrictions WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayInput `pulumi:"restrictions"`
+}
+
+func (WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictions)(nil)).Elem()
+}
+
+func (i WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsArgs) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsOutput() WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsOutput {
+	return i.ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsOutputWithContext(context.Background())
+}
+
+func (i WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsArgs) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsOutput)
+}
+
+func (i WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsArgs) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput() WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput {
+	return i.ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutputWithContext(context.Background())
+}
+
+func (i WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsArgs) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsOutput).ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutputWithContext(ctx)
+}
+
+// WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrInput is an input type that accepts WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsArgs, WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtr and WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput values.
+// You can construct a concrete instance of `WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrInput` via:
+//
+//	        WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsArgs{...}
+//
+//	or:
+//
+//	        nil
+type WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrInput interface {
+	pulumi.Input
+
+	ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput() WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput
+	ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutputWithContext(context.Context) WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput
+}
+
+type webApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrType WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsArgs
+
+func WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtr(v *WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsArgs) WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrInput {
+	return (*webApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrType)(v)
+}
+
+func (*webApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictions)(nil)).Elem()
+}
+
+func (i *webApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrType) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput() WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput {
+	return i.ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutputWithContext(context.Background())
+}
+
+func (i *webApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrType) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput)
+}
+
+type WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictions)(nil)).Elem()
+}
+
+func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsOutput) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsOutput() WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsOutput) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsOutput) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput() WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput {
+	return o.ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutputWithContext(context.Background())
+}
+
+func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsOutput) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictions) *WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictions {
+		return &v
+	}).(WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput)
+}
+
+// Browser exclusion rules for the browsers that are to be excluded
+func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsOutput) Restrictions() WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictions) []WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestriction {
+		return v.Restrictions
+	}).(WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayOutput)
+}
+
+type WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictions)(nil)).Elem()
+}
+
+func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput() WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput) Elem() WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictions) WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictions {
+		if v != nil {
+			return *v
+		}
+		var ret WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictions
+		return ret
+	}).(WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsOutput)
+}
+
+// Browser exclusion rules for the browsers that are to be excluded
+func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput) Restrictions() WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayOutput {
+	return o.ApplyT(func(v *WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictions) []WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestriction {
+		if v == nil {
+			return nil
+		}
+		return v.Restrictions
+	}).(WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayOutput)
+}
+
+type WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestriction struct {
+	// The type of the browser that is used. Possible values are `ANDROID_WEBKIT`, `BOTS_SPIDERS`, `CHROME`, `EDGE`, `FIREFOX`, `INTERNET_EXPLORER,`OPERA`and`SAFARI`
+	BrowserType string `pulumi:"browserType"`
+	// The version of the browser that is used
+	BrowserVersion *string `pulumi:"browserVersion"`
+	// No documentation available. Possible values are `EQUALS`, `GREATER_THAN_OR_EQUAL` and `LOWER_THAN_OR_EQUAL`.
+	Comparator *string `pulumi:"comparator"`
+	// The platform on which the browser is being used. Possible values are `ALL`, `DESKTOP` and `MOBILE`
+	Platform *string `pulumi:"platform"`
+}
+
+// WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionInput is an input type that accepts WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArgs and WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionOutput values.
+// You can construct a concrete instance of `WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionInput` via:
+//
+//	WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArgs{...}
+type WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionInput interface {
+	pulumi.Input
+
+	ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionOutput() WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionOutput
+	ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionOutputWithContext(context.Context) WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionOutput
+}
+
+type WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArgs struct {
+	// The type of the browser that is used. Possible values are `ANDROID_WEBKIT`, `BOTS_SPIDERS`, `CHROME`, `EDGE`, `FIREFOX`, `INTERNET_EXPLORER,`OPERA`and`SAFARI`
+	BrowserType pulumi.StringInput `pulumi:"browserType"`
+	// The version of the browser that is used
+	BrowserVersion pulumi.StringPtrInput `pulumi:"browserVersion"`
+	// No documentation available. Possible values are `EQUALS`, `GREATER_THAN_OR_EQUAL` and `LOWER_THAN_OR_EQUAL`.
+	Comparator pulumi.StringPtrInput `pulumi:"comparator"`
+	// The platform on which the browser is being used. Possible values are `ALL`, `DESKTOP` and `MOBILE`
+	Platform pulumi.StringPtrInput `pulumi:"platform"`
+}
+
+func (WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestriction)(nil)).Elem()
+}
+
+func (i WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArgs) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionOutput() WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionOutput {
+	return i.ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionOutputWithContext(context.Background())
+}
+
+func (i WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArgs) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionOutput)
+}
+
+// WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayInput is an input type that accepts WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArray and WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayOutput values.
+// You can construct a concrete instance of `WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayInput` via:
+//
+//	WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArray{ WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArgs{...} }
+type WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayInput interface {
+	pulumi.Input
+
+	ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayOutput() WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayOutput
+	ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayOutputWithContext(context.Context) WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayOutput
+}
+
+type WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArray []WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionInput
+
+func (WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestriction)(nil)).Elem()
+}
+
+func (i WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArray) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayOutput() WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayOutput {
+	return i.ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayOutputWithContext(context.Background())
+}
+
+func (i WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArray) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayOutput)
+}
+
+type WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestriction)(nil)).Elem()
+}
+
+func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionOutput) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionOutput() WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionOutput) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionOutput {
+	return o
+}
+
+// The type of the browser that is used. Possible values are `ANDROID_WEBKIT`, `BOTS_SPIDERS`, `CHROME`, `EDGE`, `FIREFOX`, `INTERNET_EXPLORER,`OPERA`and`SAFARI`
+func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionOutput) BrowserType() pulumi.StringOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestriction) string {
+		return v.BrowserType
+	}).(pulumi.StringOutput)
+}
+
+// The version of the browser that is used
+func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionOutput) BrowserVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestriction) *string {
+		return v.BrowserVersion
+	}).(pulumi.StringPtrOutput)
+}
+
+// No documentation available. Possible values are `EQUALS`, `GREATER_THAN_OR_EQUAL` and `LOWER_THAN_OR_EQUAL`.
+func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionOutput) Comparator() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestriction) *string {
+		return v.Comparator
+	}).(pulumi.StringPtrOutput)
+}
+
+// The platform on which the browser is being used. Possible values are `ALL`, `DESKTOP` and `MOBILE`
+func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionOutput) Platform() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestriction) *string {
+		return v.Platform
+	}).(pulumi.StringPtrOutput)
+}
+
+type WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestriction)(nil)).Elem()
+}
+
+func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayOutput) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayOutput() WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayOutput) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayOutput {
+	return o
+}
+
+func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayOutput) Index(i pulumi.IntInput) WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestriction {
+		return vs[0].([]WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestriction)[vs[1].(int)]
+	}).(WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionOutput)
+}
+
 type WebApplicationMonitoringSettingsContentCapture struct {
 	// JavaScript errors monitoring enabled/disabled
 	JavascriptErrors *bool `pulumi:"javascriptErrors"`
@@ -10045,6 +11067,16 @@ func (o GetSyntheticNodesNodeArrayOutput) Index(i pulumi.IntInput) GetSyntheticN
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsInput)(nil)).Elem(), WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrInput)(nil)).Elem(), WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsInput)(nil)).Elem(), WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrInput)(nil)).Elem(), WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationMonitoringSettingsBrowserRestrictionSettingsInput)(nil)).Elem(), WebApplicationMonitoringSettingsBrowserRestrictionSettingsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrInput)(nil)).Elem(), WebApplicationMonitoringSettingsBrowserRestrictionSettingsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsInput)(nil)).Elem(), WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrInput)(nil)).Elem(), WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionInput)(nil)).Elem(), WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayInput)(nil)).Elem(), WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationMonitoringSettingsContentCaptureInput)(nil)).Elem(), WebApplicationMonitoringSettingsContentCaptureArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationMonitoringSettingsContentCapturePtrInput)(nil)).Elem(), WebApplicationMonitoringSettingsContentCaptureArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsInput)(nil)).Elem(), WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsArgs{})
@@ -10181,6 +11213,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSyntheticLocationsLocationsPtrInput)(nil)).Elem(), GetSyntheticLocationsLocationsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSyntheticNodesNodeInput)(nil)).Elem(), GetSyntheticNodesNodeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSyntheticNodesNodeArrayInput)(nil)).Elem(), GetSyntheticNodesNodeArray{})
+	pulumi.RegisterOutputType(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutput{})
+	pulumi.RegisterOutputType(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput{})
+	pulumi.RegisterOutputType(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput{})
+	pulumi.RegisterOutputType(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput{})
+	pulumi.RegisterOutputType(WebApplicationMonitoringSettingsBrowserRestrictionSettingsOutput{})
+	pulumi.RegisterOutputType(WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutput{})
+	pulumi.RegisterOutputType(WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsOutput{})
+	pulumi.RegisterOutputType(WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput{})
+	pulumi.RegisterOutputType(WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionOutput{})
+	pulumi.RegisterOutputType(WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayOutput{})
 	pulumi.RegisterOutputType(WebApplicationMonitoringSettingsContentCaptureOutput{})
 	pulumi.RegisterOutputType(WebApplicationMonitoringSettingsContentCapturePtrOutput{})
 	pulumi.RegisterOutputType(WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsOutput{})

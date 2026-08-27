@@ -14,31 +14,37 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class AutomationWorkflowTriggerScheduleTriggerArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Triggers the schedule every n minutes within a given time frame - specifying the end time on any valid day in 24h format (e.g. 14:22). Conflicts with `Cron` and `Time`. Required with `IntervalMinutes` and `BetweenStart`
+        /// Triggers the schedule once at a fixed date and time in ISO 8601 format without timezone (e.g. `2025-12-25T14:30:00`). Conflicts with `Cron`, `Time`, `IntervalMinutes`, `BetweenStart` and `BetweenEnd`
+        /// </summary>
+        [Input("at")]
+        public Input<string>? At { get; set; }
+
+        /// <summary>
+        /// Triggers the schedule every n minutes within a given time frame - specifying the end time on any valid day in 24h format (e.g. 14:22). Conflicts with `Cron`, `Time` and `At`. Required with `IntervalMinutes` and `BetweenStart`
         /// </summary>
         [Input("betweenEnd")]
         public Input<string>? BetweenEnd { get; set; }
 
         /// <summary>
-        /// Triggers the schedule every n minutes within a given time frame - specifying the start time on any valid day in 24h format (e.g. 13:22). Conflicts with `Cron` and `Time`. Required with `IntervalMinutes` and `BetweenEnd`
+        /// Triggers the schedule every n minutes within a given time frame - specifying the start time on any valid day in 24h format (e.g. 13:22). Conflicts with `Cron`, `Time` and `At`. Required with `IntervalMinutes` and `BetweenEnd`
         /// </summary>
         [Input("betweenStart")]
         public Input<string>? BetweenStart { get; set; }
 
         /// <summary>
-        /// Configures using cron syntax. Conflicts with `Time`, `IntervalMinutes`, `BetweenStart` and `BetweenEnd`
+        /// Configures using cron syntax. Conflicts with `Time`, `IntervalMinutes`, `BetweenStart`, `BetweenEnd` and `At`
         /// </summary>
         [Input("cron")]
         public Input<string>? Cron { get; set; }
 
         /// <summary>
-        /// Triggers the schedule every n minutes within a given time frame. Minimum: 1, Maximum: 720. Required with `BetweenStart` and `BetweenEnd`. Conflicts with `Cron` and `Time`
+        /// Triggers the schedule every n minutes within a given time frame. Minimum: 1, Maximum: 720. Required with `BetweenStart` and `BetweenEnd`. Conflicts with `Cron`, `Time` and `At`
         /// </summary>
         [Input("intervalMinutes")]
         public Input<int>? IntervalMinutes { get; set; }
 
         /// <summary>
-        /// Specifies a fixed time the schedule will trigger at in 24h format (e.g. `14:23`). Conflicts with `Cron`, `IntervalMinutes`, `BetweenStart` and `BetweenEnd`
+        /// Specifies a fixed time the schedule will trigger at in 24h format (e.g. `14:23`). Conflicts with `Cron`, `IntervalMinutes`, `BetweenStart`, `BetweenEnd` and `At`
         /// </summary>
         [Input("time")]
         public Input<string>? Time { get; set; }

@@ -105,7 +105,7 @@ import (
 //				Enabled:           pulumi.Bool(true),
 //				Metric:            pulumi.String("ResourceCount"),
 //				MetricKey:         pulumi.String("calc:synthetic.browser.#name#"),
-//				MonitorIdentifier: monitor.ID(),
+//				MonitorIdentifier: monitor.ID().ToIDOutput().ToStringOutput(),
 //			})
 //			if err != nil {
 //				return err

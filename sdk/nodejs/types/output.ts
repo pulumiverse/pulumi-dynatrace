@@ -5,6 +5,17 @@ import * as pulumi from "@pulumi/pulumi";
 import * as inputs from "../types/input";
 import * as outputs from "../types/output";
 
+export interface ActivegateUpdatesUpdateWindows {
+    updateWindows: outputs.ActivegateUpdatesUpdateWindowsUpdateWindow[];
+}
+
+export interface ActivegateUpdatesUpdateWindowsUpdateWindow {
+    /**
+     * Select an [update window for ActiveGate updates](https://www.terraform.io/ui/settings/builtin:deployment.management.update-windows)
+     */
+    updateWindow: string;
+}
+
 export interface AlertingFilters {
     /**
      * A conditions for the metric usage
@@ -339,11 +350,11 @@ export interface AppMonitoringAppMonitoringAppMonitoring {
      */
     appId: string;
     /**
-     * Possible Values: `debug`, `error`, `info`, `off`, `useDefault`, `warn`
+     * App specific log level. Possible values: `debug`, `error`, `info`, `off`, `useDefault`, `warn`
      */
     customLogLevel: string;
     /**
-     * Possible Values: `off`, `on`, `useDefault`
+     * App specific function traces. Possible values: `off`, `on`, `useDefault`
      */
     customTraceLevel?: string;
 }
@@ -1193,6 +1204,10 @@ export interface AutomationWorkflowTasksTask {
      */
     conditions?: outputs.AutomationWorkflowTasksTaskConditions;
     /**
+     * A stored sample result for this task as JSON. Not used during execution - it powers expression auto-complete and result preview in the Dynatrace UI. Accepts any JSON value
+     */
+    customSampleResult?: string;
+    /**
      * A description for this task
      */
     description?: string;
@@ -1267,6 +1282,16 @@ export interface AutomationWorkflowTasksTaskRetry {
     failedLoopIterationsOnly?: boolean;
 }
 
+export interface AutomationWorkflowThrottle {
+    /**
+     * Whether the workflow's execution limit is currently hit. This value is computed by the server from the current throttle state.
+     * Set to `false` to reset (clear) an active throttle.
+     * The API rejects `true` unless the workflow is already throttled.
+     * When omitted, the value is read from the API
+     */
+    isLimitHit: boolean;
+}
+
 export interface AutomationWorkflowTrigger {
     /**
      * If specified the workflow is getting triggered based on events
@@ -1326,13 +1351,23 @@ export interface AutomationWorkflowTriggerEventConfigDavisEvent {
      */
     entityTagsMatch?: string;
     /**
+     * Specifies when to trigger based on maintenance window status. Possible values: `always`, `inside`, `outside`. Default: `always`
+     */
+    maintenanceWindowTriggerBehavior?: string;
+    /**
      * The Davis Events to match on
      */
     names?: outputs.AutomationWorkflowTriggerEventConfigDavisEventNames;
     /**
-     * If set to `true` closing a problem also is considered an event that triggers the execution
+     * If set to `true` closing a problem also is considered an event that triggers the execution.
+     *
+     * @deprecated Use `triggerOn` instead
      */
     onProblemClose?: boolean;
+    /**
+     * Event state to trigger on. Possible values: `open` (active only), `open-and-close` (both phases), or `close` (closure only). When unset, falls back to `onProblemClose`
+     */
+    triggerOn?: string;
     /**
      * The types of davis events to trigger an execution. Possible values are `CUSTOM_ANNOTATION`, `APPLICATION_UNEXPECTED_HIGH_LOAD`, `APPLICATION_UNEXPECTED_LOW_LOAD`, `APPLICATION_OVERLOAD_PREVENTION`, `APPLICATION_SLOWDOWN`, `AVAILABILITY_EVENT`, `LOG_AVAILABILITY`, `EC2_HIGH_CPU`, `RDS_BACKUP_COMPLETED`, `RDS_BACKUP_STARTED`, `SYNTHETIC_GLOBAL_OUTAGE`, `SYNTHETIC_LOCAL_OUTAGE`, `SYNTHETIC_TEST_LOCATION_SLOWDOWN`, `CUSTOM_CONFIGURATION`, `PROCESS_NA_HIGH_CONN_FAIL_RATE`, `OSI_HIGH_CPU`, `CUSTOM_ALERT`, `CUSTOM_APP_CRASH_RATE_INCREASED`, `CUSTOM_APPLICATION_ERROR_RATE_INCREASED`, `CUSTOM_APPLICATION_UNEXPECTED_HIGH_LOAD`, `CUSTOM_APPLICATION_UNEXPECTED_LOW_LOAD`, `CUSTOM_APPLICATION_OVERLOAD_PREVENTION`, `CUSTOM_APPLICATION_SLOWDOWN`, `PGI_CUSTOM_AVAILABILITY`, `PGI_CUSTOM_ERROR`, `CUSTOM_INFO`, `PGI_CUSTOM_PERFORMANCE`, `CUSTOM_DEPLOYMENT`, `DEPLOYMENT_CHANGED_CHANGE`, `DEPLOYMENT_CHANGED_NEW`, `DEPLOYMENT_CHANGED_REMOVED`, `EBS_VOLUME_HIGH_LATENCY`, `ERROR_EVENT`, `LOG_ERROR`, `ESXI_HOST_CONNECTION_FAILED`, `ESXI_HOST_CONNECTION_LOST`, `ESXI_GUEST_CPU_LIMIT_REACHED`, `ESXI_GUEST_ACTIVE_SWAP_WAIT`, `ESXI_HOST_CPU_SATURATION`, `ESXI_HOST_MEMORY_SATURATION`, `ESXI_HOST_MAINTENANCE`, `ESXI_HOST_NETWORK_PROBLEMS`, `ESXI_HOST_NO_CONNECTION`, `ESXI_HOST_SHUTDOWN`, `ESXI_HOST_DISK_SLOW`, `ESXI_HOST_UP`, `ESXI_HOST_TIMEOUT`, `ESXI_VM_IMPACT_HOST_CPU_SATURATION`, `ESXI_VM_IMPACT_HOST_MEMORY_SATURATION`, `DATABASE_CONNECTION_FAILURE`, `RDS_AZ_FAILOVER_COMPLETED`, `RDS_AZ_FAILOVER_STARTED`, `SERVICE_ERROR_RATE_INCREASED`, `RDS_HIGH_LATENCY`, `OSI_NIC_UTILIZATION_HIGH`, `OSI_NIC_ERRORS_HIGH`, `PGI_HAPROXY_QUEUED_REQUESTS_HIGH`, `PGI_RMQ_HIGH_FILE_DESC_USAGE`, `PGI_RMQ_HIGH_MEM_USAGE`, `PGI_RMQ_HIGH_PROCESS_USAGE`, `PGI_RMQ_HIGH_SOCKETS_USAGE`, `OSI_NIC_DROPPED_PACKETS_HIGH`, `PGI_MYSQL_SLOW_QUERIES_RATE_HIGH`, `PGI_KEYSTONE_SLOW`, `PGI_HAPROXY_SESSION_USAGE_HIGH`, `HOST_LOG_AVAILABILITY`, `HOST_LOG_ERROR`, `OSI_GRACEFULLY_SHUTDOWN`, `HOST_LOG_MATCHED`, `OSI_UNEXPECTEDLY_UNAVAILABLE`, `HOST_LOG_PERFORMANCE`, `HOST_OF_SERVICE_UNAVAILABLE`, `HTTP_CHECK_GLOBAL_OUTAGE`, `HTTP_CHECK_LOCAL_OUTAGE`, `HTTP_CHECK_TEST_LOCATION_SLOWDOWN`, `ESXI_HOST_DISK_QUEUE_SLOW`, `LOG_MATCHED`, `APPLICATION_ERROR_RATE_INCREASED`, `APPLICATION_JS_FRAMEWORK_DETECTED`, `AWS_LAMBDA_HIGH_ERROR_RATE`, `ELB_HIGH_BACKEND_ERROR_RATE`, `ELB_HIGH_FRONTEND_ERROR_RATE`, `ELB_HIGH_UNHEALTHY_HOST_RATE`, `PROCESS_HIGH_GC_ACTIVITY`, `ESXI_HOST_DATASTORE_LOW_DISK_SPACE`, `OSI_DOCKER_DEVICEMAPPER_LOW_DATA_SPACE`, `OSI_LOW_DISK_SPACE`, `OSI_DOCKER_DEVICEMAPPER_LOW_METADATA_SPACE`, `OSI_DISK_LOW_INODES`, `PGI_RMQ_LOW_DISK_SPACE`, `RDS_LOW_STORAGE_SPACE`, `MARKED_FOR_TERMINATION`, `PROCESS_MEMORY_RESOURCE_EXHAUSTED`, `OSI_HIGH_MEMORY`, `MOBILE_APP_CRASH_RATE_INCREASED`, `MOBILE_APPLICATION_ERROR_RATE_INCREASED`, `MOBILE_APPLICATION_OVERLOAD_PREVENTION`, `MOBILE_APPLICATION_SLOWDOWN`, `MOBILE_APPLICATION_UNEXPECTED_HIGH_LOAD`, `MOBILE_APPLICATION_UNEXPECTED_LOW_LOAD`, `MONITORING_UNAVAILABLE`, `PROCESS_NA_HIGH_LOSS_RATE`, `PGI_KEYSTONE_UNHEALTHY`, `ESXI_HOST_OVERLOADED_STORAGE`, `PERFORMANCE_EVENT`, `LOG_PERFORMANCE`, `PGI_LOG_AVAILABILITY`, `PGI_CRASHED_INFO`, `PROCESS_CRASHED`, `PGI_LOG_ERROR`, `PG_LOW_INSTANCE_COUNT`, `PGI_LOG_MATCHED`, `PGI_MEMDUMP`, `PGI_LOG_PERFORMANCE`, `PROCESS_RESTART`, `PGI_UNAVAILABLE`, `RDS_HIGH_CPU`, `RDS_LOW_MEMORY`, `RDS_OF_SERVICE_UNAVAILABLE`, `RESOURCE_CONTENTION_EVENT`, `SERVICE_SLOWDOWN`, `RDS_RESTART`, `RDS_RESTART_SEQUENCE`, `PGI_OF_SERVICE_UNAVAILABLE`, `OSI_SLOW_DISK`, `SYNTHETIC_NODE_OUTAGE`, `SYNTHETIC_PRIVATE_LOCATION_OUTAGE`, `EXTERNAL_SYNTHETIC_TEST_OUTAGE`, `EXTERNAL_SYNTHETIC_TEST_SLOWDOWN`, `PROCESS_THREADS_RESOURCE_EXHAUSTED`, `SERVICE_UNEXPECTED_HIGH_LOAD`, `SERVICE_UNEXPECTED_LOW_LOAD`, `ESXI_VM_DISCONNECTED`, `OPENSTACK_VM_LAUNCH_FAILED`, `ESXI_HOST_VM_MOTION_LEFT`, `ESXI_HOST_VM_MOTION_ARRIVED`, `ESXI_VM_MOTION`, `OPENSTACK_VM_MOTION`, `ESXI_VM_POWER_OFF`, `ESXI_VM_SHUTDOWN`, `OPENSTACK_HOST_VM_SHUTDOWN`, `ESXI_VM_START`, `ESXI_HOST_VM_STARTED`, `OPENSTACK_HOST_VM_STARTED`
      *
@@ -1378,9 +1413,27 @@ export interface AutomationWorkflowTriggerEventConfigDavisProblem {
      */
     entityTagsMatch?: string;
     /**
-     * If set to `true` closing a problem also is considered an event that triggers the execution
+     * If set to `true` closing a problem also is considered an event that triggers the execution.
+     *
+     * @deprecated Use `triggerOn` instead
      */
     onProblemClose?: boolean;
+    /**
+     * Minimum problem duration in minutes before the trigger fires. Possible values: `5`, `10`, `15`, `30`, `60`, `120`, `240`, `1440`, `10080`
+     */
+    problemOpenDuration?: number;
+    /**
+     * Triggers only for problems whose severity is this value or more severe. Possible values: `1` (critical) to `5` (informational). Lower numbers are more severe, so 3 matches severities 1, 2, and 3
+     */
+    severityThreshold?: number;
+    /**
+     * Problem state to trigger on. Possible values: `open` (active only), `open-and-close` (both phases), or `close` (closure only). When unset, falls back to `onProblemClose`
+     */
+    triggerOn?: string;
+    /**
+     * Problem event fields tracked for value changes. Changes to any selected field cause re-triggering. Possible values: `dt.davis.affected_users_count`, `dt.davis.impact_level`, `event.category`, `event.severity`, `rootCauseEntityId`, `smartscape.affected_entities`
+     */
+    triggerOnUpdateFields?: string[];
 }
 
 export interface AutomationWorkflowTriggerEventConfigDavisProblemCategory {
@@ -1395,7 +1448,7 @@ export interface AutomationWorkflowTriggerEventConfigDavisProblemCategory {
 
 export interface AutomationWorkflowTriggerEventConfigEvent {
     /**
-     * Possible values: `events` or `bizevents`. Default: `events`
+     * Possible values: `events`, `bizevents`, `dt.system.events`, and `security.events`. Default: `events`
      */
     eventType?: string;
     /**
@@ -1456,23 +1509,27 @@ export interface AutomationWorkflowTriggerScheduleFilterParameters {
 
 export interface AutomationWorkflowTriggerScheduleTrigger {
     /**
-     * Triggers the schedule every n minutes within a given time frame - specifying the end time on any valid day in 24h format (e.g. 14:22). Conflicts with `cron` and `time`. Required with `intervalMinutes` and `betweenStart`
+     * Triggers the schedule once at a fixed date and time in ISO 8601 format without timezone (e.g. `2025-12-25T14:30:00`). Conflicts with `cron`, `time`, `intervalMinutes`, `betweenStart` and `betweenEnd`
+     */
+    at?: string;
+    /**
+     * Triggers the schedule every n minutes within a given time frame - specifying the end time on any valid day in 24h format (e.g. 14:22). Conflicts with `cron`, `time` and `at`. Required with `intervalMinutes` and `betweenStart`
      */
     betweenEnd?: string;
     /**
-     * Triggers the schedule every n minutes within a given time frame - specifying the start time on any valid day in 24h format (e.g. 13:22). Conflicts with `cron` and `time`. Required with `intervalMinutes` and `betweenEnd`
+     * Triggers the schedule every n minutes within a given time frame - specifying the start time on any valid day in 24h format (e.g. 13:22). Conflicts with `cron`, `time` and `at`. Required with `intervalMinutes` and `betweenEnd`
      */
     betweenStart?: string;
     /**
-     * Configures using cron syntax. Conflicts with `time`, `intervalMinutes`, `betweenStart` and `betweenEnd`
+     * Configures using cron syntax. Conflicts with `time`, `intervalMinutes`, `betweenStart`, `betweenEnd` and `at`
      */
     cron?: string;
     /**
-     * Triggers the schedule every n minutes within a given time frame. Minimum: 1, Maximum: 720. Required with `betweenStart` and `betweenEnd`. Conflicts with `cron` and `time`
+     * Triggers the schedule every n minutes within a given time frame. Minimum: 1, Maximum: 720. Required with `betweenStart` and `betweenEnd`. Conflicts with `cron`, `time` and `at`
      */
     intervalMinutes?: number;
     /**
-     * Specifies a fixed time the schedule will trigger at in 24h format (e.g. `14:23`). Conflicts with `cron`, `intervalMinutes`, `betweenStart` and `betweenEnd`
+     * Specifies a fixed time the schedule will trigger at in 24h format (e.g. `14:23`). Conflicts with `cron`, `intervalMinutes`, `betweenStart`, `betweenEnd` and `at`
      */
     time?: string;
 }
@@ -4388,7 +4445,7 @@ export interface BrowserMonitorScriptConfiguration {
     /**
      * The emulated device of the monitor—holds either the parameters of the custom device or the name and orientation of the preconfigured device.
      *
-     * If not set, then the Desktop preconfigured device is used
+     *   If not set, then the Desktop preconfigured device is used
      */
     device?: outputs.BrowserMonitorScriptConfigurationDevice;
     /**
@@ -5798,7 +5855,7 @@ export interface BrowserMonitorTagTag {
     /**
      * The key of the tag.
      *
-     * Custom tags have the tag value here.
+     *   Custom tags have the tag value here.
      */
     key: string;
     /**
@@ -5808,7 +5865,7 @@ export interface BrowserMonitorTagTag {
     /**
      * The value of the tag.
      *
-     * Not applicable to custom tags.
+     *   Not applicable to custom tags.
      */
     value?: string;
 }
@@ -14652,7 +14709,7 @@ export interface HttpMonitorTagTag {
     /**
      * The key of the tag.
      *
-     * Custom tags have the tag value here.
+     *   Custom tags have the tag value here.
      */
     key: string;
     /**
@@ -14662,7 +14719,7 @@ export interface HttpMonitorTagTag {
     /**
      * The value of the tag.
      *
-     * Not applicable to custom tags.
+     *   Not applicable to custom tags.
      */
     value?: string;
 }
@@ -18962,9 +19019,17 @@ export interface MobileAppEnablementSessionReplay {
      */
     fullSessionReplay?: boolean;
     /**
+     * Enable New Session Replay Experience
+     */
+    fullSessionReplayOnGrail?: boolean;
+    /**
      * Capture screen recordings that replay the user actions preceding all detected crashes. Before enabling, Dynatrace checks your system against the [prerequisites for Session Replay](https://dt-url.net/t23s0ppi).
      */
     onCrash: boolean;
+    /**
+     * Enable New Session Replay on Crashes Experience
+     */
+    onCrashOnGrail?: boolean;
 }
 
 export interface MobileAppKeyPerformanceThresholds {
@@ -238281,46 +238346,81 @@ export interface OsServicesDetectionConditionsLinux {
 export interface OsServicesDetectionConditionsLinuxLinuxDetectionCondition {
     /**
      * This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
+     *
+     *   - `$match(ip?tables*)` – Matches string with wildcards: `*` any number (including zero) of characters and `?` exactly one character.
+     *  - `$contains(ssh)` – Matches if `ssh` appears anywhere in the service's property value.
+     *  - `$eq(sshd)` – Matches if `sshd` matches the service's property value exactly.
+     *  - `$prefix(ss)` – Matches if `ss` matches the prefix of the service's property value.
+     *  - `$suffix(hd)` – Matches if `hd` matches the suffix of the service's property value.
+     *
+     *   Available logic operations:
+     *  - `$not($eq(sshd))` – Matches if the service's property value is different from `sshd`.
+     *  - `$and($prefix(ss),$suffix(hd))` – Matches if service's property value starts with `ss` and ends with `hd`.
+     *  - `$or($prefix(ss),$suffix(hd))` – Matches if service's property value starts with `ss` or ends with `hd`.
+     *
+     *   Brackets **(** and **)** that are part of the matched property **must be escaped with a tilde (~)**
      */
     condition?: string;
     /**
-     * Custom metadata
+     * Host resource attributes are dimensions enriching the host including custom metadata which are user-defined key-value pairs that you can assign to hosts monitored by Dynatrace.
+     *
+     *   By defining custom metadata, you can enrich the monitoring data with context specific to your organization's needs, such as environment names, team ownership, application versions, or any other relevant details.
+     *
+     *   See [Define tags and metadata for hosts](https://dt-url.net/w3hv0kbw).
+     *
+     *   Note: Starting from version 1.325 host resource attributes are supported in addition to host custom metadata.
      */
     hostMetadataCondition?: outputs.OsServicesDetectionConditionsLinuxLinuxDetectionConditionHostMetadataCondition;
     /**
-     * Possible Values: `ServiceName`, `StartupType`
+     * Service property. Possible values: `ServiceName`, `StartupType`
      */
     property?: string;
     /**
-     * Possible Values: `RuleTypeHost`, `RuleTypeOsService`
+     * Rule scope. Possible values: `RuleTypeHost`, `RuleTypeOsService`
      */
     ruleType?: string;
     /**
      * This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
      *
-     * - `$eq(enabled)` – Matches services with startup type equal to enabled.
+     *   - `$eq(enabled)` – Matches services with startup type equal to enabled.
      *
-     * Available logic operations:
-     * - `$not($eq(enabled))` – Matches services with startup type different from enabled.
-     * - `$or($eq(enabled),$eq(disabled))` - Matches services that are either enabled or disabled.
+     *   Available logic operations:
+     *  - `$not($eq(enabled))` – Matches services with startup type different from enabled.
+     *  - `$or($eq(enabled),$eq(disabled))` - Matches services that are either enabled or disabled.
      *
-     * Use one of the following values as a parameter for this condition:
+     *   Use one of the following values as a parameter for this condition:
      *
-     * - `enabled`
-     * - `enabled-runtime`
-     * - `static`
-     * - `disabled`
+     *   - `enabled`
+     *  - `enabled-runtime`
+     *  - `static`
+     *  - `disabled`
+     *  - `indirect`
+     *  - `linked`
+     *  - `linked-runtime`
      */
     startupCondition?: string;
 }
 
 export interface OsServicesDetectionConditionsLinuxLinuxDetectionConditionHostMetadataCondition {
     /**
-     * When enabled, the condition requires a metadata key to exist and match the constraints; when disabled, the key is optional but must still match the constrains if it is present.
+     * When enabled, the condition requires a resource attribute to exist and match the constraints; when disabled, the key is optional but must still match the constrains if it is present.
      */
-    keyMustExist?: boolean;
+    keyMustExist: boolean;
     /**
      * This string has to match a required format.
+     *
+     *   - `$match(ver*_1.2.?)` – Matches string with wildcards: `*` any number (including zero) of characters and `?` exactly one character.
+     *  - `$contains(production)` – Matches if `production` appears anywhere in the host metadata value.
+     *  - `$eq(production)` – Matches if `production` matches the host metadata value exactly.
+     *  - `$prefix(production)` – Matches if `production` matches the prefix of the host metadata value.
+     *  - `$suffix(production)` – Matches if `production` matches the suffix of the host metadata value.
+     *
+     *   Available logic operations:
+     *  - `$not($eq(production))` – Matches if the host metadata value is different from `production`.
+     *  - `$and($prefix(production),$suffix(main))` – Matches if host metadata value starts with `production` and ends with `main`.
+     *  - `$or($prefix(production),$suffix(main))` – Matches if host metadata value starts with `production` or ends with `main`.
+     *
+     *   Brackets **(** and **)** that are part of the matched property **must be escaped with a tilde (~)**
      */
     metadataCondition: string;
     /**
@@ -238336,49 +238436,75 @@ export interface OsServicesDetectionConditionsWindows {
 export interface OsServicesDetectionConditionsWindowsDetectionConditionsWindow {
     /**
      * This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
+     *
+     *   - `$match(ip?tables*)` – Matches string with wildcards: `*` any number (including zero) of characters and `?` exactly one character.
+     *  - `$contains(ssh)` – Matches if `ssh` appears anywhere in the service's property value.
+     *  - `$eq(sshd)` – Matches if `sshd` matches the service's property value exactly.
+     *  - `$prefix(ss)` – Matches if `ss` matches the prefix of the service's property value.
+     *  - `$suffix(hd)` – Matches if `hd` matches the suffix of the service's property value.
+     *
+     *   Available logic operations:
+     *  - `$not($eq(sshd))` – Matches if the service's property value is different from `sshd`.
+     *  - `$and($prefix(ss),$suffix(hd))` – Matches if service's property value starts with `ss` and ends with `hd`.
+     *  - `$or($prefix(ss),$suffix(hd))` – Matches if service's property value starts with `ss` or ends with `hd`.
+     *
+     *   Brackets **(** and **)** that are part of the matched property **must be escaped with a tilde (~)**
      */
     condition?: string;
     /**
-     * Custom metadata
+     * Resource attribute
      */
     hostMetadataCondition?: outputs.OsServicesDetectionConditionsWindowsDetectionConditionsWindowHostMetadataCondition;
     /**
-     * Possible Values: `DisplayName`, `Manufacturer`, `Path`, `ServiceName`, `StartupType`
+     * Service property. Possible values: `DisplayName`, `Manufacturer`, `Path`, `ServiceName`, `StartupType`
      */
     property?: string;
     /**
-     * Possible Values: `RuleTypeHost`, `RuleTypeOsService`
+     * Rule scope. Possible values: `RuleTypeHost`, `RuleTypeOsService`
      */
     ruleType?: string;
     /**
      * This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
      *
-     * - `$eq(manual)` – Matches services that are started manually.
+     *   - `$eq(manual)` – Matches services that are started manually.
      *
-     * Available logic operations:
-     * - `$not($eq(auto))` – Matches services with startup type different from Automatic.
-     * - `$or($eq(auto),$eq(manual))` – Matches if service's startup type is either Automatic or Manual.
+     *   Available logic operations:
+     *  - `$not($eq(auto))` – Matches services with startup type different from Automatic.
+     *  - `$or($eq(auto),$eq(manual))` – Matches if service's startup type is either Automatic or Manual.
      *
-     * Use one of the following values as a parameter for this condition:
+     *   Use one of the following values as a parameter for this condition:
      *
-     * - `manual` for Manual
-     * - `manualTrigger` for Manual (Trigger Start)
-     * - `auto` for Automatic
-     * - `autoDelay` for Automatic (Delayed Start)
-     * - `autoTrigger` for Automatic (Trigger Start)
-     * - `autoDelayTrigger` for Automatic (Delayed Start, Trigger Start)
-     * - `disabled` for Disabled
+     *   - `manual` for Manual
+     *  - `manualTrigger` for Manual (Trigger Start)
+     *  - `auto` for Automatic
+     *  - `autoDelay` for Automatic (Delayed Start)
+     *  - `autoTrigger` for Automatic (Trigger Start)
+     *  - `autoDelayTrigger` for Automatic (Delayed Start, Trigger Start)
+     *  - `disabled` for Disabled
      */
     startupCondition?: string;
 }
 
 export interface OsServicesDetectionConditionsWindowsDetectionConditionsWindowHostMetadataCondition {
     /**
-     * When enabled, the condition requires a metadata key to exist and match the constraints; when disabled, the key is optional but must still match the constrains if it is present.
+     * When enabled, the condition requires a resource attribute to exist and match the constraints; when disabled, the key is optional but must still match the constrains if it is present.
      */
-    keyMustExist?: boolean;
+    keyMustExist: boolean;
     /**
      * This string has to match a required format.
+     *
+     *   - `$match(ver*_1.2.?)` – Matches string with wildcards: `*` any number (including zero) of characters and `?` exactly one character.
+     *  - `$contains(production)` – Matches if `production` appears anywhere in the host metadata value.
+     *  - `$eq(production)` – Matches if `production` matches the host metadata value exactly.
+     *  - `$prefix(production)` – Matches if `production` matches the prefix of the host metadata value.
+     *  - `$suffix(production)` – Matches if `production` matches the suffix of the host metadata value.
+     *
+     *   Available logic operations:
+     *  - `$not($eq(production))` – Matches if the host metadata value is different from `production`.
+     *  - `$and($prefix(production),$suffix(main))` – Matches if host metadata value starts with `production` and ends with `main`.
+     *  - `$or($prefix(production),$suffix(main))` – Matches if host metadata value starts with `production` or ends with `main`.
+     *
+     *   Brackets **(** and **)** that are part of the matched property **must be escaped with a tilde (~)**
      */
     metadataCondition: string;
     /**
@@ -238397,7 +238523,7 @@ export interface OsServicesMetadataItem {
      */
     metadataKey: string;
     /**
-     * no documentation available
+     * No documentation available
      */
     metadataValue: string;
 }
@@ -246438,13 +246564,28 @@ export interface SpanEntryPointMatchesMatch {
     value?: string;
 }
 
+export interface SyntheticPrimaryGrailTagsTags {
+    tags: outputs.SyntheticPrimaryGrailTagsTagsTag[];
+}
+
+export interface SyntheticPrimaryGrailTagsTagsTag {
+    /**
+     * Primary grail tag's key
+     */
+    key: string;
+    /**
+     * Primary grail tag's value
+     */
+    value: string;
+}
+
 export interface UpdateWindowsDailyRecurrence {
     /**
      * Every **X** days:
-     * * `1` = every day,
-     * * `2` = every two days,
-     * * `3` = every three days,
-     * * etc.
+     *  * `1` = every day,
+     *  * `2` = every two days,
+     *  * `3` = every three days,
+     *  * etc.
      */
     every: number;
     /**
@@ -246459,11 +246600,11 @@ export interface UpdateWindowsDailyRecurrence {
 
 export interface UpdateWindowsDailyRecurrenceRecurrenceRange {
     /**
-     * no documentation available
+     * No documentation available
      */
     end: string;
     /**
-     * no documentation available
+     * No documentation available
      */
     start: string;
 }
@@ -246478,7 +246619,7 @@ export interface UpdateWindowsDailyRecurrenceUpdateTime {
      */
     startTime: string;
     /**
-     * Possible Values: `GMT_06_00`, `GMT_12_00`, `GMT_10_00`, `GMT_07_00`, `GMT_00_00`, `GMT_11_00`, `GMT_03_00`, `GMT_01_00`, `GMT_05_00`, `GMT_09_00`, `GMT_02_00`, `GMT_04_00`, `GMT_08_00`
+     * Time zone. Possible values: `GMT+00:00`, `GMT+01:00`, `GMT+02:00`, `GMT+07:00`, `GMT+09:00`, `GMT-03:00`, `GMT-04:00`, `GMT-05:00`, `GMT-06:00`, `GMT-08:00`, `GMT-10:00`, `GMT-11:00`, `GMT-12:00`
      */
     timeZone: string;
 }
@@ -246486,10 +246627,10 @@ export interface UpdateWindowsDailyRecurrenceUpdateTime {
 export interface UpdateWindowsMonthlyRecurrence {
     /**
      * Every **X** months:
-     * * `1` = every month,
-     * * `2` = every two months,
-     * * `3` = every three months,
-     * * etc.
+     *  * `1` = every month,
+     *  * `2` = every two months,
+     *  * `3` = every three months,
+     *  * etc.
      */
     every: number;
     /**
@@ -246508,11 +246649,11 @@ export interface UpdateWindowsMonthlyRecurrence {
 
 export interface UpdateWindowsMonthlyRecurrenceRecurrenceRange {
     /**
-     * no documentation available
+     * No documentation available
      */
     end: string;
     /**
-     * no documentation available
+     * No documentation available
      */
     start: string;
 }
@@ -246527,7 +246668,7 @@ export interface UpdateWindowsMonthlyRecurrenceUpdateTime {
      */
     startTime: string;
     /**
-     * Possible Values: `GMT_06_00`, `GMT_12_00`, `GMT_10_00`, `GMT_07_00`, `GMT_00_00`, `GMT_11_00`, `GMT_03_00`, `GMT_01_00`, `GMT_05_00`, `GMT_09_00`, `GMT_02_00`, `GMT_04_00`, `GMT_08_00`
+     * Time zone. Possible values: `GMT+00:00`, `GMT+01:00`, `GMT+02:00`, `GMT+07:00`, `GMT+09:00`, `GMT-03:00`, `GMT-04:00`, `GMT-05:00`, `GMT-06:00`, `GMT-08:00`, `GMT-10:00`, `GMT-11:00`, `GMT-12:00`
      */
     timeZone: string;
 }
@@ -246541,11 +246682,11 @@ export interface UpdateWindowsOnceRecurrence {
 
 export interface UpdateWindowsOnceRecurrenceRecurrenceRange {
     /**
-     * no documentation available
+     * No documentation available
      */
     end: string;
     /**
-     * no documentation available
+     * No documentation available
      */
     start: string;
 }
@@ -246553,10 +246694,10 @@ export interface UpdateWindowsOnceRecurrenceRecurrenceRange {
 export interface UpdateWindowsWeeklyRecurrence {
     /**
      * Every **X** weeks:
-     * * `1` = every week,
-     * * `2` = every two weeks,
-     * * `3` = every three weeks,
-     * * etc.
+     *  * `1` = every week,
+     *  * `2` = every two weeks,
+     *  * `3` = every three weeks,
+     *  * etc.
      */
     every: number;
     /**
@@ -246575,42 +246716,42 @@ export interface UpdateWindowsWeeklyRecurrence {
 
 export interface UpdateWindowsWeeklyRecurrenceRecurrenceRange {
     /**
-     * no documentation available
+     * No documentation available
      */
     end: string;
     /**
-     * no documentation available
+     * No documentation available
      */
     start: string;
 }
 
 export interface UpdateWindowsWeeklyRecurrenceSelectedWeekDays {
     /**
-     * no documentation available
+     * No documentation available
      */
     friday: boolean;
     /**
-     * no documentation available
+     * No documentation available
      */
     monday: boolean;
     /**
-     * no documentation available
+     * No documentation available
      */
     saturday: boolean;
     /**
-     * no documentation available
+     * No documentation available
      */
     sunday: boolean;
     /**
-     * no documentation available
+     * No documentation available
      */
     thursday: boolean;
     /**
-     * no documentation available
+     * No documentation available
      */
     tuesday: boolean;
     /**
-     * no documentation available
+     * No documentation available
      */
     wednesday: boolean;
 }
@@ -246625,7 +246766,7 @@ export interface UpdateWindowsWeeklyRecurrenceUpdateTime {
      */
     startTime: string;
     /**
-     * Possible Values: `GMT_06_00`, `GMT_12_00`, `GMT_10_00`, `GMT_07_00`, `GMT_00_00`, `GMT_11_00`, `GMT_03_00`, `GMT_01_00`, `GMT_05_00`, `GMT_09_00`, `GMT_02_00`, `GMT_04_00`, `GMT_08_00`
+     * Time zone. Possible values: `GMT+00:00`, `GMT+01:00`, `GMT+02:00`, `GMT+07:00`, `GMT+09:00`, `GMT-03:00`, `GMT-04:00`, `GMT-05:00`, `GMT-06:00`, `GMT-08:00`, `GMT-10:00`, `GMT-11:00`, `GMT-12:00`
      */
     timeZone: string;
 }
@@ -247451,6 +247592,10 @@ export interface WebAppEnablementSessionReplay {
      * (Field has overlap with `dynatrace.WebApplication`) This setting is enabled (`true`) or disabled (`false`)
      */
     enabled: boolean;
+    /**
+     * Enable New Session Replay Experience
+     */
+    enabledOnGrail?: boolean;
 }
 
 export interface WebAppIpAddressExclusionIpExclusionList {

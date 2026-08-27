@@ -35,16 +35,16 @@ namespace Pulumiverse.Dynatrace
         public Output<Outputs.AppMonitoringAppMonitoring?> AppMonitoringOverrides { get; private set; } = null!;
 
         /// <summary>
-        /// Possible Values: `Debug`, `Error`, `Info`, `Off`, `Warn`
+        /// Default log level. Possible values: `Debug`, `Error`, `Info`, `Off`, `Warn`
         /// </summary>
         [Output("defaultLogLevel")]
         public Output<string> DefaultLogLevel { get; private set; } = null!;
 
         /// <summary>
-        /// Possible Values: `Off`, `On`
+        /// App function traces. Possible values: `Off`, `On`
         /// </summary>
         [Output("defaultTraceLevel")]
-        public Output<string?> DefaultTraceLevel { get; private set; } = null!;
+        public Output<string> DefaultTraceLevel { get; private set; } = null!;
 
 
         /// <summary>
@@ -100,16 +100,16 @@ namespace Pulumiverse.Dynatrace
         public Input<Inputs.AppMonitoringAppMonitoringArgs>? AppMonitoringOverrides { get; set; }
 
         /// <summary>
-        /// Possible Values: `Debug`, `Error`, `Info`, `Off`, `Warn`
+        /// Default log level. Possible values: `Debug`, `Error`, `Info`, `Off`, `Warn`
         /// </summary>
         [Input("defaultLogLevel", required: true)]
         public Input<string> DefaultLogLevel { get; set; } = null!;
 
         /// <summary>
-        /// Possible Values: `Off`, `On`
+        /// App function traces. Possible values: `Off`, `On`
         /// </summary>
-        [Input("defaultTraceLevel")]
-        public Input<string>? DefaultTraceLevel { get; set; }
+        [Input("defaultTraceLevel", required: true)]
+        public Input<string> DefaultTraceLevel { get; set; } = null!;
 
         public AppMonitoringArgs()
         {
@@ -126,13 +126,13 @@ namespace Pulumiverse.Dynatrace
         public Input<Inputs.AppMonitoringAppMonitoringGetArgs>? AppMonitoringOverrides { get; set; }
 
         /// <summary>
-        /// Possible Values: `Debug`, `Error`, `Info`, `Off`, `Warn`
+        /// Default log level. Possible values: `Debug`, `Error`, `Info`, `Off`, `Warn`
         /// </summary>
         [Input("defaultLogLevel")]
         public Input<string>? DefaultLogLevel { get; set; }
 
         /// <summary>
-        /// Possible Values: `Off`, `On`
+        /// App function traces. Possible values: `Off`, `On`
         /// </summary>
         [Input("defaultTraceLevel")]
         public Input<string>? DefaultTraceLevel { get; set; }

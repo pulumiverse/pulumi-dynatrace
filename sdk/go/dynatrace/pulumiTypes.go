@@ -13,6 +13,238 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type ActivegateUpdatesUpdateWindows struct {
+	UpdateWindows []ActivegateUpdatesUpdateWindowsUpdateWindow `pulumi:"updateWindows"`
+}
+
+// ActivegateUpdatesUpdateWindowsInput is an input type that accepts ActivegateUpdatesUpdateWindowsArgs and ActivegateUpdatesUpdateWindowsOutput values.
+// You can construct a concrete instance of `ActivegateUpdatesUpdateWindowsInput` via:
+//
+//	ActivegateUpdatesUpdateWindowsArgs{...}
+type ActivegateUpdatesUpdateWindowsInput interface {
+	pulumi.Input
+
+	ToActivegateUpdatesUpdateWindowsOutput() ActivegateUpdatesUpdateWindowsOutput
+	ToActivegateUpdatesUpdateWindowsOutputWithContext(context.Context) ActivegateUpdatesUpdateWindowsOutput
+}
+
+type ActivegateUpdatesUpdateWindowsArgs struct {
+	UpdateWindows ActivegateUpdatesUpdateWindowsUpdateWindowArrayInput `pulumi:"updateWindows"`
+}
+
+func (ActivegateUpdatesUpdateWindowsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ActivegateUpdatesUpdateWindows)(nil)).Elem()
+}
+
+func (i ActivegateUpdatesUpdateWindowsArgs) ToActivegateUpdatesUpdateWindowsOutput() ActivegateUpdatesUpdateWindowsOutput {
+	return i.ToActivegateUpdatesUpdateWindowsOutputWithContext(context.Background())
+}
+
+func (i ActivegateUpdatesUpdateWindowsArgs) ToActivegateUpdatesUpdateWindowsOutputWithContext(ctx context.Context) ActivegateUpdatesUpdateWindowsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ActivegateUpdatesUpdateWindowsOutput)
+}
+
+func (i ActivegateUpdatesUpdateWindowsArgs) ToActivegateUpdatesUpdateWindowsPtrOutput() ActivegateUpdatesUpdateWindowsPtrOutput {
+	return i.ToActivegateUpdatesUpdateWindowsPtrOutputWithContext(context.Background())
+}
+
+func (i ActivegateUpdatesUpdateWindowsArgs) ToActivegateUpdatesUpdateWindowsPtrOutputWithContext(ctx context.Context) ActivegateUpdatesUpdateWindowsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ActivegateUpdatesUpdateWindowsOutput).ToActivegateUpdatesUpdateWindowsPtrOutputWithContext(ctx)
+}
+
+// ActivegateUpdatesUpdateWindowsPtrInput is an input type that accepts ActivegateUpdatesUpdateWindowsArgs, ActivegateUpdatesUpdateWindowsPtr and ActivegateUpdatesUpdateWindowsPtrOutput values.
+// You can construct a concrete instance of `ActivegateUpdatesUpdateWindowsPtrInput` via:
+//
+//	        ActivegateUpdatesUpdateWindowsArgs{...}
+//
+//	or:
+//
+//	        nil
+type ActivegateUpdatesUpdateWindowsPtrInput interface {
+	pulumi.Input
+
+	ToActivegateUpdatesUpdateWindowsPtrOutput() ActivegateUpdatesUpdateWindowsPtrOutput
+	ToActivegateUpdatesUpdateWindowsPtrOutputWithContext(context.Context) ActivegateUpdatesUpdateWindowsPtrOutput
+}
+
+type activegateUpdatesUpdateWindowsPtrType ActivegateUpdatesUpdateWindowsArgs
+
+func ActivegateUpdatesUpdateWindowsPtr(v *ActivegateUpdatesUpdateWindowsArgs) ActivegateUpdatesUpdateWindowsPtrInput {
+	return (*activegateUpdatesUpdateWindowsPtrType)(v)
+}
+
+func (*activegateUpdatesUpdateWindowsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ActivegateUpdatesUpdateWindows)(nil)).Elem()
+}
+
+func (i *activegateUpdatesUpdateWindowsPtrType) ToActivegateUpdatesUpdateWindowsPtrOutput() ActivegateUpdatesUpdateWindowsPtrOutput {
+	return i.ToActivegateUpdatesUpdateWindowsPtrOutputWithContext(context.Background())
+}
+
+func (i *activegateUpdatesUpdateWindowsPtrType) ToActivegateUpdatesUpdateWindowsPtrOutputWithContext(ctx context.Context) ActivegateUpdatesUpdateWindowsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ActivegateUpdatesUpdateWindowsPtrOutput)
+}
+
+type ActivegateUpdatesUpdateWindowsOutput struct{ *pulumi.OutputState }
+
+func (ActivegateUpdatesUpdateWindowsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ActivegateUpdatesUpdateWindows)(nil)).Elem()
+}
+
+func (o ActivegateUpdatesUpdateWindowsOutput) ToActivegateUpdatesUpdateWindowsOutput() ActivegateUpdatesUpdateWindowsOutput {
+	return o
+}
+
+func (o ActivegateUpdatesUpdateWindowsOutput) ToActivegateUpdatesUpdateWindowsOutputWithContext(ctx context.Context) ActivegateUpdatesUpdateWindowsOutput {
+	return o
+}
+
+func (o ActivegateUpdatesUpdateWindowsOutput) ToActivegateUpdatesUpdateWindowsPtrOutput() ActivegateUpdatesUpdateWindowsPtrOutput {
+	return o.ToActivegateUpdatesUpdateWindowsPtrOutputWithContext(context.Background())
+}
+
+func (o ActivegateUpdatesUpdateWindowsOutput) ToActivegateUpdatesUpdateWindowsPtrOutputWithContext(ctx context.Context) ActivegateUpdatesUpdateWindowsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ActivegateUpdatesUpdateWindows) *ActivegateUpdatesUpdateWindows {
+		return &v
+	}).(ActivegateUpdatesUpdateWindowsPtrOutput)
+}
+
+func (o ActivegateUpdatesUpdateWindowsOutput) UpdateWindows() ActivegateUpdatesUpdateWindowsUpdateWindowArrayOutput {
+	return o.ApplyT(func(v ActivegateUpdatesUpdateWindows) []ActivegateUpdatesUpdateWindowsUpdateWindow {
+		return v.UpdateWindows
+	}).(ActivegateUpdatesUpdateWindowsUpdateWindowArrayOutput)
+}
+
+type ActivegateUpdatesUpdateWindowsPtrOutput struct{ *pulumi.OutputState }
+
+func (ActivegateUpdatesUpdateWindowsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ActivegateUpdatesUpdateWindows)(nil)).Elem()
+}
+
+func (o ActivegateUpdatesUpdateWindowsPtrOutput) ToActivegateUpdatesUpdateWindowsPtrOutput() ActivegateUpdatesUpdateWindowsPtrOutput {
+	return o
+}
+
+func (o ActivegateUpdatesUpdateWindowsPtrOutput) ToActivegateUpdatesUpdateWindowsPtrOutputWithContext(ctx context.Context) ActivegateUpdatesUpdateWindowsPtrOutput {
+	return o
+}
+
+func (o ActivegateUpdatesUpdateWindowsPtrOutput) Elem() ActivegateUpdatesUpdateWindowsOutput {
+	return o.ApplyT(func(v *ActivegateUpdatesUpdateWindows) ActivegateUpdatesUpdateWindows {
+		if v != nil {
+			return *v
+		}
+		var ret ActivegateUpdatesUpdateWindows
+		return ret
+	}).(ActivegateUpdatesUpdateWindowsOutput)
+}
+
+func (o ActivegateUpdatesUpdateWindowsPtrOutput) UpdateWindows() ActivegateUpdatesUpdateWindowsUpdateWindowArrayOutput {
+	return o.ApplyT(func(v *ActivegateUpdatesUpdateWindows) []ActivegateUpdatesUpdateWindowsUpdateWindow {
+		if v == nil {
+			return nil
+		}
+		return v.UpdateWindows
+	}).(ActivegateUpdatesUpdateWindowsUpdateWindowArrayOutput)
+}
+
+type ActivegateUpdatesUpdateWindowsUpdateWindow struct {
+	// Select an [update window for ActiveGate updates](https://www.terraform.io/ui/settings/builtin:deployment.management.update-windows)
+	UpdateWindow string `pulumi:"updateWindow"`
+}
+
+// ActivegateUpdatesUpdateWindowsUpdateWindowInput is an input type that accepts ActivegateUpdatesUpdateWindowsUpdateWindowArgs and ActivegateUpdatesUpdateWindowsUpdateWindowOutput values.
+// You can construct a concrete instance of `ActivegateUpdatesUpdateWindowsUpdateWindowInput` via:
+//
+//	ActivegateUpdatesUpdateWindowsUpdateWindowArgs{...}
+type ActivegateUpdatesUpdateWindowsUpdateWindowInput interface {
+	pulumi.Input
+
+	ToActivegateUpdatesUpdateWindowsUpdateWindowOutput() ActivegateUpdatesUpdateWindowsUpdateWindowOutput
+	ToActivegateUpdatesUpdateWindowsUpdateWindowOutputWithContext(context.Context) ActivegateUpdatesUpdateWindowsUpdateWindowOutput
+}
+
+type ActivegateUpdatesUpdateWindowsUpdateWindowArgs struct {
+	// Select an [update window for ActiveGate updates](https://www.terraform.io/ui/settings/builtin:deployment.management.update-windows)
+	UpdateWindow pulumi.StringInput `pulumi:"updateWindow"`
+}
+
+func (ActivegateUpdatesUpdateWindowsUpdateWindowArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ActivegateUpdatesUpdateWindowsUpdateWindow)(nil)).Elem()
+}
+
+func (i ActivegateUpdatesUpdateWindowsUpdateWindowArgs) ToActivegateUpdatesUpdateWindowsUpdateWindowOutput() ActivegateUpdatesUpdateWindowsUpdateWindowOutput {
+	return i.ToActivegateUpdatesUpdateWindowsUpdateWindowOutputWithContext(context.Background())
+}
+
+func (i ActivegateUpdatesUpdateWindowsUpdateWindowArgs) ToActivegateUpdatesUpdateWindowsUpdateWindowOutputWithContext(ctx context.Context) ActivegateUpdatesUpdateWindowsUpdateWindowOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ActivegateUpdatesUpdateWindowsUpdateWindowOutput)
+}
+
+// ActivegateUpdatesUpdateWindowsUpdateWindowArrayInput is an input type that accepts ActivegateUpdatesUpdateWindowsUpdateWindowArray and ActivegateUpdatesUpdateWindowsUpdateWindowArrayOutput values.
+// You can construct a concrete instance of `ActivegateUpdatesUpdateWindowsUpdateWindowArrayInput` via:
+//
+//	ActivegateUpdatesUpdateWindowsUpdateWindowArray{ ActivegateUpdatesUpdateWindowsUpdateWindowArgs{...} }
+type ActivegateUpdatesUpdateWindowsUpdateWindowArrayInput interface {
+	pulumi.Input
+
+	ToActivegateUpdatesUpdateWindowsUpdateWindowArrayOutput() ActivegateUpdatesUpdateWindowsUpdateWindowArrayOutput
+	ToActivegateUpdatesUpdateWindowsUpdateWindowArrayOutputWithContext(context.Context) ActivegateUpdatesUpdateWindowsUpdateWindowArrayOutput
+}
+
+type ActivegateUpdatesUpdateWindowsUpdateWindowArray []ActivegateUpdatesUpdateWindowsUpdateWindowInput
+
+func (ActivegateUpdatesUpdateWindowsUpdateWindowArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ActivegateUpdatesUpdateWindowsUpdateWindow)(nil)).Elem()
+}
+
+func (i ActivegateUpdatesUpdateWindowsUpdateWindowArray) ToActivegateUpdatesUpdateWindowsUpdateWindowArrayOutput() ActivegateUpdatesUpdateWindowsUpdateWindowArrayOutput {
+	return i.ToActivegateUpdatesUpdateWindowsUpdateWindowArrayOutputWithContext(context.Background())
+}
+
+func (i ActivegateUpdatesUpdateWindowsUpdateWindowArray) ToActivegateUpdatesUpdateWindowsUpdateWindowArrayOutputWithContext(ctx context.Context) ActivegateUpdatesUpdateWindowsUpdateWindowArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ActivegateUpdatesUpdateWindowsUpdateWindowArrayOutput)
+}
+
+type ActivegateUpdatesUpdateWindowsUpdateWindowOutput struct{ *pulumi.OutputState }
+
+func (ActivegateUpdatesUpdateWindowsUpdateWindowOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ActivegateUpdatesUpdateWindowsUpdateWindow)(nil)).Elem()
+}
+
+func (o ActivegateUpdatesUpdateWindowsUpdateWindowOutput) ToActivegateUpdatesUpdateWindowsUpdateWindowOutput() ActivegateUpdatesUpdateWindowsUpdateWindowOutput {
+	return o
+}
+
+func (o ActivegateUpdatesUpdateWindowsUpdateWindowOutput) ToActivegateUpdatesUpdateWindowsUpdateWindowOutputWithContext(ctx context.Context) ActivegateUpdatesUpdateWindowsUpdateWindowOutput {
+	return o
+}
+
+// Select an [update window for ActiveGate updates](https://www.terraform.io/ui/settings/builtin:deployment.management.update-windows)
+func (o ActivegateUpdatesUpdateWindowsUpdateWindowOutput) UpdateWindow() pulumi.StringOutput {
+	return o.ApplyT(func(v ActivegateUpdatesUpdateWindowsUpdateWindow) string { return v.UpdateWindow }).(pulumi.StringOutput)
+}
+
+type ActivegateUpdatesUpdateWindowsUpdateWindowArrayOutput struct{ *pulumi.OutputState }
+
+func (ActivegateUpdatesUpdateWindowsUpdateWindowArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ActivegateUpdatesUpdateWindowsUpdateWindow)(nil)).Elem()
+}
+
+func (o ActivegateUpdatesUpdateWindowsUpdateWindowArrayOutput) ToActivegateUpdatesUpdateWindowsUpdateWindowArrayOutput() ActivegateUpdatesUpdateWindowsUpdateWindowArrayOutput {
+	return o
+}
+
+func (o ActivegateUpdatesUpdateWindowsUpdateWindowArrayOutput) ToActivegateUpdatesUpdateWindowsUpdateWindowArrayOutputWithContext(ctx context.Context) ActivegateUpdatesUpdateWindowsUpdateWindowArrayOutput {
+	return o
+}
+
+func (o ActivegateUpdatesUpdateWindowsUpdateWindowArrayOutput) Index(i pulumi.IntInput) ActivegateUpdatesUpdateWindowsUpdateWindowOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ActivegateUpdatesUpdateWindowsUpdateWindow {
+		return vs[0].([]ActivegateUpdatesUpdateWindowsUpdateWindow)[vs[1].(int)]
+	}).(ActivegateUpdatesUpdateWindowsUpdateWindowOutput)
+}
+
 type AlertingFilters struct {
 	// A conditions for the metric usage
 	Filters []AlertingFiltersFilter `pulumi:"filters"`
@@ -3219,9 +3451,9 @@ func (o AppMonitoringAppMonitoringPtrOutput) AppMonitorings() AppMonitoringAppMo
 type AppMonitoringAppMonitoringAppMonitoring struct {
 	// App ID
 	AppId string `pulumi:"appId"`
-	// Possible Values: `debug`, `error`, `info`, `off`, `useDefault`, `warn`
+	// App specific log level. Possible values: `debug`, `error`, `info`, `off`, `useDefault`, `warn`
 	CustomLogLevel string `pulumi:"customLogLevel"`
-	// Possible Values: `off`, `on`, `useDefault`
+	// App specific function traces. Possible values: `off`, `on`, `useDefault`
 	CustomTraceLevel *string `pulumi:"customTraceLevel"`
 }
 
@@ -3239,9 +3471,9 @@ type AppMonitoringAppMonitoringAppMonitoringInput interface {
 type AppMonitoringAppMonitoringAppMonitoringArgs struct {
 	// App ID
 	AppId pulumi.StringInput `pulumi:"appId"`
-	// Possible Values: `debug`, `error`, `info`, `off`, `useDefault`, `warn`
+	// App specific log level. Possible values: `debug`, `error`, `info`, `off`, `useDefault`, `warn`
 	CustomLogLevel pulumi.StringInput `pulumi:"customLogLevel"`
-	// Possible Values: `off`, `on`, `useDefault`
+	// App specific function traces. Possible values: `off`, `on`, `useDefault`
 	CustomTraceLevel pulumi.StringPtrInput `pulumi:"customTraceLevel"`
 }
 
@@ -3301,12 +3533,12 @@ func (o AppMonitoringAppMonitoringAppMonitoringOutput) AppId() pulumi.StringOutp
 	return o.ApplyT(func(v AppMonitoringAppMonitoringAppMonitoring) string { return v.AppId }).(pulumi.StringOutput)
 }
 
-// Possible Values: `debug`, `error`, `info`, `off`, `useDefault`, `warn`
+// App specific log level. Possible values: `debug`, `error`, `info`, `off`, `useDefault`, `warn`
 func (o AppMonitoringAppMonitoringAppMonitoringOutput) CustomLogLevel() pulumi.StringOutput {
 	return o.ApplyT(func(v AppMonitoringAppMonitoringAppMonitoring) string { return v.CustomLogLevel }).(pulumi.StringOutput)
 }
 
-// Possible Values: `off`, `on`, `useDefault`
+// App specific function traces. Possible values: `off`, `on`, `useDefault`
 func (o AppMonitoringAppMonitoringAppMonitoringOutput) CustomTraceLevel() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AppMonitoringAppMonitoringAppMonitoring) *string { return v.CustomTraceLevel }).(pulumi.StringPtrOutput)
 }
@@ -12247,6 +12479,8 @@ type AutomationWorkflowTasksTask struct {
 	Concurrency *string `pulumi:"concurrency"`
 	// Conditions that have to be met in order to execute that task
 	Conditions *AutomationWorkflowTasksTaskConditions `pulumi:"conditions"`
+	// A stored sample result for this task as JSON. Not used during execution - it powers expression auto-complete and result preview in the Dynatrace UI. Accepts any JSON value
+	CustomSampleResult *string `pulumi:"customSampleResult"`
 	// A description for this task
 	Description *string `pulumi:"description"`
 	// Parameters and values for this task as JSON code. Contents depend on the kind of task - determined by the attribute `action`
@@ -12285,6 +12519,8 @@ type AutomationWorkflowTasksTaskArgs struct {
 	Concurrency pulumi.StringPtrInput `pulumi:"concurrency"`
 	// Conditions that have to be met in order to execute that task
 	Conditions AutomationWorkflowTasksTaskConditionsPtrInput `pulumi:"conditions"`
+	// A stored sample result for this task as JSON. Not used during execution - it powers expression auto-complete and result preview in the Dynatrace UI. Accepts any JSON value
+	CustomSampleResult pulumi.StringPtrInput `pulumi:"customSampleResult"`
 	// A description for this task
 	Description pulumi.StringPtrInput `pulumi:"description"`
 	// Parameters and values for this task as JSON code. Contents depend on the kind of task - determined by the attribute `action`
@@ -12372,6 +12608,11 @@ func (o AutomationWorkflowTasksTaskOutput) Concurrency() pulumi.StringPtrOutput 
 // Conditions that have to be met in order to execute that task
 func (o AutomationWorkflowTasksTaskOutput) Conditions() AutomationWorkflowTasksTaskConditionsPtrOutput {
 	return o.ApplyT(func(v AutomationWorkflowTasksTask) *AutomationWorkflowTasksTaskConditions { return v.Conditions }).(AutomationWorkflowTasksTaskConditionsPtrOutput)
+}
+
+// A stored sample result for this task as JSON. Not used during execution - it powers expression auto-complete and result preview in the Dynatrace UI. Accepts any JSON value
+func (o AutomationWorkflowTasksTaskOutput) CustomSampleResult() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AutomationWorkflowTasksTask) *string { return v.CustomSampleResult }).(pulumi.StringPtrOutput)
 }
 
 // A description for this task
@@ -12940,6 +13181,155 @@ func (o AutomationWorkflowTasksTaskRetryPtrOutput) FailedLoopIterationsOnly() pu
 	}).(pulumi.BoolPtrOutput)
 }
 
+type AutomationWorkflowThrottle struct {
+	// Whether the workflow's execution limit is currently hit. This value is computed by the server from the current throttle state.
+	// Set to `false` to reset (clear) an active throttle.
+	// The API rejects `true` unless the workflow is already throttled.
+	// When omitted, the value is read from the API
+	IsLimitHit *bool `pulumi:"isLimitHit"`
+}
+
+// AutomationWorkflowThrottleInput is an input type that accepts AutomationWorkflowThrottleArgs and AutomationWorkflowThrottleOutput values.
+// You can construct a concrete instance of `AutomationWorkflowThrottleInput` via:
+//
+//	AutomationWorkflowThrottleArgs{...}
+type AutomationWorkflowThrottleInput interface {
+	pulumi.Input
+
+	ToAutomationWorkflowThrottleOutput() AutomationWorkflowThrottleOutput
+	ToAutomationWorkflowThrottleOutputWithContext(context.Context) AutomationWorkflowThrottleOutput
+}
+
+type AutomationWorkflowThrottleArgs struct {
+	// Whether the workflow's execution limit is currently hit. This value is computed by the server from the current throttle state.
+	// Set to `false` to reset (clear) an active throttle.
+	// The API rejects `true` unless the workflow is already throttled.
+	// When omitted, the value is read from the API
+	IsLimitHit pulumi.BoolPtrInput `pulumi:"isLimitHit"`
+}
+
+func (AutomationWorkflowThrottleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AutomationWorkflowThrottle)(nil)).Elem()
+}
+
+func (i AutomationWorkflowThrottleArgs) ToAutomationWorkflowThrottleOutput() AutomationWorkflowThrottleOutput {
+	return i.ToAutomationWorkflowThrottleOutputWithContext(context.Background())
+}
+
+func (i AutomationWorkflowThrottleArgs) ToAutomationWorkflowThrottleOutputWithContext(ctx context.Context) AutomationWorkflowThrottleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AutomationWorkflowThrottleOutput)
+}
+
+func (i AutomationWorkflowThrottleArgs) ToAutomationWorkflowThrottlePtrOutput() AutomationWorkflowThrottlePtrOutput {
+	return i.ToAutomationWorkflowThrottlePtrOutputWithContext(context.Background())
+}
+
+func (i AutomationWorkflowThrottleArgs) ToAutomationWorkflowThrottlePtrOutputWithContext(ctx context.Context) AutomationWorkflowThrottlePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AutomationWorkflowThrottleOutput).ToAutomationWorkflowThrottlePtrOutputWithContext(ctx)
+}
+
+// AutomationWorkflowThrottlePtrInput is an input type that accepts AutomationWorkflowThrottleArgs, AutomationWorkflowThrottlePtr and AutomationWorkflowThrottlePtrOutput values.
+// You can construct a concrete instance of `AutomationWorkflowThrottlePtrInput` via:
+//
+//	        AutomationWorkflowThrottleArgs{...}
+//
+//	or:
+//
+//	        nil
+type AutomationWorkflowThrottlePtrInput interface {
+	pulumi.Input
+
+	ToAutomationWorkflowThrottlePtrOutput() AutomationWorkflowThrottlePtrOutput
+	ToAutomationWorkflowThrottlePtrOutputWithContext(context.Context) AutomationWorkflowThrottlePtrOutput
+}
+
+type automationWorkflowThrottlePtrType AutomationWorkflowThrottleArgs
+
+func AutomationWorkflowThrottlePtr(v *AutomationWorkflowThrottleArgs) AutomationWorkflowThrottlePtrInput {
+	return (*automationWorkflowThrottlePtrType)(v)
+}
+
+func (*automationWorkflowThrottlePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**AutomationWorkflowThrottle)(nil)).Elem()
+}
+
+func (i *automationWorkflowThrottlePtrType) ToAutomationWorkflowThrottlePtrOutput() AutomationWorkflowThrottlePtrOutput {
+	return i.ToAutomationWorkflowThrottlePtrOutputWithContext(context.Background())
+}
+
+func (i *automationWorkflowThrottlePtrType) ToAutomationWorkflowThrottlePtrOutputWithContext(ctx context.Context) AutomationWorkflowThrottlePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AutomationWorkflowThrottlePtrOutput)
+}
+
+type AutomationWorkflowThrottleOutput struct{ *pulumi.OutputState }
+
+func (AutomationWorkflowThrottleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AutomationWorkflowThrottle)(nil)).Elem()
+}
+
+func (o AutomationWorkflowThrottleOutput) ToAutomationWorkflowThrottleOutput() AutomationWorkflowThrottleOutput {
+	return o
+}
+
+func (o AutomationWorkflowThrottleOutput) ToAutomationWorkflowThrottleOutputWithContext(ctx context.Context) AutomationWorkflowThrottleOutput {
+	return o
+}
+
+func (o AutomationWorkflowThrottleOutput) ToAutomationWorkflowThrottlePtrOutput() AutomationWorkflowThrottlePtrOutput {
+	return o.ToAutomationWorkflowThrottlePtrOutputWithContext(context.Background())
+}
+
+func (o AutomationWorkflowThrottleOutput) ToAutomationWorkflowThrottlePtrOutputWithContext(ctx context.Context) AutomationWorkflowThrottlePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AutomationWorkflowThrottle) *AutomationWorkflowThrottle {
+		return &v
+	}).(AutomationWorkflowThrottlePtrOutput)
+}
+
+// Whether the workflow's execution limit is currently hit. This value is computed by the server from the current throttle state.
+// Set to `false` to reset (clear) an active throttle.
+// The API rejects `true` unless the workflow is already throttled.
+// When omitted, the value is read from the API
+func (o AutomationWorkflowThrottleOutput) IsLimitHit() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v AutomationWorkflowThrottle) *bool { return v.IsLimitHit }).(pulumi.BoolPtrOutput)
+}
+
+type AutomationWorkflowThrottlePtrOutput struct{ *pulumi.OutputState }
+
+func (AutomationWorkflowThrottlePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**AutomationWorkflowThrottle)(nil)).Elem()
+}
+
+func (o AutomationWorkflowThrottlePtrOutput) ToAutomationWorkflowThrottlePtrOutput() AutomationWorkflowThrottlePtrOutput {
+	return o
+}
+
+func (o AutomationWorkflowThrottlePtrOutput) ToAutomationWorkflowThrottlePtrOutputWithContext(ctx context.Context) AutomationWorkflowThrottlePtrOutput {
+	return o
+}
+
+func (o AutomationWorkflowThrottlePtrOutput) Elem() AutomationWorkflowThrottleOutput {
+	return o.ApplyT(func(v *AutomationWorkflowThrottle) AutomationWorkflowThrottle {
+		if v != nil {
+			return *v
+		}
+		var ret AutomationWorkflowThrottle
+		return ret
+	}).(AutomationWorkflowThrottleOutput)
+}
+
+// Whether the workflow's execution limit is currently hit. This value is computed by the server from the current throttle state.
+// Set to `false` to reset (clear) an active throttle.
+// The API rejects `true` unless the workflow is already throttled.
+// When omitted, the value is read from the API
+func (o AutomationWorkflowThrottlePtrOutput) IsLimitHit() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *AutomationWorkflowThrottle) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsLimitHit
+	}).(pulumi.BoolPtrOutput)
+}
+
 type AutomationWorkflowTrigger struct {
 	// If specified the workflow is getting triggered based on events
 	Event *AutomationWorkflowTriggerEvent `pulumi:"event"`
@@ -13478,10 +13868,16 @@ type AutomationWorkflowTriggerEventConfigDavisEvent struct {
 	EntityTags map[string]string `pulumi:"entityTags"`
 	// Specifies whether all or just any of the configured entity tags need to match. Possible values: `all` and `any`. Omit this attribute if all entities should match
 	EntityTagsMatch *string `pulumi:"entityTagsMatch"`
+	// Specifies when to trigger based on maintenance window status. Possible values: `always`, `inside`, `outside`. Default: `always`
+	MaintenanceWindowTriggerBehavior *string `pulumi:"maintenanceWindowTriggerBehavior"`
 	// The Davis Events to match on
 	Names *AutomationWorkflowTriggerEventConfigDavisEventNames `pulumi:"names"`
-	// If set to `true` closing a problem also is considered an event that triggers the execution
+	// If set to `true` closing a problem also is considered an event that triggers the execution.
+	//
+	// Deprecated: Use `triggerOn` instead
 	OnProblemClose *bool `pulumi:"onProblemClose"`
+	// Event state to trigger on. Possible values: `open` (active only), `open-and-close` (both phases), or `close` (closure only). When unset, falls back to `onProblemClose`
+	TriggerOn *string `pulumi:"triggerOn"`
 	// The types of davis events to trigger an execution. Possible values are `CUSTOM_ANNOTATION`, `APPLICATION_UNEXPECTED_HIGH_LOAD`, `APPLICATION_UNEXPECTED_LOW_LOAD`, `APPLICATION_OVERLOAD_PREVENTION`, `APPLICATION_SLOWDOWN`, `AVAILABILITY_EVENT`, `LOG_AVAILABILITY`, `EC2_HIGH_CPU`, `RDS_BACKUP_COMPLETED`, `RDS_BACKUP_STARTED`, `SYNTHETIC_GLOBAL_OUTAGE`, `SYNTHETIC_LOCAL_OUTAGE`, `SYNTHETIC_TEST_LOCATION_SLOWDOWN`, `CUSTOM_CONFIGURATION`, `PROCESS_NA_HIGH_CONN_FAIL_RATE`, `OSI_HIGH_CPU`, `CUSTOM_ALERT`, `CUSTOM_APP_CRASH_RATE_INCREASED`, `CUSTOM_APPLICATION_ERROR_RATE_INCREASED`, `CUSTOM_APPLICATION_UNEXPECTED_HIGH_LOAD`, `CUSTOM_APPLICATION_UNEXPECTED_LOW_LOAD`, `CUSTOM_APPLICATION_OVERLOAD_PREVENTION`, `CUSTOM_APPLICATION_SLOWDOWN`, `PGI_CUSTOM_AVAILABILITY`, `PGI_CUSTOM_ERROR`, `CUSTOM_INFO`, `PGI_CUSTOM_PERFORMANCE`, `CUSTOM_DEPLOYMENT`, `DEPLOYMENT_CHANGED_CHANGE`, `DEPLOYMENT_CHANGED_NEW`, `DEPLOYMENT_CHANGED_REMOVED`, `EBS_VOLUME_HIGH_LATENCY`, `ERROR_EVENT`, `LOG_ERROR`, `ESXI_HOST_CONNECTION_FAILED`, `ESXI_HOST_CONNECTION_LOST`, `ESXI_GUEST_CPU_LIMIT_REACHED`, `ESXI_GUEST_ACTIVE_SWAP_WAIT`, `ESXI_HOST_CPU_SATURATION`, `ESXI_HOST_MEMORY_SATURATION`, `ESXI_HOST_MAINTENANCE`, `ESXI_HOST_NETWORK_PROBLEMS`, `ESXI_HOST_NO_CONNECTION`, `ESXI_HOST_SHUTDOWN`, `ESXI_HOST_DISK_SLOW`, `ESXI_HOST_UP`, `ESXI_HOST_TIMEOUT`, `ESXI_VM_IMPACT_HOST_CPU_SATURATION`, `ESXI_VM_IMPACT_HOST_MEMORY_SATURATION`, `DATABASE_CONNECTION_FAILURE`, `RDS_AZ_FAILOVER_COMPLETED`, `RDS_AZ_FAILOVER_STARTED`, `SERVICE_ERROR_RATE_INCREASED`, `RDS_HIGH_LATENCY`, `OSI_NIC_UTILIZATION_HIGH`, `OSI_NIC_ERRORS_HIGH`, `PGI_HAPROXY_QUEUED_REQUESTS_HIGH`, `PGI_RMQ_HIGH_FILE_DESC_USAGE`, `PGI_RMQ_HIGH_MEM_USAGE`, `PGI_RMQ_HIGH_PROCESS_USAGE`, `PGI_RMQ_HIGH_SOCKETS_USAGE`, `OSI_NIC_DROPPED_PACKETS_HIGH`, `PGI_MYSQL_SLOW_QUERIES_RATE_HIGH`, `PGI_KEYSTONE_SLOW`, `PGI_HAPROXY_SESSION_USAGE_HIGH`, `HOST_LOG_AVAILABILITY`, `HOST_LOG_ERROR`, `OSI_GRACEFULLY_SHUTDOWN`, `HOST_LOG_MATCHED`, `OSI_UNEXPECTEDLY_UNAVAILABLE`, `HOST_LOG_PERFORMANCE`, `HOST_OF_SERVICE_UNAVAILABLE`, `HTTP_CHECK_GLOBAL_OUTAGE`, `HTTP_CHECK_LOCAL_OUTAGE`, `HTTP_CHECK_TEST_LOCATION_SLOWDOWN`, `ESXI_HOST_DISK_QUEUE_SLOW`, `LOG_MATCHED`, `APPLICATION_ERROR_RATE_INCREASED`, `APPLICATION_JS_FRAMEWORK_DETECTED`, `AWS_LAMBDA_HIGH_ERROR_RATE`, `ELB_HIGH_BACKEND_ERROR_RATE`, `ELB_HIGH_FRONTEND_ERROR_RATE`, `ELB_HIGH_UNHEALTHY_HOST_RATE`, `PROCESS_HIGH_GC_ACTIVITY`, `ESXI_HOST_DATASTORE_LOW_DISK_SPACE`, `OSI_DOCKER_DEVICEMAPPER_LOW_DATA_SPACE`, `OSI_LOW_DISK_SPACE`, `OSI_DOCKER_DEVICEMAPPER_LOW_METADATA_SPACE`, `OSI_DISK_LOW_INODES`, `PGI_RMQ_LOW_DISK_SPACE`, `RDS_LOW_STORAGE_SPACE`, `MARKED_FOR_TERMINATION`, `PROCESS_MEMORY_RESOURCE_EXHAUSTED`, `OSI_HIGH_MEMORY`, `MOBILE_APP_CRASH_RATE_INCREASED`, `MOBILE_APPLICATION_ERROR_RATE_INCREASED`, `MOBILE_APPLICATION_OVERLOAD_PREVENTION`, `MOBILE_APPLICATION_SLOWDOWN`, `MOBILE_APPLICATION_UNEXPECTED_HIGH_LOAD`, `MOBILE_APPLICATION_UNEXPECTED_LOW_LOAD`, `MONITORING_UNAVAILABLE`, `PROCESS_NA_HIGH_LOSS_RATE`, `PGI_KEYSTONE_UNHEALTHY`, `ESXI_HOST_OVERLOADED_STORAGE`, `PERFORMANCE_EVENT`, `LOG_PERFORMANCE`, `PGI_LOG_AVAILABILITY`, `PGI_CRASHED_INFO`, `PROCESS_CRASHED`, `PGI_LOG_ERROR`, `PG_LOW_INSTANCE_COUNT`, `PGI_LOG_MATCHED`, `PGI_MEMDUMP`, `PGI_LOG_PERFORMANCE`, `PROCESS_RESTART`, `PGI_UNAVAILABLE`, `RDS_HIGH_CPU`, `RDS_LOW_MEMORY`, `RDS_OF_SERVICE_UNAVAILABLE`, `RESOURCE_CONTENTION_EVENT`, `SERVICE_SLOWDOWN`, `RDS_RESTART`, `RDS_RESTART_SEQUENCE`, `PGI_OF_SERVICE_UNAVAILABLE`, `OSI_SLOW_DISK`, `SYNTHETIC_NODE_OUTAGE`, `SYNTHETIC_PRIVATE_LOCATION_OUTAGE`, `EXTERNAL_SYNTHETIC_TEST_OUTAGE`, `EXTERNAL_SYNTHETIC_TEST_SLOWDOWN`, `PROCESS_THREADS_RESOURCE_EXHAUSTED`, `SERVICE_UNEXPECTED_HIGH_LOAD`, `SERVICE_UNEXPECTED_LOW_LOAD`, `ESXI_VM_DISCONNECTED`, `OPENSTACK_VM_LAUNCH_FAILED`, `ESXI_HOST_VM_MOTION_LEFT`, `ESXI_HOST_VM_MOTION_ARRIVED`, `ESXI_VM_MOTION`, `OPENSTACK_VM_MOTION`, `ESXI_VM_POWER_OFF`, `ESXI_VM_SHUTDOWN`, `OPENSTACK_HOST_VM_SHUTDOWN`, `ESXI_VM_START`, `ESXI_HOST_VM_STARTED`, `OPENSTACK_HOST_VM_STARTED`
 	//
 	// Deprecated: This field has been deprecated
@@ -13506,10 +13902,16 @@ type AutomationWorkflowTriggerEventConfigDavisEventArgs struct {
 	EntityTags pulumi.StringMapInput `pulumi:"entityTags"`
 	// Specifies whether all or just any of the configured entity tags need to match. Possible values: `all` and `any`. Omit this attribute if all entities should match
 	EntityTagsMatch pulumi.StringPtrInput `pulumi:"entityTagsMatch"`
+	// Specifies when to trigger based on maintenance window status. Possible values: `always`, `inside`, `outside`. Default: `always`
+	MaintenanceWindowTriggerBehavior pulumi.StringPtrInput `pulumi:"maintenanceWindowTriggerBehavior"`
 	// The Davis Events to match on
 	Names AutomationWorkflowTriggerEventConfigDavisEventNamesPtrInput `pulumi:"names"`
-	// If set to `true` closing a problem also is considered an event that triggers the execution
+	// If set to `true` closing a problem also is considered an event that triggers the execution.
+	//
+	// Deprecated: Use `triggerOn` instead
 	OnProblemClose pulumi.BoolPtrInput `pulumi:"onProblemClose"`
+	// Event state to trigger on. Possible values: `open` (active only), `open-and-close` (both phases), or `close` (closure only). When unset, falls back to `onProblemClose`
+	TriggerOn pulumi.StringPtrInput `pulumi:"triggerOn"`
 	// The types of davis events to trigger an execution. Possible values are `CUSTOM_ANNOTATION`, `APPLICATION_UNEXPECTED_HIGH_LOAD`, `APPLICATION_UNEXPECTED_LOW_LOAD`, `APPLICATION_OVERLOAD_PREVENTION`, `APPLICATION_SLOWDOWN`, `AVAILABILITY_EVENT`, `LOG_AVAILABILITY`, `EC2_HIGH_CPU`, `RDS_BACKUP_COMPLETED`, `RDS_BACKUP_STARTED`, `SYNTHETIC_GLOBAL_OUTAGE`, `SYNTHETIC_LOCAL_OUTAGE`, `SYNTHETIC_TEST_LOCATION_SLOWDOWN`, `CUSTOM_CONFIGURATION`, `PROCESS_NA_HIGH_CONN_FAIL_RATE`, `OSI_HIGH_CPU`, `CUSTOM_ALERT`, `CUSTOM_APP_CRASH_RATE_INCREASED`, `CUSTOM_APPLICATION_ERROR_RATE_INCREASED`, `CUSTOM_APPLICATION_UNEXPECTED_HIGH_LOAD`, `CUSTOM_APPLICATION_UNEXPECTED_LOW_LOAD`, `CUSTOM_APPLICATION_OVERLOAD_PREVENTION`, `CUSTOM_APPLICATION_SLOWDOWN`, `PGI_CUSTOM_AVAILABILITY`, `PGI_CUSTOM_ERROR`, `CUSTOM_INFO`, `PGI_CUSTOM_PERFORMANCE`, `CUSTOM_DEPLOYMENT`, `DEPLOYMENT_CHANGED_CHANGE`, `DEPLOYMENT_CHANGED_NEW`, `DEPLOYMENT_CHANGED_REMOVED`, `EBS_VOLUME_HIGH_LATENCY`, `ERROR_EVENT`, `LOG_ERROR`, `ESXI_HOST_CONNECTION_FAILED`, `ESXI_HOST_CONNECTION_LOST`, `ESXI_GUEST_CPU_LIMIT_REACHED`, `ESXI_GUEST_ACTIVE_SWAP_WAIT`, `ESXI_HOST_CPU_SATURATION`, `ESXI_HOST_MEMORY_SATURATION`, `ESXI_HOST_MAINTENANCE`, `ESXI_HOST_NETWORK_PROBLEMS`, `ESXI_HOST_NO_CONNECTION`, `ESXI_HOST_SHUTDOWN`, `ESXI_HOST_DISK_SLOW`, `ESXI_HOST_UP`, `ESXI_HOST_TIMEOUT`, `ESXI_VM_IMPACT_HOST_CPU_SATURATION`, `ESXI_VM_IMPACT_HOST_MEMORY_SATURATION`, `DATABASE_CONNECTION_FAILURE`, `RDS_AZ_FAILOVER_COMPLETED`, `RDS_AZ_FAILOVER_STARTED`, `SERVICE_ERROR_RATE_INCREASED`, `RDS_HIGH_LATENCY`, `OSI_NIC_UTILIZATION_HIGH`, `OSI_NIC_ERRORS_HIGH`, `PGI_HAPROXY_QUEUED_REQUESTS_HIGH`, `PGI_RMQ_HIGH_FILE_DESC_USAGE`, `PGI_RMQ_HIGH_MEM_USAGE`, `PGI_RMQ_HIGH_PROCESS_USAGE`, `PGI_RMQ_HIGH_SOCKETS_USAGE`, `OSI_NIC_DROPPED_PACKETS_HIGH`, `PGI_MYSQL_SLOW_QUERIES_RATE_HIGH`, `PGI_KEYSTONE_SLOW`, `PGI_HAPROXY_SESSION_USAGE_HIGH`, `HOST_LOG_AVAILABILITY`, `HOST_LOG_ERROR`, `OSI_GRACEFULLY_SHUTDOWN`, `HOST_LOG_MATCHED`, `OSI_UNEXPECTEDLY_UNAVAILABLE`, `HOST_LOG_PERFORMANCE`, `HOST_OF_SERVICE_UNAVAILABLE`, `HTTP_CHECK_GLOBAL_OUTAGE`, `HTTP_CHECK_LOCAL_OUTAGE`, `HTTP_CHECK_TEST_LOCATION_SLOWDOWN`, `ESXI_HOST_DISK_QUEUE_SLOW`, `LOG_MATCHED`, `APPLICATION_ERROR_RATE_INCREASED`, `APPLICATION_JS_FRAMEWORK_DETECTED`, `AWS_LAMBDA_HIGH_ERROR_RATE`, `ELB_HIGH_BACKEND_ERROR_RATE`, `ELB_HIGH_FRONTEND_ERROR_RATE`, `ELB_HIGH_UNHEALTHY_HOST_RATE`, `PROCESS_HIGH_GC_ACTIVITY`, `ESXI_HOST_DATASTORE_LOW_DISK_SPACE`, `OSI_DOCKER_DEVICEMAPPER_LOW_DATA_SPACE`, `OSI_LOW_DISK_SPACE`, `OSI_DOCKER_DEVICEMAPPER_LOW_METADATA_SPACE`, `OSI_DISK_LOW_INODES`, `PGI_RMQ_LOW_DISK_SPACE`, `RDS_LOW_STORAGE_SPACE`, `MARKED_FOR_TERMINATION`, `PROCESS_MEMORY_RESOURCE_EXHAUSTED`, `OSI_HIGH_MEMORY`, `MOBILE_APP_CRASH_RATE_INCREASED`, `MOBILE_APPLICATION_ERROR_RATE_INCREASED`, `MOBILE_APPLICATION_OVERLOAD_PREVENTION`, `MOBILE_APPLICATION_SLOWDOWN`, `MOBILE_APPLICATION_UNEXPECTED_HIGH_LOAD`, `MOBILE_APPLICATION_UNEXPECTED_LOW_LOAD`, `MONITORING_UNAVAILABLE`, `PROCESS_NA_HIGH_LOSS_RATE`, `PGI_KEYSTONE_UNHEALTHY`, `ESXI_HOST_OVERLOADED_STORAGE`, `PERFORMANCE_EVENT`, `LOG_PERFORMANCE`, `PGI_LOG_AVAILABILITY`, `PGI_CRASHED_INFO`, `PROCESS_CRASHED`, `PGI_LOG_ERROR`, `PG_LOW_INSTANCE_COUNT`, `PGI_LOG_MATCHED`, `PGI_MEMDUMP`, `PGI_LOG_PERFORMANCE`, `PROCESS_RESTART`, `PGI_UNAVAILABLE`, `RDS_HIGH_CPU`, `RDS_LOW_MEMORY`, `RDS_OF_SERVICE_UNAVAILABLE`, `RESOURCE_CONTENTION_EVENT`, `SERVICE_SLOWDOWN`, `RDS_RESTART`, `RDS_RESTART_SEQUENCE`, `PGI_OF_SERVICE_UNAVAILABLE`, `OSI_SLOW_DISK`, `SYNTHETIC_NODE_OUTAGE`, `SYNTHETIC_PRIVATE_LOCATION_OUTAGE`, `EXTERNAL_SYNTHETIC_TEST_OUTAGE`, `EXTERNAL_SYNTHETIC_TEST_SLOWDOWN`, `PROCESS_THREADS_RESOURCE_EXHAUSTED`, `SERVICE_UNEXPECTED_HIGH_LOAD`, `SERVICE_UNEXPECTED_LOW_LOAD`, `ESXI_VM_DISCONNECTED`, `OPENSTACK_VM_LAUNCH_FAILED`, `ESXI_HOST_VM_MOTION_LEFT`, `ESXI_HOST_VM_MOTION_ARRIVED`, `ESXI_VM_MOTION`, `OPENSTACK_VM_MOTION`, `ESXI_VM_POWER_OFF`, `ESXI_VM_SHUTDOWN`, `OPENSTACK_HOST_VM_SHUTDOWN`, `ESXI_VM_START`, `ESXI_HOST_VM_STARTED`, `OPENSTACK_HOST_VM_STARTED`
 	//
 	// Deprecated: This field has been deprecated
@@ -13608,6 +14010,13 @@ func (o AutomationWorkflowTriggerEventConfigDavisEventOutput) EntityTagsMatch() 
 	return o.ApplyT(func(v AutomationWorkflowTriggerEventConfigDavisEvent) *string { return v.EntityTagsMatch }).(pulumi.StringPtrOutput)
 }
 
+// Specifies when to trigger based on maintenance window status. Possible values: `always`, `inside`, `outside`. Default: `always`
+func (o AutomationWorkflowTriggerEventConfigDavisEventOutput) MaintenanceWindowTriggerBehavior() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AutomationWorkflowTriggerEventConfigDavisEvent) *string {
+		return v.MaintenanceWindowTriggerBehavior
+	}).(pulumi.StringPtrOutput)
+}
+
 // The Davis Events to match on
 func (o AutomationWorkflowTriggerEventConfigDavisEventOutput) Names() AutomationWorkflowTriggerEventConfigDavisEventNamesPtrOutput {
 	return o.ApplyT(func(v AutomationWorkflowTriggerEventConfigDavisEvent) *AutomationWorkflowTriggerEventConfigDavisEventNames {
@@ -13615,9 +14024,16 @@ func (o AutomationWorkflowTriggerEventConfigDavisEventOutput) Names() Automation
 	}).(AutomationWorkflowTriggerEventConfigDavisEventNamesPtrOutput)
 }
 
-// If set to `true` closing a problem also is considered an event that triggers the execution
+// If set to `true` closing a problem also is considered an event that triggers the execution.
+//
+// Deprecated: Use `triggerOn` instead
 func (o AutomationWorkflowTriggerEventConfigDavisEventOutput) OnProblemClose() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v AutomationWorkflowTriggerEventConfigDavisEvent) *bool { return v.OnProblemClose }).(pulumi.BoolPtrOutput)
+}
+
+// Event state to trigger on. Possible values: `open` (active only), `open-and-close` (both phases), or `close` (closure only). When unset, falls back to `onProblemClose`
+func (o AutomationWorkflowTriggerEventConfigDavisEventOutput) TriggerOn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AutomationWorkflowTriggerEventConfigDavisEvent) *string { return v.TriggerOn }).(pulumi.StringPtrOutput)
 }
 
 // The types of davis events to trigger an execution. Possible values are `CUSTOM_ANNOTATION`, `APPLICATION_UNEXPECTED_HIGH_LOAD`, `APPLICATION_UNEXPECTED_LOW_LOAD`, `APPLICATION_OVERLOAD_PREVENTION`, `APPLICATION_SLOWDOWN`, `AVAILABILITY_EVENT`, `LOG_AVAILABILITY`, `EC2_HIGH_CPU`, `RDS_BACKUP_COMPLETED`, `RDS_BACKUP_STARTED`, `SYNTHETIC_GLOBAL_OUTAGE`, `SYNTHETIC_LOCAL_OUTAGE`, `SYNTHETIC_TEST_LOCATION_SLOWDOWN`, `CUSTOM_CONFIGURATION`, `PROCESS_NA_HIGH_CONN_FAIL_RATE`, `OSI_HIGH_CPU`, `CUSTOM_ALERT`, `CUSTOM_APP_CRASH_RATE_INCREASED`, `CUSTOM_APPLICATION_ERROR_RATE_INCREASED`, `CUSTOM_APPLICATION_UNEXPECTED_HIGH_LOAD`, `CUSTOM_APPLICATION_UNEXPECTED_LOW_LOAD`, `CUSTOM_APPLICATION_OVERLOAD_PREVENTION`, `CUSTOM_APPLICATION_SLOWDOWN`, `PGI_CUSTOM_AVAILABILITY`, `PGI_CUSTOM_ERROR`, `CUSTOM_INFO`, `PGI_CUSTOM_PERFORMANCE`, `CUSTOM_DEPLOYMENT`, `DEPLOYMENT_CHANGED_CHANGE`, `DEPLOYMENT_CHANGED_NEW`, `DEPLOYMENT_CHANGED_REMOVED`, `EBS_VOLUME_HIGH_LATENCY`, `ERROR_EVENT`, `LOG_ERROR`, `ESXI_HOST_CONNECTION_FAILED`, `ESXI_HOST_CONNECTION_LOST`, `ESXI_GUEST_CPU_LIMIT_REACHED`, `ESXI_GUEST_ACTIVE_SWAP_WAIT`, `ESXI_HOST_CPU_SATURATION`, `ESXI_HOST_MEMORY_SATURATION`, `ESXI_HOST_MAINTENANCE`, `ESXI_HOST_NETWORK_PROBLEMS`, `ESXI_HOST_NO_CONNECTION`, `ESXI_HOST_SHUTDOWN`, `ESXI_HOST_DISK_SLOW`, `ESXI_HOST_UP`, `ESXI_HOST_TIMEOUT`, `ESXI_VM_IMPACT_HOST_CPU_SATURATION`, `ESXI_VM_IMPACT_HOST_MEMORY_SATURATION`, `DATABASE_CONNECTION_FAILURE`, `RDS_AZ_FAILOVER_COMPLETED`, `RDS_AZ_FAILOVER_STARTED`, `SERVICE_ERROR_RATE_INCREASED`, `RDS_HIGH_LATENCY`, `OSI_NIC_UTILIZATION_HIGH`, `OSI_NIC_ERRORS_HIGH`, `PGI_HAPROXY_QUEUED_REQUESTS_HIGH`, `PGI_RMQ_HIGH_FILE_DESC_USAGE`, `PGI_RMQ_HIGH_MEM_USAGE`, `PGI_RMQ_HIGH_PROCESS_USAGE`, `PGI_RMQ_HIGH_SOCKETS_USAGE`, `OSI_NIC_DROPPED_PACKETS_HIGH`, `PGI_MYSQL_SLOW_QUERIES_RATE_HIGH`, `PGI_KEYSTONE_SLOW`, `PGI_HAPROXY_SESSION_USAGE_HIGH`, `HOST_LOG_AVAILABILITY`, `HOST_LOG_ERROR`, `OSI_GRACEFULLY_SHUTDOWN`, `HOST_LOG_MATCHED`, `OSI_UNEXPECTEDLY_UNAVAILABLE`, `HOST_LOG_PERFORMANCE`, `HOST_OF_SERVICE_UNAVAILABLE`, `HTTP_CHECK_GLOBAL_OUTAGE`, `HTTP_CHECK_LOCAL_OUTAGE`, `HTTP_CHECK_TEST_LOCATION_SLOWDOWN`, `ESXI_HOST_DISK_QUEUE_SLOW`, `LOG_MATCHED`, `APPLICATION_ERROR_RATE_INCREASED`, `APPLICATION_JS_FRAMEWORK_DETECTED`, `AWS_LAMBDA_HIGH_ERROR_RATE`, `ELB_HIGH_BACKEND_ERROR_RATE`, `ELB_HIGH_FRONTEND_ERROR_RATE`, `ELB_HIGH_UNHEALTHY_HOST_RATE`, `PROCESS_HIGH_GC_ACTIVITY`, `ESXI_HOST_DATASTORE_LOW_DISK_SPACE`, `OSI_DOCKER_DEVICEMAPPER_LOW_DATA_SPACE`, `OSI_LOW_DISK_SPACE`, `OSI_DOCKER_DEVICEMAPPER_LOW_METADATA_SPACE`, `OSI_DISK_LOW_INODES`, `PGI_RMQ_LOW_DISK_SPACE`, `RDS_LOW_STORAGE_SPACE`, `MARKED_FOR_TERMINATION`, `PROCESS_MEMORY_RESOURCE_EXHAUSTED`, `OSI_HIGH_MEMORY`, `MOBILE_APP_CRASH_RATE_INCREASED`, `MOBILE_APPLICATION_ERROR_RATE_INCREASED`, `MOBILE_APPLICATION_OVERLOAD_PREVENTION`, `MOBILE_APPLICATION_SLOWDOWN`, `MOBILE_APPLICATION_UNEXPECTED_HIGH_LOAD`, `MOBILE_APPLICATION_UNEXPECTED_LOW_LOAD`, `MONITORING_UNAVAILABLE`, `PROCESS_NA_HIGH_LOSS_RATE`, `PGI_KEYSTONE_UNHEALTHY`, `ESXI_HOST_OVERLOADED_STORAGE`, `PERFORMANCE_EVENT`, `LOG_PERFORMANCE`, `PGI_LOG_AVAILABILITY`, `PGI_CRASHED_INFO`, `PROCESS_CRASHED`, `PGI_LOG_ERROR`, `PG_LOW_INSTANCE_COUNT`, `PGI_LOG_MATCHED`, `PGI_MEMDUMP`, `PGI_LOG_PERFORMANCE`, `PROCESS_RESTART`, `PGI_UNAVAILABLE`, `RDS_HIGH_CPU`, `RDS_LOW_MEMORY`, `RDS_OF_SERVICE_UNAVAILABLE`, `RESOURCE_CONTENTION_EVENT`, `SERVICE_SLOWDOWN`, `RDS_RESTART`, `RDS_RESTART_SEQUENCE`, `PGI_OF_SERVICE_UNAVAILABLE`, `OSI_SLOW_DISK`, `SYNTHETIC_NODE_OUTAGE`, `SYNTHETIC_PRIVATE_LOCATION_OUTAGE`, `EXTERNAL_SYNTHETIC_TEST_OUTAGE`, `EXTERNAL_SYNTHETIC_TEST_SLOWDOWN`, `PROCESS_THREADS_RESOURCE_EXHAUSTED`, `SERVICE_UNEXPECTED_HIGH_LOAD`, `SERVICE_UNEXPECTED_LOW_LOAD`, `ESXI_VM_DISCONNECTED`, `OPENSTACK_VM_LAUNCH_FAILED`, `ESXI_HOST_VM_MOTION_LEFT`, `ESXI_HOST_VM_MOTION_ARRIVED`, `ESXI_VM_MOTION`, `OPENSTACK_VM_MOTION`, `ESXI_VM_POWER_OFF`, `ESXI_VM_SHUTDOWN`, `OPENSTACK_HOST_VM_SHUTDOWN`, `ESXI_VM_START`, `ESXI_HOST_VM_STARTED`, `OPENSTACK_HOST_VM_STARTED`
@@ -13681,6 +14097,16 @@ func (o AutomationWorkflowTriggerEventConfigDavisEventPtrOutput) EntityTagsMatch
 	}).(pulumi.StringPtrOutput)
 }
 
+// Specifies when to trigger based on maintenance window status. Possible values: `always`, `inside`, `outside`. Default: `always`
+func (o AutomationWorkflowTriggerEventConfigDavisEventPtrOutput) MaintenanceWindowTriggerBehavior() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutomationWorkflowTriggerEventConfigDavisEvent) *string {
+		if v == nil {
+			return nil
+		}
+		return v.MaintenanceWindowTriggerBehavior
+	}).(pulumi.StringPtrOutput)
+}
+
 // The Davis Events to match on
 func (o AutomationWorkflowTriggerEventConfigDavisEventPtrOutput) Names() AutomationWorkflowTriggerEventConfigDavisEventNamesPtrOutput {
 	return o.ApplyT(func(v *AutomationWorkflowTriggerEventConfigDavisEvent) *AutomationWorkflowTriggerEventConfigDavisEventNames {
@@ -13691,7 +14117,9 @@ func (o AutomationWorkflowTriggerEventConfigDavisEventPtrOutput) Names() Automat
 	}).(AutomationWorkflowTriggerEventConfigDavisEventNamesPtrOutput)
 }
 
-// If set to `true` closing a problem also is considered an event that triggers the execution
+// If set to `true` closing a problem also is considered an event that triggers the execution.
+//
+// Deprecated: Use `triggerOn` instead
 func (o AutomationWorkflowTriggerEventConfigDavisEventPtrOutput) OnProblemClose() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *AutomationWorkflowTriggerEventConfigDavisEvent) *bool {
 		if v == nil {
@@ -13699,6 +14127,16 @@ func (o AutomationWorkflowTriggerEventConfigDavisEventPtrOutput) OnProblemClose(
 		}
 		return v.OnProblemClose
 	}).(pulumi.BoolPtrOutput)
+}
+
+// Event state to trigger on. Possible values: `open` (active only), `open-and-close` (both phases), or `close` (closure only). When unset, falls back to `onProblemClose`
+func (o AutomationWorkflowTriggerEventConfigDavisEventPtrOutput) TriggerOn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutomationWorkflowTriggerEventConfigDavisEvent) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TriggerOn
+	}).(pulumi.StringPtrOutput)
 }
 
 // The types of davis events to trigger an execution. Possible values are `CUSTOM_ANNOTATION`, `APPLICATION_UNEXPECTED_HIGH_LOAD`, `APPLICATION_UNEXPECTED_LOW_LOAD`, `APPLICATION_OVERLOAD_PREVENTION`, `APPLICATION_SLOWDOWN`, `AVAILABILITY_EVENT`, `LOG_AVAILABILITY`, `EC2_HIGH_CPU`, `RDS_BACKUP_COMPLETED`, `RDS_BACKUP_STARTED`, `SYNTHETIC_GLOBAL_OUTAGE`, `SYNTHETIC_LOCAL_OUTAGE`, `SYNTHETIC_TEST_LOCATION_SLOWDOWN`, `CUSTOM_CONFIGURATION`, `PROCESS_NA_HIGH_CONN_FAIL_RATE`, `OSI_HIGH_CPU`, `CUSTOM_ALERT`, `CUSTOM_APP_CRASH_RATE_INCREASED`, `CUSTOM_APPLICATION_ERROR_RATE_INCREASED`, `CUSTOM_APPLICATION_UNEXPECTED_HIGH_LOAD`, `CUSTOM_APPLICATION_UNEXPECTED_LOW_LOAD`, `CUSTOM_APPLICATION_OVERLOAD_PREVENTION`, `CUSTOM_APPLICATION_SLOWDOWN`, `PGI_CUSTOM_AVAILABILITY`, `PGI_CUSTOM_ERROR`, `CUSTOM_INFO`, `PGI_CUSTOM_PERFORMANCE`, `CUSTOM_DEPLOYMENT`, `DEPLOYMENT_CHANGED_CHANGE`, `DEPLOYMENT_CHANGED_NEW`, `DEPLOYMENT_CHANGED_REMOVED`, `EBS_VOLUME_HIGH_LATENCY`, `ERROR_EVENT`, `LOG_ERROR`, `ESXI_HOST_CONNECTION_FAILED`, `ESXI_HOST_CONNECTION_LOST`, `ESXI_GUEST_CPU_LIMIT_REACHED`, `ESXI_GUEST_ACTIVE_SWAP_WAIT`, `ESXI_HOST_CPU_SATURATION`, `ESXI_HOST_MEMORY_SATURATION`, `ESXI_HOST_MAINTENANCE`, `ESXI_HOST_NETWORK_PROBLEMS`, `ESXI_HOST_NO_CONNECTION`, `ESXI_HOST_SHUTDOWN`, `ESXI_HOST_DISK_SLOW`, `ESXI_HOST_UP`, `ESXI_HOST_TIMEOUT`, `ESXI_VM_IMPACT_HOST_CPU_SATURATION`, `ESXI_VM_IMPACT_HOST_MEMORY_SATURATION`, `DATABASE_CONNECTION_FAILURE`, `RDS_AZ_FAILOVER_COMPLETED`, `RDS_AZ_FAILOVER_STARTED`, `SERVICE_ERROR_RATE_INCREASED`, `RDS_HIGH_LATENCY`, `OSI_NIC_UTILIZATION_HIGH`, `OSI_NIC_ERRORS_HIGH`, `PGI_HAPROXY_QUEUED_REQUESTS_HIGH`, `PGI_RMQ_HIGH_FILE_DESC_USAGE`, `PGI_RMQ_HIGH_MEM_USAGE`, `PGI_RMQ_HIGH_PROCESS_USAGE`, `PGI_RMQ_HIGH_SOCKETS_USAGE`, `OSI_NIC_DROPPED_PACKETS_HIGH`, `PGI_MYSQL_SLOW_QUERIES_RATE_HIGH`, `PGI_KEYSTONE_SLOW`, `PGI_HAPROXY_SESSION_USAGE_HIGH`, `HOST_LOG_AVAILABILITY`, `HOST_LOG_ERROR`, `OSI_GRACEFULLY_SHUTDOWN`, `HOST_LOG_MATCHED`, `OSI_UNEXPECTEDLY_UNAVAILABLE`, `HOST_LOG_PERFORMANCE`, `HOST_OF_SERVICE_UNAVAILABLE`, `HTTP_CHECK_GLOBAL_OUTAGE`, `HTTP_CHECK_LOCAL_OUTAGE`, `HTTP_CHECK_TEST_LOCATION_SLOWDOWN`, `ESXI_HOST_DISK_QUEUE_SLOW`, `LOG_MATCHED`, `APPLICATION_ERROR_RATE_INCREASED`, `APPLICATION_JS_FRAMEWORK_DETECTED`, `AWS_LAMBDA_HIGH_ERROR_RATE`, `ELB_HIGH_BACKEND_ERROR_RATE`, `ELB_HIGH_FRONTEND_ERROR_RATE`, `ELB_HIGH_UNHEALTHY_HOST_RATE`, `PROCESS_HIGH_GC_ACTIVITY`, `ESXI_HOST_DATASTORE_LOW_DISK_SPACE`, `OSI_DOCKER_DEVICEMAPPER_LOW_DATA_SPACE`, `OSI_LOW_DISK_SPACE`, `OSI_DOCKER_DEVICEMAPPER_LOW_METADATA_SPACE`, `OSI_DISK_LOW_INODES`, `PGI_RMQ_LOW_DISK_SPACE`, `RDS_LOW_STORAGE_SPACE`, `MARKED_FOR_TERMINATION`, `PROCESS_MEMORY_RESOURCE_EXHAUSTED`, `OSI_HIGH_MEMORY`, `MOBILE_APP_CRASH_RATE_INCREASED`, `MOBILE_APPLICATION_ERROR_RATE_INCREASED`, `MOBILE_APPLICATION_OVERLOAD_PREVENTION`, `MOBILE_APPLICATION_SLOWDOWN`, `MOBILE_APPLICATION_UNEXPECTED_HIGH_LOAD`, `MOBILE_APPLICATION_UNEXPECTED_LOW_LOAD`, `MONITORING_UNAVAILABLE`, `PROCESS_NA_HIGH_LOSS_RATE`, `PGI_KEYSTONE_UNHEALTHY`, `ESXI_HOST_OVERLOADED_STORAGE`, `PERFORMANCE_EVENT`, `LOG_PERFORMANCE`, `PGI_LOG_AVAILABILITY`, `PGI_CRASHED_INFO`, `PROCESS_CRASHED`, `PGI_LOG_ERROR`, `PG_LOW_INSTANCE_COUNT`, `PGI_LOG_MATCHED`, `PGI_MEMDUMP`, `PGI_LOG_PERFORMANCE`, `PROCESS_RESTART`, `PGI_UNAVAILABLE`, `RDS_HIGH_CPU`, `RDS_LOW_MEMORY`, `RDS_OF_SERVICE_UNAVAILABLE`, `RESOURCE_CONTENTION_EVENT`, `SERVICE_SLOWDOWN`, `RDS_RESTART`, `RDS_RESTART_SEQUENCE`, `PGI_OF_SERVICE_UNAVAILABLE`, `OSI_SLOW_DISK`, `SYNTHETIC_NODE_OUTAGE`, `SYNTHETIC_PRIVATE_LOCATION_OUTAGE`, `EXTERNAL_SYNTHETIC_TEST_OUTAGE`, `EXTERNAL_SYNTHETIC_TEST_SLOWDOWN`, `PROCESS_THREADS_RESOURCE_EXHAUSTED`, `SERVICE_UNEXPECTED_HIGH_LOAD`, `SERVICE_UNEXPECTED_LOW_LOAD`, `ESXI_VM_DISCONNECTED`, `OPENSTACK_VM_LAUNCH_FAILED`, `ESXI_HOST_VM_MOTION_LEFT`, `ESXI_HOST_VM_MOTION_ARRIVED`, `ESXI_VM_MOTION`, `OPENSTACK_VM_MOTION`, `ESXI_VM_POWER_OFF`, `ESXI_VM_SHUTDOWN`, `OPENSTACK_HOST_VM_SHUTDOWN`, `ESXI_VM_START`, `ESXI_HOST_VM_STARTED`, `OPENSTACK_HOST_VM_STARTED`
@@ -13968,8 +14406,18 @@ type AutomationWorkflowTriggerEventConfigDavisProblem struct {
 	EntityTags map[string]string `pulumi:"entityTags"`
 	// Specifies whether all or just any of the configured entity tags need to match. Possible values: `all` and `any`. Omit this attribute if all entities should match
 	EntityTagsMatch *string `pulumi:"entityTagsMatch"`
-	// If set to `true` closing a problem also is considered an event that triggers the execution
+	// If set to `true` closing a problem also is considered an event that triggers the execution.
+	//
+	// Deprecated: Use `triggerOn` instead
 	OnProblemClose *bool `pulumi:"onProblemClose"`
+	// Minimum problem duration in minutes before the trigger fires. Possible values: `5`, `10`, `15`, `30`, `60`, `120`, `240`, `1440`, `10080`
+	ProblemOpenDuration *int `pulumi:"problemOpenDuration"`
+	// Triggers only for problems whose severity is this value or more severe. Possible values: `1` (critical) to `5` (informational). Lower numbers are more severe, so 3 matches severities 1, 2, and 3
+	SeverityThreshold *int `pulumi:"severityThreshold"`
+	// Problem state to trigger on. Possible values: `open` (active only), `open-and-close` (both phases), or `close` (closure only). When unset, falls back to `onProblemClose`
+	TriggerOn *string `pulumi:"triggerOn"`
+	// Problem event fields tracked for value changes. Changes to any selected field cause re-triggering. Possible values: `dt.davis.affected_users_count`, `dt.davis.impact_level`, `event.category`, `event.severity`, `rootCauseEntityId`, `smartscape.affected_entities`
+	TriggerOnUpdateFields []string `pulumi:"triggerOnUpdateFields"`
 }
 
 // AutomationWorkflowTriggerEventConfigDavisProblemInput is an input type that accepts AutomationWorkflowTriggerEventConfigDavisProblemArgs and AutomationWorkflowTriggerEventConfigDavisProblemOutput values.
@@ -13993,8 +14441,18 @@ type AutomationWorkflowTriggerEventConfigDavisProblemArgs struct {
 	EntityTags pulumi.StringMapInput `pulumi:"entityTags"`
 	// Specifies whether all or just any of the configured entity tags need to match. Possible values: `all` and `any`. Omit this attribute if all entities should match
 	EntityTagsMatch pulumi.StringPtrInput `pulumi:"entityTagsMatch"`
-	// If set to `true` closing a problem also is considered an event that triggers the execution
+	// If set to `true` closing a problem also is considered an event that triggers the execution.
+	//
+	// Deprecated: Use `triggerOn` instead
 	OnProblemClose pulumi.BoolPtrInput `pulumi:"onProblemClose"`
+	// Minimum problem duration in minutes before the trigger fires. Possible values: `5`, `10`, `15`, `30`, `60`, `120`, `240`, `1440`, `10080`
+	ProblemOpenDuration pulumi.IntPtrInput `pulumi:"problemOpenDuration"`
+	// Triggers only for problems whose severity is this value or more severe. Possible values: `1` (critical) to `5` (informational). Lower numbers are more severe, so 3 matches severities 1, 2, and 3
+	SeverityThreshold pulumi.IntPtrInput `pulumi:"severityThreshold"`
+	// Problem state to trigger on. Possible values: `open` (active only), `open-and-close` (both phases), or `close` (closure only). When unset, falls back to `onProblemClose`
+	TriggerOn pulumi.StringPtrInput `pulumi:"triggerOn"`
+	// Problem event fields tracked for value changes. Changes to any selected field cause re-triggering. Possible values: `dt.davis.affected_users_count`, `dt.davis.impact_level`, `event.category`, `event.severity`, `rootCauseEntityId`, `smartscape.affected_entities`
+	TriggerOnUpdateFields pulumi.StringArrayInput `pulumi:"triggerOnUpdateFields"`
 }
 
 func (AutomationWorkflowTriggerEventConfigDavisProblemArgs) ElementType() reflect.Type {
@@ -14100,9 +14558,31 @@ func (o AutomationWorkflowTriggerEventConfigDavisProblemOutput) EntityTagsMatch(
 	return o.ApplyT(func(v AutomationWorkflowTriggerEventConfigDavisProblem) *string { return v.EntityTagsMatch }).(pulumi.StringPtrOutput)
 }
 
-// If set to `true` closing a problem also is considered an event that triggers the execution
+// If set to `true` closing a problem also is considered an event that triggers the execution.
+//
+// Deprecated: Use `triggerOn` instead
 func (o AutomationWorkflowTriggerEventConfigDavisProblemOutput) OnProblemClose() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v AutomationWorkflowTriggerEventConfigDavisProblem) *bool { return v.OnProblemClose }).(pulumi.BoolPtrOutput)
+}
+
+// Minimum problem duration in minutes before the trigger fires. Possible values: `5`, `10`, `15`, `30`, `60`, `120`, `240`, `1440`, `10080`
+func (o AutomationWorkflowTriggerEventConfigDavisProblemOutput) ProblemOpenDuration() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v AutomationWorkflowTriggerEventConfigDavisProblem) *int { return v.ProblemOpenDuration }).(pulumi.IntPtrOutput)
+}
+
+// Triggers only for problems whose severity is this value or more severe. Possible values: `1` (critical) to `5` (informational). Lower numbers are more severe, so 3 matches severities 1, 2, and 3
+func (o AutomationWorkflowTriggerEventConfigDavisProblemOutput) SeverityThreshold() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v AutomationWorkflowTriggerEventConfigDavisProblem) *int { return v.SeverityThreshold }).(pulumi.IntPtrOutput)
+}
+
+// Problem state to trigger on. Possible values: `open` (active only), `open-and-close` (both phases), or `close` (closure only). When unset, falls back to `onProblemClose`
+func (o AutomationWorkflowTriggerEventConfigDavisProblemOutput) TriggerOn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AutomationWorkflowTriggerEventConfigDavisProblem) *string { return v.TriggerOn }).(pulumi.StringPtrOutput)
+}
+
+// Problem event fields tracked for value changes. Changes to any selected field cause re-triggering. Possible values: `dt.davis.affected_users_count`, `dt.davis.impact_level`, `event.category`, `event.severity`, `rootCauseEntityId`, `smartscape.affected_entities`
+func (o AutomationWorkflowTriggerEventConfigDavisProblemOutput) TriggerOnUpdateFields() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v AutomationWorkflowTriggerEventConfigDavisProblem) []string { return v.TriggerOnUpdateFields }).(pulumi.StringArrayOutput)
 }
 
 type AutomationWorkflowTriggerEventConfigDavisProblemPtrOutput struct{ *pulumi.OutputState }
@@ -14178,7 +14658,9 @@ func (o AutomationWorkflowTriggerEventConfigDavisProblemPtrOutput) EntityTagsMat
 	}).(pulumi.StringPtrOutput)
 }
 
-// If set to `true` closing a problem also is considered an event that triggers the execution
+// If set to `true` closing a problem also is considered an event that triggers the execution.
+//
+// Deprecated: Use `triggerOn` instead
 func (o AutomationWorkflowTriggerEventConfigDavisProblemPtrOutput) OnProblemClose() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *AutomationWorkflowTriggerEventConfigDavisProblem) *bool {
 		if v == nil {
@@ -14186,6 +14668,46 @@ func (o AutomationWorkflowTriggerEventConfigDavisProblemPtrOutput) OnProblemClos
 		}
 		return v.OnProblemClose
 	}).(pulumi.BoolPtrOutput)
+}
+
+// Minimum problem duration in minutes before the trigger fires. Possible values: `5`, `10`, `15`, `30`, `60`, `120`, `240`, `1440`, `10080`
+func (o AutomationWorkflowTriggerEventConfigDavisProblemPtrOutput) ProblemOpenDuration() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *AutomationWorkflowTriggerEventConfigDavisProblem) *int {
+		if v == nil {
+			return nil
+		}
+		return v.ProblemOpenDuration
+	}).(pulumi.IntPtrOutput)
+}
+
+// Triggers only for problems whose severity is this value or more severe. Possible values: `1` (critical) to `5` (informational). Lower numbers are more severe, so 3 matches severities 1, 2, and 3
+func (o AutomationWorkflowTriggerEventConfigDavisProblemPtrOutput) SeverityThreshold() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *AutomationWorkflowTriggerEventConfigDavisProblem) *int {
+		if v == nil {
+			return nil
+		}
+		return v.SeverityThreshold
+	}).(pulumi.IntPtrOutput)
+}
+
+// Problem state to trigger on. Possible values: `open` (active only), `open-and-close` (both phases), or `close` (closure only). When unset, falls back to `onProblemClose`
+func (o AutomationWorkflowTriggerEventConfigDavisProblemPtrOutput) TriggerOn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutomationWorkflowTriggerEventConfigDavisProblem) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TriggerOn
+	}).(pulumi.StringPtrOutput)
+}
+
+// Problem event fields tracked for value changes. Changes to any selected field cause re-triggering. Possible values: `dt.davis.affected_users_count`, `dt.davis.impact_level`, `event.category`, `event.severity`, `rootCauseEntityId`, `smartscape.affected_entities`
+func (o AutomationWorkflowTriggerEventConfigDavisProblemPtrOutput) TriggerOnUpdateFields() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *AutomationWorkflowTriggerEventConfigDavisProblem) []string {
+		if v == nil {
+			return nil
+		}
+		return v.TriggerOnUpdateFields
+	}).(pulumi.StringArrayOutput)
 }
 
 type AutomationWorkflowTriggerEventConfigDavisProblemCategory struct {
@@ -14319,7 +14841,7 @@ func (o AutomationWorkflowTriggerEventConfigDavisProblemCategoryArrayOutput) Ind
 }
 
 type AutomationWorkflowTriggerEventConfigEvent struct {
-	// Possible values: `events` or `bizevents`. Default: `events`
+	// Possible values: `events`, `bizevents`, `dt.system.events`, and `security.events`. Default: `events`
 	EventType *string `pulumi:"eventType"`
 	// A query based on DQL for events that trigger executions
 	Query string `pulumi:"query"`
@@ -14337,7 +14859,7 @@ type AutomationWorkflowTriggerEventConfigEventInput interface {
 }
 
 type AutomationWorkflowTriggerEventConfigEventArgs struct {
-	// Possible values: `events` or `bizevents`. Default: `events`
+	// Possible values: `events`, `bizevents`, `dt.system.events`, and `security.events`. Default: `events`
 	EventType pulumi.StringPtrInput `pulumi:"eventType"`
 	// A query based on DQL for events that trigger executions
 	Query pulumi.StringInput `pulumi:"query"`
@@ -14420,7 +14942,7 @@ func (o AutomationWorkflowTriggerEventConfigEventOutput) ToAutomationWorkflowTri
 	}).(AutomationWorkflowTriggerEventConfigEventPtrOutput)
 }
 
-// Possible values: `events` or `bizevents`. Default: `events`
+// Possible values: `events`, `bizevents`, `dt.system.events`, and `security.events`. Default: `events`
 func (o AutomationWorkflowTriggerEventConfigEventOutput) EventType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AutomationWorkflowTriggerEventConfigEvent) *string { return v.EventType }).(pulumi.StringPtrOutput)
 }
@@ -14454,7 +14976,7 @@ func (o AutomationWorkflowTriggerEventConfigEventPtrOutput) Elem() AutomationWor
 	}).(AutomationWorkflowTriggerEventConfigEventOutput)
 }
 
-// Possible values: `events` or `bizevents`. Default: `events`
+// Possible values: `events`, `bizevents`, `dt.system.events`, and `security.events`. Default: `events`
 func (o AutomationWorkflowTriggerEventConfigEventPtrOutput) EventType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *AutomationWorkflowTriggerEventConfigEvent) *string {
 		if v == nil {
@@ -14922,15 +15444,17 @@ func (o AutomationWorkflowTriggerScheduleFilterParametersPtrOutput) Until() pulu
 }
 
 type AutomationWorkflowTriggerScheduleTrigger struct {
-	// Triggers the schedule every n minutes within a given time frame - specifying the end time on any valid day in 24h format (e.g. 14:22). Conflicts with `cron` and `time`. Required with `intervalMinutes` and `betweenStart`
+	// Triggers the schedule once at a fixed date and time in ISO 8601 format without timezone (e.g. `2025-12-25T14:30:00`). Conflicts with `cron`, `time`, `intervalMinutes`, `betweenStart` and `betweenEnd`
+	At *string `pulumi:"at"`
+	// Triggers the schedule every n minutes within a given time frame - specifying the end time on any valid day in 24h format (e.g. 14:22). Conflicts with `cron`, `time` and `at`. Required with `intervalMinutes` and `betweenStart`
 	BetweenEnd *string `pulumi:"betweenEnd"`
-	// Triggers the schedule every n minutes within a given time frame - specifying the start time on any valid day in 24h format (e.g. 13:22). Conflicts with `cron` and `time`. Required with `intervalMinutes` and `betweenEnd`
+	// Triggers the schedule every n minutes within a given time frame - specifying the start time on any valid day in 24h format (e.g. 13:22). Conflicts with `cron`, `time` and `at`. Required with `intervalMinutes` and `betweenEnd`
 	BetweenStart *string `pulumi:"betweenStart"`
-	// Configures using cron syntax. Conflicts with `time`, `intervalMinutes`, `betweenStart` and `betweenEnd`
+	// Configures using cron syntax. Conflicts with `time`, `intervalMinutes`, `betweenStart`, `betweenEnd` and `at`
 	Cron *string `pulumi:"cron"`
-	// Triggers the schedule every n minutes within a given time frame. Minimum: 1, Maximum: 720. Required with `betweenStart` and `betweenEnd`. Conflicts with `cron` and `time`
+	// Triggers the schedule every n minutes within a given time frame. Minimum: 1, Maximum: 720. Required with `betweenStart` and `betweenEnd`. Conflicts with `cron`, `time` and `at`
 	IntervalMinutes *int `pulumi:"intervalMinutes"`
-	// Specifies a fixed time the schedule will trigger at in 24h format (e.g. `14:23`). Conflicts with `cron`, `intervalMinutes`, `betweenStart` and `betweenEnd`
+	// Specifies a fixed time the schedule will trigger at in 24h format (e.g. `14:23`). Conflicts with `cron`, `intervalMinutes`, `betweenStart`, `betweenEnd` and `at`
 	Time *string `pulumi:"time"`
 }
 
@@ -14946,15 +15470,17 @@ type AutomationWorkflowTriggerScheduleTriggerInput interface {
 }
 
 type AutomationWorkflowTriggerScheduleTriggerArgs struct {
-	// Triggers the schedule every n minutes within a given time frame - specifying the end time on any valid day in 24h format (e.g. 14:22). Conflicts with `cron` and `time`. Required with `intervalMinutes` and `betweenStart`
+	// Triggers the schedule once at a fixed date and time in ISO 8601 format without timezone (e.g. `2025-12-25T14:30:00`). Conflicts with `cron`, `time`, `intervalMinutes`, `betweenStart` and `betweenEnd`
+	At pulumi.StringPtrInput `pulumi:"at"`
+	// Triggers the schedule every n minutes within a given time frame - specifying the end time on any valid day in 24h format (e.g. 14:22). Conflicts with `cron`, `time` and `at`. Required with `intervalMinutes` and `betweenStart`
 	BetweenEnd pulumi.StringPtrInput `pulumi:"betweenEnd"`
-	// Triggers the schedule every n minutes within a given time frame - specifying the start time on any valid day in 24h format (e.g. 13:22). Conflicts with `cron` and `time`. Required with `intervalMinutes` and `betweenEnd`
+	// Triggers the schedule every n minutes within a given time frame - specifying the start time on any valid day in 24h format (e.g. 13:22). Conflicts with `cron`, `time` and `at`. Required with `intervalMinutes` and `betweenEnd`
 	BetweenStart pulumi.StringPtrInput `pulumi:"betweenStart"`
-	// Configures using cron syntax. Conflicts with `time`, `intervalMinutes`, `betweenStart` and `betweenEnd`
+	// Configures using cron syntax. Conflicts with `time`, `intervalMinutes`, `betweenStart`, `betweenEnd` and `at`
 	Cron pulumi.StringPtrInput `pulumi:"cron"`
-	// Triggers the schedule every n minutes within a given time frame. Minimum: 1, Maximum: 720. Required with `betweenStart` and `betweenEnd`. Conflicts with `cron` and `time`
+	// Triggers the schedule every n minutes within a given time frame. Minimum: 1, Maximum: 720. Required with `betweenStart` and `betweenEnd`. Conflicts with `cron`, `time` and `at`
 	IntervalMinutes pulumi.IntPtrInput `pulumi:"intervalMinutes"`
-	// Specifies a fixed time the schedule will trigger at in 24h format (e.g. `14:23`). Conflicts with `cron`, `intervalMinutes`, `betweenStart` and `betweenEnd`
+	// Specifies a fixed time the schedule will trigger at in 24h format (e.g. `14:23`). Conflicts with `cron`, `intervalMinutes`, `betweenStart`, `betweenEnd` and `at`
 	Time pulumi.StringPtrInput `pulumi:"time"`
 }
 
@@ -15035,27 +15561,32 @@ func (o AutomationWorkflowTriggerScheduleTriggerOutput) ToAutomationWorkflowTrig
 	}).(AutomationWorkflowTriggerScheduleTriggerPtrOutput)
 }
 
-// Triggers the schedule every n minutes within a given time frame - specifying the end time on any valid day in 24h format (e.g. 14:22). Conflicts with `cron` and `time`. Required with `intervalMinutes` and `betweenStart`
+// Triggers the schedule once at a fixed date and time in ISO 8601 format without timezone (e.g. `2025-12-25T14:30:00`). Conflicts with `cron`, `time`, `intervalMinutes`, `betweenStart` and `betweenEnd`
+func (o AutomationWorkflowTriggerScheduleTriggerOutput) At() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AutomationWorkflowTriggerScheduleTrigger) *string { return v.At }).(pulumi.StringPtrOutput)
+}
+
+// Triggers the schedule every n minutes within a given time frame - specifying the end time on any valid day in 24h format (e.g. 14:22). Conflicts with `cron`, `time` and `at`. Required with `intervalMinutes` and `betweenStart`
 func (o AutomationWorkflowTriggerScheduleTriggerOutput) BetweenEnd() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AutomationWorkflowTriggerScheduleTrigger) *string { return v.BetweenEnd }).(pulumi.StringPtrOutput)
 }
 
-// Triggers the schedule every n minutes within a given time frame - specifying the start time on any valid day in 24h format (e.g. 13:22). Conflicts with `cron` and `time`. Required with `intervalMinutes` and `betweenEnd`
+// Triggers the schedule every n minutes within a given time frame - specifying the start time on any valid day in 24h format (e.g. 13:22). Conflicts with `cron`, `time` and `at`. Required with `intervalMinutes` and `betweenEnd`
 func (o AutomationWorkflowTriggerScheduleTriggerOutput) BetweenStart() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AutomationWorkflowTriggerScheduleTrigger) *string { return v.BetweenStart }).(pulumi.StringPtrOutput)
 }
 
-// Configures using cron syntax. Conflicts with `time`, `intervalMinutes`, `betweenStart` and `betweenEnd`
+// Configures using cron syntax. Conflicts with `time`, `intervalMinutes`, `betweenStart`, `betweenEnd` and `at`
 func (o AutomationWorkflowTriggerScheduleTriggerOutput) Cron() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AutomationWorkflowTriggerScheduleTrigger) *string { return v.Cron }).(pulumi.StringPtrOutput)
 }
 
-// Triggers the schedule every n minutes within a given time frame. Minimum: 1, Maximum: 720. Required with `betweenStart` and `betweenEnd`. Conflicts with `cron` and `time`
+// Triggers the schedule every n minutes within a given time frame. Minimum: 1, Maximum: 720. Required with `betweenStart` and `betweenEnd`. Conflicts with `cron`, `time` and `at`
 func (o AutomationWorkflowTriggerScheduleTriggerOutput) IntervalMinutes() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v AutomationWorkflowTriggerScheduleTrigger) *int { return v.IntervalMinutes }).(pulumi.IntPtrOutput)
 }
 
-// Specifies a fixed time the schedule will trigger at in 24h format (e.g. `14:23`). Conflicts with `cron`, `intervalMinutes`, `betweenStart` and `betweenEnd`
+// Specifies a fixed time the schedule will trigger at in 24h format (e.g. `14:23`). Conflicts with `cron`, `intervalMinutes`, `betweenStart`, `betweenEnd` and `at`
 func (o AutomationWorkflowTriggerScheduleTriggerOutput) Time() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AutomationWorkflowTriggerScheduleTrigger) *string { return v.Time }).(pulumi.StringPtrOutput)
 }
@@ -15084,7 +15615,17 @@ func (o AutomationWorkflowTriggerScheduleTriggerPtrOutput) Elem() AutomationWork
 	}).(AutomationWorkflowTriggerScheduleTriggerOutput)
 }
 
-// Triggers the schedule every n minutes within a given time frame - specifying the end time on any valid day in 24h format (e.g. 14:22). Conflicts with `cron` and `time`. Required with `intervalMinutes` and `betweenStart`
+// Triggers the schedule once at a fixed date and time in ISO 8601 format without timezone (e.g. `2025-12-25T14:30:00`). Conflicts with `cron`, `time`, `intervalMinutes`, `betweenStart` and `betweenEnd`
+func (o AutomationWorkflowTriggerScheduleTriggerPtrOutput) At() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutomationWorkflowTriggerScheduleTrigger) *string {
+		if v == nil {
+			return nil
+		}
+		return v.At
+	}).(pulumi.StringPtrOutput)
+}
+
+// Triggers the schedule every n minutes within a given time frame - specifying the end time on any valid day in 24h format (e.g. 14:22). Conflicts with `cron`, `time` and `at`. Required with `intervalMinutes` and `betweenStart`
 func (o AutomationWorkflowTriggerScheduleTriggerPtrOutput) BetweenEnd() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *AutomationWorkflowTriggerScheduleTrigger) *string {
 		if v == nil {
@@ -15094,7 +15635,7 @@ func (o AutomationWorkflowTriggerScheduleTriggerPtrOutput) BetweenEnd() pulumi.S
 	}).(pulumi.StringPtrOutput)
 }
 
-// Triggers the schedule every n minutes within a given time frame - specifying the start time on any valid day in 24h format (e.g. 13:22). Conflicts with `cron` and `time`. Required with `intervalMinutes` and `betweenEnd`
+// Triggers the schedule every n minutes within a given time frame - specifying the start time on any valid day in 24h format (e.g. 13:22). Conflicts with `cron`, `time` and `at`. Required with `intervalMinutes` and `betweenEnd`
 func (o AutomationWorkflowTriggerScheduleTriggerPtrOutput) BetweenStart() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *AutomationWorkflowTriggerScheduleTrigger) *string {
 		if v == nil {
@@ -15104,7 +15645,7 @@ func (o AutomationWorkflowTriggerScheduleTriggerPtrOutput) BetweenStart() pulumi
 	}).(pulumi.StringPtrOutput)
 }
 
-// Configures using cron syntax. Conflicts with `time`, `intervalMinutes`, `betweenStart` and `betweenEnd`
+// Configures using cron syntax. Conflicts with `time`, `intervalMinutes`, `betweenStart`, `betweenEnd` and `at`
 func (o AutomationWorkflowTriggerScheduleTriggerPtrOutput) Cron() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *AutomationWorkflowTriggerScheduleTrigger) *string {
 		if v == nil {
@@ -15114,7 +15655,7 @@ func (o AutomationWorkflowTriggerScheduleTriggerPtrOutput) Cron() pulumi.StringP
 	}).(pulumi.StringPtrOutput)
 }
 
-// Triggers the schedule every n minutes within a given time frame. Minimum: 1, Maximum: 720. Required with `betweenStart` and `betweenEnd`. Conflicts with `cron` and `time`
+// Triggers the schedule every n minutes within a given time frame. Minimum: 1, Maximum: 720. Required with `betweenStart` and `betweenEnd`. Conflicts with `cron`, `time` and `at`
 func (o AutomationWorkflowTriggerScheduleTriggerPtrOutput) IntervalMinutes() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *AutomationWorkflowTriggerScheduleTrigger) *int {
 		if v == nil {
@@ -15124,7 +15665,7 @@ func (o AutomationWorkflowTriggerScheduleTriggerPtrOutput) IntervalMinutes() pul
 	}).(pulumi.IntPtrOutput)
 }
 
-// Specifies a fixed time the schedule will trigger at in 24h format (e.g. `14:23`). Conflicts with `cron`, `intervalMinutes`, `betweenStart` and `betweenEnd`
+// Specifies a fixed time the schedule will trigger at in 24h format (e.g. `14:23`). Conflicts with `cron`, `intervalMinutes`, `betweenStart`, `betweenEnd` and `at`
 func (o AutomationWorkflowTriggerScheduleTriggerPtrOutput) Time() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *AutomationWorkflowTriggerScheduleTrigger) *string {
 		if v == nil {
@@ -34596,7 +35137,7 @@ type BrowserMonitorScriptConfiguration struct {
 	Cookies *BrowserMonitorScriptConfigurationCookies `pulumi:"cookies"`
 	// The emulated device of the monitor—holds either the parameters of the custom device or the name and orientation of the preconfigured device.
 	//
-	// If not set, then the Desktop preconfigured device is used
+	//   If not set, then the Desktop preconfigured device is used
 	Device *BrowserMonitorScriptConfigurationDevice `pulumi:"device"`
 	// No documentation available
 	DisableWebSecurity *bool `pulumi:"disableWebSecurity"`
@@ -34636,7 +35177,7 @@ type BrowserMonitorScriptConfigurationArgs struct {
 	Cookies BrowserMonitorScriptConfigurationCookiesPtrInput `pulumi:"cookies"`
 	// The emulated device of the monitor—holds either the parameters of the custom device or the name and orientation of the preconfigured device.
 	//
-	// If not set, then the Desktop preconfigured device is used
+	//   If not set, then the Desktop preconfigured device is used
 	Device BrowserMonitorScriptConfigurationDevicePtrInput `pulumi:"device"`
 	// No documentation available
 	DisableWebSecurity pulumi.BoolPtrInput `pulumi:"disableWebSecurity"`
@@ -34755,7 +35296,7 @@ func (o BrowserMonitorScriptConfigurationOutput) Cookies() BrowserMonitorScriptC
 
 // The emulated device of the monitor—holds either the parameters of the custom device or the name and orientation of the preconfigured device.
 //
-// If not set, then the Desktop preconfigured device is used
+//	If not set, then the Desktop preconfigured device is used
 func (o BrowserMonitorScriptConfigurationOutput) Device() BrowserMonitorScriptConfigurationDevicePtrOutput {
 	return o.ApplyT(func(v BrowserMonitorScriptConfiguration) *BrowserMonitorScriptConfigurationDevice { return v.Device }).(BrowserMonitorScriptConfigurationDevicePtrOutput)
 }
@@ -34867,7 +35408,7 @@ func (o BrowserMonitorScriptConfigurationPtrOutput) Cookies() BrowserMonitorScri
 
 // The emulated device of the monitor—holds either the parameters of the custom device or the name and orientation of the preconfigured device.
 //
-// If not set, then the Desktop preconfigured device is used
+//	If not set, then the Desktop preconfigured device is used
 func (o BrowserMonitorScriptConfigurationPtrOutput) Device() BrowserMonitorScriptConfigurationDevicePtrOutput {
 	return o.ApplyT(func(v *BrowserMonitorScriptConfiguration) *BrowserMonitorScriptConfigurationDevice {
 		if v == nil {
@@ -49748,13 +50289,13 @@ type BrowserMonitorTagTag struct {
 	Context string `pulumi:"context"`
 	// The key of the tag.
 	//
-	// Custom tags have the tag value here.
+	//   Custom tags have the tag value here.
 	Key string `pulumi:"key"`
 	// The source of the tag. Supported values are `USER`, `RULE_BASED` and `AUTO`.
 	Source *string `pulumi:"source"`
 	// The value of the tag.
 	//
-	// Not applicable to custom tags.
+	//   Not applicable to custom tags.
 	Value *string `pulumi:"value"`
 }
 
@@ -49774,13 +50315,13 @@ type BrowserMonitorTagTagArgs struct {
 	Context pulumi.StringInput `pulumi:"context"`
 	// The key of the tag.
 	//
-	// Custom tags have the tag value here.
+	//   Custom tags have the tag value here.
 	Key pulumi.StringInput `pulumi:"key"`
 	// The source of the tag. Supported values are `USER`, `RULE_BASED` and `AUTO`.
 	Source pulumi.StringPtrInput `pulumi:"source"`
 	// The value of the tag.
 	//
-	// Not applicable to custom tags.
+	//   Not applicable to custom tags.
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -49842,7 +50383,7 @@ func (o BrowserMonitorTagTagOutput) Context() pulumi.StringOutput {
 
 // The key of the tag.
 //
-// Custom tags have the tag value here.
+//	Custom tags have the tag value here.
 func (o BrowserMonitorTagTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v BrowserMonitorTagTag) string { return v.Key }).(pulumi.StringOutput)
 }
@@ -49854,7 +50395,7 @@ func (o BrowserMonitorTagTagOutput) Source() pulumi.StringPtrOutput {
 
 // The value of the tag.
 //
-// Not applicable to custom tags.
+//	Not applicable to custom tags.
 func (o BrowserMonitorTagTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BrowserMonitorTagTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -76954,456 +77495,11 @@ func (o DataPrivacyMaskingPtrOutput) UserActionMaskingEnabled() pulumi.BoolPtrOu
 	}).(pulumi.BoolPtrOutput)
 }
 
-type DataPrivacyUserTracking struct {
-	// When enabled, Dynatrace places a [persistent cookie](https://dt-url.net/313o0p4n) on all end-user devices to identify returning users.
-	PersistentCookieEnabled bool `pulumi:"persistentCookieEnabled"`
-}
-
-// DataPrivacyUserTrackingInput is an input type that accepts DataPrivacyUserTrackingArgs and DataPrivacyUserTrackingOutput values.
-// You can construct a concrete instance of `DataPrivacyUserTrackingInput` via:
-//
-//	DataPrivacyUserTrackingArgs{...}
-type DataPrivacyUserTrackingInput interface {
-	pulumi.Input
-
-	ToDataPrivacyUserTrackingOutput() DataPrivacyUserTrackingOutput
-	ToDataPrivacyUserTrackingOutputWithContext(context.Context) DataPrivacyUserTrackingOutput
-}
-
-type DataPrivacyUserTrackingArgs struct {
-	// When enabled, Dynatrace places a [persistent cookie](https://dt-url.net/313o0p4n) on all end-user devices to identify returning users.
-	PersistentCookieEnabled pulumi.BoolInput `pulumi:"persistentCookieEnabled"`
-}
-
-func (DataPrivacyUserTrackingArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*DataPrivacyUserTracking)(nil)).Elem()
-}
-
-func (i DataPrivacyUserTrackingArgs) ToDataPrivacyUserTrackingOutput() DataPrivacyUserTrackingOutput {
-	return i.ToDataPrivacyUserTrackingOutputWithContext(context.Background())
-}
-
-func (i DataPrivacyUserTrackingArgs) ToDataPrivacyUserTrackingOutputWithContext(ctx context.Context) DataPrivacyUserTrackingOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(DataPrivacyUserTrackingOutput)
-}
-
-func (i DataPrivacyUserTrackingArgs) ToDataPrivacyUserTrackingPtrOutput() DataPrivacyUserTrackingPtrOutput {
-	return i.ToDataPrivacyUserTrackingPtrOutputWithContext(context.Background())
-}
-
-func (i DataPrivacyUserTrackingArgs) ToDataPrivacyUserTrackingPtrOutputWithContext(ctx context.Context) DataPrivacyUserTrackingPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(DataPrivacyUserTrackingOutput).ToDataPrivacyUserTrackingPtrOutputWithContext(ctx)
-}
-
-// DataPrivacyUserTrackingPtrInput is an input type that accepts DataPrivacyUserTrackingArgs, DataPrivacyUserTrackingPtr and DataPrivacyUserTrackingPtrOutput values.
-// You can construct a concrete instance of `DataPrivacyUserTrackingPtrInput` via:
-//
-//	        DataPrivacyUserTrackingArgs{...}
-//
-//	or:
-//
-//	        nil
-type DataPrivacyUserTrackingPtrInput interface {
-	pulumi.Input
-
-	ToDataPrivacyUserTrackingPtrOutput() DataPrivacyUserTrackingPtrOutput
-	ToDataPrivacyUserTrackingPtrOutputWithContext(context.Context) DataPrivacyUserTrackingPtrOutput
-}
-
-type dataPrivacyUserTrackingPtrType DataPrivacyUserTrackingArgs
-
-func DataPrivacyUserTrackingPtr(v *DataPrivacyUserTrackingArgs) DataPrivacyUserTrackingPtrInput {
-	return (*dataPrivacyUserTrackingPtrType)(v)
-}
-
-func (*dataPrivacyUserTrackingPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**DataPrivacyUserTracking)(nil)).Elem()
-}
-
-func (i *dataPrivacyUserTrackingPtrType) ToDataPrivacyUserTrackingPtrOutput() DataPrivacyUserTrackingPtrOutput {
-	return i.ToDataPrivacyUserTrackingPtrOutputWithContext(context.Background())
-}
-
-func (i *dataPrivacyUserTrackingPtrType) ToDataPrivacyUserTrackingPtrOutputWithContext(ctx context.Context) DataPrivacyUserTrackingPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(DataPrivacyUserTrackingPtrOutput)
-}
-
-type DataPrivacyUserTrackingOutput struct{ *pulumi.OutputState }
-
-func (DataPrivacyUserTrackingOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*DataPrivacyUserTracking)(nil)).Elem()
-}
-
-func (o DataPrivacyUserTrackingOutput) ToDataPrivacyUserTrackingOutput() DataPrivacyUserTrackingOutput {
-	return o
-}
-
-func (o DataPrivacyUserTrackingOutput) ToDataPrivacyUserTrackingOutputWithContext(ctx context.Context) DataPrivacyUserTrackingOutput {
-	return o
-}
-
-func (o DataPrivacyUserTrackingOutput) ToDataPrivacyUserTrackingPtrOutput() DataPrivacyUserTrackingPtrOutput {
-	return o.ToDataPrivacyUserTrackingPtrOutputWithContext(context.Background())
-}
-
-func (o DataPrivacyUserTrackingOutput) ToDataPrivacyUserTrackingPtrOutputWithContext(ctx context.Context) DataPrivacyUserTrackingPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v DataPrivacyUserTracking) *DataPrivacyUserTracking {
-		return &v
-	}).(DataPrivacyUserTrackingPtrOutput)
-}
-
-// When enabled, Dynatrace places a [persistent cookie](https://dt-url.net/313o0p4n) on all end-user devices to identify returning users.
-func (o DataPrivacyUserTrackingOutput) PersistentCookieEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v DataPrivacyUserTracking) bool { return v.PersistentCookieEnabled }).(pulumi.BoolOutput)
-}
-
-type DataPrivacyUserTrackingPtrOutput struct{ *pulumi.OutputState }
-
-func (DataPrivacyUserTrackingPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**DataPrivacyUserTracking)(nil)).Elem()
-}
-
-func (o DataPrivacyUserTrackingPtrOutput) ToDataPrivacyUserTrackingPtrOutput() DataPrivacyUserTrackingPtrOutput {
-	return o
-}
-
-func (o DataPrivacyUserTrackingPtrOutput) ToDataPrivacyUserTrackingPtrOutputWithContext(ctx context.Context) DataPrivacyUserTrackingPtrOutput {
-	return o
-}
-
-func (o DataPrivacyUserTrackingPtrOutput) Elem() DataPrivacyUserTrackingOutput {
-	return o.ApplyT(func(v *DataPrivacyUserTracking) DataPrivacyUserTracking {
-		if v != nil {
-			return *v
-		}
-		var ret DataPrivacyUserTracking
-		return ret
-	}).(DataPrivacyUserTrackingOutput)
-}
-
-// When enabled, Dynatrace places a [persistent cookie](https://dt-url.net/313o0p4n) on all end-user devices to identify returning users.
-func (o DataPrivacyUserTrackingPtrOutput) PersistentCookieEnabled() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v *DataPrivacyUserTracking) *bool {
-		if v == nil {
-			return nil
-		}
-		return &v.PersistentCookieEnabled
-	}).(pulumi.BoolPtrOutput)
-}
-
-type DatabaseAnomaliesDbConnectFailures struct {
-	// Number of failed database connections during any **eval_period** minutes period to trigger an alert
-	ConnectionFailsCount *int `pulumi:"connectionFailsCount"`
-	// The *X* minutes time period during which the **connection*fails*count** is evaluated
-	EvalPeriod *int `pulumi:"evalPeriod"`
-}
-
-// DatabaseAnomaliesDbConnectFailuresInput is an input type that accepts DatabaseAnomaliesDbConnectFailuresArgs and DatabaseAnomaliesDbConnectFailuresOutput values.
-// You can construct a concrete instance of `DatabaseAnomaliesDbConnectFailuresInput` via:
-//
-//	DatabaseAnomaliesDbConnectFailuresArgs{...}
-type DatabaseAnomaliesDbConnectFailuresInput interface {
-	pulumi.Input
-
-	ToDatabaseAnomaliesDbConnectFailuresOutput() DatabaseAnomaliesDbConnectFailuresOutput
-	ToDatabaseAnomaliesDbConnectFailuresOutputWithContext(context.Context) DatabaseAnomaliesDbConnectFailuresOutput
-}
-
-type DatabaseAnomaliesDbConnectFailuresArgs struct {
-	// Number of failed database connections during any **eval_period** minutes period to trigger an alert
-	ConnectionFailsCount pulumi.IntPtrInput `pulumi:"connectionFailsCount"`
-	// The *X* minutes time period during which the **connection*fails*count** is evaluated
-	EvalPeriod pulumi.IntPtrInput `pulumi:"evalPeriod"`
-}
-
-func (DatabaseAnomaliesDbConnectFailuresArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*DatabaseAnomaliesDbConnectFailures)(nil)).Elem()
-}
-
-func (i DatabaseAnomaliesDbConnectFailuresArgs) ToDatabaseAnomaliesDbConnectFailuresOutput() DatabaseAnomaliesDbConnectFailuresOutput {
-	return i.ToDatabaseAnomaliesDbConnectFailuresOutputWithContext(context.Background())
-}
-
-func (i DatabaseAnomaliesDbConnectFailuresArgs) ToDatabaseAnomaliesDbConnectFailuresOutputWithContext(ctx context.Context) DatabaseAnomaliesDbConnectFailuresOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(DatabaseAnomaliesDbConnectFailuresOutput)
-}
-
-func (i DatabaseAnomaliesDbConnectFailuresArgs) ToDatabaseAnomaliesDbConnectFailuresPtrOutput() DatabaseAnomaliesDbConnectFailuresPtrOutput {
-	return i.ToDatabaseAnomaliesDbConnectFailuresPtrOutputWithContext(context.Background())
-}
-
-func (i DatabaseAnomaliesDbConnectFailuresArgs) ToDatabaseAnomaliesDbConnectFailuresPtrOutputWithContext(ctx context.Context) DatabaseAnomaliesDbConnectFailuresPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(DatabaseAnomaliesDbConnectFailuresOutput).ToDatabaseAnomaliesDbConnectFailuresPtrOutputWithContext(ctx)
-}
-
-// DatabaseAnomaliesDbConnectFailuresPtrInput is an input type that accepts DatabaseAnomaliesDbConnectFailuresArgs, DatabaseAnomaliesDbConnectFailuresPtr and DatabaseAnomaliesDbConnectFailuresPtrOutput values.
-// You can construct a concrete instance of `DatabaseAnomaliesDbConnectFailuresPtrInput` via:
-//
-//	        DatabaseAnomaliesDbConnectFailuresArgs{...}
-//
-//	or:
-//
-//	        nil
-type DatabaseAnomaliesDbConnectFailuresPtrInput interface {
-	pulumi.Input
-
-	ToDatabaseAnomaliesDbConnectFailuresPtrOutput() DatabaseAnomaliesDbConnectFailuresPtrOutput
-	ToDatabaseAnomaliesDbConnectFailuresPtrOutputWithContext(context.Context) DatabaseAnomaliesDbConnectFailuresPtrOutput
-}
-
-type databaseAnomaliesDbConnectFailuresPtrType DatabaseAnomaliesDbConnectFailuresArgs
-
-func DatabaseAnomaliesDbConnectFailuresPtr(v *DatabaseAnomaliesDbConnectFailuresArgs) DatabaseAnomaliesDbConnectFailuresPtrInput {
-	return (*databaseAnomaliesDbConnectFailuresPtrType)(v)
-}
-
-func (*databaseAnomaliesDbConnectFailuresPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**DatabaseAnomaliesDbConnectFailures)(nil)).Elem()
-}
-
-func (i *databaseAnomaliesDbConnectFailuresPtrType) ToDatabaseAnomaliesDbConnectFailuresPtrOutput() DatabaseAnomaliesDbConnectFailuresPtrOutput {
-	return i.ToDatabaseAnomaliesDbConnectFailuresPtrOutputWithContext(context.Background())
-}
-
-func (i *databaseAnomaliesDbConnectFailuresPtrType) ToDatabaseAnomaliesDbConnectFailuresPtrOutputWithContext(ctx context.Context) DatabaseAnomaliesDbConnectFailuresPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(DatabaseAnomaliesDbConnectFailuresPtrOutput)
-}
-
-type DatabaseAnomaliesDbConnectFailuresOutput struct{ *pulumi.OutputState }
-
-func (DatabaseAnomaliesDbConnectFailuresOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*DatabaseAnomaliesDbConnectFailures)(nil)).Elem()
-}
-
-func (o DatabaseAnomaliesDbConnectFailuresOutput) ToDatabaseAnomaliesDbConnectFailuresOutput() DatabaseAnomaliesDbConnectFailuresOutput {
-	return o
-}
-
-func (o DatabaseAnomaliesDbConnectFailuresOutput) ToDatabaseAnomaliesDbConnectFailuresOutputWithContext(ctx context.Context) DatabaseAnomaliesDbConnectFailuresOutput {
-	return o
-}
-
-func (o DatabaseAnomaliesDbConnectFailuresOutput) ToDatabaseAnomaliesDbConnectFailuresPtrOutput() DatabaseAnomaliesDbConnectFailuresPtrOutput {
-	return o.ToDatabaseAnomaliesDbConnectFailuresPtrOutputWithContext(context.Background())
-}
-
-func (o DatabaseAnomaliesDbConnectFailuresOutput) ToDatabaseAnomaliesDbConnectFailuresPtrOutputWithContext(ctx context.Context) DatabaseAnomaliesDbConnectFailuresPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v DatabaseAnomaliesDbConnectFailures) *DatabaseAnomaliesDbConnectFailures {
-		return &v
-	}).(DatabaseAnomaliesDbConnectFailuresPtrOutput)
-}
-
-// Number of failed database connections during any **eval_period** minutes period to trigger an alert
-func (o DatabaseAnomaliesDbConnectFailuresOutput) ConnectionFailsCount() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v DatabaseAnomaliesDbConnectFailures) *int { return v.ConnectionFailsCount }).(pulumi.IntPtrOutput)
-}
-
-// The *X* minutes time period during which the **connection*fails*count** is evaluated
-func (o DatabaseAnomaliesDbConnectFailuresOutput) EvalPeriod() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v DatabaseAnomaliesDbConnectFailures) *int { return v.EvalPeriod }).(pulumi.IntPtrOutput)
-}
-
-type DatabaseAnomaliesDbConnectFailuresPtrOutput struct{ *pulumi.OutputState }
-
-func (DatabaseAnomaliesDbConnectFailuresPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**DatabaseAnomaliesDbConnectFailures)(nil)).Elem()
-}
-
-func (o DatabaseAnomaliesDbConnectFailuresPtrOutput) ToDatabaseAnomaliesDbConnectFailuresPtrOutput() DatabaseAnomaliesDbConnectFailuresPtrOutput {
-	return o
-}
-
-func (o DatabaseAnomaliesDbConnectFailuresPtrOutput) ToDatabaseAnomaliesDbConnectFailuresPtrOutputWithContext(ctx context.Context) DatabaseAnomaliesDbConnectFailuresPtrOutput {
-	return o
-}
-
-func (o DatabaseAnomaliesDbConnectFailuresPtrOutput) Elem() DatabaseAnomaliesDbConnectFailuresOutput {
-	return o.ApplyT(func(v *DatabaseAnomaliesDbConnectFailures) DatabaseAnomaliesDbConnectFailures {
-		if v != nil {
-			return *v
-		}
-		var ret DatabaseAnomaliesDbConnectFailures
-		return ret
-	}).(DatabaseAnomaliesDbConnectFailuresOutput)
-}
-
-// Number of failed database connections during any **eval_period** minutes period to trigger an alert
-func (o DatabaseAnomaliesDbConnectFailuresPtrOutput) ConnectionFailsCount() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v *DatabaseAnomaliesDbConnectFailures) *int {
-		if v == nil {
-			return nil
-		}
-		return v.ConnectionFailsCount
-	}).(pulumi.IntPtrOutput)
-}
-
-// The *X* minutes time period during which the **connection*fails*count** is evaluated
-func (o DatabaseAnomaliesDbConnectFailuresPtrOutput) EvalPeriod() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v *DatabaseAnomaliesDbConnectFailures) *int {
-		if v == nil {
-			return nil
-		}
-		return v.EvalPeriod
-	}).(pulumi.IntPtrOutput)
-}
-
-type DatabaseAnomaliesFailureRate struct {
-	// Parameters of failure rate increase auto-detection. Example: If the expected error rate is 1.5%, and you set an absolute increase of 1%, and a relative increase of 50%, the thresholds will be:  Absolute: 1.5% + **1%** = 2.5%  Relative: 1.5% + 1.5% * **50%** = 2.25%
-	Auto *DatabaseAnomaliesFailureRateAuto `pulumi:"auto"`
-	// Fixed thresholds for failure rate increase detection
-	Thresholds *DatabaseAnomaliesFailureRateThresholds `pulumi:"thresholds"`
-}
-
-// DatabaseAnomaliesFailureRateInput is an input type that accepts DatabaseAnomaliesFailureRateArgs and DatabaseAnomaliesFailureRateOutput values.
-// You can construct a concrete instance of `DatabaseAnomaliesFailureRateInput` via:
-//
-//	DatabaseAnomaliesFailureRateArgs{...}
-type DatabaseAnomaliesFailureRateInput interface {
-	pulumi.Input
-
-	ToDatabaseAnomaliesFailureRateOutput() DatabaseAnomaliesFailureRateOutput
-	ToDatabaseAnomaliesFailureRateOutputWithContext(context.Context) DatabaseAnomaliesFailureRateOutput
-}
-
-type DatabaseAnomaliesFailureRateArgs struct {
-	// Parameters of failure rate increase auto-detection. Example: If the expected error rate is 1.5%, and you set an absolute increase of 1%, and a relative increase of 50%, the thresholds will be:  Absolute: 1.5% + **1%** = 2.5%  Relative: 1.5% + 1.5% * **50%** = 2.25%
-	Auto DatabaseAnomaliesFailureRateAutoPtrInput `pulumi:"auto"`
-	// Fixed thresholds for failure rate increase detection
-	Thresholds DatabaseAnomaliesFailureRateThresholdsPtrInput `pulumi:"thresholds"`
-}
-
-func (DatabaseAnomaliesFailureRateArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*DatabaseAnomaliesFailureRate)(nil)).Elem()
-}
-
-func (i DatabaseAnomaliesFailureRateArgs) ToDatabaseAnomaliesFailureRateOutput() DatabaseAnomaliesFailureRateOutput {
-	return i.ToDatabaseAnomaliesFailureRateOutputWithContext(context.Background())
-}
-
-func (i DatabaseAnomaliesFailureRateArgs) ToDatabaseAnomaliesFailureRateOutputWithContext(ctx context.Context) DatabaseAnomaliesFailureRateOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(DatabaseAnomaliesFailureRateOutput)
-}
-
-func (i DatabaseAnomaliesFailureRateArgs) ToDatabaseAnomaliesFailureRatePtrOutput() DatabaseAnomaliesFailureRatePtrOutput {
-	return i.ToDatabaseAnomaliesFailureRatePtrOutputWithContext(context.Background())
-}
-
-func (i DatabaseAnomaliesFailureRateArgs) ToDatabaseAnomaliesFailureRatePtrOutputWithContext(ctx context.Context) DatabaseAnomaliesFailureRatePtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(DatabaseAnomaliesFailureRateOutput).ToDatabaseAnomaliesFailureRatePtrOutputWithContext(ctx)
-}
-
-// DatabaseAnomaliesFailureRatePtrInput is an input type that accepts DatabaseAnomaliesFailureRateArgs, DatabaseAnomaliesFailureRatePtr and DatabaseAnomaliesFailureRatePtrOutput values.
-// You can construct a concrete instance of `DatabaseAnomaliesFailureRatePtrInput` via:
-//
-//	        DatabaseAnomaliesFailureRateArgs{...}
-//
-//	or:
-//
-//	        nil
-type DatabaseAnomaliesFailureRatePtrInput interface {
-	pulumi.Input
-
-	ToDatabaseAnomaliesFailureRatePtrOutput() DatabaseAnomaliesFailureRatePtrOutput
-	ToDatabaseAnomaliesFailureRatePtrOutputWithContext(context.Context) DatabaseAnomaliesFailureRatePtrOutput
-}
-
-type databaseAnomaliesFailureRatePtrType DatabaseAnomaliesFailureRateArgs
-
-func DatabaseAnomaliesFailureRatePtr(v *DatabaseAnomaliesFailureRateArgs) DatabaseAnomaliesFailureRatePtrInput {
-	return (*databaseAnomaliesFailureRatePtrType)(v)
-}
-
-func (*databaseAnomaliesFailureRatePtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**DatabaseAnomaliesFailureRate)(nil)).Elem()
-}
-
-func (i *databaseAnomaliesFailureRatePtrType) ToDatabaseAnomaliesFailureRatePtrOutput() DatabaseAnomaliesFailureRatePtrOutput {
-	return i.ToDatabaseAnomaliesFailureRatePtrOutputWithContext(context.Background())
-}
-
-func (i *databaseAnomaliesFailureRatePtrType) ToDatabaseAnomaliesFailureRatePtrOutputWithContext(ctx context.Context) DatabaseAnomaliesFailureRatePtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(DatabaseAnomaliesFailureRatePtrOutput)
-}
-
-type DatabaseAnomaliesFailureRateOutput struct{ *pulumi.OutputState }
-
-func (DatabaseAnomaliesFailureRateOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*DatabaseAnomaliesFailureRate)(nil)).Elem()
-}
-
-func (o DatabaseAnomaliesFailureRateOutput) ToDatabaseAnomaliesFailureRateOutput() DatabaseAnomaliesFailureRateOutput {
-	return o
-}
-
-func (o DatabaseAnomaliesFailureRateOutput) ToDatabaseAnomaliesFailureRateOutputWithContext(ctx context.Context) DatabaseAnomaliesFailureRateOutput {
-	return o
-}
-
-func (o DatabaseAnomaliesFailureRateOutput) ToDatabaseAnomaliesFailureRatePtrOutput() DatabaseAnomaliesFailureRatePtrOutput {
-	return o.ToDatabaseAnomaliesFailureRatePtrOutputWithContext(context.Background())
-}
-
-func (o DatabaseAnomaliesFailureRateOutput) ToDatabaseAnomaliesFailureRatePtrOutputWithContext(ctx context.Context) DatabaseAnomaliesFailureRatePtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v DatabaseAnomaliesFailureRate) *DatabaseAnomaliesFailureRate {
-		return &v
-	}).(DatabaseAnomaliesFailureRatePtrOutput)
-}
-
-// Parameters of failure rate increase auto-detection. Example: If the expected error rate is 1.5%, and you set an absolute increase of 1%, and a relative increase of 50%, the thresholds will be:  Absolute: 1.5% + **1%** = 2.5%  Relative: 1.5% + 1.5% * **50%** = 2.25%
-func (o DatabaseAnomaliesFailureRateOutput) Auto() DatabaseAnomaliesFailureRateAutoPtrOutput {
-	return o.ApplyT(func(v DatabaseAnomaliesFailureRate) *DatabaseAnomaliesFailureRateAuto { return v.Auto }).(DatabaseAnomaliesFailureRateAutoPtrOutput)
-}
-
-// Fixed thresholds for failure rate increase detection
-func (o DatabaseAnomaliesFailureRateOutput) Thresholds() DatabaseAnomaliesFailureRateThresholdsPtrOutput {
-	return o.ApplyT(func(v DatabaseAnomaliesFailureRate) *DatabaseAnomaliesFailureRateThresholds { return v.Thresholds }).(DatabaseAnomaliesFailureRateThresholdsPtrOutput)
-}
-
-type DatabaseAnomaliesFailureRatePtrOutput struct{ *pulumi.OutputState }
-
-func (DatabaseAnomaliesFailureRatePtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**DatabaseAnomaliesFailureRate)(nil)).Elem()
-}
-
-func (o DatabaseAnomaliesFailureRatePtrOutput) ToDatabaseAnomaliesFailureRatePtrOutput() DatabaseAnomaliesFailureRatePtrOutput {
-	return o
-}
-
-func (o DatabaseAnomaliesFailureRatePtrOutput) ToDatabaseAnomaliesFailureRatePtrOutputWithContext(ctx context.Context) DatabaseAnomaliesFailureRatePtrOutput {
-	return o
-}
-
-func (o DatabaseAnomaliesFailureRatePtrOutput) Elem() DatabaseAnomaliesFailureRateOutput {
-	return o.ApplyT(func(v *DatabaseAnomaliesFailureRate) DatabaseAnomaliesFailureRate {
-		if v != nil {
-			return *v
-		}
-		var ret DatabaseAnomaliesFailureRate
-		return ret
-	}).(DatabaseAnomaliesFailureRateOutput)
-}
-
-// Parameters of failure rate increase auto-detection. Example: If the expected error rate is 1.5%, and you set an absolute increase of 1%, and a relative increase of 50%, the thresholds will be:  Absolute: 1.5% + **1%** = 2.5%  Relative: 1.5% + 1.5% * **50%** = 2.25%
-func (o DatabaseAnomaliesFailureRatePtrOutput) Auto() DatabaseAnomaliesFailureRateAutoPtrOutput {
-	return o.ApplyT(func(v *DatabaseAnomaliesFailureRate) *DatabaseAnomaliesFailureRateAuto {
-		if v == nil {
-			return nil
-		}
-		return v.Auto
-	}).(DatabaseAnomaliesFailureRateAutoPtrOutput)
-}
-
-// Fixed thresholds for failure rate increase detection
-func (o DatabaseAnomaliesFailureRatePtrOutput) Thresholds() DatabaseAnomaliesFailureRateThresholdsPtrOutput {
-	return o.ApplyT(func(v *DatabaseAnomaliesFailureRate) *DatabaseAnomaliesFailureRateThresholds {
-		if v == nil {
-			return nil
-		}
-		return v.Thresholds
-	}).(DatabaseAnomaliesFailureRateThresholdsPtrOutput)
-}
-
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*ActivegateUpdatesUpdateWindowsInput)(nil)).Elem(), ActivegateUpdatesUpdateWindowsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ActivegateUpdatesUpdateWindowsPtrInput)(nil)).Elem(), ActivegateUpdatesUpdateWindowsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ActivegateUpdatesUpdateWindowsUpdateWindowInput)(nil)).Elem(), ActivegateUpdatesUpdateWindowsUpdateWindowArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ActivegateUpdatesUpdateWindowsUpdateWindowArrayInput)(nil)).Elem(), ActivegateUpdatesUpdateWindowsUpdateWindowArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AlertingFiltersInput)(nil)).Elem(), AlertingFiltersArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AlertingFiltersPtrInput)(nil)).Elem(), AlertingFiltersArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AlertingFiltersFilterInput)(nil)).Elem(), AlertingFiltersFilterArgs{})
@@ -77568,6 +77664,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AutomationWorkflowTasksTaskPositionPtrInput)(nil)).Elem(), AutomationWorkflowTasksTaskPositionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AutomationWorkflowTasksTaskRetryInput)(nil)).Elem(), AutomationWorkflowTasksTaskRetryArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AutomationWorkflowTasksTaskRetryPtrInput)(nil)).Elem(), AutomationWorkflowTasksTaskRetryArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AutomationWorkflowThrottleInput)(nil)).Elem(), AutomationWorkflowThrottleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AutomationWorkflowThrottlePtrInput)(nil)).Elem(), AutomationWorkflowThrottleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AutomationWorkflowTriggerInput)(nil)).Elem(), AutomationWorkflowTriggerArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AutomationWorkflowTriggerPtrInput)(nil)).Elem(), AutomationWorkflowTriggerArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AutomationWorkflowTriggerEventInput)(nil)).Elem(), AutomationWorkflowTriggerEventArgs{})
@@ -78379,12 +78477,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DataPrivacyDoNotTrackPtrInput)(nil)).Elem(), DataPrivacyDoNotTrackArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DataPrivacyMaskingInput)(nil)).Elem(), DataPrivacyMaskingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DataPrivacyMaskingPtrInput)(nil)).Elem(), DataPrivacyMaskingArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*DataPrivacyUserTrackingInput)(nil)).Elem(), DataPrivacyUserTrackingArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*DataPrivacyUserTrackingPtrInput)(nil)).Elem(), DataPrivacyUserTrackingArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseAnomaliesDbConnectFailuresInput)(nil)).Elem(), DatabaseAnomaliesDbConnectFailuresArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseAnomaliesDbConnectFailuresPtrInput)(nil)).Elem(), DatabaseAnomaliesDbConnectFailuresArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseAnomaliesFailureRateInput)(nil)).Elem(), DatabaseAnomaliesFailureRateArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseAnomaliesFailureRatePtrInput)(nil)).Elem(), DatabaseAnomaliesFailureRateArgs{})
+	pulumi.RegisterOutputType(ActivegateUpdatesUpdateWindowsOutput{})
+	pulumi.RegisterOutputType(ActivegateUpdatesUpdateWindowsPtrOutput{})
+	pulumi.RegisterOutputType(ActivegateUpdatesUpdateWindowsUpdateWindowOutput{})
+	pulumi.RegisterOutputType(ActivegateUpdatesUpdateWindowsUpdateWindowArrayOutput{})
 	pulumi.RegisterOutputType(AlertingFiltersOutput{})
 	pulumi.RegisterOutputType(AlertingFiltersPtrOutput{})
 	pulumi.RegisterOutputType(AlertingFiltersFilterOutput{})
@@ -78549,6 +78645,8 @@ func init() {
 	pulumi.RegisterOutputType(AutomationWorkflowTasksTaskPositionPtrOutput{})
 	pulumi.RegisterOutputType(AutomationWorkflowTasksTaskRetryOutput{})
 	pulumi.RegisterOutputType(AutomationWorkflowTasksTaskRetryPtrOutput{})
+	pulumi.RegisterOutputType(AutomationWorkflowThrottleOutput{})
+	pulumi.RegisterOutputType(AutomationWorkflowThrottlePtrOutput{})
 	pulumi.RegisterOutputType(AutomationWorkflowTriggerOutput{})
 	pulumi.RegisterOutputType(AutomationWorkflowTriggerPtrOutput{})
 	pulumi.RegisterOutputType(AutomationWorkflowTriggerEventOutput{})
@@ -79360,10 +79458,4 @@ func init() {
 	pulumi.RegisterOutputType(DataPrivacyDoNotTrackPtrOutput{})
 	pulumi.RegisterOutputType(DataPrivacyMaskingOutput{})
 	pulumi.RegisterOutputType(DataPrivacyMaskingPtrOutput{})
-	pulumi.RegisterOutputType(DataPrivacyUserTrackingOutput{})
-	pulumi.RegisterOutputType(DataPrivacyUserTrackingPtrOutput{})
-	pulumi.RegisterOutputType(DatabaseAnomaliesDbConnectFailuresOutput{})
-	pulumi.RegisterOutputType(DatabaseAnomaliesDbConnectFailuresPtrOutput{})
-	pulumi.RegisterOutputType(DatabaseAnomaliesFailureRateOutput{})
-	pulumi.RegisterOutputType(DatabaseAnomaliesFailureRatePtrOutput{})
 }

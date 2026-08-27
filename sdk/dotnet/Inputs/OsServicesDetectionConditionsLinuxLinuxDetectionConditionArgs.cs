@@ -15,24 +15,43 @@ namespace Pulumiverse.Dynatrace.Inputs
     {
         /// <summary>
         /// This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
+        /// 
+        ///   - `$match(ip?tables*)` – Matches string with wildcards: `*` any number (including zero) of characters and `?` exactly one character.
+        ///  - `$contains(ssh)` – Matches if `Ssh` appears anywhere in the service's property value.
+        ///  - `$eq(sshd)` – Matches if `Sshd` matches the service's property value exactly.
+        ///  - `$prefix(ss)` – Matches if `Ss` matches the prefix of the service's property value.
+        ///  - `$suffix(hd)` – Matches if `Hd` matches the suffix of the service's property value.
+        /// 
+        ///   Available logic operations:
+        ///  - `$not($eq(sshd))` – Matches if the service's property value is different from `Sshd`.
+        ///  - `$and($prefix(ss),$suffix(hd))` – Matches if service's property value starts with `Ss` and ends with `Hd`.
+        ///  - `$or($prefix(ss),$suffix(hd))` – Matches if service's property value starts with `Ss` or ends with `Hd`.
+        /// 
+        ///   Brackets **(** and **)** that are part of the matched property **must be escaped with a tilde (~)**
         /// </summary>
         [Input("condition")]
         public Input<string>? Condition { get; set; }
 
         /// <summary>
-        /// Custom metadata
+        /// Host resource attributes are dimensions enriching the host including custom metadata which are user-defined key-value pairs that you can assign to hosts monitored by Dynatrace.
+        /// 
+        ///   By defining custom metadata, you can enrich the monitoring data with context specific to your organization's needs, such as environment names, team ownership, application versions, or any other relevant details.
+        /// 
+        ///   See [Define tags and metadata for hosts](https://dt-url.net/w3hv0kbw).
+        /// 
+        ///   Note: Starting from version 1.325 host resource attributes are supported in addition to host custom metadata.
         /// </summary>
         [Input("hostMetadataCondition")]
         public Input<Inputs.OsServicesDetectionConditionsLinuxLinuxDetectionConditionHostMetadataConditionArgs>? HostMetadataCondition { get; set; }
 
         /// <summary>
-        /// Possible Values: `ServiceName`, `StartupType`
+        /// Service property. Possible values: `ServiceName`, `StartupType`
         /// </summary>
         [Input("property")]
         public Input<string>? Property { get; set; }
 
         /// <summary>
-        /// Possible Values: `RuleTypeHost`, `RuleTypeOsService`
+        /// Rule scope. Possible values: `RuleTypeHost`, `RuleTypeOsService`
         /// </summary>
         [Input("ruleType")]
         public Input<string>? RuleType { get; set; }
@@ -40,18 +59,21 @@ namespace Pulumiverse.Dynatrace.Inputs
         /// <summary>
         /// This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
         /// 
-        /// - `$eq(enabled)` – Matches services with startup type equal to enabled.
+        ///   - `$eq(enabled)` – Matches services with startup type equal to enabled.
         /// 
-        /// Available logic operations:
-        /// - `$not($eq(enabled))` – Matches services with startup type different from enabled.
-        /// - `$or($eq(enabled),$eq(disabled))` - Matches services that are either enabled or disabled.
+        ///   Available logic operations:
+        ///  - `$not($eq(enabled))` – Matches services with startup type different from enabled.
+        ///  - `$or($eq(enabled),$eq(disabled))` - Matches services that are either enabled or disabled.
         /// 
-        /// Use one of the following values as a parameter for this condition:
+        ///   Use one of the following values as a parameter for this condition:
         /// 
-        /// - `Enabled`
-        /// - `enabled-runtime`
-        /// - `Static`
-        /// - `Disabled`
+        ///   - `Enabled`
+        ///  - `enabled-runtime`
+        ///  - `Static`
+        ///  - `Disabled`
+        ///  - `Indirect`
+        ///  - `Linked`
+        ///  - `linked-runtime`
         /// </summary>
         [Input("startupCondition")]
         public Input<string>? StartupCondition { get; set; }

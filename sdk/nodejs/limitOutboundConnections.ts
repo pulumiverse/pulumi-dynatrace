@@ -50,7 +50,7 @@ export class LimitOutboundConnections extends pulumi.CustomResource {
     }
 
     /**
-     * no documentation available
+     * No documentation available
      */
     declare public readonly allowedOutboundConnections: pulumi.Output<outputs.LimitOutboundConnectionsAllowedOutboundConnections>;
 
@@ -85,7 +85,7 @@ export class LimitOutboundConnections extends pulumi.CustomResource {
  */
 export interface LimitOutboundConnectionsState {
     /**
-     * no documentation available
+     * No documentation available
      */
     allowedOutboundConnections?: pulumi.Input<inputs.LimitOutboundConnectionsAllowedOutboundConnections | undefined>;
 }
@@ -95,7 +95,7 @@ export interface LimitOutboundConnectionsState {
  */
 export interface LimitOutboundConnectionsArgs {
     /**
-     * no documentation available
+     * No documentation available
      */
     allowedOutboundConnections: pulumi.Input<inputs.LimitOutboundConnectionsAllowedOutboundConnections>;
 }

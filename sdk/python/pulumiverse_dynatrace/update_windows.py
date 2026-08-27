@@ -32,12 +32,12 @@ class UpdateWindowsArgs:
         The set of arguments for constructing a UpdateWindows resource.
 
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[_builtins.str] recurrence: Possible Values: `MONTHLY`, `ONCE`, `DAILY`, `WEEKLY`
-        :param pulumi.Input['UpdateWindowsDailyRecurrenceArgs'] daily_recurrence: no documentation available
-        :param pulumi.Input['UpdateWindowsMonthlyRecurrenceArgs'] monthly_recurrence: no documentation available
+        :param pulumi.Input[_builtins.str] recurrence: Recurrence. Possible values: `DAILY`, `MONTHLY`, `ONCE`, `WEEKLY`
+        :param pulumi.Input['UpdateWindowsDailyRecurrenceArgs'] daily_recurrence: No documentation available
+        :param pulumi.Input['UpdateWindowsMonthlyRecurrenceArgs'] monthly_recurrence: No documentation available
         :param pulumi.Input[_builtins.str] name: Name
-        :param pulumi.Input['UpdateWindowsOnceRecurrenceArgs'] once_recurrence: no documentation available
-        :param pulumi.Input['UpdateWindowsWeeklyRecurrenceArgs'] weekly_recurrence: no documentation available
+        :param pulumi.Input['UpdateWindowsOnceRecurrenceArgs'] once_recurrence: No documentation available
+        :param pulumi.Input['UpdateWindowsWeeklyRecurrenceArgs'] weekly_recurrence: No documentation available
         """
         pulumi.set(__self__, "enabled", enabled)
         pulumi.set(__self__, "recurrence", recurrence)
@@ -68,7 +68,7 @@ class UpdateWindowsArgs:
     @pulumi.getter
     def recurrence(self) -> pulumi.Input[_builtins.str]:
         """
-        Possible Values: `MONTHLY`, `ONCE`, `DAILY`, `WEEKLY`
+        Recurrence. Possible values: `DAILY`, `MONTHLY`, `ONCE`, `WEEKLY`
         """
         return pulumi.get(self, "recurrence")
 
@@ -80,7 +80,7 @@ class UpdateWindowsArgs:
     @pulumi.getter(name="dailyRecurrence")
     def daily_recurrence(self) -> pulumi.Input[Optional['UpdateWindowsDailyRecurrenceArgs']]:
         """
-        no documentation available
+        No documentation available
         """
         return pulumi.get(self, "daily_recurrence")
 
@@ -92,7 +92,7 @@ class UpdateWindowsArgs:
     @pulumi.getter(name="monthlyRecurrence")
     def monthly_recurrence(self) -> pulumi.Input[Optional['UpdateWindowsMonthlyRecurrenceArgs']]:
         """
-        no documentation available
+        No documentation available
         """
         return pulumi.get(self, "monthly_recurrence")
 
@@ -116,7 +116,7 @@ class UpdateWindowsArgs:
     @pulumi.getter(name="onceRecurrence")
     def once_recurrence(self) -> pulumi.Input[Optional['UpdateWindowsOnceRecurrenceArgs']]:
         """
-        no documentation available
+        No documentation available
         """
         return pulumi.get(self, "once_recurrence")
 
@@ -128,7 +128,7 @@ class UpdateWindowsArgs:
     @pulumi.getter(name="weeklyRecurrence")
     def weekly_recurrence(self) -> pulumi.Input[Optional['UpdateWindowsWeeklyRecurrenceArgs']]:
         """
-        no documentation available
+        No documentation available
         """
         return pulumi.get(self, "weekly_recurrence")
 
@@ -150,13 +150,13 @@ class _UpdateWindowsState:
         """
         Input properties used for looking up and filtering UpdateWindows resources.
 
-        :param pulumi.Input['UpdateWindowsDailyRecurrenceArgs'] daily_recurrence: no documentation available
+        :param pulumi.Input['UpdateWindowsDailyRecurrenceArgs'] daily_recurrence: No documentation available
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input['UpdateWindowsMonthlyRecurrenceArgs'] monthly_recurrence: no documentation available
+        :param pulumi.Input['UpdateWindowsMonthlyRecurrenceArgs'] monthly_recurrence: No documentation available
         :param pulumi.Input[_builtins.str] name: Name
-        :param pulumi.Input['UpdateWindowsOnceRecurrenceArgs'] once_recurrence: no documentation available
-        :param pulumi.Input[_builtins.str] recurrence: Possible Values: `MONTHLY`, `ONCE`, `DAILY`, `WEEKLY`
-        :param pulumi.Input['UpdateWindowsWeeklyRecurrenceArgs'] weekly_recurrence: no documentation available
+        :param pulumi.Input['UpdateWindowsOnceRecurrenceArgs'] once_recurrence: No documentation available
+        :param pulumi.Input[_builtins.str] recurrence: Recurrence. Possible values: `DAILY`, `MONTHLY`, `ONCE`, `WEEKLY`
+        :param pulumi.Input['UpdateWindowsWeeklyRecurrenceArgs'] weekly_recurrence: No documentation available
         """
         if daily_recurrence is not None:
             pulumi.set(__self__, "daily_recurrence", daily_recurrence)
@@ -177,7 +177,7 @@ class _UpdateWindowsState:
     @pulumi.getter(name="dailyRecurrence")
     def daily_recurrence(self) -> pulumi.Input[Optional['UpdateWindowsDailyRecurrenceArgs']]:
         """
-        no documentation available
+        No documentation available
         """
         return pulumi.get(self, "daily_recurrence")
 
@@ -201,7 +201,7 @@ class _UpdateWindowsState:
     @pulumi.getter(name="monthlyRecurrence")
     def monthly_recurrence(self) -> pulumi.Input[Optional['UpdateWindowsMonthlyRecurrenceArgs']]:
         """
-        no documentation available
+        No documentation available
         """
         return pulumi.get(self, "monthly_recurrence")
 
@@ -225,7 +225,7 @@ class _UpdateWindowsState:
     @pulumi.getter(name="onceRecurrence")
     def once_recurrence(self) -> pulumi.Input[Optional['UpdateWindowsOnceRecurrenceArgs']]:
         """
-        no documentation available
+        No documentation available
         """
         return pulumi.get(self, "once_recurrence")
 
@@ -237,7 +237,7 @@ class _UpdateWindowsState:
     @pulumi.getter
     def recurrence(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Possible Values: `MONTHLY`, `ONCE`, `DAILY`, `WEEKLY`
+        Recurrence. Possible values: `DAILY`, `MONTHLY`, `ONCE`, `WEEKLY`
         """
         return pulumi.get(self, "recurrence")
 
@@ -249,7 +249,7 @@ class _UpdateWindowsState:
     @pulumi.getter(name="weeklyRecurrence")
     def weekly_recurrence(self) -> pulumi.Input[Optional['UpdateWindowsWeeklyRecurrenceArgs']]:
         """
-        no documentation available
+        No documentation available
         """
         return pulumi.get(self, "weekly_recurrence")
 
@@ -290,13 +290,13 @@ class UpdateWindows(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['UpdateWindowsDailyRecurrenceArgs', 'UpdateWindowsDailyRecurrenceArgsDict']] daily_recurrence: no documentation available
+        :param pulumi.Input[Union['UpdateWindowsDailyRecurrenceArgs', 'UpdateWindowsDailyRecurrenceArgsDict']] daily_recurrence: No documentation available
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[Union['UpdateWindowsMonthlyRecurrenceArgs', 'UpdateWindowsMonthlyRecurrenceArgsDict']] monthly_recurrence: no documentation available
+        :param pulumi.Input[Union['UpdateWindowsMonthlyRecurrenceArgs', 'UpdateWindowsMonthlyRecurrenceArgsDict']] monthly_recurrence: No documentation available
         :param pulumi.Input[_builtins.str] name: Name
-        :param pulumi.Input[Union['UpdateWindowsOnceRecurrenceArgs', 'UpdateWindowsOnceRecurrenceArgsDict']] once_recurrence: no documentation available
-        :param pulumi.Input[_builtins.str] recurrence: Possible Values: `MONTHLY`, `ONCE`, `DAILY`, `WEEKLY`
-        :param pulumi.Input[Union['UpdateWindowsWeeklyRecurrenceArgs', 'UpdateWindowsWeeklyRecurrenceArgsDict']] weekly_recurrence: no documentation available
+        :param pulumi.Input[Union['UpdateWindowsOnceRecurrenceArgs', 'UpdateWindowsOnceRecurrenceArgsDict']] once_recurrence: No documentation available
+        :param pulumi.Input[_builtins.str] recurrence: Recurrence. Possible values: `DAILY`, `MONTHLY`, `ONCE`, `WEEKLY`
+        :param pulumi.Input[Union['UpdateWindowsWeeklyRecurrenceArgs', 'UpdateWindowsWeeklyRecurrenceArgsDict']] weekly_recurrence: No documentation available
         """
         ...
     @overload
@@ -386,13 +386,13 @@ class UpdateWindows(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['UpdateWindowsDailyRecurrenceArgs', 'UpdateWindowsDailyRecurrenceArgsDict']] daily_recurrence: no documentation available
+        :param pulumi.Input[Union['UpdateWindowsDailyRecurrenceArgs', 'UpdateWindowsDailyRecurrenceArgsDict']] daily_recurrence: No documentation available
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[Union['UpdateWindowsMonthlyRecurrenceArgs', 'UpdateWindowsMonthlyRecurrenceArgsDict']] monthly_recurrence: no documentation available
+        :param pulumi.Input[Union['UpdateWindowsMonthlyRecurrenceArgs', 'UpdateWindowsMonthlyRecurrenceArgsDict']] monthly_recurrence: No documentation available
         :param pulumi.Input[_builtins.str] name: Name
-        :param pulumi.Input[Union['UpdateWindowsOnceRecurrenceArgs', 'UpdateWindowsOnceRecurrenceArgsDict']] once_recurrence: no documentation available
-        :param pulumi.Input[_builtins.str] recurrence: Possible Values: `MONTHLY`, `ONCE`, `DAILY`, `WEEKLY`
-        :param pulumi.Input[Union['UpdateWindowsWeeklyRecurrenceArgs', 'UpdateWindowsWeeklyRecurrenceArgsDict']] weekly_recurrence: no documentation available
+        :param pulumi.Input[Union['UpdateWindowsOnceRecurrenceArgs', 'UpdateWindowsOnceRecurrenceArgsDict']] once_recurrence: No documentation available
+        :param pulumi.Input[_builtins.str] recurrence: Recurrence. Possible values: `DAILY`, `MONTHLY`, `ONCE`, `WEEKLY`
+        :param pulumi.Input[Union['UpdateWindowsWeeklyRecurrenceArgs', 'UpdateWindowsWeeklyRecurrenceArgsDict']] weekly_recurrence: No documentation available
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -411,7 +411,7 @@ class UpdateWindows(pulumi.CustomResource):
     @pulumi.getter(name="dailyRecurrence")
     def daily_recurrence(self) -> pulumi.Output[Optional['outputs.UpdateWindowsDailyRecurrence']]:
         """
-        no documentation available
+        No documentation available
         """
         return pulumi.get(self, "daily_recurrence")
 
@@ -427,7 +427,7 @@ class UpdateWindows(pulumi.CustomResource):
     @pulumi.getter(name="monthlyRecurrence")
     def monthly_recurrence(self) -> pulumi.Output[Optional['outputs.UpdateWindowsMonthlyRecurrence']]:
         """
-        no documentation available
+        No documentation available
         """
         return pulumi.get(self, "monthly_recurrence")
 
@@ -443,7 +443,7 @@ class UpdateWindows(pulumi.CustomResource):
     @pulumi.getter(name="onceRecurrence")
     def once_recurrence(self) -> pulumi.Output[Optional['outputs.UpdateWindowsOnceRecurrence']]:
         """
-        no documentation available
+        No documentation available
         """
         return pulumi.get(self, "once_recurrence")
 
@@ -451,7 +451,7 @@ class UpdateWindows(pulumi.CustomResource):
     @pulumi.getter
     def recurrence(self) -> pulumi.Output[_builtins.str]:
         """
-        Possible Values: `MONTHLY`, `ONCE`, `DAILY`, `WEEKLY`
+        Recurrence. Possible values: `DAILY`, `MONTHLY`, `ONCE`, `WEEKLY`
         """
         return pulumi.get(self, "recurrence")
 
@@ -459,7 +459,7 @@ class UpdateWindows(pulumi.CustomResource):
     @pulumi.getter(name="weeklyRecurrence")
     def weekly_recurrence(self) -> pulumi.Output[Optional['outputs.UpdateWindowsWeeklyRecurrence']]:
         """
-        no documentation available
+        No documentation available
         """
         return pulumi.get(self, "weekly_recurrence")
 

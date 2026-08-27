@@ -77,7 +77,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			invokeBase64encode, err := std.Base64encode(ctx, &std.Base64encodeArgs{
-//				Input: std.File(ctx, &std.FileArgs{
+//				Input: std.File(ctx, std.FileArgs{
 //					Input: "certificate.pem",
 //				}, nil).Result,
 //			}, nil)
@@ -141,7 +141,7 @@ import (
 //					SafeName:               pulumi.String("my-safe-name"),
 //					FolderName:             pulumi.String("my-folder-name"),
 //					AccountName:            pulumi.String("my-account-name"),
-//					UsernamePasswordForCpm: usernamePasswordCredentials.ID(),
+//					UsernamePasswordForCpm: usernamePasswordCredentials.ID().ToIDOutput().ToStringOutput(),
 //				},
 //				Scopes: pulumi.StringArray{
 //					pulumi.String("SYNTHETIC"),
@@ -198,7 +198,7 @@ import (
 //					SafeName:      pulumi.String("my-safe-name"),
 //					FolderName:    pulumi.String("my-folder-name"),
 //					AccountName:   pulumi.String("my-account-name"),
-//					Certificate:   certificateCredentials.ID(),
+//					Certificate:   certificateCredentials.ID().ToIDOutput().ToStringOutput(),
 //				},
 //				Scopes: pulumi.StringArray{
 //					pulumi.String("SYNTHETIC"),

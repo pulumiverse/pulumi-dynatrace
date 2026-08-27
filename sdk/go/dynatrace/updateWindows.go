@@ -28,19 +28,19 @@ import (
 type UpdateWindows struct {
 	pulumi.CustomResourceState
 
-	// no documentation available
+	// No documentation available
 	DailyRecurrence UpdateWindowsDailyRecurrencePtrOutput `pulumi:"dailyRecurrence"`
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolOutput `pulumi:"enabled"`
-	// no documentation available
+	// No documentation available
 	MonthlyRecurrence UpdateWindowsMonthlyRecurrencePtrOutput `pulumi:"monthlyRecurrence"`
 	// Name
 	Name pulumi.StringOutput `pulumi:"name"`
-	// no documentation available
+	// No documentation available
 	OnceRecurrence UpdateWindowsOnceRecurrencePtrOutput `pulumi:"onceRecurrence"`
-	// Possible Values: `MONTHLY`, `ONCE`, `DAILY`, `WEEKLY`
+	// Recurrence. Possible values: `DAILY`, `MONTHLY`, `ONCE`, `WEEKLY`
 	Recurrence pulumi.StringOutput `pulumi:"recurrence"`
-	// no documentation available
+	// No documentation available
 	WeeklyRecurrence UpdateWindowsWeeklyRecurrencePtrOutput `pulumi:"weeklyRecurrence"`
 }
 
@@ -80,36 +80,36 @@ func GetUpdateWindows(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering UpdateWindows resources.
 type updateWindowsState struct {
-	// no documentation available
+	// No documentation available
 	DailyRecurrence *UpdateWindowsDailyRecurrence `pulumi:"dailyRecurrence"`
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled *bool `pulumi:"enabled"`
-	// no documentation available
+	// No documentation available
 	MonthlyRecurrence *UpdateWindowsMonthlyRecurrence `pulumi:"monthlyRecurrence"`
 	// Name
 	Name *string `pulumi:"name"`
-	// no documentation available
+	// No documentation available
 	OnceRecurrence *UpdateWindowsOnceRecurrence `pulumi:"onceRecurrence"`
-	// Possible Values: `MONTHLY`, `ONCE`, `DAILY`, `WEEKLY`
+	// Recurrence. Possible values: `DAILY`, `MONTHLY`, `ONCE`, `WEEKLY`
 	Recurrence *string `pulumi:"recurrence"`
-	// no documentation available
+	// No documentation available
 	WeeklyRecurrence *UpdateWindowsWeeklyRecurrence `pulumi:"weeklyRecurrence"`
 }
 
 type UpdateWindowsState struct {
-	// no documentation available
+	// No documentation available
 	DailyRecurrence UpdateWindowsDailyRecurrencePtrInput
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolPtrInput
-	// no documentation available
+	// No documentation available
 	MonthlyRecurrence UpdateWindowsMonthlyRecurrencePtrInput
 	// Name
 	Name pulumi.StringPtrInput
-	// no documentation available
+	// No documentation available
 	OnceRecurrence UpdateWindowsOnceRecurrencePtrInput
-	// Possible Values: `MONTHLY`, `ONCE`, `DAILY`, `WEEKLY`
+	// Recurrence. Possible values: `DAILY`, `MONTHLY`, `ONCE`, `WEEKLY`
 	Recurrence pulumi.StringPtrInput
-	// no documentation available
+	// No documentation available
 	WeeklyRecurrence UpdateWindowsWeeklyRecurrencePtrInput
 }
 
@@ -118,37 +118,37 @@ func (UpdateWindowsState) ElementType() reflect.Type {
 }
 
 type updateWindowsArgs struct {
-	// no documentation available
+	// No documentation available
 	DailyRecurrence *UpdateWindowsDailyRecurrence `pulumi:"dailyRecurrence"`
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`
-	// no documentation available
+	// No documentation available
 	MonthlyRecurrence *UpdateWindowsMonthlyRecurrence `pulumi:"monthlyRecurrence"`
 	// Name
 	Name *string `pulumi:"name"`
-	// no documentation available
+	// No documentation available
 	OnceRecurrence *UpdateWindowsOnceRecurrence `pulumi:"onceRecurrence"`
-	// Possible Values: `MONTHLY`, `ONCE`, `DAILY`, `WEEKLY`
+	// Recurrence. Possible values: `DAILY`, `MONTHLY`, `ONCE`, `WEEKLY`
 	Recurrence string `pulumi:"recurrence"`
-	// no documentation available
+	// No documentation available
 	WeeklyRecurrence *UpdateWindowsWeeklyRecurrence `pulumi:"weeklyRecurrence"`
 }
 
 // The set of arguments for constructing a UpdateWindows resource.
 type UpdateWindowsArgs struct {
-	// no documentation available
+	// No documentation available
 	DailyRecurrence UpdateWindowsDailyRecurrencePtrInput
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolInput
-	// no documentation available
+	// No documentation available
 	MonthlyRecurrence UpdateWindowsMonthlyRecurrencePtrInput
 	// Name
 	Name pulumi.StringPtrInput
-	// no documentation available
+	// No documentation available
 	OnceRecurrence UpdateWindowsOnceRecurrencePtrInput
-	// Possible Values: `MONTHLY`, `ONCE`, `DAILY`, `WEEKLY`
+	// Recurrence. Possible values: `DAILY`, `MONTHLY`, `ONCE`, `WEEKLY`
 	Recurrence pulumi.StringInput
-	// no documentation available
+	// No documentation available
 	WeeklyRecurrence UpdateWindowsWeeklyRecurrencePtrInput
 }
 
@@ -239,7 +239,7 @@ func (o UpdateWindowsOutput) ToUpdateWindowsOutputWithContext(ctx context.Contex
 	return o
 }
 
-// no documentation available
+// No documentation available
 func (o UpdateWindowsOutput) DailyRecurrence() UpdateWindowsDailyRecurrencePtrOutput {
 	return o.ApplyT(func(v *UpdateWindows) UpdateWindowsDailyRecurrencePtrOutput { return v.DailyRecurrence }).(UpdateWindowsDailyRecurrencePtrOutput)
 }
@@ -249,7 +249,7 @@ func (o UpdateWindowsOutput) Enabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *UpdateWindows) pulumi.BoolOutput { return v.Enabled }).(pulumi.BoolOutput)
 }
 
-// no documentation available
+// No documentation available
 func (o UpdateWindowsOutput) MonthlyRecurrence() UpdateWindowsMonthlyRecurrencePtrOutput {
 	return o.ApplyT(func(v *UpdateWindows) UpdateWindowsMonthlyRecurrencePtrOutput { return v.MonthlyRecurrence }).(UpdateWindowsMonthlyRecurrencePtrOutput)
 }
@@ -259,17 +259,17 @@ func (o UpdateWindowsOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *UpdateWindows) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
-// no documentation available
+// No documentation available
 func (o UpdateWindowsOutput) OnceRecurrence() UpdateWindowsOnceRecurrencePtrOutput {
 	return o.ApplyT(func(v *UpdateWindows) UpdateWindowsOnceRecurrencePtrOutput { return v.OnceRecurrence }).(UpdateWindowsOnceRecurrencePtrOutput)
 }
 
-// Possible Values: `MONTHLY`, `ONCE`, `DAILY`, `WEEKLY`
+// Recurrence. Possible values: `DAILY`, `MONTHLY`, `ONCE`, `WEEKLY`
 func (o UpdateWindowsOutput) Recurrence() pulumi.StringOutput {
 	return o.ApplyT(func(v *UpdateWindows) pulumi.StringOutput { return v.Recurrence }).(pulumi.StringOutput)
 }
 
-// no documentation available
+// No documentation available
 func (o UpdateWindowsOutput) WeeklyRecurrence() UpdateWindowsWeeklyRecurrencePtrOutput {
 	return o.ApplyT(func(v *UpdateWindows) UpdateWindowsWeeklyRecurrencePtrOutput { return v.WeeklyRecurrence }).(UpdateWindowsWeeklyRecurrencePtrOutput)
 }

@@ -33,6 +33,7 @@ class LogOneagentArgs:
                  severity_detection_limit_bytes: pulumi.Input[_builtins.int],
                  severity_detection_lines_limit: pulumi.Input[_builtins.int],
                  system_logs_detection_enabled: pulumi.Input[_builtins.bool],
+                 binary_detection_mode: pulumi.Input[Optional[_builtins.str]] = None,
                  scope: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a LogOneagent resource.
@@ -43,14 +44,15 @@ class LogOneagentArgs:
         :param pulumi.Input[_builtins.str] default_timezone: Default timezone for agent if more specific configurations is not defined.
         :param pulumi.Input[_builtins.int] event_log_query_timeout_sec: Defines the maximum timeout value, in seconds, for the query extracting Windows Event Logs
         :param pulumi.Input[_builtins.bool] iisdetection_enabled: Allows detection of logs and event logs written by IIS server.
-        :param pulumi.Input[_builtins.bool] log_scanner_linux_nfs_enabled: Allows detection of logs written to mounted network storage drives. Applies only to Linux hosts. For other OSes it's always enabled.
+        :param pulumi.Input[_builtins.bool] log_scanner_linux_nfs_enabled: Allows detection of logs written to mounted network storage drives. Applies only to Linux hosts. For Windows operating system it's always enabled.
         :param pulumi.Input[_builtins.int] max_lgis_per_entity_count: Defines the maximum number of log group instances per entity after which, the new automatic ones wouldn't be added.
         :param pulumi.Input[_builtins.int] min_binary_detection_limit_bytes: Defines the minimum number of bytes in log file required for binary detection.
-        :param pulumi.Input[_builtins.bool] monitor_own_logs_enabled: Enabling this option may affect your licensing costs. For more details, see [documentation](https://dt-url.net/4l02yi8).
+        :param pulumi.Input[_builtins.bool] monitor_own_logs_enabled: Enabling this option may affect your licensing costs. For more details, see [documentation](https://dt-url.net/7v02z76).
         :param pulumi.Input[_builtins.bool] open_log_files_detection_enabled: Automatically detect logs written by important processes. For more details, check our [documentation](https://dt-url.net/7v02z76)
         :param pulumi.Input[_builtins.int] severity_detection_limit_bytes: Defines the number of characters in every log line (starting from the first character in the line) where severity is searched.
         :param pulumi.Input[_builtins.int] severity_detection_lines_limit: Defines the number of the first lines of every log entry where severity is searched.
         :param pulumi.Input[_builtins.bool] system_logs_detection_enabled: Linux: syslog, message log Windows: system, application, security event logs
+        :param pulumi.Input[_builtins.str] binary_detection_mode: Specifies the granularity at which binary log files are detected. 'Per log source' applies binary detection at the log source level, 'Per log file' evaluates each log file individually. Possible values: `BinaryPerLogFile`, `BinaryPerLogSource`
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
         """
         pulumi.set(__self__, "container_timezone_heuristic_enabled", container_timezone_heuristic_enabled)
@@ -67,6 +69,8 @@ class LogOneagentArgs:
         pulumi.set(__self__, "severity_detection_limit_bytes", severity_detection_limit_bytes)
         pulumi.set(__self__, "severity_detection_lines_limit", severity_detection_lines_limit)
         pulumi.set(__self__, "system_logs_detection_enabled", system_logs_detection_enabled)
+        if binary_detection_mode is not None:
+            pulumi.set(__self__, "binary_detection_mode", binary_detection_mode)
         if scope is not None:
             pulumi.set(__self__, "scope", scope)
 
@@ -146,7 +150,7 @@ class LogOneagentArgs:
     @pulumi.getter(name="logScannerLinuxNfsEnabled")
     def log_scanner_linux_nfs_enabled(self) -> pulumi.Input[_builtins.bool]:
         """
-        Allows detection of logs written to mounted network storage drives. Applies only to Linux hosts. For other OSes it's always enabled.
+        Allows detection of logs written to mounted network storage drives. Applies only to Linux hosts. For Windows operating system it's always enabled.
         """
         return pulumi.get(self, "log_scanner_linux_nfs_enabled")
 
@@ -182,7 +186,7 @@ class LogOneagentArgs:
     @pulumi.getter(name="monitorOwnLogsEnabled")
     def monitor_own_logs_enabled(self) -> pulumi.Input[_builtins.bool]:
         """
-        Enabling this option may affect your licensing costs. For more details, see [documentation](https://dt-url.net/4l02yi8).
+        Enabling this option may affect your licensing costs. For more details, see [documentation](https://dt-url.net/7v02z76).
         """
         return pulumi.get(self, "monitor_own_logs_enabled")
 
@@ -239,6 +243,18 @@ class LogOneagentArgs:
         pulumi.set(self, "system_logs_detection_enabled", value)
 
     @_builtins.property
+    @pulumi.getter(name="binaryDetectionMode")
+    def binary_detection_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Specifies the granularity at which binary log files are detected. 'Per log source' applies binary detection at the log source level, 'Per log file' evaluates each log file individually. Possible values: `BinaryPerLogFile`, `BinaryPerLogSource`
+        """
+        return pulumi.get(self, "binary_detection_mode")
+
+    @binary_detection_mode.setter
+    def binary_detection_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "binary_detection_mode", value)
+
+    @_builtins.property
     @pulumi.getter
     def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -254,6 +270,7 @@ class LogOneagentArgs:
 @pulumi.input_type
 class _LogOneagentState:
     def __init__(__self__, *,
+                 binary_detection_mode: pulumi.Input[Optional[_builtins.str]] = None,
                  container_timezone_heuristic_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  containers_logs_detection_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  date_search_limit_bytes: pulumi.Input[Optional[_builtins.int]] = None,
@@ -272,22 +289,25 @@ class _LogOneagentState:
         """
         Input properties used for looking up and filtering LogOneagent resources.
 
+        :param pulumi.Input[_builtins.str] binary_detection_mode: Specifies the granularity at which binary log files are detected. 'Per log source' applies binary detection at the log source level, 'Per log file' evaluates each log file individually. Possible values: `BinaryPerLogFile`, `BinaryPerLogSource`
         :param pulumi.Input[_builtins.bool] container_timezone_heuristic_enabled: Enables automatic detection of timezone in container's logs if it is not explicitly defined in content or configured.
         :param pulumi.Input[_builtins.bool] containers_logs_detection_enabled: Allows detection of log messages written to the containerized application's stdout/stderr streams.
         :param pulumi.Input[_builtins.int] date_search_limit_bytes: Defines the number of characters in every log line (starting from the first character in the line) where the timestamp is searched.
         :param pulumi.Input[_builtins.str] default_timezone: Default timezone for agent if more specific configurations is not defined.
         :param pulumi.Input[_builtins.int] event_log_query_timeout_sec: Defines the maximum timeout value, in seconds, for the query extracting Windows Event Logs
         :param pulumi.Input[_builtins.bool] iisdetection_enabled: Allows detection of logs and event logs written by IIS server.
-        :param pulumi.Input[_builtins.bool] log_scanner_linux_nfs_enabled: Allows detection of logs written to mounted network storage drives. Applies only to Linux hosts. For other OSes it's always enabled.
+        :param pulumi.Input[_builtins.bool] log_scanner_linux_nfs_enabled: Allows detection of logs written to mounted network storage drives. Applies only to Linux hosts. For Windows operating system it's always enabled.
         :param pulumi.Input[_builtins.int] max_lgis_per_entity_count: Defines the maximum number of log group instances per entity after which, the new automatic ones wouldn't be added.
         :param pulumi.Input[_builtins.int] min_binary_detection_limit_bytes: Defines the minimum number of bytes in log file required for binary detection.
-        :param pulumi.Input[_builtins.bool] monitor_own_logs_enabled: Enabling this option may affect your licensing costs. For more details, see [documentation](https://dt-url.net/4l02yi8).
+        :param pulumi.Input[_builtins.bool] monitor_own_logs_enabled: Enabling this option may affect your licensing costs. For more details, see [documentation](https://dt-url.net/7v02z76).
         :param pulumi.Input[_builtins.bool] open_log_files_detection_enabled: Automatically detect logs written by important processes. For more details, check our [documentation](https://dt-url.net/7v02z76)
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
         :param pulumi.Input[_builtins.int] severity_detection_limit_bytes: Defines the number of characters in every log line (starting from the first character in the line) where severity is searched.
         :param pulumi.Input[_builtins.int] severity_detection_lines_limit: Defines the number of the first lines of every log entry where severity is searched.
         :param pulumi.Input[_builtins.bool] system_logs_detection_enabled: Linux: syslog, message log Windows: system, application, security event logs
         """
+        if binary_detection_mode is not None:
+            pulumi.set(__self__, "binary_detection_mode", binary_detection_mode)
         if container_timezone_heuristic_enabled is not None:
             pulumi.set(__self__, "container_timezone_heuristic_enabled", container_timezone_heuristic_enabled)
         if containers_logs_detection_enabled is not None:
@@ -318,6 +338,18 @@ class _LogOneagentState:
             pulumi.set(__self__, "severity_detection_lines_limit", severity_detection_lines_limit)
         if system_logs_detection_enabled is not None:
             pulumi.set(__self__, "system_logs_detection_enabled", system_logs_detection_enabled)
+
+    @_builtins.property
+    @pulumi.getter(name="binaryDetectionMode")
+    def binary_detection_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Specifies the granularity at which binary log files are detected. 'Per log source' applies binary detection at the log source level, 'Per log file' evaluates each log file individually. Possible values: `BinaryPerLogFile`, `BinaryPerLogSource`
+        """
+        return pulumi.get(self, "binary_detection_mode")
+
+    @binary_detection_mode.setter
+    def binary_detection_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "binary_detection_mode", value)
 
     @_builtins.property
     @pulumi.getter(name="containerTimezoneHeuristicEnabled")
@@ -395,7 +427,7 @@ class _LogOneagentState:
     @pulumi.getter(name="logScannerLinuxNfsEnabled")
     def log_scanner_linux_nfs_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
-        Allows detection of logs written to mounted network storage drives. Applies only to Linux hosts. For other OSes it's always enabled.
+        Allows detection of logs written to mounted network storage drives. Applies only to Linux hosts. For Windows operating system it's always enabled.
         """
         return pulumi.get(self, "log_scanner_linux_nfs_enabled")
 
@@ -431,7 +463,7 @@ class _LogOneagentState:
     @pulumi.getter(name="monitorOwnLogsEnabled")
     def monitor_own_logs_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
-        Enabling this option may affect your licensing costs. For more details, see [documentation](https://dt-url.net/4l02yi8).
+        Enabling this option may affect your licensing costs. For more details, see [documentation](https://dt-url.net/7v02z76).
         """
         return pulumi.get(self, "monitor_own_logs_enabled")
 
@@ -506,6 +538,7 @@ class LogOneagent(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 binary_detection_mode: pulumi.Input[Optional[_builtins.str]] = None,
                  container_timezone_heuristic_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  containers_logs_detection_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  date_search_limit_bytes: pulumi.Input[Optional[_builtins.int]] = None,
@@ -540,16 +573,17 @@ class LogOneagent(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[_builtins.str] binary_detection_mode: Specifies the granularity at which binary log files are detected. 'Per log source' applies binary detection at the log source level, 'Per log file' evaluates each log file individually. Possible values: `BinaryPerLogFile`, `BinaryPerLogSource`
         :param pulumi.Input[_builtins.bool] container_timezone_heuristic_enabled: Enables automatic detection of timezone in container's logs if it is not explicitly defined in content or configured.
         :param pulumi.Input[_builtins.bool] containers_logs_detection_enabled: Allows detection of log messages written to the containerized application's stdout/stderr streams.
         :param pulumi.Input[_builtins.int] date_search_limit_bytes: Defines the number of characters in every log line (starting from the first character in the line) where the timestamp is searched.
         :param pulumi.Input[_builtins.str] default_timezone: Default timezone for agent if more specific configurations is not defined.
         :param pulumi.Input[_builtins.int] event_log_query_timeout_sec: Defines the maximum timeout value, in seconds, for the query extracting Windows Event Logs
         :param pulumi.Input[_builtins.bool] iisdetection_enabled: Allows detection of logs and event logs written by IIS server.
-        :param pulumi.Input[_builtins.bool] log_scanner_linux_nfs_enabled: Allows detection of logs written to mounted network storage drives. Applies only to Linux hosts. For other OSes it's always enabled.
+        :param pulumi.Input[_builtins.bool] log_scanner_linux_nfs_enabled: Allows detection of logs written to mounted network storage drives. Applies only to Linux hosts. For Windows operating system it's always enabled.
         :param pulumi.Input[_builtins.int] max_lgis_per_entity_count: Defines the maximum number of log group instances per entity after which, the new automatic ones wouldn't be added.
         :param pulumi.Input[_builtins.int] min_binary_detection_limit_bytes: Defines the minimum number of bytes in log file required for binary detection.
-        :param pulumi.Input[_builtins.bool] monitor_own_logs_enabled: Enabling this option may affect your licensing costs. For more details, see [documentation](https://dt-url.net/4l02yi8).
+        :param pulumi.Input[_builtins.bool] monitor_own_logs_enabled: Enabling this option may affect your licensing costs. For more details, see [documentation](https://dt-url.net/7v02z76).
         :param pulumi.Input[_builtins.bool] open_log_files_detection_enabled: Automatically detect logs written by important processes. For more details, check our [documentation](https://dt-url.net/7v02z76)
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
         :param pulumi.Input[_builtins.int] severity_detection_limit_bytes: Defines the number of characters in every log line (starting from the first character in the line) where severity is searched.
@@ -593,6 +627,7 @@ class LogOneagent(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 binary_detection_mode: pulumi.Input[Optional[_builtins.str]] = None,
                  container_timezone_heuristic_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  containers_logs_detection_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  date_search_limit_bytes: pulumi.Input[Optional[_builtins.int]] = None,
@@ -617,6 +652,7 @@ class LogOneagent(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = LogOneagentArgs.__new__(LogOneagentArgs)
 
+            __props__.__dict__["binary_detection_mode"] = binary_detection_mode
             if container_timezone_heuristic_enabled is None and not opts.urn:
                 raise TypeError("Missing required property 'container_timezone_heuristic_enabled'")
             __props__.__dict__["container_timezone_heuristic_enabled"] = container_timezone_heuristic_enabled
@@ -670,6 +706,7 @@ class LogOneagent(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
+            binary_detection_mode: pulumi.Input[Optional[_builtins.str]] = None,
             container_timezone_heuristic_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             containers_logs_detection_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             date_search_limit_bytes: pulumi.Input[Optional[_builtins.int]] = None,
@@ -692,16 +729,17 @@ class LogOneagent(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[_builtins.str] binary_detection_mode: Specifies the granularity at which binary log files are detected. 'Per log source' applies binary detection at the log source level, 'Per log file' evaluates each log file individually. Possible values: `BinaryPerLogFile`, `BinaryPerLogSource`
         :param pulumi.Input[_builtins.bool] container_timezone_heuristic_enabled: Enables automatic detection of timezone in container's logs if it is not explicitly defined in content or configured.
         :param pulumi.Input[_builtins.bool] containers_logs_detection_enabled: Allows detection of log messages written to the containerized application's stdout/stderr streams.
         :param pulumi.Input[_builtins.int] date_search_limit_bytes: Defines the number of characters in every log line (starting from the first character in the line) where the timestamp is searched.
         :param pulumi.Input[_builtins.str] default_timezone: Default timezone for agent if more specific configurations is not defined.
         :param pulumi.Input[_builtins.int] event_log_query_timeout_sec: Defines the maximum timeout value, in seconds, for the query extracting Windows Event Logs
         :param pulumi.Input[_builtins.bool] iisdetection_enabled: Allows detection of logs and event logs written by IIS server.
-        :param pulumi.Input[_builtins.bool] log_scanner_linux_nfs_enabled: Allows detection of logs written to mounted network storage drives. Applies only to Linux hosts. For other OSes it's always enabled.
+        :param pulumi.Input[_builtins.bool] log_scanner_linux_nfs_enabled: Allows detection of logs written to mounted network storage drives. Applies only to Linux hosts. For Windows operating system it's always enabled.
         :param pulumi.Input[_builtins.int] max_lgis_per_entity_count: Defines the maximum number of log group instances per entity after which, the new automatic ones wouldn't be added.
         :param pulumi.Input[_builtins.int] min_binary_detection_limit_bytes: Defines the minimum number of bytes in log file required for binary detection.
-        :param pulumi.Input[_builtins.bool] monitor_own_logs_enabled: Enabling this option may affect your licensing costs. For more details, see [documentation](https://dt-url.net/4l02yi8).
+        :param pulumi.Input[_builtins.bool] monitor_own_logs_enabled: Enabling this option may affect your licensing costs. For more details, see [documentation](https://dt-url.net/7v02z76).
         :param pulumi.Input[_builtins.bool] open_log_files_detection_enabled: Automatically detect logs written by important processes. For more details, check our [documentation](https://dt-url.net/7v02z76)
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
         :param pulumi.Input[_builtins.int] severity_detection_limit_bytes: Defines the number of characters in every log line (starting from the first character in the line) where severity is searched.
@@ -712,6 +750,7 @@ class LogOneagent(pulumi.CustomResource):
 
         __props__ = _LogOneagentState.__new__(_LogOneagentState)
 
+        __props__.__dict__["binary_detection_mode"] = binary_detection_mode
         __props__.__dict__["container_timezone_heuristic_enabled"] = container_timezone_heuristic_enabled
         __props__.__dict__["containers_logs_detection_enabled"] = containers_logs_detection_enabled
         __props__.__dict__["date_search_limit_bytes"] = date_search_limit_bytes
@@ -728,6 +767,14 @@ class LogOneagent(pulumi.CustomResource):
         __props__.__dict__["severity_detection_lines_limit"] = severity_detection_lines_limit
         __props__.__dict__["system_logs_detection_enabled"] = system_logs_detection_enabled
         return LogOneagent(resource_name, opts=opts, __props__=__props__)
+
+    @_builtins.property
+    @pulumi.getter(name="binaryDetectionMode")
+    def binary_detection_mode(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        Specifies the granularity at which binary log files are detected. 'Per log source' applies binary detection at the log source level, 'Per log file' evaluates each log file individually. Possible values: `BinaryPerLogFile`, `BinaryPerLogSource`
+        """
+        return pulumi.get(self, "binary_detection_mode")
 
     @_builtins.property
     @pulumi.getter(name="containerTimezoneHeuristicEnabled")
@@ -781,7 +828,7 @@ class LogOneagent(pulumi.CustomResource):
     @pulumi.getter(name="logScannerLinuxNfsEnabled")
     def log_scanner_linux_nfs_enabled(self) -> pulumi.Output[_builtins.bool]:
         """
-        Allows detection of logs written to mounted network storage drives. Applies only to Linux hosts. For other OSes it's always enabled.
+        Allows detection of logs written to mounted network storage drives. Applies only to Linux hosts. For Windows operating system it's always enabled.
         """
         return pulumi.get(self, "log_scanner_linux_nfs_enabled")
 
@@ -805,7 +852,7 @@ class LogOneagent(pulumi.CustomResource):
     @pulumi.getter(name="monitorOwnLogsEnabled")
     def monitor_own_logs_enabled(self) -> pulumi.Output[_builtins.bool]:
         """
-        Enabling this option may affect your licensing costs. For more details, see [documentation](https://dt-url.net/4l02yi8).
+        Enabling this option may affect your licensing costs. For more details, see [documentation](https://dt-url.net/7v02z76).
         """
         return pulumi.get(self, "monitor_own_logs_enabled")
 

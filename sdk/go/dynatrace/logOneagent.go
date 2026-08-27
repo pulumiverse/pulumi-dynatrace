@@ -28,6 +28,8 @@ import (
 type LogOneagent struct {
 	pulumi.CustomResourceState
 
+	// Specifies the granularity at which binary log files are detected. 'Per log source' applies binary detection at the log source level, 'Per log file' evaluates each log file individually. Possible values: `BinaryPerLogFile`, `BinaryPerLogSource`
+	BinaryDetectionMode pulumi.StringPtrOutput `pulumi:"binaryDetectionMode"`
 	// Enables automatic detection of timezone in container's logs if it is not explicitly defined in content or configured.
 	ContainerTimezoneHeuristicEnabled pulumi.BoolOutput `pulumi:"containerTimezoneHeuristicEnabled"`
 	// Allows detection of log messages written to the containerized application's stdout/stderr streams.
@@ -40,13 +42,13 @@ type LogOneagent struct {
 	EventLogQueryTimeoutSec pulumi.IntOutput `pulumi:"eventLogQueryTimeoutSec"`
 	// Allows detection of logs and event logs written by IIS server.
 	IisdetectionEnabled pulumi.BoolOutput `pulumi:"iisdetectionEnabled"`
-	// Allows detection of logs written to mounted network storage drives. Applies only to Linux hosts. For other OSes it's always enabled.
+	// Allows detection of logs written to mounted network storage drives. Applies only to Linux hosts. For Windows operating system it's always enabled.
 	LogScannerLinuxNfsEnabled pulumi.BoolOutput `pulumi:"logScannerLinuxNfsEnabled"`
 	// Defines the maximum number of log group instances per entity after which, the new automatic ones wouldn't be added.
 	MaxLgisPerEntityCount pulumi.IntOutput `pulumi:"maxLgisPerEntityCount"`
 	// Defines the minimum number of bytes in log file required for binary detection.
 	MinBinaryDetectionLimitBytes pulumi.IntOutput `pulumi:"minBinaryDetectionLimitBytes"`
-	// Enabling this option may affect your licensing costs. For more details, see [documentation](https://dt-url.net/4l02yi8).
+	// Enabling this option may affect your licensing costs. For more details, see [documentation](https://dt-url.net/7v02z76).
 	MonitorOwnLogsEnabled pulumi.BoolOutput `pulumi:"monitorOwnLogsEnabled"`
 	// Automatically detect logs written by important processes. For more details, check our [documentation](https://dt-url.net/7v02z76)
 	OpenLogFilesDetectionEnabled pulumi.BoolOutput `pulumi:"openLogFilesDetectionEnabled"`
@@ -132,6 +134,8 @@ func GetLogOneagent(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering LogOneagent resources.
 type logOneagentState struct {
+	// Specifies the granularity at which binary log files are detected. 'Per log source' applies binary detection at the log source level, 'Per log file' evaluates each log file individually. Possible values: `BinaryPerLogFile`, `BinaryPerLogSource`
+	BinaryDetectionMode *string `pulumi:"binaryDetectionMode"`
 	// Enables automatic detection of timezone in container's logs if it is not explicitly defined in content or configured.
 	ContainerTimezoneHeuristicEnabled *bool `pulumi:"containerTimezoneHeuristicEnabled"`
 	// Allows detection of log messages written to the containerized application's stdout/stderr streams.
@@ -144,13 +148,13 @@ type logOneagentState struct {
 	EventLogQueryTimeoutSec *int `pulumi:"eventLogQueryTimeoutSec"`
 	// Allows detection of logs and event logs written by IIS server.
 	IisdetectionEnabled *bool `pulumi:"iisdetectionEnabled"`
-	// Allows detection of logs written to mounted network storage drives. Applies only to Linux hosts. For other OSes it's always enabled.
+	// Allows detection of logs written to mounted network storage drives. Applies only to Linux hosts. For Windows operating system it's always enabled.
 	LogScannerLinuxNfsEnabled *bool `pulumi:"logScannerLinuxNfsEnabled"`
 	// Defines the maximum number of log group instances per entity after which, the new automatic ones wouldn't be added.
 	MaxLgisPerEntityCount *int `pulumi:"maxLgisPerEntityCount"`
 	// Defines the minimum number of bytes in log file required for binary detection.
 	MinBinaryDetectionLimitBytes *int `pulumi:"minBinaryDetectionLimitBytes"`
-	// Enabling this option may affect your licensing costs. For more details, see [documentation](https://dt-url.net/4l02yi8).
+	// Enabling this option may affect your licensing costs. For more details, see [documentation](https://dt-url.net/7v02z76).
 	MonitorOwnLogsEnabled *bool `pulumi:"monitorOwnLogsEnabled"`
 	// Automatically detect logs written by important processes. For more details, check our [documentation](https://dt-url.net/7v02z76)
 	OpenLogFilesDetectionEnabled *bool `pulumi:"openLogFilesDetectionEnabled"`
@@ -165,6 +169,8 @@ type logOneagentState struct {
 }
 
 type LogOneagentState struct {
+	// Specifies the granularity at which binary log files are detected. 'Per log source' applies binary detection at the log source level, 'Per log file' evaluates each log file individually. Possible values: `BinaryPerLogFile`, `BinaryPerLogSource`
+	BinaryDetectionMode pulumi.StringPtrInput
 	// Enables automatic detection of timezone in container's logs if it is not explicitly defined in content or configured.
 	ContainerTimezoneHeuristicEnabled pulumi.BoolPtrInput
 	// Allows detection of log messages written to the containerized application's stdout/stderr streams.
@@ -177,13 +183,13 @@ type LogOneagentState struct {
 	EventLogQueryTimeoutSec pulumi.IntPtrInput
 	// Allows detection of logs and event logs written by IIS server.
 	IisdetectionEnabled pulumi.BoolPtrInput
-	// Allows detection of logs written to mounted network storage drives. Applies only to Linux hosts. For other OSes it's always enabled.
+	// Allows detection of logs written to mounted network storage drives. Applies only to Linux hosts. For Windows operating system it's always enabled.
 	LogScannerLinuxNfsEnabled pulumi.BoolPtrInput
 	// Defines the maximum number of log group instances per entity after which, the new automatic ones wouldn't be added.
 	MaxLgisPerEntityCount pulumi.IntPtrInput
 	// Defines the minimum number of bytes in log file required for binary detection.
 	MinBinaryDetectionLimitBytes pulumi.IntPtrInput
-	// Enabling this option may affect your licensing costs. For more details, see [documentation](https://dt-url.net/4l02yi8).
+	// Enabling this option may affect your licensing costs. For more details, see [documentation](https://dt-url.net/7v02z76).
 	MonitorOwnLogsEnabled pulumi.BoolPtrInput
 	// Automatically detect logs written by important processes. For more details, check our [documentation](https://dt-url.net/7v02z76)
 	OpenLogFilesDetectionEnabled pulumi.BoolPtrInput
@@ -202,6 +208,8 @@ func (LogOneagentState) ElementType() reflect.Type {
 }
 
 type logOneagentArgs struct {
+	// Specifies the granularity at which binary log files are detected. 'Per log source' applies binary detection at the log source level, 'Per log file' evaluates each log file individually. Possible values: `BinaryPerLogFile`, `BinaryPerLogSource`
+	BinaryDetectionMode *string `pulumi:"binaryDetectionMode"`
 	// Enables automatic detection of timezone in container's logs if it is not explicitly defined in content or configured.
 	ContainerTimezoneHeuristicEnabled bool `pulumi:"containerTimezoneHeuristicEnabled"`
 	// Allows detection of log messages written to the containerized application's stdout/stderr streams.
@@ -214,13 +222,13 @@ type logOneagentArgs struct {
 	EventLogQueryTimeoutSec int `pulumi:"eventLogQueryTimeoutSec"`
 	// Allows detection of logs and event logs written by IIS server.
 	IisdetectionEnabled bool `pulumi:"iisdetectionEnabled"`
-	// Allows detection of logs written to mounted network storage drives. Applies only to Linux hosts. For other OSes it's always enabled.
+	// Allows detection of logs written to mounted network storage drives. Applies only to Linux hosts. For Windows operating system it's always enabled.
 	LogScannerLinuxNfsEnabled bool `pulumi:"logScannerLinuxNfsEnabled"`
 	// Defines the maximum number of log group instances per entity after which, the new automatic ones wouldn't be added.
 	MaxLgisPerEntityCount int `pulumi:"maxLgisPerEntityCount"`
 	// Defines the minimum number of bytes in log file required for binary detection.
 	MinBinaryDetectionLimitBytes int `pulumi:"minBinaryDetectionLimitBytes"`
-	// Enabling this option may affect your licensing costs. For more details, see [documentation](https://dt-url.net/4l02yi8).
+	// Enabling this option may affect your licensing costs. For more details, see [documentation](https://dt-url.net/7v02z76).
 	MonitorOwnLogsEnabled bool `pulumi:"monitorOwnLogsEnabled"`
 	// Automatically detect logs written by important processes. For more details, check our [documentation](https://dt-url.net/7v02z76)
 	OpenLogFilesDetectionEnabled bool `pulumi:"openLogFilesDetectionEnabled"`
@@ -236,6 +244,8 @@ type logOneagentArgs struct {
 
 // The set of arguments for constructing a LogOneagent resource.
 type LogOneagentArgs struct {
+	// Specifies the granularity at which binary log files are detected. 'Per log source' applies binary detection at the log source level, 'Per log file' evaluates each log file individually. Possible values: `BinaryPerLogFile`, `BinaryPerLogSource`
+	BinaryDetectionMode pulumi.StringPtrInput
 	// Enables automatic detection of timezone in container's logs if it is not explicitly defined in content or configured.
 	ContainerTimezoneHeuristicEnabled pulumi.BoolInput
 	// Allows detection of log messages written to the containerized application's stdout/stderr streams.
@@ -248,13 +258,13 @@ type LogOneagentArgs struct {
 	EventLogQueryTimeoutSec pulumi.IntInput
 	// Allows detection of logs and event logs written by IIS server.
 	IisdetectionEnabled pulumi.BoolInput
-	// Allows detection of logs written to mounted network storage drives. Applies only to Linux hosts. For other OSes it's always enabled.
+	// Allows detection of logs written to mounted network storage drives. Applies only to Linux hosts. For Windows operating system it's always enabled.
 	LogScannerLinuxNfsEnabled pulumi.BoolInput
 	// Defines the maximum number of log group instances per entity after which, the new automatic ones wouldn't be added.
 	MaxLgisPerEntityCount pulumi.IntInput
 	// Defines the minimum number of bytes in log file required for binary detection.
 	MinBinaryDetectionLimitBytes pulumi.IntInput
-	// Enabling this option may affect your licensing costs. For more details, see [documentation](https://dt-url.net/4l02yi8).
+	// Enabling this option may affect your licensing costs. For more details, see [documentation](https://dt-url.net/7v02z76).
 	MonitorOwnLogsEnabled pulumi.BoolInput
 	// Automatically detect logs written by important processes. For more details, check our [documentation](https://dt-url.net/7v02z76)
 	OpenLogFilesDetectionEnabled pulumi.BoolInput
@@ -355,6 +365,11 @@ func (o LogOneagentOutput) ToLogOneagentOutputWithContext(ctx context.Context) L
 	return o
 }
 
+// Specifies the granularity at which binary log files are detected. 'Per log source' applies binary detection at the log source level, 'Per log file' evaluates each log file individually. Possible values: `BinaryPerLogFile`, `BinaryPerLogSource`
+func (o LogOneagentOutput) BinaryDetectionMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LogOneagent) pulumi.StringPtrOutput { return v.BinaryDetectionMode }).(pulumi.StringPtrOutput)
+}
+
 // Enables automatic detection of timezone in container's logs if it is not explicitly defined in content or configured.
 func (o LogOneagentOutput) ContainerTimezoneHeuristicEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *LogOneagent) pulumi.BoolOutput { return v.ContainerTimezoneHeuristicEnabled }).(pulumi.BoolOutput)
@@ -385,7 +400,7 @@ func (o LogOneagentOutput) IisdetectionEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *LogOneagent) pulumi.BoolOutput { return v.IisdetectionEnabled }).(pulumi.BoolOutput)
 }
 
-// Allows detection of logs written to mounted network storage drives. Applies only to Linux hosts. For other OSes it's always enabled.
+// Allows detection of logs written to mounted network storage drives. Applies only to Linux hosts. For Windows operating system it's always enabled.
 func (o LogOneagentOutput) LogScannerLinuxNfsEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *LogOneagent) pulumi.BoolOutput { return v.LogScannerLinuxNfsEnabled }).(pulumi.BoolOutput)
 }
@@ -400,7 +415,7 @@ func (o LogOneagentOutput) MinBinaryDetectionLimitBytes() pulumi.IntOutput {
 	return o.ApplyT(func(v *LogOneagent) pulumi.IntOutput { return v.MinBinaryDetectionLimitBytes }).(pulumi.IntOutput)
 }
 
-// Enabling this option may affect your licensing costs. For more details, see [documentation](https://dt-url.net/4l02yi8).
+// Enabling this option may affect your licensing costs. For more details, see [documentation](https://dt-url.net/7v02z76).
 func (o LogOneagentOutput) MonitorOwnLogsEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *LogOneagent) pulumi.BoolOutput { return v.MonitorOwnLogsEnabled }).(pulumi.BoolOutput)
 }

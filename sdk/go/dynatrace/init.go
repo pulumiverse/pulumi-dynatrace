@@ -281,8 +281,6 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &GithubConnection{}
 	case "dynatrace:index/gitlabConnection:GitlabConnection":
 		r = &GitlabConnection{}
-	case "dynatrace:index/goldenState:GoldenState":
-		r = &GoldenState{}
 	case "dynatrace:index/grailMetricsAllowall:GrailMetricsAllowall":
 		r = &GrailMetricsAllowall{}
 	case "dynatrace:index/grailMetricsAllowlist:GrailMetricsAllowlist":
@@ -823,6 +821,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &SyntheticAvailability{}
 	case "dynatrace:index/syntheticLocation:SyntheticLocation":
 		r = &SyntheticLocation{}
+	case "dynatrace:index/syntheticPrimaryGrailTags:SyntheticPrimaryGrailTags":
+		r = &SyntheticPrimaryGrailTags{}
 	case "dynatrace:index/tokenSettings:TokenSettings":
 		r = &TokenSettings{}
 	case "dynatrace:index/transactionStartFilters:TransactionStartFilters":
@@ -1596,11 +1596,6 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"dynatrace",
 		"index/gitlabConnection",
-		&module{version},
-	)
-	pulumi.RegisterResourceModule(
-		"dynatrace",
-		"index/goldenState",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -2951,6 +2946,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"dynatrace",
 		"index/syntheticLocation",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/syntheticPrimaryGrailTags",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

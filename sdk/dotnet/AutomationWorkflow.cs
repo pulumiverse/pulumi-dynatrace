@@ -166,6 +166,8 @@ namespace Pulumiverse.Dynatrace
     ///                         },
     ///                         EntityTagsMatch = "all",
     ///                         OnProblemClose = false,
+    ///                         TriggerOn = "open",
+    ///                         MaintenanceWindowTriggerBehavior = "inside",
     ///                         CustomFilter = "matchesPhrase(custom.event.type, \"DEPLOY\")",
     ///                     },
     ///                 },
@@ -246,6 +248,12 @@ namespace Pulumiverse.Dynatrace
         public Output<Outputs.AutomationWorkflowTasks> Tasks { get; private set; } = null!;
 
         /// <summary>
+        /// Execution throttling state for the workflow. Server-computed - see `IsLimitHit`. Set only to reset an active throttle
+        /// </summary>
+        [Output("throttle")]
+        public Output<Outputs.AutomationWorkflowThrottle> Throttle { get; private set; } = null!;
+
+        /// <summary>
         /// The title / name of the workflow
         /// </summary>
         [Output("title")]
@@ -262,6 +270,12 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         [Output("type")]
         public Output<string?> Type { get; private set; } = null!;
+
+        /// <summary>
+        /// Timestamp of the earliest schedule that was skipped and not yet acknowledged
+        /// </summary>
+        [Output("unacknowledgedSkippedScheduleAt")]
+        public Output<string> UnacknowledgedSkippedScheduleAt { get; private set; } = null!;
 
 
         /// <summary>
@@ -377,6 +391,12 @@ namespace Pulumiverse.Dynatrace
         public Input<Inputs.AutomationWorkflowTasksArgs> Tasks { get; set; } = null!;
 
         /// <summary>
+        /// Execution throttling state for the workflow. Server-computed - see `IsLimitHit`. Set only to reset an active throttle
+        /// </summary>
+        [Input("throttle")]
+        public Input<Inputs.AutomationWorkflowThrottleArgs>? Throttle { get; set; }
+
+        /// <summary>
         /// The title / name of the workflow
         /// </summary>
         [Input("title", required: true)]
@@ -469,6 +489,12 @@ namespace Pulumiverse.Dynatrace
         public Input<Inputs.AutomationWorkflowTasksGetArgs>? Tasks { get; set; }
 
         /// <summary>
+        /// Execution throttling state for the workflow. Server-computed - see `IsLimitHit`. Set only to reset an active throttle
+        /// </summary>
+        [Input("throttle")]
+        public Input<Inputs.AutomationWorkflowThrottleGetArgs>? Throttle { get; set; }
+
+        /// <summary>
         /// The title / name of the workflow
         /// </summary>
         [Input("title")]
@@ -485,6 +511,12 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }
+
+        /// <summary>
+        /// Timestamp of the earliest schedule that was skipped and not yet acknowledged
+        /// </summary>
+        [Input("unacknowledgedSkippedScheduleAt")]
+        public Input<string>? UnacknowledgedSkippedScheduleAt { get; set; }
 
         public AutomationWorkflowState()
         {

@@ -194,7 +194,6 @@ from .get_update_windows import *
 from .get_vulnerability_alerting import *
 from .github_connection import *
 from .gitlab_connection import *
-from .golden_state import *
 from .grail_metrics_allowall import *
 from .grail_metrics_allowlist import *
 from .grail_security_context import *
@@ -466,6 +465,7 @@ from .span_entry_point import *
 from .span_events import *
 from .synthetic_availability import *
 from .synthetic_location import *
+from .synthetic_primary_grail_tags import *
 from .token_settings import *
 from .transaction_start_filters import *
 from .trello_notification import *
@@ -1564,14 +1564,6 @@ _utilities.register(
   "fqn": "pulumiverse_dynatrace",
   "classes": {
    "dynatrace:index/gitlabConnection:GitlabConnection": "GitlabConnection"
-  }
- },
- {
-  "pkg": "dynatrace",
-  "mod": "index/goldenState",
-  "fqn": "pulumiverse_dynatrace",
-  "classes": {
-   "dynatrace:index/goldenState:GoldenState": "GoldenState"
   }
  },
  {
@@ -3732,6 +3724,14 @@ _utilities.register(
   "fqn": "pulumiverse_dynatrace",
   "classes": {
    "dynatrace:index/syntheticLocation:SyntheticLocation": "SyntheticLocation"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/syntheticPrimaryGrailTags",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/syntheticPrimaryGrailTags:SyntheticPrimaryGrailTags": "SyntheticPrimaryGrailTags"
   }
  },
  {

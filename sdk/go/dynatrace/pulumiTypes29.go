@@ -13,6 +13,390 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRename struct {
+	// Fields to rename
+	Fields OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFields `pulumi:"fields"`
+}
+
+// OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameInput is an input type that accepts OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameArgs and OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameOutput values.
+// You can construct a concrete instance of `OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameInput` via:
+//
+//	OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameArgs{...}
+type OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameInput interface {
+	pulumi.Input
+
+	ToOpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameOutput() OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameOutput
+	ToOpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameOutputWithContext(context.Context) OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameOutput
+}
+
+type OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameArgs struct {
+	// Fields to rename
+	Fields OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsInput `pulumi:"fields"`
+}
+
+func (OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRename)(nil)).Elem()
+}
+
+func (i OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameArgs) ToOpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameOutput() OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameOutput {
+	return i.ToOpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameOutputWithContext(context.Background())
+}
+
+func (i OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameArgs) ToOpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameOutputWithContext(ctx context.Context) OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameOutput)
+}
+
+func (i OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameArgs) ToOpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenamePtrOutput() OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenamePtrOutput {
+	return i.ToOpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenamePtrOutputWithContext(context.Background())
+}
+
+func (i OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameArgs) ToOpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenamePtrOutputWithContext(ctx context.Context) OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenamePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameOutput).ToOpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenamePtrOutputWithContext(ctx)
+}
+
+// OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenamePtrInput is an input type that accepts OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameArgs, OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenamePtr and OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenamePtrOutput values.
+// You can construct a concrete instance of `OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenamePtrInput` via:
+//
+//	        OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameArgs{...}
+//
+//	or:
+//
+//	        nil
+type OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenamePtrInput interface {
+	pulumi.Input
+
+	ToOpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenamePtrOutput() OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenamePtrOutput
+	ToOpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenamePtrOutputWithContext(context.Context) OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenamePtrOutput
+}
+
+type openpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenamePtrType OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameArgs
+
+func OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenamePtr(v *OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameArgs) OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenamePtrInput {
+	return (*openpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenamePtrType)(v)
+}
+
+func (*openpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenamePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRename)(nil)).Elem()
+}
+
+func (i *openpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenamePtrType) ToOpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenamePtrOutput() OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenamePtrOutput {
+	return i.ToOpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenamePtrOutputWithContext(context.Background())
+}
+
+func (i *openpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenamePtrType) ToOpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenamePtrOutputWithContext(ctx context.Context) OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenamePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenamePtrOutput)
+}
+
+type OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameOutput struct{ *pulumi.OutputState }
+
+func (OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRename)(nil)).Elem()
+}
+
+func (o OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameOutput) ToOpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameOutput() OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameOutput {
+	return o
+}
+
+func (o OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameOutput) ToOpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameOutputWithContext(ctx context.Context) OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameOutput {
+	return o
+}
+
+func (o OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameOutput) ToOpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenamePtrOutput() OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenamePtrOutput {
+	return o.ToOpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenamePtrOutputWithContext(context.Background())
+}
+
+func (o OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameOutput) ToOpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenamePtrOutputWithContext(ctx context.Context) OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenamePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRename) *OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRename {
+		return &v
+	}).(OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenamePtrOutput)
+}
+
+// Fields to rename
+func (o OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameOutput) Fields() OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsOutput {
+	return o.ApplyT(func(v OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRename) OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFields {
+		return v.Fields
+	}).(OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsOutput)
+}
+
+type OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenamePtrOutput struct{ *pulumi.OutputState }
+
+func (OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenamePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRename)(nil)).Elem()
+}
+
+func (o OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenamePtrOutput) ToOpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenamePtrOutput() OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenamePtrOutput {
+	return o
+}
+
+func (o OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenamePtrOutput) ToOpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenamePtrOutputWithContext(ctx context.Context) OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenamePtrOutput {
+	return o
+}
+
+func (o OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenamePtrOutput) Elem() OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameOutput {
+	return o.ApplyT(func(v *OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRename) OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRename {
+		if v != nil {
+			return *v
+		}
+		var ret OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRename
+		return ret
+	}).(OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameOutput)
+}
+
+// Fields to rename
+func (o OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenamePtrOutput) Fields() OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsPtrOutput {
+	return o.ApplyT(func(v *OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRename) *OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFields {
+		if v == nil {
+			return nil
+		}
+		return &v.Fields
+	}).(OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsPtrOutput)
+}
+
+type OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFields struct {
+	Fields []OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsField `pulumi:"fields"`
+}
+
+// OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsInput is an input type that accepts OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsArgs and OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsOutput values.
+// You can construct a concrete instance of `OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsInput` via:
+//
+//	OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsArgs{...}
+type OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsInput interface {
+	pulumi.Input
+
+	ToOpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsOutput() OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsOutput
+	ToOpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsOutputWithContext(context.Context) OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsOutput
+}
+
+type OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsArgs struct {
+	Fields OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsFieldArrayInput `pulumi:"fields"`
+}
+
+func (OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFields)(nil)).Elem()
+}
+
+func (i OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsArgs) ToOpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsOutput() OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsOutput {
+	return i.ToOpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsOutputWithContext(context.Background())
+}
+
+func (i OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsArgs) ToOpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsOutputWithContext(ctx context.Context) OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsOutput)
+}
+
+func (i OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsArgs) ToOpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsPtrOutput() OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsPtrOutput {
+	return i.ToOpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsPtrOutputWithContext(context.Background())
+}
+
+func (i OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsArgs) ToOpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsPtrOutputWithContext(ctx context.Context) OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsOutput).ToOpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsPtrOutputWithContext(ctx)
+}
+
+// OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsPtrInput is an input type that accepts OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsArgs, OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsPtr and OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsPtrOutput values.
+// You can construct a concrete instance of `OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsPtrInput` via:
+//
+//	        OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsArgs{...}
+//
+//	or:
+//
+//	        nil
+type OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsPtrInput interface {
+	pulumi.Input
+
+	ToOpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsPtrOutput() OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsPtrOutput
+	ToOpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsPtrOutputWithContext(context.Context) OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsPtrOutput
+}
+
+type openpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsPtrType OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsArgs
+
+func OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsPtr(v *OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsArgs) OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsPtrInput {
+	return (*openpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsPtrType)(v)
+}
+
+func (*openpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFields)(nil)).Elem()
+}
+
+func (i *openpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsPtrType) ToOpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsPtrOutput() OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsPtrOutput {
+	return i.ToOpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsPtrOutputWithContext(context.Background())
+}
+
+func (i *openpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsPtrType) ToOpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsPtrOutputWithContext(ctx context.Context) OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsPtrOutput)
+}
+
+type OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsOutput struct{ *pulumi.OutputState }
+
+func (OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFields)(nil)).Elem()
+}
+
+func (o OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsOutput) ToOpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsOutput() OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsOutput {
+	return o
+}
+
+func (o OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsOutput) ToOpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsOutputWithContext(ctx context.Context) OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsOutput {
+	return o
+}
+
+func (o OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsOutput) ToOpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsPtrOutput() OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsPtrOutput {
+	return o.ToOpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsPtrOutputWithContext(context.Background())
+}
+
+func (o OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsOutput) ToOpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsPtrOutputWithContext(ctx context.Context) OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFields) *OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFields {
+		return &v
+	}).(OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsPtrOutput)
+}
+
+func (o OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsOutput) Fields() OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsFieldArrayOutput {
+	return o.ApplyT(func(v OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFields) []OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsField {
+		return v.Fields
+	}).(OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsFieldArrayOutput)
+}
+
+type OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsPtrOutput struct{ *pulumi.OutputState }
+
+func (OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFields)(nil)).Elem()
+}
+
+func (o OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsPtrOutput) ToOpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsPtrOutput() OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsPtrOutput {
+	return o
+}
+
+func (o OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsPtrOutput) ToOpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsPtrOutputWithContext(ctx context.Context) OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsPtrOutput {
+	return o
+}
+
+func (o OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsPtrOutput) Elem() OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsOutput {
+	return o.ApplyT(func(v *OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFields) OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFields {
+		if v != nil {
+			return *v
+		}
+		var ret OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFields
+		return ret
+	}).(OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsOutput)
+}
+
+func (o OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsPtrOutput) Fields() OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsFieldArrayOutput {
+	return o.ApplyT(func(v *OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFields) []OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsField {
+		if v == nil {
+			return nil
+		}
+		return v.Fields
+	}).(OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsFieldArrayOutput)
+}
+
+type OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsField struct {
+	// Fields's name
+	FromName string `pulumi:"fromName"`
+	// New field's name
+	ToName string `pulumi:"toName"`
+}
+
+// OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsFieldInput is an input type that accepts OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsFieldArgs and OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsFieldOutput values.
+// You can construct a concrete instance of `OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsFieldInput` via:
+//
+//	OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsFieldArgs{...}
+type OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsFieldInput interface {
+	pulumi.Input
+
+	ToOpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsFieldOutput() OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsFieldOutput
+	ToOpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsFieldOutputWithContext(context.Context) OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsFieldOutput
+}
+
+type OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsFieldArgs struct {
+	// Fields's name
+	FromName pulumi.StringInput `pulumi:"fromName"`
+	// New field's name
+	ToName pulumi.StringInput `pulumi:"toName"`
+}
+
+func (OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsFieldArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsField)(nil)).Elem()
+}
+
+func (i OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsFieldArgs) ToOpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsFieldOutput() OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsFieldOutput {
+	return i.ToOpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsFieldOutputWithContext(context.Background())
+}
+
+func (i OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsFieldArgs) ToOpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsFieldOutputWithContext(ctx context.Context) OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsFieldOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsFieldOutput)
+}
+
+// OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsFieldArrayInput is an input type that accepts OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsFieldArray and OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsFieldArrayOutput values.
+// You can construct a concrete instance of `OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsFieldArrayInput` via:
+//
+//	OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsFieldArray{ OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsFieldArgs{...} }
+type OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsFieldArrayInput interface {
+	pulumi.Input
+
+	ToOpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsFieldArrayOutput() OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsFieldArrayOutput
+	ToOpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsFieldArrayOutputWithContext(context.Context) OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsFieldArrayOutput
+}
+
+type OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsFieldArray []OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsFieldInput
+
+func (OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsFieldArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsField)(nil)).Elem()
+}
+
+func (i OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsFieldArray) ToOpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsFieldArrayOutput() OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsFieldArrayOutput {
+	return i.ToOpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsFieldArrayOutputWithContext(context.Background())
+}
+
+func (i OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsFieldArray) ToOpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsFieldArrayOutputWithContext(ctx context.Context) OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsFieldArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsFieldArrayOutput)
+}
+
+type OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsFieldOutput struct{ *pulumi.OutputState }
+
+func (OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsFieldOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsField)(nil)).Elem()
+}
+
+func (o OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsFieldOutput) ToOpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsFieldOutput() OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsFieldOutput {
+	return o
+}
+
+func (o OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsFieldOutput) ToOpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsFieldOutputWithContext(ctx context.Context) OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsFieldOutput {
+	return o
+}
+
+// Fields's name
+func (o OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsFieldOutput) FromName() pulumi.StringOutput {
+	return o.ApplyT(func(v OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsField) string {
+		return v.FromName
+	}).(pulumi.StringOutput)
+}
+
+// New field's name
+func (o OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsFieldOutput) ToName() pulumi.StringOutput {
+	return o.ApplyT(func(v OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsField) string {
+		return v.ToName
+	}).(pulumi.StringOutput)
+}
+
+type OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsFieldArrayOutput struct{ *pulumi.OutputState }
+
+func (OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsFieldArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsField)(nil)).Elem()
+}
+
+func (o OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsFieldArrayOutput) ToOpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsFieldArrayOutput() OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsFieldArrayOutput {
+	return o
+}
+
+func (o OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsFieldArrayOutput) ToOpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsFieldArrayOutputWithContext(ctx context.Context) OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsFieldArrayOutput {
+	return o
+}
+
+func (o OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsFieldArrayOutput) Index(i pulumi.IntInput) OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsFieldOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsField {
+		return vs[0].([]OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsField)[vs[1].(int)]
+	}).(OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsFieldOutput)
+}
+
 type OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorGeoLookup struct {
 	// Optional prefix for all output geo fields. If specified, output fields will be prefixed as \n\n.geo.\n\n. If omitted, output fields will be geo.\n\n.
 	GeoFieldPrefix *string `pulumi:"geoFieldPrefix"`
@@ -78545,27 +78929,49 @@ func (o OsServicesDetectionConditionsLinuxPtrOutput) LinuxDetectionConditions() 
 
 type OsServicesDetectionConditionsLinuxLinuxDetectionCondition struct {
 	// This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
+	//
+	//   - `$match(ip?tables*)` – Matches string with wildcards: `*` any number (including zero) of characters and `?` exactly one character.
+	//  - `$contains(ssh)` – Matches if `ssh` appears anywhere in the service's property value.
+	//  - `$eq(sshd)` – Matches if `sshd` matches the service's property value exactly.
+	//  - `$prefix(ss)` – Matches if `ss` matches the prefix of the service's property value.
+	//  - `$suffix(hd)` – Matches if `hd` matches the suffix of the service's property value.
+	//
+	//   Available logic operations:
+	//  - `$not($eq(sshd))` – Matches if the service's property value is different from `sshd`.
+	//  - `$and($prefix(ss),$suffix(hd))` – Matches if service's property value starts with `ss` and ends with `hd`.
+	//  - `$or($prefix(ss),$suffix(hd))` – Matches if service's property value starts with `ss` or ends with `hd`.
+	//
+	//   Brackets **(** and **)** that are part of the matched property **must be escaped with a tilde (~)**
 	Condition *string `pulumi:"condition"`
-	// Custom metadata
+	// Host resource attributes are dimensions enriching the host including custom metadata which are user-defined key-value pairs that you can assign to hosts monitored by Dynatrace.
+	//
+	//   By defining custom metadata, you can enrich the monitoring data with context specific to your organization's needs, such as environment names, team ownership, application versions, or any other relevant details.
+	//
+	//   See [Define tags and metadata for hosts](https://dt-url.net/w3hv0kbw).
+	//
+	//   Note: Starting from version 1.325 host resource attributes are supported in addition to host custom metadata.
 	HostMetadataCondition *OsServicesDetectionConditionsLinuxLinuxDetectionConditionHostMetadataCondition `pulumi:"hostMetadataCondition"`
-	// Possible Values: `ServiceName`, `StartupType`
+	// Service property. Possible values: `ServiceName`, `StartupType`
 	Property *string `pulumi:"property"`
-	// Possible Values: `RuleTypeHost`, `RuleTypeOsService`
+	// Rule scope. Possible values: `RuleTypeHost`, `RuleTypeOsService`
 	RuleType *string `pulumi:"ruleType"`
 	// This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
 	//
-	// - `$eq(enabled)` – Matches services with startup type equal to enabled.
+	//   - `$eq(enabled)` – Matches services with startup type equal to enabled.
 	//
-	// Available logic operations:
-	// - `$not($eq(enabled))` – Matches services with startup type different from enabled.
-	// - `$or($eq(enabled),$eq(disabled))` - Matches services that are either enabled or disabled.
+	//   Available logic operations:
+	//  - `$not($eq(enabled))` – Matches services with startup type different from enabled.
+	//  - `$or($eq(enabled),$eq(disabled))` - Matches services that are either enabled or disabled.
 	//
-	// Use one of the following values as a parameter for this condition:
+	//   Use one of the following values as a parameter for this condition:
 	//
-	// - `enabled`
-	// - `enabled-runtime`
-	// - `static`
-	// - `disabled`
+	//   - `enabled`
+	//  - `enabled-runtime`
+	//  - `static`
+	//  - `disabled`
+	//  - `indirect`
+	//  - `linked`
+	//  - `linked-runtime`
 	StartupCondition *string `pulumi:"startupCondition"`
 }
 
@@ -78582,27 +78988,49 @@ type OsServicesDetectionConditionsLinuxLinuxDetectionConditionInput interface {
 
 type OsServicesDetectionConditionsLinuxLinuxDetectionConditionArgs struct {
 	// This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
+	//
+	//   - `$match(ip?tables*)` – Matches string with wildcards: `*` any number (including zero) of characters and `?` exactly one character.
+	//  - `$contains(ssh)` – Matches if `ssh` appears anywhere in the service's property value.
+	//  - `$eq(sshd)` – Matches if `sshd` matches the service's property value exactly.
+	//  - `$prefix(ss)` – Matches if `ss` matches the prefix of the service's property value.
+	//  - `$suffix(hd)` – Matches if `hd` matches the suffix of the service's property value.
+	//
+	//   Available logic operations:
+	//  - `$not($eq(sshd))` – Matches if the service's property value is different from `sshd`.
+	//  - `$and($prefix(ss),$suffix(hd))` – Matches if service's property value starts with `ss` and ends with `hd`.
+	//  - `$or($prefix(ss),$suffix(hd))` – Matches if service's property value starts with `ss` or ends with `hd`.
+	//
+	//   Brackets **(** and **)** that are part of the matched property **must be escaped with a tilde (~)**
 	Condition pulumi.StringPtrInput `pulumi:"condition"`
-	// Custom metadata
+	// Host resource attributes are dimensions enriching the host including custom metadata which are user-defined key-value pairs that you can assign to hosts monitored by Dynatrace.
+	//
+	//   By defining custom metadata, you can enrich the monitoring data with context specific to your organization's needs, such as environment names, team ownership, application versions, or any other relevant details.
+	//
+	//   See [Define tags and metadata for hosts](https://dt-url.net/w3hv0kbw).
+	//
+	//   Note: Starting from version 1.325 host resource attributes are supported in addition to host custom metadata.
 	HostMetadataCondition OsServicesDetectionConditionsLinuxLinuxDetectionConditionHostMetadataConditionPtrInput `pulumi:"hostMetadataCondition"`
-	// Possible Values: `ServiceName`, `StartupType`
+	// Service property. Possible values: `ServiceName`, `StartupType`
 	Property pulumi.StringPtrInput `pulumi:"property"`
-	// Possible Values: `RuleTypeHost`, `RuleTypeOsService`
+	// Rule scope. Possible values: `RuleTypeHost`, `RuleTypeOsService`
 	RuleType pulumi.StringPtrInput `pulumi:"ruleType"`
 	// This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
 	//
-	// - `$eq(enabled)` – Matches services with startup type equal to enabled.
+	//   - `$eq(enabled)` – Matches services with startup type equal to enabled.
 	//
-	// Available logic operations:
-	// - `$not($eq(enabled))` – Matches services with startup type different from enabled.
-	// - `$or($eq(enabled),$eq(disabled))` - Matches services that are either enabled or disabled.
+	//   Available logic operations:
+	//  - `$not($eq(enabled))` – Matches services with startup type different from enabled.
+	//  - `$or($eq(enabled),$eq(disabled))` - Matches services that are either enabled or disabled.
 	//
-	// Use one of the following values as a parameter for this condition:
+	//   Use one of the following values as a parameter for this condition:
 	//
-	// - `enabled`
-	// - `enabled-runtime`
-	// - `static`
-	// - `disabled`
+	//   - `enabled`
+	//  - `enabled-runtime`
+	//  - `static`
+	//  - `disabled`
+	//  - `indirect`
+	//  - `linked`
+	//  - `linked-runtime`
 	StartupCondition pulumi.StringPtrInput `pulumi:"startupCondition"`
 }
 
@@ -78658,41 +79086,78 @@ func (o OsServicesDetectionConditionsLinuxLinuxDetectionConditionOutput) ToOsSer
 }
 
 // This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
+//
+//   - `$match(ip?tables*)` – Matches string with wildcards: `*` any number (including zero) of characters and `?` exactly one character.
+//
+//   - `$contains(ssh)` – Matches if `ssh` appears anywhere in the service's property value.
+//
+//   - `$eq(sshd)` – Matches if `sshd` matches the service's property value exactly.
+//
+//   - `$prefix(ss)` – Matches if `ss` matches the prefix of the service's property value.
+//
+//   - `$suffix(hd)` – Matches if `hd` matches the suffix of the service's property value.
+//
+//     Available logic operations:
+//
+//   - `$not($eq(sshd))` – Matches if the service's property value is different from `sshd`.
+//
+//   - `$and($prefix(ss),$suffix(hd))` – Matches if service's property value starts with `ss` and ends with `hd`.
+//
+//   - `$or($prefix(ss),$suffix(hd))` – Matches if service's property value starts with `ss` or ends with `hd`.
+//
+//     Brackets **(** and **)** that are part of the matched property **must be escaped with a tilde (~)**
 func (o OsServicesDetectionConditionsLinuxLinuxDetectionConditionOutput) Condition() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v OsServicesDetectionConditionsLinuxLinuxDetectionCondition) *string { return v.Condition }).(pulumi.StringPtrOutput)
 }
 
-// Custom metadata
+// Host resource attributes are dimensions enriching the host including custom metadata which are user-defined key-value pairs that you can assign to hosts monitored by Dynatrace.
+//
+//	By defining custom metadata, you can enrich the monitoring data with context specific to your organization's needs, such as environment names, team ownership, application versions, or any other relevant details.
+//
+//	See [Define tags and metadata for hosts](https://dt-url.net/w3hv0kbw).
+//
+//	Note: Starting from version 1.325 host resource attributes are supported in addition to host custom metadata.
 func (o OsServicesDetectionConditionsLinuxLinuxDetectionConditionOutput) HostMetadataCondition() OsServicesDetectionConditionsLinuxLinuxDetectionConditionHostMetadataConditionPtrOutput {
 	return o.ApplyT(func(v OsServicesDetectionConditionsLinuxLinuxDetectionCondition) *OsServicesDetectionConditionsLinuxLinuxDetectionConditionHostMetadataCondition {
 		return v.HostMetadataCondition
 	}).(OsServicesDetectionConditionsLinuxLinuxDetectionConditionHostMetadataConditionPtrOutput)
 }
 
-// Possible Values: `ServiceName`, `StartupType`
+// Service property. Possible values: `ServiceName`, `StartupType`
 func (o OsServicesDetectionConditionsLinuxLinuxDetectionConditionOutput) Property() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v OsServicesDetectionConditionsLinuxLinuxDetectionCondition) *string { return v.Property }).(pulumi.StringPtrOutput)
 }
 
-// Possible Values: `RuleTypeHost`, `RuleTypeOsService`
+// Rule scope. Possible values: `RuleTypeHost`, `RuleTypeOsService`
 func (o OsServicesDetectionConditionsLinuxLinuxDetectionConditionOutput) RuleType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v OsServicesDetectionConditionsLinuxLinuxDetectionCondition) *string { return v.RuleType }).(pulumi.StringPtrOutput)
 }
 
 // This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
 //
-// - `$eq(enabled)` – Matches services with startup type equal to enabled.
+//   - `$eq(enabled)` – Matches services with startup type equal to enabled.
 //
-// Available logic operations:
-// - `$not($eq(enabled))` – Matches services with startup type different from enabled.
-// - `$or($eq(enabled),$eq(disabled))` - Matches services that are either enabled or disabled.
+//     Available logic operations:
 //
-// Use one of the following values as a parameter for this condition:
+//   - `$not($eq(enabled))` – Matches services with startup type different from enabled.
 //
-// - `enabled`
-// - `enabled-runtime`
-// - `static`
-// - `disabled`
+//   - `$or($eq(enabled),$eq(disabled))` - Matches services that are either enabled or disabled.
+//
+//     Use one of the following values as a parameter for this condition:
+//
+//   - `enabled`
+//
+//   - `enabled-runtime`
+//
+//   - `static`
+//
+//   - `disabled`
+//
+//   - `indirect`
+//
+//   - `linked`
+//
+//   - `linked-runtime`
 func (o OsServicesDetectionConditionsLinuxLinuxDetectionConditionOutput) StartupCondition() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v OsServicesDetectionConditionsLinuxLinuxDetectionCondition) *string { return v.StartupCondition }).(pulumi.StringPtrOutput)
 }
@@ -78718,9 +79183,22 @@ func (o OsServicesDetectionConditionsLinuxLinuxDetectionConditionArrayOutput) In
 }
 
 type OsServicesDetectionConditionsLinuxLinuxDetectionConditionHostMetadataCondition struct {
-	// When enabled, the condition requires a metadata key to exist and match the constraints; when disabled, the key is optional but must still match the constrains if it is present.
-	KeyMustExist *bool `pulumi:"keyMustExist"`
+	// When enabled, the condition requires a resource attribute to exist and match the constraints; when disabled, the key is optional but must still match the constrains if it is present.
+	KeyMustExist bool `pulumi:"keyMustExist"`
 	// This string has to match a required format.
+	//
+	//   - `$match(ver*_1.2.?)` – Matches string with wildcards: `*` any number (including zero) of characters and `?` exactly one character.
+	//  - `$contains(production)` – Matches if `production` appears anywhere in the host metadata value.
+	//  - `$eq(production)` – Matches if `production` matches the host metadata value exactly.
+	//  - `$prefix(production)` – Matches if `production` matches the prefix of the host metadata value.
+	//  - `$suffix(production)` – Matches if `production` matches the suffix of the host metadata value.
+	//
+	//   Available logic operations:
+	//  - `$not($eq(production))` – Matches if the host metadata value is different from `production`.
+	//  - `$and($prefix(production),$suffix(main))` – Matches if host metadata value starts with `production` and ends with `main`.
+	//  - `$or($prefix(production),$suffix(main))` – Matches if host metadata value starts with `production` or ends with `main`.
+	//
+	//   Brackets **(** and **)** that are part of the matched property **must be escaped with a tilde (~)**
 	MetadataCondition string `pulumi:"metadataCondition"`
 	// Key
 	MetadataKey string `pulumi:"metadataKey"`
@@ -78738,9 +79216,22 @@ type OsServicesDetectionConditionsLinuxLinuxDetectionConditionHostMetadataCondit
 }
 
 type OsServicesDetectionConditionsLinuxLinuxDetectionConditionHostMetadataConditionArgs struct {
-	// When enabled, the condition requires a metadata key to exist and match the constraints; when disabled, the key is optional but must still match the constrains if it is present.
-	KeyMustExist pulumi.BoolPtrInput `pulumi:"keyMustExist"`
+	// When enabled, the condition requires a resource attribute to exist and match the constraints; when disabled, the key is optional but must still match the constrains if it is present.
+	KeyMustExist pulumi.BoolInput `pulumi:"keyMustExist"`
 	// This string has to match a required format.
+	//
+	//   - `$match(ver*_1.2.?)` – Matches string with wildcards: `*` any number (including zero) of characters and `?` exactly one character.
+	//  - `$contains(production)` – Matches if `production` appears anywhere in the host metadata value.
+	//  - `$eq(production)` – Matches if `production` matches the host metadata value exactly.
+	//  - `$prefix(production)` – Matches if `production` matches the prefix of the host metadata value.
+	//  - `$suffix(production)` – Matches if `production` matches the suffix of the host metadata value.
+	//
+	//   Available logic operations:
+	//  - `$not($eq(production))` – Matches if the host metadata value is different from `production`.
+	//  - `$and($prefix(production),$suffix(main))` – Matches if host metadata value starts with `production` and ends with `main`.
+	//  - `$or($prefix(production),$suffix(main))` – Matches if host metadata value starts with `production` or ends with `main`.
+	//
+	//   Brackets **(** and **)** that are part of the matched property **must be escaped with a tilde (~)**
 	MetadataCondition pulumi.StringInput `pulumi:"metadataCondition"`
 	// Key
 	MetadataKey pulumi.StringInput `pulumi:"metadataKey"`
@@ -78823,14 +79314,34 @@ func (o OsServicesDetectionConditionsLinuxLinuxDetectionConditionHostMetadataCon
 	}).(OsServicesDetectionConditionsLinuxLinuxDetectionConditionHostMetadataConditionPtrOutput)
 }
 
-// When enabled, the condition requires a metadata key to exist and match the constraints; when disabled, the key is optional but must still match the constrains if it is present.
-func (o OsServicesDetectionConditionsLinuxLinuxDetectionConditionHostMetadataConditionOutput) KeyMustExist() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v OsServicesDetectionConditionsLinuxLinuxDetectionConditionHostMetadataCondition) *bool {
+// When enabled, the condition requires a resource attribute to exist and match the constraints; when disabled, the key is optional but must still match the constrains if it is present.
+func (o OsServicesDetectionConditionsLinuxLinuxDetectionConditionHostMetadataConditionOutput) KeyMustExist() pulumi.BoolOutput {
+	return o.ApplyT(func(v OsServicesDetectionConditionsLinuxLinuxDetectionConditionHostMetadataCondition) bool {
 		return v.KeyMustExist
-	}).(pulumi.BoolPtrOutput)
+	}).(pulumi.BoolOutput)
 }
 
 // This string has to match a required format.
+//
+//   - `$match(ver*_1.2.?)` – Matches string with wildcards: `*` any number (including zero) of characters and `?` exactly one character.
+//
+//   - `$contains(production)` – Matches if `production` appears anywhere in the host metadata value.
+//
+//   - `$eq(production)` – Matches if `production` matches the host metadata value exactly.
+//
+//   - `$prefix(production)` – Matches if `production` matches the prefix of the host metadata value.
+//
+//   - `$suffix(production)` – Matches if `production` matches the suffix of the host metadata value.
+//
+//     Available logic operations:
+//
+//   - `$not($eq(production))` – Matches if the host metadata value is different from `production`.
+//
+//   - `$and($prefix(production),$suffix(main))` – Matches if host metadata value starts with `production` and ends with `main`.
+//
+//   - `$or($prefix(production),$suffix(main))` – Matches if host metadata value starts with `production` or ends with `main`.
+//
+//     Brackets **(** and **)** that are part of the matched property **must be escaped with a tilde (~)**
 func (o OsServicesDetectionConditionsLinuxLinuxDetectionConditionHostMetadataConditionOutput) MetadataCondition() pulumi.StringOutput {
 	return o.ApplyT(func(v OsServicesDetectionConditionsLinuxLinuxDetectionConditionHostMetadataCondition) string {
 		return v.MetadataCondition
@@ -78868,17 +79379,37 @@ func (o OsServicesDetectionConditionsLinuxLinuxDetectionConditionHostMetadataCon
 	}).(OsServicesDetectionConditionsLinuxLinuxDetectionConditionHostMetadataConditionOutput)
 }
 
-// When enabled, the condition requires a metadata key to exist and match the constraints; when disabled, the key is optional but must still match the constrains if it is present.
+// When enabled, the condition requires a resource attribute to exist and match the constraints; when disabled, the key is optional but must still match the constrains if it is present.
 func (o OsServicesDetectionConditionsLinuxLinuxDetectionConditionHostMetadataConditionPtrOutput) KeyMustExist() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *OsServicesDetectionConditionsLinuxLinuxDetectionConditionHostMetadataCondition) *bool {
 		if v == nil {
 			return nil
 		}
-		return v.KeyMustExist
+		return &v.KeyMustExist
 	}).(pulumi.BoolPtrOutput)
 }
 
 // This string has to match a required format.
+//
+//   - `$match(ver*_1.2.?)` – Matches string with wildcards: `*` any number (including zero) of characters and `?` exactly one character.
+//
+//   - `$contains(production)` – Matches if `production` appears anywhere in the host metadata value.
+//
+//   - `$eq(production)` – Matches if `production` matches the host metadata value exactly.
+//
+//   - `$prefix(production)` – Matches if `production` matches the prefix of the host metadata value.
+//
+//   - `$suffix(production)` – Matches if `production` matches the suffix of the host metadata value.
+//
+//     Available logic operations:
+//
+//   - `$not($eq(production))` – Matches if the host metadata value is different from `production`.
+//
+//   - `$and($prefix(production),$suffix(main))` – Matches if host metadata value starts with `production` and ends with `main`.
+//
+//   - `$or($prefix(production),$suffix(main))` – Matches if host metadata value starts with `production` or ends with `main`.
+//
+//     Brackets **(** and **)** that are part of the matched property **must be escaped with a tilde (~)**
 func (o OsServicesDetectionConditionsLinuxLinuxDetectionConditionHostMetadataConditionPtrOutput) MetadataCondition() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *OsServicesDetectionConditionsLinuxLinuxDetectionConditionHostMetadataCondition) *string {
 		if v == nil {
@@ -79035,30 +79566,43 @@ func (o OsServicesDetectionConditionsWindowsPtrOutput) DetectionConditionsWindow
 
 type OsServicesDetectionConditionsWindowsDetectionConditionsWindow struct {
 	// This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
+	//
+	//   - `$match(ip?tables*)` – Matches string with wildcards: `*` any number (including zero) of characters and `?` exactly one character.
+	//  - `$contains(ssh)` – Matches if `ssh` appears anywhere in the service's property value.
+	//  - `$eq(sshd)` – Matches if `sshd` matches the service's property value exactly.
+	//  - `$prefix(ss)` – Matches if `ss` matches the prefix of the service's property value.
+	//  - `$suffix(hd)` – Matches if `hd` matches the suffix of the service's property value.
+	//
+	//   Available logic operations:
+	//  - `$not($eq(sshd))` – Matches if the service's property value is different from `sshd`.
+	//  - `$and($prefix(ss),$suffix(hd))` – Matches if service's property value starts with `ss` and ends with `hd`.
+	//  - `$or($prefix(ss),$suffix(hd))` – Matches if service's property value starts with `ss` or ends with `hd`.
+	//
+	//   Brackets **(** and **)** that are part of the matched property **must be escaped with a tilde (~)**
 	Condition *string `pulumi:"condition"`
-	// Custom metadata
+	// Resource attribute
 	HostMetadataCondition *OsServicesDetectionConditionsWindowsDetectionConditionsWindowHostMetadataCondition `pulumi:"hostMetadataCondition"`
-	// Possible Values: `DisplayName`, `Manufacturer`, `Path`, `ServiceName`, `StartupType`
+	// Service property. Possible values: `DisplayName`, `Manufacturer`, `Path`, `ServiceName`, `StartupType`
 	Property *string `pulumi:"property"`
-	// Possible Values: `RuleTypeHost`, `RuleTypeOsService`
+	// Rule scope. Possible values: `RuleTypeHost`, `RuleTypeOsService`
 	RuleType *string `pulumi:"ruleType"`
 	// This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
 	//
-	// - `$eq(manual)` – Matches services that are started manually.
+	//   - `$eq(manual)` – Matches services that are started manually.
 	//
-	// Available logic operations:
-	// - `$not($eq(auto))` – Matches services with startup type different from Automatic.
-	// - `$or($eq(auto),$eq(manual))` – Matches if service's startup type is either Automatic or Manual.
+	//   Available logic operations:
+	//  - `$not($eq(auto))` – Matches services with startup type different from Automatic.
+	//  - `$or($eq(auto),$eq(manual))` – Matches if service's startup type is either Automatic or Manual.
 	//
-	// Use one of the following values as a parameter for this condition:
+	//   Use one of the following values as a parameter for this condition:
 	//
-	// - `manual` for Manual
-	// - `manualTrigger` for Manual (Trigger Start)
-	// - `auto` for Automatic
-	// - `autoDelay` for Automatic (Delayed Start)
-	// - `autoTrigger` for Automatic (Trigger Start)
-	// - `autoDelayTrigger` for Automatic (Delayed Start, Trigger Start)
-	// - `disabled` for Disabled
+	//   - `manual` for Manual
+	//  - `manualTrigger` for Manual (Trigger Start)
+	//  - `auto` for Automatic
+	//  - `autoDelay` for Automatic (Delayed Start)
+	//  - `autoTrigger` for Automatic (Trigger Start)
+	//  - `autoDelayTrigger` for Automatic (Delayed Start, Trigger Start)
+	//  - `disabled` for Disabled
 	StartupCondition *string `pulumi:"startupCondition"`
 }
 
@@ -79075,30 +79619,43 @@ type OsServicesDetectionConditionsWindowsDetectionConditionsWindowInput interfac
 
 type OsServicesDetectionConditionsWindowsDetectionConditionsWindowArgs struct {
 	// This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
+	//
+	//   - `$match(ip?tables*)` – Matches string with wildcards: `*` any number (including zero) of characters and `?` exactly one character.
+	//  - `$contains(ssh)` – Matches if `ssh` appears anywhere in the service's property value.
+	//  - `$eq(sshd)` – Matches if `sshd` matches the service's property value exactly.
+	//  - `$prefix(ss)` – Matches if `ss` matches the prefix of the service's property value.
+	//  - `$suffix(hd)` – Matches if `hd` matches the suffix of the service's property value.
+	//
+	//   Available logic operations:
+	//  - `$not($eq(sshd))` – Matches if the service's property value is different from `sshd`.
+	//  - `$and($prefix(ss),$suffix(hd))` – Matches if service's property value starts with `ss` and ends with `hd`.
+	//  - `$or($prefix(ss),$suffix(hd))` – Matches if service's property value starts with `ss` or ends with `hd`.
+	//
+	//   Brackets **(** and **)** that are part of the matched property **must be escaped with a tilde (~)**
 	Condition pulumi.StringPtrInput `pulumi:"condition"`
-	// Custom metadata
+	// Resource attribute
 	HostMetadataCondition OsServicesDetectionConditionsWindowsDetectionConditionsWindowHostMetadataConditionPtrInput `pulumi:"hostMetadataCondition"`
-	// Possible Values: `DisplayName`, `Manufacturer`, `Path`, `ServiceName`, `StartupType`
+	// Service property. Possible values: `DisplayName`, `Manufacturer`, `Path`, `ServiceName`, `StartupType`
 	Property pulumi.StringPtrInput `pulumi:"property"`
-	// Possible Values: `RuleTypeHost`, `RuleTypeOsService`
+	// Rule scope. Possible values: `RuleTypeHost`, `RuleTypeOsService`
 	RuleType pulumi.StringPtrInput `pulumi:"ruleType"`
 	// This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
 	//
-	// - `$eq(manual)` – Matches services that are started manually.
+	//   - `$eq(manual)` – Matches services that are started manually.
 	//
-	// Available logic operations:
-	// - `$not($eq(auto))` – Matches services with startup type different from Automatic.
-	// - `$or($eq(auto),$eq(manual))` – Matches if service's startup type is either Automatic or Manual.
+	//   Available logic operations:
+	//  - `$not($eq(auto))` – Matches services with startup type different from Automatic.
+	//  - `$or($eq(auto),$eq(manual))` – Matches if service's startup type is either Automatic or Manual.
 	//
-	// Use one of the following values as a parameter for this condition:
+	//   Use one of the following values as a parameter for this condition:
 	//
-	// - `manual` for Manual
-	// - `manualTrigger` for Manual (Trigger Start)
-	// - `auto` for Automatic
-	// - `autoDelay` for Automatic (Delayed Start)
-	// - `autoTrigger` for Automatic (Trigger Start)
-	// - `autoDelayTrigger` for Automatic (Delayed Start, Trigger Start)
-	// - `disabled` for Disabled
+	//   - `manual` for Manual
+	//  - `manualTrigger` for Manual (Trigger Start)
+	//  - `auto` for Automatic
+	//  - `autoDelay` for Automatic (Delayed Start)
+	//  - `autoTrigger` for Automatic (Trigger Start)
+	//  - `autoDelayTrigger` for Automatic (Delayed Start, Trigger Start)
+	//  - `disabled` for Disabled
 	StartupCondition pulumi.StringPtrInput `pulumi:"startupCondition"`
 }
 
@@ -79154,44 +79711,72 @@ func (o OsServicesDetectionConditionsWindowsDetectionConditionsWindowOutput) ToO
 }
 
 // This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
+//
+//   - `$match(ip?tables*)` – Matches string with wildcards: `*` any number (including zero) of characters and `?` exactly one character.
+//
+//   - `$contains(ssh)` – Matches if `ssh` appears anywhere in the service's property value.
+//
+//   - `$eq(sshd)` – Matches if `sshd` matches the service's property value exactly.
+//
+//   - `$prefix(ss)` – Matches if `ss` matches the prefix of the service's property value.
+//
+//   - `$suffix(hd)` – Matches if `hd` matches the suffix of the service's property value.
+//
+//     Available logic operations:
+//
+//   - `$not($eq(sshd))` – Matches if the service's property value is different from `sshd`.
+//
+//   - `$and($prefix(ss),$suffix(hd))` – Matches if service's property value starts with `ss` and ends with `hd`.
+//
+//   - `$or($prefix(ss),$suffix(hd))` – Matches if service's property value starts with `ss` or ends with `hd`.
+//
+//     Brackets **(** and **)** that are part of the matched property **must be escaped with a tilde (~)**
 func (o OsServicesDetectionConditionsWindowsDetectionConditionsWindowOutput) Condition() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v OsServicesDetectionConditionsWindowsDetectionConditionsWindow) *string { return v.Condition }).(pulumi.StringPtrOutput)
 }
 
-// Custom metadata
+// Resource attribute
 func (o OsServicesDetectionConditionsWindowsDetectionConditionsWindowOutput) HostMetadataCondition() OsServicesDetectionConditionsWindowsDetectionConditionsWindowHostMetadataConditionPtrOutput {
 	return o.ApplyT(func(v OsServicesDetectionConditionsWindowsDetectionConditionsWindow) *OsServicesDetectionConditionsWindowsDetectionConditionsWindowHostMetadataCondition {
 		return v.HostMetadataCondition
 	}).(OsServicesDetectionConditionsWindowsDetectionConditionsWindowHostMetadataConditionPtrOutput)
 }
 
-// Possible Values: `DisplayName`, `Manufacturer`, `Path`, `ServiceName`, `StartupType`
+// Service property. Possible values: `DisplayName`, `Manufacturer`, `Path`, `ServiceName`, `StartupType`
 func (o OsServicesDetectionConditionsWindowsDetectionConditionsWindowOutput) Property() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v OsServicesDetectionConditionsWindowsDetectionConditionsWindow) *string { return v.Property }).(pulumi.StringPtrOutput)
 }
 
-// Possible Values: `RuleTypeHost`, `RuleTypeOsService`
+// Rule scope. Possible values: `RuleTypeHost`, `RuleTypeOsService`
 func (o OsServicesDetectionConditionsWindowsDetectionConditionsWindowOutput) RuleType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v OsServicesDetectionConditionsWindowsDetectionConditionsWindow) *string { return v.RuleType }).(pulumi.StringPtrOutput)
 }
 
 // This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
 //
-// - `$eq(manual)` – Matches services that are started manually.
+//   - `$eq(manual)` – Matches services that are started manually.
 //
-// Available logic operations:
-// - `$not($eq(auto))` – Matches services with startup type different from Automatic.
-// - `$or($eq(auto),$eq(manual))` – Matches if service's startup type is either Automatic or Manual.
+//     Available logic operations:
 //
-// Use one of the following values as a parameter for this condition:
+//   - `$not($eq(auto))` – Matches services with startup type different from Automatic.
 //
-// - `manual` for Manual
-// - `manualTrigger` for Manual (Trigger Start)
-// - `auto` for Automatic
-// - `autoDelay` for Automatic (Delayed Start)
-// - `autoTrigger` for Automatic (Trigger Start)
-// - `autoDelayTrigger` for Automatic (Delayed Start, Trigger Start)
-// - `disabled` for Disabled
+//   - `$or($eq(auto),$eq(manual))` – Matches if service's startup type is either Automatic or Manual.
+//
+//     Use one of the following values as a parameter for this condition:
+//
+//   - `manual` for Manual
+//
+//   - `manualTrigger` for Manual (Trigger Start)
+//
+//   - `auto` for Automatic
+//
+//   - `autoDelay` for Automatic (Delayed Start)
+//
+//   - `autoTrigger` for Automatic (Trigger Start)
+//
+//   - `autoDelayTrigger` for Automatic (Delayed Start, Trigger Start)
+//
+//   - `disabled` for Disabled
 func (o OsServicesDetectionConditionsWindowsDetectionConditionsWindowOutput) StartupCondition() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v OsServicesDetectionConditionsWindowsDetectionConditionsWindow) *string {
 		return v.StartupCondition
@@ -79219,9 +79804,22 @@ func (o OsServicesDetectionConditionsWindowsDetectionConditionsWindowArrayOutput
 }
 
 type OsServicesDetectionConditionsWindowsDetectionConditionsWindowHostMetadataCondition struct {
-	// When enabled, the condition requires a metadata key to exist and match the constraints; when disabled, the key is optional but must still match the constrains if it is present.
-	KeyMustExist *bool `pulumi:"keyMustExist"`
+	// When enabled, the condition requires a resource attribute to exist and match the constraints; when disabled, the key is optional but must still match the constrains if it is present.
+	KeyMustExist bool `pulumi:"keyMustExist"`
 	// This string has to match a required format.
+	//
+	//   - `$match(ver*_1.2.?)` – Matches string with wildcards: `*` any number (including zero) of characters and `?` exactly one character.
+	//  - `$contains(production)` – Matches if `production` appears anywhere in the host metadata value.
+	//  - `$eq(production)` – Matches if `production` matches the host metadata value exactly.
+	//  - `$prefix(production)` – Matches if `production` matches the prefix of the host metadata value.
+	//  - `$suffix(production)` – Matches if `production` matches the suffix of the host metadata value.
+	//
+	//   Available logic operations:
+	//  - `$not($eq(production))` – Matches if the host metadata value is different from `production`.
+	//  - `$and($prefix(production),$suffix(main))` – Matches if host metadata value starts with `production` and ends with `main`.
+	//  - `$or($prefix(production),$suffix(main))` – Matches if host metadata value starts with `production` or ends with `main`.
+	//
+	//   Brackets **(** and **)** that are part of the matched property **must be escaped with a tilde (~)**
 	MetadataCondition string `pulumi:"metadataCondition"`
 	// Key
 	MetadataKey string `pulumi:"metadataKey"`
@@ -79239,9 +79837,22 @@ type OsServicesDetectionConditionsWindowsDetectionConditionsWindowHostMetadataCo
 }
 
 type OsServicesDetectionConditionsWindowsDetectionConditionsWindowHostMetadataConditionArgs struct {
-	// When enabled, the condition requires a metadata key to exist and match the constraints; when disabled, the key is optional but must still match the constrains if it is present.
-	KeyMustExist pulumi.BoolPtrInput `pulumi:"keyMustExist"`
+	// When enabled, the condition requires a resource attribute to exist and match the constraints; when disabled, the key is optional but must still match the constrains if it is present.
+	KeyMustExist pulumi.BoolInput `pulumi:"keyMustExist"`
 	// This string has to match a required format.
+	//
+	//   - `$match(ver*_1.2.?)` – Matches string with wildcards: `*` any number (including zero) of characters and `?` exactly one character.
+	//  - `$contains(production)` – Matches if `production` appears anywhere in the host metadata value.
+	//  - `$eq(production)` – Matches if `production` matches the host metadata value exactly.
+	//  - `$prefix(production)` – Matches if `production` matches the prefix of the host metadata value.
+	//  - `$suffix(production)` – Matches if `production` matches the suffix of the host metadata value.
+	//
+	//   Available logic operations:
+	//  - `$not($eq(production))` – Matches if the host metadata value is different from `production`.
+	//  - `$and($prefix(production),$suffix(main))` – Matches if host metadata value starts with `production` and ends with `main`.
+	//  - `$or($prefix(production),$suffix(main))` – Matches if host metadata value starts with `production` or ends with `main`.
+	//
+	//   Brackets **(** and **)** that are part of the matched property **must be escaped with a tilde (~)**
 	MetadataCondition pulumi.StringInput `pulumi:"metadataCondition"`
 	// Key
 	MetadataKey pulumi.StringInput `pulumi:"metadataKey"`
@@ -79324,14 +79935,34 @@ func (o OsServicesDetectionConditionsWindowsDetectionConditionsWindowHostMetadat
 	}).(OsServicesDetectionConditionsWindowsDetectionConditionsWindowHostMetadataConditionPtrOutput)
 }
 
-// When enabled, the condition requires a metadata key to exist and match the constraints; when disabled, the key is optional but must still match the constrains if it is present.
-func (o OsServicesDetectionConditionsWindowsDetectionConditionsWindowHostMetadataConditionOutput) KeyMustExist() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v OsServicesDetectionConditionsWindowsDetectionConditionsWindowHostMetadataCondition) *bool {
+// When enabled, the condition requires a resource attribute to exist and match the constraints; when disabled, the key is optional but must still match the constrains if it is present.
+func (o OsServicesDetectionConditionsWindowsDetectionConditionsWindowHostMetadataConditionOutput) KeyMustExist() pulumi.BoolOutput {
+	return o.ApplyT(func(v OsServicesDetectionConditionsWindowsDetectionConditionsWindowHostMetadataCondition) bool {
 		return v.KeyMustExist
-	}).(pulumi.BoolPtrOutput)
+	}).(pulumi.BoolOutput)
 }
 
 // This string has to match a required format.
+//
+//   - `$match(ver*_1.2.?)` – Matches string with wildcards: `*` any number (including zero) of characters and `?` exactly one character.
+//
+//   - `$contains(production)` – Matches if `production` appears anywhere in the host metadata value.
+//
+//   - `$eq(production)` – Matches if `production` matches the host metadata value exactly.
+//
+//   - `$prefix(production)` – Matches if `production` matches the prefix of the host metadata value.
+//
+//   - `$suffix(production)` – Matches if `production` matches the suffix of the host metadata value.
+//
+//     Available logic operations:
+//
+//   - `$not($eq(production))` – Matches if the host metadata value is different from `production`.
+//
+//   - `$and($prefix(production),$suffix(main))` – Matches if host metadata value starts with `production` and ends with `main`.
+//
+//   - `$or($prefix(production),$suffix(main))` – Matches if host metadata value starts with `production` or ends with `main`.
+//
+//     Brackets **(** and **)** that are part of the matched property **must be escaped with a tilde (~)**
 func (o OsServicesDetectionConditionsWindowsDetectionConditionsWindowHostMetadataConditionOutput) MetadataCondition() pulumi.StringOutput {
 	return o.ApplyT(func(v OsServicesDetectionConditionsWindowsDetectionConditionsWindowHostMetadataCondition) string {
 		return v.MetadataCondition
@@ -79369,17 +80000,37 @@ func (o OsServicesDetectionConditionsWindowsDetectionConditionsWindowHostMetadat
 	}).(OsServicesDetectionConditionsWindowsDetectionConditionsWindowHostMetadataConditionOutput)
 }
 
-// When enabled, the condition requires a metadata key to exist and match the constraints; when disabled, the key is optional but must still match the constrains if it is present.
+// When enabled, the condition requires a resource attribute to exist and match the constraints; when disabled, the key is optional but must still match the constrains if it is present.
 func (o OsServicesDetectionConditionsWindowsDetectionConditionsWindowHostMetadataConditionPtrOutput) KeyMustExist() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *OsServicesDetectionConditionsWindowsDetectionConditionsWindowHostMetadataCondition) *bool {
 		if v == nil {
 			return nil
 		}
-		return v.KeyMustExist
+		return &v.KeyMustExist
 	}).(pulumi.BoolPtrOutput)
 }
 
 // This string has to match a required format.
+//
+//   - `$match(ver*_1.2.?)` – Matches string with wildcards: `*` any number (including zero) of characters and `?` exactly one character.
+//
+//   - `$contains(production)` – Matches if `production` appears anywhere in the host metadata value.
+//
+//   - `$eq(production)` – Matches if `production` matches the host metadata value exactly.
+//
+//   - `$prefix(production)` – Matches if `production` matches the prefix of the host metadata value.
+//
+//   - `$suffix(production)` – Matches if `production` matches the suffix of the host metadata value.
+//
+//     Available logic operations:
+//
+//   - `$not($eq(production))` – Matches if the host metadata value is different from `production`.
+//
+//   - `$and($prefix(production),$suffix(main))` – Matches if host metadata value starts with `production` and ends with `main`.
+//
+//   - `$or($prefix(production),$suffix(main))` – Matches if host metadata value starts with `production` or ends with `main`.
+//
+//     Brackets **(** and **)** that are part of the matched property **must be escaped with a tilde (~)**
 func (o OsServicesDetectionConditionsWindowsDetectionConditionsWindowHostMetadataConditionPtrOutput) MetadataCondition() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *OsServicesDetectionConditionsWindowsDetectionConditionsWindowHostMetadataCondition) *string {
 		if v == nil {
@@ -79535,7 +80186,7 @@ func (o OsServicesMetadataPtrOutput) Items() OsServicesMetadataItemArrayOutput {
 type OsServicesMetadataItem struct {
 	// Type 'dt.' for key hints.
 	MetadataKey string `pulumi:"metadataKey"`
-	// no documentation available
+	// No documentation available
 	MetadataValue string `pulumi:"metadataValue"`
 }
 
@@ -79553,7 +80204,7 @@ type OsServicesMetadataItemInput interface {
 type OsServicesMetadataItemArgs struct {
 	// Type 'dt.' for key hints.
 	MetadataKey pulumi.StringInput `pulumi:"metadataKey"`
-	// no documentation available
+	// No documentation available
 	MetadataValue pulumi.StringInput `pulumi:"metadataValue"`
 }
 
@@ -79613,7 +80264,7 @@ func (o OsServicesMetadataItemOutput) MetadataKey() pulumi.StringOutput {
 	return o.ApplyT(func(v OsServicesMetadataItem) string { return v.MetadataKey }).(pulumi.StringOutput)
 }
 
-// no documentation available
+// No documentation available
 func (o OsServicesMetadataItemOutput) MetadataValue() pulumi.StringOutput {
 	return o.ApplyT(func(v OsServicesMetadataItem) string { return v.MetadataValue }).(pulumi.StringOutput)
 }
@@ -82062,408 +82713,13 @@ func (o PlatformSloCustomSliFilterSegmentsFilterSegmentArrayOutput) Index(i pulu
 	}).(PlatformSloCustomSliFilterSegmentsFilterSegmentOutput)
 }
 
-type PlatformSloCustomSliFilterSegmentsFilterSegmentVariables struct {
-	FilterSegmentVariables []PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariable `pulumi:"filterSegmentVariables"`
-}
-
-// PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesInput is an input type that accepts PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesArgs and PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesOutput values.
-// You can construct a concrete instance of `PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesInput` via:
-//
-//	PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesArgs{...}
-type PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesInput interface {
-	pulumi.Input
-
-	ToPlatformSloCustomSliFilterSegmentsFilterSegmentVariablesOutput() PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesOutput
-	ToPlatformSloCustomSliFilterSegmentsFilterSegmentVariablesOutputWithContext(context.Context) PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesOutput
-}
-
-type PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesArgs struct {
-	FilterSegmentVariables PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArrayInput `pulumi:"filterSegmentVariables"`
-}
-
-func (PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*PlatformSloCustomSliFilterSegmentsFilterSegmentVariables)(nil)).Elem()
-}
-
-func (i PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesArgs) ToPlatformSloCustomSliFilterSegmentsFilterSegmentVariablesOutput() PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesOutput {
-	return i.ToPlatformSloCustomSliFilterSegmentsFilterSegmentVariablesOutputWithContext(context.Background())
-}
-
-func (i PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesArgs) ToPlatformSloCustomSliFilterSegmentsFilterSegmentVariablesOutputWithContext(ctx context.Context) PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesOutput)
-}
-
-func (i PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesArgs) ToPlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrOutput() PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrOutput {
-	return i.ToPlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrOutputWithContext(context.Background())
-}
-
-func (i PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesArgs) ToPlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrOutputWithContext(ctx context.Context) PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesOutput).ToPlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrOutputWithContext(ctx)
-}
-
-// PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrInput is an input type that accepts PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesArgs, PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtr and PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrOutput values.
-// You can construct a concrete instance of `PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrInput` via:
-//
-//	        PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesArgs{...}
-//
-//	or:
-//
-//	        nil
-type PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrInput interface {
-	pulumi.Input
-
-	ToPlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrOutput() PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrOutput
-	ToPlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrOutputWithContext(context.Context) PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrOutput
-}
-
-type platformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrType PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesArgs
-
-func PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtr(v *PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesArgs) PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrInput {
-	return (*platformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrType)(v)
-}
-
-func (*platformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**PlatformSloCustomSliFilterSegmentsFilterSegmentVariables)(nil)).Elem()
-}
-
-func (i *platformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrType) ToPlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrOutput() PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrOutput {
-	return i.ToPlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrOutputWithContext(context.Background())
-}
-
-func (i *platformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrType) ToPlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrOutputWithContext(ctx context.Context) PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrOutput)
-}
-
-type PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesOutput struct{ *pulumi.OutputState }
-
-func (PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*PlatformSloCustomSliFilterSegmentsFilterSegmentVariables)(nil)).Elem()
-}
-
-func (o PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesOutput) ToPlatformSloCustomSliFilterSegmentsFilterSegmentVariablesOutput() PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesOutput {
-	return o
-}
-
-func (o PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesOutput) ToPlatformSloCustomSliFilterSegmentsFilterSegmentVariablesOutputWithContext(ctx context.Context) PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesOutput {
-	return o
-}
-
-func (o PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesOutput) ToPlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrOutput() PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrOutput {
-	return o.ToPlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrOutputWithContext(context.Background())
-}
-
-func (o PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesOutput) ToPlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrOutputWithContext(ctx context.Context) PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v PlatformSloCustomSliFilterSegmentsFilterSegmentVariables) *PlatformSloCustomSliFilterSegmentsFilterSegmentVariables {
-		return &v
-	}).(PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrOutput)
-}
-
-func (o PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesOutput) FilterSegmentVariables() PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArrayOutput {
-	return o.ApplyT(func(v PlatformSloCustomSliFilterSegmentsFilterSegmentVariables) []PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariable {
-		return v.FilterSegmentVariables
-	}).(PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArrayOutput)
-}
-
-type PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrOutput struct{ *pulumi.OutputState }
-
-func (PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**PlatformSloCustomSliFilterSegmentsFilterSegmentVariables)(nil)).Elem()
-}
-
-func (o PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrOutput) ToPlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrOutput() PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrOutput {
-	return o
-}
-
-func (o PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrOutput) ToPlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrOutputWithContext(ctx context.Context) PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrOutput {
-	return o
-}
-
-func (o PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrOutput) Elem() PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesOutput {
-	return o.ApplyT(func(v *PlatformSloCustomSliFilterSegmentsFilterSegmentVariables) PlatformSloCustomSliFilterSegmentsFilterSegmentVariables {
-		if v != nil {
-			return *v
-		}
-		var ret PlatformSloCustomSliFilterSegmentsFilterSegmentVariables
-		return ret
-	}).(PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesOutput)
-}
-
-func (o PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrOutput) FilterSegmentVariables() PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArrayOutput {
-	return o.ApplyT(func(v *PlatformSloCustomSliFilterSegmentsFilterSegmentVariables) []PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariable {
-		if v == nil {
-			return nil
-		}
-		return v.FilterSegmentVariables
-	}).(PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArrayOutput)
-}
-
-type PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariable struct {
-	// Name of the filter segment variable
-	Name string `pulumi:"name"`
-	// Values of the filter segment variable
-	Values []string `pulumi:"values"`
-}
-
-// PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableInput is an input type that accepts PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArgs and PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableOutput values.
-// You can construct a concrete instance of `PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableInput` via:
-//
-//	PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArgs{...}
-type PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableInput interface {
-	pulumi.Input
-
-	ToPlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableOutput() PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableOutput
-	ToPlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableOutputWithContext(context.Context) PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableOutput
-}
-
-type PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArgs struct {
-	// Name of the filter segment variable
-	Name pulumi.StringInput `pulumi:"name"`
-	// Values of the filter segment variable
-	Values pulumi.StringArrayInput `pulumi:"values"`
-}
-
-func (PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariable)(nil)).Elem()
-}
-
-func (i PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArgs) ToPlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableOutput() PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableOutput {
-	return i.ToPlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableOutputWithContext(context.Background())
-}
-
-func (i PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArgs) ToPlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableOutputWithContext(ctx context.Context) PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableOutput)
-}
-
-// PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArrayInput is an input type that accepts PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArray and PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArrayOutput values.
-// You can construct a concrete instance of `PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArrayInput` via:
-//
-//	PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArray{ PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArgs{...} }
-type PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArrayInput interface {
-	pulumi.Input
-
-	ToPlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArrayOutput() PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArrayOutput
-	ToPlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArrayOutputWithContext(context.Context) PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArrayOutput
-}
-
-type PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArray []PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableInput
-
-func (PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariable)(nil)).Elem()
-}
-
-func (i PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArray) ToPlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArrayOutput() PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArrayOutput {
-	return i.ToPlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArrayOutputWithContext(context.Background())
-}
-
-func (i PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArray) ToPlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArrayOutputWithContext(ctx context.Context) PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArrayOutput)
-}
-
-type PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableOutput struct{ *pulumi.OutputState }
-
-func (PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariable)(nil)).Elem()
-}
-
-func (o PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableOutput) ToPlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableOutput() PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableOutput {
-	return o
-}
-
-func (o PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableOutput) ToPlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableOutputWithContext(ctx context.Context) PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableOutput {
-	return o
-}
-
-// Name of the filter segment variable
-func (o PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariable) string {
-		return v.Name
-	}).(pulumi.StringOutput)
-}
-
-// Values of the filter segment variable
-func (o PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableOutput) Values() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariable) []string {
-		return v.Values
-	}).(pulumi.StringArrayOutput)
-}
-
-type PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArrayOutput struct{ *pulumi.OutputState }
-
-func (PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariable)(nil)).Elem()
-}
-
-func (o PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArrayOutput) ToPlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArrayOutput() PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArrayOutput {
-	return o
-}
-
-func (o PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArrayOutput) ToPlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArrayOutputWithContext(ctx context.Context) PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArrayOutput {
-	return o
-}
-
-func (o PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArrayOutput) Index(i pulumi.IntInput) PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariable {
-		return vs[0].([]PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariable)[vs[1].(int)]
-	}).(PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableOutput)
-}
-
-type PlatformSloSliReference struct {
-	// Template ID of the SLI reference
-	TemplateId string `pulumi:"templateId"`
-	// Variables of the SLI reference
-	Variables PlatformSloSliReferenceVariables `pulumi:"variables"`
-}
-
-// PlatformSloSliReferenceInput is an input type that accepts PlatformSloSliReferenceArgs and PlatformSloSliReferenceOutput values.
-// You can construct a concrete instance of `PlatformSloSliReferenceInput` via:
-//
-//	PlatformSloSliReferenceArgs{...}
-type PlatformSloSliReferenceInput interface {
-	pulumi.Input
-
-	ToPlatformSloSliReferenceOutput() PlatformSloSliReferenceOutput
-	ToPlatformSloSliReferenceOutputWithContext(context.Context) PlatformSloSliReferenceOutput
-}
-
-type PlatformSloSliReferenceArgs struct {
-	// Template ID of the SLI reference
-	TemplateId pulumi.StringInput `pulumi:"templateId"`
-	// Variables of the SLI reference
-	Variables PlatformSloSliReferenceVariablesInput `pulumi:"variables"`
-}
-
-func (PlatformSloSliReferenceArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*PlatformSloSliReference)(nil)).Elem()
-}
-
-func (i PlatformSloSliReferenceArgs) ToPlatformSloSliReferenceOutput() PlatformSloSliReferenceOutput {
-	return i.ToPlatformSloSliReferenceOutputWithContext(context.Background())
-}
-
-func (i PlatformSloSliReferenceArgs) ToPlatformSloSliReferenceOutputWithContext(ctx context.Context) PlatformSloSliReferenceOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(PlatformSloSliReferenceOutput)
-}
-
-func (i PlatformSloSliReferenceArgs) ToPlatformSloSliReferencePtrOutput() PlatformSloSliReferencePtrOutput {
-	return i.ToPlatformSloSliReferencePtrOutputWithContext(context.Background())
-}
-
-func (i PlatformSloSliReferenceArgs) ToPlatformSloSliReferencePtrOutputWithContext(ctx context.Context) PlatformSloSliReferencePtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(PlatformSloSliReferenceOutput).ToPlatformSloSliReferencePtrOutputWithContext(ctx)
-}
-
-// PlatformSloSliReferencePtrInput is an input type that accepts PlatformSloSliReferenceArgs, PlatformSloSliReferencePtr and PlatformSloSliReferencePtrOutput values.
-// You can construct a concrete instance of `PlatformSloSliReferencePtrInput` via:
-//
-//	        PlatformSloSliReferenceArgs{...}
-//
-//	or:
-//
-//	        nil
-type PlatformSloSliReferencePtrInput interface {
-	pulumi.Input
-
-	ToPlatformSloSliReferencePtrOutput() PlatformSloSliReferencePtrOutput
-	ToPlatformSloSliReferencePtrOutputWithContext(context.Context) PlatformSloSliReferencePtrOutput
-}
-
-type platformSloSliReferencePtrType PlatformSloSliReferenceArgs
-
-func PlatformSloSliReferencePtr(v *PlatformSloSliReferenceArgs) PlatformSloSliReferencePtrInput {
-	return (*platformSloSliReferencePtrType)(v)
-}
-
-func (*platformSloSliReferencePtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**PlatformSloSliReference)(nil)).Elem()
-}
-
-func (i *platformSloSliReferencePtrType) ToPlatformSloSliReferencePtrOutput() PlatformSloSliReferencePtrOutput {
-	return i.ToPlatformSloSliReferencePtrOutputWithContext(context.Background())
-}
-
-func (i *platformSloSliReferencePtrType) ToPlatformSloSliReferencePtrOutputWithContext(ctx context.Context) PlatformSloSliReferencePtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(PlatformSloSliReferencePtrOutput)
-}
-
-type PlatformSloSliReferenceOutput struct{ *pulumi.OutputState }
-
-func (PlatformSloSliReferenceOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*PlatformSloSliReference)(nil)).Elem()
-}
-
-func (o PlatformSloSliReferenceOutput) ToPlatformSloSliReferenceOutput() PlatformSloSliReferenceOutput {
-	return o
-}
-
-func (o PlatformSloSliReferenceOutput) ToPlatformSloSliReferenceOutputWithContext(ctx context.Context) PlatformSloSliReferenceOutput {
-	return o
-}
-
-func (o PlatformSloSliReferenceOutput) ToPlatformSloSliReferencePtrOutput() PlatformSloSliReferencePtrOutput {
-	return o.ToPlatformSloSliReferencePtrOutputWithContext(context.Background())
-}
-
-func (o PlatformSloSliReferenceOutput) ToPlatformSloSliReferencePtrOutputWithContext(ctx context.Context) PlatformSloSliReferencePtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v PlatformSloSliReference) *PlatformSloSliReference {
-		return &v
-	}).(PlatformSloSliReferencePtrOutput)
-}
-
-// Template ID of the SLI reference
-func (o PlatformSloSliReferenceOutput) TemplateId() pulumi.StringOutput {
-	return o.ApplyT(func(v PlatformSloSliReference) string { return v.TemplateId }).(pulumi.StringOutput)
-}
-
-// Variables of the SLI reference
-func (o PlatformSloSliReferenceOutput) Variables() PlatformSloSliReferenceVariablesOutput {
-	return o.ApplyT(func(v PlatformSloSliReference) PlatformSloSliReferenceVariables { return v.Variables }).(PlatformSloSliReferenceVariablesOutput)
-}
-
-type PlatformSloSliReferencePtrOutput struct{ *pulumi.OutputState }
-
-func (PlatformSloSliReferencePtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**PlatformSloSliReference)(nil)).Elem()
-}
-
-func (o PlatformSloSliReferencePtrOutput) ToPlatformSloSliReferencePtrOutput() PlatformSloSliReferencePtrOutput {
-	return o
-}
-
-func (o PlatformSloSliReferencePtrOutput) ToPlatformSloSliReferencePtrOutputWithContext(ctx context.Context) PlatformSloSliReferencePtrOutput {
-	return o
-}
-
-func (o PlatformSloSliReferencePtrOutput) Elem() PlatformSloSliReferenceOutput {
-	return o.ApplyT(func(v *PlatformSloSliReference) PlatformSloSliReference {
-		if v != nil {
-			return *v
-		}
-		var ret PlatformSloSliReference
-		return ret
-	}).(PlatformSloSliReferenceOutput)
-}
-
-// Template ID of the SLI reference
-func (o PlatformSloSliReferencePtrOutput) TemplateId() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *PlatformSloSliReference) *string {
-		if v == nil {
-			return nil
-		}
-		return &v.TemplateId
-	}).(pulumi.StringPtrOutput)
-}
-
-// Variables of the SLI reference
-func (o PlatformSloSliReferencePtrOutput) Variables() PlatformSloSliReferenceVariablesPtrOutput {
-	return o.ApplyT(func(v *PlatformSloSliReference) *PlatformSloSliReferenceVariables {
-		if v == nil {
-			return nil
-		}
-		return &v.Variables
-	}).(PlatformSloSliReferenceVariablesPtrOutput)
-}
-
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameInput)(nil)).Elem(), OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenamePtrInput)(nil)).Elem(), OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsInput)(nil)).Elem(), OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsPtrInput)(nil)).Elem(), OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsFieldInput)(nil)).Elem(), OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsFieldArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsFieldArrayInput)(nil)).Elem(), OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsFieldArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorGeoLookupInput)(nil)).Elem(), OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorGeoLookupArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorGeoLookupPtrInput)(nil)).Elem(), OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorGeoLookupArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorHistogramMetricInput)(nil)).Elem(), OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorHistogramMetricArgs{})
@@ -83458,12 +83714,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*PlatformSloCustomSliFilterSegmentsPtrInput)(nil)).Elem(), PlatformSloCustomSliFilterSegmentsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PlatformSloCustomSliFilterSegmentsFilterSegmentInput)(nil)).Elem(), PlatformSloCustomSliFilterSegmentsFilterSegmentArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PlatformSloCustomSliFilterSegmentsFilterSegmentArrayInput)(nil)).Elem(), PlatformSloCustomSliFilterSegmentsFilterSegmentArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesInput)(nil)).Elem(), PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrInput)(nil)).Elem(), PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableInput)(nil)).Elem(), PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArrayInput)(nil)).Elem(), PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*PlatformSloSliReferenceInput)(nil)).Elem(), PlatformSloSliReferenceArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*PlatformSloSliReferencePtrInput)(nil)).Elem(), PlatformSloSliReferenceArgs{})
+	pulumi.RegisterOutputType(OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameOutput{})
+	pulumi.RegisterOutputType(OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenamePtrOutput{})
+	pulumi.RegisterOutputType(OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsOutput{})
+	pulumi.RegisterOutputType(OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsPtrOutput{})
+	pulumi.RegisterOutputType(OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsFieldOutput{})
+	pulumi.RegisterOutputType(OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorFieldsRenameFieldsFieldArrayOutput{})
 	pulumi.RegisterOutputType(OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorGeoLookupOutput{})
 	pulumi.RegisterOutputType(OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorGeoLookupPtrOutput{})
 	pulumi.RegisterOutputType(OpenpipelineV2UsersessionsPipelinesProcessingProcessorsProcessorHistogramMetricOutput{})
@@ -84458,10 +84714,4 @@ func init() {
 	pulumi.RegisterOutputType(PlatformSloCustomSliFilterSegmentsPtrOutput{})
 	pulumi.RegisterOutputType(PlatformSloCustomSliFilterSegmentsFilterSegmentOutput{})
 	pulumi.RegisterOutputType(PlatformSloCustomSliFilterSegmentsFilterSegmentArrayOutput{})
-	pulumi.RegisterOutputType(PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesOutput{})
-	pulumi.RegisterOutputType(PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrOutput{})
-	pulumi.RegisterOutputType(PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableOutput{})
-	pulumi.RegisterOutputType(PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArrayOutput{})
-	pulumi.RegisterOutputType(PlatformSloSliReferenceOutput{})
-	pulumi.RegisterOutputType(PlatformSloSliReferencePtrOutput{})
 }

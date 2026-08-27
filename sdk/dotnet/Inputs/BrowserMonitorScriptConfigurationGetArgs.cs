@@ -45,8 +45,8 @@ namespace Pulumiverse.Dynatrace.Inputs
 
         /// <summary>
         /// The emulated device of the monitor—holds either the parameters of the custom device or the name and orientation of the preconfigured device.
-        /// 
-        /// If not set, then the Desktop preconfigured device is used
+        ///   
+        ///   If not set, then the Desktop preconfigured device is used
         /// </summary>
         [Input("device")]
         public Input<Inputs.BrowserMonitorScriptConfigurationDeviceGetArgs>? Device { get; set; }

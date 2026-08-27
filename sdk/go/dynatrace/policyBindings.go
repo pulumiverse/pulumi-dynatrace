@@ -55,10 +55,10 @@ import (
 //				return err
 //			}
 //			_, err = dynatrace.NewPolicyBindings(ctx, "env_bindings", &dynatrace.PolicyBindingsArgs{
-//				Group:       myGroup.ID(),
+//				Group:       myGroup.ID().ToIDOutput().ToStringOutput(),
 //				Environment: pulumi.String("########-####-####-####-############"),
 //				Policies: pulumi.StringArray{
-//					envPolicy.ID(),
+//					envPolicy.ID().ToIDOutput().ToStringOutput(),
 //				},
 //			})
 //			if err != nil {
@@ -73,10 +73,10 @@ import (
 //				return err
 //			}
 //			_, err = dynatrace.NewPolicyBindings(ctx, "cluster_bindings", &dynatrace.PolicyBindingsArgs{
-//				Group:   myGroup.ID(),
+//				Group:   myGroup.ID().ToIDOutput().ToStringOutput(),
 //				Cluster: pulumi.String("########-####-####-####-############"),
 //				Policies: pulumi.StringArray{
-//					clusterPolicy.ID(),
+//					clusterPolicy.ID().ToIDOutput().ToStringOutput(),
 //				},
 //			})
 //			if err != nil {

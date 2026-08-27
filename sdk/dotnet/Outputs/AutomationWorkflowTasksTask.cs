@@ -31,6 +31,10 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly Outputs.AutomationWorkflowTasksTaskConditions? Conditions;
         /// <summary>
+        /// A stored sample result for this task as JSON. Not used during execution - it powers expression auto-complete and result preview in the Dynatrace UI. Accepts any JSON value
+        /// </summary>
+        public readonly string? CustomSampleResult;
+        /// <summary>
         /// A description for this task
         /// </summary>
         public readonly string? Description;
@@ -73,6 +77,8 @@ namespace Pulumiverse.Dynatrace.Outputs
 
             Outputs.AutomationWorkflowTasksTaskConditions? conditions,
 
+            string? customSampleResult,
+
             string? description,
 
             string? input,
@@ -93,6 +99,7 @@ namespace Pulumiverse.Dynatrace.Outputs
             Active = active;
             Concurrency = concurrency;
             Conditions = conditions;
+            CustomSampleResult = customSampleResult;
             Description = description;
             Input = input;
             Name = name;

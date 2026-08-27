@@ -14,13 +14,26 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class OsServicesDetectionConditionsWindowsDetectionConditionsWindowHostMetadataConditionArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// When enabled, the condition requires a metadata key to exist and match the constraints; when disabled, the key is optional but must still match the constrains if it is present.
+        /// When enabled, the condition requires a resource attribute to exist and match the constraints; when disabled, the key is optional but must still match the constrains if it is present.
         /// </summary>
-        [Input("keyMustExist")]
-        public Input<bool>? KeyMustExist { get; set; }
+        [Input("keyMustExist", required: true)]
+        public Input<bool> KeyMustExist { get; set; } = null!;
 
         /// <summary>
         /// This string has to match a required format.
+        /// 
+        ///   - `$match(ver*_1.2.?)` – Matches string with wildcards: `*` any number (including zero) of characters and `?` exactly one character.
+        ///  - `$contains(production)` – Matches if `Production` appears anywhere in the host metadata value.
+        ///  - `$eq(production)` – Matches if `Production` matches the host metadata value exactly.
+        ///  - `$prefix(production)` – Matches if `Production` matches the prefix of the host metadata value.
+        ///  - `$suffix(production)` – Matches if `Production` matches the suffix of the host metadata value.
+        /// 
+        ///   Available logic operations:
+        ///  - `$not($eq(production))` – Matches if the host metadata value is different from `Production`.
+        ///  - `$and($prefix(production),$suffix(main))` – Matches if host metadata value starts with `Production` and ends with `Main`.
+        ///  - `$or($prefix(production),$suffix(main))` – Matches if host metadata value starts with `Production` or ends with `Main`.
+        /// 
+        ///   Brackets **(** and **)** that are part of the matched property **must be escaped with a tilde (~)**
         /// </summary>
         [Input("metadataCondition", required: true)]
         public Input<string> MetadataCondition { get; set; } = null!;

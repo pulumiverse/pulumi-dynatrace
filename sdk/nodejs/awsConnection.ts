@@ -73,9 +73,9 @@ import * as utilities from "./utilities";
  *             },
  *             Action: "sts:AssumeRoleWithWebIdentity",
  *             Condition: {
- *                 StringEquals: pulumi.all([dynatrace_oidc_provider.url, test_aws_connection.id, dynatrace_oidc_provider.url]).apply(([dynatrace-oidc-providerUrl, id, dynatrace-oidc-providerUrl1]) => {
- *                     [`${dynatrace_oidc_providerUrl}:sub`]: `dt:connection-id/${id}`,
- *                     [`${dynatrace_oidc_providerUrl1}:aud`]: "<TENANT_URL>/app-id/dynatrace.aws.connector",
+ *                 StringEquals: pulumi.all([dynatrace_oidc_provider.url, test_aws_connection.id]).apply(([url, id]) => {
+ *                     [`${url}:sub`]: `dt:connection-id/${id}`,
+ *                     [`${url}:aud`]: "<TENANT_URL>/app-id/dynatrace.aws.connector",
  *                 }),
  *             },
  *         }],

@@ -44,7 +44,7 @@ import (
 //			if err != nil {
 //				return err
 //			}
-//			tmpJSON0, err := json.Marshal(map[string]interface{}{
+//			tmpJSON0, err := json.Marshal(map[string]string{
 //				"method": "GET",
 //				"url":    "https://www.example.com/",
 //			})
@@ -52,7 +52,7 @@ import (
 //				return err
 //			}
 //			json0 := string(tmpJSON0)
-//			tmpJSON1, err := json.Marshal(map[string]interface{}{
+//			tmpJSON1, err := json.Marshal(map[string]string{
 //				"method": "GET",
 //				"url":    "https://www.example.com/",
 //			})
@@ -60,7 +60,7 @@ import (
 //				return err
 //			}
 //			json1 := string(tmpJSON1)
-//			tmpJSON2, err := json.Marshal(map[string]interface{}{
+//			tmpJSON2, err := json.Marshal(map[string]string{
 //				"method": "GET",
 //				"url":    "https://www.example.com",
 //			})
@@ -68,7 +68,7 @@ import (
 //				return err
 //			}
 //			json2 := string(tmpJSON2)
-//			tmpJSON3, err := json.Marshal(map[string]interface{}{
+//			tmpJSON3, err := json.Marshal(map[string]string{
 //				"script": `// optional import of sdk modules
 //
 // import { execution } from '@dynatrace-sdk/automation-utils';
@@ -89,8 +89,8 @@ import (
 //			json3 := string(tmpJSON3)
 //			_, err = dynatrace.NewAutomationWorkflow(ctx, "workflow_with_davis_event_trigger", &dynatrace.AutomationWorkflowArgs{
 //				Description: pulumi.String("Desc"),
-//				Actor:       wfUser.ID(),
-//				Owner:       wfUser.ID(),
+//				Actor:       wfUser.ID().ToIDOutput().ToStringOutput(),
+//				Owner:       wfUser.ID().ToIDOutput().ToStringOutput(),
 //				Private:     pulumi.Bool(false),
 //				Title:       pulumi.String("#name#"),
 //				Tasks: &dynatrace.AutomationWorkflowTasksArgs{
@@ -168,9 +168,11 @@ import (
 //								EntityTags: pulumi.StringMap{
 //									"asdf": pulumi.String(""),
 //								},
-//								EntityTagsMatch: pulumi.String("all"),
-//								OnProblemClose:  pulumi.Bool(false),
-//								CustomFilter:    pulumi.String("matchesPhrase(custom.event.type, \"DEPLOY\")"),
+//								EntityTagsMatch:                  pulumi.String("all"),
+//								OnProblemClose:                   pulumi.Bool(false),
+//								TriggerOn:                        pulumi.String("open"),
+//								MaintenanceWindowTriggerBehavior: pulumi.String("inside"),
+//								CustomFilter:                     pulumi.String("matchesPhrase(custom.event.type, \"DEPLOY\")"),
 //							},
 //						},
 //					},
@@ -209,12 +211,16 @@ type AutomationWorkflow struct {
 	Result pulumi.StringPtrOutput `pulumi:"result"`
 	// The tasks to run for every execution of this workflow. Note: the order in which tasks are declared in HCL does not determine their layout - positions are not assigned incrementally based on declaration order. Set `position` explicitly on each task if you need a deterministic layout
 	Tasks AutomationWorkflowTasksOutput `pulumi:"tasks"`
+	// Execution throttling state for the workflow. Server-computed - see `isLimitHit`. Set only to reset an active throttle
+	Throttle AutomationWorkflowThrottleOutput `pulumi:"throttle"`
 	// The title / name of the workflow
 	Title pulumi.StringOutput `pulumi:"title"`
 	// Configures how executions of the workflows are getting triggered. If no trigger is specified it means the workflow is getting manually triggered
 	Trigger AutomationWorkflowTriggerPtrOutput `pulumi:"trigger"`
 	// The type of the workflow. Possible values are `STANDARD` and `SIMPLE`. Defaults to `STANDARD`. Workflows of type `SIMPLE` are allowed to contain only one action
 	Type pulumi.StringPtrOutput `pulumi:"type"`
+	// Timestamp of the earliest schedule that was skipped and not yet acknowledged
+	UnacknowledgedSkippedScheduleAt pulumi.StringOutput `pulumi:"unacknowledgedSkippedScheduleAt"`
 }
 
 // NewAutomationWorkflow registers a new resource with the given unique name, arguments, and options.
@@ -275,12 +281,16 @@ type automationWorkflowState struct {
 	Result *string `pulumi:"result"`
 	// The tasks to run for every execution of this workflow. Note: the order in which tasks are declared in HCL does not determine their layout - positions are not assigned incrementally based on declaration order. Set `position` explicitly on each task if you need a deterministic layout
 	Tasks *AutomationWorkflowTasks `pulumi:"tasks"`
+	// Execution throttling state for the workflow. Server-computed - see `isLimitHit`. Set only to reset an active throttle
+	Throttle *AutomationWorkflowThrottle `pulumi:"throttle"`
 	// The title / name of the workflow
 	Title *string `pulumi:"title"`
 	// Configures how executions of the workflows are getting triggered. If no trigger is specified it means the workflow is getting manually triggered
 	Trigger *AutomationWorkflowTrigger `pulumi:"trigger"`
 	// The type of the workflow. Possible values are `STANDARD` and `SIMPLE`. Defaults to `STANDARD`. Workflows of type `SIMPLE` are allowed to contain only one action
 	Type *string `pulumi:"type"`
+	// Timestamp of the earliest schedule that was skipped and not yet acknowledged
+	UnacknowledgedSkippedScheduleAt *string `pulumi:"unacknowledgedSkippedScheduleAt"`
 }
 
 type AutomationWorkflowState struct {
@@ -306,12 +316,16 @@ type AutomationWorkflowState struct {
 	Result pulumi.StringPtrInput
 	// The tasks to run for every execution of this workflow. Note: the order in which tasks are declared in HCL does not determine their layout - positions are not assigned incrementally based on declaration order. Set `position` explicitly on each task if you need a deterministic layout
 	Tasks AutomationWorkflowTasksPtrInput
+	// Execution throttling state for the workflow. Server-computed - see `isLimitHit`. Set only to reset an active throttle
+	Throttle AutomationWorkflowThrottlePtrInput
 	// The title / name of the workflow
 	Title pulumi.StringPtrInput
 	// Configures how executions of the workflows are getting triggered. If no trigger is specified it means the workflow is getting manually triggered
 	Trigger AutomationWorkflowTriggerPtrInput
 	// The type of the workflow. Possible values are `STANDARD` and `SIMPLE`. Defaults to `STANDARD`. Workflows of type `SIMPLE` are allowed to contain only one action
 	Type pulumi.StringPtrInput
+	// Timestamp of the earliest schedule that was skipped and not yet acknowledged
+	UnacknowledgedSkippedScheduleAt pulumi.StringPtrInput
 }
 
 func (AutomationWorkflowState) ElementType() reflect.Type {
@@ -341,6 +355,8 @@ type automationWorkflowArgs struct {
 	Result *string `pulumi:"result"`
 	// The tasks to run for every execution of this workflow. Note: the order in which tasks are declared in HCL does not determine their layout - positions are not assigned incrementally based on declaration order. Set `position` explicitly on each task if you need a deterministic layout
 	Tasks AutomationWorkflowTasks `pulumi:"tasks"`
+	// Execution throttling state for the workflow. Server-computed - see `isLimitHit`. Set only to reset an active throttle
+	Throttle *AutomationWorkflowThrottle `pulumi:"throttle"`
 	// The title / name of the workflow
 	Title string `pulumi:"title"`
 	// Configures how executions of the workflows are getting triggered. If no trigger is specified it means the workflow is getting manually triggered
@@ -373,6 +389,8 @@ type AutomationWorkflowArgs struct {
 	Result pulumi.StringPtrInput
 	// The tasks to run for every execution of this workflow. Note: the order in which tasks are declared in HCL does not determine their layout - positions are not assigned incrementally based on declaration order. Set `position` explicitly on each task if you need a deterministic layout
 	Tasks AutomationWorkflowTasksInput
+	// Execution throttling state for the workflow. Server-computed - see `isLimitHit`. Set only to reset an active throttle
+	Throttle AutomationWorkflowThrottlePtrInput
 	// The title / name of the workflow
 	Title pulumi.StringInput
 	// Configures how executions of the workflows are getting triggered. If no trigger is specified it means the workflow is getting manually triggered
@@ -523,6 +541,11 @@ func (o AutomationWorkflowOutput) Tasks() AutomationWorkflowTasksOutput {
 	return o.ApplyT(func(v *AutomationWorkflow) AutomationWorkflowTasksOutput { return v.Tasks }).(AutomationWorkflowTasksOutput)
 }
 
+// Execution throttling state for the workflow. Server-computed - see `isLimitHit`. Set only to reset an active throttle
+func (o AutomationWorkflowOutput) Throttle() AutomationWorkflowThrottleOutput {
+	return o.ApplyT(func(v *AutomationWorkflow) AutomationWorkflowThrottleOutput { return v.Throttle }).(AutomationWorkflowThrottleOutput)
+}
+
 // The title / name of the workflow
 func (o AutomationWorkflowOutput) Title() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutomationWorkflow) pulumi.StringOutput { return v.Title }).(pulumi.StringOutput)
@@ -536,6 +559,11 @@ func (o AutomationWorkflowOutput) Trigger() AutomationWorkflowTriggerPtrOutput {
 // The type of the workflow. Possible values are `STANDARD` and `SIMPLE`. Defaults to `STANDARD`. Workflows of type `SIMPLE` are allowed to contain only one action
 func (o AutomationWorkflowOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *AutomationWorkflow) pulumi.StringPtrOutput { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+// Timestamp of the earliest schedule that was skipped and not yet acknowledged
+func (o AutomationWorkflowOutput) UnacknowledgedSkippedScheduleAt() pulumi.StringOutput {
+	return o.ApplyT(func(v *AutomationWorkflow) pulumi.StringOutput { return v.UnacknowledgedSkippedScheduleAt }).(pulumi.StringOutput)
 }
 
 type AutomationWorkflowArrayOutput struct{ *pulumi.OutputState }

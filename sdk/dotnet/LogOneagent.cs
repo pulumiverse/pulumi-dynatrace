@@ -29,6 +29,12 @@ namespace Pulumiverse.Dynatrace
     public partial class LogOneagent : global::Pulumi.CustomResource
     {
         /// <summary>
+        /// Specifies the granularity at which binary log files are detected. 'Per log source' applies binary detection at the log source level, 'Per log file' evaluates each log file individually. Possible values: `BinaryPerLogFile`, `BinaryPerLogSource`
+        /// </summary>
+        [Output("binaryDetectionMode")]
+        public Output<string?> BinaryDetectionMode { get; private set; } = null!;
+
+        /// <summary>
         /// Enables automatic detection of timezone in container's logs if it is not explicitly defined in content or configured.
         /// </summary>
         [Output("containerTimezoneHeuristicEnabled")]
@@ -65,7 +71,7 @@ namespace Pulumiverse.Dynatrace
         public Output<bool> IisdetectionEnabled { get; private set; } = null!;
 
         /// <summary>
-        /// Allows detection of logs written to mounted network storage drives. Applies only to Linux hosts. For other OSes it's always enabled.
+        /// Allows detection of logs written to mounted network storage drives. Applies only to Linux hosts. For Windows operating system it's always enabled.
         /// </summary>
         [Output("logScannerLinuxNfsEnabled")]
         public Output<bool> LogScannerLinuxNfsEnabled { get; private set; } = null!;
@@ -83,7 +89,7 @@ namespace Pulumiverse.Dynatrace
         public Output<int> MinBinaryDetectionLimitBytes { get; private set; } = null!;
 
         /// <summary>
-        /// Enabling this option may affect your licensing costs. For more details, see [documentation](https://dt-url.net/4l02yi8).
+        /// Enabling this option may affect your licensing costs. For more details, see [documentation](https://dt-url.net/7v02z76).
         /// </summary>
         [Output("monitorOwnLogsEnabled")]
         public Output<bool> MonitorOwnLogsEnabled { get; private set; } = null!;
@@ -166,6 +172,12 @@ namespace Pulumiverse.Dynatrace
     public sealed class LogOneagentArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// Specifies the granularity at which binary log files are detected. 'Per log source' applies binary detection at the log source level, 'Per log file' evaluates each log file individually. Possible values: `BinaryPerLogFile`, `BinaryPerLogSource`
+        /// </summary>
+        [Input("binaryDetectionMode")]
+        public Input<string>? BinaryDetectionMode { get; set; }
+
+        /// <summary>
         /// Enables automatic detection of timezone in container's logs if it is not explicitly defined in content or configured.
         /// </summary>
         [Input("containerTimezoneHeuristicEnabled", required: true)]
@@ -202,7 +214,7 @@ namespace Pulumiverse.Dynatrace
         public Input<bool> IisdetectionEnabled { get; set; } = null!;
 
         /// <summary>
-        /// Allows detection of logs written to mounted network storage drives. Applies only to Linux hosts. For other OSes it's always enabled.
+        /// Allows detection of logs written to mounted network storage drives. Applies only to Linux hosts. For Windows operating system it's always enabled.
         /// </summary>
         [Input("logScannerLinuxNfsEnabled", required: true)]
         public Input<bool> LogScannerLinuxNfsEnabled { get; set; } = null!;
@@ -220,7 +232,7 @@ namespace Pulumiverse.Dynatrace
         public Input<int> MinBinaryDetectionLimitBytes { get; set; } = null!;
 
         /// <summary>
-        /// Enabling this option may affect your licensing costs. For more details, see [documentation](https://dt-url.net/4l02yi8).
+        /// Enabling this option may affect your licensing costs. For more details, see [documentation](https://dt-url.net/7v02z76).
         /// </summary>
         [Input("monitorOwnLogsEnabled", required: true)]
         public Input<bool> MonitorOwnLogsEnabled { get; set; } = null!;
@@ -264,6 +276,12 @@ namespace Pulumiverse.Dynatrace
     public sealed class LogOneagentState : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// Specifies the granularity at which binary log files are detected. 'Per log source' applies binary detection at the log source level, 'Per log file' evaluates each log file individually. Possible values: `BinaryPerLogFile`, `BinaryPerLogSource`
+        /// </summary>
+        [Input("binaryDetectionMode")]
+        public Input<string>? BinaryDetectionMode { get; set; }
+
+        /// <summary>
         /// Enables automatic detection of timezone in container's logs if it is not explicitly defined in content or configured.
         /// </summary>
         [Input("containerTimezoneHeuristicEnabled")]
@@ -300,7 +318,7 @@ namespace Pulumiverse.Dynatrace
         public Input<bool>? IisdetectionEnabled { get; set; }
 
         /// <summary>
-        /// Allows detection of logs written to mounted network storage drives. Applies only to Linux hosts. For other OSes it's always enabled.
+        /// Allows detection of logs written to mounted network storage drives. Applies only to Linux hosts. For Windows operating system it's always enabled.
         /// </summary>
         [Input("logScannerLinuxNfsEnabled")]
         public Input<bool>? LogScannerLinuxNfsEnabled { get; set; }
@@ -318,7 +336,7 @@ namespace Pulumiverse.Dynatrace
         public Input<int>? MinBinaryDetectionLimitBytes { get; set; }
 
         /// <summary>
-        /// Enabling this option may affect your licensing costs. For more details, see [documentation](https://dt-url.net/4l02yi8).
+        /// Enabling this option may affect your licensing costs. For more details, see [documentation](https://dt-url.net/7v02z76).
         /// </summary>
         [Input("monitorOwnLogsEnabled")]
         public Input<bool>? MonitorOwnLogsEnabled { get; set; }

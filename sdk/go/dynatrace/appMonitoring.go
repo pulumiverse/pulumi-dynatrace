@@ -30,10 +30,10 @@ type AppMonitoring struct {
 
 	// You can override the default monitoring setting for each app separately
 	AppMonitoring AppMonitoringAppMonitoringPtrOutput `pulumi:"appMonitoring"`
-	// Possible Values: `debug`, `error`, `info`, `off`, `warn`
+	// Default log level. Possible values: `debug`, `error`, `info`, `off`, `warn`
 	DefaultLogLevel pulumi.StringOutput `pulumi:"defaultLogLevel"`
-	// Possible Values: `off`, `on`
-	DefaultTraceLevel pulumi.StringPtrOutput `pulumi:"defaultTraceLevel"`
+	// App function traces. Possible values: `off`, `on`
+	DefaultTraceLevel pulumi.StringOutput `pulumi:"defaultTraceLevel"`
 }
 
 // NewAppMonitoring registers a new resource with the given unique name, arguments, and options.
@@ -45,6 +45,9 @@ func NewAppMonitoring(ctx *pulumi.Context,
 
 	if args.DefaultLogLevel == nil {
 		return nil, errors.New("invalid value for required argument 'DefaultLogLevel'")
+	}
+	if args.DefaultTraceLevel == nil {
+		return nil, errors.New("invalid value for required argument 'DefaultTraceLevel'")
 	}
 	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource AppMonitoring
@@ -71,18 +74,18 @@ func GetAppMonitoring(ctx *pulumi.Context,
 type appMonitoringState struct {
 	// You can override the default monitoring setting for each app separately
 	AppMonitoring *AppMonitoringAppMonitoring `pulumi:"appMonitoring"`
-	// Possible Values: `debug`, `error`, `info`, `off`, `warn`
+	// Default log level. Possible values: `debug`, `error`, `info`, `off`, `warn`
 	DefaultLogLevel *string `pulumi:"defaultLogLevel"`
-	// Possible Values: `off`, `on`
+	// App function traces. Possible values: `off`, `on`
 	DefaultTraceLevel *string `pulumi:"defaultTraceLevel"`
 }
 
 type AppMonitoringState struct {
 	// You can override the default monitoring setting for each app separately
 	AppMonitoring AppMonitoringAppMonitoringPtrInput
-	// Possible Values: `debug`, `error`, `info`, `off`, `warn`
+	// Default log level. Possible values: `debug`, `error`, `info`, `off`, `warn`
 	DefaultLogLevel pulumi.StringPtrInput
-	// Possible Values: `off`, `on`
+	// App function traces. Possible values: `off`, `on`
 	DefaultTraceLevel pulumi.StringPtrInput
 }
 
@@ -93,20 +96,20 @@ func (AppMonitoringState) ElementType() reflect.Type {
 type appMonitoringArgs struct {
 	// You can override the default monitoring setting for each app separately
 	AppMonitoring *AppMonitoringAppMonitoring `pulumi:"appMonitoring"`
-	// Possible Values: `debug`, `error`, `info`, `off`, `warn`
+	// Default log level. Possible values: `debug`, `error`, `info`, `off`, `warn`
 	DefaultLogLevel string `pulumi:"defaultLogLevel"`
-	// Possible Values: `off`, `on`
-	DefaultTraceLevel *string `pulumi:"defaultTraceLevel"`
+	// App function traces. Possible values: `off`, `on`
+	DefaultTraceLevel string `pulumi:"defaultTraceLevel"`
 }
 
 // The set of arguments for constructing a AppMonitoring resource.
 type AppMonitoringArgs struct {
 	// You can override the default monitoring setting for each app separately
 	AppMonitoring AppMonitoringAppMonitoringPtrInput
-	// Possible Values: `debug`, `error`, `info`, `off`, `warn`
+	// Default log level. Possible values: `debug`, `error`, `info`, `off`, `warn`
 	DefaultLogLevel pulumi.StringInput
-	// Possible Values: `off`, `on`
-	DefaultTraceLevel pulumi.StringPtrInput
+	// App function traces. Possible values: `off`, `on`
+	DefaultTraceLevel pulumi.StringInput
 }
 
 func (AppMonitoringArgs) ElementType() reflect.Type {
@@ -201,14 +204,14 @@ func (o AppMonitoringOutput) AppMonitoring() AppMonitoringAppMonitoringPtrOutput
 	return o.ApplyT(func(v *AppMonitoring) AppMonitoringAppMonitoringPtrOutput { return v.AppMonitoring }).(AppMonitoringAppMonitoringPtrOutput)
 }
 
-// Possible Values: `debug`, `error`, `info`, `off`, `warn`
+// Default log level. Possible values: `debug`, `error`, `info`, `off`, `warn`
 func (o AppMonitoringOutput) DefaultLogLevel() pulumi.StringOutput {
 	return o.ApplyT(func(v *AppMonitoring) pulumi.StringOutput { return v.DefaultLogLevel }).(pulumi.StringOutput)
 }
 
-// Possible Values: `off`, `on`
-func (o AppMonitoringOutput) DefaultTraceLevel() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *AppMonitoring) pulumi.StringPtrOutput { return v.DefaultTraceLevel }).(pulumi.StringPtrOutput)
+// App function traces. Possible values: `off`, `on`
+func (o AppMonitoringOutput) DefaultTraceLevel() pulumi.StringOutput {
+	return o.ApplyT(func(v *AppMonitoring) pulumi.StringOutput { return v.DefaultTraceLevel }).(pulumi.StringOutput)
 }
 
 type AppMonitoringArrayOutput struct{ *pulumi.OutputState }

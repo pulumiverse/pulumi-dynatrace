@@ -138,7 +138,7 @@ import (
 //									Url: pulumi.String("https://example.com"),
 //									Authentication: &dynatrace.BrowserMonitorScriptEventsEventNavigateAuthenticationArgs{
 //										Type:  pulumi.String("http_authentication"),
-//										Creds: credentialsVault.ID(),
+//										Creds: credentialsVault.ID().ToIDOutput().ToStringOutput(),
 //									},
 //									Wait: &dynatrace.BrowserMonitorScriptEventsEventNavigateWaitArgs{
 //										WaitFor: pulumi.String("page_complete"),
@@ -151,7 +151,7 @@ import (
 //									Url: pulumi.String("https://example.com"),
 //									Authentication: &dynatrace.BrowserMonitorScriptEventsEventNavigateAuthenticationArgs{
 //										Type:  pulumi.String("http_authentication"),
-//										Creds: credentialsVault.ID(),
+//										Creds: credentialsVault.ID().ToIDOutput().ToStringOutput(),
 //									},
 //									Validate: &dynatrace.BrowserMonitorScriptEventsEventNavigateValidateArgs{
 //										Validations: dynatrace.BrowserMonitorScriptEventsEventNavigateValidateValidationArray{
@@ -237,7 +237,7 @@ type BrowserMonitor struct {
 	KeyPerformanceMetrics BrowserMonitorKeyPerformanceMetricsOutput `pulumi:"keyPerformanceMetrics"`
 	// A list of locations from which the monitor is executed.
 	//
-	// To specify a location, use its entity ID.
+	//   To specify a location, use its entity ID.
 	Locations pulumi.StringArrayOutput `pulumi:"locations"`
 	// A set of manually assigned applications.
 	ManuallyAssignedApps pulumi.StringArrayOutput `pulumi:"manuallyAssignedApps"`
@@ -247,7 +247,7 @@ type BrowserMonitor struct {
 	Script BrowserMonitorScriptPtrOutput `pulumi:"script"`
 	// A set of tags assigned to the monitor.
 	//
-	// You can specify only the value of the tag here and the `CONTEXTLESS` context and source 'USER' will be added automatically.
+	//   You can specify only the value of the tag here and the `CONTEXTLESS` context and source 'USER' will be added automatically.
 	Tags BrowserMonitorTagArrayOutput `pulumi:"tags"`
 }
 
@@ -297,7 +297,7 @@ type browserMonitorState struct {
 	KeyPerformanceMetrics *BrowserMonitorKeyPerformanceMetrics `pulumi:"keyPerformanceMetrics"`
 	// A list of locations from which the monitor is executed.
 	//
-	// To specify a location, use its entity ID.
+	//   To specify a location, use its entity ID.
 	Locations []string `pulumi:"locations"`
 	// A set of manually assigned applications.
 	ManuallyAssignedApps []string `pulumi:"manuallyAssignedApps"`
@@ -307,7 +307,7 @@ type browserMonitorState struct {
 	Script *BrowserMonitorScript `pulumi:"script"`
 	// A set of tags assigned to the monitor.
 	//
-	// You can specify only the value of the tag here and the `CONTEXTLESS` context and source 'USER' will be added automatically.
+	//   You can specify only the value of the tag here and the `CONTEXTLESS` context and source 'USER' will be added automatically.
 	Tags []BrowserMonitorTag `pulumi:"tags"`
 }
 
@@ -322,7 +322,7 @@ type BrowserMonitorState struct {
 	KeyPerformanceMetrics BrowserMonitorKeyPerformanceMetricsPtrInput
 	// A list of locations from which the monitor is executed.
 	//
-	// To specify a location, use its entity ID.
+	//   To specify a location, use its entity ID.
 	Locations pulumi.StringArrayInput
 	// A set of manually assigned applications.
 	ManuallyAssignedApps pulumi.StringArrayInput
@@ -332,7 +332,7 @@ type BrowserMonitorState struct {
 	Script BrowserMonitorScriptPtrInput
 	// A set of tags assigned to the monitor.
 	//
-	// You can specify only the value of the tag here and the `CONTEXTLESS` context and source 'USER' will be added automatically.
+	//   You can specify only the value of the tag here and the `CONTEXTLESS` context and source 'USER' will be added automatically.
 	Tags BrowserMonitorTagArrayInput
 }
 
@@ -351,7 +351,7 @@ type browserMonitorArgs struct {
 	KeyPerformanceMetrics BrowserMonitorKeyPerformanceMetrics `pulumi:"keyPerformanceMetrics"`
 	// A list of locations from which the monitor is executed.
 	//
-	// To specify a location, use its entity ID.
+	//   To specify a location, use its entity ID.
 	Locations []string `pulumi:"locations"`
 	// A set of manually assigned applications.
 	ManuallyAssignedApps []string `pulumi:"manuallyAssignedApps"`
@@ -361,7 +361,7 @@ type browserMonitorArgs struct {
 	Script *BrowserMonitorScript `pulumi:"script"`
 	// A set of tags assigned to the monitor.
 	//
-	// You can specify only the value of the tag here and the `CONTEXTLESS` context and source 'USER' will be added automatically.
+	//   You can specify only the value of the tag here and the `CONTEXTLESS` context and source 'USER' will be added automatically.
 	Tags []BrowserMonitorTag `pulumi:"tags"`
 }
 
@@ -377,7 +377,7 @@ type BrowserMonitorArgs struct {
 	KeyPerformanceMetrics BrowserMonitorKeyPerformanceMetricsInput
 	// A list of locations from which the monitor is executed.
 	//
-	// To specify a location, use its entity ID.
+	//   To specify a location, use its entity ID.
 	Locations pulumi.StringArrayInput
 	// A set of manually assigned applications.
 	ManuallyAssignedApps pulumi.StringArrayInput
@@ -387,7 +387,7 @@ type BrowserMonitorArgs struct {
 	Script BrowserMonitorScriptPtrInput
 	// A set of tags assigned to the monitor.
 	//
-	// You can specify only the value of the tag here and the `CONTEXTLESS` context and source 'USER' will be added automatically.
+	//   You can specify only the value of the tag here and the `CONTEXTLESS` context and source 'USER' will be added automatically.
 	Tags BrowserMonitorTagArrayInput
 }
 
@@ -500,7 +500,7 @@ func (o BrowserMonitorOutput) KeyPerformanceMetrics() BrowserMonitorKeyPerforman
 
 // A list of locations from which the monitor is executed.
 //
-// To specify a location, use its entity ID.
+//	To specify a location, use its entity ID.
 func (o BrowserMonitorOutput) Locations() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *BrowserMonitor) pulumi.StringArrayOutput { return v.Locations }).(pulumi.StringArrayOutput)
 }
@@ -522,7 +522,7 @@ func (o BrowserMonitorOutput) Script() BrowserMonitorScriptPtrOutput {
 
 // A set of tags assigned to the monitor.
 //
-// You can specify only the value of the tag here and the `CONTEXTLESS` context and source 'USER' will be added automatically.
+//	You can specify only the value of the tag here and the `CONTEXTLESS` context and source 'USER' will be added automatically.
 func (o BrowserMonitorOutput) Tags() BrowserMonitorTagArrayOutput {
 	return o.ApplyT(func(v *BrowserMonitor) BrowserMonitorTagArrayOutput { return v.Tags }).(BrowserMonitorTagArrayOutput)
 }

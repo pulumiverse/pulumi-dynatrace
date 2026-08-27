@@ -199,7 +199,7 @@ import (
 //									pulumi.String("metricExtraction"),
 //								},
 //							},
-//							PipelineId: example1.ID(),
+//							PipelineId: example1.ID().ToIDOutput().ToStringOutput(),
 //						},
 //					},
 //				},
@@ -211,7 +211,7 @@ import (
 //					Type: pulumi.String("include"),
 //				},
 //				MemberPipelines: pulumi.StringArray{
-//					example2.ID(),
+//					example2.ID().ToIDOutput().ToStringOutput(),
 //				},
 //			})
 //			if err != nil {

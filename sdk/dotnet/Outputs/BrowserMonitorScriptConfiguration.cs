@@ -32,8 +32,8 @@ namespace Pulumiverse.Dynatrace.Outputs
         public readonly Outputs.BrowserMonitorScriptConfigurationCookies? Cookies;
         /// <summary>
         /// The emulated device of the monitor—holds either the parameters of the custom device or the name and orientation of the preconfigured device.
-        /// 
-        /// If not set, then the Desktop preconfigured device is used
+        ///   
+        ///   If not set, then the Desktop preconfigured device is used
         /// </summary>
         public readonly Outputs.BrowserMonitorScriptConfigurationDevice? Device;
         /// <summary>

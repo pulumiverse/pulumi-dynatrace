@@ -38,6 +38,12 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<Inputs.AutomationWorkflowTasksTaskConditionsArgs>? Conditions { get; set; }
 
         /// <summary>
+        /// A stored sample result for this task as JSON. Not used during execution - it powers expression auto-complete and result preview in the Dynatrace UI. Accepts any JSON value
+        /// </summary>
+        [Input("customSampleResult")]
+        public Input<string>? CustomSampleResult { get; set; }
+
+        /// <summary>
         /// A description for this task
         /// </summary>
         [Input("description")]

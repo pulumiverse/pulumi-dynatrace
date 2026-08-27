@@ -13,6 +13,407 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type PlatformSloCustomSliFilterSegmentsFilterSegmentVariables struct {
+	FilterSegmentVariables []PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariable `pulumi:"filterSegmentVariables"`
+}
+
+// PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesInput is an input type that accepts PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesArgs and PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesOutput values.
+// You can construct a concrete instance of `PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesInput` via:
+//
+//	PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesArgs{...}
+type PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesInput interface {
+	pulumi.Input
+
+	ToPlatformSloCustomSliFilterSegmentsFilterSegmentVariablesOutput() PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesOutput
+	ToPlatformSloCustomSliFilterSegmentsFilterSegmentVariablesOutputWithContext(context.Context) PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesOutput
+}
+
+type PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesArgs struct {
+	FilterSegmentVariables PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArrayInput `pulumi:"filterSegmentVariables"`
+}
+
+func (PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PlatformSloCustomSliFilterSegmentsFilterSegmentVariables)(nil)).Elem()
+}
+
+func (i PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesArgs) ToPlatformSloCustomSliFilterSegmentsFilterSegmentVariablesOutput() PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesOutput {
+	return i.ToPlatformSloCustomSliFilterSegmentsFilterSegmentVariablesOutputWithContext(context.Background())
+}
+
+func (i PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesArgs) ToPlatformSloCustomSliFilterSegmentsFilterSegmentVariablesOutputWithContext(ctx context.Context) PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesOutput)
+}
+
+func (i PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesArgs) ToPlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrOutput() PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrOutput {
+	return i.ToPlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrOutputWithContext(context.Background())
+}
+
+func (i PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesArgs) ToPlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrOutputWithContext(ctx context.Context) PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesOutput).ToPlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrOutputWithContext(ctx)
+}
+
+// PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrInput is an input type that accepts PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesArgs, PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtr and PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrOutput values.
+// You can construct a concrete instance of `PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrInput` via:
+//
+//	        PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesArgs{...}
+//
+//	or:
+//
+//	        nil
+type PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrInput interface {
+	pulumi.Input
+
+	ToPlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrOutput() PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrOutput
+	ToPlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrOutputWithContext(context.Context) PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrOutput
+}
+
+type platformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrType PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesArgs
+
+func PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtr(v *PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesArgs) PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrInput {
+	return (*platformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrType)(v)
+}
+
+func (*platformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**PlatformSloCustomSliFilterSegmentsFilterSegmentVariables)(nil)).Elem()
+}
+
+func (i *platformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrType) ToPlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrOutput() PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrOutput {
+	return i.ToPlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrOutputWithContext(context.Background())
+}
+
+func (i *platformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrType) ToPlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrOutputWithContext(ctx context.Context) PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrOutput)
+}
+
+type PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesOutput struct{ *pulumi.OutputState }
+
+func (PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PlatformSloCustomSliFilterSegmentsFilterSegmentVariables)(nil)).Elem()
+}
+
+func (o PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesOutput) ToPlatformSloCustomSliFilterSegmentsFilterSegmentVariablesOutput() PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesOutput {
+	return o
+}
+
+func (o PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesOutput) ToPlatformSloCustomSliFilterSegmentsFilterSegmentVariablesOutputWithContext(ctx context.Context) PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesOutput {
+	return o
+}
+
+func (o PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesOutput) ToPlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrOutput() PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrOutput {
+	return o.ToPlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrOutputWithContext(context.Background())
+}
+
+func (o PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesOutput) ToPlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrOutputWithContext(ctx context.Context) PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v PlatformSloCustomSliFilterSegmentsFilterSegmentVariables) *PlatformSloCustomSliFilterSegmentsFilterSegmentVariables {
+		return &v
+	}).(PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrOutput)
+}
+
+func (o PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesOutput) FilterSegmentVariables() PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArrayOutput {
+	return o.ApplyT(func(v PlatformSloCustomSliFilterSegmentsFilterSegmentVariables) []PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariable {
+		return v.FilterSegmentVariables
+	}).(PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArrayOutput)
+}
+
+type PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrOutput struct{ *pulumi.OutputState }
+
+func (PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**PlatformSloCustomSliFilterSegmentsFilterSegmentVariables)(nil)).Elem()
+}
+
+func (o PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrOutput) ToPlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrOutput() PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrOutput {
+	return o
+}
+
+func (o PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrOutput) ToPlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrOutputWithContext(ctx context.Context) PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrOutput {
+	return o
+}
+
+func (o PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrOutput) Elem() PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesOutput {
+	return o.ApplyT(func(v *PlatformSloCustomSliFilterSegmentsFilterSegmentVariables) PlatformSloCustomSliFilterSegmentsFilterSegmentVariables {
+		if v != nil {
+			return *v
+		}
+		var ret PlatformSloCustomSliFilterSegmentsFilterSegmentVariables
+		return ret
+	}).(PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesOutput)
+}
+
+func (o PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrOutput) FilterSegmentVariables() PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArrayOutput {
+	return o.ApplyT(func(v *PlatformSloCustomSliFilterSegmentsFilterSegmentVariables) []PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariable {
+		if v == nil {
+			return nil
+		}
+		return v.FilterSegmentVariables
+	}).(PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArrayOutput)
+}
+
+type PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariable struct {
+	// Name of the filter segment variable
+	Name string `pulumi:"name"`
+	// Values of the filter segment variable
+	Values []string `pulumi:"values"`
+}
+
+// PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableInput is an input type that accepts PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArgs and PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableOutput values.
+// You can construct a concrete instance of `PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableInput` via:
+//
+//	PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArgs{...}
+type PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableInput interface {
+	pulumi.Input
+
+	ToPlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableOutput() PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableOutput
+	ToPlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableOutputWithContext(context.Context) PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableOutput
+}
+
+type PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArgs struct {
+	// Name of the filter segment variable
+	Name pulumi.StringInput `pulumi:"name"`
+	// Values of the filter segment variable
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariable)(nil)).Elem()
+}
+
+func (i PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArgs) ToPlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableOutput() PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableOutput {
+	return i.ToPlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableOutputWithContext(context.Background())
+}
+
+func (i PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArgs) ToPlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableOutputWithContext(ctx context.Context) PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableOutput)
+}
+
+// PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArrayInput is an input type that accepts PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArray and PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArrayOutput values.
+// You can construct a concrete instance of `PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArrayInput` via:
+//
+//	PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArray{ PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArgs{...} }
+type PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArrayInput interface {
+	pulumi.Input
+
+	ToPlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArrayOutput() PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArrayOutput
+	ToPlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArrayOutputWithContext(context.Context) PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArrayOutput
+}
+
+type PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArray []PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableInput
+
+func (PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariable)(nil)).Elem()
+}
+
+func (i PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArray) ToPlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArrayOutput() PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArrayOutput {
+	return i.ToPlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArrayOutputWithContext(context.Background())
+}
+
+func (i PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArray) ToPlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArrayOutputWithContext(ctx context.Context) PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArrayOutput)
+}
+
+type PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableOutput struct{ *pulumi.OutputState }
+
+func (PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariable)(nil)).Elem()
+}
+
+func (o PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableOutput) ToPlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableOutput() PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableOutput {
+	return o
+}
+
+func (o PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableOutput) ToPlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableOutputWithContext(ctx context.Context) PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableOutput {
+	return o
+}
+
+// Name of the filter segment variable
+func (o PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariable) string {
+		return v.Name
+	}).(pulumi.StringOutput)
+}
+
+// Values of the filter segment variable
+func (o PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariable) []string {
+		return v.Values
+	}).(pulumi.StringArrayOutput)
+}
+
+type PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArrayOutput struct{ *pulumi.OutputState }
+
+func (PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariable)(nil)).Elem()
+}
+
+func (o PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArrayOutput) ToPlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArrayOutput() PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArrayOutput {
+	return o
+}
+
+func (o PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArrayOutput) ToPlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArrayOutputWithContext(ctx context.Context) PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArrayOutput {
+	return o
+}
+
+func (o PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArrayOutput) Index(i pulumi.IntInput) PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariable {
+		return vs[0].([]PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariable)[vs[1].(int)]
+	}).(PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableOutput)
+}
+
+type PlatformSloSliReference struct {
+	// Template ID of the SLI reference
+	TemplateId string `pulumi:"templateId"`
+	// Variables of the SLI reference
+	Variables PlatformSloSliReferenceVariables `pulumi:"variables"`
+}
+
+// PlatformSloSliReferenceInput is an input type that accepts PlatformSloSliReferenceArgs and PlatformSloSliReferenceOutput values.
+// You can construct a concrete instance of `PlatformSloSliReferenceInput` via:
+//
+//	PlatformSloSliReferenceArgs{...}
+type PlatformSloSliReferenceInput interface {
+	pulumi.Input
+
+	ToPlatformSloSliReferenceOutput() PlatformSloSliReferenceOutput
+	ToPlatformSloSliReferenceOutputWithContext(context.Context) PlatformSloSliReferenceOutput
+}
+
+type PlatformSloSliReferenceArgs struct {
+	// Template ID of the SLI reference
+	TemplateId pulumi.StringInput `pulumi:"templateId"`
+	// Variables of the SLI reference
+	Variables PlatformSloSliReferenceVariablesInput `pulumi:"variables"`
+}
+
+func (PlatformSloSliReferenceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PlatformSloSliReference)(nil)).Elem()
+}
+
+func (i PlatformSloSliReferenceArgs) ToPlatformSloSliReferenceOutput() PlatformSloSliReferenceOutput {
+	return i.ToPlatformSloSliReferenceOutputWithContext(context.Background())
+}
+
+func (i PlatformSloSliReferenceArgs) ToPlatformSloSliReferenceOutputWithContext(ctx context.Context) PlatformSloSliReferenceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PlatformSloSliReferenceOutput)
+}
+
+func (i PlatformSloSliReferenceArgs) ToPlatformSloSliReferencePtrOutput() PlatformSloSliReferencePtrOutput {
+	return i.ToPlatformSloSliReferencePtrOutputWithContext(context.Background())
+}
+
+func (i PlatformSloSliReferenceArgs) ToPlatformSloSliReferencePtrOutputWithContext(ctx context.Context) PlatformSloSliReferencePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PlatformSloSliReferenceOutput).ToPlatformSloSliReferencePtrOutputWithContext(ctx)
+}
+
+// PlatformSloSliReferencePtrInput is an input type that accepts PlatformSloSliReferenceArgs, PlatformSloSliReferencePtr and PlatformSloSliReferencePtrOutput values.
+// You can construct a concrete instance of `PlatformSloSliReferencePtrInput` via:
+//
+//	        PlatformSloSliReferenceArgs{...}
+//
+//	or:
+//
+//	        nil
+type PlatformSloSliReferencePtrInput interface {
+	pulumi.Input
+
+	ToPlatformSloSliReferencePtrOutput() PlatformSloSliReferencePtrOutput
+	ToPlatformSloSliReferencePtrOutputWithContext(context.Context) PlatformSloSliReferencePtrOutput
+}
+
+type platformSloSliReferencePtrType PlatformSloSliReferenceArgs
+
+func PlatformSloSliReferencePtr(v *PlatformSloSliReferenceArgs) PlatformSloSliReferencePtrInput {
+	return (*platformSloSliReferencePtrType)(v)
+}
+
+func (*platformSloSliReferencePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**PlatformSloSliReference)(nil)).Elem()
+}
+
+func (i *platformSloSliReferencePtrType) ToPlatformSloSliReferencePtrOutput() PlatformSloSliReferencePtrOutput {
+	return i.ToPlatformSloSliReferencePtrOutputWithContext(context.Background())
+}
+
+func (i *platformSloSliReferencePtrType) ToPlatformSloSliReferencePtrOutputWithContext(ctx context.Context) PlatformSloSliReferencePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PlatformSloSliReferencePtrOutput)
+}
+
+type PlatformSloSliReferenceOutput struct{ *pulumi.OutputState }
+
+func (PlatformSloSliReferenceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PlatformSloSliReference)(nil)).Elem()
+}
+
+func (o PlatformSloSliReferenceOutput) ToPlatformSloSliReferenceOutput() PlatformSloSliReferenceOutput {
+	return o
+}
+
+func (o PlatformSloSliReferenceOutput) ToPlatformSloSliReferenceOutputWithContext(ctx context.Context) PlatformSloSliReferenceOutput {
+	return o
+}
+
+func (o PlatformSloSliReferenceOutput) ToPlatformSloSliReferencePtrOutput() PlatformSloSliReferencePtrOutput {
+	return o.ToPlatformSloSliReferencePtrOutputWithContext(context.Background())
+}
+
+func (o PlatformSloSliReferenceOutput) ToPlatformSloSliReferencePtrOutputWithContext(ctx context.Context) PlatformSloSliReferencePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v PlatformSloSliReference) *PlatformSloSliReference {
+		return &v
+	}).(PlatformSloSliReferencePtrOutput)
+}
+
+// Template ID of the SLI reference
+func (o PlatformSloSliReferenceOutput) TemplateId() pulumi.StringOutput {
+	return o.ApplyT(func(v PlatformSloSliReference) string { return v.TemplateId }).(pulumi.StringOutput)
+}
+
+// Variables of the SLI reference
+func (o PlatformSloSliReferenceOutput) Variables() PlatformSloSliReferenceVariablesOutput {
+	return o.ApplyT(func(v PlatformSloSliReference) PlatformSloSliReferenceVariables { return v.Variables }).(PlatformSloSliReferenceVariablesOutput)
+}
+
+type PlatformSloSliReferencePtrOutput struct{ *pulumi.OutputState }
+
+func (PlatformSloSliReferencePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**PlatformSloSliReference)(nil)).Elem()
+}
+
+func (o PlatformSloSliReferencePtrOutput) ToPlatformSloSliReferencePtrOutput() PlatformSloSliReferencePtrOutput {
+	return o
+}
+
+func (o PlatformSloSliReferencePtrOutput) ToPlatformSloSliReferencePtrOutputWithContext(ctx context.Context) PlatformSloSliReferencePtrOutput {
+	return o
+}
+
+func (o PlatformSloSliReferencePtrOutput) Elem() PlatformSloSliReferenceOutput {
+	return o.ApplyT(func(v *PlatformSloSliReference) PlatformSloSliReference {
+		if v != nil {
+			return *v
+		}
+		var ret PlatformSloSliReference
+		return ret
+	}).(PlatformSloSliReferenceOutput)
+}
+
+// Template ID of the SLI reference
+func (o PlatformSloSliReferencePtrOutput) TemplateId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PlatformSloSliReference) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.TemplateId
+	}).(pulumi.StringPtrOutput)
+}
+
+// Variables of the SLI reference
+func (o PlatformSloSliReferencePtrOutput) Variables() PlatformSloSliReferenceVariablesPtrOutput {
+	return o.ApplyT(func(v *PlatformSloSliReference) *PlatformSloSliReferenceVariables {
+		if v == nil {
+			return nil
+		}
+		return &v.Variables
+	}).(PlatformSloSliReferenceVariablesPtrOutput)
+}
+
 type PlatformSloSliReferenceVariables struct {
 	SliReferenceVariables []PlatformSloSliReferenceVariablesSliReferenceVariable `pulumi:"sliReferenceVariables"`
 }
@@ -60337,12 +60738,251 @@ func (o SpanEntryPointMatchesMatchArrayOutput) Index(i pulumi.IntInput) SpanEntr
 	}).(SpanEntryPointMatchesMatchOutput)
 }
 
+type SyntheticPrimaryGrailTagsTags struct {
+	Tags []SyntheticPrimaryGrailTagsTagsTag `pulumi:"tags"`
+}
+
+// SyntheticPrimaryGrailTagsTagsInput is an input type that accepts SyntheticPrimaryGrailTagsTagsArgs and SyntheticPrimaryGrailTagsTagsOutput values.
+// You can construct a concrete instance of `SyntheticPrimaryGrailTagsTagsInput` via:
+//
+//	SyntheticPrimaryGrailTagsTagsArgs{...}
+type SyntheticPrimaryGrailTagsTagsInput interface {
+	pulumi.Input
+
+	ToSyntheticPrimaryGrailTagsTagsOutput() SyntheticPrimaryGrailTagsTagsOutput
+	ToSyntheticPrimaryGrailTagsTagsOutputWithContext(context.Context) SyntheticPrimaryGrailTagsTagsOutput
+}
+
+type SyntheticPrimaryGrailTagsTagsArgs struct {
+	Tags SyntheticPrimaryGrailTagsTagsTagArrayInput `pulumi:"tags"`
+}
+
+func (SyntheticPrimaryGrailTagsTagsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*SyntheticPrimaryGrailTagsTags)(nil)).Elem()
+}
+
+func (i SyntheticPrimaryGrailTagsTagsArgs) ToSyntheticPrimaryGrailTagsTagsOutput() SyntheticPrimaryGrailTagsTagsOutput {
+	return i.ToSyntheticPrimaryGrailTagsTagsOutputWithContext(context.Background())
+}
+
+func (i SyntheticPrimaryGrailTagsTagsArgs) ToSyntheticPrimaryGrailTagsTagsOutputWithContext(ctx context.Context) SyntheticPrimaryGrailTagsTagsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SyntheticPrimaryGrailTagsTagsOutput)
+}
+
+func (i SyntheticPrimaryGrailTagsTagsArgs) ToSyntheticPrimaryGrailTagsTagsPtrOutput() SyntheticPrimaryGrailTagsTagsPtrOutput {
+	return i.ToSyntheticPrimaryGrailTagsTagsPtrOutputWithContext(context.Background())
+}
+
+func (i SyntheticPrimaryGrailTagsTagsArgs) ToSyntheticPrimaryGrailTagsTagsPtrOutputWithContext(ctx context.Context) SyntheticPrimaryGrailTagsTagsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SyntheticPrimaryGrailTagsTagsOutput).ToSyntheticPrimaryGrailTagsTagsPtrOutputWithContext(ctx)
+}
+
+// SyntheticPrimaryGrailTagsTagsPtrInput is an input type that accepts SyntheticPrimaryGrailTagsTagsArgs, SyntheticPrimaryGrailTagsTagsPtr and SyntheticPrimaryGrailTagsTagsPtrOutput values.
+// You can construct a concrete instance of `SyntheticPrimaryGrailTagsTagsPtrInput` via:
+//
+//	        SyntheticPrimaryGrailTagsTagsArgs{...}
+//
+//	or:
+//
+//	        nil
+type SyntheticPrimaryGrailTagsTagsPtrInput interface {
+	pulumi.Input
+
+	ToSyntheticPrimaryGrailTagsTagsPtrOutput() SyntheticPrimaryGrailTagsTagsPtrOutput
+	ToSyntheticPrimaryGrailTagsTagsPtrOutputWithContext(context.Context) SyntheticPrimaryGrailTagsTagsPtrOutput
+}
+
+type syntheticPrimaryGrailTagsTagsPtrType SyntheticPrimaryGrailTagsTagsArgs
+
+func SyntheticPrimaryGrailTagsTagsPtr(v *SyntheticPrimaryGrailTagsTagsArgs) SyntheticPrimaryGrailTagsTagsPtrInput {
+	return (*syntheticPrimaryGrailTagsTagsPtrType)(v)
+}
+
+func (*syntheticPrimaryGrailTagsTagsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**SyntheticPrimaryGrailTagsTags)(nil)).Elem()
+}
+
+func (i *syntheticPrimaryGrailTagsTagsPtrType) ToSyntheticPrimaryGrailTagsTagsPtrOutput() SyntheticPrimaryGrailTagsTagsPtrOutput {
+	return i.ToSyntheticPrimaryGrailTagsTagsPtrOutputWithContext(context.Background())
+}
+
+func (i *syntheticPrimaryGrailTagsTagsPtrType) ToSyntheticPrimaryGrailTagsTagsPtrOutputWithContext(ctx context.Context) SyntheticPrimaryGrailTagsTagsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SyntheticPrimaryGrailTagsTagsPtrOutput)
+}
+
+type SyntheticPrimaryGrailTagsTagsOutput struct{ *pulumi.OutputState }
+
+func (SyntheticPrimaryGrailTagsTagsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SyntheticPrimaryGrailTagsTags)(nil)).Elem()
+}
+
+func (o SyntheticPrimaryGrailTagsTagsOutput) ToSyntheticPrimaryGrailTagsTagsOutput() SyntheticPrimaryGrailTagsTagsOutput {
+	return o
+}
+
+func (o SyntheticPrimaryGrailTagsTagsOutput) ToSyntheticPrimaryGrailTagsTagsOutputWithContext(ctx context.Context) SyntheticPrimaryGrailTagsTagsOutput {
+	return o
+}
+
+func (o SyntheticPrimaryGrailTagsTagsOutput) ToSyntheticPrimaryGrailTagsTagsPtrOutput() SyntheticPrimaryGrailTagsTagsPtrOutput {
+	return o.ToSyntheticPrimaryGrailTagsTagsPtrOutputWithContext(context.Background())
+}
+
+func (o SyntheticPrimaryGrailTagsTagsOutput) ToSyntheticPrimaryGrailTagsTagsPtrOutputWithContext(ctx context.Context) SyntheticPrimaryGrailTagsTagsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v SyntheticPrimaryGrailTagsTags) *SyntheticPrimaryGrailTagsTags {
+		return &v
+	}).(SyntheticPrimaryGrailTagsTagsPtrOutput)
+}
+
+func (o SyntheticPrimaryGrailTagsTagsOutput) Tags() SyntheticPrimaryGrailTagsTagsTagArrayOutput {
+	return o.ApplyT(func(v SyntheticPrimaryGrailTagsTags) []SyntheticPrimaryGrailTagsTagsTag { return v.Tags }).(SyntheticPrimaryGrailTagsTagsTagArrayOutput)
+}
+
+type SyntheticPrimaryGrailTagsTagsPtrOutput struct{ *pulumi.OutputState }
+
+func (SyntheticPrimaryGrailTagsTagsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**SyntheticPrimaryGrailTagsTags)(nil)).Elem()
+}
+
+func (o SyntheticPrimaryGrailTagsTagsPtrOutput) ToSyntheticPrimaryGrailTagsTagsPtrOutput() SyntheticPrimaryGrailTagsTagsPtrOutput {
+	return o
+}
+
+func (o SyntheticPrimaryGrailTagsTagsPtrOutput) ToSyntheticPrimaryGrailTagsTagsPtrOutputWithContext(ctx context.Context) SyntheticPrimaryGrailTagsTagsPtrOutput {
+	return o
+}
+
+func (o SyntheticPrimaryGrailTagsTagsPtrOutput) Elem() SyntheticPrimaryGrailTagsTagsOutput {
+	return o.ApplyT(func(v *SyntheticPrimaryGrailTagsTags) SyntheticPrimaryGrailTagsTags {
+		if v != nil {
+			return *v
+		}
+		var ret SyntheticPrimaryGrailTagsTags
+		return ret
+	}).(SyntheticPrimaryGrailTagsTagsOutput)
+}
+
+func (o SyntheticPrimaryGrailTagsTagsPtrOutput) Tags() SyntheticPrimaryGrailTagsTagsTagArrayOutput {
+	return o.ApplyT(func(v *SyntheticPrimaryGrailTagsTags) []SyntheticPrimaryGrailTagsTagsTag {
+		if v == nil {
+			return nil
+		}
+		return v.Tags
+	}).(SyntheticPrimaryGrailTagsTagsTagArrayOutput)
+}
+
+type SyntheticPrimaryGrailTagsTagsTag struct {
+	// Primary grail tag's key
+	Key string `pulumi:"key"`
+	// Primary grail tag's value
+	Value string `pulumi:"value"`
+}
+
+// SyntheticPrimaryGrailTagsTagsTagInput is an input type that accepts SyntheticPrimaryGrailTagsTagsTagArgs and SyntheticPrimaryGrailTagsTagsTagOutput values.
+// You can construct a concrete instance of `SyntheticPrimaryGrailTagsTagsTagInput` via:
+//
+//	SyntheticPrimaryGrailTagsTagsTagArgs{...}
+type SyntheticPrimaryGrailTagsTagsTagInput interface {
+	pulumi.Input
+
+	ToSyntheticPrimaryGrailTagsTagsTagOutput() SyntheticPrimaryGrailTagsTagsTagOutput
+	ToSyntheticPrimaryGrailTagsTagsTagOutputWithContext(context.Context) SyntheticPrimaryGrailTagsTagsTagOutput
+}
+
+type SyntheticPrimaryGrailTagsTagsTagArgs struct {
+	// Primary grail tag's key
+	Key pulumi.StringInput `pulumi:"key"`
+	// Primary grail tag's value
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (SyntheticPrimaryGrailTagsTagsTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*SyntheticPrimaryGrailTagsTagsTag)(nil)).Elem()
+}
+
+func (i SyntheticPrimaryGrailTagsTagsTagArgs) ToSyntheticPrimaryGrailTagsTagsTagOutput() SyntheticPrimaryGrailTagsTagsTagOutput {
+	return i.ToSyntheticPrimaryGrailTagsTagsTagOutputWithContext(context.Background())
+}
+
+func (i SyntheticPrimaryGrailTagsTagsTagArgs) ToSyntheticPrimaryGrailTagsTagsTagOutputWithContext(ctx context.Context) SyntheticPrimaryGrailTagsTagsTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SyntheticPrimaryGrailTagsTagsTagOutput)
+}
+
+// SyntheticPrimaryGrailTagsTagsTagArrayInput is an input type that accepts SyntheticPrimaryGrailTagsTagsTagArray and SyntheticPrimaryGrailTagsTagsTagArrayOutput values.
+// You can construct a concrete instance of `SyntheticPrimaryGrailTagsTagsTagArrayInput` via:
+//
+//	SyntheticPrimaryGrailTagsTagsTagArray{ SyntheticPrimaryGrailTagsTagsTagArgs{...} }
+type SyntheticPrimaryGrailTagsTagsTagArrayInput interface {
+	pulumi.Input
+
+	ToSyntheticPrimaryGrailTagsTagsTagArrayOutput() SyntheticPrimaryGrailTagsTagsTagArrayOutput
+	ToSyntheticPrimaryGrailTagsTagsTagArrayOutputWithContext(context.Context) SyntheticPrimaryGrailTagsTagsTagArrayOutput
+}
+
+type SyntheticPrimaryGrailTagsTagsTagArray []SyntheticPrimaryGrailTagsTagsTagInput
+
+func (SyntheticPrimaryGrailTagsTagsTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SyntheticPrimaryGrailTagsTagsTag)(nil)).Elem()
+}
+
+func (i SyntheticPrimaryGrailTagsTagsTagArray) ToSyntheticPrimaryGrailTagsTagsTagArrayOutput() SyntheticPrimaryGrailTagsTagsTagArrayOutput {
+	return i.ToSyntheticPrimaryGrailTagsTagsTagArrayOutputWithContext(context.Background())
+}
+
+func (i SyntheticPrimaryGrailTagsTagsTagArray) ToSyntheticPrimaryGrailTagsTagsTagArrayOutputWithContext(ctx context.Context) SyntheticPrimaryGrailTagsTagsTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SyntheticPrimaryGrailTagsTagsTagArrayOutput)
+}
+
+type SyntheticPrimaryGrailTagsTagsTagOutput struct{ *pulumi.OutputState }
+
+func (SyntheticPrimaryGrailTagsTagsTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SyntheticPrimaryGrailTagsTagsTag)(nil)).Elem()
+}
+
+func (o SyntheticPrimaryGrailTagsTagsTagOutput) ToSyntheticPrimaryGrailTagsTagsTagOutput() SyntheticPrimaryGrailTagsTagsTagOutput {
+	return o
+}
+
+func (o SyntheticPrimaryGrailTagsTagsTagOutput) ToSyntheticPrimaryGrailTagsTagsTagOutputWithContext(ctx context.Context) SyntheticPrimaryGrailTagsTagsTagOutput {
+	return o
+}
+
+// Primary grail tag's key
+func (o SyntheticPrimaryGrailTagsTagsTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v SyntheticPrimaryGrailTagsTagsTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Primary grail tag's value
+func (o SyntheticPrimaryGrailTagsTagsTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v SyntheticPrimaryGrailTagsTagsTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type SyntheticPrimaryGrailTagsTagsTagArrayOutput struct{ *pulumi.OutputState }
+
+func (SyntheticPrimaryGrailTagsTagsTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SyntheticPrimaryGrailTagsTagsTag)(nil)).Elem()
+}
+
+func (o SyntheticPrimaryGrailTagsTagsTagArrayOutput) ToSyntheticPrimaryGrailTagsTagsTagArrayOutput() SyntheticPrimaryGrailTagsTagsTagArrayOutput {
+	return o
+}
+
+func (o SyntheticPrimaryGrailTagsTagsTagArrayOutput) ToSyntheticPrimaryGrailTagsTagsTagArrayOutputWithContext(ctx context.Context) SyntheticPrimaryGrailTagsTagsTagArrayOutput {
+	return o
+}
+
+func (o SyntheticPrimaryGrailTagsTagsTagArrayOutput) Index(i pulumi.IntInput) SyntheticPrimaryGrailTagsTagsTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) SyntheticPrimaryGrailTagsTagsTag {
+		return vs[0].([]SyntheticPrimaryGrailTagsTagsTag)[vs[1].(int)]
+	}).(SyntheticPrimaryGrailTagsTagsTagOutput)
+}
+
 type UpdateWindowsDailyRecurrence struct {
 	// Every **X** days:
-	// * `1` = every day,
-	// * `2` = every two days,
-	// * `3` = every three days,
-	// * etc.
+	//  * `1` = every day,
+	//  * `2` = every two days,
+	//  * `3` = every three days,
+	//  * etc.
 	Every int `pulumi:"every"`
 	// Recurrence range
 	RecurrenceRange UpdateWindowsDailyRecurrenceRecurrenceRange `pulumi:"recurrenceRange"`
@@ -60363,10 +61003,10 @@ type UpdateWindowsDailyRecurrenceInput interface {
 
 type UpdateWindowsDailyRecurrenceArgs struct {
 	// Every **X** days:
-	// * `1` = every day,
-	// * `2` = every two days,
-	// * `3` = every three days,
-	// * etc.
+	//  * `1` = every day,
+	//  * `2` = every two days,
+	//  * `3` = every three days,
+	//  * etc.
 	Every pulumi.IntInput `pulumi:"every"`
 	// Recurrence range
 	RecurrenceRange UpdateWindowsDailyRecurrenceRecurrenceRangeInput `pulumi:"recurrenceRange"`
@@ -60452,10 +61092,10 @@ func (o UpdateWindowsDailyRecurrenceOutput) ToUpdateWindowsDailyRecurrencePtrOut
 }
 
 // Every **X** days:
-// * `1` = every day,
-// * `2` = every two days,
-// * `3` = every three days,
-// * etc.
+//   - `1` = every day,
+//   - `2` = every two days,
+//   - `3` = every three days,
+//   - etc.
 func (o UpdateWindowsDailyRecurrenceOutput) Every() pulumi.IntOutput {
 	return o.ApplyT(func(v UpdateWindowsDailyRecurrence) int { return v.Every }).(pulumi.IntOutput)
 }
@@ -60497,10 +61137,10 @@ func (o UpdateWindowsDailyRecurrencePtrOutput) Elem() UpdateWindowsDailyRecurren
 }
 
 // Every **X** days:
-// * `1` = every day,
-// * `2` = every two days,
-// * `3` = every three days,
-// * etc.
+//   - `1` = every day,
+//   - `2` = every two days,
+//   - `3` = every three days,
+//   - etc.
 func (o UpdateWindowsDailyRecurrencePtrOutput) Every() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *UpdateWindowsDailyRecurrence) *int {
 		if v == nil {
@@ -60531,9 +61171,9 @@ func (o UpdateWindowsDailyRecurrencePtrOutput) UpdateTime() UpdateWindowsDailyRe
 }
 
 type UpdateWindowsDailyRecurrenceRecurrenceRange struct {
-	// no documentation available
+	// No documentation available
 	End string `pulumi:"end"`
-	// no documentation available
+	// No documentation available
 	Start string `pulumi:"start"`
 }
 
@@ -60549,9 +61189,9 @@ type UpdateWindowsDailyRecurrenceRecurrenceRangeInput interface {
 }
 
 type UpdateWindowsDailyRecurrenceRecurrenceRangeArgs struct {
-	// no documentation available
+	// No documentation available
 	End pulumi.StringInput `pulumi:"end"`
-	// no documentation available
+	// No documentation available
 	Start pulumi.StringInput `pulumi:"start"`
 }
 
@@ -60632,12 +61272,12 @@ func (o UpdateWindowsDailyRecurrenceRecurrenceRangeOutput) ToUpdateWindowsDailyR
 	}).(UpdateWindowsDailyRecurrenceRecurrenceRangePtrOutput)
 }
 
-// no documentation available
+// No documentation available
 func (o UpdateWindowsDailyRecurrenceRecurrenceRangeOutput) End() pulumi.StringOutput {
 	return o.ApplyT(func(v UpdateWindowsDailyRecurrenceRecurrenceRange) string { return v.End }).(pulumi.StringOutput)
 }
 
-// no documentation available
+// No documentation available
 func (o UpdateWindowsDailyRecurrenceRecurrenceRangeOutput) Start() pulumi.StringOutput {
 	return o.ApplyT(func(v UpdateWindowsDailyRecurrenceRecurrenceRange) string { return v.Start }).(pulumi.StringOutput)
 }
@@ -60666,7 +61306,7 @@ func (o UpdateWindowsDailyRecurrenceRecurrenceRangePtrOutput) Elem() UpdateWindo
 	}).(UpdateWindowsDailyRecurrenceRecurrenceRangeOutput)
 }
 
-// no documentation available
+// No documentation available
 func (o UpdateWindowsDailyRecurrenceRecurrenceRangePtrOutput) End() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *UpdateWindowsDailyRecurrenceRecurrenceRange) *string {
 		if v == nil {
@@ -60676,7 +61316,7 @@ func (o UpdateWindowsDailyRecurrenceRecurrenceRangePtrOutput) End() pulumi.Strin
 	}).(pulumi.StringPtrOutput)
 }
 
-// no documentation available
+// No documentation available
 func (o UpdateWindowsDailyRecurrenceRecurrenceRangePtrOutput) Start() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *UpdateWindowsDailyRecurrenceRecurrenceRange) *string {
 		if v == nil {
@@ -60691,7 +61331,7 @@ type UpdateWindowsDailyRecurrenceUpdateTime struct {
 	Duration int `pulumi:"duration"`
 	// Start time (24-hour clock)
 	StartTime string `pulumi:"startTime"`
-	// Possible Values: `GMT_06_00`, `GMT_12_00`, `GMT_10_00`, `GMT_07_00`, `GMT_00_00`, `GMT_11_00`, `GMT_03_00`, `GMT_01_00`, `GMT_05_00`, `GMT_09_00`, `GMT_02_00`, `GMT_04_00`, `GMT_08_00`
+	// Time zone. Possible values: `GMT+00:00`, `GMT+01:00`, `GMT+02:00`, `GMT+07:00`, `GMT+09:00`, `GMT-03:00`, `GMT-04:00`, `GMT-05:00`, `GMT-06:00`, `GMT-08:00`, `GMT-10:00`, `GMT-11:00`, `GMT-12:00`
 	TimeZone string `pulumi:"timeZone"`
 }
 
@@ -60711,7 +61351,7 @@ type UpdateWindowsDailyRecurrenceUpdateTimeArgs struct {
 	Duration pulumi.IntInput `pulumi:"duration"`
 	// Start time (24-hour clock)
 	StartTime pulumi.StringInput `pulumi:"startTime"`
-	// Possible Values: `GMT_06_00`, `GMT_12_00`, `GMT_10_00`, `GMT_07_00`, `GMT_00_00`, `GMT_11_00`, `GMT_03_00`, `GMT_01_00`, `GMT_05_00`, `GMT_09_00`, `GMT_02_00`, `GMT_04_00`, `GMT_08_00`
+	// Time zone. Possible values: `GMT+00:00`, `GMT+01:00`, `GMT+02:00`, `GMT+07:00`, `GMT+09:00`, `GMT-03:00`, `GMT-04:00`, `GMT-05:00`, `GMT-06:00`, `GMT-08:00`, `GMT-10:00`, `GMT-11:00`, `GMT-12:00`
 	TimeZone pulumi.StringInput `pulumi:"timeZone"`
 }
 
@@ -60802,7 +61442,7 @@ func (o UpdateWindowsDailyRecurrenceUpdateTimeOutput) StartTime() pulumi.StringO
 	return o.ApplyT(func(v UpdateWindowsDailyRecurrenceUpdateTime) string { return v.StartTime }).(pulumi.StringOutput)
 }
 
-// Possible Values: `GMT_06_00`, `GMT_12_00`, `GMT_10_00`, `GMT_07_00`, `GMT_00_00`, `GMT_11_00`, `GMT_03_00`, `GMT_01_00`, `GMT_05_00`, `GMT_09_00`, `GMT_02_00`, `GMT_04_00`, `GMT_08_00`
+// Time zone. Possible values: `GMT+00:00`, `GMT+01:00`, `GMT+02:00`, `GMT+07:00`, `GMT+09:00`, `GMT-03:00`, `GMT-04:00`, `GMT-05:00`, `GMT-06:00`, `GMT-08:00`, `GMT-10:00`, `GMT-11:00`, `GMT-12:00`
 func (o UpdateWindowsDailyRecurrenceUpdateTimeOutput) TimeZone() pulumi.StringOutput {
 	return o.ApplyT(func(v UpdateWindowsDailyRecurrenceUpdateTime) string { return v.TimeZone }).(pulumi.StringOutput)
 }
@@ -60851,7 +61491,7 @@ func (o UpdateWindowsDailyRecurrenceUpdateTimePtrOutput) StartTime() pulumi.Stri
 	}).(pulumi.StringPtrOutput)
 }
 
-// Possible Values: `GMT_06_00`, `GMT_12_00`, `GMT_10_00`, `GMT_07_00`, `GMT_00_00`, `GMT_11_00`, `GMT_03_00`, `GMT_01_00`, `GMT_05_00`, `GMT_09_00`, `GMT_02_00`, `GMT_04_00`, `GMT_08_00`
+// Time zone. Possible values: `GMT+00:00`, `GMT+01:00`, `GMT+02:00`, `GMT+07:00`, `GMT+09:00`, `GMT-03:00`, `GMT-04:00`, `GMT-05:00`, `GMT-06:00`, `GMT-08:00`, `GMT-10:00`, `GMT-11:00`, `GMT-12:00`
 func (o UpdateWindowsDailyRecurrenceUpdateTimePtrOutput) TimeZone() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *UpdateWindowsDailyRecurrenceUpdateTime) *string {
 		if v == nil {
@@ -60863,10 +61503,10 @@ func (o UpdateWindowsDailyRecurrenceUpdateTimePtrOutput) TimeZone() pulumi.Strin
 
 type UpdateWindowsMonthlyRecurrence struct {
 	// Every **X** months:
-	// * `1` = every month,
-	// * `2` = every two months,
-	// * `3` = every three months,
-	// * etc.
+	//  * `1` = every month,
+	//  * `2` = every two months,
+	//  * `3` = every three months,
+	//  * etc.
 	Every int `pulumi:"every"`
 	// Recurrence range
 	RecurrenceRange UpdateWindowsMonthlyRecurrenceRecurrenceRange `pulumi:"recurrenceRange"`
@@ -60889,10 +61529,10 @@ type UpdateWindowsMonthlyRecurrenceInput interface {
 
 type UpdateWindowsMonthlyRecurrenceArgs struct {
 	// Every **X** months:
-	// * `1` = every month,
-	// * `2` = every two months,
-	// * `3` = every three months,
-	// * etc.
+	//  * `1` = every month,
+	//  * `2` = every two months,
+	//  * `3` = every three months,
+	//  * etc.
 	Every pulumi.IntInput `pulumi:"every"`
 	// Recurrence range
 	RecurrenceRange UpdateWindowsMonthlyRecurrenceRecurrenceRangeInput `pulumi:"recurrenceRange"`
@@ -60980,10 +61620,10 @@ func (o UpdateWindowsMonthlyRecurrenceOutput) ToUpdateWindowsMonthlyRecurrencePt
 }
 
 // Every **X** months:
-// * `1` = every month,
-// * `2` = every two months,
-// * `3` = every three months,
-// * etc.
+//   - `1` = every month,
+//   - `2` = every two months,
+//   - `3` = every three months,
+//   - etc.
 func (o UpdateWindowsMonthlyRecurrenceOutput) Every() pulumi.IntOutput {
 	return o.ApplyT(func(v UpdateWindowsMonthlyRecurrence) int { return v.Every }).(pulumi.IntOutput)
 }
@@ -61030,10 +61670,10 @@ func (o UpdateWindowsMonthlyRecurrencePtrOutput) Elem() UpdateWindowsMonthlyRecu
 }
 
 // Every **X** months:
-// * `1` = every month,
-// * `2` = every two months,
-// * `3` = every three months,
-// * etc.
+//   - `1` = every month,
+//   - `2` = every two months,
+//   - `3` = every three months,
+//   - etc.
 func (o UpdateWindowsMonthlyRecurrencePtrOutput) Every() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *UpdateWindowsMonthlyRecurrence) *int {
 		if v == nil {
@@ -61074,9 +61714,9 @@ func (o UpdateWindowsMonthlyRecurrencePtrOutput) UpdateTime() UpdateWindowsMonth
 }
 
 type UpdateWindowsMonthlyRecurrenceRecurrenceRange struct {
-	// no documentation available
+	// No documentation available
 	End string `pulumi:"end"`
-	// no documentation available
+	// No documentation available
 	Start string `pulumi:"start"`
 }
 
@@ -61092,9 +61732,9 @@ type UpdateWindowsMonthlyRecurrenceRecurrenceRangeInput interface {
 }
 
 type UpdateWindowsMonthlyRecurrenceRecurrenceRangeArgs struct {
-	// no documentation available
+	// No documentation available
 	End pulumi.StringInput `pulumi:"end"`
-	// no documentation available
+	// No documentation available
 	Start pulumi.StringInput `pulumi:"start"`
 }
 
@@ -61175,12 +61815,12 @@ func (o UpdateWindowsMonthlyRecurrenceRecurrenceRangeOutput) ToUpdateWindowsMont
 	}).(UpdateWindowsMonthlyRecurrenceRecurrenceRangePtrOutput)
 }
 
-// no documentation available
+// No documentation available
 func (o UpdateWindowsMonthlyRecurrenceRecurrenceRangeOutput) End() pulumi.StringOutput {
 	return o.ApplyT(func(v UpdateWindowsMonthlyRecurrenceRecurrenceRange) string { return v.End }).(pulumi.StringOutput)
 }
 
-// no documentation available
+// No documentation available
 func (o UpdateWindowsMonthlyRecurrenceRecurrenceRangeOutput) Start() pulumi.StringOutput {
 	return o.ApplyT(func(v UpdateWindowsMonthlyRecurrenceRecurrenceRange) string { return v.Start }).(pulumi.StringOutput)
 }
@@ -61209,7 +61849,7 @@ func (o UpdateWindowsMonthlyRecurrenceRecurrenceRangePtrOutput) Elem() UpdateWin
 	}).(UpdateWindowsMonthlyRecurrenceRecurrenceRangeOutput)
 }
 
-// no documentation available
+// No documentation available
 func (o UpdateWindowsMonthlyRecurrenceRecurrenceRangePtrOutput) End() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *UpdateWindowsMonthlyRecurrenceRecurrenceRange) *string {
 		if v == nil {
@@ -61219,7 +61859,7 @@ func (o UpdateWindowsMonthlyRecurrenceRecurrenceRangePtrOutput) End() pulumi.Str
 	}).(pulumi.StringPtrOutput)
 }
 
-// no documentation available
+// No documentation available
 func (o UpdateWindowsMonthlyRecurrenceRecurrenceRangePtrOutput) Start() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *UpdateWindowsMonthlyRecurrenceRecurrenceRange) *string {
 		if v == nil {
@@ -61234,7 +61874,7 @@ type UpdateWindowsMonthlyRecurrenceUpdateTime struct {
 	Duration int `pulumi:"duration"`
 	// Start time (24-hour clock)
 	StartTime string `pulumi:"startTime"`
-	// Possible Values: `GMT_06_00`, `GMT_12_00`, `GMT_10_00`, `GMT_07_00`, `GMT_00_00`, `GMT_11_00`, `GMT_03_00`, `GMT_01_00`, `GMT_05_00`, `GMT_09_00`, `GMT_02_00`, `GMT_04_00`, `GMT_08_00`
+	// Time zone. Possible values: `GMT+00:00`, `GMT+01:00`, `GMT+02:00`, `GMT+07:00`, `GMT+09:00`, `GMT-03:00`, `GMT-04:00`, `GMT-05:00`, `GMT-06:00`, `GMT-08:00`, `GMT-10:00`, `GMT-11:00`, `GMT-12:00`
 	TimeZone string `pulumi:"timeZone"`
 }
 
@@ -61254,7 +61894,7 @@ type UpdateWindowsMonthlyRecurrenceUpdateTimeArgs struct {
 	Duration pulumi.IntInput `pulumi:"duration"`
 	// Start time (24-hour clock)
 	StartTime pulumi.StringInput `pulumi:"startTime"`
-	// Possible Values: `GMT_06_00`, `GMT_12_00`, `GMT_10_00`, `GMT_07_00`, `GMT_00_00`, `GMT_11_00`, `GMT_03_00`, `GMT_01_00`, `GMT_05_00`, `GMT_09_00`, `GMT_02_00`, `GMT_04_00`, `GMT_08_00`
+	// Time zone. Possible values: `GMT+00:00`, `GMT+01:00`, `GMT+02:00`, `GMT+07:00`, `GMT+09:00`, `GMT-03:00`, `GMT-04:00`, `GMT-05:00`, `GMT-06:00`, `GMT-08:00`, `GMT-10:00`, `GMT-11:00`, `GMT-12:00`
 	TimeZone pulumi.StringInput `pulumi:"timeZone"`
 }
 
@@ -61345,7 +61985,7 @@ func (o UpdateWindowsMonthlyRecurrenceUpdateTimeOutput) StartTime() pulumi.Strin
 	return o.ApplyT(func(v UpdateWindowsMonthlyRecurrenceUpdateTime) string { return v.StartTime }).(pulumi.StringOutput)
 }
 
-// Possible Values: `GMT_06_00`, `GMT_12_00`, `GMT_10_00`, `GMT_07_00`, `GMT_00_00`, `GMT_11_00`, `GMT_03_00`, `GMT_01_00`, `GMT_05_00`, `GMT_09_00`, `GMT_02_00`, `GMT_04_00`, `GMT_08_00`
+// Time zone. Possible values: `GMT+00:00`, `GMT+01:00`, `GMT+02:00`, `GMT+07:00`, `GMT+09:00`, `GMT-03:00`, `GMT-04:00`, `GMT-05:00`, `GMT-06:00`, `GMT-08:00`, `GMT-10:00`, `GMT-11:00`, `GMT-12:00`
 func (o UpdateWindowsMonthlyRecurrenceUpdateTimeOutput) TimeZone() pulumi.StringOutput {
 	return o.ApplyT(func(v UpdateWindowsMonthlyRecurrenceUpdateTime) string { return v.TimeZone }).(pulumi.StringOutput)
 }
@@ -61394,7 +62034,7 @@ func (o UpdateWindowsMonthlyRecurrenceUpdateTimePtrOutput) StartTime() pulumi.St
 	}).(pulumi.StringPtrOutput)
 }
 
-// Possible Values: `GMT_06_00`, `GMT_12_00`, `GMT_10_00`, `GMT_07_00`, `GMT_00_00`, `GMT_11_00`, `GMT_03_00`, `GMT_01_00`, `GMT_05_00`, `GMT_09_00`, `GMT_02_00`, `GMT_04_00`, `GMT_08_00`
+// Time zone. Possible values: `GMT+00:00`, `GMT+01:00`, `GMT+02:00`, `GMT+07:00`, `GMT+09:00`, `GMT-03:00`, `GMT-04:00`, `GMT-05:00`, `GMT-06:00`, `GMT-08:00`, `GMT-10:00`, `GMT-11:00`, `GMT-12:00`
 func (o UpdateWindowsMonthlyRecurrenceUpdateTimePtrOutput) TimeZone() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *UpdateWindowsMonthlyRecurrenceUpdateTime) *string {
 		if v == nil {
@@ -61544,9 +62184,9 @@ func (o UpdateWindowsOnceRecurrencePtrOutput) RecurrenceRange() UpdateWindowsOnc
 }
 
 type UpdateWindowsOnceRecurrenceRecurrenceRange struct {
-	// no documentation available
+	// No documentation available
 	End string `pulumi:"end"`
-	// no documentation available
+	// No documentation available
 	Start string `pulumi:"start"`
 }
 
@@ -61562,9 +62202,9 @@ type UpdateWindowsOnceRecurrenceRecurrenceRangeInput interface {
 }
 
 type UpdateWindowsOnceRecurrenceRecurrenceRangeArgs struct {
-	// no documentation available
+	// No documentation available
 	End pulumi.StringInput `pulumi:"end"`
-	// no documentation available
+	// No documentation available
 	Start pulumi.StringInput `pulumi:"start"`
 }
 
@@ -61645,12 +62285,12 @@ func (o UpdateWindowsOnceRecurrenceRecurrenceRangeOutput) ToUpdateWindowsOnceRec
 	}).(UpdateWindowsOnceRecurrenceRecurrenceRangePtrOutput)
 }
 
-// no documentation available
+// No documentation available
 func (o UpdateWindowsOnceRecurrenceRecurrenceRangeOutput) End() pulumi.StringOutput {
 	return o.ApplyT(func(v UpdateWindowsOnceRecurrenceRecurrenceRange) string { return v.End }).(pulumi.StringOutput)
 }
 
-// no documentation available
+// No documentation available
 func (o UpdateWindowsOnceRecurrenceRecurrenceRangeOutput) Start() pulumi.StringOutput {
 	return o.ApplyT(func(v UpdateWindowsOnceRecurrenceRecurrenceRange) string { return v.Start }).(pulumi.StringOutput)
 }
@@ -61679,7 +62319,7 @@ func (o UpdateWindowsOnceRecurrenceRecurrenceRangePtrOutput) Elem() UpdateWindow
 	}).(UpdateWindowsOnceRecurrenceRecurrenceRangeOutput)
 }
 
-// no documentation available
+// No documentation available
 func (o UpdateWindowsOnceRecurrenceRecurrenceRangePtrOutput) End() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *UpdateWindowsOnceRecurrenceRecurrenceRange) *string {
 		if v == nil {
@@ -61689,7 +62329,7 @@ func (o UpdateWindowsOnceRecurrenceRecurrenceRangePtrOutput) End() pulumi.String
 	}).(pulumi.StringPtrOutput)
 }
 
-// no documentation available
+// No documentation available
 func (o UpdateWindowsOnceRecurrenceRecurrenceRangePtrOutput) Start() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *UpdateWindowsOnceRecurrenceRecurrenceRange) *string {
 		if v == nil {
@@ -61701,10 +62341,10 @@ func (o UpdateWindowsOnceRecurrenceRecurrenceRangePtrOutput) Start() pulumi.Stri
 
 type UpdateWindowsWeeklyRecurrence struct {
 	// Every **X** weeks:
-	// * `1` = every week,
-	// * `2` = every two weeks,
-	// * `3` = every three weeks,
-	// * etc.
+	//  * `1` = every week,
+	//  * `2` = every two weeks,
+	//  * `3` = every three weeks,
+	//  * etc.
 	Every int `pulumi:"every"`
 	// Recurrence range
 	RecurrenceRange UpdateWindowsWeeklyRecurrenceRecurrenceRange `pulumi:"recurrenceRange"`
@@ -61727,10 +62367,10 @@ type UpdateWindowsWeeklyRecurrenceInput interface {
 
 type UpdateWindowsWeeklyRecurrenceArgs struct {
 	// Every **X** weeks:
-	// * `1` = every week,
-	// * `2` = every two weeks,
-	// * `3` = every three weeks,
-	// * etc.
+	//  * `1` = every week,
+	//  * `2` = every two weeks,
+	//  * `3` = every three weeks,
+	//  * etc.
 	Every pulumi.IntInput `pulumi:"every"`
 	// Recurrence range
 	RecurrenceRange UpdateWindowsWeeklyRecurrenceRecurrenceRangeInput `pulumi:"recurrenceRange"`
@@ -61818,10 +62458,10 @@ func (o UpdateWindowsWeeklyRecurrenceOutput) ToUpdateWindowsWeeklyRecurrencePtrO
 }
 
 // Every **X** weeks:
-// * `1` = every week,
-// * `2` = every two weeks,
-// * `3` = every three weeks,
-// * etc.
+//   - `1` = every week,
+//   - `2` = every two weeks,
+//   - `3` = every three weeks,
+//   - etc.
 func (o UpdateWindowsWeeklyRecurrenceOutput) Every() pulumi.IntOutput {
 	return o.ApplyT(func(v UpdateWindowsWeeklyRecurrence) int { return v.Every }).(pulumi.IntOutput)
 }
@@ -61870,10 +62510,10 @@ func (o UpdateWindowsWeeklyRecurrencePtrOutput) Elem() UpdateWindowsWeeklyRecurr
 }
 
 // Every **X** weeks:
-// * `1` = every week,
-// * `2` = every two weeks,
-// * `3` = every three weeks,
-// * etc.
+//   - `1` = every week,
+//   - `2` = every two weeks,
+//   - `3` = every three weeks,
+//   - etc.
 func (o UpdateWindowsWeeklyRecurrencePtrOutput) Every() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *UpdateWindowsWeeklyRecurrence) *int {
 		if v == nil {
@@ -61914,9 +62554,9 @@ func (o UpdateWindowsWeeklyRecurrencePtrOutput) UpdateTime() UpdateWindowsWeekly
 }
 
 type UpdateWindowsWeeklyRecurrenceRecurrenceRange struct {
-	// no documentation available
+	// No documentation available
 	End string `pulumi:"end"`
-	// no documentation available
+	// No documentation available
 	Start string `pulumi:"start"`
 }
 
@@ -61932,9 +62572,9 @@ type UpdateWindowsWeeklyRecurrenceRecurrenceRangeInput interface {
 }
 
 type UpdateWindowsWeeklyRecurrenceRecurrenceRangeArgs struct {
-	// no documentation available
+	// No documentation available
 	End pulumi.StringInput `pulumi:"end"`
-	// no documentation available
+	// No documentation available
 	Start pulumi.StringInput `pulumi:"start"`
 }
 
@@ -62015,12 +62655,12 @@ func (o UpdateWindowsWeeklyRecurrenceRecurrenceRangeOutput) ToUpdateWindowsWeekl
 	}).(UpdateWindowsWeeklyRecurrenceRecurrenceRangePtrOutput)
 }
 
-// no documentation available
+// No documentation available
 func (o UpdateWindowsWeeklyRecurrenceRecurrenceRangeOutput) End() pulumi.StringOutput {
 	return o.ApplyT(func(v UpdateWindowsWeeklyRecurrenceRecurrenceRange) string { return v.End }).(pulumi.StringOutput)
 }
 
-// no documentation available
+// No documentation available
 func (o UpdateWindowsWeeklyRecurrenceRecurrenceRangeOutput) Start() pulumi.StringOutput {
 	return o.ApplyT(func(v UpdateWindowsWeeklyRecurrenceRecurrenceRange) string { return v.Start }).(pulumi.StringOutput)
 }
@@ -62049,7 +62689,7 @@ func (o UpdateWindowsWeeklyRecurrenceRecurrenceRangePtrOutput) Elem() UpdateWind
 	}).(UpdateWindowsWeeklyRecurrenceRecurrenceRangeOutput)
 }
 
-// no documentation available
+// No documentation available
 func (o UpdateWindowsWeeklyRecurrenceRecurrenceRangePtrOutput) End() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *UpdateWindowsWeeklyRecurrenceRecurrenceRange) *string {
 		if v == nil {
@@ -62059,7 +62699,7 @@ func (o UpdateWindowsWeeklyRecurrenceRecurrenceRangePtrOutput) End() pulumi.Stri
 	}).(pulumi.StringPtrOutput)
 }
 
-// no documentation available
+// No documentation available
 func (o UpdateWindowsWeeklyRecurrenceRecurrenceRangePtrOutput) Start() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *UpdateWindowsWeeklyRecurrenceRecurrenceRange) *string {
 		if v == nil {
@@ -62070,19 +62710,19 @@ func (o UpdateWindowsWeeklyRecurrenceRecurrenceRangePtrOutput) Start() pulumi.St
 }
 
 type UpdateWindowsWeeklyRecurrenceSelectedWeekDays struct {
-	// no documentation available
+	// No documentation available
 	Friday bool `pulumi:"friday"`
-	// no documentation available
+	// No documentation available
 	Monday bool `pulumi:"monday"`
-	// no documentation available
+	// No documentation available
 	Saturday bool `pulumi:"saturday"`
-	// no documentation available
+	// No documentation available
 	Sunday bool `pulumi:"sunday"`
-	// no documentation available
+	// No documentation available
 	Thursday bool `pulumi:"thursday"`
-	// no documentation available
+	// No documentation available
 	Tuesday bool `pulumi:"tuesday"`
-	// no documentation available
+	// No documentation available
 	Wednesday bool `pulumi:"wednesday"`
 }
 
@@ -62098,19 +62738,19 @@ type UpdateWindowsWeeklyRecurrenceSelectedWeekDaysInput interface {
 }
 
 type UpdateWindowsWeeklyRecurrenceSelectedWeekDaysArgs struct {
-	// no documentation available
+	// No documentation available
 	Friday pulumi.BoolInput `pulumi:"friday"`
-	// no documentation available
+	// No documentation available
 	Monday pulumi.BoolInput `pulumi:"monday"`
-	// no documentation available
+	// No documentation available
 	Saturday pulumi.BoolInput `pulumi:"saturday"`
-	// no documentation available
+	// No documentation available
 	Sunday pulumi.BoolInput `pulumi:"sunday"`
-	// no documentation available
+	// No documentation available
 	Thursday pulumi.BoolInput `pulumi:"thursday"`
-	// no documentation available
+	// No documentation available
 	Tuesday pulumi.BoolInput `pulumi:"tuesday"`
-	// no documentation available
+	// No documentation available
 	Wednesday pulumi.BoolInput `pulumi:"wednesday"`
 }
 
@@ -62191,37 +62831,37 @@ func (o UpdateWindowsWeeklyRecurrenceSelectedWeekDaysOutput) ToUpdateWindowsWeek
 	}).(UpdateWindowsWeeklyRecurrenceSelectedWeekDaysPtrOutput)
 }
 
-// no documentation available
+// No documentation available
 func (o UpdateWindowsWeeklyRecurrenceSelectedWeekDaysOutput) Friday() pulumi.BoolOutput {
 	return o.ApplyT(func(v UpdateWindowsWeeklyRecurrenceSelectedWeekDays) bool { return v.Friday }).(pulumi.BoolOutput)
 }
 
-// no documentation available
+// No documentation available
 func (o UpdateWindowsWeeklyRecurrenceSelectedWeekDaysOutput) Monday() pulumi.BoolOutput {
 	return o.ApplyT(func(v UpdateWindowsWeeklyRecurrenceSelectedWeekDays) bool { return v.Monday }).(pulumi.BoolOutput)
 }
 
-// no documentation available
+// No documentation available
 func (o UpdateWindowsWeeklyRecurrenceSelectedWeekDaysOutput) Saturday() pulumi.BoolOutput {
 	return o.ApplyT(func(v UpdateWindowsWeeklyRecurrenceSelectedWeekDays) bool { return v.Saturday }).(pulumi.BoolOutput)
 }
 
-// no documentation available
+// No documentation available
 func (o UpdateWindowsWeeklyRecurrenceSelectedWeekDaysOutput) Sunday() pulumi.BoolOutput {
 	return o.ApplyT(func(v UpdateWindowsWeeklyRecurrenceSelectedWeekDays) bool { return v.Sunday }).(pulumi.BoolOutput)
 }
 
-// no documentation available
+// No documentation available
 func (o UpdateWindowsWeeklyRecurrenceSelectedWeekDaysOutput) Thursday() pulumi.BoolOutput {
 	return o.ApplyT(func(v UpdateWindowsWeeklyRecurrenceSelectedWeekDays) bool { return v.Thursday }).(pulumi.BoolOutput)
 }
 
-// no documentation available
+// No documentation available
 func (o UpdateWindowsWeeklyRecurrenceSelectedWeekDaysOutput) Tuesday() pulumi.BoolOutput {
 	return o.ApplyT(func(v UpdateWindowsWeeklyRecurrenceSelectedWeekDays) bool { return v.Tuesday }).(pulumi.BoolOutput)
 }
 
-// no documentation available
+// No documentation available
 func (o UpdateWindowsWeeklyRecurrenceSelectedWeekDaysOutput) Wednesday() pulumi.BoolOutput {
 	return o.ApplyT(func(v UpdateWindowsWeeklyRecurrenceSelectedWeekDays) bool { return v.Wednesday }).(pulumi.BoolOutput)
 }
@@ -62250,7 +62890,7 @@ func (o UpdateWindowsWeeklyRecurrenceSelectedWeekDaysPtrOutput) Elem() UpdateWin
 	}).(UpdateWindowsWeeklyRecurrenceSelectedWeekDaysOutput)
 }
 
-// no documentation available
+// No documentation available
 func (o UpdateWindowsWeeklyRecurrenceSelectedWeekDaysPtrOutput) Friday() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *UpdateWindowsWeeklyRecurrenceSelectedWeekDays) *bool {
 		if v == nil {
@@ -62260,7 +62900,7 @@ func (o UpdateWindowsWeeklyRecurrenceSelectedWeekDaysPtrOutput) Friday() pulumi.
 	}).(pulumi.BoolPtrOutput)
 }
 
-// no documentation available
+// No documentation available
 func (o UpdateWindowsWeeklyRecurrenceSelectedWeekDaysPtrOutput) Monday() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *UpdateWindowsWeeklyRecurrenceSelectedWeekDays) *bool {
 		if v == nil {
@@ -62270,7 +62910,7 @@ func (o UpdateWindowsWeeklyRecurrenceSelectedWeekDaysPtrOutput) Monday() pulumi.
 	}).(pulumi.BoolPtrOutput)
 }
 
-// no documentation available
+// No documentation available
 func (o UpdateWindowsWeeklyRecurrenceSelectedWeekDaysPtrOutput) Saturday() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *UpdateWindowsWeeklyRecurrenceSelectedWeekDays) *bool {
 		if v == nil {
@@ -62280,7 +62920,7 @@ func (o UpdateWindowsWeeklyRecurrenceSelectedWeekDaysPtrOutput) Saturday() pulum
 	}).(pulumi.BoolPtrOutput)
 }
 
-// no documentation available
+// No documentation available
 func (o UpdateWindowsWeeklyRecurrenceSelectedWeekDaysPtrOutput) Sunday() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *UpdateWindowsWeeklyRecurrenceSelectedWeekDays) *bool {
 		if v == nil {
@@ -62290,7 +62930,7 @@ func (o UpdateWindowsWeeklyRecurrenceSelectedWeekDaysPtrOutput) Sunday() pulumi.
 	}).(pulumi.BoolPtrOutput)
 }
 
-// no documentation available
+// No documentation available
 func (o UpdateWindowsWeeklyRecurrenceSelectedWeekDaysPtrOutput) Thursday() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *UpdateWindowsWeeklyRecurrenceSelectedWeekDays) *bool {
 		if v == nil {
@@ -62300,7 +62940,7 @@ func (o UpdateWindowsWeeklyRecurrenceSelectedWeekDaysPtrOutput) Thursday() pulum
 	}).(pulumi.BoolPtrOutput)
 }
 
-// no documentation available
+// No documentation available
 func (o UpdateWindowsWeeklyRecurrenceSelectedWeekDaysPtrOutput) Tuesday() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *UpdateWindowsWeeklyRecurrenceSelectedWeekDays) *bool {
 		if v == nil {
@@ -62310,7 +62950,7 @@ func (o UpdateWindowsWeeklyRecurrenceSelectedWeekDaysPtrOutput) Tuesday() pulumi
 	}).(pulumi.BoolPtrOutput)
 }
 
-// no documentation available
+// No documentation available
 func (o UpdateWindowsWeeklyRecurrenceSelectedWeekDaysPtrOutput) Wednesday() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *UpdateWindowsWeeklyRecurrenceSelectedWeekDays) *bool {
 		if v == nil {
@@ -62325,7 +62965,7 @@ type UpdateWindowsWeeklyRecurrenceUpdateTime struct {
 	Duration int `pulumi:"duration"`
 	// Start time (24-hour clock)
 	StartTime string `pulumi:"startTime"`
-	// Possible Values: `GMT_06_00`, `GMT_12_00`, `GMT_10_00`, `GMT_07_00`, `GMT_00_00`, `GMT_11_00`, `GMT_03_00`, `GMT_01_00`, `GMT_05_00`, `GMT_09_00`, `GMT_02_00`, `GMT_04_00`, `GMT_08_00`
+	// Time zone. Possible values: `GMT+00:00`, `GMT+01:00`, `GMT+02:00`, `GMT+07:00`, `GMT+09:00`, `GMT-03:00`, `GMT-04:00`, `GMT-05:00`, `GMT-06:00`, `GMT-08:00`, `GMT-10:00`, `GMT-11:00`, `GMT-12:00`
 	TimeZone string `pulumi:"timeZone"`
 }
 
@@ -62345,7 +62985,7 @@ type UpdateWindowsWeeklyRecurrenceUpdateTimeArgs struct {
 	Duration pulumi.IntInput `pulumi:"duration"`
 	// Start time (24-hour clock)
 	StartTime pulumi.StringInput `pulumi:"startTime"`
-	// Possible Values: `GMT_06_00`, `GMT_12_00`, `GMT_10_00`, `GMT_07_00`, `GMT_00_00`, `GMT_11_00`, `GMT_03_00`, `GMT_01_00`, `GMT_05_00`, `GMT_09_00`, `GMT_02_00`, `GMT_04_00`, `GMT_08_00`
+	// Time zone. Possible values: `GMT+00:00`, `GMT+01:00`, `GMT+02:00`, `GMT+07:00`, `GMT+09:00`, `GMT-03:00`, `GMT-04:00`, `GMT-05:00`, `GMT-06:00`, `GMT-08:00`, `GMT-10:00`, `GMT-11:00`, `GMT-12:00`
 	TimeZone pulumi.StringInput `pulumi:"timeZone"`
 }
 
@@ -62436,7 +63076,7 @@ func (o UpdateWindowsWeeklyRecurrenceUpdateTimeOutput) StartTime() pulumi.String
 	return o.ApplyT(func(v UpdateWindowsWeeklyRecurrenceUpdateTime) string { return v.StartTime }).(pulumi.StringOutput)
 }
 
-// Possible Values: `GMT_06_00`, `GMT_12_00`, `GMT_10_00`, `GMT_07_00`, `GMT_00_00`, `GMT_11_00`, `GMT_03_00`, `GMT_01_00`, `GMT_05_00`, `GMT_09_00`, `GMT_02_00`, `GMT_04_00`, `GMT_08_00`
+// Time zone. Possible values: `GMT+00:00`, `GMT+01:00`, `GMT+02:00`, `GMT+07:00`, `GMT+09:00`, `GMT-03:00`, `GMT-04:00`, `GMT-05:00`, `GMT-06:00`, `GMT-08:00`, `GMT-10:00`, `GMT-11:00`, `GMT-12:00`
 func (o UpdateWindowsWeeklyRecurrenceUpdateTimeOutput) TimeZone() pulumi.StringOutput {
 	return o.ApplyT(func(v UpdateWindowsWeeklyRecurrenceUpdateTime) string { return v.TimeZone }).(pulumi.StringOutput)
 }
@@ -62485,7 +63125,7 @@ func (o UpdateWindowsWeeklyRecurrenceUpdateTimePtrOutput) StartTime() pulumi.Str
 	}).(pulumi.StringPtrOutput)
 }
 
-// Possible Values: `GMT_06_00`, `GMT_12_00`, `GMT_10_00`, `GMT_07_00`, `GMT_00_00`, `GMT_11_00`, `GMT_03_00`, `GMT_01_00`, `GMT_05_00`, `GMT_09_00`, `GMT_02_00`, `GMT_04_00`, `GMT_08_00`
+// Time zone. Possible values: `GMT+00:00`, `GMT+01:00`, `GMT+02:00`, `GMT+07:00`, `GMT+09:00`, `GMT-03:00`, `GMT-04:00`, `GMT-05:00`, `GMT-06:00`, `GMT-08:00`, `GMT-10:00`, `GMT-11:00`, `GMT-12:00`
 func (o UpdateWindowsWeeklyRecurrenceUpdateTimePtrOutput) TimeZone() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *UpdateWindowsWeeklyRecurrenceUpdateTime) *string {
 		if v == nil {
@@ -72981,6 +73621,8 @@ type WebAppEnablementSessionReplay struct {
 	CostAndTrafficControl int `pulumi:"costAndTrafficControl"`
 	// (Field has overlap with `WebApplication`) This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`
+	// Enable New Session Replay Experience
+	EnabledOnGrail *bool `pulumi:"enabledOnGrail"`
 }
 
 // WebAppEnablementSessionReplayInput is an input type that accepts WebAppEnablementSessionReplayArgs and WebAppEnablementSessionReplayOutput values.
@@ -72999,6 +73641,8 @@ type WebAppEnablementSessionReplayArgs struct {
 	CostAndTrafficControl pulumi.IntInput `pulumi:"costAndTrafficControl"`
 	// (Field has overlap with `WebApplication`) This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolInput `pulumi:"enabled"`
+	// Enable New Session Replay Experience
+	EnabledOnGrail pulumi.BoolPtrInput `pulumi:"enabledOnGrail"`
 }
 
 func (WebAppEnablementSessionReplayArgs) ElementType() reflect.Type {
@@ -73088,6 +73732,11 @@ func (o WebAppEnablementSessionReplayOutput) Enabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v WebAppEnablementSessionReplay) bool { return v.Enabled }).(pulumi.BoolOutput)
 }
 
+// Enable New Session Replay Experience
+func (o WebAppEnablementSessionReplayOutput) EnabledOnGrail() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WebAppEnablementSessionReplay) *bool { return v.EnabledOnGrail }).(pulumi.BoolPtrOutput)
+}
+
 type WebAppEnablementSessionReplayPtrOutput struct{ *pulumi.OutputState }
 
 func (WebAppEnablementSessionReplayPtrOutput) ElementType() reflect.Type {
@@ -73129,6 +73778,16 @@ func (o WebAppEnablementSessionReplayPtrOutput) Enabled() pulumi.BoolPtrOutput {
 			return nil
 		}
 		return &v.Enabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Enable New Session Replay Experience
+func (o WebAppEnablementSessionReplayPtrOutput) EnabledOnGrail() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *WebAppEnablementSessionReplay) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.EnabledOnGrail
 	}).(pulumi.BoolPtrOutput)
 }
 
@@ -78337,1029 +78996,13 @@ func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalE
 	}).(pulumi.BoolPtrOutput)
 }
 
-type WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettings struct {
-	// Blur enabled/disabled
-	Blur *bool `pulumi:"blur"`
-	// Change enabled/disabled
-	Change *bool `pulumi:"change"`
-	// Click enabled/disabled
-	Click *bool `pulumi:"click"`
-	// MouseUp enabled/disabled
-	Mouseup *bool `pulumi:"mouseup"`
-	// TouchEnd enabled/disabled
-	TouchEnd *bool `pulumi:"touchEnd"`
-	// TouchStart enabled/disabled
-	TouchStart *bool `pulumi:"touchStart"`
-}
-
-// WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsInput is an input type that accepts WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsArgs and WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutput values.
-// You can construct a concrete instance of `WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsInput` via:
-//
-//	WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsArgs{...}
-type WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsInput interface {
-	pulumi.Input
-
-	ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutput() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutput
-	ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutputWithContext(context.Context) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutput
-}
-
-type WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsArgs struct {
-	// Blur enabled/disabled
-	Blur pulumi.BoolPtrInput `pulumi:"blur"`
-	// Change enabled/disabled
-	Change pulumi.BoolPtrInput `pulumi:"change"`
-	// Click enabled/disabled
-	Click pulumi.BoolPtrInput `pulumi:"click"`
-	// MouseUp enabled/disabled
-	Mouseup pulumi.BoolPtrInput `pulumi:"mouseup"`
-	// TouchEnd enabled/disabled
-	TouchEnd pulumi.BoolPtrInput `pulumi:"touchEnd"`
-	// TouchStart enabled/disabled
-	TouchStart pulumi.BoolPtrInput `pulumi:"touchStart"`
-}
-
-func (WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettings)(nil)).Elem()
-}
-
-func (i WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsArgs) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutput() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutput {
-	return i.ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutputWithContext(context.Background())
-}
-
-func (i WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsArgs) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutput)
-}
-
-func (i WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsArgs) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput {
-	return i.ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutputWithContext(context.Background())
-}
-
-func (i WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsArgs) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutput).ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutputWithContext(ctx)
-}
-
-// WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrInput is an input type that accepts WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsArgs, WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtr and WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput values.
-// You can construct a concrete instance of `WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrInput` via:
-//
-//	        WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsArgs{...}
-//
-//	or:
-//
-//	        nil
-type WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrInput interface {
-	pulumi.Input
-
-	ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput
-	ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutputWithContext(context.Context) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput
-}
-
-type webApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrType WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsArgs
-
-func WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtr(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsArgs) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrInput {
-	return (*webApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrType)(v)
-}
-
-func (*webApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettings)(nil)).Elem()
-}
-
-func (i *webApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrType) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput {
-	return i.ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutputWithContext(context.Background())
-}
-
-func (i *webApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrType) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput)
-}
-
-type WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutput struct{ *pulumi.OutputState }
-
-func (WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettings)(nil)).Elem()
-}
-
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutput) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutput() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutput {
-	return o
-}
-
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutput) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutput {
-	return o
-}
-
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutput) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput {
-	return o.ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutputWithContext(context.Background())
-}
-
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutput) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettings) *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettings {
-		return &v
-	}).(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput)
-}
-
-// Blur enabled/disabled
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutput) Blur() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettings) *bool {
-		return v.Blur
-	}).(pulumi.BoolPtrOutput)
-}
-
-// Change enabled/disabled
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutput) Change() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettings) *bool {
-		return v.Change
-	}).(pulumi.BoolPtrOutput)
-}
-
-// Click enabled/disabled
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutput) Click() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettings) *bool {
-		return v.Click
-	}).(pulumi.BoolPtrOutput)
-}
-
-// MouseUp enabled/disabled
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutput) Mouseup() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettings) *bool {
-		return v.Mouseup
-	}).(pulumi.BoolPtrOutput)
-}
-
-// TouchEnd enabled/disabled
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutput) TouchEnd() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettings) *bool {
-		return v.TouchEnd
-	}).(pulumi.BoolPtrOutput)
-}
-
-// TouchStart enabled/disabled
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutput) TouchStart() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettings) *bool {
-		return v.TouchStart
-	}).(pulumi.BoolPtrOutput)
-}
-
-type WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput struct{ *pulumi.OutputState }
-
-func (WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettings)(nil)).Elem()
-}
-
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput {
-	return o
-}
-
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput {
-	return o
-}
-
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput) Elem() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutput {
-	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettings) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettings {
-		if v != nil {
-			return *v
-		}
-		var ret WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettings
-		return ret
-	}).(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutput)
-}
-
-// Blur enabled/disabled
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput) Blur() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettings) *bool {
-		if v == nil {
-			return nil
-		}
-		return v.Blur
-	}).(pulumi.BoolPtrOutput)
-}
-
-// Change enabled/disabled
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput) Change() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettings) *bool {
-		if v == nil {
-			return nil
-		}
-		return v.Change
-	}).(pulumi.BoolPtrOutput)
-}
-
-// Click enabled/disabled
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput) Click() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettings) *bool {
-		if v == nil {
-			return nil
-		}
-		return v.Click
-	}).(pulumi.BoolPtrOutput)
-}
-
-// MouseUp enabled/disabled
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput) Mouseup() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettings) *bool {
-		if v == nil {
-			return nil
-		}
-		return v.Mouseup
-	}).(pulumi.BoolPtrOutput)
-}
-
-// TouchEnd enabled/disabled
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput) TouchEnd() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettings) *bool {
-		if v == nil {
-			return nil
-		}
-		return v.TouchEnd
-	}).(pulumi.BoolPtrOutput)
-}
-
-// TouchStart enabled/disabled
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput) TouchStart() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettings) *bool {
-		if v == nil {
-			return nil
-		}
-		return v.TouchStart
-	}).(pulumi.BoolPtrOutput)
-}
-
-type WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings struct {
-	// Additional events to be captured globally as user input.
-	AdditionalEventCapturedAsUserInput *string `pulumi:"additionalEventCapturedAsUserInput"`
-	// Change enabled/disabled
-	Change *bool `pulumi:"change"`
-	// Click enabled/disabled
-	Click *bool `pulumi:"click"`
-	// DoubleClick enabled/disabled
-	Doubleclick *bool `pulumi:"doubleclick"`
-	// KeyDown enabled/disabled
-	Keydown *bool `pulumi:"keydown"`
-	// KeyUp enabled/disabled
-	Keyup *bool `pulumi:"keyup"`
-	// MouseDown enabled/disabled
-	Mousedown *bool `pulumi:"mousedown"`
-	// MouseUp enabled/disabled
-	Mouseup *bool `pulumi:"mouseup"`
-	// Scroll enabled/disabled
-	Scroll *bool `pulumi:"scroll"`
-	// TouchEnd enabled/disabled
-	TouchEnd *bool `pulumi:"touchEnd"`
-	// TouchStart enabled/disabled
-	TouchStart *bool `pulumi:"touchStart"`
-}
-
-// WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsInput is an input type that accepts WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsArgs and WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput values.
-// You can construct a concrete instance of `WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsInput` via:
-//
-//	WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsArgs{...}
-type WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsInput interface {
-	pulumi.Input
-
-	ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput
-	ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutputWithContext(context.Context) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput
-}
-
-type WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsArgs struct {
-	// Additional events to be captured globally as user input.
-	AdditionalEventCapturedAsUserInput pulumi.StringPtrInput `pulumi:"additionalEventCapturedAsUserInput"`
-	// Change enabled/disabled
-	Change pulumi.BoolPtrInput `pulumi:"change"`
-	// Click enabled/disabled
-	Click pulumi.BoolPtrInput `pulumi:"click"`
-	// DoubleClick enabled/disabled
-	Doubleclick pulumi.BoolPtrInput `pulumi:"doubleclick"`
-	// KeyDown enabled/disabled
-	Keydown pulumi.BoolPtrInput `pulumi:"keydown"`
-	// KeyUp enabled/disabled
-	Keyup pulumi.BoolPtrInput `pulumi:"keyup"`
-	// MouseDown enabled/disabled
-	Mousedown pulumi.BoolPtrInput `pulumi:"mousedown"`
-	// MouseUp enabled/disabled
-	Mouseup pulumi.BoolPtrInput `pulumi:"mouseup"`
-	// Scroll enabled/disabled
-	Scroll pulumi.BoolPtrInput `pulumi:"scroll"`
-	// TouchEnd enabled/disabled
-	TouchEnd pulumi.BoolPtrInput `pulumi:"touchEnd"`
-	// TouchStart enabled/disabled
-	TouchStart pulumi.BoolPtrInput `pulumi:"touchStart"`
-}
-
-func (WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings)(nil)).Elem()
-}
-
-func (i WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsArgs) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput {
-	return i.ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutputWithContext(context.Background())
-}
-
-func (i WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsArgs) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput)
-}
-
-func (i WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsArgs) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput {
-	return i.ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutputWithContext(context.Background())
-}
-
-func (i WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsArgs) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput).ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutputWithContext(ctx)
-}
-
-// WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrInput is an input type that accepts WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsArgs, WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtr and WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput values.
-// You can construct a concrete instance of `WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrInput` via:
-//
-//	        WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsArgs{...}
-//
-//	or:
-//
-//	        nil
-type WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrInput interface {
-	pulumi.Input
-
-	ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput
-	ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutputWithContext(context.Context) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput
-}
-
-type webApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrType WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsArgs
-
-func WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtr(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsArgs) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrInput {
-	return (*webApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrType)(v)
-}
-
-func (*webApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings)(nil)).Elem()
-}
-
-func (i *webApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrType) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput {
-	return i.ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutputWithContext(context.Background())
-}
-
-func (i *webApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrType) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput)
-}
-
-type WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput struct{ *pulumi.OutputState }
-
-func (WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings)(nil)).Elem()
-}
-
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput {
-	return o
-}
-
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput {
-	return o
-}
-
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput {
-	return o.ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutputWithContext(context.Background())
-}
-
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings) *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings {
-		return &v
-	}).(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput)
-}
-
-// Additional events to be captured globally as user input.
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput) AdditionalEventCapturedAsUserInput() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings) *string {
-		return v.AdditionalEventCapturedAsUserInput
-	}).(pulumi.StringPtrOutput)
-}
-
-// Change enabled/disabled
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput) Change() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings) *bool {
-		return v.Change
-	}).(pulumi.BoolPtrOutput)
-}
-
-// Click enabled/disabled
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput) Click() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings) *bool {
-		return v.Click
-	}).(pulumi.BoolPtrOutput)
-}
-
-// DoubleClick enabled/disabled
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput) Doubleclick() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings) *bool {
-		return v.Doubleclick
-	}).(pulumi.BoolPtrOutput)
-}
-
-// KeyDown enabled/disabled
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput) Keydown() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings) *bool {
-		return v.Keydown
-	}).(pulumi.BoolPtrOutput)
-}
-
-// KeyUp enabled/disabled
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput) Keyup() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings) *bool {
-		return v.Keyup
-	}).(pulumi.BoolPtrOutput)
-}
-
-// MouseDown enabled/disabled
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput) Mousedown() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings) *bool {
-		return v.Mousedown
-	}).(pulumi.BoolPtrOutput)
-}
-
-// MouseUp enabled/disabled
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput) Mouseup() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings) *bool {
-		return v.Mouseup
-	}).(pulumi.BoolPtrOutput)
-}
-
-// Scroll enabled/disabled
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput) Scroll() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings) *bool {
-		return v.Scroll
-	}).(pulumi.BoolPtrOutput)
-}
-
-// TouchEnd enabled/disabled
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput) TouchEnd() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings) *bool {
-		return v.TouchEnd
-	}).(pulumi.BoolPtrOutput)
-}
-
-// TouchStart enabled/disabled
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput) TouchStart() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings) *bool {
-		return v.TouchStart
-	}).(pulumi.BoolPtrOutput)
-}
-
-type WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput struct{ *pulumi.OutputState }
-
-func (WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings)(nil)).Elem()
-}
-
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput {
-	return o
-}
-
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput {
-	return o
-}
-
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput) Elem() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput {
-	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings {
-		if v != nil {
-			return *v
-		}
-		var ret WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings
-		return ret
-	}).(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput)
-}
-
-// Additional events to be captured globally as user input.
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput) AdditionalEventCapturedAsUserInput() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings) *string {
-		if v == nil {
-			return nil
-		}
-		return v.AdditionalEventCapturedAsUserInput
-	}).(pulumi.StringPtrOutput)
-}
-
-// Change enabled/disabled
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput) Change() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings) *bool {
-		if v == nil {
-			return nil
-		}
-		return v.Change
-	}).(pulumi.BoolPtrOutput)
-}
-
-// Click enabled/disabled
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput) Click() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings) *bool {
-		if v == nil {
-			return nil
-		}
-		return v.Click
-	}).(pulumi.BoolPtrOutput)
-}
-
-// DoubleClick enabled/disabled
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput) Doubleclick() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings) *bool {
-		if v == nil {
-			return nil
-		}
-		return v.Doubleclick
-	}).(pulumi.BoolPtrOutput)
-}
-
-// KeyDown enabled/disabled
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput) Keydown() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings) *bool {
-		if v == nil {
-			return nil
-		}
-		return v.Keydown
-	}).(pulumi.BoolPtrOutput)
-}
-
-// KeyUp enabled/disabled
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput) Keyup() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings) *bool {
-		if v == nil {
-			return nil
-		}
-		return v.Keyup
-	}).(pulumi.BoolPtrOutput)
-}
-
-// MouseDown enabled/disabled
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput) Mousedown() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings) *bool {
-		if v == nil {
-			return nil
-		}
-		return v.Mousedown
-	}).(pulumi.BoolPtrOutput)
-}
-
-// MouseUp enabled/disabled
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput) Mouseup() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings) *bool {
-		if v == nil {
-			return nil
-		}
-		return v.Mouseup
-	}).(pulumi.BoolPtrOutput)
-}
-
-// Scroll enabled/disabled
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput) Scroll() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings) *bool {
-		if v == nil {
-			return nil
-		}
-		return v.Scroll
-	}).(pulumi.BoolPtrOutput)
-}
-
-// TouchEnd enabled/disabled
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput) TouchEnd() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings) *bool {
-		if v == nil {
-			return nil
-		}
-		return v.TouchEnd
-	}).(pulumi.BoolPtrOutput)
-}
-
-// TouchStart enabled/disabled
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput) TouchStart() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings) *bool {
-		if v == nil {
-			return nil
-		}
-		return v.TouchStart
-	}).(pulumi.BoolPtrOutput)
-}
-
-type WebApplicationMonitoringSettingsBrowserRestrictionSettings struct {
-	// The mode of the list of browser restrictions. Possible values area `EXCLUDE` and `INCLUDE`.
-	Mode string `pulumi:"mode"`
-	// A list of browser restrictions
-	Restrictions *WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictions `pulumi:"restrictions"`
-}
-
-// WebApplicationMonitoringSettingsBrowserRestrictionSettingsInput is an input type that accepts WebApplicationMonitoringSettingsBrowserRestrictionSettingsArgs and WebApplicationMonitoringSettingsBrowserRestrictionSettingsOutput values.
-// You can construct a concrete instance of `WebApplicationMonitoringSettingsBrowserRestrictionSettingsInput` via:
-//
-//	WebApplicationMonitoringSettingsBrowserRestrictionSettingsArgs{...}
-type WebApplicationMonitoringSettingsBrowserRestrictionSettingsInput interface {
-	pulumi.Input
-
-	ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsOutput() WebApplicationMonitoringSettingsBrowserRestrictionSettingsOutput
-	ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsOutputWithContext(context.Context) WebApplicationMonitoringSettingsBrowserRestrictionSettingsOutput
-}
-
-type WebApplicationMonitoringSettingsBrowserRestrictionSettingsArgs struct {
-	// The mode of the list of browser restrictions. Possible values area `EXCLUDE` and `INCLUDE`.
-	Mode pulumi.StringInput `pulumi:"mode"`
-	// A list of browser restrictions
-	Restrictions WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrInput `pulumi:"restrictions"`
-}
-
-func (WebApplicationMonitoringSettingsBrowserRestrictionSettingsArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*WebApplicationMonitoringSettingsBrowserRestrictionSettings)(nil)).Elem()
-}
-
-func (i WebApplicationMonitoringSettingsBrowserRestrictionSettingsArgs) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsOutput() WebApplicationMonitoringSettingsBrowserRestrictionSettingsOutput {
-	return i.ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsOutputWithContext(context.Background())
-}
-
-func (i WebApplicationMonitoringSettingsBrowserRestrictionSettingsArgs) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsBrowserRestrictionSettingsOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsBrowserRestrictionSettingsOutput)
-}
-
-func (i WebApplicationMonitoringSettingsBrowserRestrictionSettingsArgs) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutput() WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutput {
-	return i.ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutputWithContext(context.Background())
-}
-
-func (i WebApplicationMonitoringSettingsBrowserRestrictionSettingsArgs) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsBrowserRestrictionSettingsOutput).ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutputWithContext(ctx)
-}
-
-// WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrInput is an input type that accepts WebApplicationMonitoringSettingsBrowserRestrictionSettingsArgs, WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtr and WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutput values.
-// You can construct a concrete instance of `WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrInput` via:
-//
-//	        WebApplicationMonitoringSettingsBrowserRestrictionSettingsArgs{...}
-//
-//	or:
-//
-//	        nil
-type WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrInput interface {
-	pulumi.Input
-
-	ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutput() WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutput
-	ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutputWithContext(context.Context) WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutput
-}
-
-type webApplicationMonitoringSettingsBrowserRestrictionSettingsPtrType WebApplicationMonitoringSettingsBrowserRestrictionSettingsArgs
-
-func WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtr(v *WebApplicationMonitoringSettingsBrowserRestrictionSettingsArgs) WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrInput {
-	return (*webApplicationMonitoringSettingsBrowserRestrictionSettingsPtrType)(v)
-}
-
-func (*webApplicationMonitoringSettingsBrowserRestrictionSettingsPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**WebApplicationMonitoringSettingsBrowserRestrictionSettings)(nil)).Elem()
-}
-
-func (i *webApplicationMonitoringSettingsBrowserRestrictionSettingsPtrType) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutput() WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutput {
-	return i.ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutputWithContext(context.Background())
-}
-
-func (i *webApplicationMonitoringSettingsBrowserRestrictionSettingsPtrType) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutput)
-}
-
-type WebApplicationMonitoringSettingsBrowserRestrictionSettingsOutput struct{ *pulumi.OutputState }
-
-func (WebApplicationMonitoringSettingsBrowserRestrictionSettingsOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*WebApplicationMonitoringSettingsBrowserRestrictionSettings)(nil)).Elem()
-}
-
-func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsOutput) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsOutput() WebApplicationMonitoringSettingsBrowserRestrictionSettingsOutput {
-	return o
-}
-
-func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsOutput) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsBrowserRestrictionSettingsOutput {
-	return o
-}
-
-func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsOutput) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutput() WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutput {
-	return o.ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutputWithContext(context.Background())
-}
-
-func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsOutput) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebApplicationMonitoringSettingsBrowserRestrictionSettings) *WebApplicationMonitoringSettingsBrowserRestrictionSettings {
-		return &v
-	}).(WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutput)
-}
-
-// The mode of the list of browser restrictions. Possible values area `EXCLUDE` and `INCLUDE`.
-func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsOutput) Mode() pulumi.StringOutput {
-	return o.ApplyT(func(v WebApplicationMonitoringSettingsBrowserRestrictionSettings) string { return v.Mode }).(pulumi.StringOutput)
-}
-
-// A list of browser restrictions
-func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsOutput) Restrictions() WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput {
-	return o.ApplyT(func(v WebApplicationMonitoringSettingsBrowserRestrictionSettings) *WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictions {
-		return v.Restrictions
-	}).(WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput)
-}
-
-type WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutput struct{ *pulumi.OutputState }
-
-func (WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**WebApplicationMonitoringSettingsBrowserRestrictionSettings)(nil)).Elem()
-}
-
-func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutput) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutput() WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutput {
-	return o
-}
-
-func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutput) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutput {
-	return o
-}
-
-func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutput) Elem() WebApplicationMonitoringSettingsBrowserRestrictionSettingsOutput {
-	return o.ApplyT(func(v *WebApplicationMonitoringSettingsBrowserRestrictionSettings) WebApplicationMonitoringSettingsBrowserRestrictionSettings {
-		if v != nil {
-			return *v
-		}
-		var ret WebApplicationMonitoringSettingsBrowserRestrictionSettings
-		return ret
-	}).(WebApplicationMonitoringSettingsBrowserRestrictionSettingsOutput)
-}
-
-// The mode of the list of browser restrictions. Possible values area `EXCLUDE` and `INCLUDE`.
-func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutput) Mode() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *WebApplicationMonitoringSettingsBrowserRestrictionSettings) *string {
-		if v == nil {
-			return nil
-		}
-		return &v.Mode
-	}).(pulumi.StringPtrOutput)
-}
-
-// A list of browser restrictions
-func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutput) Restrictions() WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput {
-	return o.ApplyT(func(v *WebApplicationMonitoringSettingsBrowserRestrictionSettings) *WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictions {
-		if v == nil {
-			return nil
-		}
-		return v.Restrictions
-	}).(WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput)
-}
-
-type WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictions struct {
-	// Browser exclusion rules for the browsers that are to be excluded
-	Restrictions []WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestriction `pulumi:"restrictions"`
-}
-
-// WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsInput is an input type that accepts WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsArgs and WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsOutput values.
-// You can construct a concrete instance of `WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsInput` via:
-//
-//	WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsArgs{...}
-type WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsInput interface {
-	pulumi.Input
-
-	ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsOutput() WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsOutput
-	ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsOutputWithContext(context.Context) WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsOutput
-}
-
-type WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsArgs struct {
-	// Browser exclusion rules for the browsers that are to be excluded
-	Restrictions WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayInput `pulumi:"restrictions"`
-}
-
-func (WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictions)(nil)).Elem()
-}
-
-func (i WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsArgs) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsOutput() WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsOutput {
-	return i.ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsOutputWithContext(context.Background())
-}
-
-func (i WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsArgs) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsOutput)
-}
-
-func (i WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsArgs) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput() WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput {
-	return i.ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutputWithContext(context.Background())
-}
-
-func (i WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsArgs) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsOutput).ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutputWithContext(ctx)
-}
-
-// WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrInput is an input type that accepts WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsArgs, WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtr and WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput values.
-// You can construct a concrete instance of `WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrInput` via:
-//
-//	        WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsArgs{...}
-//
-//	or:
-//
-//	        nil
-type WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrInput interface {
-	pulumi.Input
-
-	ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput() WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput
-	ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutputWithContext(context.Context) WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput
-}
-
-type webApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrType WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsArgs
-
-func WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtr(v *WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsArgs) WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrInput {
-	return (*webApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrType)(v)
-}
-
-func (*webApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictions)(nil)).Elem()
-}
-
-func (i *webApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrType) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput() WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput {
-	return i.ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutputWithContext(context.Background())
-}
-
-func (i *webApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrType) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput)
-}
-
-type WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsOutput struct{ *pulumi.OutputState }
-
-func (WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictions)(nil)).Elem()
-}
-
-func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsOutput) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsOutput() WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsOutput {
-	return o
-}
-
-func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsOutput) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsOutput {
-	return o
-}
-
-func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsOutput) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput() WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput {
-	return o.ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutputWithContext(context.Background())
-}
-
-func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsOutput) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictions) *WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictions {
-		return &v
-	}).(WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput)
-}
-
-// Browser exclusion rules for the browsers that are to be excluded
-func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsOutput) Restrictions() WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayOutput {
-	return o.ApplyT(func(v WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictions) []WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestriction {
-		return v.Restrictions
-	}).(WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayOutput)
-}
-
-type WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput struct{ *pulumi.OutputState }
-
-func (WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictions)(nil)).Elem()
-}
-
-func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput() WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput {
-	return o
-}
-
-func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput {
-	return o
-}
-
-func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput) Elem() WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsOutput {
-	return o.ApplyT(func(v *WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictions) WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictions {
-		if v != nil {
-			return *v
-		}
-		var ret WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictions
-		return ret
-	}).(WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsOutput)
-}
-
-// Browser exclusion rules for the browsers that are to be excluded
-func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput) Restrictions() WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayOutput {
-	return o.ApplyT(func(v *WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictions) []WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestriction {
-		if v == nil {
-			return nil
-		}
-		return v.Restrictions
-	}).(WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayOutput)
-}
-
-type WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestriction struct {
-	// The type of the browser that is used. Possible values are `ANDROID_WEBKIT`, `BOTS_SPIDERS`, `CHROME`, `EDGE`, `FIREFOX`, `INTERNET_EXPLORER,`OPERA`and`SAFARI`
-	BrowserType string `pulumi:"browserType"`
-	// The version of the browser that is used
-	BrowserVersion *string `pulumi:"browserVersion"`
-	// No documentation available. Possible values are `EQUALS`, `GREATER_THAN_OR_EQUAL` and `LOWER_THAN_OR_EQUAL`.
-	Comparator *string `pulumi:"comparator"`
-	// The platform on which the browser is being used. Possible values are `ALL`, `DESKTOP` and `MOBILE`
-	Platform *string `pulumi:"platform"`
-}
-
-// WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionInput is an input type that accepts WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArgs and WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionOutput values.
-// You can construct a concrete instance of `WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionInput` via:
-//
-//	WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArgs{...}
-type WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionInput interface {
-	pulumi.Input
-
-	ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionOutput() WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionOutput
-	ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionOutputWithContext(context.Context) WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionOutput
-}
-
-type WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArgs struct {
-	// The type of the browser that is used. Possible values are `ANDROID_WEBKIT`, `BOTS_SPIDERS`, `CHROME`, `EDGE`, `FIREFOX`, `INTERNET_EXPLORER,`OPERA`and`SAFARI`
-	BrowserType pulumi.StringInput `pulumi:"browserType"`
-	// The version of the browser that is used
-	BrowserVersion pulumi.StringPtrInput `pulumi:"browserVersion"`
-	// No documentation available. Possible values are `EQUALS`, `GREATER_THAN_OR_EQUAL` and `LOWER_THAN_OR_EQUAL`.
-	Comparator pulumi.StringPtrInput `pulumi:"comparator"`
-	// The platform on which the browser is being used. Possible values are `ALL`, `DESKTOP` and `MOBILE`
-	Platform pulumi.StringPtrInput `pulumi:"platform"`
-}
-
-func (WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestriction)(nil)).Elem()
-}
-
-func (i WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArgs) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionOutput() WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionOutput {
-	return i.ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionOutputWithContext(context.Background())
-}
-
-func (i WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArgs) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionOutput)
-}
-
-// WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayInput is an input type that accepts WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArray and WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayOutput values.
-// You can construct a concrete instance of `WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayInput` via:
-//
-//	WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArray{ WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArgs{...} }
-type WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayInput interface {
-	pulumi.Input
-
-	ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayOutput() WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayOutput
-	ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayOutputWithContext(context.Context) WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayOutput
-}
-
-type WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArray []WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionInput
-
-func (WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestriction)(nil)).Elem()
-}
-
-func (i WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArray) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayOutput() WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayOutput {
-	return i.ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayOutputWithContext(context.Background())
-}
-
-func (i WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArray) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayOutput)
-}
-
-type WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionOutput struct{ *pulumi.OutputState }
-
-func (WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestriction)(nil)).Elem()
-}
-
-func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionOutput) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionOutput() WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionOutput {
-	return o
-}
-
-func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionOutput) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionOutput {
-	return o
-}
-
-// The type of the browser that is used. Possible values are `ANDROID_WEBKIT`, `BOTS_SPIDERS`, `CHROME`, `EDGE`, `FIREFOX`, `INTERNET_EXPLORER,`OPERA`and`SAFARI`
-func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionOutput) BrowserType() pulumi.StringOutput {
-	return o.ApplyT(func(v WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestriction) string {
-		return v.BrowserType
-	}).(pulumi.StringOutput)
-}
-
-// The version of the browser that is used
-func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionOutput) BrowserVersion() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestriction) *string {
-		return v.BrowserVersion
-	}).(pulumi.StringPtrOutput)
-}
-
-// No documentation available. Possible values are `EQUALS`, `GREATER_THAN_OR_EQUAL` and `LOWER_THAN_OR_EQUAL`.
-func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionOutput) Comparator() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestriction) *string {
-		return v.Comparator
-	}).(pulumi.StringPtrOutput)
-}
-
-// The platform on which the browser is being used. Possible values are `ALL`, `DESKTOP` and `MOBILE`
-func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionOutput) Platform() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestriction) *string {
-		return v.Platform
-	}).(pulumi.StringPtrOutput)
-}
-
-type WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayOutput struct{ *pulumi.OutputState }
-
-func (WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestriction)(nil)).Elem()
-}
-
-func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayOutput) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayOutput() WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayOutput {
-	return o
-}
-
-func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayOutput) ToWebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayOutput {
-	return o
-}
-
-func (o WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayOutput) Index(i pulumi.IntInput) WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestriction {
-		return vs[0].([]WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestriction)[vs[1].(int)]
-	}).(WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionOutput)
-}
-
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesInput)(nil)).Elem(), PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrInput)(nil)).Elem(), PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableInput)(nil)).Elem(), PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArrayInput)(nil)).Elem(), PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PlatformSloSliReferenceInput)(nil)).Elem(), PlatformSloSliReferenceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PlatformSloSliReferencePtrInput)(nil)).Elem(), PlatformSloSliReferenceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PlatformSloSliReferenceVariablesInput)(nil)).Elem(), PlatformSloSliReferenceVariablesArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PlatformSloSliReferenceVariablesPtrInput)(nil)).Elem(), PlatformSloSliReferenceVariablesArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PlatformSloSliReferenceVariablesSliReferenceVariableInput)(nil)).Elem(), PlatformSloSliReferenceVariablesSliReferenceVariableArgs{})
@@ -80114,6 +79757,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*SpanEntryPointMatchesPtrInput)(nil)).Elem(), SpanEntryPointMatchesArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SpanEntryPointMatchesMatchInput)(nil)).Elem(), SpanEntryPointMatchesMatchArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SpanEntryPointMatchesMatchArrayInput)(nil)).Elem(), SpanEntryPointMatchesMatchArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SyntheticPrimaryGrailTagsTagsInput)(nil)).Elem(), SyntheticPrimaryGrailTagsTagsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SyntheticPrimaryGrailTagsTagsPtrInput)(nil)).Elem(), SyntheticPrimaryGrailTagsTagsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SyntheticPrimaryGrailTagsTagsTagInput)(nil)).Elem(), SyntheticPrimaryGrailTagsTagsTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SyntheticPrimaryGrailTagsTagsTagArrayInput)(nil)).Elem(), SyntheticPrimaryGrailTagsTagsTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*UpdateWindowsDailyRecurrenceInput)(nil)).Elem(), UpdateWindowsDailyRecurrenceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*UpdateWindowsDailyRecurrencePtrInput)(nil)).Elem(), UpdateWindowsDailyRecurrenceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*UpdateWindowsDailyRecurrenceRecurrenceRangeInput)(nil)).Elem(), UpdateWindowsDailyRecurrenceRecurrenceRangeArgs{})
@@ -80335,16 +79982,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrInput)(nil)).Elem(), WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersInput)(nil)).Elem(), WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrInput)(nil)).Elem(), WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsInput)(nil)).Elem(), WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrInput)(nil)).Elem(), WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsInput)(nil)).Elem(), WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrInput)(nil)).Elem(), WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationMonitoringSettingsBrowserRestrictionSettingsInput)(nil)).Elem(), WebApplicationMonitoringSettingsBrowserRestrictionSettingsArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrInput)(nil)).Elem(), WebApplicationMonitoringSettingsBrowserRestrictionSettingsArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsInput)(nil)).Elem(), WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrInput)(nil)).Elem(), WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionInput)(nil)).Elem(), WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayInput)(nil)).Elem(), WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArray{})
+	pulumi.RegisterOutputType(PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesOutput{})
+	pulumi.RegisterOutputType(PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrOutput{})
+	pulumi.RegisterOutputType(PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableOutput{})
+	pulumi.RegisterOutputType(PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArrayOutput{})
+	pulumi.RegisterOutputType(PlatformSloSliReferenceOutput{})
+	pulumi.RegisterOutputType(PlatformSloSliReferencePtrOutput{})
 	pulumi.RegisterOutputType(PlatformSloSliReferenceVariablesOutput{})
 	pulumi.RegisterOutputType(PlatformSloSliReferenceVariablesPtrOutput{})
 	pulumi.RegisterOutputType(PlatformSloSliReferenceVariablesSliReferenceVariableOutput{})
@@ -81099,6 +80742,10 @@ func init() {
 	pulumi.RegisterOutputType(SpanEntryPointMatchesPtrOutput{})
 	pulumi.RegisterOutputType(SpanEntryPointMatchesMatchOutput{})
 	pulumi.RegisterOutputType(SpanEntryPointMatchesMatchArrayOutput{})
+	pulumi.RegisterOutputType(SyntheticPrimaryGrailTagsTagsOutput{})
+	pulumi.RegisterOutputType(SyntheticPrimaryGrailTagsTagsPtrOutput{})
+	pulumi.RegisterOutputType(SyntheticPrimaryGrailTagsTagsTagOutput{})
+	pulumi.RegisterOutputType(SyntheticPrimaryGrailTagsTagsTagArrayOutput{})
 	pulumi.RegisterOutputType(UpdateWindowsDailyRecurrenceOutput{})
 	pulumi.RegisterOutputType(UpdateWindowsDailyRecurrencePtrOutput{})
 	pulumi.RegisterOutputType(UpdateWindowsDailyRecurrenceRecurrenceRangeOutput{})
@@ -81320,14 +80967,4 @@ func init() {
 	pulumi.RegisterOutputType(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutput{})
 	pulumi.RegisterOutputType(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersOutput{})
 	pulumi.RegisterOutputType(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutput{})
-	pulumi.RegisterOutputType(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsOutput{})
-	pulumi.RegisterOutputType(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput{})
-	pulumi.RegisterOutputType(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsOutput{})
-	pulumi.RegisterOutputType(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput{})
-	pulumi.RegisterOutputType(WebApplicationMonitoringSettingsBrowserRestrictionSettingsOutput{})
-	pulumi.RegisterOutputType(WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutput{})
-	pulumi.RegisterOutputType(WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsOutput{})
-	pulumi.RegisterOutputType(WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsPtrOutput{})
-	pulumi.RegisterOutputType(WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionOutput{})
-	pulumi.RegisterOutputType(WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionArrayOutput{})
 }

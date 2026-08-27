@@ -60,7 +60,7 @@ import (
 //			if err != nil {
 //				return err
 //			}
-//			tmpJSON0, err := json.Marshal(map[string]interface{}{
+//			tmpJSON0, err := json.Marshal(map[string]string{
 //				"DavisSecurityScore": "{DavisSecurityScore}",
 //				"SecurityProblemId":  "{SecurityProblemId}",
 //				"SecurityProblemUrl": "{SecurityProblemUrl}",
@@ -74,7 +74,7 @@ import (
 //				Type:                                pulumi.String("WEBHOOK"),
 //				Enabled:                             pulumi.Bool(true),
 //				DisplayName:                         pulumi.String("Terraform Security Problem Webhook Test"),
-//				SecurityProblemBasedAlertingProfile: alert.ID(),
+//				SecurityProblemBasedAlertingProfile: alert.ID().ToIDOutput().ToStringOutput(),
 //				Trigger:                             pulumi.String("SECURITY_PROBLEM"),
 //				SecurityProblemBasedWebhookPayload: &dynatrace.AppsecNotificationSecurityProblemBasedWebhookPayloadArgs{
 //					Payload: pulumi.String(json0),

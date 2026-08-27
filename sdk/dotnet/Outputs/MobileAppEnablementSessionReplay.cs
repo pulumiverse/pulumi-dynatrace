@@ -23,9 +23,17 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly bool? FullSessionReplay;
         /// <summary>
+        /// Enable New Session Replay Experience
+        /// </summary>
+        public readonly bool? FullSessionReplayOnGrail;
+        /// <summary>
         /// Capture screen recordings that replay the user actions preceding all detected crashes. Before enabling, Dynatrace checks your system against the [prerequisites for Session Replay](https://dt-url.net/t23s0ppi).
         /// </summary>
         public readonly bool OnCrash;
+        /// <summary>
+        /// Enable New Session Replay on Crashes Experience
+        /// </summary>
+        public readonly bool? OnCrashOnGrail;
 
         [OutputConstructor]
         private MobileAppEnablementSessionReplay(
@@ -33,11 +41,17 @@ namespace Pulumiverse.Dynatrace.Outputs
 
             bool? fullSessionReplay,
 
-            bool onCrash)
+            bool? fullSessionReplayOnGrail,
+
+            bool onCrash,
+
+            bool? onCrashOnGrail)
         {
             CostAndTrafficControl = costAndTrafficControl;
             FullSessionReplay = fullSessionReplay;
+            FullSessionReplayOnGrail = fullSessionReplayOnGrail;
             OnCrash = onCrash;
+            OnCrashOnGrail = onCrashOnGrail;
         }
     }
 }

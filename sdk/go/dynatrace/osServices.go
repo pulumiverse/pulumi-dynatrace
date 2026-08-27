@@ -43,6 +43,8 @@ type OsServices struct {
 	// Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+).
 	Metadata OsServicesMetadataPtrOutput `pulumi:"metadata"`
 	// Toggle the switch in order to enable or disable availability metric monitoring for this policy. Availability metrics produce custom metrics. Refer to [documentation](https://dt-url.net/vl03xzk) for consumption examples. Each monitored service consumes one custom metric.
+	//
+	//   **The feature can't be configured on hosts in Discovery mode**
 	Monitoring pulumi.BoolOutput `pulumi:"monitoring"`
 	// Rule name
 	Name pulumi.StringOutput `pulumi:"name"`
@@ -51,26 +53,41 @@ type OsServices struct {
 	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
 	Scope pulumi.StringPtrOutput `pulumi:"scope"`
 	// This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
+	//
+	//   - `$eq(failed)` – Matches services that are in failed state.
+	//
+	//   Available logic operations:
+	//  - `$not($eq(active))` – Matches services with state different from active.
+	//  - `$or($eq(inactive),$eq(failed))` – Matches services that are either in inactive or failed state.
+	//
+	//   Use one of the following values as a parameter for this condition:
+	//
+	//   - `reloading`
+	//  - `activating`
+	//  - `deactivating`
+	//  - `failed`
+	//  - `inactive`
+	//  - `active`
 	StatusConditionLinux pulumi.StringPtrOutput `pulumi:"statusConditionLinux"`
 	// This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
 	//
-	// - `$eq(paused)` – Matches services that are in paused state.
+	//   - `$eq(paused)` – Matches services that are in paused state.
 	//
-	// Available logic operations:
-	// - `$not($eq(paused))` – Matches services that are in state different from paused.
-	// - `$or($eq(paused),$eq(running))` – Matches services that are either in paused or running state.
+	//   Available logic operations:
+	//  - `$not($eq(paused))` – Matches services that are in state different from paused.
+	//  - `$or($eq(paused),$eq(running))` – Matches services that are either in paused or running state.
 	//
-	// Use one of the following values as a parameter for this condition:
+	//   Use one of the following values as a parameter for this condition:
 	//
-	// - `running`
-	// - `stopped`
-	// - `startPending`
-	// - `stopPending`
-	// - `continuePending`
-	// - `pausePending`
-	// - `paused`
+	//   - `running`
+	//  - `stopped`
+	//  - `startPending`
+	//  - `stopPending`
+	//  - `continuePending`
+	//  - `pausePending`
+	//  - `paused`
 	StatusConditionWindows pulumi.StringPtrOutput `pulumi:"statusConditionWindows"`
-	// Possible Values: `LINUX`, `WINDOWS`
+	// System. Possible values: `LINUX`, `WINDOWS`
 	System pulumi.StringOutput `pulumi:"system"`
 }
 
@@ -131,6 +148,8 @@ type osServicesState struct {
 	// Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+).
 	Metadata *OsServicesMetadata `pulumi:"metadata"`
 	// Toggle the switch in order to enable or disable availability metric monitoring for this policy. Availability metrics produce custom metrics. Refer to [documentation](https://dt-url.net/vl03xzk) for consumption examples. Each monitored service consumes one custom metric.
+	//
+	//   **The feature can't be configured on hosts in Discovery mode**
 	Monitoring *bool `pulumi:"monitoring"`
 	// Rule name
 	Name *string `pulumi:"name"`
@@ -139,26 +158,41 @@ type osServicesState struct {
 	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
 	Scope *string `pulumi:"scope"`
 	// This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
+	//
+	//   - `$eq(failed)` – Matches services that are in failed state.
+	//
+	//   Available logic operations:
+	//  - `$not($eq(active))` – Matches services with state different from active.
+	//  - `$or($eq(inactive),$eq(failed))` – Matches services that are either in inactive or failed state.
+	//
+	//   Use one of the following values as a parameter for this condition:
+	//
+	//   - `reloading`
+	//  - `activating`
+	//  - `deactivating`
+	//  - `failed`
+	//  - `inactive`
+	//  - `active`
 	StatusConditionLinux *string `pulumi:"statusConditionLinux"`
 	// This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
 	//
-	// - `$eq(paused)` – Matches services that are in paused state.
+	//   - `$eq(paused)` – Matches services that are in paused state.
 	//
-	// Available logic operations:
-	// - `$not($eq(paused))` – Matches services that are in state different from paused.
-	// - `$or($eq(paused),$eq(running))` – Matches services that are either in paused or running state.
+	//   Available logic operations:
+	//  - `$not($eq(paused))` – Matches services that are in state different from paused.
+	//  - `$or($eq(paused),$eq(running))` – Matches services that are either in paused or running state.
 	//
-	// Use one of the following values as a parameter for this condition:
+	//   Use one of the following values as a parameter for this condition:
 	//
-	// - `running`
-	// - `stopped`
-	// - `startPending`
-	// - `stopPending`
-	// - `continuePending`
-	// - `pausePending`
-	// - `paused`
+	//   - `running`
+	//  - `stopped`
+	//  - `startPending`
+	//  - `stopPending`
+	//  - `continuePending`
+	//  - `pausePending`
+	//  - `paused`
 	StatusConditionWindows *string `pulumi:"statusConditionWindows"`
-	// Possible Values: `LINUX`, `WINDOWS`
+	// System. Possible values: `LINUX`, `WINDOWS`
 	System *string `pulumi:"system"`
 }
 
@@ -178,6 +212,8 @@ type OsServicesState struct {
 	// Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+).
 	Metadata OsServicesMetadataPtrInput
 	// Toggle the switch in order to enable or disable availability metric monitoring for this policy. Availability metrics produce custom metrics. Refer to [documentation](https://dt-url.net/vl03xzk) for consumption examples. Each monitored service consumes one custom metric.
+	//
+	//   **The feature can't be configured on hosts in Discovery mode**
 	Monitoring pulumi.BoolPtrInput
 	// Rule name
 	Name pulumi.StringPtrInput
@@ -186,26 +222,41 @@ type OsServicesState struct {
 	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
 	Scope pulumi.StringPtrInput
 	// This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
+	//
+	//   - `$eq(failed)` – Matches services that are in failed state.
+	//
+	//   Available logic operations:
+	//  - `$not($eq(active))` – Matches services with state different from active.
+	//  - `$or($eq(inactive),$eq(failed))` – Matches services that are either in inactive or failed state.
+	//
+	//   Use one of the following values as a parameter for this condition:
+	//
+	//   - `reloading`
+	//  - `activating`
+	//  - `deactivating`
+	//  - `failed`
+	//  - `inactive`
+	//  - `active`
 	StatusConditionLinux pulumi.StringPtrInput
 	// This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
 	//
-	// - `$eq(paused)` – Matches services that are in paused state.
+	//   - `$eq(paused)` – Matches services that are in paused state.
 	//
-	// Available logic operations:
-	// - `$not($eq(paused))` – Matches services that are in state different from paused.
-	// - `$or($eq(paused),$eq(running))` – Matches services that are either in paused or running state.
+	//   Available logic operations:
+	//  - `$not($eq(paused))` – Matches services that are in state different from paused.
+	//  - `$or($eq(paused),$eq(running))` – Matches services that are either in paused or running state.
 	//
-	// Use one of the following values as a parameter for this condition:
+	//   Use one of the following values as a parameter for this condition:
 	//
-	// - `running`
-	// - `stopped`
-	// - `startPending`
-	// - `stopPending`
-	// - `continuePending`
-	// - `pausePending`
-	// - `paused`
+	//   - `running`
+	//  - `stopped`
+	//  - `startPending`
+	//  - `stopPending`
+	//  - `continuePending`
+	//  - `pausePending`
+	//  - `paused`
 	StatusConditionWindows pulumi.StringPtrInput
-	// Possible Values: `LINUX`, `WINDOWS`
+	// System. Possible values: `LINUX`, `WINDOWS`
 	System pulumi.StringPtrInput
 }
 
@@ -229,6 +280,8 @@ type osServicesArgs struct {
 	// Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+).
 	Metadata *OsServicesMetadata `pulumi:"metadata"`
 	// Toggle the switch in order to enable or disable availability metric monitoring for this policy. Availability metrics produce custom metrics. Refer to [documentation](https://dt-url.net/vl03xzk) for consumption examples. Each monitored service consumes one custom metric.
+	//
+	//   **The feature can't be configured on hosts in Discovery mode**
 	Monitoring bool `pulumi:"monitoring"`
 	// Rule name
 	Name *string `pulumi:"name"`
@@ -237,26 +290,41 @@ type osServicesArgs struct {
 	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
 	Scope *string `pulumi:"scope"`
 	// This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
+	//
+	//   - `$eq(failed)` – Matches services that are in failed state.
+	//
+	//   Available logic operations:
+	//  - `$not($eq(active))` – Matches services with state different from active.
+	//  - `$or($eq(inactive),$eq(failed))` – Matches services that are either in inactive or failed state.
+	//
+	//   Use one of the following values as a parameter for this condition:
+	//
+	//   - `reloading`
+	//  - `activating`
+	//  - `deactivating`
+	//  - `failed`
+	//  - `inactive`
+	//  - `active`
 	StatusConditionLinux *string `pulumi:"statusConditionLinux"`
 	// This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
 	//
-	// - `$eq(paused)` – Matches services that are in paused state.
+	//   - `$eq(paused)` – Matches services that are in paused state.
 	//
-	// Available logic operations:
-	// - `$not($eq(paused))` – Matches services that are in state different from paused.
-	// - `$or($eq(paused),$eq(running))` – Matches services that are either in paused or running state.
+	//   Available logic operations:
+	//  - `$not($eq(paused))` – Matches services that are in state different from paused.
+	//  - `$or($eq(paused),$eq(running))` – Matches services that are either in paused or running state.
 	//
-	// Use one of the following values as a parameter for this condition:
+	//   Use one of the following values as a parameter for this condition:
 	//
-	// - `running`
-	// - `stopped`
-	// - `startPending`
-	// - `stopPending`
-	// - `continuePending`
-	// - `pausePending`
-	// - `paused`
+	//   - `running`
+	//  - `stopped`
+	//  - `startPending`
+	//  - `stopPending`
+	//  - `continuePending`
+	//  - `pausePending`
+	//  - `paused`
 	StatusConditionWindows *string `pulumi:"statusConditionWindows"`
-	// Possible Values: `LINUX`, `WINDOWS`
+	// System. Possible values: `LINUX`, `WINDOWS`
 	System string `pulumi:"system"`
 }
 
@@ -277,6 +345,8 @@ type OsServicesArgs struct {
 	// Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+).
 	Metadata OsServicesMetadataPtrInput
 	// Toggle the switch in order to enable or disable availability metric monitoring for this policy. Availability metrics produce custom metrics. Refer to [documentation](https://dt-url.net/vl03xzk) for consumption examples. Each monitored service consumes one custom metric.
+	//
+	//   **The feature can't be configured on hosts in Discovery mode**
 	Monitoring pulumi.BoolInput
 	// Rule name
 	Name pulumi.StringPtrInput
@@ -285,26 +355,41 @@ type OsServicesArgs struct {
 	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
 	Scope pulumi.StringPtrInput
 	// This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
+	//
+	//   - `$eq(failed)` – Matches services that are in failed state.
+	//
+	//   Available logic operations:
+	//  - `$not($eq(active))` – Matches services with state different from active.
+	//  - `$or($eq(inactive),$eq(failed))` – Matches services that are either in inactive or failed state.
+	//
+	//   Use one of the following values as a parameter for this condition:
+	//
+	//   - `reloading`
+	//  - `activating`
+	//  - `deactivating`
+	//  - `failed`
+	//  - `inactive`
+	//  - `active`
 	StatusConditionLinux pulumi.StringPtrInput
 	// This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
 	//
-	// - `$eq(paused)` – Matches services that are in paused state.
+	//   - `$eq(paused)` – Matches services that are in paused state.
 	//
-	// Available logic operations:
-	// - `$not($eq(paused))` – Matches services that are in state different from paused.
-	// - `$or($eq(paused),$eq(running))` – Matches services that are either in paused or running state.
+	//   Available logic operations:
+	//  - `$not($eq(paused))` – Matches services that are in state different from paused.
+	//  - `$or($eq(paused),$eq(running))` – Matches services that are either in paused or running state.
 	//
-	// Use one of the following values as a parameter for this condition:
+	//   Use one of the following values as a parameter for this condition:
 	//
-	// - `running`
-	// - `stopped`
-	// - `startPending`
-	// - `stopPending`
-	// - `continuePending`
-	// - `pausePending`
-	// - `paused`
+	//   - `running`
+	//  - `stopped`
+	//  - `startPending`
+	//  - `stopPending`
+	//  - `continuePending`
+	//  - `pausePending`
+	//  - `paused`
 	StatusConditionWindows pulumi.StringPtrInput
-	// Possible Values: `LINUX`, `WINDOWS`
+	// System. Possible values: `LINUX`, `WINDOWS`
 	System pulumi.StringInput
 }
 
@@ -431,6 +516,8 @@ func (o OsServicesOutput) Metadata() OsServicesMetadataPtrOutput {
 }
 
 // Toggle the switch in order to enable or disable availability metric monitoring for this policy. Availability metrics produce custom metrics. Refer to [documentation](https://dt-url.net/vl03xzk) for consumption examples. Each monitored service consumes one custom metric.
+//
+//	**The feature can't be configured on hosts in Discovery mode**
 func (o OsServicesOutput) Monitoring() pulumi.BoolOutput {
 	return o.ApplyT(func(v *OsServices) pulumi.BoolOutput { return v.Monitoring }).(pulumi.BoolOutput)
 }
@@ -451,32 +538,62 @@ func (o OsServicesOutput) Scope() pulumi.StringPtrOutput {
 }
 
 // This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
+//
+//   - `$eq(failed)` – Matches services that are in failed state.
+//
+//     Available logic operations:
+//
+//   - `$not($eq(active))` – Matches services with state different from active.
+//
+//   - `$or($eq(inactive),$eq(failed))` – Matches services that are either in inactive or failed state.
+//
+//     Use one of the following values as a parameter for this condition:
+//
+//   - `reloading`
+//
+//   - `activating`
+//
+//   - `deactivating`
+//
+//   - `failed`
+//
+//   - `inactive`
+//
+//   - `active`
 func (o OsServicesOutput) StatusConditionLinux() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *OsServices) pulumi.StringPtrOutput { return v.StatusConditionLinux }).(pulumi.StringPtrOutput)
 }
 
 // This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
 //
-// - `$eq(paused)` – Matches services that are in paused state.
+//   - `$eq(paused)` – Matches services that are in paused state.
 //
-// Available logic operations:
-// - `$not($eq(paused))` – Matches services that are in state different from paused.
-// - `$or($eq(paused),$eq(running))` – Matches services that are either in paused or running state.
+//     Available logic operations:
 //
-// Use one of the following values as a parameter for this condition:
+//   - `$not($eq(paused))` – Matches services that are in state different from paused.
 //
-// - `running`
-// - `stopped`
-// - `startPending`
-// - `stopPending`
-// - `continuePending`
-// - `pausePending`
-// - `paused`
+//   - `$or($eq(paused),$eq(running))` – Matches services that are either in paused or running state.
+//
+//     Use one of the following values as a parameter for this condition:
+//
+//   - `running`
+//
+//   - `stopped`
+//
+//   - `startPending`
+//
+//   - `stopPending`
+//
+//   - `continuePending`
+//
+//   - `pausePending`
+//
+//   - `paused`
 func (o OsServicesOutput) StatusConditionWindows() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *OsServices) pulumi.StringPtrOutput { return v.StatusConditionWindows }).(pulumi.StringPtrOutput)
 }
 
-// Possible Values: `LINUX`, `WINDOWS`
+// System. Possible values: `LINUX`, `WINDOWS`
 func (o OsServicesOutput) System() pulumi.StringOutput {
 	return o.ApplyT(func(v *OsServices) pulumi.StringOutput { return v.System }).(pulumi.StringOutput)
 }

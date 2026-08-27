@@ -60,7 +60,7 @@ import (
 //						"name":       "Performance",
 //						"tileType":   "HEADER",
 //						"configured": true,
-//						"bounds": map[string]interface{}{
+//						"bounds": map[string]int{
 //							"top":    0,
 //							"left":   38,
 //							"width":  1026,
@@ -73,7 +73,7 @@ import (
 //						"name":       "Failure rate by service",
 //						"tileType":   "DATA_EXPLORER",
 //						"configured": true,
-//						"bounds": map[string]interface{}{
+//						"bounds": map[string]int{
 //							"top":    342,
 //							"left":   38,
 //							"width":  342,
@@ -93,7 +93,7 @@ import (
 //								},
 //								"sortBy":          "DESC",
 //								"sortByDimension": "",
-//								"filterBy": map[string]interface{}{
+//								"filterBy": map[string][]interface{}{
 //									"nestedFilters": []interface{}{},
 //									"criteria":      []interface{}{},
 //								},
@@ -104,60 +104,60 @@ import (
 //						},
 //						"visualConfig": map[string]interface{}{
 //							"type": "TOP_LIST",
-//							"global": map[string]interface{}{
+//							"global": map[string]bool{
 //								"hideLegend": false,
 //							},
 //							"rules": []map[string]interface{}{
 //								map[string]interface{}{
 //									"matcher": "A:",
-//									"properties": map[string]interface{}{
+//									"properties": map[string]string{
 //										"color": "DEFAULT",
 //									},
 //									"seriesOverrides": []interface{}{},
 //								},
 //							},
 //							"axes": map[string]interface{}{
-//								"xAxis": map[string]interface{}{
+//								"xAxis": map[string]bool{
 //									"visible": true,
 //								},
 //								"yAxes": []interface{}{},
 //							},
-//							"heatmapSettings": map[string]interface{}{
+//							"heatmapSettings": map[string]string{
 //								"yAxis": "VALUE",
 //							},
-//							"singleValueSettings": map[string]interface{}{
+//							"singleValueSettings": map[string]bool{
 //								"showSparkLine": true,
 //							},
 //							"thresholds": []map[string]interface{}{
 //								map[string]interface{}{
 //									"axisTarget": "LEFT",
-//									"rules": []map[string]interface{}{
-//										map[string]interface{}{
+//									"rules": []map[string]string{
+//										{
 //											"color": "#7dc540",
 //										},
-//										map[string]interface{}{
+//										{
 //											"color": "#f5d30f",
 //										},
-//										map[string]interface{}{
+//										{
 //											"color": "#dc172a",
 //										},
 //									},
 //									"visible": true,
 //								},
 //							},
-//							"tableSettings": map[string]interface{}{
+//							"tableSettings": map[string][]interface{}{
 //								"hiddenColumns": []interface{}{},
 //							},
-//							"graphChartSettings": map[string]interface{}{
+//							"graphChartSettings": map[string]bool{
 //								"connectNulls": false,
 //							},
-//							"honeycombSettings": map[string]interface{}{
+//							"honeycombSettings": map[string]bool{
 //								"showHive":   true,
 //								"showLegend": true,
 //								"showLabels": false,
 //							},
 //						},
-//						"queriesSettings": map[string]interface{}{
+//						"queriesSettings": map[string]string{
 //							"resolution": "",
 //						},
 //						"metricExpressions": []string{
@@ -168,7 +168,7 @@ import (
 //						"name":       "Total calls",
 //						"tileType":   "DATA_EXPLORER",
 //						"configured": true,
-//						"bounds": map[string]interface{}{
+//						"bounds": map[string]int{
 //							"top":    38,
 //							"left":   38,
 //							"width":  342,
@@ -188,7 +188,7 @@ import (
 //								},
 //								"sortBy":          "DESC",
 //								"sortByDimension": "",
-//								"filterBy": map[string]interface{}{
+//								"filterBy": map[string][]interface{}{
 //									"nestedFilters": []interface{}{},
 //									"criteria":      []interface{}{},
 //								},
@@ -206,7 +206,7 @@ import (
 //								},
 //								"sortBy":          "DESC",
 //								"sortByDimension": "",
-//								"filterBy": map[string]interface{}{
+//								"filterBy": map[string][]interface{}{
 //									"nestedFilters": []interface{}{},
 //									"criteria":      []interface{}{},
 //								},
@@ -224,7 +224,7 @@ import (
 //								},
 //								"sortBy":          "DESC",
 //								"sortByDimension": "",
-//								"filterBy": map[string]interface{}{
+//								"filterBy": map[string][]interface{}{
 //									"nestedFilters": []interface{}{},
 //									"criteria":      []interface{}{},
 //								},
@@ -235,27 +235,27 @@ import (
 //						},
 //						"visualConfig": map[string]interface{}{
 //							"type": "STACKED_AREA",
-//							"global": map[string]interface{}{
+//							"global": map[string]bool{
 //								"hideLegend": false,
 //							},
 //							"rules": []map[string]interface{}{
 //								map[string]interface{}{
 //									"matcher": "A:",
-//									"properties": map[string]interface{}{
+//									"properties": map[string]string{
 //										"color": "DEFAULT",
 //									},
 //									"seriesOverrides": []interface{}{},
 //								},
 //								map[string]interface{}{
 //									"matcher": "B:",
-//									"properties": map[string]interface{}{
+//									"properties": map[string]string{
 //										"color": "DEFAULT",
 //									},
 //									"seriesOverrides": []interface{}{},
 //								},
 //								map[string]interface{}{
 //									"matcher": "C:",
-//									"properties": map[string]interface{}{
+//									"properties": map[string]string{
 //										"color": "DEFAULT",
 //									},
 //									"seriesOverrides": []interface{}{},
@@ -282,42 +282,42 @@ import (
 //									},
 //								},
 //							},
-//							"heatmapSettings": map[string]interface{}{
+//							"heatmapSettings": map[string]string{
 //								"yAxis": "VALUE",
 //							},
-//							"singleValueSettings": map[string]interface{}{
+//							"singleValueSettings": map[string]bool{
 //								"showSparkLine": true,
 //							},
 //							"thresholds": []map[string]interface{}{
 //								map[string]interface{}{
 //									"axisTarget": "LEFT",
-//									"rules": []map[string]interface{}{
-//										map[string]interface{}{
+//									"rules": []map[string]string{
+//										{
 //											"color": "#7dc540",
 //										},
-//										map[string]interface{}{
+//										{
 //											"color": "#f5d30f",
 //										},
-//										map[string]interface{}{
+//										{
 //											"color": "#dc172a",
 //										},
 //									},
 //									"visible": true,
 //								},
 //							},
-//							"tableSettings": map[string]interface{}{
+//							"tableSettings": map[string][]interface{}{
 //								"hiddenColumns": []interface{}{},
 //							},
-//							"graphChartSettings": map[string]interface{}{
+//							"graphChartSettings": map[string]bool{
 //								"connectNulls": false,
 //							},
-//							"honeycombSettings": map[string]interface{}{
+//							"honeycombSettings": map[string]bool{
 //								"showHive":   true,
 //								"showLegend": true,
 //								"showLabels": false,
 //							},
 //						},
-//						"queriesSettings": map[string]interface{}{
+//						"queriesSettings": map[string]string{
 //							"resolution": "",
 //						},
 //						"metricExpressions": []string{
@@ -328,7 +328,7 @@ import (
 //						"name":       "Total errors",
 //						"tileType":   "DATA_EXPLORER",
 //						"configured": true,
-//						"bounds": map[string]interface{}{
+//						"bounds": map[string]int{
 //							"top":    38,
 //							"left":   380,
 //							"width":  342,
@@ -346,7 +346,7 @@ import (
 //								"splitBy":          []interface{}{},
 //								"sortBy":           "DESC",
 //								"sortByDimension":  "",
-//								"filterBy": map[string]interface{}{
+//								"filterBy": map[string][]interface{}{
 //									"nestedFilters": []interface{}{},
 //									"criteria":      []interface{}{},
 //								},
@@ -357,28 +357,28 @@ import (
 //						},
 //						"visualConfig": map[string]interface{}{
 //							"type": "SINGLE_VALUE",
-//							"global": map[string]interface{}{
+//							"global": map[string]bool{
 //								"hideLegend": false,
 //							},
 //							"rules": []map[string]interface{}{
 //								map[string]interface{}{
 //									"matcher": "A:",
-//									"properties": map[string]interface{}{
+//									"properties": map[string]string{
 //										"color": "DEFAULT",
 //									},
 //									"seriesOverrides": []interface{}{},
 //								},
 //							},
 //							"axes": map[string]interface{}{
-//								"xAxis": map[string]interface{}{
+//								"xAxis": map[string]bool{
 //									"visible": true,
 //								},
 //								"yAxes": []interface{}{},
 //							},
-//							"heatmapSettings": map[string]interface{}{
+//							"heatmapSettings": map[string]string{
 //								"yAxis": "VALUE",
 //							},
-//							"singleValueSettings": map[string]interface{}{
+//							"singleValueSettings": map[string]bool{
 //								"showTrend":                false,
 //								"showSparkLine":            true,
 //								"linkTileColorToThreshold": false,
@@ -386,33 +386,33 @@ import (
 //							"thresholds": []map[string]interface{}{
 //								map[string]interface{}{
 //									"axisTarget": "LEFT",
-//									"rules": []map[string]interface{}{
-//										map[string]interface{}{
+//									"rules": []map[string]string{
+//										{
 //											"color": "#7dc540",
 //										},
-//										map[string]interface{}{
+//										{
 //											"color": "#f5d30f",
 //										},
-//										map[string]interface{}{
+//										{
 //											"color": "#dc172a",
 //										},
 //									},
 //									"visible": true,
 //								},
 //							},
-//							"tableSettings": map[string]interface{}{
+//							"tableSettings": map[string][]interface{}{
 //								"hiddenColumns": []interface{}{},
 //							},
-//							"graphChartSettings": map[string]interface{}{
+//							"graphChartSettings": map[string]bool{
 //								"connectNulls": false,
 //							},
-//							"honeycombSettings": map[string]interface{}{
+//							"honeycombSettings": map[string]bool{
 //								"showHive":   true,
 //								"showLegend": true,
 //								"showLabels": false,
 //							},
 //						},
-//						"queriesSettings": map[string]interface{}{
+//						"queriesSettings": map[string]string{
 //							"resolution": "",
 //						},
 //						"metricExpressions": []string{
@@ -424,7 +424,7 @@ import (
 //						"name":       "Client side errors",
 //						"tileType":   "DATA_EXPLORER",
 //						"configured": true,
-//						"bounds": map[string]interface{}{
+//						"bounds": map[string]int{
 //							"top":    38,
 //							"left":   722,
 //							"width":  342,
@@ -442,7 +442,7 @@ import (
 //								"splitBy":          []interface{}{},
 //								"sortBy":           "DESC",
 //								"sortByDimension":  "",
-//								"filterBy": map[string]interface{}{
+//								"filterBy": map[string][]interface{}{
 //									"nestedFilters": []interface{}{},
 //									"criteria":      []interface{}{},
 //								},
@@ -453,60 +453,60 @@ import (
 //						},
 //						"visualConfig": map[string]interface{}{
 //							"type": "SINGLE_VALUE",
-//							"global": map[string]interface{}{
+//							"global": map[string]bool{
 //								"hideLegend": false,
 //							},
 //							"rules": []map[string]interface{}{
 //								map[string]interface{}{
 //									"matcher": "A:",
-//									"properties": map[string]interface{}{
+//									"properties": map[string]string{
 //										"color": "DEFAULT",
 //									},
 //									"seriesOverrides": []interface{}{},
 //								},
 //							},
 //							"axes": map[string]interface{}{
-//								"xAxis": map[string]interface{}{
+//								"xAxis": map[string]bool{
 //									"visible": true,
 //								},
 //								"yAxes": []interface{}{},
 //							},
-//							"heatmapSettings": map[string]interface{}{
+//							"heatmapSettings": map[string]string{
 //								"yAxis": "VALUE",
 //							},
-//							"singleValueSettings": map[string]interface{}{
+//							"singleValueSettings": map[string]bool{
 //								"showSparkLine": true,
 //							},
 //							"thresholds": []map[string]interface{}{
 //								map[string]interface{}{
 //									"axisTarget": "LEFT",
-//									"rules": []map[string]interface{}{
-//										map[string]interface{}{
+//									"rules": []map[string]string{
+//										{
 //											"color": "#7dc540",
 //										},
-//										map[string]interface{}{
+//										{
 //											"color": "#f5d30f",
 //										},
-//										map[string]interface{}{
+//										{
 //											"color": "#dc172a",
 //										},
 //									},
 //									"visible": true,
 //								},
 //							},
-//							"tableSettings": map[string]interface{}{
+//							"tableSettings": map[string][]interface{}{
 //								"hiddenColumns": []interface{}{},
 //							},
-//							"graphChartSettings": map[string]interface{}{
+//							"graphChartSettings": map[string]bool{
 //								"connectNulls": false,
 //							},
-//							"honeycombSettings": map[string]interface{}{
+//							"honeycombSettings": map[string]bool{
 //								"showHive":   true,
 //								"showLegend": true,
 //								"showLabels": false,
 //							},
 //						},
-//						"queriesSettings": map[string]interface{}{
+//						"queriesSettings": map[string]string{
 //							"resolution": "",
 //						},
 //						"metricExpressions": []string{

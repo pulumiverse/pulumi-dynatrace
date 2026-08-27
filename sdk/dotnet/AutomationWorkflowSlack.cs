@@ -44,24 +44,57 @@ namespace Pulumiverse.Dynatrace
     /// - `terraform-provider-dynatrace -export dynatrace.AutomationWorkflowSlack` downloads existing Slack for Workflows configuration
     /// 
     /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// 
+    /// ## Resource Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var @default = new Dynatrace.AutomationWorkflowSlack("default", new()
+    ///     {
+    ///         Name = "#name#",
+    ///         Token = "#######",
+    ///     });
+    /// 
+    ///     var externalApproval = new Dynatrace.AutomationWorkflowSlack("external_approval", new()
+    ///     {
+    ///         Name = "#name#",
+    ///         Token = "#######",
+    ///         ExternalApproval = true,
+    ///         SigningSecret = "#######",
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [DynatraceResourceType("dynatrace:index/automationWorkflowSlack:AutomationWorkflowSlack")]
     public partial class AutomationWorkflowSlack : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+        /// Accept external approvals can enable Slack users to directly respond to approval request.
         /// </summary>
-        [Output("insertAfter")]
-        public Output<string> InsertAfter { get; private set; } = null!;
+        [Output("externalApproval")]
+        public Output<bool?> ExternalApproval { get; private set; } = null!;
 
         /// <summary>
-        /// The name of the Slack connection
+        /// Provide a unique and clearly identifiable connection name to your Slack App.
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
         /// <summary>
-        /// The bot token obtained from the Slack App Management UI
+        /// The signing secret obtained from the Slack App Management UI.
+        /// </summary>
+        [Output("signingSecret")]
+        public Output<string?> SigningSecret { get; private set; } = null!;
+
+        /// <summary>
+        /// The bot token obtained from the Slack App Management UI.
         /// </summary>
         [Output("token")]
         public Output<string> Token { get; private set; } = null!;
@@ -92,6 +125,7 @@ namespace Pulumiverse.Dynatrace
                 PluginDownloadURL = "github://api.github.com/pulumiverse",
                 AdditionalSecretOutputs =
                 {
+                    "signingSecret",
                     "token",
                 },
             };
@@ -118,22 +152,38 @@ namespace Pulumiverse.Dynatrace
     public sealed class AutomationWorkflowSlackArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+        /// Accept external approvals can enable Slack users to directly respond to approval request.
         /// </summary>
-        [Input("insertAfter")]
-        public Input<string>? InsertAfter { get; set; }
+        [Input("externalApproval")]
+        public Input<bool>? ExternalApproval { get; set; }
 
         /// <summary>
-        /// The name of the Slack connection
+        /// Provide a unique and clearly identifiable connection name to your Slack App.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
+
+        [Input("signingSecret")]
+        private Input<string>? _signingSecret;
+
+        /// <summary>
+        /// The signing secret obtained from the Slack App Management UI.
+        /// </summary>
+        public Input<string>? SigningSecret
+        {
+            get => _signingSecret;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _signingSecret = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         [Input("token", required: true)]
         private Input<string>? _token;
 
         /// <summary>
-        /// The bot token obtained from the Slack App Management UI
+        /// The bot token obtained from the Slack App Management UI.
         /// </summary>
         public Input<string>? Token
         {
@@ -154,22 +204,38 @@ namespace Pulumiverse.Dynatrace
     public sealed class AutomationWorkflowSlackState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+        /// Accept external approvals can enable Slack users to directly respond to approval request.
         /// </summary>
-        [Input("insertAfter")]
-        public Input<string>? InsertAfter { get; set; }
+        [Input("externalApproval")]
+        public Input<bool>? ExternalApproval { get; set; }
 
         /// <summary>
-        /// The name of the Slack connection
+        /// Provide a unique and clearly identifiable connection name to your Slack App.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
+
+        [Input("signingSecret")]
+        private Input<string>? _signingSecret;
+
+        /// <summary>
+        /// The signing secret obtained from the Slack App Management UI.
+        /// </summary>
+        public Input<string>? SigningSecret
+        {
+            get => _signingSecret;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _signingSecret = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         [Input("token")]
         private Input<string>? _token;
 
         /// <summary>
-        /// The bot token obtained from the Slack App Management UI
+        /// The bot token obtained from the Slack App Management UI.
         /// </summary>
         public Input<string>? Token
         {

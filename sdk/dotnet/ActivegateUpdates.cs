@@ -24,21 +24,78 @@ namespace Pulumiverse.Dynatrace
     /// - `terraform-provider-dynatrace -export dynatrace.ActivegateUpdates` downloads existing Activegate updates configuration
     /// 
     /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// 
+    /// ## Resource Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var exampleUpdateWindows = new Dynatrace.UpdateWindows("example", new()
+    ///     {
+    ///         Name = "#name#",
+    ///         Enabled = true,
+    ///         Recurrence = "ONCE",
+    ///         OnceRecurrence = new Dynatrace.Inputs.UpdateWindowsOnceRecurrenceArgs
+    ///         {
+    ///             RecurrenceRange = new Dynatrace.Inputs.UpdateWindowsOnceRecurrenceRecurrenceRangeArgs
+    ///             {
+    ///                 End = "2023-02-15T04:00:00Z",
+    ///                 Start = "2023-02-15T02:00:00Z",
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    ///     var example = new Dynatrace.ActivegateUpdates("example", new()
+    ///     {
+    ///         Scope = "environment",
+    ///         TargetVersion = "latest",
+    ///         UpdateMode = "AUTOMATIC_DURING_UW",
+    ///         UpdateWindows = new Dynatrace.Inputs.ActivegateUpdatesUpdateWindowsArgs
+    ///         {
+    ///             UpdateWindows = new[]
+    ///             {
+    ///                 new Dynatrace.Inputs.ActivegateUpdatesUpdateWindowsUpdateWindowArgs
+    ///                 {
+    ///                     UpdateWindow = exampleUpdateWindows.Id,
+    ///                 },
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [DynatraceResourceType("dynatrace:index/activegateUpdates:ActivegateUpdates")]
     public partial class ActivegateUpdates : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// Automatic updates at earliest convenience
-        /// </summary>
-        [Output("autoUpdate")]
-        public Output<bool> AutoUpdate { get; private set; } = null!;
-
-        /// <summary>
         /// The scope of this setting (ENVIRONMENT*ACTIVE*GATE). Omit this property if you want to cover the whole environment.
         /// </summary>
         [Output("scope")]
         public Output<string?> Scope { get; private set; } = null!;
+
+        /// <summary>
+        /// Target version
+        /// </summary>
+        [Output("targetVersion")]
+        public Output<string> TargetVersion { get; private set; } = null!;
+
+        /// <summary>
+        /// Update mode. Possible values: `AUTOMATIC`, `AUTOMATIC_DURING_UW`, `MANUAL`
+        /// </summary>
+        [Output("updateMode")]
+        public Output<string> UpdateMode { get; private set; } = null!;
+
+        /// <summary>
+        /// Update windows
+        /// </summary>
+        [Output("updateWindows")]
+        public Output<Outputs.ActivegateUpdatesUpdateWindows?> UpdateWindows { get; private set; } = null!;
 
 
         /// <summary>
@@ -88,16 +145,28 @@ namespace Pulumiverse.Dynatrace
     public sealed class ActivegateUpdatesArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Automatic updates at earliest convenience
-        /// </summary>
-        [Input("autoUpdate", required: true)]
-        public Input<bool> AutoUpdate { get; set; } = null!;
-
-        /// <summary>
         /// The scope of this setting (ENVIRONMENT*ACTIVE*GATE). Omit this property if you want to cover the whole environment.
         /// </summary>
         [Input("scope")]
         public Input<string>? Scope { get; set; }
+
+        /// <summary>
+        /// Target version
+        /// </summary>
+        [Input("targetVersion", required: true)]
+        public Input<string> TargetVersion { get; set; } = null!;
+
+        /// <summary>
+        /// Update mode. Possible values: `AUTOMATIC`, `AUTOMATIC_DURING_UW`, `MANUAL`
+        /// </summary>
+        [Input("updateMode", required: true)]
+        public Input<string> UpdateMode { get; set; } = null!;
+
+        /// <summary>
+        /// Update windows
+        /// </summary>
+        [Input("updateWindows")]
+        public Input<Inputs.ActivegateUpdatesUpdateWindowsArgs>? UpdateWindows { get; set; }
 
         public ActivegateUpdatesArgs()
         {
@@ -108,16 +177,28 @@ namespace Pulumiverse.Dynatrace
     public sealed class ActivegateUpdatesState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Automatic updates at earliest convenience
-        /// </summary>
-        [Input("autoUpdate")]
-        public Input<bool>? AutoUpdate { get; set; }
-
-        /// <summary>
         /// The scope of this setting (ENVIRONMENT*ACTIVE*GATE). Omit this property if you want to cover the whole environment.
         /// </summary>
         [Input("scope")]
         public Input<string>? Scope { get; set; }
+
+        /// <summary>
+        /// Target version
+        /// </summary>
+        [Input("targetVersion")]
+        public Input<string>? TargetVersion { get; set; }
+
+        /// <summary>
+        /// Update mode. Possible values: `AUTOMATIC`, `AUTOMATIC_DURING_UW`, `MANUAL`
+        /// </summary>
+        [Input("updateMode")]
+        public Input<string>? UpdateMode { get; set; }
+
+        /// <summary>
+        /// Update windows
+        /// </summary>
+        [Input("updateWindows")]
+        public Input<Inputs.ActivegateUpdatesUpdateWindowsGetArgs>? UpdateWindows { get; set; }
 
         public ActivegateUpdatesState()
         {

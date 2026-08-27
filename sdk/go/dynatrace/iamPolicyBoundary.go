@@ -61,12 +61,12 @@ import (
 //			}
 //			_, err = dynatrace.NewIamPolicyBindingsV2(ctx, "this", &dynatrace.IamPolicyBindingsV2Args{
 //				Environment: pulumi.String("########"),
-//				Group:       thisIamGroup.ID(),
+//				Group:       thisIamGroup.ID().ToIDOutput().ToStringOutput(),
 //				Policies: dynatrace.IamPolicyBindingsV2PolicyArray{
 //					&dynatrace.IamPolicyBindingsV2PolicyArgs{
-//						Id: thisIamPolicy.ID(),
+//						Id: thisIamPolicy.ID().ToIDOutput().ToStringOutput(),
 //						Boundaries: pulumi.StringArray{
-//							this.ID(),
+//							this.ID().ToIDOutput().ToStringOutput(),
 //						},
 //					},
 //				},

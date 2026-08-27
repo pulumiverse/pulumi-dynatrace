@@ -20,13 +20,13 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<string> AppId { get; set; } = null!;
 
         /// <summary>
-        /// Possible Values: `Debug`, `Error`, `Info`, `Off`, `useDefault`, `Warn`
+        /// App specific log level. Possible values: `Debug`, `Error`, `Info`, `Off`, `useDefault`, `Warn`
         /// </summary>
         [Input("customLogLevel", required: true)]
         public Input<string> CustomLogLevel { get; set; } = null!;
 
         /// <summary>
-        /// Possible Values: `Off`, `On`, `useDefault`
+        /// App specific function traces. Possible values: `Off`, `On`, `useDefault`
         /// </summary>
         [Input("customTraceLevel")]
         public Input<string>? CustomTraceLevel { get; set; }
