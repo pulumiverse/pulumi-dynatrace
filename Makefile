@@ -98,6 +98,7 @@ install_plugins::
 	[ -x $(shell which pulumi) ] || curl -fsSL https://get.pulumi.com | sh
 	pulumi plugin install resource std 2.3.2
 	pulumi plugin install converter terraform 1.2.4
+	pulumi plugin install resource aws
 
 install_dotnet_sdk::
 	mkdir -p $(WORKING_DIR)/nuget
