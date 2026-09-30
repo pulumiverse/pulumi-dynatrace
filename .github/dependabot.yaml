@@ -4,9 +4,8 @@ updates:
     assignees:
       - "pierskarsenbarg"
     schedule:
-      interval: "weekly"
+      interval: "monthly"
       time: "08:00"
-      day: "monday"
     commit-message:
       prefix: "provider"
       include: "scope"
@@ -24,8 +23,7 @@ updates:
       - "pierskarsenbarg"
     directory: "/sdk"
     schedule:
-      interval: "weekly"
-      day: "tuesday"
+      interval: "monthly"
       time: "08:00"
     commit-message:
       prefix: "sdk"
@@ -41,8 +39,7 @@ updates:
       - "pierskarsenbarg"
     directory: "/"
     schedule:
-      interval: "weekly"
-      day: "wednesday"
+      interval: "monthly"
       time: "08:00"
     commit-message:
       prefix: "gha"
