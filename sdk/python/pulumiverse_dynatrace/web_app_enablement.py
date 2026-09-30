@@ -169,9 +169,9 @@ class WebAppEnablement(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  application_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 experience_analytics: pulumi.Input[Optional[Union['WebAppEnablementExperienceAnalyticsArgs', 'WebAppEnablementExperienceAnalyticsArgsDict']]] = None,
-                 rum: pulumi.Input[Optional[Union['WebAppEnablementRumArgs', 'WebAppEnablementRumArgsDict']]] = None,
-                 session_replay: pulumi.Input[Optional[Union['WebAppEnablementSessionReplayArgs', 'WebAppEnablementSessionReplayArgsDict']]] = None,
+                 experience_analytics: pulumi.Input[Optional[Union['WebAppEnablementExperienceAnalyticsArgs', 'WebAppEnablementExperienceAnalyticsArgsDict', 'outputs.WebAppEnablementExperienceAnalytics']]] = None,
+                 rum: pulumi.Input[Optional[Union['WebAppEnablementRumArgs', 'WebAppEnablementRumArgsDict', 'outputs.WebAppEnablementRum']]] = None,
+                 session_replay: pulumi.Input[Optional[Union['WebAppEnablementSessionReplayArgs', 'WebAppEnablementSessionReplayArgsDict', 'outputs.WebAppEnablementSessionReplay']]] = None,
                  __props__=None):
         """
         > Configuration of the application scope overlaps with dynatrace_web_application, but this resource in addition provides an option for an environment scope.
@@ -194,9 +194,9 @@ class WebAppEnablement(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
-        :param pulumi.Input[Union['WebAppEnablementExperienceAnalyticsArgs', 'WebAppEnablementExperienceAnalyticsArgsDict']] experience_analytics: User Interactions
-        :param pulumi.Input[Union['WebAppEnablementRumArgs', 'WebAppEnablementRumArgsDict']] rum: Capture and analyze all user actions within your application. Enable [Real User Monitoring (RUM)](https://dt-url.net/1n2b0prq) to monitor and improve your application's performance, identify errors, and gain insight into your user's behavior and experience.
-        :param pulumi.Input[Union['WebAppEnablementSessionReplayArgs', 'WebAppEnablementSessionReplayArgsDict']] session_replay: [Session Replay](https://dt-url.net/session-replay) captures all user interactions within your application and replays them in a movie-like experience while providing [best-in-class security and data protection](https://dt-url.net/b303zxj).
+        :param pulumi.Input[Union['WebAppEnablementExperienceAnalyticsArgs', 'WebAppEnablementExperienceAnalyticsArgsDict', 'outputs.WebAppEnablementExperienceAnalytics']] experience_analytics: User Interactions
+        :param pulumi.Input[Union['WebAppEnablementRumArgs', 'WebAppEnablementRumArgsDict', 'outputs.WebAppEnablementRum']] rum: Capture and analyze all user actions within your application. Enable [Real User Monitoring (RUM)](https://dt-url.net/1n2b0prq) to monitor and improve your application's performance, identify errors, and gain insight into your user's behavior and experience.
+        :param pulumi.Input[Union['WebAppEnablementSessionReplayArgs', 'WebAppEnablementSessionReplayArgsDict', 'outputs.WebAppEnablementSessionReplay']] session_replay: [Session Replay](https://dt-url.net/session-replay) captures all user interactions within your application and replays them in a movie-like experience while providing [best-in-class security and data protection](https://dt-url.net/b303zxj).
         """
         ...
     @overload
@@ -238,9 +238,9 @@ class WebAppEnablement(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  application_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 experience_analytics: pulumi.Input[Optional[Union['WebAppEnablementExperienceAnalyticsArgs', 'WebAppEnablementExperienceAnalyticsArgsDict']]] = None,
-                 rum: pulumi.Input[Optional[Union['WebAppEnablementRumArgs', 'WebAppEnablementRumArgsDict']]] = None,
-                 session_replay: pulumi.Input[Optional[Union['WebAppEnablementSessionReplayArgs', 'WebAppEnablementSessionReplayArgsDict']]] = None,
+                 experience_analytics: pulumi.Input[Optional[Union['WebAppEnablementExperienceAnalyticsArgs', 'WebAppEnablementExperienceAnalyticsArgsDict', 'outputs.WebAppEnablementExperienceAnalytics']]] = None,
+                 rum: pulumi.Input[Optional[Union['WebAppEnablementRumArgs', 'WebAppEnablementRumArgsDict', 'outputs.WebAppEnablementRum']]] = None,
+                 session_replay: pulumi.Input[Optional[Union['WebAppEnablementSessionReplayArgs', 'WebAppEnablementSessionReplayArgsDict', 'outputs.WebAppEnablementSessionReplay']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -269,9 +269,9 @@ class WebAppEnablement(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             application_id: pulumi.Input[Optional[_builtins.str]] = None,
-            experience_analytics: pulumi.Input[Optional[Union['WebAppEnablementExperienceAnalyticsArgs', 'WebAppEnablementExperienceAnalyticsArgsDict']]] = None,
-            rum: pulumi.Input[Optional[Union['WebAppEnablementRumArgs', 'WebAppEnablementRumArgsDict']]] = None,
-            session_replay: pulumi.Input[Optional[Union['WebAppEnablementSessionReplayArgs', 'WebAppEnablementSessionReplayArgsDict']]] = None) -> 'WebAppEnablement':
+            experience_analytics: pulumi.Input[Optional[Union['WebAppEnablementExperienceAnalyticsArgs', 'WebAppEnablementExperienceAnalyticsArgsDict', 'outputs.WebAppEnablementExperienceAnalytics']]] = None,
+            rum: pulumi.Input[Optional[Union['WebAppEnablementRumArgs', 'WebAppEnablementRumArgsDict', 'outputs.WebAppEnablementRum']]] = None,
+            session_replay: pulumi.Input[Optional[Union['WebAppEnablementSessionReplayArgs', 'WebAppEnablementSessionReplayArgsDict', 'outputs.WebAppEnablementSessionReplay']]] = None) -> 'WebAppEnablement':
         """
         Get an existing WebAppEnablement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -280,9 +280,9 @@ class WebAppEnablement(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
-        :param pulumi.Input[Union['WebAppEnablementExperienceAnalyticsArgs', 'WebAppEnablementExperienceAnalyticsArgsDict']] experience_analytics: User Interactions
-        :param pulumi.Input[Union['WebAppEnablementRumArgs', 'WebAppEnablementRumArgsDict']] rum: Capture and analyze all user actions within your application. Enable [Real User Monitoring (RUM)](https://dt-url.net/1n2b0prq) to monitor and improve your application's performance, identify errors, and gain insight into your user's behavior and experience.
-        :param pulumi.Input[Union['WebAppEnablementSessionReplayArgs', 'WebAppEnablementSessionReplayArgsDict']] session_replay: [Session Replay](https://dt-url.net/session-replay) captures all user interactions within your application and replays them in a movie-like experience while providing [best-in-class security and data protection](https://dt-url.net/b303zxj).
+        :param pulumi.Input[Union['WebAppEnablementExperienceAnalyticsArgs', 'WebAppEnablementExperienceAnalyticsArgsDict', 'outputs.WebAppEnablementExperienceAnalytics']] experience_analytics: User Interactions
+        :param pulumi.Input[Union['WebAppEnablementRumArgs', 'WebAppEnablementRumArgsDict', 'outputs.WebAppEnablementRum']] rum: Capture and analyze all user actions within your application. Enable [Real User Monitoring (RUM)](https://dt-url.net/1n2b0prq) to monitor and improve your application's performance, identify errors, and gain insight into your user's behavior and experience.
+        :param pulumi.Input[Union['WebAppEnablementSessionReplayArgs', 'WebAppEnablementSessionReplayArgsDict', 'outputs.WebAppEnablementSessionReplay']] session_replay: [Session Replay](https://dt-url.net/session-replay) captures all user interactions within your application and replays them in a movie-like experience while providing [best-in-class security and data protection](https://dt-url.net/b303zxj).
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

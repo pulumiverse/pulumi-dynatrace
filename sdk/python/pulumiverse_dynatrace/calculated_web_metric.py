@@ -296,12 +296,12 @@ class CalculatedWebMetric(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  app_identifier: pulumi.Input[Optional[_builtins.str]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
-                 dimensions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CalculatedWebMetricDimensionArgs', 'CalculatedWebMetricDimensionArgsDict']]]]] = None,
+                 dimensions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CalculatedWebMetricDimensionArgs', 'CalculatedWebMetricDimensionArgsDict', 'outputs.CalculatedWebMetricDimension']]]]] = None,
                  enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-                 metric_definition: pulumi.Input[Optional[Union['CalculatedWebMetricMetricDefinitionArgs', 'CalculatedWebMetricMetricDefinitionArgsDict']]] = None,
+                 metric_definition: pulumi.Input[Optional[Union['CalculatedWebMetricMetricDefinitionArgs', 'CalculatedWebMetricMetricDefinitionArgsDict', 'outputs.CalculatedWebMetricMetricDefinition']]] = None,
                  metric_key: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 user_action_filter: pulumi.Input[Optional[Union['CalculatedWebMetricUserActionFilterArgs', 'CalculatedWebMetricUserActionFilterArgsDict']]] = None,
+                 user_action_filter: pulumi.Input[Optional[Union['CalculatedWebMetricUserActionFilterArgs', 'CalculatedWebMetricUserActionFilterArgsDict', 'outputs.CalculatedWebMetricUserActionFilter']]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
@@ -355,12 +355,12 @@ class CalculatedWebMetric(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] app_identifier: The Dynatrace entity ID of the application to which the metric belongs.
         :param pulumi.Input[_builtins.str] description: Descriptor of a calculated web metric.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['CalculatedWebMetricDimensionArgs', 'CalculatedWebMetricDimensionArgsDict']]]] dimensions: Parameters of a definition of a calculated web metric.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CalculatedWebMetricDimensionArgs', 'CalculatedWebMetricDimensionArgsDict', 'outputs.CalculatedWebMetricDimension']]]] dimensions: Parameters of a definition of a calculated web metric.
         :param pulumi.Input[_builtins.bool] enabled: The metric is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[Union['CalculatedWebMetricMetricDefinitionArgs', 'CalculatedWebMetricMetricDefinitionArgsDict']] metric_definition: The definition of a calculated web metric.
+        :param pulumi.Input[Union['CalculatedWebMetricMetricDefinitionArgs', 'CalculatedWebMetricMetricDefinitionArgsDict', 'outputs.CalculatedWebMetricMetricDefinition']] metric_definition: The definition of a calculated web metric.
         :param pulumi.Input[_builtins.str] metric_key: The unique key of the calculated web metric.
         :param pulumi.Input[_builtins.str] name: The displayed name of the metric.
-        :param pulumi.Input[Union['CalculatedWebMetricUserActionFilterArgs', 'CalculatedWebMetricUserActionFilterArgsDict']] user_action_filter: Parameters of a definition of a calculated web metric.
+        :param pulumi.Input[Union['CalculatedWebMetricUserActionFilterArgs', 'CalculatedWebMetricUserActionFilterArgsDict', 'outputs.CalculatedWebMetricUserActionFilter']] user_action_filter: Parameters of a definition of a calculated web metric.
         """
         ...
     @overload
@@ -433,12 +433,12 @@ class CalculatedWebMetric(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  app_identifier: pulumi.Input[Optional[_builtins.str]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
-                 dimensions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CalculatedWebMetricDimensionArgs', 'CalculatedWebMetricDimensionArgsDict']]]]] = None,
+                 dimensions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CalculatedWebMetricDimensionArgs', 'CalculatedWebMetricDimensionArgsDict', 'outputs.CalculatedWebMetricDimension']]]]] = None,
                  enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-                 metric_definition: pulumi.Input[Optional[Union['CalculatedWebMetricMetricDefinitionArgs', 'CalculatedWebMetricMetricDefinitionArgsDict']]] = None,
+                 metric_definition: pulumi.Input[Optional[Union['CalculatedWebMetricMetricDefinitionArgs', 'CalculatedWebMetricMetricDefinitionArgsDict', 'outputs.CalculatedWebMetricMetricDefinition']]] = None,
                  metric_key: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 user_action_filter: pulumi.Input[Optional[Union['CalculatedWebMetricUserActionFilterArgs', 'CalculatedWebMetricUserActionFilterArgsDict']]] = None,
+                 user_action_filter: pulumi.Input[Optional[Union['CalculatedWebMetricUserActionFilterArgs', 'CalculatedWebMetricUserActionFilterArgsDict', 'outputs.CalculatedWebMetricUserActionFilter']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -476,12 +476,12 @@ class CalculatedWebMetric(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             app_identifier: pulumi.Input[Optional[_builtins.str]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
-            dimensions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CalculatedWebMetricDimensionArgs', 'CalculatedWebMetricDimensionArgsDict']]]]] = None,
+            dimensions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CalculatedWebMetricDimensionArgs', 'CalculatedWebMetricDimensionArgsDict', 'outputs.CalculatedWebMetricDimension']]]]] = None,
             enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-            metric_definition: pulumi.Input[Optional[Union['CalculatedWebMetricMetricDefinitionArgs', 'CalculatedWebMetricMetricDefinitionArgsDict']]] = None,
+            metric_definition: pulumi.Input[Optional[Union['CalculatedWebMetricMetricDefinitionArgs', 'CalculatedWebMetricMetricDefinitionArgsDict', 'outputs.CalculatedWebMetricMetricDefinition']]] = None,
             metric_key: pulumi.Input[Optional[_builtins.str]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
-            user_action_filter: pulumi.Input[Optional[Union['CalculatedWebMetricUserActionFilterArgs', 'CalculatedWebMetricUserActionFilterArgsDict']]] = None) -> 'CalculatedWebMetric':
+            user_action_filter: pulumi.Input[Optional[Union['CalculatedWebMetricUserActionFilterArgs', 'CalculatedWebMetricUserActionFilterArgsDict', 'outputs.CalculatedWebMetricUserActionFilter']]] = None) -> 'CalculatedWebMetric':
         """
         Get an existing CalculatedWebMetric resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -491,12 +491,12 @@ class CalculatedWebMetric(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] app_identifier: The Dynatrace entity ID of the application to which the metric belongs.
         :param pulumi.Input[_builtins.str] description: Descriptor of a calculated web metric.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['CalculatedWebMetricDimensionArgs', 'CalculatedWebMetricDimensionArgsDict']]]] dimensions: Parameters of a definition of a calculated web metric.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CalculatedWebMetricDimensionArgs', 'CalculatedWebMetricDimensionArgsDict', 'outputs.CalculatedWebMetricDimension']]]] dimensions: Parameters of a definition of a calculated web metric.
         :param pulumi.Input[_builtins.bool] enabled: The metric is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[Union['CalculatedWebMetricMetricDefinitionArgs', 'CalculatedWebMetricMetricDefinitionArgsDict']] metric_definition: The definition of a calculated web metric.
+        :param pulumi.Input[Union['CalculatedWebMetricMetricDefinitionArgs', 'CalculatedWebMetricMetricDefinitionArgsDict', 'outputs.CalculatedWebMetricMetricDefinition']] metric_definition: The definition of a calculated web metric.
         :param pulumi.Input[_builtins.str] metric_key: The unique key of the calculated web metric.
         :param pulumi.Input[_builtins.str] name: The displayed name of the metric.
-        :param pulumi.Input[Union['CalculatedWebMetricUserActionFilterArgs', 'CalculatedWebMetricUserActionFilterArgsDict']] user_action_filter: Parameters of a definition of a calculated web metric.
+        :param pulumi.Input[Union['CalculatedWebMetricUserActionFilterArgs', 'CalculatedWebMetricUserActionFilterArgsDict', 'outputs.CalculatedWebMetricUserActionFilter']] user_action_filter: Parameters of a definition of a calculated web metric.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

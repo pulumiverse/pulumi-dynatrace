@@ -236,9 +236,9 @@ class SiteReliabilityGuardian(pulumi.CustomResource):
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  event_kind: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 objectives: pulumi.Input[Optional[Union['SiteReliabilityGuardianObjectivesArgs', 'SiteReliabilityGuardianObjectivesArgsDict']]] = None,
+                 objectives: pulumi.Input[Optional[Union['SiteReliabilityGuardianObjectivesArgs', 'SiteReliabilityGuardianObjectivesArgsDict', 'outputs.SiteReliabilityGuardianObjectives']]] = None,
                  tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 variables: pulumi.Input[Optional[Union['SiteReliabilityGuardianVariablesArgs', 'SiteReliabilityGuardianVariablesArgsDict']]] = None,
+                 variables: pulumi.Input[Optional[Union['SiteReliabilityGuardianVariablesArgs', 'SiteReliabilityGuardianVariablesArgsDict', 'outputs.SiteReliabilityGuardianVariables']]] = None,
                  __props__=None):
         """
         > This resource requires the `Site Reliability Guardian` app to be installed via the Dynatrace Hub.
@@ -263,9 +263,9 @@ class SiteReliabilityGuardian(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] description: Optional explanation of this guardian's purpose and scope.
         :param pulumi.Input[_builtins.str] event_kind: If set to null/'BIZ*EVENT' validation events stored as bizevents in Grail. If set to 'SDLC*EVENT' validation events stored as SDLC events. Possible values: `BIZ_EVENT`, `SDLC_EVENT`
         :param pulumi.Input[_builtins.str] name: Unique display name for this guardian.
-        :param pulumi.Input[Union['SiteReliabilityGuardianObjectivesArgs', 'SiteReliabilityGuardianObjectivesArgsDict']] objectives: The validation criteria evaluated each time this guardian is executed.
+        :param pulumi.Input[Union['SiteReliabilityGuardianObjectivesArgs', 'SiteReliabilityGuardianObjectivesArgsDict', 'outputs.SiteReliabilityGuardianObjectives']] objectives: The validation criteria evaluated each time this guardian is executed.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] tags: Define key/value pairs that further describe this guardian.
-        :param pulumi.Input[Union['SiteReliabilityGuardianVariablesArgs', 'SiteReliabilityGuardianVariablesArgsDict']] variables: Define variables for dynamically defining DQL queries
+        :param pulumi.Input[Union['SiteReliabilityGuardianVariablesArgs', 'SiteReliabilityGuardianVariablesArgsDict', 'outputs.SiteReliabilityGuardianVariables']] variables: Define variables for dynamically defining DQL queries
         """
         ...
     @overload
@@ -309,9 +309,9 @@ class SiteReliabilityGuardian(pulumi.CustomResource):
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  event_kind: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 objectives: pulumi.Input[Optional[Union['SiteReliabilityGuardianObjectivesArgs', 'SiteReliabilityGuardianObjectivesArgsDict']]] = None,
+                 objectives: pulumi.Input[Optional[Union['SiteReliabilityGuardianObjectivesArgs', 'SiteReliabilityGuardianObjectivesArgsDict', 'outputs.SiteReliabilityGuardianObjectives']]] = None,
                  tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 variables: pulumi.Input[Optional[Union['SiteReliabilityGuardianVariablesArgs', 'SiteReliabilityGuardianVariablesArgsDict']]] = None,
+                 variables: pulumi.Input[Optional[Union['SiteReliabilityGuardianVariablesArgs', 'SiteReliabilityGuardianVariablesArgsDict', 'outputs.SiteReliabilityGuardianVariables']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -342,9 +342,9 @@ class SiteReliabilityGuardian(pulumi.CustomResource):
             description: pulumi.Input[Optional[_builtins.str]] = None,
             event_kind: pulumi.Input[Optional[_builtins.str]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
-            objectives: pulumi.Input[Optional[Union['SiteReliabilityGuardianObjectivesArgs', 'SiteReliabilityGuardianObjectivesArgsDict']]] = None,
+            objectives: pulumi.Input[Optional[Union['SiteReliabilityGuardianObjectivesArgs', 'SiteReliabilityGuardianObjectivesArgsDict', 'outputs.SiteReliabilityGuardianObjectives']]] = None,
             tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            variables: pulumi.Input[Optional[Union['SiteReliabilityGuardianVariablesArgs', 'SiteReliabilityGuardianVariablesArgsDict']]] = None) -> 'SiteReliabilityGuardian':
+            variables: pulumi.Input[Optional[Union['SiteReliabilityGuardianVariablesArgs', 'SiteReliabilityGuardianVariablesArgsDict', 'outputs.SiteReliabilityGuardianVariables']]] = None) -> 'SiteReliabilityGuardian':
         """
         Get an existing SiteReliabilityGuardian resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -355,9 +355,9 @@ class SiteReliabilityGuardian(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] description: Optional explanation of this guardian's purpose and scope.
         :param pulumi.Input[_builtins.str] event_kind: If set to null/'BIZ*EVENT' validation events stored as bizevents in Grail. If set to 'SDLC*EVENT' validation events stored as SDLC events. Possible values: `BIZ_EVENT`, `SDLC_EVENT`
         :param pulumi.Input[_builtins.str] name: Unique display name for this guardian.
-        :param pulumi.Input[Union['SiteReliabilityGuardianObjectivesArgs', 'SiteReliabilityGuardianObjectivesArgsDict']] objectives: The validation criteria evaluated each time this guardian is executed.
+        :param pulumi.Input[Union['SiteReliabilityGuardianObjectivesArgs', 'SiteReliabilityGuardianObjectivesArgsDict', 'outputs.SiteReliabilityGuardianObjectives']] objectives: The validation criteria evaluated each time this guardian is executed.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] tags: Define key/value pairs that further describe this guardian.
-        :param pulumi.Input[Union['SiteReliabilityGuardianVariablesArgs', 'SiteReliabilityGuardianVariablesArgsDict']] variables: Define variables for dynamically defining DQL queries
+        :param pulumi.Input[Union['SiteReliabilityGuardianVariablesArgs', 'SiteReliabilityGuardianVariablesArgsDict', 'outputs.SiteReliabilityGuardianVariables']] variables: Define variables for dynamically defining DQL queries
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

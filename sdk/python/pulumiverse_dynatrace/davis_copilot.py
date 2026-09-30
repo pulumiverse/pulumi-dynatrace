@@ -201,7 +201,7 @@ class DavisCopilot(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 blocklist_entries: pulumi.Input[Optional[Union['DavisCopilotBlocklistEntriesArgs', 'DavisCopilotBlocklistEntriesArgsDict']]] = None,
+                 blocklist_entries: pulumi.Input[Optional[Union['DavisCopilotBlocklistEntriesArgs', 'DavisCopilotBlocklistEntriesArgsDict', 'outputs.DavisCopilotBlocklistEntries']]] = None,
                  enable_agentic_ai: pulumi.Input[Optional[_builtins.bool]] = None,
                  enable_copilot: pulumi.Input[Optional[_builtins.bool]] = None,
                  enable_document_suggestion: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -227,7 +227,7 @@ class DavisCopilot(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['DavisCopilotBlocklistEntriesArgs', 'DavisCopilotBlocklistEntriesArgsDict']] blocklist_entries: You can exclude specific data buckets and tables from the semantic index. Learn more about [configuring data access](https://dt-url.net/lc62i1q).
+        :param pulumi.Input[Union['DavisCopilotBlocklistEntriesArgs', 'DavisCopilotBlocklistEntriesArgsDict', 'outputs.DavisCopilotBlocklistEntries']] blocklist_entries: You can exclude specific data buckets and tables from the semantic index. Learn more about [configuring data access](https://dt-url.net/lc62i1q).
         :param pulumi.Input[_builtins.bool] enable_agentic_ai: Please note that once agentic AI is enabled, the Dynatrace Assist interface is allowed to call tools and run Grail queries. You still need to [assign permissions](https://dt-url.net/agentic-ai) to the relevant user groups.
         :param pulumi.Input[_builtins.bool] enable_copilot: Please note that once generative AI is enabled, you still need to [assign permissions](https://dt-url.net/rh22idn) to the relevant user groups.
         :param pulumi.Input[_builtins.bool] enable_document_suggestion: By enabling document suggestions, Dynatrace Intelligence can find similarities between Problems and existing Notebooks and Dashboards in order to suggest relevant troubleshooting guides. Learn more about [document suggestions](https://dt-url.net/xy02gpo).
@@ -272,7 +272,7 @@ class DavisCopilot(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 blocklist_entries: pulumi.Input[Optional[Union['DavisCopilotBlocklistEntriesArgs', 'DavisCopilotBlocklistEntriesArgsDict']]] = None,
+                 blocklist_entries: pulumi.Input[Optional[Union['DavisCopilotBlocklistEntriesArgs', 'DavisCopilotBlocklistEntriesArgsDict', 'outputs.DavisCopilotBlocklistEntries']]] = None,
                  enable_agentic_ai: pulumi.Input[Optional[_builtins.bool]] = None,
                  enable_copilot: pulumi.Input[Optional[_builtins.bool]] = None,
                  enable_document_suggestion: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -303,7 +303,7 @@ class DavisCopilot(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            blocklist_entries: pulumi.Input[Optional[Union['DavisCopilotBlocklistEntriesArgs', 'DavisCopilotBlocklistEntriesArgsDict']]] = None,
+            blocklist_entries: pulumi.Input[Optional[Union['DavisCopilotBlocklistEntriesArgs', 'DavisCopilotBlocklistEntriesArgsDict', 'outputs.DavisCopilotBlocklistEntries']]] = None,
             enable_agentic_ai: pulumi.Input[Optional[_builtins.bool]] = None,
             enable_copilot: pulumi.Input[Optional[_builtins.bool]] = None,
             enable_document_suggestion: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -315,7 +315,7 @@ class DavisCopilot(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['DavisCopilotBlocklistEntriesArgs', 'DavisCopilotBlocklistEntriesArgsDict']] blocklist_entries: You can exclude specific data buckets and tables from the semantic index. Learn more about [configuring data access](https://dt-url.net/lc62i1q).
+        :param pulumi.Input[Union['DavisCopilotBlocklistEntriesArgs', 'DavisCopilotBlocklistEntriesArgsDict', 'outputs.DavisCopilotBlocklistEntries']] blocklist_entries: You can exclude specific data buckets and tables from the semantic index. Learn more about [configuring data access](https://dt-url.net/lc62i1q).
         :param pulumi.Input[_builtins.bool] enable_agentic_ai: Please note that once agentic AI is enabled, the Dynatrace Assist interface is allowed to call tools and run Grail queries. You still need to [assign permissions](https://dt-url.net/agentic-ai) to the relevant user groups.
         :param pulumi.Input[_builtins.bool] enable_copilot: Please note that once generative AI is enabled, you still need to [assign permissions](https://dt-url.net/rh22idn) to the relevant user groups.
         :param pulumi.Input[_builtins.bool] enable_document_suggestion: By enabling document suggestions, Dynatrace Intelligence can find similarities between Problems and existing Notebooks and Dashboards in order to suggest relevant troubleshooting guides. Learn more about [document suggestions](https://dt-url.net/xy02gpo).

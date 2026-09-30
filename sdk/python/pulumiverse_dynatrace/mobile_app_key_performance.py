@@ -137,7 +137,7 @@ class MobileAppKeyPerformance(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  frustrating_if_reported_or_web_request_error: pulumi.Input[Optional[_builtins.bool]] = None,
                  scope: pulumi.Input[Optional[_builtins.str]] = None,
-                 thresholds: pulumi.Input[Optional[Union['MobileAppKeyPerformanceThresholdsArgs', 'MobileAppKeyPerformanceThresholdsArgsDict']]] = None,
+                 thresholds: pulumi.Input[Optional[Union['MobileAppKeyPerformanceThresholdsArgs', 'MobileAppKeyPerformanceThresholdsArgsDict', 'outputs.MobileAppKeyPerformanceThresholds']]] = None,
                  __props__=None):
         """
         > Configuration of the mobile/custom application scope overlaps with dynatrace_mobile_application, but this resource in addition provides an option for a key user action scope.
@@ -161,7 +161,7 @@ class MobileAppKeyPerformance(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] frustrating_if_reported_or_web_request_error: Treat user actions with reported errors or web request errors as erroneous and rate their performance as Frustrating. Turn off this setting if errors should not affect the Apdex rate.
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (DEVICE*APPLICATION*METHOD, MOBILE*APPLICATION, CUSTOM*APPLICATION)
-        :param pulumi.Input[Union['MobileAppKeyPerformanceThresholdsArgs', 'MobileAppKeyPerformanceThresholdsArgsDict']] thresholds: no documentation available
+        :param pulumi.Input[Union['MobileAppKeyPerformanceThresholdsArgs', 'MobileAppKeyPerformanceThresholdsArgsDict', 'outputs.MobileAppKeyPerformanceThresholds']] thresholds: no documentation available
         """
         ...
     @overload
@@ -204,7 +204,7 @@ class MobileAppKeyPerformance(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  frustrating_if_reported_or_web_request_error: pulumi.Input[Optional[_builtins.bool]] = None,
                  scope: pulumi.Input[Optional[_builtins.str]] = None,
-                 thresholds: pulumi.Input[Optional[Union['MobileAppKeyPerformanceThresholdsArgs', 'MobileAppKeyPerformanceThresholdsArgsDict']]] = None,
+                 thresholds: pulumi.Input[Optional[Union['MobileAppKeyPerformanceThresholdsArgs', 'MobileAppKeyPerformanceThresholdsArgsDict', 'outputs.MobileAppKeyPerformanceThresholds']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -235,7 +235,7 @@ class MobileAppKeyPerformance(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             frustrating_if_reported_or_web_request_error: pulumi.Input[Optional[_builtins.bool]] = None,
             scope: pulumi.Input[Optional[_builtins.str]] = None,
-            thresholds: pulumi.Input[Optional[Union['MobileAppKeyPerformanceThresholdsArgs', 'MobileAppKeyPerformanceThresholdsArgsDict']]] = None) -> 'MobileAppKeyPerformance':
+            thresholds: pulumi.Input[Optional[Union['MobileAppKeyPerformanceThresholdsArgs', 'MobileAppKeyPerformanceThresholdsArgsDict', 'outputs.MobileAppKeyPerformanceThresholds']]] = None) -> 'MobileAppKeyPerformance':
         """
         Get an existing MobileAppKeyPerformance resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -245,7 +245,7 @@ class MobileAppKeyPerformance(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] frustrating_if_reported_or_web_request_error: Treat user actions with reported errors or web request errors as erroneous and rate their performance as Frustrating. Turn off this setting if errors should not affect the Apdex rate.
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (DEVICE*APPLICATION*METHOD, MOBILE*APPLICATION, CUSTOM*APPLICATION)
-        :param pulumi.Input[Union['MobileAppKeyPerformanceThresholdsArgs', 'MobileAppKeyPerformanceThresholdsArgsDict']] thresholds: no documentation available
+        :param pulumi.Input[Union['MobileAppKeyPerformanceThresholdsArgs', 'MobileAppKeyPerformanceThresholdsArgsDict', 'outputs.MobileAppKeyPerformanceThresholds']] thresholds: no documentation available
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

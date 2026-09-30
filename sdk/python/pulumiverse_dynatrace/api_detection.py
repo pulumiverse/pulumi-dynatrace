@@ -233,7 +233,7 @@ class ApiDetection(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  api_color: pulumi.Input[Optional[_builtins.str]] = None,
                  api_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 conditions: pulumi.Input[Optional[Union['ApiDetectionConditionsArgs', 'ApiDetectionConditionsArgsDict']]] = None,
+                 conditions: pulumi.Input[Optional[Union['ApiDetectionConditionsArgs', 'ApiDetectionConditionsArgsDict', 'outputs.ApiDetectionConditions']]] = None,
                  insert_after: pulumi.Input[Optional[_builtins.str]] = None,
                  technology: pulumi.Input[Optional[_builtins.str]] = None,
                  third_party_api: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -258,7 +258,7 @@ class ApiDetection(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] api_color: This color will be used to highlight APIs when viewing code level data, such as distributed traces or method hotspots.
         :param pulumi.Input[_builtins.str] api_name: API name
-        :param pulumi.Input[Union['ApiDetectionConditionsArgs', 'ApiDetectionConditionsArgsDict']] conditions: List of conditions
+        :param pulumi.Input[Union['ApiDetectionConditionsArgs', 'ApiDetectionConditionsArgsDict', 'outputs.ApiDetectionConditions']] conditions: List of conditions
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[_builtins.str] technology: Restrict this rule to a specific technology.
         :param pulumi.Input[_builtins.bool] third_party_api: This API defines a third party library
@@ -302,7 +302,7 @@ class ApiDetection(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  api_color: pulumi.Input[Optional[_builtins.str]] = None,
                  api_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 conditions: pulumi.Input[Optional[Union['ApiDetectionConditionsArgs', 'ApiDetectionConditionsArgsDict']]] = None,
+                 conditions: pulumi.Input[Optional[Union['ApiDetectionConditionsArgs', 'ApiDetectionConditionsArgsDict', 'outputs.ApiDetectionConditions']]] = None,
                  insert_after: pulumi.Input[Optional[_builtins.str]] = None,
                  technology: pulumi.Input[Optional[_builtins.str]] = None,
                  third_party_api: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -339,7 +339,7 @@ class ApiDetection(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             api_color: pulumi.Input[Optional[_builtins.str]] = None,
             api_name: pulumi.Input[Optional[_builtins.str]] = None,
-            conditions: pulumi.Input[Optional[Union['ApiDetectionConditionsArgs', 'ApiDetectionConditionsArgsDict']]] = None,
+            conditions: pulumi.Input[Optional[Union['ApiDetectionConditionsArgs', 'ApiDetectionConditionsArgsDict', 'outputs.ApiDetectionConditions']]] = None,
             insert_after: pulumi.Input[Optional[_builtins.str]] = None,
             technology: pulumi.Input[Optional[_builtins.str]] = None,
             third_party_api: pulumi.Input[Optional[_builtins.bool]] = None) -> 'ApiDetection':
@@ -352,7 +352,7 @@ class ApiDetection(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] api_color: This color will be used to highlight APIs when viewing code level data, such as distributed traces or method hotspots.
         :param pulumi.Input[_builtins.str] api_name: API name
-        :param pulumi.Input[Union['ApiDetectionConditionsArgs', 'ApiDetectionConditionsArgsDict']] conditions: List of conditions
+        :param pulumi.Input[Union['ApiDetectionConditionsArgs', 'ApiDetectionConditionsArgsDict', 'outputs.ApiDetectionConditions']] conditions: List of conditions
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[_builtins.str] technology: Restrict this rule to a specific technology.
         :param pulumi.Input[_builtins.bool] third_party_api: This API defines a third party library

@@ -203,7 +203,7 @@ class ProcessGroupingRules(pulumi.CustomResource):
                  custom_technology_name: pulumi.Input[Optional[_builtins.str]] = None,
                  enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  insert_after: pulumi.Input[Optional[_builtins.str]] = None,
-                 pg_extraction: pulumi.Input[Optional[Union['ProcessGroupingRulesPgExtractionArgs', 'ProcessGroupingRulesPgExtractionArgsDict']]] = None,
+                 pg_extraction: pulumi.Input[Optional[Union['ProcessGroupingRulesPgExtractionArgs', 'ProcessGroupingRulesPgExtractionArgsDict', 'outputs.ProcessGroupingRulesPgExtraction']]] = None,
                  scope: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -267,7 +267,7 @@ class ProcessGroupingRules(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] custom_technology_name: Note: Reported only in full-stack, infrastructure and discovery modes.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
-        :param pulumi.Input[Union['ProcessGroupingRulesPgExtractionArgs', 'ProcessGroupingRulesPgExtractionArgsDict']] pg_extraction: Define process groups and processes.
+        :param pulumi.Input[Union['ProcessGroupingRulesPgExtractionArgs', 'ProcessGroupingRulesPgExtractionArgsDict', 'outputs.ProcessGroupingRulesPgExtraction']] pg_extraction: Define process groups and processes.
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (HOST, KUBERNETES_CLUSTER, HOST_GROUP). Omit this property if you want to cover the whole environment.
         """
         ...
@@ -350,7 +350,7 @@ class ProcessGroupingRules(pulumi.CustomResource):
                  custom_technology_name: pulumi.Input[Optional[_builtins.str]] = None,
                  enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  insert_after: pulumi.Input[Optional[_builtins.str]] = None,
-                 pg_extraction: pulumi.Input[Optional[Union['ProcessGroupingRulesPgExtractionArgs', 'ProcessGroupingRulesPgExtractionArgsDict']]] = None,
+                 pg_extraction: pulumi.Input[Optional[Union['ProcessGroupingRulesPgExtractionArgs', 'ProcessGroupingRulesPgExtractionArgsDict', 'outputs.ProcessGroupingRulesPgExtraction']]] = None,
                  scope: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -383,7 +383,7 @@ class ProcessGroupingRules(pulumi.CustomResource):
             custom_technology_name: pulumi.Input[Optional[_builtins.str]] = None,
             enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             insert_after: pulumi.Input[Optional[_builtins.str]] = None,
-            pg_extraction: pulumi.Input[Optional[Union['ProcessGroupingRulesPgExtractionArgs', 'ProcessGroupingRulesPgExtractionArgsDict']]] = None,
+            pg_extraction: pulumi.Input[Optional[Union['ProcessGroupingRulesPgExtractionArgs', 'ProcessGroupingRulesPgExtractionArgsDict', 'outputs.ProcessGroupingRulesPgExtraction']]] = None,
             scope: pulumi.Input[Optional[_builtins.str]] = None) -> 'ProcessGroupingRules':
         """
         Get an existing ProcessGroupingRules resource's state with the given name, id, and optional extra
@@ -395,7 +395,7 @@ class ProcessGroupingRules(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] custom_technology_name: Note: Reported only in full-stack, infrastructure and discovery modes.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
-        :param pulumi.Input[Union['ProcessGroupingRulesPgExtractionArgs', 'ProcessGroupingRulesPgExtractionArgsDict']] pg_extraction: Define process groups and processes.
+        :param pulumi.Input[Union['ProcessGroupingRulesPgExtractionArgs', 'ProcessGroupingRulesPgExtractionArgsDict', 'outputs.ProcessGroupingRulesPgExtraction']] pg_extraction: Define process groups and processes.
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (HOST, KUBERNETES_CLUSTER, HOST_GROUP). Omit this property if you want to cover the whole environment.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

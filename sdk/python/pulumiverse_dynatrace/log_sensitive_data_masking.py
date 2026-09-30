@@ -234,8 +234,8 @@ class LogSensitiveDataMasking(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  insert_after: pulumi.Input[Optional[_builtins.str]] = None,
-                 masking: pulumi.Input[Optional[Union['LogSensitiveDataMaskingMaskingArgs', 'LogSensitiveDataMaskingMaskingArgsDict']]] = None,
-                 matchers: pulumi.Input[Optional[Union['LogSensitiveDataMaskingMatchersArgs', 'LogSensitiveDataMaskingMatchersArgsDict']]] = None,
+                 masking: pulumi.Input[Optional[Union['LogSensitiveDataMaskingMaskingArgs', 'LogSensitiveDataMaskingMaskingArgsDict', 'outputs.LogSensitiveDataMaskingMasking']]] = None,
+                 matchers: pulumi.Input[Optional[Union['LogSensitiveDataMaskingMatchersArgs', 'LogSensitiveDataMaskingMatchersArgsDict', 'outputs.LogSensitiveDataMaskingMatchers']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  scope: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -259,8 +259,8 @@ class LogSensitiveDataMasking(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
-        :param pulumi.Input[Union['LogSensitiveDataMaskingMaskingArgs', 'LogSensitiveDataMaskingMaskingArgsDict']] masking: No documentation available
-        :param pulumi.Input[Union['LogSensitiveDataMaskingMatchersArgs', 'LogSensitiveDataMaskingMatchersArgsDict']] matchers: No documentation available
+        :param pulumi.Input[Union['LogSensitiveDataMaskingMaskingArgs', 'LogSensitiveDataMaskingMaskingArgsDict', 'outputs.LogSensitiveDataMaskingMasking']] masking: No documentation available
+        :param pulumi.Input[Union['LogSensitiveDataMaskingMatchersArgs', 'LogSensitiveDataMaskingMatchersArgsDict', 'outputs.LogSensitiveDataMaskingMatchers']] matchers: No documentation available
         :param pulumi.Input[_builtins.str] name: Name
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
         """
@@ -303,8 +303,8 @@ class LogSensitiveDataMasking(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  insert_after: pulumi.Input[Optional[_builtins.str]] = None,
-                 masking: pulumi.Input[Optional[Union['LogSensitiveDataMaskingMaskingArgs', 'LogSensitiveDataMaskingMaskingArgsDict']]] = None,
-                 matchers: pulumi.Input[Optional[Union['LogSensitiveDataMaskingMatchersArgs', 'LogSensitiveDataMaskingMatchersArgsDict']]] = None,
+                 masking: pulumi.Input[Optional[Union['LogSensitiveDataMaskingMaskingArgs', 'LogSensitiveDataMaskingMaskingArgsDict', 'outputs.LogSensitiveDataMaskingMasking']]] = None,
+                 matchers: pulumi.Input[Optional[Union['LogSensitiveDataMaskingMatchersArgs', 'LogSensitiveDataMaskingMatchersArgsDict', 'outputs.LogSensitiveDataMaskingMatchers']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  scope: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -338,8 +338,8 @@ class LogSensitiveDataMasking(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             insert_after: pulumi.Input[Optional[_builtins.str]] = None,
-            masking: pulumi.Input[Optional[Union['LogSensitiveDataMaskingMaskingArgs', 'LogSensitiveDataMaskingMaskingArgsDict']]] = None,
-            matchers: pulumi.Input[Optional[Union['LogSensitiveDataMaskingMatchersArgs', 'LogSensitiveDataMaskingMatchersArgsDict']]] = None,
+            masking: pulumi.Input[Optional[Union['LogSensitiveDataMaskingMaskingArgs', 'LogSensitiveDataMaskingMaskingArgsDict', 'outputs.LogSensitiveDataMaskingMasking']]] = None,
+            matchers: pulumi.Input[Optional[Union['LogSensitiveDataMaskingMatchersArgs', 'LogSensitiveDataMaskingMatchersArgsDict', 'outputs.LogSensitiveDataMaskingMatchers']]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             scope: pulumi.Input[Optional[_builtins.str]] = None) -> 'LogSensitiveDataMasking':
         """
@@ -351,8 +351,8 @@ class LogSensitiveDataMasking(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
-        :param pulumi.Input[Union['LogSensitiveDataMaskingMaskingArgs', 'LogSensitiveDataMaskingMaskingArgsDict']] masking: No documentation available
-        :param pulumi.Input[Union['LogSensitiveDataMaskingMatchersArgs', 'LogSensitiveDataMaskingMatchersArgsDict']] matchers: No documentation available
+        :param pulumi.Input[Union['LogSensitiveDataMaskingMaskingArgs', 'LogSensitiveDataMaskingMaskingArgsDict', 'outputs.LogSensitiveDataMaskingMasking']] masking: No documentation available
+        :param pulumi.Input[Union['LogSensitiveDataMaskingMatchersArgs', 'LogSensitiveDataMaskingMatchersArgsDict', 'outputs.LogSensitiveDataMaskingMatchers']] matchers: No documentation available
         :param pulumi.Input[_builtins.str] name: Name
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
         """

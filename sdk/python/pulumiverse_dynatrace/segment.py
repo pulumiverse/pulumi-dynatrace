@@ -202,10 +202,10 @@ class Segment(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
-                 includes: pulumi.Input[Optional[Union['SegmentIncludesArgs', 'SegmentIncludesArgsDict']]] = None,
+                 includes: pulumi.Input[Optional[Union['SegmentIncludesArgs', 'SegmentIncludesArgsDict', 'outputs.SegmentIncludes']]] = None,
                  is_public: pulumi.Input[Optional[_builtins.bool]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 variables: pulumi.Input[Optional[Union['SegmentVariablesArgs', 'SegmentVariablesArgsDict']]] = None,
+                 variables: pulumi.Input[Optional[Union['SegmentVariablesArgs', 'SegmentVariablesArgsDict', 'outputs.SegmentVariables']]] = None,
                  __props__=None):
         """
         > **Dynatrace SaaS only**
@@ -228,10 +228,10 @@ class Segment(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] description: Description of the filter-segment
-        :param pulumi.Input[Union['SegmentIncludesArgs', 'SegmentIncludesArgsDict']] includes: List of includes of the filter-segment
+        :param pulumi.Input[Union['SegmentIncludesArgs', 'SegmentIncludesArgsDict', 'outputs.SegmentIncludes']] includes: List of includes of the filter-segment
         :param pulumi.Input[_builtins.bool] is_public: Indicates if the filter-segment is publicly accessible within the tenant
         :param pulumi.Input[_builtins.str] name: Name of the filter-segment
-        :param pulumi.Input[Union['SegmentVariablesArgs', 'SegmentVariablesArgsDict']] variables: Variables of the filter-segment
+        :param pulumi.Input[Union['SegmentVariablesArgs', 'SegmentVariablesArgsDict', 'outputs.SegmentVariables']] variables: Variables of the filter-segment
         """
         ...
     @overload
@@ -273,10 +273,10 @@ class Segment(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
-                 includes: pulumi.Input[Optional[Union['SegmentIncludesArgs', 'SegmentIncludesArgsDict']]] = None,
+                 includes: pulumi.Input[Optional[Union['SegmentIncludesArgs', 'SegmentIncludesArgsDict', 'outputs.SegmentIncludes']]] = None,
                  is_public: pulumi.Input[Optional[_builtins.bool]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 variables: pulumi.Input[Optional[Union['SegmentVariablesArgs', 'SegmentVariablesArgsDict']]] = None,
+                 variables: pulumi.Input[Optional[Union['SegmentVariablesArgs', 'SegmentVariablesArgsDict', 'outputs.SegmentVariables']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -304,10 +304,10 @@ class Segment(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
-            includes: pulumi.Input[Optional[Union['SegmentIncludesArgs', 'SegmentIncludesArgsDict']]] = None,
+            includes: pulumi.Input[Optional[Union['SegmentIncludesArgs', 'SegmentIncludesArgsDict', 'outputs.SegmentIncludes']]] = None,
             is_public: pulumi.Input[Optional[_builtins.bool]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
-            variables: pulumi.Input[Optional[Union['SegmentVariablesArgs', 'SegmentVariablesArgsDict']]] = None) -> 'Segment':
+            variables: pulumi.Input[Optional[Union['SegmentVariablesArgs', 'SegmentVariablesArgsDict', 'outputs.SegmentVariables']]] = None) -> 'Segment':
         """
         Get an existing Segment resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -316,10 +316,10 @@ class Segment(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] description: Description of the filter-segment
-        :param pulumi.Input[Union['SegmentIncludesArgs', 'SegmentIncludesArgsDict']] includes: List of includes of the filter-segment
+        :param pulumi.Input[Union['SegmentIncludesArgs', 'SegmentIncludesArgsDict', 'outputs.SegmentIncludes']] includes: List of includes of the filter-segment
         :param pulumi.Input[_builtins.bool] is_public: Indicates if the filter-segment is publicly accessible within the tenant
         :param pulumi.Input[_builtins.str] name: Name of the filter-segment
-        :param pulumi.Input[Union['SegmentVariablesArgs', 'SegmentVariablesArgsDict']] variables: Variables of the filter-segment
+        :param pulumi.Input[Union['SegmentVariablesArgs', 'SegmentVariablesArgsDict', 'outputs.SegmentVariables']] variables: Variables of the filter-segment
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

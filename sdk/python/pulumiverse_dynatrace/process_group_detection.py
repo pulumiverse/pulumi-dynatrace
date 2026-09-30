@@ -200,10 +200,10 @@ class ProcessGroupDetection(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-                 group_extraction: pulumi.Input[Optional[Union['ProcessGroupDetectionGroupExtractionArgs', 'ProcessGroupDetectionGroupExtractionArgsDict']]] = None,
+                 group_extraction: pulumi.Input[Optional[Union['ProcessGroupDetectionGroupExtractionArgs', 'ProcessGroupDetectionGroupExtractionArgsDict', 'outputs.ProcessGroupDetectionGroupExtraction']]] = None,
                  insert_after: pulumi.Input[Optional[_builtins.str]] = None,
-                 instance_extraction: pulumi.Input[Optional[Union['ProcessGroupDetectionInstanceExtractionArgs', 'ProcessGroupDetectionInstanceExtractionArgsDict']]] = None,
-                 process_detection: pulumi.Input[Optional[Union['ProcessGroupDetectionProcessDetectionArgs', 'ProcessGroupDetectionProcessDetectionArgsDict']]] = None,
+                 instance_extraction: pulumi.Input[Optional[Union['ProcessGroupDetectionInstanceExtractionArgs', 'ProcessGroupDetectionInstanceExtractionArgsDict', 'outputs.ProcessGroupDetectionInstanceExtraction']]] = None,
+                 process_detection: pulumi.Input[Optional[Union['ProcessGroupDetectionProcessDetectionArgs', 'ProcessGroupDetectionProcessDetectionArgsDict', 'outputs.ProcessGroupDetectionProcessDetection']]] = None,
                  __props__=None):
         """
         > **Warning** This resource has been deprecated in favor of `ProcessGroupingRules`.
@@ -255,10 +255,10 @@ class ProcessGroupDetection(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[Union['ProcessGroupDetectionGroupExtractionArgs', 'ProcessGroupDetectionGroupExtractionArgsDict']] group_extraction: You can define the properties that should be used to identify your process groups.
+        :param pulumi.Input[Union['ProcessGroupDetectionGroupExtractionArgs', 'ProcessGroupDetectionGroupExtractionArgsDict', 'outputs.ProcessGroupDetectionGroupExtraction']] group_extraction: You can define the properties that should be used to identify your process groups.
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
-        :param pulumi.Input[Union['ProcessGroupDetectionInstanceExtractionArgs', 'ProcessGroupDetectionInstanceExtractionArgsDict']] instance_extraction: You can define the properties that should be used to identify your process instances.
-        :param pulumi.Input[Union['ProcessGroupDetectionProcessDetectionArgs', 'ProcessGroupDetectionProcessDetectionArgsDict']] process_detection: Apply this rule to processes where the selected property contains the specified string.
+        :param pulumi.Input[Union['ProcessGroupDetectionInstanceExtractionArgs', 'ProcessGroupDetectionInstanceExtractionArgsDict', 'outputs.ProcessGroupDetectionInstanceExtraction']] instance_extraction: You can define the properties that should be used to identify your process instances.
+        :param pulumi.Input[Union['ProcessGroupDetectionProcessDetectionArgs', 'ProcessGroupDetectionProcessDetectionArgsDict', 'outputs.ProcessGroupDetectionProcessDetection']] process_detection: Apply this rule to processes where the selected property contains the specified string.
         """
         ...
     @overload
@@ -329,10 +329,10 @@ class ProcessGroupDetection(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-                 group_extraction: pulumi.Input[Optional[Union['ProcessGroupDetectionGroupExtractionArgs', 'ProcessGroupDetectionGroupExtractionArgsDict']]] = None,
+                 group_extraction: pulumi.Input[Optional[Union['ProcessGroupDetectionGroupExtractionArgs', 'ProcessGroupDetectionGroupExtractionArgsDict', 'outputs.ProcessGroupDetectionGroupExtraction']]] = None,
                  insert_after: pulumi.Input[Optional[_builtins.str]] = None,
-                 instance_extraction: pulumi.Input[Optional[Union['ProcessGroupDetectionInstanceExtractionArgs', 'ProcessGroupDetectionInstanceExtractionArgsDict']]] = None,
-                 process_detection: pulumi.Input[Optional[Union['ProcessGroupDetectionProcessDetectionArgs', 'ProcessGroupDetectionProcessDetectionArgsDict']]] = None,
+                 instance_extraction: pulumi.Input[Optional[Union['ProcessGroupDetectionInstanceExtractionArgs', 'ProcessGroupDetectionInstanceExtractionArgsDict', 'outputs.ProcessGroupDetectionInstanceExtraction']]] = None,
+                 process_detection: pulumi.Input[Optional[Union['ProcessGroupDetectionProcessDetectionArgs', 'ProcessGroupDetectionProcessDetectionArgsDict', 'outputs.ProcessGroupDetectionProcessDetection']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -364,10 +364,10 @@ class ProcessGroupDetection(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-            group_extraction: pulumi.Input[Optional[Union['ProcessGroupDetectionGroupExtractionArgs', 'ProcessGroupDetectionGroupExtractionArgsDict']]] = None,
+            group_extraction: pulumi.Input[Optional[Union['ProcessGroupDetectionGroupExtractionArgs', 'ProcessGroupDetectionGroupExtractionArgsDict', 'outputs.ProcessGroupDetectionGroupExtraction']]] = None,
             insert_after: pulumi.Input[Optional[_builtins.str]] = None,
-            instance_extraction: pulumi.Input[Optional[Union['ProcessGroupDetectionInstanceExtractionArgs', 'ProcessGroupDetectionInstanceExtractionArgsDict']]] = None,
-            process_detection: pulumi.Input[Optional[Union['ProcessGroupDetectionProcessDetectionArgs', 'ProcessGroupDetectionProcessDetectionArgsDict']]] = None) -> 'ProcessGroupDetection':
+            instance_extraction: pulumi.Input[Optional[Union['ProcessGroupDetectionInstanceExtractionArgs', 'ProcessGroupDetectionInstanceExtractionArgsDict', 'outputs.ProcessGroupDetectionInstanceExtraction']]] = None,
+            process_detection: pulumi.Input[Optional[Union['ProcessGroupDetectionProcessDetectionArgs', 'ProcessGroupDetectionProcessDetectionArgsDict', 'outputs.ProcessGroupDetectionProcessDetection']]] = None) -> 'ProcessGroupDetection':
         """
         Get an existing ProcessGroupDetection resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -376,10 +376,10 @@ class ProcessGroupDetection(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[Union['ProcessGroupDetectionGroupExtractionArgs', 'ProcessGroupDetectionGroupExtractionArgsDict']] group_extraction: You can define the properties that should be used to identify your process groups.
+        :param pulumi.Input[Union['ProcessGroupDetectionGroupExtractionArgs', 'ProcessGroupDetectionGroupExtractionArgsDict', 'outputs.ProcessGroupDetectionGroupExtraction']] group_extraction: You can define the properties that should be used to identify your process groups.
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
-        :param pulumi.Input[Union['ProcessGroupDetectionInstanceExtractionArgs', 'ProcessGroupDetectionInstanceExtractionArgsDict']] instance_extraction: You can define the properties that should be used to identify your process instances.
-        :param pulumi.Input[Union['ProcessGroupDetectionProcessDetectionArgs', 'ProcessGroupDetectionProcessDetectionArgsDict']] process_detection: Apply this rule to processes where the selected property contains the specified string.
+        :param pulumi.Input[Union['ProcessGroupDetectionInstanceExtractionArgs', 'ProcessGroupDetectionInstanceExtractionArgsDict', 'outputs.ProcessGroupDetectionInstanceExtraction']] instance_extraction: You can define the properties that should be used to identify your process instances.
+        :param pulumi.Input[Union['ProcessGroupDetectionProcessDetectionArgs', 'ProcessGroupDetectionProcessDetectionArgsDict', 'outputs.ProcessGroupDetectionProcessDetection']] process_detection: Apply this rule to processes where the selected property contains the specified string.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

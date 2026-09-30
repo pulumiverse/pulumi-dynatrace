@@ -105,7 +105,7 @@ class HttpMonitorScript(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  http_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 script: pulumi.Input[Optional[Union['HttpMonitorScriptScriptArgs', 'HttpMonitorScriptScriptArgsDict']]] = None,
+                 script: pulumi.Input[Optional[Union['HttpMonitorScriptScriptArgs', 'HttpMonitorScriptScriptArgsDict', 'outputs.HttpMonitorScriptScript']]] = None,
                  __props__=None):
         """
         > This resource allows you to manage the script of your HTTP monitor separately from the `HttpMonitor` resource. To utilize this resource, please omit the `script` block and set `no_script=true` in your `HttpMonitor` resource.
@@ -174,7 +174,7 @@ class HttpMonitorScript(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] http_id: The ID of the HTTP monitor
-        :param pulumi.Input[Union['HttpMonitorScriptScriptArgs', 'HttpMonitorScriptScriptArgsDict']] script: The HTTP Script
+        :param pulumi.Input[Union['HttpMonitorScriptScriptArgs', 'HttpMonitorScriptScriptArgsDict', 'outputs.HttpMonitorScriptScript']] script: The HTTP Script
         """
         ...
     @overload
@@ -262,7 +262,7 @@ class HttpMonitorScript(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  http_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 script: pulumi.Input[Optional[Union['HttpMonitorScriptScriptArgs', 'HttpMonitorScriptScriptArgsDict']]] = None,
+                 script: pulumi.Input[Optional[Union['HttpMonitorScriptScriptArgs', 'HttpMonitorScriptScriptArgsDict', 'outputs.HttpMonitorScriptScript']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -289,7 +289,7 @@ class HttpMonitorScript(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             http_id: pulumi.Input[Optional[_builtins.str]] = None,
-            script: pulumi.Input[Optional[Union['HttpMonitorScriptScriptArgs', 'HttpMonitorScriptScriptArgsDict']]] = None) -> 'HttpMonitorScript':
+            script: pulumi.Input[Optional[Union['HttpMonitorScriptScriptArgs', 'HttpMonitorScriptScriptArgsDict', 'outputs.HttpMonitorScriptScript']]] = None) -> 'HttpMonitorScript':
         """
         Get an existing HttpMonitorScript resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -298,7 +298,7 @@ class HttpMonitorScript(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] http_id: The ID of the HTTP monitor
-        :param pulumi.Input[Union['HttpMonitorScriptScriptArgs', 'HttpMonitorScriptScriptArgsDict']] script: The HTTP Script
+        :param pulumi.Input[Union['HttpMonitorScriptScriptArgs', 'HttpMonitorScriptScriptArgsDict', 'outputs.HttpMonitorScriptScript']] script: The HTTP Script
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

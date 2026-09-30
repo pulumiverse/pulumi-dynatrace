@@ -296,7 +296,7 @@ class GenericRelationships(pulumi.CustomResource):
                  enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  from_role: pulumi.Input[Optional[_builtins.str]] = None,
                  from_type: pulumi.Input[Optional[_builtins.str]] = None,
-                 sources: pulumi.Input[Optional[Union['GenericRelationshipsSourcesArgs', 'GenericRelationshipsSourcesArgsDict']]] = None,
+                 sources: pulumi.Input[Optional[Union['GenericRelationshipsSourcesArgs', 'GenericRelationshipsSourcesArgsDict', 'outputs.GenericRelationshipsSources']]] = None,
                  to_role: pulumi.Input[Optional[_builtins.str]] = None,
                  to_type: pulumi.Input[Optional[_builtins.str]] = None,
                  type_of_relation: pulumi.Input[Optional[_builtins.str]] = None,
@@ -323,7 +323,7 @@ class GenericRelationships(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] from_role: Specify a role for the source entity. If both source and destination type are the same, referring different roles will allow identification of a relationships direction. If role is left blank, any role of the source type is considered for the relationship.
         :param pulumi.Input[_builtins.str] from_type: Define an entity type as the source of the relationship.
-        :param pulumi.Input[Union['GenericRelationshipsSourcesArgs', 'GenericRelationshipsSourcesArgsDict']] sources: Specify all sources which should be evaluated for this relationship rule. The relationship is only created when any of the filters match.
+        :param pulumi.Input[Union['GenericRelationshipsSourcesArgs', 'GenericRelationshipsSourcesArgsDict', 'outputs.GenericRelationshipsSources']] sources: Specify all sources which should be evaluated for this relationship rule. The relationship is only created when any of the filters match.
         :param pulumi.Input[_builtins.str] to_role: Specify a role for the destination entity. If both source and destination type are the same, referring different roles will allow identification of a relationships direction. If role is left blank, any role of the destination type is considered for the relationship.
         :param pulumi.Input[_builtins.str] to_type: Define an entity type as the destination of the relationship. You can choose the same type as the source type. In this case you also may assign different roles for source and destination for having directed relationships.
         :param pulumi.Input[_builtins.str] type_of_relation: Type of the relationship between the Source Type and the Destination Type. Possible Values: `CALLS`, `CHILD_OF`, `INSTANCE_OF`, `PART_OF`, `RUNS_ON`, `SAME_AS`
@@ -369,7 +369,7 @@ class GenericRelationships(pulumi.CustomResource):
                  enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  from_role: pulumi.Input[Optional[_builtins.str]] = None,
                  from_type: pulumi.Input[Optional[_builtins.str]] = None,
-                 sources: pulumi.Input[Optional[Union['GenericRelationshipsSourcesArgs', 'GenericRelationshipsSourcesArgsDict']]] = None,
+                 sources: pulumi.Input[Optional[Union['GenericRelationshipsSourcesArgs', 'GenericRelationshipsSourcesArgsDict', 'outputs.GenericRelationshipsSources']]] = None,
                  to_role: pulumi.Input[Optional[_builtins.str]] = None,
                  to_type: pulumi.Input[Optional[_builtins.str]] = None,
                  type_of_relation: pulumi.Input[Optional[_builtins.str]] = None,
@@ -416,7 +416,7 @@ class GenericRelationships(pulumi.CustomResource):
             enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             from_role: pulumi.Input[Optional[_builtins.str]] = None,
             from_type: pulumi.Input[Optional[_builtins.str]] = None,
-            sources: pulumi.Input[Optional[Union['GenericRelationshipsSourcesArgs', 'GenericRelationshipsSourcesArgsDict']]] = None,
+            sources: pulumi.Input[Optional[Union['GenericRelationshipsSourcesArgs', 'GenericRelationshipsSourcesArgsDict', 'outputs.GenericRelationshipsSources']]] = None,
             to_role: pulumi.Input[Optional[_builtins.str]] = None,
             to_type: pulumi.Input[Optional[_builtins.str]] = None,
             type_of_relation: pulumi.Input[Optional[_builtins.str]] = None) -> 'GenericRelationships':
@@ -431,7 +431,7 @@ class GenericRelationships(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] from_role: Specify a role for the source entity. If both source and destination type are the same, referring different roles will allow identification of a relationships direction. If role is left blank, any role of the source type is considered for the relationship.
         :param pulumi.Input[_builtins.str] from_type: Define an entity type as the source of the relationship.
-        :param pulumi.Input[Union['GenericRelationshipsSourcesArgs', 'GenericRelationshipsSourcesArgsDict']] sources: Specify all sources which should be evaluated for this relationship rule. The relationship is only created when any of the filters match.
+        :param pulumi.Input[Union['GenericRelationshipsSourcesArgs', 'GenericRelationshipsSourcesArgsDict', 'outputs.GenericRelationshipsSources']] sources: Specify all sources which should be evaluated for this relationship rule. The relationship is only created when any of the filters match.
         :param pulumi.Input[_builtins.str] to_role: Specify a role for the destination entity. If both source and destination type are the same, referring different roles will allow identification of a relationships direction. If role is left blank, any role of the destination type is considered for the relationship.
         :param pulumi.Input[_builtins.str] to_type: Define an entity type as the destination of the relationship. You can choose the same type as the source type. In this case you also may assign different roles for source and destination for having directed relationships.
         :param pulumi.Input[_builtins.str] type_of_relation: Type of the relationship between the Source Type and the Destination Type. Possible Values: `CALLS`, `CHILD_OF`, `INSTANCE_OF`, `PART_OF`, `RUNS_ON`, `SAME_AS`

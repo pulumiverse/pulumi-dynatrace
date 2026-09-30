@@ -170,10 +170,10 @@ class DatabaseAnomalies(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 db_connect_failures: pulumi.Input[Optional[Union['DatabaseAnomaliesDbConnectFailuresArgs', 'DatabaseAnomaliesDbConnectFailuresArgsDict']]] = None,
-                 failure_rate: pulumi.Input[Optional[Union['DatabaseAnomaliesFailureRateArgs', 'DatabaseAnomaliesFailureRateArgsDict']]] = None,
-                 load: pulumi.Input[Optional[Union['DatabaseAnomaliesLoadArgs', 'DatabaseAnomaliesLoadArgsDict']]] = None,
-                 response_time: pulumi.Input[Optional[Union['DatabaseAnomaliesResponseTimeArgs', 'DatabaseAnomaliesResponseTimeArgsDict']]] = None,
+                 db_connect_failures: pulumi.Input[Optional[Union['DatabaseAnomaliesDbConnectFailuresArgs', 'DatabaseAnomaliesDbConnectFailuresArgsDict', 'outputs.DatabaseAnomaliesDbConnectFailures']]] = None,
+                 failure_rate: pulumi.Input[Optional[Union['DatabaseAnomaliesFailureRateArgs', 'DatabaseAnomaliesFailureRateArgsDict', 'outputs.DatabaseAnomaliesFailureRate']]] = None,
+                 load: pulumi.Input[Optional[Union['DatabaseAnomaliesLoadArgs', 'DatabaseAnomaliesLoadArgsDict', 'outputs.DatabaseAnomaliesLoad']]] = None,
+                 response_time: pulumi.Input[Optional[Union['DatabaseAnomaliesResponseTimeArgs', 'DatabaseAnomaliesResponseTimeArgsDict', 'outputs.DatabaseAnomaliesResponseTime']]] = None,
                  __props__=None):
         """
         > This resource is utilizing an older API endpoint, please use DatabaseAnomaliesV2 instead.
@@ -195,10 +195,10 @@ class DatabaseAnomalies(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['DatabaseAnomaliesDbConnectFailuresArgs', 'DatabaseAnomaliesDbConnectFailuresArgsDict']] db_connect_failures: Parameters of the failed database connections detection.  The alert is triggered when failed connections number exceeds **connectionFailsCount** during any **timePeriodMinutes** minutes period
-        :param pulumi.Input[Union['DatabaseAnomaliesFailureRateArgs', 'DatabaseAnomaliesFailureRateArgsDict']] failure_rate: Configuration of failure rate increase detection
-        :param pulumi.Input[Union['DatabaseAnomaliesLoadArgs', 'DatabaseAnomaliesLoadArgsDict']] load: Configuration for anomalies regarding load drops and spikes
-        :param pulumi.Input[Union['DatabaseAnomaliesResponseTimeArgs', 'DatabaseAnomaliesResponseTimeArgsDict']] response_time: Configuration of response time degradation detection
+        :param pulumi.Input[Union['DatabaseAnomaliesDbConnectFailuresArgs', 'DatabaseAnomaliesDbConnectFailuresArgsDict', 'outputs.DatabaseAnomaliesDbConnectFailures']] db_connect_failures: Parameters of the failed database connections detection.  The alert is triggered when failed connections number exceeds **connectionFailsCount** during any **timePeriodMinutes** minutes period
+        :param pulumi.Input[Union['DatabaseAnomaliesFailureRateArgs', 'DatabaseAnomaliesFailureRateArgsDict', 'outputs.DatabaseAnomaliesFailureRate']] failure_rate: Configuration of failure rate increase detection
+        :param pulumi.Input[Union['DatabaseAnomaliesLoadArgs', 'DatabaseAnomaliesLoadArgsDict', 'outputs.DatabaseAnomaliesLoad']] load: Configuration for anomalies regarding load drops and spikes
+        :param pulumi.Input[Union['DatabaseAnomaliesResponseTimeArgs', 'DatabaseAnomaliesResponseTimeArgsDict', 'outputs.DatabaseAnomaliesResponseTime']] response_time: Configuration of response time degradation detection
         """
         ...
     @overload
@@ -239,10 +239,10 @@ class DatabaseAnomalies(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 db_connect_failures: pulumi.Input[Optional[Union['DatabaseAnomaliesDbConnectFailuresArgs', 'DatabaseAnomaliesDbConnectFailuresArgsDict']]] = None,
-                 failure_rate: pulumi.Input[Optional[Union['DatabaseAnomaliesFailureRateArgs', 'DatabaseAnomaliesFailureRateArgsDict']]] = None,
-                 load: pulumi.Input[Optional[Union['DatabaseAnomaliesLoadArgs', 'DatabaseAnomaliesLoadArgsDict']]] = None,
-                 response_time: pulumi.Input[Optional[Union['DatabaseAnomaliesResponseTimeArgs', 'DatabaseAnomaliesResponseTimeArgsDict']]] = None,
+                 db_connect_failures: pulumi.Input[Optional[Union['DatabaseAnomaliesDbConnectFailuresArgs', 'DatabaseAnomaliesDbConnectFailuresArgsDict', 'outputs.DatabaseAnomaliesDbConnectFailures']]] = None,
+                 failure_rate: pulumi.Input[Optional[Union['DatabaseAnomaliesFailureRateArgs', 'DatabaseAnomaliesFailureRateArgsDict', 'outputs.DatabaseAnomaliesFailureRate']]] = None,
+                 load: pulumi.Input[Optional[Union['DatabaseAnomaliesLoadArgs', 'DatabaseAnomaliesLoadArgsDict', 'outputs.DatabaseAnomaliesLoad']]] = None,
+                 response_time: pulumi.Input[Optional[Union['DatabaseAnomaliesResponseTimeArgs', 'DatabaseAnomaliesResponseTimeArgsDict', 'outputs.DatabaseAnomaliesResponseTime']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -266,10 +266,10 @@ class DatabaseAnomalies(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            db_connect_failures: pulumi.Input[Optional[Union['DatabaseAnomaliesDbConnectFailuresArgs', 'DatabaseAnomaliesDbConnectFailuresArgsDict']]] = None,
-            failure_rate: pulumi.Input[Optional[Union['DatabaseAnomaliesFailureRateArgs', 'DatabaseAnomaliesFailureRateArgsDict']]] = None,
-            load: pulumi.Input[Optional[Union['DatabaseAnomaliesLoadArgs', 'DatabaseAnomaliesLoadArgsDict']]] = None,
-            response_time: pulumi.Input[Optional[Union['DatabaseAnomaliesResponseTimeArgs', 'DatabaseAnomaliesResponseTimeArgsDict']]] = None) -> 'DatabaseAnomalies':
+            db_connect_failures: pulumi.Input[Optional[Union['DatabaseAnomaliesDbConnectFailuresArgs', 'DatabaseAnomaliesDbConnectFailuresArgsDict', 'outputs.DatabaseAnomaliesDbConnectFailures']]] = None,
+            failure_rate: pulumi.Input[Optional[Union['DatabaseAnomaliesFailureRateArgs', 'DatabaseAnomaliesFailureRateArgsDict', 'outputs.DatabaseAnomaliesFailureRate']]] = None,
+            load: pulumi.Input[Optional[Union['DatabaseAnomaliesLoadArgs', 'DatabaseAnomaliesLoadArgsDict', 'outputs.DatabaseAnomaliesLoad']]] = None,
+            response_time: pulumi.Input[Optional[Union['DatabaseAnomaliesResponseTimeArgs', 'DatabaseAnomaliesResponseTimeArgsDict', 'outputs.DatabaseAnomaliesResponseTime']]] = None) -> 'DatabaseAnomalies':
         """
         Get an existing DatabaseAnomalies resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -277,10 +277,10 @@ class DatabaseAnomalies(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['DatabaseAnomaliesDbConnectFailuresArgs', 'DatabaseAnomaliesDbConnectFailuresArgsDict']] db_connect_failures: Parameters of the failed database connections detection.  The alert is triggered when failed connections number exceeds **connectionFailsCount** during any **timePeriodMinutes** minutes period
-        :param pulumi.Input[Union['DatabaseAnomaliesFailureRateArgs', 'DatabaseAnomaliesFailureRateArgsDict']] failure_rate: Configuration of failure rate increase detection
-        :param pulumi.Input[Union['DatabaseAnomaliesLoadArgs', 'DatabaseAnomaliesLoadArgsDict']] load: Configuration for anomalies regarding load drops and spikes
-        :param pulumi.Input[Union['DatabaseAnomaliesResponseTimeArgs', 'DatabaseAnomaliesResponseTimeArgsDict']] response_time: Configuration of response time degradation detection
+        :param pulumi.Input[Union['DatabaseAnomaliesDbConnectFailuresArgs', 'DatabaseAnomaliesDbConnectFailuresArgsDict', 'outputs.DatabaseAnomaliesDbConnectFailures']] db_connect_failures: Parameters of the failed database connections detection.  The alert is triggered when failed connections number exceeds **connectionFailsCount** during any **timePeriodMinutes** minutes period
+        :param pulumi.Input[Union['DatabaseAnomaliesFailureRateArgs', 'DatabaseAnomaliesFailureRateArgsDict', 'outputs.DatabaseAnomaliesFailureRate']] failure_rate: Configuration of failure rate increase detection
+        :param pulumi.Input[Union['DatabaseAnomaliesLoadArgs', 'DatabaseAnomaliesLoadArgsDict', 'outputs.DatabaseAnomaliesLoad']] load: Configuration for anomalies regarding load drops and spikes
+        :param pulumi.Input[Union['DatabaseAnomaliesResponseTimeArgs', 'DatabaseAnomaliesResponseTimeArgsDict', 'outputs.DatabaseAnomaliesResponseTime']] response_time: Configuration of response time degradation detection
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

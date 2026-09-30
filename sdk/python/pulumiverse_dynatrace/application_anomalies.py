@@ -138,9 +138,9 @@ class ApplicationAnomalies(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 failure_rate: pulumi.Input[Optional[Union['ApplicationAnomaliesFailureRateArgs', 'ApplicationAnomaliesFailureRateArgsDict']]] = None,
-                 response_time: pulumi.Input[Optional[Union['ApplicationAnomaliesResponseTimeArgs', 'ApplicationAnomaliesResponseTimeArgsDict']]] = None,
-                 traffic: pulumi.Input[Optional[Union['ApplicationAnomaliesTrafficArgs', 'ApplicationAnomaliesTrafficArgsDict']]] = None,
+                 failure_rate: pulumi.Input[Optional[Union['ApplicationAnomaliesFailureRateArgs', 'ApplicationAnomaliesFailureRateArgsDict', 'outputs.ApplicationAnomaliesFailureRate']]] = None,
+                 response_time: pulumi.Input[Optional[Union['ApplicationAnomaliesResponseTimeArgs', 'ApplicationAnomaliesResponseTimeArgsDict', 'outputs.ApplicationAnomaliesResponseTime']]] = None,
+                 traffic: pulumi.Input[Optional[Union['ApplicationAnomaliesTrafficArgs', 'ApplicationAnomaliesTrafficArgsDict', 'outputs.ApplicationAnomaliesTraffic']]] = None,
                  __props__=None):
         """
         > This resource is utilizing an older API endpoint, please use WebAppAnomalies instead.
@@ -162,9 +162,9 @@ class ApplicationAnomalies(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['ApplicationAnomaliesFailureRateArgs', 'ApplicationAnomaliesFailureRateArgsDict']] failure_rate: Configuration of failure rate increase detection
-        :param pulumi.Input[Union['ApplicationAnomaliesResponseTimeArgs', 'ApplicationAnomaliesResponseTimeArgsDict']] response_time: Configuration of response time degradation detection
-        :param pulumi.Input[Union['ApplicationAnomaliesTrafficArgs', 'ApplicationAnomaliesTrafficArgsDict']] traffic: Configuration for anomalies regarding traffic
+        :param pulumi.Input[Union['ApplicationAnomaliesFailureRateArgs', 'ApplicationAnomaliesFailureRateArgsDict', 'outputs.ApplicationAnomaliesFailureRate']] failure_rate: Configuration of failure rate increase detection
+        :param pulumi.Input[Union['ApplicationAnomaliesResponseTimeArgs', 'ApplicationAnomaliesResponseTimeArgsDict', 'outputs.ApplicationAnomaliesResponseTime']] response_time: Configuration of response time degradation detection
+        :param pulumi.Input[Union['ApplicationAnomaliesTrafficArgs', 'ApplicationAnomaliesTrafficArgsDict', 'outputs.ApplicationAnomaliesTraffic']] traffic: Configuration for anomalies regarding traffic
         """
         ...
     @overload
@@ -205,9 +205,9 @@ class ApplicationAnomalies(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 failure_rate: pulumi.Input[Optional[Union['ApplicationAnomaliesFailureRateArgs', 'ApplicationAnomaliesFailureRateArgsDict']]] = None,
-                 response_time: pulumi.Input[Optional[Union['ApplicationAnomaliesResponseTimeArgs', 'ApplicationAnomaliesResponseTimeArgsDict']]] = None,
-                 traffic: pulumi.Input[Optional[Union['ApplicationAnomaliesTrafficArgs', 'ApplicationAnomaliesTrafficArgsDict']]] = None,
+                 failure_rate: pulumi.Input[Optional[Union['ApplicationAnomaliesFailureRateArgs', 'ApplicationAnomaliesFailureRateArgsDict', 'outputs.ApplicationAnomaliesFailureRate']]] = None,
+                 response_time: pulumi.Input[Optional[Union['ApplicationAnomaliesResponseTimeArgs', 'ApplicationAnomaliesResponseTimeArgsDict', 'outputs.ApplicationAnomaliesResponseTime']]] = None,
+                 traffic: pulumi.Input[Optional[Union['ApplicationAnomaliesTrafficArgs', 'ApplicationAnomaliesTrafficArgsDict', 'outputs.ApplicationAnomaliesTraffic']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -230,9 +230,9 @@ class ApplicationAnomalies(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            failure_rate: pulumi.Input[Optional[Union['ApplicationAnomaliesFailureRateArgs', 'ApplicationAnomaliesFailureRateArgsDict']]] = None,
-            response_time: pulumi.Input[Optional[Union['ApplicationAnomaliesResponseTimeArgs', 'ApplicationAnomaliesResponseTimeArgsDict']]] = None,
-            traffic: pulumi.Input[Optional[Union['ApplicationAnomaliesTrafficArgs', 'ApplicationAnomaliesTrafficArgsDict']]] = None) -> 'ApplicationAnomalies':
+            failure_rate: pulumi.Input[Optional[Union['ApplicationAnomaliesFailureRateArgs', 'ApplicationAnomaliesFailureRateArgsDict', 'outputs.ApplicationAnomaliesFailureRate']]] = None,
+            response_time: pulumi.Input[Optional[Union['ApplicationAnomaliesResponseTimeArgs', 'ApplicationAnomaliesResponseTimeArgsDict', 'outputs.ApplicationAnomaliesResponseTime']]] = None,
+            traffic: pulumi.Input[Optional[Union['ApplicationAnomaliesTrafficArgs', 'ApplicationAnomaliesTrafficArgsDict', 'outputs.ApplicationAnomaliesTraffic']]] = None) -> 'ApplicationAnomalies':
         """
         Get an existing ApplicationAnomalies resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -240,9 +240,9 @@ class ApplicationAnomalies(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['ApplicationAnomaliesFailureRateArgs', 'ApplicationAnomaliesFailureRateArgsDict']] failure_rate: Configuration of failure rate increase detection
-        :param pulumi.Input[Union['ApplicationAnomaliesResponseTimeArgs', 'ApplicationAnomaliesResponseTimeArgsDict']] response_time: Configuration of response time degradation detection
-        :param pulumi.Input[Union['ApplicationAnomaliesTrafficArgs', 'ApplicationAnomaliesTrafficArgsDict']] traffic: Configuration for anomalies regarding traffic
+        :param pulumi.Input[Union['ApplicationAnomaliesFailureRateArgs', 'ApplicationAnomaliesFailureRateArgsDict', 'outputs.ApplicationAnomaliesFailureRate']] failure_rate: Configuration of failure rate increase detection
+        :param pulumi.Input[Union['ApplicationAnomaliesResponseTimeArgs', 'ApplicationAnomaliesResponseTimeArgsDict', 'outputs.ApplicationAnomaliesResponseTime']] response_time: Configuration of response time degradation detection
+        :param pulumi.Input[Union['ApplicationAnomaliesTrafficArgs', 'ApplicationAnomaliesTrafficArgsDict', 'outputs.ApplicationAnomaliesTraffic']] traffic: Configuration for anomalies regarding traffic
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

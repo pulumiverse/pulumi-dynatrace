@@ -168,9 +168,9 @@ class ServiceHttpFailure(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 broken_links: pulumi.Input[Optional[Union['ServiceHttpFailureBrokenLinksArgs', 'ServiceHttpFailureBrokenLinksArgsDict']]] = None,
+                 broken_links: pulumi.Input[Optional[Union['ServiceHttpFailureBrokenLinksArgs', 'ServiceHttpFailureBrokenLinksArgsDict', 'outputs.ServiceHttpFailureBrokenLinks']]] = None,
                  enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-                 http_response_codes: pulumi.Input[Optional[Union['ServiceHttpFailureHttpResponseCodesArgs', 'ServiceHttpFailureHttpResponseCodesArgsDict']]] = None,
+                 http_response_codes: pulumi.Input[Optional[Union['ServiceHttpFailureHttpResponseCodesArgs', 'ServiceHttpFailureHttpResponseCodesArgsDict', 'outputs.ServiceHttpFailureHttpResponseCodes']]] = None,
                  service_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -191,9 +191,9 @@ class ServiceHttpFailure(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['ServiceHttpFailureBrokenLinksArgs', 'ServiceHttpFailureBrokenLinksArgsDict']] broken_links: HTTP 404 response codes are thrown when a web server can't find a certain page. 404s are classified as broken links on the client side and therefore aren't considered to be service failures. By enabling this setting, you can have 404s treated as server-side service failures.
+        :param pulumi.Input[Union['ServiceHttpFailureBrokenLinksArgs', 'ServiceHttpFailureBrokenLinksArgsDict', 'outputs.ServiceHttpFailureBrokenLinks']] broken_links: HTTP 404 response codes are thrown when a web server can't find a certain page. 404s are classified as broken links on the client side and therefore aren't considered to be service failures. By enabling this setting, you can have 404s treated as server-side service failures.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[Union['ServiceHttpFailureHttpResponseCodesArgs', 'ServiceHttpFailureHttpResponseCodesArgsDict']] http_response_codes: HTTP response codes
+        :param pulumi.Input[Union['ServiceHttpFailureHttpResponseCodesArgs', 'ServiceHttpFailureHttpResponseCodesArgsDict', 'outputs.ServiceHttpFailureHttpResponseCodes']] http_response_codes: HTTP response codes
         :param pulumi.Input[_builtins.str] service_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         """
         ...
@@ -233,9 +233,9 @@ class ServiceHttpFailure(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 broken_links: pulumi.Input[Optional[Union['ServiceHttpFailureBrokenLinksArgs', 'ServiceHttpFailureBrokenLinksArgsDict']]] = None,
+                 broken_links: pulumi.Input[Optional[Union['ServiceHttpFailureBrokenLinksArgs', 'ServiceHttpFailureBrokenLinksArgsDict', 'outputs.ServiceHttpFailureBrokenLinks']]] = None,
                  enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-                 http_response_codes: pulumi.Input[Optional[Union['ServiceHttpFailureHttpResponseCodesArgs', 'ServiceHttpFailureHttpResponseCodesArgsDict']]] = None,
+                 http_response_codes: pulumi.Input[Optional[Union['ServiceHttpFailureHttpResponseCodesArgs', 'ServiceHttpFailureHttpResponseCodesArgsDict', 'outputs.ServiceHttpFailureHttpResponseCodes']]] = None,
                  service_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -264,9 +264,9 @@ class ServiceHttpFailure(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            broken_links: pulumi.Input[Optional[Union['ServiceHttpFailureBrokenLinksArgs', 'ServiceHttpFailureBrokenLinksArgsDict']]] = None,
+            broken_links: pulumi.Input[Optional[Union['ServiceHttpFailureBrokenLinksArgs', 'ServiceHttpFailureBrokenLinksArgsDict', 'outputs.ServiceHttpFailureBrokenLinks']]] = None,
             enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-            http_response_codes: pulumi.Input[Optional[Union['ServiceHttpFailureHttpResponseCodesArgs', 'ServiceHttpFailureHttpResponseCodesArgsDict']]] = None,
+            http_response_codes: pulumi.Input[Optional[Union['ServiceHttpFailureHttpResponseCodesArgs', 'ServiceHttpFailureHttpResponseCodesArgsDict', 'outputs.ServiceHttpFailureHttpResponseCodes']]] = None,
             service_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'ServiceHttpFailure':
         """
         Get an existing ServiceHttpFailure resource's state with the given name, id, and optional extra
@@ -275,9 +275,9 @@ class ServiceHttpFailure(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['ServiceHttpFailureBrokenLinksArgs', 'ServiceHttpFailureBrokenLinksArgsDict']] broken_links: HTTP 404 response codes are thrown when a web server can't find a certain page. 404s are classified as broken links on the client side and therefore aren't considered to be service failures. By enabling this setting, you can have 404s treated as server-side service failures.
+        :param pulumi.Input[Union['ServiceHttpFailureBrokenLinksArgs', 'ServiceHttpFailureBrokenLinksArgsDict', 'outputs.ServiceHttpFailureBrokenLinks']] broken_links: HTTP 404 response codes are thrown when a web server can't find a certain page. 404s are classified as broken links on the client side and therefore aren't considered to be service failures. By enabling this setting, you can have 404s treated as server-side service failures.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[Union['ServiceHttpFailureHttpResponseCodesArgs', 'ServiceHttpFailureHttpResponseCodesArgsDict']] http_response_codes: HTTP response codes
+        :param pulumi.Input[Union['ServiceHttpFailureHttpResponseCodesArgs', 'ServiceHttpFailureHttpResponseCodesArgsDict', 'outputs.ServiceHttpFailureHttpResponseCodes']] http_response_codes: HTTP response codes
         :param pulumi.Input[_builtins.str] service_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

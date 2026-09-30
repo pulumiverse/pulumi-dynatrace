@@ -138,7 +138,7 @@ class GcpConnection(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 service_account_impersonation: pulumi.Input[Optional[Union['GcpConnectionServiceAccountImpersonationArgs', 'GcpConnectionServiceAccountImpersonationArgsDict']]] = None,
+                 service_account_impersonation: pulumi.Input[Optional[Union['GcpConnectionServiceAccountImpersonationArgs', 'GcpConnectionServiceAccountImpersonationArgsDict', 'outputs.GcpConnectionServiceAccountImpersonation']]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -223,7 +223,7 @@ class GcpConnection(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] name: The name of the connection
-        :param pulumi.Input[Union['GcpConnectionServiceAccountImpersonationArgs', 'GcpConnectionServiceAccountImpersonationArgsDict']] service_account_impersonation: No documentation available
+        :param pulumi.Input[Union['GcpConnectionServiceAccountImpersonationArgs', 'GcpConnectionServiceAccountImpersonationArgsDict', 'outputs.GcpConnectionServiceAccountImpersonation']] service_account_impersonation: No documentation available
         :param pulumi.Input[_builtins.str] type: GCP Authentication mechanism to be used by the connection. Possible values: `serviceAccountImpersonation`
         """
         ...
@@ -327,7 +327,7 @@ class GcpConnection(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 service_account_impersonation: pulumi.Input[Optional[Union['GcpConnectionServiceAccountImpersonationArgs', 'GcpConnectionServiceAccountImpersonationArgsDict']]] = None,
+                 service_account_impersonation: pulumi.Input[Optional[Union['GcpConnectionServiceAccountImpersonationArgs', 'GcpConnectionServiceAccountImpersonationArgsDict', 'outputs.GcpConnectionServiceAccountImpersonation']]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -354,7 +354,7 @@ class GcpConnection(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
-            service_account_impersonation: pulumi.Input[Optional[Union['GcpConnectionServiceAccountImpersonationArgs', 'GcpConnectionServiceAccountImpersonationArgsDict']]] = None,
+            service_account_impersonation: pulumi.Input[Optional[Union['GcpConnectionServiceAccountImpersonationArgs', 'GcpConnectionServiceAccountImpersonationArgsDict', 'outputs.GcpConnectionServiceAccountImpersonation']]] = None,
             type: pulumi.Input[Optional[_builtins.str]] = None) -> 'GcpConnection':
         """
         Get an existing GcpConnection resource's state with the given name, id, and optional extra
@@ -364,7 +364,7 @@ class GcpConnection(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] name: The name of the connection
-        :param pulumi.Input[Union['GcpConnectionServiceAccountImpersonationArgs', 'GcpConnectionServiceAccountImpersonationArgsDict']] service_account_impersonation: No documentation available
+        :param pulumi.Input[Union['GcpConnectionServiceAccountImpersonationArgs', 'GcpConnectionServiceAccountImpersonationArgsDict', 'outputs.GcpConnectionServiceAccountImpersonation']] service_account_impersonation: No documentation available
         :param pulumi.Input[_builtins.str] type: GCP Authentication mechanism to be used by the connection. Possible values: `serviceAccountImpersonation`
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

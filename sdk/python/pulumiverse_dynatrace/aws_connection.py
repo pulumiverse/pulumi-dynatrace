@@ -139,8 +139,8 @@ class AwsConnection(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 role_based_auth: pulumi.Input[Optional[Union['AwsConnectionRoleBasedAuthArgs', 'AwsConnectionRoleBasedAuthArgsDict']]] = None,
-                 web_identity: pulumi.Input[Optional[Union['AwsConnectionWebIdentityArgs', 'AwsConnectionWebIdentityArgsDict']]] = None,
+                 role_based_auth: pulumi.Input[Optional[Union['AwsConnectionRoleBasedAuthArgs', 'AwsConnectionRoleBasedAuthArgsDict', 'outputs.AwsConnectionRoleBasedAuth']]] = None,
+                 web_identity: pulumi.Input[Optional[Union['AwsConnectionWebIdentityArgs', 'AwsConnectionWebIdentityArgsDict', 'outputs.AwsConnectionWebIdentity']]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -228,8 +228,8 @@ class AwsConnection(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] name: The name of the connection
-        :param pulumi.Input[Union['AwsConnectionRoleBasedAuthArgs', 'AwsConnectionRoleBasedAuthArgsDict']] role_based_auth: No documentation available
-        :param pulumi.Input[Union['AwsConnectionWebIdentityArgs', 'AwsConnectionWebIdentityArgsDict']] web_identity: No documentation available
+        :param pulumi.Input[Union['AwsConnectionRoleBasedAuthArgs', 'AwsConnectionRoleBasedAuthArgsDict', 'outputs.AwsConnectionRoleBasedAuth']] role_based_auth: No documentation available
+        :param pulumi.Input[Union['AwsConnectionWebIdentityArgs', 'AwsConnectionWebIdentityArgsDict', 'outputs.AwsConnectionWebIdentity']] web_identity: No documentation available
         """
         ...
     @overload
@@ -336,8 +336,8 @@ class AwsConnection(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 role_based_auth: pulumi.Input[Optional[Union['AwsConnectionRoleBasedAuthArgs', 'AwsConnectionRoleBasedAuthArgsDict']]] = None,
-                 web_identity: pulumi.Input[Optional[Union['AwsConnectionWebIdentityArgs', 'AwsConnectionWebIdentityArgsDict']]] = None,
+                 role_based_auth: pulumi.Input[Optional[Union['AwsConnectionRoleBasedAuthArgs', 'AwsConnectionRoleBasedAuthArgsDict', 'outputs.AwsConnectionRoleBasedAuth']]] = None,
+                 web_identity: pulumi.Input[Optional[Union['AwsConnectionWebIdentityArgs', 'AwsConnectionWebIdentityArgsDict', 'outputs.AwsConnectionWebIdentity']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -361,8 +361,8 @@ class AwsConnection(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
-            role_based_auth: pulumi.Input[Optional[Union['AwsConnectionRoleBasedAuthArgs', 'AwsConnectionRoleBasedAuthArgsDict']]] = None,
-            web_identity: pulumi.Input[Optional[Union['AwsConnectionWebIdentityArgs', 'AwsConnectionWebIdentityArgsDict']]] = None) -> 'AwsConnection':
+            role_based_auth: pulumi.Input[Optional[Union['AwsConnectionRoleBasedAuthArgs', 'AwsConnectionRoleBasedAuthArgsDict', 'outputs.AwsConnectionRoleBasedAuth']]] = None,
+            web_identity: pulumi.Input[Optional[Union['AwsConnectionWebIdentityArgs', 'AwsConnectionWebIdentityArgsDict', 'outputs.AwsConnectionWebIdentity']]] = None) -> 'AwsConnection':
         """
         Get an existing AwsConnection resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -371,8 +371,8 @@ class AwsConnection(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] name: The name of the connection
-        :param pulumi.Input[Union['AwsConnectionRoleBasedAuthArgs', 'AwsConnectionRoleBasedAuthArgsDict']] role_based_auth: No documentation available
-        :param pulumi.Input[Union['AwsConnectionWebIdentityArgs', 'AwsConnectionWebIdentityArgsDict']] web_identity: No documentation available
+        :param pulumi.Input[Union['AwsConnectionRoleBasedAuthArgs', 'AwsConnectionRoleBasedAuthArgsDict', 'outputs.AwsConnectionRoleBasedAuth']] role_based_auth: No documentation available
+        :param pulumi.Input[Union['AwsConnectionWebIdentityArgs', 'AwsConnectionWebIdentityArgsDict', 'outputs.AwsConnectionWebIdentity']] web_identity: No documentation available
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

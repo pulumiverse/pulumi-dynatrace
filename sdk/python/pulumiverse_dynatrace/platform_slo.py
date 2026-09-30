@@ -233,11 +233,11 @@ class PlatformSlo(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 criteria: pulumi.Input[Optional[Union['PlatformSloCriteriaArgs', 'PlatformSloCriteriaArgsDict']]] = None,
-                 custom_sli: pulumi.Input[Optional[Union['PlatformSloCustomSliArgs', 'PlatformSloCustomSliArgsDict']]] = None,
+                 criteria: pulumi.Input[Optional[Union['PlatformSloCriteriaArgs', 'PlatformSloCriteriaArgsDict', 'outputs.PlatformSloCriteria']]] = None,
+                 custom_sli: pulumi.Input[Optional[Union['PlatformSloCustomSliArgs', 'PlatformSloCustomSliArgsDict', 'outputs.PlatformSloCustomSli']]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 sli_reference: pulumi.Input[Optional[Union['PlatformSloSliReferenceArgs', 'PlatformSloSliReferenceArgsDict']]] = None,
+                 sli_reference: pulumi.Input[Optional[Union['PlatformSloSliReferenceArgs', 'PlatformSloSliReferenceArgsDict', 'outputs.PlatformSloSliReference']]] = None,
                  tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
@@ -256,11 +256,11 @@ class PlatformSlo(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['PlatformSloCriteriaArgs', 'PlatformSloCriteriaArgsDict']] criteria: Criteria of the SLO
-        :param pulumi.Input[Union['PlatformSloCustomSliArgs', 'PlatformSloCustomSliArgsDict']] custom_sli: Custom SLI of the SLO
+        :param pulumi.Input[Union['PlatformSloCriteriaArgs', 'PlatformSloCriteriaArgsDict', 'outputs.PlatformSloCriteria']] criteria: Criteria of the SLO
+        :param pulumi.Input[Union['PlatformSloCustomSliArgs', 'PlatformSloCustomSliArgsDict', 'outputs.PlatformSloCustomSli']] custom_sli: Custom SLI of the SLO
         :param pulumi.Input[_builtins.str] description: Description of the SLO
         :param pulumi.Input[_builtins.str] name: Name of the SLO
-        :param pulumi.Input[Union['PlatformSloSliReferenceArgs', 'PlatformSloSliReferenceArgsDict']] sli_reference: SLI reference of the SLO
+        :param pulumi.Input[Union['PlatformSloSliReferenceArgs', 'PlatformSloSliReferenceArgsDict', 'outputs.PlatformSloSliReference']] sli_reference: SLI reference of the SLO
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] tags: Tags of the SLO. Example: `Stage:DEV`
         """
         ...
@@ -298,11 +298,11 @@ class PlatformSlo(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 criteria: pulumi.Input[Optional[Union['PlatformSloCriteriaArgs', 'PlatformSloCriteriaArgsDict']]] = None,
-                 custom_sli: pulumi.Input[Optional[Union['PlatformSloCustomSliArgs', 'PlatformSloCustomSliArgsDict']]] = None,
+                 criteria: pulumi.Input[Optional[Union['PlatformSloCriteriaArgs', 'PlatformSloCriteriaArgsDict', 'outputs.PlatformSloCriteria']]] = None,
+                 custom_sli: pulumi.Input[Optional[Union['PlatformSloCustomSliArgs', 'PlatformSloCustomSliArgsDict', 'outputs.PlatformSloCustomSli']]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 sli_reference: pulumi.Input[Optional[Union['PlatformSloSliReferenceArgs', 'PlatformSloSliReferenceArgsDict']]] = None,
+                 sli_reference: pulumi.Input[Optional[Union['PlatformSloSliReferenceArgs', 'PlatformSloSliReferenceArgsDict', 'outputs.PlatformSloSliReference']]] = None,
                  tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -331,11 +331,11 @@ class PlatformSlo(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            criteria: pulumi.Input[Optional[Union['PlatformSloCriteriaArgs', 'PlatformSloCriteriaArgsDict']]] = None,
-            custom_sli: pulumi.Input[Optional[Union['PlatformSloCustomSliArgs', 'PlatformSloCustomSliArgsDict']]] = None,
+            criteria: pulumi.Input[Optional[Union['PlatformSloCriteriaArgs', 'PlatformSloCriteriaArgsDict', 'outputs.PlatformSloCriteria']]] = None,
+            custom_sli: pulumi.Input[Optional[Union['PlatformSloCustomSliArgs', 'PlatformSloCustomSliArgsDict', 'outputs.PlatformSloCustomSli']]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
-            sli_reference: pulumi.Input[Optional[Union['PlatformSloSliReferenceArgs', 'PlatformSloSliReferenceArgsDict']]] = None,
+            sli_reference: pulumi.Input[Optional[Union['PlatformSloSliReferenceArgs', 'PlatformSloSliReferenceArgsDict', 'outputs.PlatformSloSliReference']]] = None,
             tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'PlatformSlo':
         """
         Get an existing PlatformSlo resource's state with the given name, id, and optional extra
@@ -344,11 +344,11 @@ class PlatformSlo(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['PlatformSloCriteriaArgs', 'PlatformSloCriteriaArgsDict']] criteria: Criteria of the SLO
-        :param pulumi.Input[Union['PlatformSloCustomSliArgs', 'PlatformSloCustomSliArgsDict']] custom_sli: Custom SLI of the SLO
+        :param pulumi.Input[Union['PlatformSloCriteriaArgs', 'PlatformSloCriteriaArgsDict', 'outputs.PlatformSloCriteria']] criteria: Criteria of the SLO
+        :param pulumi.Input[Union['PlatformSloCustomSliArgs', 'PlatformSloCustomSliArgsDict', 'outputs.PlatformSloCustomSli']] custom_sli: Custom SLI of the SLO
         :param pulumi.Input[_builtins.str] description: Description of the SLO
         :param pulumi.Input[_builtins.str] name: Name of the SLO
-        :param pulumi.Input[Union['PlatformSloSliReferenceArgs', 'PlatformSloSliReferenceArgsDict']] sli_reference: SLI reference of the SLO
+        :param pulumi.Input[Union['PlatformSloSliReferenceArgs', 'PlatformSloSliReferenceArgsDict', 'outputs.PlatformSloSliReference']] sli_reference: SLI reference of the SLO
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] tags: Tags of the SLO. Example: `Stage:DEV`
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

@@ -139,7 +139,7 @@ class AutomationWorkflowAwsConnections(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
-                 web_identity: pulumi.Input[Optional[Union['AutomationWorkflowAwsConnectionsWebIdentityArgs', 'AutomationWorkflowAwsConnectionsWebIdentityArgsDict']]] = None,
+                 web_identity: pulumi.Input[Optional[Union['AutomationWorkflowAwsConnectionsWebIdentityArgs', 'AutomationWorkflowAwsConnectionsWebIdentityArgsDict', 'outputs.AutomationWorkflowAwsConnectionsWebIdentity']]] = None,
                  __props__=None):
         """
         > **Warning** This resource is deprecated and will be removed in a future release.
@@ -182,7 +182,7 @@ class AutomationWorkflowAwsConnections(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] name: Name
         :param pulumi.Input[_builtins.str] type: Possible Values: `WebIdentity`
-        :param pulumi.Input[Union['AutomationWorkflowAwsConnectionsWebIdentityArgs', 'AutomationWorkflowAwsConnectionsWebIdentityArgsDict']] web_identity: no documentation available
+        :param pulumi.Input[Union['AutomationWorkflowAwsConnectionsWebIdentityArgs', 'AutomationWorkflowAwsConnectionsWebIdentityArgsDict', 'outputs.AutomationWorkflowAwsConnectionsWebIdentity']] web_identity: no documentation available
         """
         ...
     @overload
@@ -244,7 +244,7 @@ class AutomationWorkflowAwsConnections(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
-                 web_identity: pulumi.Input[Optional[Union['AutomationWorkflowAwsConnectionsWebIdentityArgs', 'AutomationWorkflowAwsConnectionsWebIdentityArgsDict']]] = None,
+                 web_identity: pulumi.Input[Optional[Union['AutomationWorkflowAwsConnectionsWebIdentityArgs', 'AutomationWorkflowAwsConnectionsWebIdentityArgsDict', 'outputs.AutomationWorkflowAwsConnectionsWebIdentity']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -271,7 +271,7 @@ class AutomationWorkflowAwsConnections(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             type: pulumi.Input[Optional[_builtins.str]] = None,
-            web_identity: pulumi.Input[Optional[Union['AutomationWorkflowAwsConnectionsWebIdentityArgs', 'AutomationWorkflowAwsConnectionsWebIdentityArgsDict']]] = None) -> 'AutomationWorkflowAwsConnections':
+            web_identity: pulumi.Input[Optional[Union['AutomationWorkflowAwsConnectionsWebIdentityArgs', 'AutomationWorkflowAwsConnectionsWebIdentityArgsDict', 'outputs.AutomationWorkflowAwsConnectionsWebIdentity']]] = None) -> 'AutomationWorkflowAwsConnections':
         """
         Get an existing AutomationWorkflowAwsConnections resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -281,7 +281,7 @@ class AutomationWorkflowAwsConnections(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] name: Name
         :param pulumi.Input[_builtins.str] type: Possible Values: `WebIdentity`
-        :param pulumi.Input[Union['AutomationWorkflowAwsConnectionsWebIdentityArgs', 'AutomationWorkflowAwsConnectionsWebIdentityArgsDict']] web_identity: no documentation available
+        :param pulumi.Input[Union['AutomationWorkflowAwsConnectionsWebIdentityArgs', 'AutomationWorkflowAwsConnectionsWebIdentityArgsDict', 'outputs.AutomationWorkflowAwsConnectionsWebIdentity']] web_identity: no documentation available
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

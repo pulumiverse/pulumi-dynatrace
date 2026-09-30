@@ -227,10 +227,10 @@ class AutomationSchedulingRule(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  business_calendar: pulumi.Input[Optional[_builtins.str]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
-                 fixed_offset: pulumi.Input[Optional[Union['AutomationSchedulingRuleFixedOffsetArgs', 'AutomationSchedulingRuleFixedOffsetArgsDict']]] = None,
-                 grouping: pulumi.Input[Optional[Union['AutomationSchedulingRuleGroupingArgs', 'AutomationSchedulingRuleGroupingArgsDict']]] = None,
-                 recurrence: pulumi.Input[Optional[Union['AutomationSchedulingRuleRecurrenceArgs', 'AutomationSchedulingRuleRecurrenceArgsDict']]] = None,
-                 relative_offset: pulumi.Input[Optional[Union['AutomationSchedulingRuleRelativeOffsetArgs', 'AutomationSchedulingRuleRelativeOffsetArgsDict']]] = None,
+                 fixed_offset: pulumi.Input[Optional[Union['AutomationSchedulingRuleFixedOffsetArgs', 'AutomationSchedulingRuleFixedOffsetArgsDict', 'outputs.AutomationSchedulingRuleFixedOffset']]] = None,
+                 grouping: pulumi.Input[Optional[Union['AutomationSchedulingRuleGroupingArgs', 'AutomationSchedulingRuleGroupingArgsDict', 'outputs.AutomationSchedulingRuleGrouping']]] = None,
+                 recurrence: pulumi.Input[Optional[Union['AutomationSchedulingRuleRecurrenceArgs', 'AutomationSchedulingRuleRecurrenceArgsDict', 'outputs.AutomationSchedulingRuleRecurrence']]] = None,
+                 relative_offset: pulumi.Input[Optional[Union['AutomationSchedulingRuleRelativeOffsetArgs', 'AutomationSchedulingRuleRelativeOffsetArgsDict', 'outputs.AutomationSchedulingRuleRelativeOffset']]] = None,
                  title: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -289,10 +289,10 @@ class AutomationSchedulingRule(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  business_calendar: pulumi.Input[Optional[_builtins.str]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
-                 fixed_offset: pulumi.Input[Optional[Union['AutomationSchedulingRuleFixedOffsetArgs', 'AutomationSchedulingRuleFixedOffsetArgsDict']]] = None,
-                 grouping: pulumi.Input[Optional[Union['AutomationSchedulingRuleGroupingArgs', 'AutomationSchedulingRuleGroupingArgsDict']]] = None,
-                 recurrence: pulumi.Input[Optional[Union['AutomationSchedulingRuleRecurrenceArgs', 'AutomationSchedulingRuleRecurrenceArgsDict']]] = None,
-                 relative_offset: pulumi.Input[Optional[Union['AutomationSchedulingRuleRelativeOffsetArgs', 'AutomationSchedulingRuleRelativeOffsetArgsDict']]] = None,
+                 fixed_offset: pulumi.Input[Optional[Union['AutomationSchedulingRuleFixedOffsetArgs', 'AutomationSchedulingRuleFixedOffsetArgsDict', 'outputs.AutomationSchedulingRuleFixedOffset']]] = None,
+                 grouping: pulumi.Input[Optional[Union['AutomationSchedulingRuleGroupingArgs', 'AutomationSchedulingRuleGroupingArgsDict', 'outputs.AutomationSchedulingRuleGrouping']]] = None,
+                 recurrence: pulumi.Input[Optional[Union['AutomationSchedulingRuleRecurrenceArgs', 'AutomationSchedulingRuleRecurrenceArgsDict', 'outputs.AutomationSchedulingRuleRecurrence']]] = None,
+                 relative_offset: pulumi.Input[Optional[Union['AutomationSchedulingRuleRelativeOffsetArgs', 'AutomationSchedulingRuleRelativeOffsetArgsDict', 'outputs.AutomationSchedulingRuleRelativeOffset']]] = None,
                  title: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -324,10 +324,10 @@ class AutomationSchedulingRule(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             business_calendar: pulumi.Input[Optional[_builtins.str]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
-            fixed_offset: pulumi.Input[Optional[Union['AutomationSchedulingRuleFixedOffsetArgs', 'AutomationSchedulingRuleFixedOffsetArgsDict']]] = None,
-            grouping: pulumi.Input[Optional[Union['AutomationSchedulingRuleGroupingArgs', 'AutomationSchedulingRuleGroupingArgsDict']]] = None,
-            recurrence: pulumi.Input[Optional[Union['AutomationSchedulingRuleRecurrenceArgs', 'AutomationSchedulingRuleRecurrenceArgsDict']]] = None,
-            relative_offset: pulumi.Input[Optional[Union['AutomationSchedulingRuleRelativeOffsetArgs', 'AutomationSchedulingRuleRelativeOffsetArgsDict']]] = None,
+            fixed_offset: pulumi.Input[Optional[Union['AutomationSchedulingRuleFixedOffsetArgs', 'AutomationSchedulingRuleFixedOffsetArgsDict', 'outputs.AutomationSchedulingRuleFixedOffset']]] = None,
+            grouping: pulumi.Input[Optional[Union['AutomationSchedulingRuleGroupingArgs', 'AutomationSchedulingRuleGroupingArgsDict', 'outputs.AutomationSchedulingRuleGrouping']]] = None,
+            recurrence: pulumi.Input[Optional[Union['AutomationSchedulingRuleRecurrenceArgs', 'AutomationSchedulingRuleRecurrenceArgsDict', 'outputs.AutomationSchedulingRuleRecurrence']]] = None,
+            relative_offset: pulumi.Input[Optional[Union['AutomationSchedulingRuleRelativeOffsetArgs', 'AutomationSchedulingRuleRelativeOffsetArgsDict', 'outputs.AutomationSchedulingRuleRelativeOffset']]] = None,
             title: pulumi.Input[Optional[_builtins.str]] = None) -> 'AutomationSchedulingRule':
         """
         Get an existing AutomationSchedulingRule resource's state with the given name, id, and optional extra

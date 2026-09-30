@@ -138,7 +138,7 @@ class HttpMonitorPerformance(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  scope: pulumi.Input[Optional[_builtins.str]] = None,
-                 thresholds: pulumi.Input[Optional[Union['HttpMonitorPerformanceThresholdsArgs', 'HttpMonitorPerformanceThresholdsArgsDict']]] = None,
+                 thresholds: pulumi.Input[Optional[Union['HttpMonitorPerformanceThresholdsArgs', 'HttpMonitorPerformanceThresholdsArgsDict', 'outputs.HttpMonitorPerformanceThresholds']]] = None,
                  __props__=None):
         """
         > Configuration of the HTTP check scope overlaps with dynatrace_http_monitor, but this resource in addition provides an option for an environment scope.
@@ -162,7 +162,7 @@ class HttpMonitorPerformance(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (HTTP_CHECK)
-        :param pulumi.Input[Union['HttpMonitorPerformanceThresholdsArgs', 'HttpMonitorPerformanceThresholdsArgsDict']] thresholds: Performance thresholds
+        :param pulumi.Input[Union['HttpMonitorPerformanceThresholdsArgs', 'HttpMonitorPerformanceThresholdsArgsDict', 'outputs.HttpMonitorPerformanceThresholds']] thresholds: Performance thresholds
         """
         ...
     @overload
@@ -205,7 +205,7 @@ class HttpMonitorPerformance(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  scope: pulumi.Input[Optional[_builtins.str]] = None,
-                 thresholds: pulumi.Input[Optional[Union['HttpMonitorPerformanceThresholdsArgs', 'HttpMonitorPerformanceThresholdsArgsDict']]] = None,
+                 thresholds: pulumi.Input[Optional[Union['HttpMonitorPerformanceThresholdsArgs', 'HttpMonitorPerformanceThresholdsArgsDict', 'outputs.HttpMonitorPerformanceThresholds']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -234,7 +234,7 @@ class HttpMonitorPerformance(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             scope: pulumi.Input[Optional[_builtins.str]] = None,
-            thresholds: pulumi.Input[Optional[Union['HttpMonitorPerformanceThresholdsArgs', 'HttpMonitorPerformanceThresholdsArgsDict']]] = None) -> 'HttpMonitorPerformance':
+            thresholds: pulumi.Input[Optional[Union['HttpMonitorPerformanceThresholdsArgs', 'HttpMonitorPerformanceThresholdsArgsDict', 'outputs.HttpMonitorPerformanceThresholds']]] = None) -> 'HttpMonitorPerformance':
         """
         Get an existing HttpMonitorPerformance resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -244,7 +244,7 @@ class HttpMonitorPerformance(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (HTTP_CHECK)
-        :param pulumi.Input[Union['HttpMonitorPerformanceThresholdsArgs', 'HttpMonitorPerformanceThresholdsArgsDict']] thresholds: Performance thresholds
+        :param pulumi.Input[Union['HttpMonitorPerformanceThresholdsArgs', 'HttpMonitorPerformanceThresholdsArgsDict', 'outputs.HttpMonitorPerformanceThresholds']] thresholds: Performance thresholds
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

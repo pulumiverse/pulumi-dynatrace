@@ -198,11 +198,11 @@ class CustomAppAnomalies(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 error_rate_increase: pulumi.Input[Optional[Union['CustomAppAnomaliesErrorRateIncreaseArgs', 'CustomAppAnomaliesErrorRateIncreaseArgsDict']]] = None,
+                 error_rate_increase: pulumi.Input[Optional[Union['CustomAppAnomaliesErrorRateIncreaseArgs', 'CustomAppAnomaliesErrorRateIncreaseArgsDict', 'outputs.CustomAppAnomaliesErrorRateIncrease']]] = None,
                  scope: pulumi.Input[Optional[_builtins.str]] = None,
-                 slow_user_actions: pulumi.Input[Optional[Union['CustomAppAnomaliesSlowUserActionsArgs', 'CustomAppAnomaliesSlowUserActionsArgsDict']]] = None,
-                 unexpected_high_load: pulumi.Input[Optional[Union['CustomAppAnomaliesUnexpectedHighLoadArgs', 'CustomAppAnomaliesUnexpectedHighLoadArgsDict']]] = None,
-                 unexpected_low_load: pulumi.Input[Optional[Union['CustomAppAnomaliesUnexpectedLowLoadArgs', 'CustomAppAnomaliesUnexpectedLowLoadArgsDict']]] = None,
+                 slow_user_actions: pulumi.Input[Optional[Union['CustomAppAnomaliesSlowUserActionsArgs', 'CustomAppAnomaliesSlowUserActionsArgsDict', 'outputs.CustomAppAnomaliesSlowUserActions']]] = None,
+                 unexpected_high_load: pulumi.Input[Optional[Union['CustomAppAnomaliesUnexpectedHighLoadArgs', 'CustomAppAnomaliesUnexpectedHighLoadArgsDict', 'outputs.CustomAppAnomaliesUnexpectedHighLoad']]] = None,
+                 unexpected_low_load: pulumi.Input[Optional[Union['CustomAppAnomaliesUnexpectedLowLoadArgs', 'CustomAppAnomaliesUnexpectedLowLoadArgsDict', 'outputs.CustomAppAnomaliesUnexpectedLowLoad']]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -222,11 +222,11 @@ class CustomAppAnomalies(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['CustomAppAnomaliesErrorRateIncreaseArgs', 'CustomAppAnomaliesErrorRateIncreaseArgsDict']] error_rate_increase: Error rate increase
+        :param pulumi.Input[Union['CustomAppAnomaliesErrorRateIncreaseArgs', 'CustomAppAnomaliesErrorRateIncreaseArgsDict', 'outputs.CustomAppAnomaliesErrorRateIncrease']] error_rate_increase: Error rate increase
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (DEVICE*APPLICATION*METHOD CUSTOM_APPLICATION environment)
-        :param pulumi.Input[Union['CustomAppAnomaliesSlowUserActionsArgs', 'CustomAppAnomaliesSlowUserActionsArgsDict']] slow_user_actions: Slow user actions
-        :param pulumi.Input[Union['CustomAppAnomaliesUnexpectedHighLoadArgs', 'CustomAppAnomaliesUnexpectedHighLoadArgsDict']] unexpected_high_load: Unexpected high load
-        :param pulumi.Input[Union['CustomAppAnomaliesUnexpectedLowLoadArgs', 'CustomAppAnomaliesUnexpectedLowLoadArgsDict']] unexpected_low_load: Unexpected low load
+        :param pulumi.Input[Union['CustomAppAnomaliesSlowUserActionsArgs', 'CustomAppAnomaliesSlowUserActionsArgsDict', 'outputs.CustomAppAnomaliesSlowUserActions']] slow_user_actions: Slow user actions
+        :param pulumi.Input[Union['CustomAppAnomaliesUnexpectedHighLoadArgs', 'CustomAppAnomaliesUnexpectedHighLoadArgsDict', 'outputs.CustomAppAnomaliesUnexpectedHighLoad']] unexpected_high_load: Unexpected high load
+        :param pulumi.Input[Union['CustomAppAnomaliesUnexpectedLowLoadArgs', 'CustomAppAnomaliesUnexpectedLowLoadArgsDict', 'outputs.CustomAppAnomaliesUnexpectedLowLoad']] unexpected_low_load: Unexpected low load
         """
         ...
     @overload
@@ -265,11 +265,11 @@ class CustomAppAnomalies(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 error_rate_increase: pulumi.Input[Optional[Union['CustomAppAnomaliesErrorRateIncreaseArgs', 'CustomAppAnomaliesErrorRateIncreaseArgsDict']]] = None,
+                 error_rate_increase: pulumi.Input[Optional[Union['CustomAppAnomaliesErrorRateIncreaseArgs', 'CustomAppAnomaliesErrorRateIncreaseArgsDict', 'outputs.CustomAppAnomaliesErrorRateIncrease']]] = None,
                  scope: pulumi.Input[Optional[_builtins.str]] = None,
-                 slow_user_actions: pulumi.Input[Optional[Union['CustomAppAnomaliesSlowUserActionsArgs', 'CustomAppAnomaliesSlowUserActionsArgsDict']]] = None,
-                 unexpected_high_load: pulumi.Input[Optional[Union['CustomAppAnomaliesUnexpectedHighLoadArgs', 'CustomAppAnomaliesUnexpectedHighLoadArgsDict']]] = None,
-                 unexpected_low_load: pulumi.Input[Optional[Union['CustomAppAnomaliesUnexpectedLowLoadArgs', 'CustomAppAnomaliesUnexpectedLowLoadArgsDict']]] = None,
+                 slow_user_actions: pulumi.Input[Optional[Union['CustomAppAnomaliesSlowUserActionsArgs', 'CustomAppAnomaliesSlowUserActionsArgsDict', 'outputs.CustomAppAnomaliesSlowUserActions']]] = None,
+                 unexpected_high_load: pulumi.Input[Optional[Union['CustomAppAnomaliesUnexpectedHighLoadArgs', 'CustomAppAnomaliesUnexpectedHighLoadArgsDict', 'outputs.CustomAppAnomaliesUnexpectedHighLoad']]] = None,
+                 unexpected_low_load: pulumi.Input[Optional[Union['CustomAppAnomaliesUnexpectedLowLoadArgs', 'CustomAppAnomaliesUnexpectedLowLoadArgsDict', 'outputs.CustomAppAnomaliesUnexpectedLowLoad']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -302,11 +302,11 @@ class CustomAppAnomalies(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            error_rate_increase: pulumi.Input[Optional[Union['CustomAppAnomaliesErrorRateIncreaseArgs', 'CustomAppAnomaliesErrorRateIncreaseArgsDict']]] = None,
+            error_rate_increase: pulumi.Input[Optional[Union['CustomAppAnomaliesErrorRateIncreaseArgs', 'CustomAppAnomaliesErrorRateIncreaseArgsDict', 'outputs.CustomAppAnomaliesErrorRateIncrease']]] = None,
             scope: pulumi.Input[Optional[_builtins.str]] = None,
-            slow_user_actions: pulumi.Input[Optional[Union['CustomAppAnomaliesSlowUserActionsArgs', 'CustomAppAnomaliesSlowUserActionsArgsDict']]] = None,
-            unexpected_high_load: pulumi.Input[Optional[Union['CustomAppAnomaliesUnexpectedHighLoadArgs', 'CustomAppAnomaliesUnexpectedHighLoadArgsDict']]] = None,
-            unexpected_low_load: pulumi.Input[Optional[Union['CustomAppAnomaliesUnexpectedLowLoadArgs', 'CustomAppAnomaliesUnexpectedLowLoadArgsDict']]] = None) -> 'CustomAppAnomalies':
+            slow_user_actions: pulumi.Input[Optional[Union['CustomAppAnomaliesSlowUserActionsArgs', 'CustomAppAnomaliesSlowUserActionsArgsDict', 'outputs.CustomAppAnomaliesSlowUserActions']]] = None,
+            unexpected_high_load: pulumi.Input[Optional[Union['CustomAppAnomaliesUnexpectedHighLoadArgs', 'CustomAppAnomaliesUnexpectedHighLoadArgsDict', 'outputs.CustomAppAnomaliesUnexpectedHighLoad']]] = None,
+            unexpected_low_load: pulumi.Input[Optional[Union['CustomAppAnomaliesUnexpectedLowLoadArgs', 'CustomAppAnomaliesUnexpectedLowLoadArgsDict', 'outputs.CustomAppAnomaliesUnexpectedLowLoad']]] = None) -> 'CustomAppAnomalies':
         """
         Get an existing CustomAppAnomalies resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -314,11 +314,11 @@ class CustomAppAnomalies(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['CustomAppAnomaliesErrorRateIncreaseArgs', 'CustomAppAnomaliesErrorRateIncreaseArgsDict']] error_rate_increase: Error rate increase
+        :param pulumi.Input[Union['CustomAppAnomaliesErrorRateIncreaseArgs', 'CustomAppAnomaliesErrorRateIncreaseArgsDict', 'outputs.CustomAppAnomaliesErrorRateIncrease']] error_rate_increase: Error rate increase
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (DEVICE*APPLICATION*METHOD CUSTOM_APPLICATION environment)
-        :param pulumi.Input[Union['CustomAppAnomaliesSlowUserActionsArgs', 'CustomAppAnomaliesSlowUserActionsArgsDict']] slow_user_actions: Slow user actions
-        :param pulumi.Input[Union['CustomAppAnomaliesUnexpectedHighLoadArgs', 'CustomAppAnomaliesUnexpectedHighLoadArgsDict']] unexpected_high_load: Unexpected high load
-        :param pulumi.Input[Union['CustomAppAnomaliesUnexpectedLowLoadArgs', 'CustomAppAnomaliesUnexpectedLowLoadArgsDict']] unexpected_low_load: Unexpected low load
+        :param pulumi.Input[Union['CustomAppAnomaliesSlowUserActionsArgs', 'CustomAppAnomaliesSlowUserActionsArgsDict', 'outputs.CustomAppAnomaliesSlowUserActions']] slow_user_actions: Slow user actions
+        :param pulumi.Input[Union['CustomAppAnomaliesUnexpectedHighLoadArgs', 'CustomAppAnomaliesUnexpectedHighLoadArgsDict', 'outputs.CustomAppAnomaliesUnexpectedHighLoad']] unexpected_high_load: Unexpected high load
+        :param pulumi.Input[Union['CustomAppAnomaliesUnexpectedLowLoadArgs', 'CustomAppAnomaliesUnexpectedLowLoadArgsDict', 'outputs.CustomAppAnomaliesUnexpectedLowLoad']] unexpected_low_load: Unexpected low load
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

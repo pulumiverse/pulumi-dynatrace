@@ -168,10 +168,10 @@ class OpenpipelineV2DavisProblemsPipelinegroups(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 composition: pulumi.Input[Optional[Union['OpenpipelineV2DavisProblemsPipelinegroupsCompositionArgs', 'OpenpipelineV2DavisProblemsPipelinegroupsCompositionArgsDict']]] = None,
+                 composition: pulumi.Input[Optional[Union['OpenpipelineV2DavisProblemsPipelinegroupsCompositionArgs', 'OpenpipelineV2DavisProblemsPipelinegroupsCompositionArgsDict', 'outputs.OpenpipelineV2DavisProblemsPipelinegroupsComposition']]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  member_pipelines: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 member_stages: pulumi.Input[Optional[Union['OpenpipelineV2DavisProblemsPipelinegroupsMemberStagesArgs', 'OpenpipelineV2DavisProblemsPipelinegroupsMemberStagesArgsDict']]] = None,
+                 member_stages: pulumi.Input[Optional[Union['OpenpipelineV2DavisProblemsPipelinegroupsMemberStagesArgs', 'OpenpipelineV2DavisProblemsPipelinegroupsMemberStagesArgsDict', 'outputs.OpenpipelineV2DavisProblemsPipelinegroupsMemberStages']]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -367,10 +367,10 @@ class OpenpipelineV2DavisProblemsPipelinegroups(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['OpenpipelineV2DavisProblemsPipelinegroupsCompositionArgs', 'OpenpipelineV2DavisProblemsPipelinegroupsCompositionArgsDict']] composition: Composition
+        :param pulumi.Input[Union['OpenpipelineV2DavisProblemsPipelinegroupsCompositionArgs', 'OpenpipelineV2DavisProblemsPipelinegroupsCompositionArgsDict', 'outputs.OpenpipelineV2DavisProblemsPipelinegroupsComposition']] composition: Composition
         :param pulumi.Input[_builtins.str] display_name: Display name
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] member_pipelines: Pipelines wrapped by this group
-        :param pulumi.Input[Union['OpenpipelineV2DavisProblemsPipelinegroupsMemberStagesArgs', 'OpenpipelineV2DavisProblemsPipelinegroupsMemberStagesArgsDict']] member_stages: stage configuration of the member pipelines
+        :param pulumi.Input[Union['OpenpipelineV2DavisProblemsPipelinegroupsMemberStagesArgs', 'OpenpipelineV2DavisProblemsPipelinegroupsMemberStagesArgsDict', 'outputs.OpenpipelineV2DavisProblemsPipelinegroupsMemberStages']] member_stages: stage configuration of the member pipelines
         """
         ...
     @overload
@@ -585,10 +585,10 @@ class OpenpipelineV2DavisProblemsPipelinegroups(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 composition: pulumi.Input[Optional[Union['OpenpipelineV2DavisProblemsPipelinegroupsCompositionArgs', 'OpenpipelineV2DavisProblemsPipelinegroupsCompositionArgsDict']]] = None,
+                 composition: pulumi.Input[Optional[Union['OpenpipelineV2DavisProblemsPipelinegroupsCompositionArgs', 'OpenpipelineV2DavisProblemsPipelinegroupsCompositionArgsDict', 'outputs.OpenpipelineV2DavisProblemsPipelinegroupsComposition']]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  member_pipelines: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 member_stages: pulumi.Input[Optional[Union['OpenpipelineV2DavisProblemsPipelinegroupsMemberStagesArgs', 'OpenpipelineV2DavisProblemsPipelinegroupsMemberStagesArgsDict']]] = None,
+                 member_stages: pulumi.Input[Optional[Union['OpenpipelineV2DavisProblemsPipelinegroupsMemberStagesArgs', 'OpenpipelineV2DavisProblemsPipelinegroupsMemberStagesArgsDict', 'outputs.OpenpipelineV2DavisProblemsPipelinegroupsMemberStages']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -616,10 +616,10 @@ class OpenpipelineV2DavisProblemsPipelinegroups(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            composition: pulumi.Input[Optional[Union['OpenpipelineV2DavisProblemsPipelinegroupsCompositionArgs', 'OpenpipelineV2DavisProblemsPipelinegroupsCompositionArgsDict']]] = None,
+            composition: pulumi.Input[Optional[Union['OpenpipelineV2DavisProblemsPipelinegroupsCompositionArgs', 'OpenpipelineV2DavisProblemsPipelinegroupsCompositionArgsDict', 'outputs.OpenpipelineV2DavisProblemsPipelinegroupsComposition']]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             member_pipelines: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            member_stages: pulumi.Input[Optional[Union['OpenpipelineV2DavisProblemsPipelinegroupsMemberStagesArgs', 'OpenpipelineV2DavisProblemsPipelinegroupsMemberStagesArgsDict']]] = None) -> 'OpenpipelineV2DavisProblemsPipelinegroups':
+            member_stages: pulumi.Input[Optional[Union['OpenpipelineV2DavisProblemsPipelinegroupsMemberStagesArgs', 'OpenpipelineV2DavisProblemsPipelinegroupsMemberStagesArgsDict', 'outputs.OpenpipelineV2DavisProblemsPipelinegroupsMemberStages']]] = None) -> 'OpenpipelineV2DavisProblemsPipelinegroups':
         """
         Get an existing OpenpipelineV2DavisProblemsPipelinegroups resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -627,10 +627,10 @@ class OpenpipelineV2DavisProblemsPipelinegroups(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['OpenpipelineV2DavisProblemsPipelinegroupsCompositionArgs', 'OpenpipelineV2DavisProblemsPipelinegroupsCompositionArgsDict']] composition: Composition
+        :param pulumi.Input[Union['OpenpipelineV2DavisProblemsPipelinegroupsCompositionArgs', 'OpenpipelineV2DavisProblemsPipelinegroupsCompositionArgsDict', 'outputs.OpenpipelineV2DavisProblemsPipelinegroupsComposition']] composition: Composition
         :param pulumi.Input[_builtins.str] display_name: Display name
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] member_pipelines: Pipelines wrapped by this group
-        :param pulumi.Input[Union['OpenpipelineV2DavisProblemsPipelinegroupsMemberStagesArgs', 'OpenpipelineV2DavisProblemsPipelinegroupsMemberStagesArgsDict']] member_stages: stage configuration of the member pipelines
+        :param pulumi.Input[Union['OpenpipelineV2DavisProblemsPipelinegroupsMemberStagesArgs', 'OpenpipelineV2DavisProblemsPipelinegroupsMemberStagesArgsDict', 'outputs.OpenpipelineV2DavisProblemsPipelinegroupsMemberStages']] member_stages: stage configuration of the member pipelines
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

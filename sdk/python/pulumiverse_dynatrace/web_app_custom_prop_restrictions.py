@@ -138,8 +138,8 @@ class WebAppCustomPropRestrictions(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  application_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 custom_event_properties_allow_list: pulumi.Input[Optional[Union['WebAppCustomPropRestrictionsCustomEventPropertiesAllowListArgs', 'WebAppCustomPropRestrictionsCustomEventPropertiesAllowListArgsDict']]] = None,
-                 custom_session_properties_allow_list: pulumi.Input[Optional[Union['WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListArgs', 'WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListArgsDict']]] = None,
+                 custom_event_properties_allow_list: pulumi.Input[Optional[Union['WebAppCustomPropRestrictionsCustomEventPropertiesAllowListArgs', 'WebAppCustomPropRestrictionsCustomEventPropertiesAllowListArgsDict', 'outputs.WebAppCustomPropRestrictionsCustomEventPropertiesAllowList']]] = None,
+                 custom_session_properties_allow_list: pulumi.Input[Optional[Union['WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListArgs', 'WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListArgsDict', 'outputs.WebAppCustomPropRestrictionsCustomSessionPropertiesAllowList']]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -154,8 +154,8 @@ class WebAppCustomPropRestrictions(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
-        :param pulumi.Input[Union['WebAppCustomPropRestrictionsCustomEventPropertiesAllowListArgs', 'WebAppCustomPropRestrictionsCustomEventPropertiesAllowListArgsDict']] custom_event_properties_allow_list: List of allowed custom event properties
-        :param pulumi.Input[Union['WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListArgs', 'WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListArgsDict']] custom_session_properties_allow_list: List of allowed custom session properties
+        :param pulumi.Input[Union['WebAppCustomPropRestrictionsCustomEventPropertiesAllowListArgs', 'WebAppCustomPropRestrictionsCustomEventPropertiesAllowListArgsDict', 'outputs.WebAppCustomPropRestrictionsCustomEventPropertiesAllowList']] custom_event_properties_allow_list: List of allowed custom event properties
+        :param pulumi.Input[Union['WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListArgs', 'WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListArgsDict', 'outputs.WebAppCustomPropRestrictionsCustomSessionPropertiesAllowList']] custom_session_properties_allow_list: List of allowed custom session properties
         """
         ...
     @overload
@@ -189,8 +189,8 @@ class WebAppCustomPropRestrictions(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  application_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 custom_event_properties_allow_list: pulumi.Input[Optional[Union['WebAppCustomPropRestrictionsCustomEventPropertiesAllowListArgs', 'WebAppCustomPropRestrictionsCustomEventPropertiesAllowListArgsDict']]] = None,
-                 custom_session_properties_allow_list: pulumi.Input[Optional[Union['WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListArgs', 'WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListArgsDict']]] = None,
+                 custom_event_properties_allow_list: pulumi.Input[Optional[Union['WebAppCustomPropRestrictionsCustomEventPropertiesAllowListArgs', 'WebAppCustomPropRestrictionsCustomEventPropertiesAllowListArgsDict', 'outputs.WebAppCustomPropRestrictionsCustomEventPropertiesAllowList']]] = None,
+                 custom_session_properties_allow_list: pulumi.Input[Optional[Union['WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListArgs', 'WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListArgsDict', 'outputs.WebAppCustomPropRestrictionsCustomSessionPropertiesAllowList']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -216,8 +216,8 @@ class WebAppCustomPropRestrictions(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             application_id: pulumi.Input[Optional[_builtins.str]] = None,
-            custom_event_properties_allow_list: pulumi.Input[Optional[Union['WebAppCustomPropRestrictionsCustomEventPropertiesAllowListArgs', 'WebAppCustomPropRestrictionsCustomEventPropertiesAllowListArgsDict']]] = None,
-            custom_session_properties_allow_list: pulumi.Input[Optional[Union['WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListArgs', 'WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListArgsDict']]] = None) -> 'WebAppCustomPropRestrictions':
+            custom_event_properties_allow_list: pulumi.Input[Optional[Union['WebAppCustomPropRestrictionsCustomEventPropertiesAllowListArgs', 'WebAppCustomPropRestrictionsCustomEventPropertiesAllowListArgsDict', 'outputs.WebAppCustomPropRestrictionsCustomEventPropertiesAllowList']]] = None,
+            custom_session_properties_allow_list: pulumi.Input[Optional[Union['WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListArgs', 'WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListArgsDict', 'outputs.WebAppCustomPropRestrictionsCustomSessionPropertiesAllowList']]] = None) -> 'WebAppCustomPropRestrictions':
         """
         Get an existing WebAppCustomPropRestrictions resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -226,8 +226,8 @@ class WebAppCustomPropRestrictions(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
-        :param pulumi.Input[Union['WebAppCustomPropRestrictionsCustomEventPropertiesAllowListArgs', 'WebAppCustomPropRestrictionsCustomEventPropertiesAllowListArgsDict']] custom_event_properties_allow_list: List of allowed custom event properties
-        :param pulumi.Input[Union['WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListArgs', 'WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListArgsDict']] custom_session_properties_allow_list: List of allowed custom session properties
+        :param pulumi.Input[Union['WebAppCustomPropRestrictionsCustomEventPropertiesAllowListArgs', 'WebAppCustomPropRestrictionsCustomEventPropertiesAllowListArgsDict', 'outputs.WebAppCustomPropRestrictionsCustomEventPropertiesAllowList']] custom_event_properties_allow_list: List of allowed custom event properties
+        :param pulumi.Input[Union['WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListArgs', 'WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListArgsDict', 'outputs.WebAppCustomPropRestrictionsCustomSessionPropertiesAllowList']] custom_session_properties_allow_list: List of allowed custom session properties
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

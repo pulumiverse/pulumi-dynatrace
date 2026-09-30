@@ -271,7 +271,7 @@ class UserGroup(pulumi.CustomResource):
                  ldap_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  manage_account: pulumi.Input[Optional[_builtins.bool]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 permissions: pulumi.Input[Optional[Union['UserGroupPermissionsArgs', 'UserGroupPermissionsArgsDict']]] = None,
+                 permissions: pulumi.Input[Optional[Union['UserGroupPermissionsArgs', 'UserGroupPermissionsArgsDict', 'outputs.UserGroupPermissions']]] = None,
                  sso_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
@@ -339,7 +339,7 @@ class UserGroup(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] ldap_groups: LDAP group names
         :param pulumi.Input[_builtins.bool] manage_account: If `true`, then the group has the manage account rights
         :param pulumi.Input[_builtins.str] name: The name of the user group
-        :param pulumi.Input[Union['UserGroupPermissionsArgs', 'UserGroupPermissionsArgsDict']] permissions: Permissions for environments
+        :param pulumi.Input[Union['UserGroupPermissionsArgs', 'UserGroupPermissionsArgsDict', 'outputs.UserGroupPermissions']] permissions: Permissions for environments
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] sso_groups: SSO group names. If defined it's used to map SSO group name to Dynatrace group name, otherwise mapping is done by group name
         """
         ...
@@ -426,7 +426,7 @@ class UserGroup(pulumi.CustomResource):
                  ldap_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  manage_account: pulumi.Input[Optional[_builtins.bool]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 permissions: pulumi.Input[Optional[Union['UserGroupPermissionsArgs', 'UserGroupPermissionsArgsDict']]] = None,
+                 permissions: pulumi.Input[Optional[Union['UserGroupPermissionsArgs', 'UserGroupPermissionsArgsDict', 'outputs.UserGroupPermissions']]] = None,
                  sso_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -459,7 +459,7 @@ class UserGroup(pulumi.CustomResource):
             ldap_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             manage_account: pulumi.Input[Optional[_builtins.bool]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
-            permissions: pulumi.Input[Optional[Union['UserGroupPermissionsArgs', 'UserGroupPermissionsArgsDict']]] = None,
+            permissions: pulumi.Input[Optional[Union['UserGroupPermissionsArgs', 'UserGroupPermissionsArgsDict', 'outputs.UserGroupPermissions']]] = None,
             sso_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'UserGroup':
         """
         Get an existing UserGroup resource's state with the given name, id, and optional extra
@@ -473,7 +473,7 @@ class UserGroup(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] ldap_groups: LDAP group names
         :param pulumi.Input[_builtins.bool] manage_account: If `true`, then the group has the manage account rights
         :param pulumi.Input[_builtins.str] name: The name of the user group
-        :param pulumi.Input[Union['UserGroupPermissionsArgs', 'UserGroupPermissionsArgsDict']] permissions: Permissions for environments
+        :param pulumi.Input[Union['UserGroupPermissionsArgs', 'UserGroupPermissionsArgsDict', 'outputs.UserGroupPermissions']] permissions: Permissions for environments
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] sso_groups: SSO group names. If defined it's used to map SSO group name to Dynatrace group name, otherwise mapping is done by group name
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

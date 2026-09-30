@@ -394,10 +394,10 @@ class LogTimestamp(pulumi.CustomResource):
                  date_search_limit: pulumi.Input[Optional[_builtins.int]] = None,
                  date_time_pattern: pulumi.Input[Optional[_builtins.str]] = None,
                  enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-                 entry_boundary: pulumi.Input[Optional[Union['LogTimestampEntryBoundaryArgs', 'LogTimestampEntryBoundaryArgsDict']]] = None,
+                 entry_boundary: pulumi.Input[Optional[Union['LogTimestampEntryBoundaryArgs', 'LogTimestampEntryBoundaryArgsDict', 'outputs.LogTimestampEntryBoundary']]] = None,
                  insert_after: pulumi.Input[Optional[_builtins.str]] = None,
-                 json_configuration: pulumi.Input[Optional[Union['LogTimestampJsonConfigurationArgs', 'LogTimestampJsonConfigurationArgsDict']]] = None,
-                 matchers: pulumi.Input[Optional[Union['LogTimestampMatchersArgs', 'LogTimestampMatchersArgsDict']]] = None,
+                 json_configuration: pulumi.Input[Optional[Union['LogTimestampJsonConfigurationArgs', 'LogTimestampJsonConfigurationArgsDict', 'outputs.LogTimestampJsonConfiguration']]] = None,
+                 matchers: pulumi.Input[Optional[Union['LogTimestampMatchersArgs', 'LogTimestampMatchersArgsDict', 'outputs.LogTimestampMatchers']]] = None,
                  scope: pulumi.Input[Optional[_builtins.str]] = None,
                  skip_indented_lines: pulumi.Input[Optional[_builtins.bool]] = None,
                  timezone: pulumi.Input[Optional[_builtins.str]] = None,
@@ -424,10 +424,10 @@ class LogTimestamp(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] date_search_limit: Defines the number of characters in every log line (starting from the first character in the line) where the timestamp is searched.
         :param pulumi.Input[_builtins.str] date_time_pattern: Date-time pattern
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[Union['LogTimestampEntryBoundaryArgs', 'LogTimestampEntryBoundaryArgsDict']] entry_boundary: Optional field. Enter a fragment of the line text that starts the entry. No support for wildcards - the text is treated literally.
+        :param pulumi.Input[Union['LogTimestampEntryBoundaryArgs', 'LogTimestampEntryBoundaryArgsDict', 'outputs.LogTimestampEntryBoundary']] entry_boundary: Optional field. Enter a fragment of the line text that starts the entry. No support for wildcards - the text is treated literally.
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
-        :param pulumi.Input[Union['LogTimestampJsonConfigurationArgs', 'LogTimestampJsonConfigurationArgsDict']] json_configuration: Detect JSON format
-        :param pulumi.Input[Union['LogTimestampMatchersArgs', 'LogTimestampMatchersArgsDict']] matchers: no documentation available
+        :param pulumi.Input[Union['LogTimestampJsonConfigurationArgs', 'LogTimestampJsonConfigurationArgsDict', 'outputs.LogTimestampJsonConfiguration']] json_configuration: Detect JSON format
+        :param pulumi.Input[Union['LogTimestampMatchersArgs', 'LogTimestampMatchersArgsDict', 'outputs.LogTimestampMatchers']] matchers: no documentation available
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
         :param pulumi.Input[_builtins.bool] skip_indented_lines: Don't parse timestamps in lines starting with white character
         :param pulumi.Input[_builtins.str] timezone: Timezone
@@ -473,10 +473,10 @@ class LogTimestamp(pulumi.CustomResource):
                  date_search_limit: pulumi.Input[Optional[_builtins.int]] = None,
                  date_time_pattern: pulumi.Input[Optional[_builtins.str]] = None,
                  enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-                 entry_boundary: pulumi.Input[Optional[Union['LogTimestampEntryBoundaryArgs', 'LogTimestampEntryBoundaryArgsDict']]] = None,
+                 entry_boundary: pulumi.Input[Optional[Union['LogTimestampEntryBoundaryArgs', 'LogTimestampEntryBoundaryArgsDict', 'outputs.LogTimestampEntryBoundary']]] = None,
                  insert_after: pulumi.Input[Optional[_builtins.str]] = None,
-                 json_configuration: pulumi.Input[Optional[Union['LogTimestampJsonConfigurationArgs', 'LogTimestampJsonConfigurationArgsDict']]] = None,
-                 matchers: pulumi.Input[Optional[Union['LogTimestampMatchersArgs', 'LogTimestampMatchersArgsDict']]] = None,
+                 json_configuration: pulumi.Input[Optional[Union['LogTimestampJsonConfigurationArgs', 'LogTimestampJsonConfigurationArgsDict', 'outputs.LogTimestampJsonConfiguration']]] = None,
+                 matchers: pulumi.Input[Optional[Union['LogTimestampMatchersArgs', 'LogTimestampMatchersArgsDict', 'outputs.LogTimestampMatchers']]] = None,
                  scope: pulumi.Input[Optional[_builtins.str]] = None,
                  skip_indented_lines: pulumi.Input[Optional[_builtins.bool]] = None,
                  timezone: pulumi.Input[Optional[_builtins.str]] = None,
@@ -522,10 +522,10 @@ class LogTimestamp(pulumi.CustomResource):
             date_search_limit: pulumi.Input[Optional[_builtins.int]] = None,
             date_time_pattern: pulumi.Input[Optional[_builtins.str]] = None,
             enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-            entry_boundary: pulumi.Input[Optional[Union['LogTimestampEntryBoundaryArgs', 'LogTimestampEntryBoundaryArgsDict']]] = None,
+            entry_boundary: pulumi.Input[Optional[Union['LogTimestampEntryBoundaryArgs', 'LogTimestampEntryBoundaryArgsDict', 'outputs.LogTimestampEntryBoundary']]] = None,
             insert_after: pulumi.Input[Optional[_builtins.str]] = None,
-            json_configuration: pulumi.Input[Optional[Union['LogTimestampJsonConfigurationArgs', 'LogTimestampJsonConfigurationArgsDict']]] = None,
-            matchers: pulumi.Input[Optional[Union['LogTimestampMatchersArgs', 'LogTimestampMatchersArgsDict']]] = None,
+            json_configuration: pulumi.Input[Optional[Union['LogTimestampJsonConfigurationArgs', 'LogTimestampJsonConfigurationArgsDict', 'outputs.LogTimestampJsonConfiguration']]] = None,
+            matchers: pulumi.Input[Optional[Union['LogTimestampMatchersArgs', 'LogTimestampMatchersArgsDict', 'outputs.LogTimestampMatchers']]] = None,
             scope: pulumi.Input[Optional[_builtins.str]] = None,
             skip_indented_lines: pulumi.Input[Optional[_builtins.bool]] = None,
             timezone: pulumi.Input[Optional[_builtins.str]] = None) -> 'LogTimestamp':
@@ -540,10 +540,10 @@ class LogTimestamp(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] date_search_limit: Defines the number of characters in every log line (starting from the first character in the line) where the timestamp is searched.
         :param pulumi.Input[_builtins.str] date_time_pattern: Date-time pattern
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[Union['LogTimestampEntryBoundaryArgs', 'LogTimestampEntryBoundaryArgsDict']] entry_boundary: Optional field. Enter a fragment of the line text that starts the entry. No support for wildcards - the text is treated literally.
+        :param pulumi.Input[Union['LogTimestampEntryBoundaryArgs', 'LogTimestampEntryBoundaryArgsDict', 'outputs.LogTimestampEntryBoundary']] entry_boundary: Optional field. Enter a fragment of the line text that starts the entry. No support for wildcards - the text is treated literally.
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
-        :param pulumi.Input[Union['LogTimestampJsonConfigurationArgs', 'LogTimestampJsonConfigurationArgsDict']] json_configuration: Detect JSON format
-        :param pulumi.Input[Union['LogTimestampMatchersArgs', 'LogTimestampMatchersArgsDict']] matchers: no documentation available
+        :param pulumi.Input[Union['LogTimestampJsonConfigurationArgs', 'LogTimestampJsonConfigurationArgsDict', 'outputs.LogTimestampJsonConfiguration']] json_configuration: Detect JSON format
+        :param pulumi.Input[Union['LogTimestampMatchersArgs', 'LogTimestampMatchersArgsDict', 'outputs.LogTimestampMatchers']] matchers: no documentation available
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
         :param pulumi.Input[_builtins.bool] skip_indented_lines: Don't parse timestamps in lines starting with white character
         :param pulumi.Input[_builtins.str] timezone: Timezone

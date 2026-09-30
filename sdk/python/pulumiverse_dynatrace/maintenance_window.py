@@ -331,8 +331,8 @@ class MaintenanceWindow(pulumi.CustomResource):
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 schedule: pulumi.Input[Optional[Union['MaintenanceWindowScheduleArgs', 'MaintenanceWindowScheduleArgsDict']]] = None,
-                 scope: pulumi.Input[Optional[Union['MaintenanceWindowScopeArgs', 'MaintenanceWindowScopeArgsDict']]] = None,
+                 schedule: pulumi.Input[Optional[Union['MaintenanceWindowScheduleArgs', 'MaintenanceWindowScheduleArgsDict', 'outputs.MaintenanceWindowSchedule']]] = None,
+                 scope: pulumi.Input[Optional[Union['MaintenanceWindowScopeArgs', 'MaintenanceWindowScopeArgsDict', 'outputs.MaintenanceWindowScope']]] = None,
                  suppress_synth_mon_exec: pulumi.Input[Optional[_builtins.bool]] = None,
                  suppression: pulumi.Input[Optional[_builtins.str]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
@@ -355,8 +355,8 @@ class MaintenanceWindow(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] description: A short description of the maintenance purpose
         :param pulumi.Input[_builtins.bool] enabled: The Maintenance Window is enabled or disabled
         :param pulumi.Input[_builtins.str] name: The name of the maintenance window, displayed in the UI
-        :param pulumi.Input[Union['MaintenanceWindowScheduleArgs', 'MaintenanceWindowScheduleArgsDict']] schedule: The schedule of the maintenance window
-        :param pulumi.Input[Union['MaintenanceWindowScopeArgs', 'MaintenanceWindowScopeArgsDict']] scope: the tiles this Dashboard consist of
+        :param pulumi.Input[Union['MaintenanceWindowScheduleArgs', 'MaintenanceWindowScheduleArgsDict', 'outputs.MaintenanceWindowSchedule']] schedule: The schedule of the maintenance window
+        :param pulumi.Input[Union['MaintenanceWindowScopeArgs', 'MaintenanceWindowScopeArgsDict', 'outputs.MaintenanceWindowScope']] scope: the tiles this Dashboard consist of
         :param pulumi.Input[_builtins.bool] suppress_synth_mon_exec: Suppress execution of synthetic monitors during the maintenance
         :param pulumi.Input[_builtins.str] suppression: The type of suppression of alerting and problem detection during the maintenance
         :param pulumi.Input[_builtins.str] type: The type of the maintenance: planned or unplanned
@@ -398,8 +398,8 @@ class MaintenanceWindow(pulumi.CustomResource):
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 schedule: pulumi.Input[Optional[Union['MaintenanceWindowScheduleArgs', 'MaintenanceWindowScheduleArgsDict']]] = None,
-                 scope: pulumi.Input[Optional[Union['MaintenanceWindowScopeArgs', 'MaintenanceWindowScopeArgsDict']]] = None,
+                 schedule: pulumi.Input[Optional[Union['MaintenanceWindowScheduleArgs', 'MaintenanceWindowScheduleArgsDict', 'outputs.MaintenanceWindowSchedule']]] = None,
+                 scope: pulumi.Input[Optional[Union['MaintenanceWindowScopeArgs', 'MaintenanceWindowScopeArgsDict', 'outputs.MaintenanceWindowScope']]] = None,
                  suppress_synth_mon_exec: pulumi.Input[Optional[_builtins.bool]] = None,
                  suppression: pulumi.Input[Optional[_builtins.str]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
@@ -439,8 +439,8 @@ class MaintenanceWindow(pulumi.CustomResource):
             description: pulumi.Input[Optional[_builtins.str]] = None,
             enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
-            schedule: pulumi.Input[Optional[Union['MaintenanceWindowScheduleArgs', 'MaintenanceWindowScheduleArgsDict']]] = None,
-            scope: pulumi.Input[Optional[Union['MaintenanceWindowScopeArgs', 'MaintenanceWindowScopeArgsDict']]] = None,
+            schedule: pulumi.Input[Optional[Union['MaintenanceWindowScheduleArgs', 'MaintenanceWindowScheduleArgsDict', 'outputs.MaintenanceWindowSchedule']]] = None,
+            scope: pulumi.Input[Optional[Union['MaintenanceWindowScopeArgs', 'MaintenanceWindowScopeArgsDict', 'outputs.MaintenanceWindowScope']]] = None,
             suppress_synth_mon_exec: pulumi.Input[Optional[_builtins.bool]] = None,
             suppression: pulumi.Input[Optional[_builtins.str]] = None,
             type: pulumi.Input[Optional[_builtins.str]] = None,
@@ -455,8 +455,8 @@ class MaintenanceWindow(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] description: A short description of the maintenance purpose
         :param pulumi.Input[_builtins.bool] enabled: The Maintenance Window is enabled or disabled
         :param pulumi.Input[_builtins.str] name: The name of the maintenance window, displayed in the UI
-        :param pulumi.Input[Union['MaintenanceWindowScheduleArgs', 'MaintenanceWindowScheduleArgsDict']] schedule: The schedule of the maintenance window
-        :param pulumi.Input[Union['MaintenanceWindowScopeArgs', 'MaintenanceWindowScopeArgsDict']] scope: the tiles this Dashboard consist of
+        :param pulumi.Input[Union['MaintenanceWindowScheduleArgs', 'MaintenanceWindowScheduleArgsDict', 'outputs.MaintenanceWindowSchedule']] schedule: The schedule of the maintenance window
+        :param pulumi.Input[Union['MaintenanceWindowScopeArgs', 'MaintenanceWindowScopeArgsDict', 'outputs.MaintenanceWindowScope']] scope: the tiles this Dashboard consist of
         :param pulumi.Input[_builtins.bool] suppress_synth_mon_exec: Suppress execution of synthetic monitors during the maintenance
         :param pulumi.Input[_builtins.str] suppression: The type of suppression of alerting and problem detection during the maintenance
         :param pulumi.Input[_builtins.str] type: The type of the maintenance: planned or unplanned

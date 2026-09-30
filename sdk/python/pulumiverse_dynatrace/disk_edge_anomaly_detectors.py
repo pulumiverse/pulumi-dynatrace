@@ -328,11 +328,11 @@ class DiskEdgeAnomalyDetectors(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 alerts: pulumi.Input[Optional[Union['DiskEdgeAnomalyDetectorsAlertsArgs', 'DiskEdgeAnomalyDetectorsAlertsArgsDict']]] = None,
-                 detection_conditions: pulumi.Input[Optional[Union['DiskEdgeAnomalyDetectorsDetectionConditionsArgs', 'DiskEdgeAnomalyDetectorsDetectionConditionsArgsDict']]] = None,
+                 alerts: pulumi.Input[Optional[Union['DiskEdgeAnomalyDetectorsAlertsArgs', 'DiskEdgeAnomalyDetectorsAlertsArgsDict', 'outputs.DiskEdgeAnomalyDetectorsAlerts']]] = None,
+                 detection_conditions: pulumi.Input[Optional[Union['DiskEdgeAnomalyDetectorsDetectionConditionsArgs', 'DiskEdgeAnomalyDetectorsDetectionConditionsArgsDict', 'outputs.DiskEdgeAnomalyDetectorsDetectionConditions']]] = None,
                  disk_name_filters: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-                 event_properties: pulumi.Input[Optional[Union['DiskEdgeAnomalyDetectorsEventPropertiesArgs', 'DiskEdgeAnomalyDetectorsEventPropertiesArgsDict']]] = None,
+                 event_properties: pulumi.Input[Optional[Union['DiskEdgeAnomalyDetectorsEventPropertiesArgs', 'DiskEdgeAnomalyDetectorsEventPropertiesArgsDict', 'outputs.DiskEdgeAnomalyDetectorsEventProperties']]] = None,
                  insert_after: pulumi.Input[Optional[_builtins.str]] = None,
                  operating_systems: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  policy_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -356,11 +356,11 @@ class DiskEdgeAnomalyDetectors(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['DiskEdgeAnomalyDetectorsAlertsArgs', 'DiskEdgeAnomalyDetectorsAlertsArgsDict']] alerts: Alerts
-        :param pulumi.Input[Union['DiskEdgeAnomalyDetectorsDetectionConditionsArgs', 'DiskEdgeAnomalyDetectorsDetectionConditionsArgsDict']] detection_conditions: Set of rules to scope which disks the policy applies to. Rules can match based on disk properties (total space, filesystem, disk type) or host resource attributes. Each disk property type can be defined at most once per policy.
+        :param pulumi.Input[Union['DiskEdgeAnomalyDetectorsAlertsArgs', 'DiskEdgeAnomalyDetectorsAlertsArgsDict', 'outputs.DiskEdgeAnomalyDetectorsAlerts']] alerts: Alerts
+        :param pulumi.Input[Union['DiskEdgeAnomalyDetectorsDetectionConditionsArgs', 'DiskEdgeAnomalyDetectorsDetectionConditionsArgsDict', 'outputs.DiskEdgeAnomalyDetectorsDetectionConditions']] detection_conditions: Set of rules to scope which disks the policy applies to. Rules can match based on disk properties (total space, filesystem, disk type) or host resource attributes. Each disk property type can be defined at most once per policy.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] disk_name_filters: Disk will be included in this policy if **any** of the filters match
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[Union['DiskEdgeAnomalyDetectorsEventPropertiesArgs', 'DiskEdgeAnomalyDetectorsEventPropertiesArgsDict']] event_properties: Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+)
+        :param pulumi.Input[Union['DiskEdgeAnomalyDetectorsEventPropertiesArgs', 'DiskEdgeAnomalyDetectorsEventPropertiesArgsDict', 'outputs.DiskEdgeAnomalyDetectorsEventProperties']] event_properties: Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+)
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] operating_systems: Select the operating systems on which policy should be applied. Possible values: `AIX`, `LINUX`, `WINDOWS`
         :param pulumi.Input[_builtins.str] policy_name: Policy name
@@ -403,11 +403,11 @@ class DiskEdgeAnomalyDetectors(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 alerts: pulumi.Input[Optional[Union['DiskEdgeAnomalyDetectorsAlertsArgs', 'DiskEdgeAnomalyDetectorsAlertsArgsDict']]] = None,
-                 detection_conditions: pulumi.Input[Optional[Union['DiskEdgeAnomalyDetectorsDetectionConditionsArgs', 'DiskEdgeAnomalyDetectorsDetectionConditionsArgsDict']]] = None,
+                 alerts: pulumi.Input[Optional[Union['DiskEdgeAnomalyDetectorsAlertsArgs', 'DiskEdgeAnomalyDetectorsAlertsArgsDict', 'outputs.DiskEdgeAnomalyDetectorsAlerts']]] = None,
+                 detection_conditions: pulumi.Input[Optional[Union['DiskEdgeAnomalyDetectorsDetectionConditionsArgs', 'DiskEdgeAnomalyDetectorsDetectionConditionsArgsDict', 'outputs.DiskEdgeAnomalyDetectorsDetectionConditions']]] = None,
                  disk_name_filters: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-                 event_properties: pulumi.Input[Optional[Union['DiskEdgeAnomalyDetectorsEventPropertiesArgs', 'DiskEdgeAnomalyDetectorsEventPropertiesArgsDict']]] = None,
+                 event_properties: pulumi.Input[Optional[Union['DiskEdgeAnomalyDetectorsEventPropertiesArgs', 'DiskEdgeAnomalyDetectorsEventPropertiesArgsDict', 'outputs.DiskEdgeAnomalyDetectorsEventProperties']]] = None,
                  insert_after: pulumi.Input[Optional[_builtins.str]] = None,
                  operating_systems: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  policy_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -444,11 +444,11 @@ class DiskEdgeAnomalyDetectors(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            alerts: pulumi.Input[Optional[Union['DiskEdgeAnomalyDetectorsAlertsArgs', 'DiskEdgeAnomalyDetectorsAlertsArgsDict']]] = None,
-            detection_conditions: pulumi.Input[Optional[Union['DiskEdgeAnomalyDetectorsDetectionConditionsArgs', 'DiskEdgeAnomalyDetectorsDetectionConditionsArgsDict']]] = None,
+            alerts: pulumi.Input[Optional[Union['DiskEdgeAnomalyDetectorsAlertsArgs', 'DiskEdgeAnomalyDetectorsAlertsArgsDict', 'outputs.DiskEdgeAnomalyDetectorsAlerts']]] = None,
+            detection_conditions: pulumi.Input[Optional[Union['DiskEdgeAnomalyDetectorsDetectionConditionsArgs', 'DiskEdgeAnomalyDetectorsDetectionConditionsArgsDict', 'outputs.DiskEdgeAnomalyDetectorsDetectionConditions']]] = None,
             disk_name_filters: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-            event_properties: pulumi.Input[Optional[Union['DiskEdgeAnomalyDetectorsEventPropertiesArgs', 'DiskEdgeAnomalyDetectorsEventPropertiesArgsDict']]] = None,
+            event_properties: pulumi.Input[Optional[Union['DiskEdgeAnomalyDetectorsEventPropertiesArgs', 'DiskEdgeAnomalyDetectorsEventPropertiesArgsDict', 'outputs.DiskEdgeAnomalyDetectorsEventProperties']]] = None,
             insert_after: pulumi.Input[Optional[_builtins.str]] = None,
             operating_systems: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             policy_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -460,11 +460,11 @@ class DiskEdgeAnomalyDetectors(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['DiskEdgeAnomalyDetectorsAlertsArgs', 'DiskEdgeAnomalyDetectorsAlertsArgsDict']] alerts: Alerts
-        :param pulumi.Input[Union['DiskEdgeAnomalyDetectorsDetectionConditionsArgs', 'DiskEdgeAnomalyDetectorsDetectionConditionsArgsDict']] detection_conditions: Set of rules to scope which disks the policy applies to. Rules can match based on disk properties (total space, filesystem, disk type) or host resource attributes. Each disk property type can be defined at most once per policy.
+        :param pulumi.Input[Union['DiskEdgeAnomalyDetectorsAlertsArgs', 'DiskEdgeAnomalyDetectorsAlertsArgsDict', 'outputs.DiskEdgeAnomalyDetectorsAlerts']] alerts: Alerts
+        :param pulumi.Input[Union['DiskEdgeAnomalyDetectorsDetectionConditionsArgs', 'DiskEdgeAnomalyDetectorsDetectionConditionsArgsDict', 'outputs.DiskEdgeAnomalyDetectorsDetectionConditions']] detection_conditions: Set of rules to scope which disks the policy applies to. Rules can match based on disk properties (total space, filesystem, disk type) or host resource attributes. Each disk property type can be defined at most once per policy.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] disk_name_filters: Disk will be included in this policy if **any** of the filters match
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[Union['DiskEdgeAnomalyDetectorsEventPropertiesArgs', 'DiskEdgeAnomalyDetectorsEventPropertiesArgsDict']] event_properties: Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+)
+        :param pulumi.Input[Union['DiskEdgeAnomalyDetectorsEventPropertiesArgs', 'DiskEdgeAnomalyDetectorsEventPropertiesArgsDict', 'outputs.DiskEdgeAnomalyDetectorsEventProperties']] event_properties: Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+)
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] operating_systems: Select the operating systems on which policy should be applied. Possible values: `AIX`, `LINUX`, `WINDOWS`
         :param pulumi.Input[_builtins.str] policy_name: Policy name

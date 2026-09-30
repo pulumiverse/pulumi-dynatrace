@@ -70,7 +70,7 @@ class AwaitableGetSyntheticLocationsResult(GetSyntheticLocationsResult):
 
 
 def get_synthetic_locations(id: Optional[_builtins.str] = None,
-                            locations: Optional[Union['GetSyntheticLocationsLocationsArgs', 'GetSyntheticLocationsLocationsArgsDict']] = None,
+                            locations: Optional[Union['GetSyntheticLocationsLocationsArgs', 'GetSyntheticLocationsLocationsArgsDict', 'outputs.GetSyntheticLocationsLocationsResult']] = None,
                             name: Optional[_builtins.str] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSyntheticLocationsResult:
     """
@@ -94,7 +94,7 @@ def get_synthetic_locations(id: Optional[_builtins.str] = None,
         locations=pulumi.get(__ret__, 'locations'),
         name=pulumi.get(__ret__, 'name'))
 def get_synthetic_locations_output(id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                   locations: pulumi.Input[Optional[Optional[Union['GetSyntheticLocationsLocationsArgs', 'GetSyntheticLocationsLocationsArgsDict']]]] = None,
+                                   locations: pulumi.Input[Optional[Optional[Union['GetSyntheticLocationsLocationsArgs', 'GetSyntheticLocationsLocationsArgsDict', 'outputs.GetSyntheticLocationsLocationsResult']]]] = None,
                                    name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSyntheticLocationsResult]:
     """

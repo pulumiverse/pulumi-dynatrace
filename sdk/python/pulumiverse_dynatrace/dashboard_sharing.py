@@ -219,9 +219,9 @@ class DashboardSharing(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  dashboard_id: pulumi.Input[Optional[_builtins.str]] = None,
                  enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-                 permissions: pulumi.Input[Optional[Union['DashboardSharingPermissionsArgs', 'DashboardSharingPermissionsArgsDict']]] = None,
+                 permissions: pulumi.Input[Optional[Union['DashboardSharingPermissionsArgs', 'DashboardSharingPermissionsArgsDict', 'outputs.DashboardSharingPermissions']]] = None,
                  preset: pulumi.Input[Optional[_builtins.bool]] = None,
-                 public: pulumi.Input[Optional[Union['DashboardSharingPublicArgs', 'DashboardSharingPublicArgsDict']]] = None,
+                 public: pulumi.Input[Optional[Union['DashboardSharingPublicArgs', 'DashboardSharingPublicArgsDict', 'outputs.DashboardSharingPublic']]] = None,
                  __props__=None):
         """
         > This is a child resource of dynatrace_json_dashboard, therefore it is automatically retrieved with the dashboard.
@@ -290,9 +290,9 @@ class DashboardSharing(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] dashboard_id: The Dynatrace entity ID of the dashboard
         :param pulumi.Input[_builtins.bool] enabled: The dashboard is shared (`true`) or private (`false`). Make sure that this value is aligned with the attribute `shared` of the resources `Dashboard` and `JsonDashboard`. Otherwise you will encounter non-empty plans.
-        :param pulumi.Input[Union['DashboardSharingPermissionsArgs', 'DashboardSharingPermissionsArgsDict']] permissions: Access permissions of the dashboard
+        :param pulumi.Input[Union['DashboardSharingPermissionsArgs', 'DashboardSharingPermissionsArgsDict', 'outputs.DashboardSharingPermissions']] permissions: Access permissions of the dashboard
         :param pulumi.Input[_builtins.bool] preset: If `true` the dashboard will be marked as preset. Setting this attribute to `true` will automatically enforce a specific set of permissions - Dashboards flagged as Preset are shared by default. Make sure that this value is aligned with the attribute `preset` of the resources `Dashboard` and `JsonDashboard`. Otherwise you will encounter non-empty plans.
-        :param pulumi.Input[Union['DashboardSharingPublicArgs', 'DashboardSharingPublicArgsDict']] public: Configuration of the [anonymous access](https://dt-url.net/ov03sf1) to the dashboard
+        :param pulumi.Input[Union['DashboardSharingPublicArgs', 'DashboardSharingPublicArgsDict', 'outputs.DashboardSharingPublic']] public: Configuration of the [anonymous access](https://dt-url.net/ov03sf1) to the dashboard
         """
         ...
     @overload
@@ -380,9 +380,9 @@ class DashboardSharing(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  dashboard_id: pulumi.Input[Optional[_builtins.str]] = None,
                  enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-                 permissions: pulumi.Input[Optional[Union['DashboardSharingPermissionsArgs', 'DashboardSharingPermissionsArgsDict']]] = None,
+                 permissions: pulumi.Input[Optional[Union['DashboardSharingPermissionsArgs', 'DashboardSharingPermissionsArgsDict', 'outputs.DashboardSharingPermissions']]] = None,
                  preset: pulumi.Input[Optional[_builtins.bool]] = None,
-                 public: pulumi.Input[Optional[Union['DashboardSharingPublicArgs', 'DashboardSharingPublicArgsDict']]] = None,
+                 public: pulumi.Input[Optional[Union['DashboardSharingPublicArgs', 'DashboardSharingPublicArgsDict', 'outputs.DashboardSharingPublic']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -413,9 +413,9 @@ class DashboardSharing(pulumi.CustomResource):
             dashboard_id: pulumi.Input[Optional[_builtins.str]] = None,
             enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             muted: pulumi.Input[Optional[_builtins.bool]] = None,
-            permissions: pulumi.Input[Optional[Union['DashboardSharingPermissionsArgs', 'DashboardSharingPermissionsArgsDict']]] = None,
+            permissions: pulumi.Input[Optional[Union['DashboardSharingPermissionsArgs', 'DashboardSharingPermissionsArgsDict', 'outputs.DashboardSharingPermissions']]] = None,
             preset: pulumi.Input[Optional[_builtins.bool]] = None,
-            public: pulumi.Input[Optional[Union['DashboardSharingPublicArgs', 'DashboardSharingPublicArgsDict']]] = None) -> 'DashboardSharing':
+            public: pulumi.Input[Optional[Union['DashboardSharingPublicArgs', 'DashboardSharingPublicArgsDict', 'outputs.DashboardSharingPublic']]] = None) -> 'DashboardSharing':
         """
         Get an existing DashboardSharing resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -426,9 +426,9 @@ class DashboardSharing(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] dashboard_id: The Dynatrace entity ID of the dashboard
         :param pulumi.Input[_builtins.bool] enabled: The dashboard is shared (`true`) or private (`false`). Make sure that this value is aligned with the attribute `shared` of the resources `Dashboard` and `JsonDashboard`. Otherwise you will encounter non-empty plans.
         :param pulumi.Input[_builtins.bool] muted: Reserved for internal use by the provider
-        :param pulumi.Input[Union['DashboardSharingPermissionsArgs', 'DashboardSharingPermissionsArgsDict']] permissions: Access permissions of the dashboard
+        :param pulumi.Input[Union['DashboardSharingPermissionsArgs', 'DashboardSharingPermissionsArgsDict', 'outputs.DashboardSharingPermissions']] permissions: Access permissions of the dashboard
         :param pulumi.Input[_builtins.bool] preset: If `true` the dashboard will be marked as preset. Setting this attribute to `true` will automatically enforce a specific set of permissions - Dashboards flagged as Preset are shared by default. Make sure that this value is aligned with the attribute `preset` of the resources `Dashboard` and `JsonDashboard`. Otherwise you will encounter non-empty plans.
-        :param pulumi.Input[Union['DashboardSharingPublicArgs', 'DashboardSharingPublicArgsDict']] public: Configuration of the [anonymous access](https://dt-url.net/ov03sf1) to the dashboard
+        :param pulumi.Input[Union['DashboardSharingPublicArgs', 'DashboardSharingPublicArgsDict', 'outputs.DashboardSharingPublic']] public: Configuration of the [anonymous access](https://dt-url.net/ov03sf1) to the dashboard
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

@@ -105,7 +105,7 @@ class WebAppKeyPerformanceCustom(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  scope: pulumi.Input[Optional[_builtins.str]] = None,
-                 thresholds: pulumi.Input[Optional[Union['WebAppKeyPerformanceCustomThresholdsArgs', 'WebAppKeyPerformanceCustomThresholdsArgsDict']]] = None,
+                 thresholds: pulumi.Input[Optional[Union['WebAppKeyPerformanceCustomThresholdsArgs', 'WebAppKeyPerformanceCustomThresholdsArgsDict', 'outputs.WebAppKeyPerformanceCustomThresholds']]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -126,7 +126,7 @@ class WebAppKeyPerformanceCustom(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (APPLICATION_METHOD, APPLICATION)
-        :param pulumi.Input[Union['WebAppKeyPerformanceCustomThresholdsArgs', 'WebAppKeyPerformanceCustomThresholdsArgsDict']] thresholds: User action duration thresholds
+        :param pulumi.Input[Union['WebAppKeyPerformanceCustomThresholdsArgs', 'WebAppKeyPerformanceCustomThresholdsArgsDict', 'outputs.WebAppKeyPerformanceCustomThresholds']] thresholds: User action duration thresholds
         """
         ...
     @overload
@@ -166,7 +166,7 @@ class WebAppKeyPerformanceCustom(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  scope: pulumi.Input[Optional[_builtins.str]] = None,
-                 thresholds: pulumi.Input[Optional[Union['WebAppKeyPerformanceCustomThresholdsArgs', 'WebAppKeyPerformanceCustomThresholdsArgsDict']]] = None,
+                 thresholds: pulumi.Input[Optional[Union['WebAppKeyPerformanceCustomThresholdsArgs', 'WebAppKeyPerformanceCustomThresholdsArgsDict', 'outputs.WebAppKeyPerformanceCustomThresholds']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -193,7 +193,7 @@ class WebAppKeyPerformanceCustom(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             scope: pulumi.Input[Optional[_builtins.str]] = None,
-            thresholds: pulumi.Input[Optional[Union['WebAppKeyPerformanceCustomThresholdsArgs', 'WebAppKeyPerformanceCustomThresholdsArgsDict']]] = None) -> 'WebAppKeyPerformanceCustom':
+            thresholds: pulumi.Input[Optional[Union['WebAppKeyPerformanceCustomThresholdsArgs', 'WebAppKeyPerformanceCustomThresholdsArgsDict', 'outputs.WebAppKeyPerformanceCustomThresholds']]] = None) -> 'WebAppKeyPerformanceCustom':
         """
         Get an existing WebAppKeyPerformanceCustom resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -202,7 +202,7 @@ class WebAppKeyPerformanceCustom(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (APPLICATION_METHOD, APPLICATION)
-        :param pulumi.Input[Union['WebAppKeyPerformanceCustomThresholdsArgs', 'WebAppKeyPerformanceCustomThresholdsArgsDict']] thresholds: User action duration thresholds
+        :param pulumi.Input[Union['WebAppKeyPerformanceCustomThresholdsArgs', 'WebAppKeyPerformanceCustomThresholdsArgsDict', 'outputs.WebAppKeyPerformanceCustomThresholds']] thresholds: User action duration thresholds
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

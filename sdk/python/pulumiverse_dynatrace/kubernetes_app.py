@@ -105,7 +105,7 @@ class KubernetesApp(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 kubernetes_app_options: pulumi.Input[Optional[Union['KubernetesAppKubernetesAppOptionsArgs', 'KubernetesAppKubernetesAppOptionsArgsDict']]] = None,
+                 kubernetes_app_options: pulumi.Input[Optional[Union['KubernetesAppKubernetesAppOptionsArgs', 'KubernetesAppKubernetesAppOptionsArgsDict', 'outputs.KubernetesAppKubernetesAppOptions']]] = None,
                  scope: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -126,7 +126,7 @@ class KubernetesApp(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['KubernetesAppKubernetesAppOptionsArgs', 'KubernetesAppKubernetesAppOptionsArgsDict']] kubernetes_app_options: no documentation available
+        :param pulumi.Input[Union['KubernetesAppKubernetesAppOptionsArgs', 'KubernetesAppKubernetesAppOptionsArgsDict', 'outputs.KubernetesAppKubernetesAppOptions']] kubernetes_app_options: no documentation available
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
         """
         ...
@@ -166,7 +166,7 @@ class KubernetesApp(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 kubernetes_app_options: pulumi.Input[Optional[Union['KubernetesAppKubernetesAppOptionsArgs', 'KubernetesAppKubernetesAppOptionsArgsDict']]] = None,
+                 kubernetes_app_options: pulumi.Input[Optional[Union['KubernetesAppKubernetesAppOptionsArgs', 'KubernetesAppKubernetesAppOptionsArgsDict', 'outputs.KubernetesAppKubernetesAppOptions']]] = None,
                  scope: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -191,7 +191,7 @@ class KubernetesApp(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            kubernetes_app_options: pulumi.Input[Optional[Union['KubernetesAppKubernetesAppOptionsArgs', 'KubernetesAppKubernetesAppOptionsArgsDict']]] = None,
+            kubernetes_app_options: pulumi.Input[Optional[Union['KubernetesAppKubernetesAppOptionsArgs', 'KubernetesAppKubernetesAppOptionsArgsDict', 'outputs.KubernetesAppKubernetesAppOptions']]] = None,
             scope: pulumi.Input[Optional[_builtins.str]] = None) -> 'KubernetesApp':
         """
         Get an existing KubernetesApp resource's state with the given name, id, and optional extra
@@ -200,7 +200,7 @@ class KubernetesApp(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['KubernetesAppKubernetesAppOptionsArgs', 'KubernetesAppKubernetesAppOptionsArgsDict']] kubernetes_app_options: no documentation available
+        :param pulumi.Input[Union['KubernetesAppKubernetesAppOptionsArgs', 'KubernetesAppKubernetesAppOptionsArgsDict', 'outputs.KubernetesAppKubernetesAppOptions']] kubernetes_app_options: no documentation available
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

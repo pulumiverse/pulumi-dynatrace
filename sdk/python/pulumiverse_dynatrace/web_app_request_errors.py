@@ -136,7 +136,7 @@ class WebAppRequestErrors(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 error_rules: pulumi.Input[Optional[Union['WebAppRequestErrorsErrorRulesArgs', 'WebAppRequestErrorsErrorRulesArgsDict']]] = None,
+                 error_rules: pulumi.Input[Optional[Union['WebAppRequestErrorsErrorRulesArgs', 'WebAppRequestErrorsErrorRulesArgsDict', 'outputs.WebAppRequestErrorsErrorRules']]] = None,
                  ignore_request_errors_in_apdex_calculation: pulumi.Input[Optional[_builtins.bool]] = None,
                  scope: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -160,7 +160,7 @@ class WebAppRequestErrors(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['WebAppRequestErrorsErrorRulesArgs', 'WebAppRequestErrorsErrorRulesArgsDict']] error_rules: (Field has overlap with `ApplicationErrorRules`)
+        :param pulumi.Input[Union['WebAppRequestErrorsErrorRulesArgs', 'WebAppRequestErrorsErrorRulesArgsDict', 'outputs.WebAppRequestErrorsErrorRules']] error_rules: (Field has overlap with `ApplicationErrorRules`)
         :param pulumi.Input[_builtins.bool] ignore_request_errors_in_apdex_calculation: (Field has overlap with `ApplicationErrorRules`) This setting overrides Apdex settings for individual rules listed below
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (APPLICATION, environment-default)
         """
@@ -203,7 +203,7 @@ class WebAppRequestErrors(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 error_rules: pulumi.Input[Optional[Union['WebAppRequestErrorsErrorRulesArgs', 'WebAppRequestErrorsErrorRulesArgsDict']]] = None,
+                 error_rules: pulumi.Input[Optional[Union['WebAppRequestErrorsErrorRulesArgs', 'WebAppRequestErrorsErrorRulesArgsDict', 'outputs.WebAppRequestErrorsErrorRules']]] = None,
                  ignore_request_errors_in_apdex_calculation: pulumi.Input[Optional[_builtins.bool]] = None,
                  scope: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -232,7 +232,7 @@ class WebAppRequestErrors(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            error_rules: pulumi.Input[Optional[Union['WebAppRequestErrorsErrorRulesArgs', 'WebAppRequestErrorsErrorRulesArgsDict']]] = None,
+            error_rules: pulumi.Input[Optional[Union['WebAppRequestErrorsErrorRulesArgs', 'WebAppRequestErrorsErrorRulesArgsDict', 'outputs.WebAppRequestErrorsErrorRules']]] = None,
             ignore_request_errors_in_apdex_calculation: pulumi.Input[Optional[_builtins.bool]] = None,
             scope: pulumi.Input[Optional[_builtins.str]] = None) -> 'WebAppRequestErrors':
         """
@@ -242,7 +242,7 @@ class WebAppRequestErrors(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['WebAppRequestErrorsErrorRulesArgs', 'WebAppRequestErrorsErrorRulesArgsDict']] error_rules: (Field has overlap with `ApplicationErrorRules`)
+        :param pulumi.Input[Union['WebAppRequestErrorsErrorRulesArgs', 'WebAppRequestErrorsErrorRulesArgsDict', 'outputs.WebAppRequestErrorsErrorRules']] error_rules: (Field has overlap with `ApplicationErrorRules`)
         :param pulumi.Input[_builtins.bool] ignore_request_errors_in_apdex_calculation: (Field has overlap with `ApplicationErrorRules`) This setting overrides Apdex settings for individual rules listed below
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (APPLICATION, environment-default)
         """

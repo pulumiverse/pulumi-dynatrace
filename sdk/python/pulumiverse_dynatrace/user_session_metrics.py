@@ -201,9 +201,9 @@ class UserSessionMetrics(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  dimensions: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-                 filters: pulumi.Input[Optional[Union['UserSessionMetricsFiltersArgs', 'UserSessionMetricsFiltersArgsDict']]] = None,
+                 filters: pulumi.Input[Optional[Union['UserSessionMetricsFiltersArgs', 'UserSessionMetricsFiltersArgsDict', 'outputs.UserSessionMetricsFilters']]] = None,
                  metric_key: pulumi.Input[Optional[_builtins.str]] = None,
-                 value: pulumi.Input[Optional[Union['UserSessionMetricsValueArgs', 'UserSessionMetricsValueArgsDict']]] = None,
+                 value: pulumi.Input[Optional[Union['UserSessionMetricsValueArgs', 'UserSessionMetricsValueArgsDict', 'outputs.UserSessionMetricsValue']]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -225,9 +225,9 @@ class UserSessionMetrics(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dimensions: Defines the fields that are used as dimensions. A dimension is a collection of reference information about a metric data point that is of interest to your business. Dimensions are parameters like "browserFamily", "userType", "country". For example, using "userType" as a dimension allows you to split chart data based on user types.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[Union['UserSessionMetricsFiltersArgs', 'UserSessionMetricsFiltersArgsDict']] filters: Defines the filters for the user session. Filters apply at the moment of extracting the data and only sessions that satisfy the filtering criteria will be used to extract the custom metrics. You will not be able to modify these filters in the metric data explorer. For example, using "userType equals REAL_USER" will give you only data from real users, while forcing the synthetic sessions to be ignored.
+        :param pulumi.Input[Union['UserSessionMetricsFiltersArgs', 'UserSessionMetricsFiltersArgsDict', 'outputs.UserSessionMetricsFilters']] filters: Defines the filters for the user session. Filters apply at the moment of extracting the data and only sessions that satisfy the filtering criteria will be used to extract the custom metrics. You will not be able to modify these filters in the metric data explorer. For example, using "userType equals REAL_USER" will give you only data from real users, while forcing the synthetic sessions to be ignored.
         :param pulumi.Input[_builtins.str] metric_key: Metric key
-        :param pulumi.Input[Union['UserSessionMetricsValueArgs', 'UserSessionMetricsValueArgsDict']] value: Defines the type of value to be extracted from the user session. When using **User session counter**, the number of user sessions is counted (similar to count(*) when using USQL). When using **User session field value**, the value of a user session field is extracted.
+        :param pulumi.Input[Union['UserSessionMetricsValueArgs', 'UserSessionMetricsValueArgsDict', 'outputs.UserSessionMetricsValue']] value: Defines the type of value to be extracted from the user session. When using **User session counter**, the number of user sessions is counted (similar to count(*) when using USQL). When using **User session field value**, the value of a user session field is extracted.
         """
         ...
     @overload
@@ -268,9 +268,9 @@ class UserSessionMetrics(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  dimensions: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-                 filters: pulumi.Input[Optional[Union['UserSessionMetricsFiltersArgs', 'UserSessionMetricsFiltersArgsDict']]] = None,
+                 filters: pulumi.Input[Optional[Union['UserSessionMetricsFiltersArgs', 'UserSessionMetricsFiltersArgsDict', 'outputs.UserSessionMetricsFilters']]] = None,
                  metric_key: pulumi.Input[Optional[_builtins.str]] = None,
-                 value: pulumi.Input[Optional[Union['UserSessionMetricsValueArgs', 'UserSessionMetricsValueArgsDict']]] = None,
+                 value: pulumi.Input[Optional[Union['UserSessionMetricsValueArgs', 'UserSessionMetricsValueArgsDict', 'outputs.UserSessionMetricsValue']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -303,9 +303,9 @@ class UserSessionMetrics(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             dimensions: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-            filters: pulumi.Input[Optional[Union['UserSessionMetricsFiltersArgs', 'UserSessionMetricsFiltersArgsDict']]] = None,
+            filters: pulumi.Input[Optional[Union['UserSessionMetricsFiltersArgs', 'UserSessionMetricsFiltersArgsDict', 'outputs.UserSessionMetricsFilters']]] = None,
             metric_key: pulumi.Input[Optional[_builtins.str]] = None,
-            value: pulumi.Input[Optional[Union['UserSessionMetricsValueArgs', 'UserSessionMetricsValueArgsDict']]] = None) -> 'UserSessionMetrics':
+            value: pulumi.Input[Optional[Union['UserSessionMetricsValueArgs', 'UserSessionMetricsValueArgsDict', 'outputs.UserSessionMetricsValue']]] = None) -> 'UserSessionMetrics':
         """
         Get an existing UserSessionMetrics resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -315,9 +315,9 @@ class UserSessionMetrics(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dimensions: Defines the fields that are used as dimensions. A dimension is a collection of reference information about a metric data point that is of interest to your business. Dimensions are parameters like "browserFamily", "userType", "country". For example, using "userType" as a dimension allows you to split chart data based on user types.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[Union['UserSessionMetricsFiltersArgs', 'UserSessionMetricsFiltersArgsDict']] filters: Defines the filters for the user session. Filters apply at the moment of extracting the data and only sessions that satisfy the filtering criteria will be used to extract the custom metrics. You will not be able to modify these filters in the metric data explorer. For example, using "userType equals REAL_USER" will give you only data from real users, while forcing the synthetic sessions to be ignored.
+        :param pulumi.Input[Union['UserSessionMetricsFiltersArgs', 'UserSessionMetricsFiltersArgsDict', 'outputs.UserSessionMetricsFilters']] filters: Defines the filters for the user session. Filters apply at the moment of extracting the data and only sessions that satisfy the filtering criteria will be used to extract the custom metrics. You will not be able to modify these filters in the metric data explorer. For example, using "userType equals REAL_USER" will give you only data from real users, while forcing the synthetic sessions to be ignored.
         :param pulumi.Input[_builtins.str] metric_key: Metric key
-        :param pulumi.Input[Union['UserSessionMetricsValueArgs', 'UserSessionMetricsValueArgsDict']] value: Defines the type of value to be extracted from the user session. When using **User session counter**, the number of user sessions is counted (similar to count(*) when using USQL). When using **User session field value**, the value of a user session field is extracted.
+        :param pulumi.Input[Union['UserSessionMetricsValueArgs', 'UserSessionMetricsValueArgsDict', 'outputs.UserSessionMetricsValue']] value: Defines the type of value to be extracted from the user session. When using **User session counter**, the number of user sessions is counted (similar to count(*) when using USQL). When using **User session field value**, the value of a user session field is extracted.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

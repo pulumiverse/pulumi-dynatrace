@@ -138,9 +138,9 @@ class OpenpipelineBusinessEvents(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 endpoints: pulumi.Input[Optional[Union['OpenpipelineBusinessEventsEndpointsArgs', 'OpenpipelineBusinessEventsEndpointsArgsDict']]] = None,
-                 pipelines: pulumi.Input[Optional[Union['OpenpipelineBusinessEventsPipelinesArgs', 'OpenpipelineBusinessEventsPipelinesArgsDict']]] = None,
-                 routing: pulumi.Input[Optional[Union['OpenpipelineBusinessEventsRoutingArgs', 'OpenpipelineBusinessEventsRoutingArgsDict']]] = None,
+                 endpoints: pulumi.Input[Optional[Union['OpenpipelineBusinessEventsEndpointsArgs', 'OpenpipelineBusinessEventsEndpointsArgsDict', 'outputs.OpenpipelineBusinessEventsEndpoints']]] = None,
+                 pipelines: pulumi.Input[Optional[Union['OpenpipelineBusinessEventsPipelinesArgs', 'OpenpipelineBusinessEventsPipelinesArgsDict', 'outputs.OpenpipelineBusinessEventsPipelines']]] = None,
+                 routing: pulumi.Input[Optional[Union['OpenpipelineBusinessEventsRoutingArgs', 'OpenpipelineBusinessEventsRoutingArgsDict', 'outputs.OpenpipelineBusinessEventsRouting']]] = None,
                  __props__=None):
         """
         > This resource API endpoint has been deprecated, please migrate your OpenPipeline configurations and use `dynatrace_openpipeline_v2_bizevents_*` instead.
@@ -190,9 +190,9 @@ class OpenpipelineBusinessEvents(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['OpenpipelineBusinessEventsEndpointsArgs', 'OpenpipelineBusinessEventsEndpointsArgsDict']] endpoints: List of all ingest sources of the configuration
-        :param pulumi.Input[Union['OpenpipelineBusinessEventsPipelinesArgs', 'OpenpipelineBusinessEventsPipelinesArgsDict']] pipelines: List of all pipelines of the configuration
-        :param pulumi.Input[Union['OpenpipelineBusinessEventsRoutingArgs', 'OpenpipelineBusinessEventsRoutingArgsDict']] routing: Dynamic routing definition
+        :param pulumi.Input[Union['OpenpipelineBusinessEventsEndpointsArgs', 'OpenpipelineBusinessEventsEndpointsArgsDict', 'outputs.OpenpipelineBusinessEventsEndpoints']] endpoints: List of all ingest sources of the configuration
+        :param pulumi.Input[Union['OpenpipelineBusinessEventsPipelinesArgs', 'OpenpipelineBusinessEventsPipelinesArgsDict', 'outputs.OpenpipelineBusinessEventsPipelines']] pipelines: List of all pipelines of the configuration
+        :param pulumi.Input[Union['OpenpipelineBusinessEventsRoutingArgs', 'OpenpipelineBusinessEventsRoutingArgsDict', 'outputs.OpenpipelineBusinessEventsRouting']] routing: Dynamic routing definition
         """
         ...
     @overload
@@ -261,9 +261,9 @@ class OpenpipelineBusinessEvents(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 endpoints: pulumi.Input[Optional[Union['OpenpipelineBusinessEventsEndpointsArgs', 'OpenpipelineBusinessEventsEndpointsArgsDict']]] = None,
-                 pipelines: pulumi.Input[Optional[Union['OpenpipelineBusinessEventsPipelinesArgs', 'OpenpipelineBusinessEventsPipelinesArgsDict']]] = None,
-                 routing: pulumi.Input[Optional[Union['OpenpipelineBusinessEventsRoutingArgs', 'OpenpipelineBusinessEventsRoutingArgsDict']]] = None,
+                 endpoints: pulumi.Input[Optional[Union['OpenpipelineBusinessEventsEndpointsArgs', 'OpenpipelineBusinessEventsEndpointsArgsDict', 'outputs.OpenpipelineBusinessEventsEndpoints']]] = None,
+                 pipelines: pulumi.Input[Optional[Union['OpenpipelineBusinessEventsPipelinesArgs', 'OpenpipelineBusinessEventsPipelinesArgsDict', 'outputs.OpenpipelineBusinessEventsPipelines']]] = None,
+                 routing: pulumi.Input[Optional[Union['OpenpipelineBusinessEventsRoutingArgs', 'OpenpipelineBusinessEventsRoutingArgsDict', 'outputs.OpenpipelineBusinessEventsRouting']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -286,9 +286,9 @@ class OpenpipelineBusinessEvents(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            endpoints: pulumi.Input[Optional[Union['OpenpipelineBusinessEventsEndpointsArgs', 'OpenpipelineBusinessEventsEndpointsArgsDict']]] = None,
-            pipelines: pulumi.Input[Optional[Union['OpenpipelineBusinessEventsPipelinesArgs', 'OpenpipelineBusinessEventsPipelinesArgsDict']]] = None,
-            routing: pulumi.Input[Optional[Union['OpenpipelineBusinessEventsRoutingArgs', 'OpenpipelineBusinessEventsRoutingArgsDict']]] = None) -> 'OpenpipelineBusinessEvents':
+            endpoints: pulumi.Input[Optional[Union['OpenpipelineBusinessEventsEndpointsArgs', 'OpenpipelineBusinessEventsEndpointsArgsDict', 'outputs.OpenpipelineBusinessEventsEndpoints']]] = None,
+            pipelines: pulumi.Input[Optional[Union['OpenpipelineBusinessEventsPipelinesArgs', 'OpenpipelineBusinessEventsPipelinesArgsDict', 'outputs.OpenpipelineBusinessEventsPipelines']]] = None,
+            routing: pulumi.Input[Optional[Union['OpenpipelineBusinessEventsRoutingArgs', 'OpenpipelineBusinessEventsRoutingArgsDict', 'outputs.OpenpipelineBusinessEventsRouting']]] = None) -> 'OpenpipelineBusinessEvents':
         """
         Get an existing OpenpipelineBusinessEvents resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -296,9 +296,9 @@ class OpenpipelineBusinessEvents(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['OpenpipelineBusinessEventsEndpointsArgs', 'OpenpipelineBusinessEventsEndpointsArgsDict']] endpoints: List of all ingest sources of the configuration
-        :param pulumi.Input[Union['OpenpipelineBusinessEventsPipelinesArgs', 'OpenpipelineBusinessEventsPipelinesArgsDict']] pipelines: List of all pipelines of the configuration
-        :param pulumi.Input[Union['OpenpipelineBusinessEventsRoutingArgs', 'OpenpipelineBusinessEventsRoutingArgsDict']] routing: Dynamic routing definition
+        :param pulumi.Input[Union['OpenpipelineBusinessEventsEndpointsArgs', 'OpenpipelineBusinessEventsEndpointsArgsDict', 'outputs.OpenpipelineBusinessEventsEndpoints']] endpoints: List of all ingest sources of the configuration
+        :param pulumi.Input[Union['OpenpipelineBusinessEventsPipelinesArgs', 'OpenpipelineBusinessEventsPipelinesArgsDict', 'outputs.OpenpipelineBusinessEventsPipelines']] pipelines: List of all pipelines of the configuration
+        :param pulumi.Input[Union['OpenpipelineBusinessEventsRoutingArgs', 'OpenpipelineBusinessEventsRoutingArgsDict', 'outputs.OpenpipelineBusinessEventsRouting']] routing: Dynamic routing definition
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

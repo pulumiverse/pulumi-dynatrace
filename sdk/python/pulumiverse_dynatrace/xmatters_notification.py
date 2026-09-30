@@ -299,7 +299,7 @@ class XmattersNotification(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  active: pulumi.Input[Optional[_builtins.bool]] = None,
-                 headers: pulumi.Input[Optional[Union['XmattersNotificationHeadersArgs', 'XmattersNotificationHeadersArgsDict']]] = None,
+                 headers: pulumi.Input[Optional[Union['XmattersNotificationHeadersArgs', 'XmattersNotificationHeadersArgsDict', 'outputs.XmattersNotificationHeaders']]] = None,
                  insecure: pulumi.Input[Optional[_builtins.bool]] = None,
                  legacy_id: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -326,7 +326,7 @@ class XmattersNotification(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] active: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[Union['XmattersNotificationHeadersArgs', 'XmattersNotificationHeadersArgsDict']] headers: A list of the additional HTTP headers.
+        :param pulumi.Input[Union['XmattersNotificationHeadersArgs', 'XmattersNotificationHeadersArgsDict', 'outputs.XmattersNotificationHeaders']] headers: A list of the additional HTTP headers.
         :param pulumi.Input[_builtins.bool] insecure: Accept any SSL certificate (including self-signed and invalid certificates)
         :param pulumi.Input[_builtins.str] legacy_id: The ID of these settings when referred to from resources requiring the REST API V1 keys
         :param pulumi.Input[_builtins.str] name: The name of the notification configuration.
@@ -373,7 +373,7 @@ class XmattersNotification(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  active: pulumi.Input[Optional[_builtins.bool]] = None,
-                 headers: pulumi.Input[Optional[Union['XmattersNotificationHeadersArgs', 'XmattersNotificationHeadersArgsDict']]] = None,
+                 headers: pulumi.Input[Optional[Union['XmattersNotificationHeadersArgs', 'XmattersNotificationHeadersArgsDict', 'outputs.XmattersNotificationHeaders']]] = None,
                  insecure: pulumi.Input[Optional[_builtins.bool]] = None,
                  legacy_id: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -416,7 +416,7 @@ class XmattersNotification(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             active: pulumi.Input[Optional[_builtins.bool]] = None,
-            headers: pulumi.Input[Optional[Union['XmattersNotificationHeadersArgs', 'XmattersNotificationHeadersArgsDict']]] = None,
+            headers: pulumi.Input[Optional[Union['XmattersNotificationHeadersArgs', 'XmattersNotificationHeadersArgsDict', 'outputs.XmattersNotificationHeaders']]] = None,
             insecure: pulumi.Input[Optional[_builtins.bool]] = None,
             legacy_id: pulumi.Input[Optional[_builtins.str]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -431,7 +431,7 @@ class XmattersNotification(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] active: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[Union['XmattersNotificationHeadersArgs', 'XmattersNotificationHeadersArgsDict']] headers: A list of the additional HTTP headers.
+        :param pulumi.Input[Union['XmattersNotificationHeadersArgs', 'XmattersNotificationHeadersArgsDict', 'outputs.XmattersNotificationHeaders']] headers: A list of the additional HTTP headers.
         :param pulumi.Input[_builtins.bool] insecure: Accept any SSL certificate (including self-signed and invalid certificates)
         :param pulumi.Input[_builtins.str] legacy_id: The ID of these settings when referred to from resources requiring the REST API V1 keys
         :param pulumi.Input[_builtins.str] name: The name of the notification configuration.

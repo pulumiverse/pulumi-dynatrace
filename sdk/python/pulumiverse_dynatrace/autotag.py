@@ -203,9 +203,9 @@ class Autotag(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
-                 entity_selector_based_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutotagEntitySelectorBasedRuleArgs', 'AutotagEntitySelectorBasedRuleArgsDict']]]]] = None,
+                 entity_selector_based_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutotagEntitySelectorBasedRuleArgs', 'AutotagEntitySelectorBasedRuleArgsDict', 'outputs.AutotagEntitySelectorBasedRule']]]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutotagRuleArgs', 'AutotagRuleArgsDict']]]]] = None,
+                 rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutotagRuleArgs', 'AutotagRuleArgsDict', 'outputs.AutotagRule']]]]] = None,
                  unknowns: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -229,9 +229,9 @@ class Autotag(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] description: The description of the auto-tag.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['AutotagEntitySelectorBasedRuleArgs', 'AutotagEntitySelectorBasedRuleArgsDict']]]] entity_selector_based_rules: A list of entity-selector based rules for management zone usage. If several rules are specified, the `or` logic applies
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AutotagEntitySelectorBasedRuleArgs', 'AutotagEntitySelectorBasedRuleArgsDict', 'outputs.AutotagEntitySelectorBasedRule']]]] entity_selector_based_rules: A list of entity-selector based rules for management zone usage. If several rules are specified, the `or` logic applies
         :param pulumi.Input[_builtins.str] name: The name of the auto-tag, which is applied to entities.  Additionally you can specify a **valueFormat** in the tag rule. In that case the tag is used in the `name:valueFormat` format.  For example you can extend the `Infrastructure` tag to `Infrastructure:Windows` and `Infrastructure:Linux`.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['AutotagRuleArgs', 'AutotagRuleArgsDict']]]] rules: A list of rules for management zone usage.  Each rule is evaluated independently of all other rules
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AutotagRuleArgs', 'AutotagRuleArgsDict', 'outputs.AutotagRule']]]] rules: A list of rules for management zone usage.  Each rule is evaluated independently of all other rules
         :param pulumi.Input[_builtins.str] unknowns: allows for configuring properties that are not explicitly supported by the current version of this provider
         """
         ...
@@ -274,9 +274,9 @@ class Autotag(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
-                 entity_selector_based_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutotagEntitySelectorBasedRuleArgs', 'AutotagEntitySelectorBasedRuleArgsDict']]]]] = None,
+                 entity_selector_based_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutotagEntitySelectorBasedRuleArgs', 'AutotagEntitySelectorBasedRuleArgsDict', 'outputs.AutotagEntitySelectorBasedRule']]]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutotagRuleArgs', 'AutotagRuleArgsDict']]]]] = None,
+                 rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutotagRuleArgs', 'AutotagRuleArgsDict', 'outputs.AutotagRule']]]]] = None,
                  unknowns: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -303,9 +303,9 @@ class Autotag(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
-            entity_selector_based_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutotagEntitySelectorBasedRuleArgs', 'AutotagEntitySelectorBasedRuleArgsDict']]]]] = None,
+            entity_selector_based_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutotagEntitySelectorBasedRuleArgs', 'AutotagEntitySelectorBasedRuleArgsDict', 'outputs.AutotagEntitySelectorBasedRule']]]]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
-            rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutotagRuleArgs', 'AutotagRuleArgsDict']]]]] = None,
+            rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutotagRuleArgs', 'AutotagRuleArgsDict', 'outputs.AutotagRule']]]]] = None,
             unknowns: pulumi.Input[Optional[_builtins.str]] = None) -> 'Autotag':
         """
         Get an existing Autotag resource's state with the given name, id, and optional extra
@@ -315,9 +315,9 @@ class Autotag(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] description: The description of the auto-tag.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['AutotagEntitySelectorBasedRuleArgs', 'AutotagEntitySelectorBasedRuleArgsDict']]]] entity_selector_based_rules: A list of entity-selector based rules for management zone usage. If several rules are specified, the `or` logic applies
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AutotagEntitySelectorBasedRuleArgs', 'AutotagEntitySelectorBasedRuleArgsDict', 'outputs.AutotagEntitySelectorBasedRule']]]] entity_selector_based_rules: A list of entity-selector based rules for management zone usage. If several rules are specified, the `or` logic applies
         :param pulumi.Input[_builtins.str] name: The name of the auto-tag, which is applied to entities.  Additionally you can specify a **valueFormat** in the tag rule. In that case the tag is used in the `name:valueFormat` format.  For example you can extend the `Infrastructure` tag to `Infrastructure:Windows` and `Infrastructure:Linux`.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['AutotagRuleArgs', 'AutotagRuleArgsDict']]]] rules: A list of rules for management zone usage.  Each rule is evaluated independently of all other rules
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AutotagRuleArgs', 'AutotagRuleArgsDict', 'outputs.AutotagRule']]]] rules: A list of rules for management zone usage.  Each rule is evaluated independently of all other rules
         :param pulumi.Input[_builtins.str] unknowns: allows for configuring properties that are not explicitly supported by the current version of this provider
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

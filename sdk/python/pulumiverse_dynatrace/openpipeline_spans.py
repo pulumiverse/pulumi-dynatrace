@@ -138,9 +138,9 @@ class OpenpipelineSpans(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 endpoints: pulumi.Input[Optional[Union['OpenpipelineSpansEndpointsArgs', 'OpenpipelineSpansEndpointsArgsDict']]] = None,
-                 pipelines: pulumi.Input[Optional[Union['OpenpipelineSpansPipelinesArgs', 'OpenpipelineSpansPipelinesArgsDict']]] = None,
-                 routing: pulumi.Input[Optional[Union['OpenpipelineSpansRoutingArgs', 'OpenpipelineSpansRoutingArgsDict']]] = None,
+                 endpoints: pulumi.Input[Optional[Union['OpenpipelineSpansEndpointsArgs', 'OpenpipelineSpansEndpointsArgsDict', 'outputs.OpenpipelineSpansEndpoints']]] = None,
+                 pipelines: pulumi.Input[Optional[Union['OpenpipelineSpansPipelinesArgs', 'OpenpipelineSpansPipelinesArgsDict', 'outputs.OpenpipelineSpansPipelines']]] = None,
+                 routing: pulumi.Input[Optional[Union['OpenpipelineSpansRoutingArgs', 'OpenpipelineSpansRoutingArgsDict', 'outputs.OpenpipelineSpansRouting']]] = None,
                  __props__=None):
         """
         > This resource API endpoint has been deprecated, please migrate your OpenPipeline configurations and use `dynatrace_openpipeline_v2_spans_*` instead.
@@ -249,9 +249,9 @@ class OpenpipelineSpans(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['OpenpipelineSpansEndpointsArgs', 'OpenpipelineSpansEndpointsArgsDict']] endpoints: List of all ingest sources of the configuration
-        :param pulumi.Input[Union['OpenpipelineSpansPipelinesArgs', 'OpenpipelineSpansPipelinesArgsDict']] pipelines: List of all pipelines of the configuration
-        :param pulumi.Input[Union['OpenpipelineSpansRoutingArgs', 'OpenpipelineSpansRoutingArgsDict']] routing: Dynamic routing definition
+        :param pulumi.Input[Union['OpenpipelineSpansEndpointsArgs', 'OpenpipelineSpansEndpointsArgsDict', 'outputs.OpenpipelineSpansEndpoints']] endpoints: List of all ingest sources of the configuration
+        :param pulumi.Input[Union['OpenpipelineSpansPipelinesArgs', 'OpenpipelineSpansPipelinesArgsDict', 'outputs.OpenpipelineSpansPipelines']] pipelines: List of all pipelines of the configuration
+        :param pulumi.Input[Union['OpenpipelineSpansRoutingArgs', 'OpenpipelineSpansRoutingArgsDict', 'outputs.OpenpipelineSpansRouting']] routing: Dynamic routing definition
         """
         ...
     @overload
@@ -379,9 +379,9 @@ class OpenpipelineSpans(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 endpoints: pulumi.Input[Optional[Union['OpenpipelineSpansEndpointsArgs', 'OpenpipelineSpansEndpointsArgsDict']]] = None,
-                 pipelines: pulumi.Input[Optional[Union['OpenpipelineSpansPipelinesArgs', 'OpenpipelineSpansPipelinesArgsDict']]] = None,
-                 routing: pulumi.Input[Optional[Union['OpenpipelineSpansRoutingArgs', 'OpenpipelineSpansRoutingArgsDict']]] = None,
+                 endpoints: pulumi.Input[Optional[Union['OpenpipelineSpansEndpointsArgs', 'OpenpipelineSpansEndpointsArgsDict', 'outputs.OpenpipelineSpansEndpoints']]] = None,
+                 pipelines: pulumi.Input[Optional[Union['OpenpipelineSpansPipelinesArgs', 'OpenpipelineSpansPipelinesArgsDict', 'outputs.OpenpipelineSpansPipelines']]] = None,
+                 routing: pulumi.Input[Optional[Union['OpenpipelineSpansRoutingArgs', 'OpenpipelineSpansRoutingArgsDict', 'outputs.OpenpipelineSpansRouting']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -404,9 +404,9 @@ class OpenpipelineSpans(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            endpoints: pulumi.Input[Optional[Union['OpenpipelineSpansEndpointsArgs', 'OpenpipelineSpansEndpointsArgsDict']]] = None,
-            pipelines: pulumi.Input[Optional[Union['OpenpipelineSpansPipelinesArgs', 'OpenpipelineSpansPipelinesArgsDict']]] = None,
-            routing: pulumi.Input[Optional[Union['OpenpipelineSpansRoutingArgs', 'OpenpipelineSpansRoutingArgsDict']]] = None) -> 'OpenpipelineSpans':
+            endpoints: pulumi.Input[Optional[Union['OpenpipelineSpansEndpointsArgs', 'OpenpipelineSpansEndpointsArgsDict', 'outputs.OpenpipelineSpansEndpoints']]] = None,
+            pipelines: pulumi.Input[Optional[Union['OpenpipelineSpansPipelinesArgs', 'OpenpipelineSpansPipelinesArgsDict', 'outputs.OpenpipelineSpansPipelines']]] = None,
+            routing: pulumi.Input[Optional[Union['OpenpipelineSpansRoutingArgs', 'OpenpipelineSpansRoutingArgsDict', 'outputs.OpenpipelineSpansRouting']]] = None) -> 'OpenpipelineSpans':
         """
         Get an existing OpenpipelineSpans resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -414,9 +414,9 @@ class OpenpipelineSpans(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['OpenpipelineSpansEndpointsArgs', 'OpenpipelineSpansEndpointsArgsDict']] endpoints: List of all ingest sources of the configuration
-        :param pulumi.Input[Union['OpenpipelineSpansPipelinesArgs', 'OpenpipelineSpansPipelinesArgsDict']] pipelines: List of all pipelines of the configuration
-        :param pulumi.Input[Union['OpenpipelineSpansRoutingArgs', 'OpenpipelineSpansRoutingArgsDict']] routing: Dynamic routing definition
+        :param pulumi.Input[Union['OpenpipelineSpansEndpointsArgs', 'OpenpipelineSpansEndpointsArgsDict', 'outputs.OpenpipelineSpansEndpoints']] endpoints: List of all ingest sources of the configuration
+        :param pulumi.Input[Union['OpenpipelineSpansPipelinesArgs', 'OpenpipelineSpansPipelinesArgsDict', 'outputs.OpenpipelineSpansPipelines']] pipelines: List of all pipelines of the configuration
+        :param pulumi.Input[Union['OpenpipelineSpansRoutingArgs', 'OpenpipelineSpansRoutingArgsDict', 'outputs.OpenpipelineSpansRouting']] routing: Dynamic routing definition
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

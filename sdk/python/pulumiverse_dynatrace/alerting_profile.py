@@ -242,10 +242,10 @@ class AlertingProfile(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 event_type_filters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AlertingProfileEventTypeFilterArgs', 'AlertingProfileEventTypeFilterArgsDict']]]]] = None,
-                 metadata: pulumi.Input[Optional[Union['AlertingProfileMetadataArgs', 'AlertingProfileMetadataArgsDict']]] = None,
+                 event_type_filters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AlertingProfileEventTypeFilterArgs', 'AlertingProfileEventTypeFilterArgsDict', 'outputs.AlertingProfileEventTypeFilter']]]]] = None,
+                 metadata: pulumi.Input[Optional[Union['AlertingProfileMetadataArgs', 'AlertingProfileMetadataArgsDict', 'outputs.AlertingProfileMetadata']]] = None,
                  mz_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AlertingProfileRuleArgs', 'AlertingProfileRuleArgsDict']]]]] = None,
+                 rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AlertingProfileRuleArgs', 'AlertingProfileRuleArgsDict', 'outputs.AlertingProfileRule']]]]] = None,
                  unknowns: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -263,10 +263,10 @@ class AlertingProfile(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] display_name: The name of the alerting profile, displayed in the UI
-        :param pulumi.Input[Sequence[pulumi.Input[Union['AlertingProfileEventTypeFilterArgs', 'AlertingProfileEventTypeFilterArgsDict']]]] event_type_filters: The list of event filters.  For all filters that are *negated* inside of these event filters, that is all `Predefined` as well as `Custom` (Title and/or Description) ones the AND logic applies. For all *non-negated* ones the OR logic applies. Between these two groups, negated and non-negated, the AND logic applies.  If you specify both severity rule and event filter, the AND logic applies
-        :param pulumi.Input[Union['AlertingProfileMetadataArgs', 'AlertingProfileMetadataArgsDict']] metadata: `metadata` exists for backwards compatibility but shouldn't get specified anymore
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AlertingProfileEventTypeFilterArgs', 'AlertingProfileEventTypeFilterArgsDict', 'outputs.AlertingProfileEventTypeFilter']]]] event_type_filters: The list of event filters.  For all filters that are *negated* inside of these event filters, that is all `Predefined` as well as `Custom` (Title and/or Description) ones the AND logic applies. For all *non-negated* ones the OR logic applies. Between these two groups, negated and non-negated, the AND logic applies.  If you specify both severity rule and event filter, the AND logic applies
+        :param pulumi.Input[Union['AlertingProfileMetadataArgs', 'AlertingProfileMetadataArgsDict', 'outputs.AlertingProfileMetadata']] metadata: `metadata` exists for backwards compatibility but shouldn't get specified anymore
         :param pulumi.Input[_builtins.str] mz_id: The ID of the management zone to which the alerting profile applies
-        :param pulumi.Input[Sequence[pulumi.Input[Union['AlertingProfileRuleArgs', 'AlertingProfileRuleArgsDict']]]] rules: A list of rules for management zone usage.  Each rule is evaluated independently of all other rules
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AlertingProfileRuleArgs', 'AlertingProfileRuleArgsDict', 'outputs.AlertingProfileRule']]]] rules: A list of rules for management zone usage.  Each rule is evaluated independently of all other rules
         :param pulumi.Input[_builtins.str] unknowns: allows for configuring properties that are not explicitly supported by the current version of this provider
         """
         ...
@@ -303,10 +303,10 @@ class AlertingProfile(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 event_type_filters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AlertingProfileEventTypeFilterArgs', 'AlertingProfileEventTypeFilterArgsDict']]]]] = None,
-                 metadata: pulumi.Input[Optional[Union['AlertingProfileMetadataArgs', 'AlertingProfileMetadataArgsDict']]] = None,
+                 event_type_filters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AlertingProfileEventTypeFilterArgs', 'AlertingProfileEventTypeFilterArgsDict', 'outputs.AlertingProfileEventTypeFilter']]]]] = None,
+                 metadata: pulumi.Input[Optional[Union['AlertingProfileMetadataArgs', 'AlertingProfileMetadataArgsDict', 'outputs.AlertingProfileMetadata']]] = None,
                  mz_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AlertingProfileRuleArgs', 'AlertingProfileRuleArgsDict']]]]] = None,
+                 rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AlertingProfileRuleArgs', 'AlertingProfileRuleArgsDict', 'outputs.AlertingProfileRule']]]]] = None,
                  unknowns: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -336,10 +336,10 @@ class AlertingProfile(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
-            event_type_filters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AlertingProfileEventTypeFilterArgs', 'AlertingProfileEventTypeFilterArgsDict']]]]] = None,
-            metadata: pulumi.Input[Optional[Union['AlertingProfileMetadataArgs', 'AlertingProfileMetadataArgsDict']]] = None,
+            event_type_filters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AlertingProfileEventTypeFilterArgs', 'AlertingProfileEventTypeFilterArgsDict', 'outputs.AlertingProfileEventTypeFilter']]]]] = None,
+            metadata: pulumi.Input[Optional[Union['AlertingProfileMetadataArgs', 'AlertingProfileMetadataArgsDict', 'outputs.AlertingProfileMetadata']]] = None,
             mz_id: pulumi.Input[Optional[_builtins.str]] = None,
-            rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AlertingProfileRuleArgs', 'AlertingProfileRuleArgsDict']]]]] = None,
+            rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AlertingProfileRuleArgs', 'AlertingProfileRuleArgsDict', 'outputs.AlertingProfileRule']]]]] = None,
             unknowns: pulumi.Input[Optional[_builtins.str]] = None) -> 'AlertingProfile':
         """
         Get an existing AlertingProfile resource's state with the given name, id, and optional extra
@@ -349,10 +349,10 @@ class AlertingProfile(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] display_name: The name of the alerting profile, displayed in the UI
-        :param pulumi.Input[Sequence[pulumi.Input[Union['AlertingProfileEventTypeFilterArgs', 'AlertingProfileEventTypeFilterArgsDict']]]] event_type_filters: The list of event filters.  For all filters that are *negated* inside of these event filters, that is all `Predefined` as well as `Custom` (Title and/or Description) ones the AND logic applies. For all *non-negated* ones the OR logic applies. Between these two groups, negated and non-negated, the AND logic applies.  If you specify both severity rule and event filter, the AND logic applies
-        :param pulumi.Input[Union['AlertingProfileMetadataArgs', 'AlertingProfileMetadataArgsDict']] metadata: `metadata` exists for backwards compatibility but shouldn't get specified anymore
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AlertingProfileEventTypeFilterArgs', 'AlertingProfileEventTypeFilterArgsDict', 'outputs.AlertingProfileEventTypeFilter']]]] event_type_filters: The list of event filters.  For all filters that are *negated* inside of these event filters, that is all `Predefined` as well as `Custom` (Title and/or Description) ones the AND logic applies. For all *non-negated* ones the OR logic applies. Between these two groups, negated and non-negated, the AND logic applies.  If you specify both severity rule and event filter, the AND logic applies
+        :param pulumi.Input[Union['AlertingProfileMetadataArgs', 'AlertingProfileMetadataArgsDict', 'outputs.AlertingProfileMetadata']] metadata: `metadata` exists for backwards compatibility but shouldn't get specified anymore
         :param pulumi.Input[_builtins.str] mz_id: The ID of the management zone to which the alerting profile applies
-        :param pulumi.Input[Sequence[pulumi.Input[Union['AlertingProfileRuleArgs', 'AlertingProfileRuleArgsDict']]]] rules: A list of rules for management zone usage.  Each rule is evaluated independently of all other rules
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AlertingProfileRuleArgs', 'AlertingProfileRuleArgsDict', 'outputs.AlertingProfileRule']]]] rules: A list of rules for management zone usage.  Each rule is evaluated independently of all other rules
         :param pulumi.Input[_builtins.str] unknowns: allows for configuring properties that are not explicitly supported by the current version of this provider
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

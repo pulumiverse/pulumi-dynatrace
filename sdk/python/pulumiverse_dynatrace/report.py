@@ -170,7 +170,7 @@ class Report(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  dashboard_id: pulumi.Input[Optional[_builtins.str]] = None,
                  email_notifications: pulumi.Input[Optional[_builtins.bool]] = None,
-                 subscriptions: pulumi.Input[Optional[Union['ReportSubscriptionsArgs', 'ReportSubscriptionsArgsDict']]] = None,
+                 subscriptions: pulumi.Input[Optional[Union['ReportSubscriptionsArgs', 'ReportSubscriptionsArgsDict', 'outputs.ReportSubscriptions']]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -187,7 +187,7 @@ class Report(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] dashboard_id: The ID of the associated dashboard
         :param pulumi.Input[_builtins.bool] email_notifications: The email notifications for the dashboard report are enabled (true) or disabled (false).
-        :param pulumi.Input[Union['ReportSubscriptionsArgs', 'ReportSubscriptionsArgsDict']] subscriptions: A list of the report subscribers
+        :param pulumi.Input[Union['ReportSubscriptionsArgs', 'ReportSubscriptionsArgsDict', 'outputs.ReportSubscriptions']] subscriptions: A list of the report subscribers
         :param pulumi.Input[_builtins.str] type: The type of report
         """
         ...
@@ -223,7 +223,7 @@ class Report(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  dashboard_id: pulumi.Input[Optional[_builtins.str]] = None,
                  email_notifications: pulumi.Input[Optional[_builtins.bool]] = None,
-                 subscriptions: pulumi.Input[Optional[Union['ReportSubscriptionsArgs', 'ReportSubscriptionsArgsDict']]] = None,
+                 subscriptions: pulumi.Input[Optional[Union['ReportSubscriptionsArgs', 'ReportSubscriptionsArgsDict', 'outputs.ReportSubscriptions']]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -254,7 +254,7 @@ class Report(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             dashboard_id: pulumi.Input[Optional[_builtins.str]] = None,
             email_notifications: pulumi.Input[Optional[_builtins.bool]] = None,
-            subscriptions: pulumi.Input[Optional[Union['ReportSubscriptionsArgs', 'ReportSubscriptionsArgsDict']]] = None,
+            subscriptions: pulumi.Input[Optional[Union['ReportSubscriptionsArgs', 'ReportSubscriptionsArgsDict', 'outputs.ReportSubscriptions']]] = None,
             type: pulumi.Input[Optional[_builtins.str]] = None) -> 'Report':
         """
         Get an existing Report resource's state with the given name, id, and optional extra
@@ -265,7 +265,7 @@ class Report(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] dashboard_id: The ID of the associated dashboard
         :param pulumi.Input[_builtins.bool] email_notifications: The email notifications for the dashboard report are enabled (true) or disabled (false).
-        :param pulumi.Input[Union['ReportSubscriptionsArgs', 'ReportSubscriptionsArgsDict']] subscriptions: A list of the report subscribers
+        :param pulumi.Input[Union['ReportSubscriptionsArgs', 'ReportSubscriptionsArgsDict', 'outputs.ReportSubscriptions']] subscriptions: A list of the report subscribers
         :param pulumi.Input[_builtins.str] type: The type of report
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

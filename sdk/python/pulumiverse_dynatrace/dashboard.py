@@ -178,9 +178,9 @@ class Dashboard(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 dashboard_metadata: pulumi.Input[Optional[Union['DashboardDashboardMetadataArgs', 'DashboardDashboardMetadataArgsDict']]] = None,
-                 metadata: pulumi.Input[Optional[Union['DashboardMetadataArgs', 'DashboardMetadataArgsDict']]] = None,
-                 tiles: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DashboardTileArgs', 'DashboardTileArgsDict']]]]] = None,
+                 dashboard_metadata: pulumi.Input[Optional[Union['DashboardDashboardMetadataArgs', 'DashboardDashboardMetadataArgsDict', 'outputs.DashboardDashboardMetadata']]] = None,
+                 metadata: pulumi.Input[Optional[Union['DashboardMetadataArgs', 'DashboardMetadataArgsDict', 'outputs.DashboardMetadata']]] = None,
+                 tiles: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DashboardTileArgs', 'DashboardTileArgsDict', 'outputs.DashboardTile']]]]] = None,
                  unknowns: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -203,9 +203,9 @@ class Dashboard(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['DashboardDashboardMetadataArgs', 'DashboardDashboardMetadataArgsDict']] dashboard_metadata: contains parameters of a dashboard
-        :param pulumi.Input[Union['DashboardMetadataArgs', 'DashboardMetadataArgsDict']] metadata: `metadata` exists for backwards compatibility but shouldn't get specified anymore
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DashboardTileArgs', 'DashboardTileArgsDict']]]] tiles: the tiles this Dashboard consist of
+        :param pulumi.Input[Union['DashboardDashboardMetadataArgs', 'DashboardDashboardMetadataArgsDict', 'outputs.DashboardDashboardMetadata']] dashboard_metadata: contains parameters of a dashboard
+        :param pulumi.Input[Union['DashboardMetadataArgs', 'DashboardMetadataArgsDict', 'outputs.DashboardMetadata']] metadata: `metadata` exists for backwards compatibility but shouldn't get specified anymore
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DashboardTileArgs', 'DashboardTileArgsDict', 'outputs.DashboardTile']]]] tiles: the tiles this Dashboard consist of
         :param pulumi.Input[_builtins.str] unknowns: allows for configuring properties that are not explicitly supported by the current version of this provider
         """
         ...
@@ -247,9 +247,9 @@ class Dashboard(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 dashboard_metadata: pulumi.Input[Optional[Union['DashboardDashboardMetadataArgs', 'DashboardDashboardMetadataArgsDict']]] = None,
-                 metadata: pulumi.Input[Optional[Union['DashboardMetadataArgs', 'DashboardMetadataArgsDict']]] = None,
-                 tiles: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DashboardTileArgs', 'DashboardTileArgsDict']]]]] = None,
+                 dashboard_metadata: pulumi.Input[Optional[Union['DashboardDashboardMetadataArgs', 'DashboardDashboardMetadataArgsDict', 'outputs.DashboardDashboardMetadata']]] = None,
+                 metadata: pulumi.Input[Optional[Union['DashboardMetadataArgs', 'DashboardMetadataArgsDict', 'outputs.DashboardMetadata']]] = None,
+                 tiles: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DashboardTileArgs', 'DashboardTileArgsDict', 'outputs.DashboardTile']]]]] = None,
                  unknowns: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -274,9 +274,9 @@ class Dashboard(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            dashboard_metadata: pulumi.Input[Optional[Union['DashboardDashboardMetadataArgs', 'DashboardDashboardMetadataArgsDict']]] = None,
-            metadata: pulumi.Input[Optional[Union['DashboardMetadataArgs', 'DashboardMetadataArgsDict']]] = None,
-            tiles: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DashboardTileArgs', 'DashboardTileArgsDict']]]]] = None,
+            dashboard_metadata: pulumi.Input[Optional[Union['DashboardDashboardMetadataArgs', 'DashboardDashboardMetadataArgsDict', 'outputs.DashboardDashboardMetadata']]] = None,
+            metadata: pulumi.Input[Optional[Union['DashboardMetadataArgs', 'DashboardMetadataArgsDict', 'outputs.DashboardMetadata']]] = None,
+            tiles: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DashboardTileArgs', 'DashboardTileArgsDict', 'outputs.DashboardTile']]]]] = None,
             unknowns: pulumi.Input[Optional[_builtins.str]] = None) -> 'Dashboard':
         """
         Get an existing Dashboard resource's state with the given name, id, and optional extra
@@ -285,9 +285,9 @@ class Dashboard(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['DashboardDashboardMetadataArgs', 'DashboardDashboardMetadataArgsDict']] dashboard_metadata: contains parameters of a dashboard
-        :param pulumi.Input[Union['DashboardMetadataArgs', 'DashboardMetadataArgsDict']] metadata: `metadata` exists for backwards compatibility but shouldn't get specified anymore
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DashboardTileArgs', 'DashboardTileArgsDict']]]] tiles: the tiles this Dashboard consist of
+        :param pulumi.Input[Union['DashboardDashboardMetadataArgs', 'DashboardDashboardMetadataArgsDict', 'outputs.DashboardDashboardMetadata']] dashboard_metadata: contains parameters of a dashboard
+        :param pulumi.Input[Union['DashboardMetadataArgs', 'DashboardMetadataArgsDict', 'outputs.DashboardMetadata']] metadata: `metadata` exists for backwards compatibility but shouldn't get specified anymore
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DashboardTileArgs', 'DashboardTileArgsDict', 'outputs.DashboardTile']]]] tiles: the tiles this Dashboard consist of
         :param pulumi.Input[_builtins.str] unknowns: allows for configuring properties that are not explicitly supported by the current version of this provider
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

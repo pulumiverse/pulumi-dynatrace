@@ -295,9 +295,9 @@ class CalculatedSyntheticMetric(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
-                 dimensions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CalculatedSyntheticMetricDimensionArgs', 'CalculatedSyntheticMetricDimensionArgsDict']]]]] = None,
+                 dimensions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CalculatedSyntheticMetricDimensionArgs', 'CalculatedSyntheticMetricDimensionArgsDict', 'outputs.CalculatedSyntheticMetricDimension']]]]] = None,
                  enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-                 filter: pulumi.Input[Optional[Union['CalculatedSyntheticMetricFilterArgs', 'CalculatedSyntheticMetricFilterArgsDict']]] = None,
+                 filter: pulumi.Input[Optional[Union['CalculatedSyntheticMetricFilterArgs', 'CalculatedSyntheticMetricFilterArgsDict', 'outputs.CalculatedSyntheticMetricFilter']]] = None,
                  metric: pulumi.Input[Optional[_builtins.str]] = None,
                  metric_key: pulumi.Input[Optional[_builtins.str]] = None,
                  monitor_identifier: pulumi.Input[Optional[_builtins.str]] = None,
@@ -378,9 +378,9 @@ class CalculatedSyntheticMetric(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] description: Descriptor of a calculated synthetic metric.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['CalculatedSyntheticMetricDimensionArgs', 'CalculatedSyntheticMetricDimensionArgsDict']]]] dimensions: Dimension of the calculated synthetic metric.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CalculatedSyntheticMetricDimensionArgs', 'CalculatedSyntheticMetricDimensionArgsDict', 'outputs.CalculatedSyntheticMetricDimension']]]] dimensions: Dimension of the calculated synthetic metric.
         :param pulumi.Input[_builtins.bool] enabled: The metric is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[Union['CalculatedSyntheticMetricFilterArgs', 'CalculatedSyntheticMetricFilterArgsDict']] filter: Filter of the calculated synthetic metric.
+        :param pulumi.Input[Union['CalculatedSyntheticMetricFilterArgs', 'CalculatedSyntheticMetricFilterArgsDict', 'outputs.CalculatedSyntheticMetricFilter']] filter: Filter of the calculated synthetic metric.
         :param pulumi.Input[_builtins.str] metric: The type of the synthetic metric. Possible values: [ ApplicationCache, Callback, CumulativeLayoutShift, DNSLookup, DOMComplete, DOMContentLoaded, DOMInteractive, FailedRequestsResources, FirstContentfulPaint, FirstInputDelay, FirstInputStart, FirstPaint, HTMLDownloaded, HttpErrors, JavaScriptErrors, LargestContentfulPaint, LoadEventEnd, LoadEventStart, LongTasks, NavigationStart, OnDOMContentLoaded, OnLoad, Processing, RedirectTime, Request, RequestStart, ResourceCount, Response, SecureConnect, SpeedIndex, TCPConnect, TimeToFirstByte, TotalDuration, TransferSize, UserActionDuration, VisuallyComplete ]
         :param pulumi.Input[_builtins.str] metric_key: The unique key of the calculated synthetic metric.
         :param pulumi.Input[_builtins.str] monitor_identifier: The Dynatrace entity ID of the monitor to which the metric belongs.
@@ -480,9 +480,9 @@ class CalculatedSyntheticMetric(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
-                 dimensions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CalculatedSyntheticMetricDimensionArgs', 'CalculatedSyntheticMetricDimensionArgsDict']]]]] = None,
+                 dimensions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CalculatedSyntheticMetricDimensionArgs', 'CalculatedSyntheticMetricDimensionArgsDict', 'outputs.CalculatedSyntheticMetricDimension']]]]] = None,
                  enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-                 filter: pulumi.Input[Optional[Union['CalculatedSyntheticMetricFilterArgs', 'CalculatedSyntheticMetricFilterArgsDict']]] = None,
+                 filter: pulumi.Input[Optional[Union['CalculatedSyntheticMetricFilterArgs', 'CalculatedSyntheticMetricFilterArgsDict', 'outputs.CalculatedSyntheticMetricFilter']]] = None,
                  metric: pulumi.Input[Optional[_builtins.str]] = None,
                  metric_key: pulumi.Input[Optional[_builtins.str]] = None,
                  monitor_identifier: pulumi.Input[Optional[_builtins.str]] = None,
@@ -523,9 +523,9 @@ class CalculatedSyntheticMetric(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
-            dimensions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CalculatedSyntheticMetricDimensionArgs', 'CalculatedSyntheticMetricDimensionArgsDict']]]]] = None,
+            dimensions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CalculatedSyntheticMetricDimensionArgs', 'CalculatedSyntheticMetricDimensionArgsDict', 'outputs.CalculatedSyntheticMetricDimension']]]]] = None,
             enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-            filter: pulumi.Input[Optional[Union['CalculatedSyntheticMetricFilterArgs', 'CalculatedSyntheticMetricFilterArgsDict']]] = None,
+            filter: pulumi.Input[Optional[Union['CalculatedSyntheticMetricFilterArgs', 'CalculatedSyntheticMetricFilterArgsDict', 'outputs.CalculatedSyntheticMetricFilter']]] = None,
             metric: pulumi.Input[Optional[_builtins.str]] = None,
             metric_key: pulumi.Input[Optional[_builtins.str]] = None,
             monitor_identifier: pulumi.Input[Optional[_builtins.str]] = None,
@@ -538,9 +538,9 @@ class CalculatedSyntheticMetric(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] description: Descriptor of a calculated synthetic metric.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['CalculatedSyntheticMetricDimensionArgs', 'CalculatedSyntheticMetricDimensionArgsDict']]]] dimensions: Dimension of the calculated synthetic metric.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CalculatedSyntheticMetricDimensionArgs', 'CalculatedSyntheticMetricDimensionArgsDict', 'outputs.CalculatedSyntheticMetricDimension']]]] dimensions: Dimension of the calculated synthetic metric.
         :param pulumi.Input[_builtins.bool] enabled: The metric is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[Union['CalculatedSyntheticMetricFilterArgs', 'CalculatedSyntheticMetricFilterArgsDict']] filter: Filter of the calculated synthetic metric.
+        :param pulumi.Input[Union['CalculatedSyntheticMetricFilterArgs', 'CalculatedSyntheticMetricFilterArgsDict', 'outputs.CalculatedSyntheticMetricFilter']] filter: Filter of the calculated synthetic metric.
         :param pulumi.Input[_builtins.str] metric: The type of the synthetic metric. Possible values: [ ApplicationCache, Callback, CumulativeLayoutShift, DNSLookup, DOMComplete, DOMContentLoaded, DOMInteractive, FailedRequestsResources, FirstContentfulPaint, FirstInputDelay, FirstInputStart, FirstPaint, HTMLDownloaded, HttpErrors, JavaScriptErrors, LargestContentfulPaint, LoadEventEnd, LoadEventStart, LongTasks, NavigationStart, OnDOMContentLoaded, OnLoad, Processing, RedirectTime, Request, RequestStart, ResourceCount, Response, SecureConnect, SpeedIndex, TCPConnect, TimeToFirstByte, TotalDuration, TransferSize, UserActionDuration, VisuallyComplete ]
         :param pulumi.Input[_builtins.str] metric_key: The unique key of the calculated synthetic metric.
         :param pulumi.Input[_builtins.str] monitor_identifier: The Dynatrace entity ID of the monitor to which the metric belongs.

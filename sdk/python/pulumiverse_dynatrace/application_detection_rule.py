@@ -177,7 +177,7 @@ class ApplicationDetectionRule(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  application_identifier: pulumi.Input[Optional[_builtins.str]] = None,
-                 filter_config: pulumi.Input[Optional[Union['ApplicationDetectionRuleFilterConfigArgs', 'ApplicationDetectionRuleFilterConfigArgsDict']]] = None,
+                 filter_config: pulumi.Input[Optional[Union['ApplicationDetectionRuleFilterConfigArgs', 'ApplicationDetectionRuleFilterConfigArgsDict', 'outputs.ApplicationDetectionRuleFilterConfig']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  order: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -200,7 +200,7 @@ class ApplicationDetectionRule(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] application_identifier: The Dynatrace entity ID of the application, for example APPLICATION-4A3B43
-        :param pulumi.Input[Union['ApplicationDetectionRuleFilterConfigArgs', 'ApplicationDetectionRuleFilterConfigArgsDict']] filter_config: The condition of an application detection rule
+        :param pulumi.Input[Union['ApplicationDetectionRuleFilterConfigArgs', 'ApplicationDetectionRuleFilterConfigArgsDict', 'outputs.ApplicationDetectionRuleFilterConfig']] filter_config: The condition of an application detection rule
         :param pulumi.Input[_builtins.str] name: The unique name of the Application detection rule
         :param pulumi.Input[_builtins.str] order: The order of the rule in the rules list
         """
@@ -242,7 +242,7 @@ class ApplicationDetectionRule(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  application_identifier: pulumi.Input[Optional[_builtins.str]] = None,
-                 filter_config: pulumi.Input[Optional[Union['ApplicationDetectionRuleFilterConfigArgs', 'ApplicationDetectionRuleFilterConfigArgsDict']]] = None,
+                 filter_config: pulumi.Input[Optional[Union['ApplicationDetectionRuleFilterConfigArgs', 'ApplicationDetectionRuleFilterConfigArgsDict', 'outputs.ApplicationDetectionRuleFilterConfig']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  order: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -273,7 +273,7 @@ class ApplicationDetectionRule(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             application_identifier: pulumi.Input[Optional[_builtins.str]] = None,
-            filter_config: pulumi.Input[Optional[Union['ApplicationDetectionRuleFilterConfigArgs', 'ApplicationDetectionRuleFilterConfigArgsDict']]] = None,
+            filter_config: pulumi.Input[Optional[Union['ApplicationDetectionRuleFilterConfigArgs', 'ApplicationDetectionRuleFilterConfigArgsDict', 'outputs.ApplicationDetectionRuleFilterConfig']]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             order: pulumi.Input[Optional[_builtins.str]] = None) -> 'ApplicationDetectionRule':
         """
@@ -284,7 +284,7 @@ class ApplicationDetectionRule(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] application_identifier: The Dynatrace entity ID of the application, for example APPLICATION-4A3B43
-        :param pulumi.Input[Union['ApplicationDetectionRuleFilterConfigArgs', 'ApplicationDetectionRuleFilterConfigArgsDict']] filter_config: The condition of an application detection rule
+        :param pulumi.Input[Union['ApplicationDetectionRuleFilterConfigArgs', 'ApplicationDetectionRuleFilterConfigArgsDict', 'outputs.ApplicationDetectionRuleFilterConfig']] filter_config: The condition of an application detection rule
         :param pulumi.Input[_builtins.str] name: The unique name of the Application detection rule
         :param pulumi.Input[_builtins.str] order: The order of the rule in the rules list
         """

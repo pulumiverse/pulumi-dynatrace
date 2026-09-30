@@ -74,7 +74,7 @@ class OpenpipelineV2EventsSecurityRouting(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 routing_entries: pulumi.Input[Optional[Union['OpenpipelineV2EventsSecurityRoutingRoutingEntriesArgs', 'OpenpipelineV2EventsSecurityRoutingRoutingEntriesArgsDict']]] = None,
+                 routing_entries: pulumi.Input[Optional[Union['OpenpipelineV2EventsSecurityRoutingRoutingEntriesArgs', 'OpenpipelineV2EventsSecurityRoutingRoutingEntriesArgsDict', 'outputs.OpenpipelineV2EventsSecurityRoutingRoutingEntries']]] = None,
                  __props__=None):
         """
         > Deploying an OpenPipeline routing configuration will overwrite the existing one of the same kind, causing any manual changes made in the web UI or other routing configurations managed by Terraform or Monaco to be lost. Ensure all routing configurations of the same kind are defined within a single Terraform or Monaco configuration to prevent data loss.
@@ -113,7 +113,7 @@ class OpenpipelineV2EventsSecurityRouting(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['OpenpipelineV2EventsSecurityRoutingRoutingEntriesArgs', 'OpenpipelineV2EventsSecurityRoutingRoutingEntriesArgsDict']] routing_entries: Routing for pipelines
+        :param pulumi.Input[Union['OpenpipelineV2EventsSecurityRoutingRoutingEntriesArgs', 'OpenpipelineV2EventsSecurityRoutingRoutingEntriesArgsDict', 'outputs.OpenpipelineV2EventsSecurityRoutingRoutingEntries']] routing_entries: Routing for pipelines
         """
         ...
     @overload
@@ -171,7 +171,7 @@ class OpenpipelineV2EventsSecurityRouting(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 routing_entries: pulumi.Input[Optional[Union['OpenpipelineV2EventsSecurityRoutingRoutingEntriesArgs', 'OpenpipelineV2EventsSecurityRoutingRoutingEntriesArgsDict']]] = None,
+                 routing_entries: pulumi.Input[Optional[Union['OpenpipelineV2EventsSecurityRoutingRoutingEntriesArgs', 'OpenpipelineV2EventsSecurityRoutingRoutingEntriesArgsDict', 'outputs.OpenpipelineV2EventsSecurityRoutingRoutingEntries']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -192,7 +192,7 @@ class OpenpipelineV2EventsSecurityRouting(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            routing_entries: pulumi.Input[Optional[Union['OpenpipelineV2EventsSecurityRoutingRoutingEntriesArgs', 'OpenpipelineV2EventsSecurityRoutingRoutingEntriesArgsDict']]] = None) -> 'OpenpipelineV2EventsSecurityRouting':
+            routing_entries: pulumi.Input[Optional[Union['OpenpipelineV2EventsSecurityRoutingRoutingEntriesArgs', 'OpenpipelineV2EventsSecurityRoutingRoutingEntriesArgsDict', 'outputs.OpenpipelineV2EventsSecurityRoutingRoutingEntries']]] = None) -> 'OpenpipelineV2EventsSecurityRouting':
         """
         Get an existing OpenpipelineV2EventsSecurityRouting resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -200,7 +200,7 @@ class OpenpipelineV2EventsSecurityRouting(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['OpenpipelineV2EventsSecurityRoutingRoutingEntriesArgs', 'OpenpipelineV2EventsSecurityRoutingRoutingEntriesArgsDict']] routing_entries: Routing for pipelines
+        :param pulumi.Input[Union['OpenpipelineV2EventsSecurityRoutingRoutingEntriesArgs', 'OpenpipelineV2EventsSecurityRoutingRoutingEntriesArgsDict', 'outputs.OpenpipelineV2EventsSecurityRoutingRoutingEntries']] routing_entries: Routing for pipelines
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

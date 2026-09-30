@@ -234,7 +234,7 @@ class LogStorage(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  insert_after: pulumi.Input[Optional[_builtins.str]] = None,
-                 matchers: pulumi.Input[Optional[Union['LogStorageMatchersArgs', 'LogStorageMatchersArgsDict']]] = None,
+                 matchers: pulumi.Input[Optional[Union['LogStorageMatchersArgs', 'LogStorageMatchersArgsDict', 'outputs.LogStorageMatchers']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  scope: pulumi.Input[Optional[_builtins.str]] = None,
                  send_to_storage: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -259,7 +259,7 @@ class LogStorage(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
-        :param pulumi.Input[Union['LogStorageMatchersArgs', 'LogStorageMatchersArgsDict']] matchers: no documentation available
+        :param pulumi.Input[Union['LogStorageMatchersArgs', 'LogStorageMatchersArgsDict', 'outputs.LogStorageMatchers']] matchers: no documentation available
         :param pulumi.Input[_builtins.str] name: Name
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
         :param pulumi.Input[_builtins.bool] send_to_storage: If `true` matching logs will be included in storage. If `false` matching logs will be excluded from storage.
@@ -303,7 +303,7 @@ class LogStorage(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  insert_after: pulumi.Input[Optional[_builtins.str]] = None,
-                 matchers: pulumi.Input[Optional[Union['LogStorageMatchersArgs', 'LogStorageMatchersArgsDict']]] = None,
+                 matchers: pulumi.Input[Optional[Union['LogStorageMatchersArgs', 'LogStorageMatchersArgsDict', 'outputs.LogStorageMatchers']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  scope: pulumi.Input[Optional[_builtins.str]] = None,
                  send_to_storage: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -338,7 +338,7 @@ class LogStorage(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             insert_after: pulumi.Input[Optional[_builtins.str]] = None,
-            matchers: pulumi.Input[Optional[Union['LogStorageMatchersArgs', 'LogStorageMatchersArgsDict']]] = None,
+            matchers: pulumi.Input[Optional[Union['LogStorageMatchersArgs', 'LogStorageMatchersArgsDict', 'outputs.LogStorageMatchers']]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             scope: pulumi.Input[Optional[_builtins.str]] = None,
             send_to_storage: pulumi.Input[Optional[_builtins.bool]] = None) -> 'LogStorage':
@@ -351,7 +351,7 @@ class LogStorage(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
-        :param pulumi.Input[Union['LogStorageMatchersArgs', 'LogStorageMatchersArgsDict']] matchers: no documentation available
+        :param pulumi.Input[Union['LogStorageMatchersArgs', 'LogStorageMatchersArgsDict', 'outputs.LogStorageMatchers']] matchers: no documentation available
         :param pulumi.Input[_builtins.str] name: Name
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
         :param pulumi.Input[_builtins.bool] send_to_storage: If `true` matching logs will be included in storage. If `false` matching logs will be excluded from storage.

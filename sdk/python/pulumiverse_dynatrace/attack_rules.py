@@ -262,12 +262,12 @@ class AttackRules(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 attack_handling: pulumi.Input[Optional[Union['AttackRulesAttackHandlingArgs', 'AttackRulesAttackHandlingArgsDict']]] = None,
-                 criteria: pulumi.Input[Optional[Union['AttackRulesCriteriaArgs', 'AttackRulesCriteriaArgsDict']]] = None,
+                 attack_handling: pulumi.Input[Optional[Union['AttackRulesAttackHandlingArgs', 'AttackRulesAttackHandlingArgsDict', 'outputs.AttackRulesAttackHandling']]] = None,
+                 criteria: pulumi.Input[Optional[Union['AttackRulesCriteriaArgs', 'AttackRulesCriteriaArgsDict', 'outputs.AttackRulesCriteria']]] = None,
                  enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  insert_after: pulumi.Input[Optional[_builtins.str]] = None,
-                 metadata: pulumi.Input[Optional[Union['AttackRulesMetadataArgs', 'AttackRulesMetadataArgsDict']]] = None,
-                 resource_attribute_conditions: pulumi.Input[Optional[Union['AttackRulesResourceAttributeConditionsArgs', 'AttackRulesResourceAttributeConditionsArgsDict']]] = None,
+                 metadata: pulumi.Input[Optional[Union['AttackRulesMetadataArgs', 'AttackRulesMetadataArgsDict', 'outputs.AttackRulesMetadata']]] = None,
+                 resource_attribute_conditions: pulumi.Input[Optional[Union['AttackRulesResourceAttributeConditionsArgs', 'AttackRulesResourceAttributeConditionsArgsDict', 'outputs.AttackRulesResourceAttributeConditions']]] = None,
                  rule_name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -290,12 +290,12 @@ class AttackRules(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['AttackRulesAttackHandlingArgs', 'AttackRulesAttackHandlingArgsDict']] attack_handling: Step 1: Select attack protection behavior
-        :param pulumi.Input[Union['AttackRulesCriteriaArgs', 'AttackRulesCriteriaArgsDict']] criteria: Step 2: Select attack type
+        :param pulumi.Input[Union['AttackRulesAttackHandlingArgs', 'AttackRulesAttackHandlingArgsDict', 'outputs.AttackRulesAttackHandling']] attack_handling: Step 1: Select attack protection behavior
+        :param pulumi.Input[Union['AttackRulesCriteriaArgs', 'AttackRulesCriteriaArgsDict', 'outputs.AttackRulesCriteria']] criteria: Step 2: Select attack type
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
-        :param pulumi.Input[Union['AttackRulesMetadataArgs', 'AttackRulesMetadataArgsDict']] metadata: Step 4: Leave comment (optional)
-        :param pulumi.Input[Union['AttackRulesResourceAttributeConditionsArgs', 'AttackRulesResourceAttributeConditionsArgsDict']] resource_attribute_conditions: If you add more than one condition, note that all conditions must be true simultaneously for the rule to apply.
+        :param pulumi.Input[Union['AttackRulesMetadataArgs', 'AttackRulesMetadataArgsDict', 'outputs.AttackRulesMetadata']] metadata: Step 4: Leave comment (optional)
+        :param pulumi.Input[Union['AttackRulesResourceAttributeConditionsArgs', 'AttackRulesResourceAttributeConditionsArgsDict', 'outputs.AttackRulesResourceAttributeConditions']] resource_attribute_conditions: If you add more than one condition, note that all conditions must be true simultaneously for the rule to apply.
         :param pulumi.Input[_builtins.str] rule_name: Rule name
         """
         ...
@@ -337,12 +337,12 @@ class AttackRules(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 attack_handling: pulumi.Input[Optional[Union['AttackRulesAttackHandlingArgs', 'AttackRulesAttackHandlingArgsDict']]] = None,
-                 criteria: pulumi.Input[Optional[Union['AttackRulesCriteriaArgs', 'AttackRulesCriteriaArgsDict']]] = None,
+                 attack_handling: pulumi.Input[Optional[Union['AttackRulesAttackHandlingArgs', 'AttackRulesAttackHandlingArgsDict', 'outputs.AttackRulesAttackHandling']]] = None,
+                 criteria: pulumi.Input[Optional[Union['AttackRulesCriteriaArgs', 'AttackRulesCriteriaArgsDict', 'outputs.AttackRulesCriteria']]] = None,
                  enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  insert_after: pulumi.Input[Optional[_builtins.str]] = None,
-                 metadata: pulumi.Input[Optional[Union['AttackRulesMetadataArgs', 'AttackRulesMetadataArgsDict']]] = None,
-                 resource_attribute_conditions: pulumi.Input[Optional[Union['AttackRulesResourceAttributeConditionsArgs', 'AttackRulesResourceAttributeConditionsArgsDict']]] = None,
+                 metadata: pulumi.Input[Optional[Union['AttackRulesMetadataArgs', 'AttackRulesMetadataArgsDict', 'outputs.AttackRulesMetadata']]] = None,
+                 resource_attribute_conditions: pulumi.Input[Optional[Union['AttackRulesResourceAttributeConditionsArgs', 'AttackRulesResourceAttributeConditionsArgsDict', 'outputs.AttackRulesResourceAttributeConditions']]] = None,
                  rule_name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -378,12 +378,12 @@ class AttackRules(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            attack_handling: pulumi.Input[Optional[Union['AttackRulesAttackHandlingArgs', 'AttackRulesAttackHandlingArgsDict']]] = None,
-            criteria: pulumi.Input[Optional[Union['AttackRulesCriteriaArgs', 'AttackRulesCriteriaArgsDict']]] = None,
+            attack_handling: pulumi.Input[Optional[Union['AttackRulesAttackHandlingArgs', 'AttackRulesAttackHandlingArgsDict', 'outputs.AttackRulesAttackHandling']]] = None,
+            criteria: pulumi.Input[Optional[Union['AttackRulesCriteriaArgs', 'AttackRulesCriteriaArgsDict', 'outputs.AttackRulesCriteria']]] = None,
             enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             insert_after: pulumi.Input[Optional[_builtins.str]] = None,
-            metadata: pulumi.Input[Optional[Union['AttackRulesMetadataArgs', 'AttackRulesMetadataArgsDict']]] = None,
-            resource_attribute_conditions: pulumi.Input[Optional[Union['AttackRulesResourceAttributeConditionsArgs', 'AttackRulesResourceAttributeConditionsArgsDict']]] = None,
+            metadata: pulumi.Input[Optional[Union['AttackRulesMetadataArgs', 'AttackRulesMetadataArgsDict', 'outputs.AttackRulesMetadata']]] = None,
+            resource_attribute_conditions: pulumi.Input[Optional[Union['AttackRulesResourceAttributeConditionsArgs', 'AttackRulesResourceAttributeConditionsArgsDict', 'outputs.AttackRulesResourceAttributeConditions']]] = None,
             rule_name: pulumi.Input[Optional[_builtins.str]] = None) -> 'AttackRules':
         """
         Get an existing AttackRules resource's state with the given name, id, and optional extra
@@ -392,12 +392,12 @@ class AttackRules(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['AttackRulesAttackHandlingArgs', 'AttackRulesAttackHandlingArgsDict']] attack_handling: Step 1: Select attack protection behavior
-        :param pulumi.Input[Union['AttackRulesCriteriaArgs', 'AttackRulesCriteriaArgsDict']] criteria: Step 2: Select attack type
+        :param pulumi.Input[Union['AttackRulesAttackHandlingArgs', 'AttackRulesAttackHandlingArgsDict', 'outputs.AttackRulesAttackHandling']] attack_handling: Step 1: Select attack protection behavior
+        :param pulumi.Input[Union['AttackRulesCriteriaArgs', 'AttackRulesCriteriaArgsDict', 'outputs.AttackRulesCriteria']] criteria: Step 2: Select attack type
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
-        :param pulumi.Input[Union['AttackRulesMetadataArgs', 'AttackRulesMetadataArgsDict']] metadata: Step 4: Leave comment (optional)
-        :param pulumi.Input[Union['AttackRulesResourceAttributeConditionsArgs', 'AttackRulesResourceAttributeConditionsArgsDict']] resource_attribute_conditions: If you add more than one condition, note that all conditions must be true simultaneously for the rule to apply.
+        :param pulumi.Input[Union['AttackRulesMetadataArgs', 'AttackRulesMetadataArgsDict', 'outputs.AttackRulesMetadata']] metadata: Step 4: Leave comment (optional)
+        :param pulumi.Input[Union['AttackRulesResourceAttributeConditionsArgs', 'AttackRulesResourceAttributeConditionsArgsDict', 'outputs.AttackRulesResourceAttributeConditions']] resource_attribute_conditions: If you add more than one condition, note that all conditions must be true simultaneously for the rule to apply.
         :param pulumi.Input[_builtins.str] rule_name: Rule name
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

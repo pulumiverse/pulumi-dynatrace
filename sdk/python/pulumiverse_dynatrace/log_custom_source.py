@@ -200,8 +200,8 @@ class LogCustomSource(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 context: pulumi.Input[Optional[Union['LogCustomSourceContextArgs', 'LogCustomSourceContextArgsDict']]] = None,
-                 custom_log_source: pulumi.Input[Optional[Union['LogCustomSourceCustomLogSourceArgs', 'LogCustomSourceCustomLogSourceArgsDict']]] = None,
+                 context: pulumi.Input[Optional[Union['LogCustomSourceContextArgs', 'LogCustomSourceContextArgsDict', 'outputs.LogCustomSourceContext']]] = None,
+                 custom_log_source: pulumi.Input[Optional[Union['LogCustomSourceCustomLogSourceArgs', 'LogCustomSourceCustomLogSourceArgsDict', 'outputs.LogCustomSourceCustomLogSource']]] = None,
                  enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  scope: pulumi.Input[Optional[_builtins.str]] = None,
@@ -224,8 +224,8 @@ class LogCustomSource(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['LogCustomSourceContextArgs', 'LogCustomSourceContextArgsDict']] context: Define Custom Log Source only within context if provided
-        :param pulumi.Input[Union['LogCustomSourceCustomLogSourceArgs', 'LogCustomSourceCustomLogSourceArgsDict']] custom_log_source: no documentation available
+        :param pulumi.Input[Union['LogCustomSourceContextArgs', 'LogCustomSourceContextArgsDict', 'outputs.LogCustomSourceContext']] context: Define Custom Log Source only within context if provided
+        :param pulumi.Input[Union['LogCustomSourceCustomLogSourceArgs', 'LogCustomSourceCustomLogSourceArgsDict', 'outputs.LogCustomSourceCustomLogSource']] custom_log_source: no documentation available
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] name: Name
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
@@ -267,8 +267,8 @@ class LogCustomSource(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 context: pulumi.Input[Optional[Union['LogCustomSourceContextArgs', 'LogCustomSourceContextArgsDict']]] = None,
-                 custom_log_source: pulumi.Input[Optional[Union['LogCustomSourceCustomLogSourceArgs', 'LogCustomSourceCustomLogSourceArgsDict']]] = None,
+                 context: pulumi.Input[Optional[Union['LogCustomSourceContextArgs', 'LogCustomSourceContextArgsDict', 'outputs.LogCustomSourceContext']]] = None,
+                 custom_log_source: pulumi.Input[Optional[Union['LogCustomSourceCustomLogSourceArgs', 'LogCustomSourceCustomLogSourceArgsDict', 'outputs.LogCustomSourceCustomLogSource']]] = None,
                  enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  scope: pulumi.Input[Optional[_builtins.str]] = None,
@@ -300,8 +300,8 @@ class LogCustomSource(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            context: pulumi.Input[Optional[Union['LogCustomSourceContextArgs', 'LogCustomSourceContextArgsDict']]] = None,
-            custom_log_source: pulumi.Input[Optional[Union['LogCustomSourceCustomLogSourceArgs', 'LogCustomSourceCustomLogSourceArgsDict']]] = None,
+            context: pulumi.Input[Optional[Union['LogCustomSourceContextArgs', 'LogCustomSourceContextArgsDict', 'outputs.LogCustomSourceContext']]] = None,
+            custom_log_source: pulumi.Input[Optional[Union['LogCustomSourceCustomLogSourceArgs', 'LogCustomSourceCustomLogSourceArgsDict', 'outputs.LogCustomSourceCustomLogSource']]] = None,
             enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             scope: pulumi.Input[Optional[_builtins.str]] = None) -> 'LogCustomSource':
@@ -312,8 +312,8 @@ class LogCustomSource(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['LogCustomSourceContextArgs', 'LogCustomSourceContextArgsDict']] context: Define Custom Log Source only within context if provided
-        :param pulumi.Input[Union['LogCustomSourceCustomLogSourceArgs', 'LogCustomSourceCustomLogSourceArgsDict']] custom_log_source: no documentation available
+        :param pulumi.Input[Union['LogCustomSourceContextArgs', 'LogCustomSourceContextArgsDict', 'outputs.LogCustomSourceContext']] context: Define Custom Log Source only within context if provided
+        :param pulumi.Input[Union['LogCustomSourceCustomLogSourceArgs', 'LogCustomSourceCustomLogSourceArgsDict', 'outputs.LogCustomSourceCustomLogSource']] custom_log_source: no documentation available
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] name: Name
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.

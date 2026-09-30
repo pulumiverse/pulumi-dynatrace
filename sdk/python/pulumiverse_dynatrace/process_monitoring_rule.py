@@ -199,7 +199,7 @@ class ProcessMonitoringRule(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 condition: pulumi.Input[Optional[Union['ProcessMonitoringRuleConditionArgs', 'ProcessMonitoringRuleConditionArgsDict']]] = None,
+                 condition: pulumi.Input[Optional[Union['ProcessMonitoringRuleConditionArgs', 'ProcessMonitoringRuleConditionArgsDict', 'outputs.ProcessMonitoringRuleCondition']]] = None,
                  enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  host_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  insert_after: pulumi.Input[Optional[_builtins.str]] = None,
@@ -240,7 +240,7 @@ class ProcessMonitoringRule(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['ProcessMonitoringRuleConditionArgs', 'ProcessMonitoringRuleConditionArgsDict']] condition: Condition
+        :param pulumi.Input[Union['ProcessMonitoringRuleConditionArgs', 'ProcessMonitoringRuleConditionArgsDict', 'outputs.ProcessMonitoringRuleCondition']] condition: Condition
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] host_group_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
@@ -300,7 +300,7 @@ class ProcessMonitoringRule(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 condition: pulumi.Input[Optional[Union['ProcessMonitoringRuleConditionArgs', 'ProcessMonitoringRuleConditionArgsDict']]] = None,
+                 condition: pulumi.Input[Optional[Union['ProcessMonitoringRuleConditionArgs', 'ProcessMonitoringRuleConditionArgsDict', 'outputs.ProcessMonitoringRuleCondition']]] = None,
                  enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  host_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  insert_after: pulumi.Input[Optional[_builtins.str]] = None,
@@ -335,7 +335,7 @@ class ProcessMonitoringRule(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            condition: pulumi.Input[Optional[Union['ProcessMonitoringRuleConditionArgs', 'ProcessMonitoringRuleConditionArgsDict']]] = None,
+            condition: pulumi.Input[Optional[Union['ProcessMonitoringRuleConditionArgs', 'ProcessMonitoringRuleConditionArgsDict', 'outputs.ProcessMonitoringRuleCondition']]] = None,
             enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             host_group_id: pulumi.Input[Optional[_builtins.str]] = None,
             insert_after: pulumi.Input[Optional[_builtins.str]] = None,
@@ -347,7 +347,7 @@ class ProcessMonitoringRule(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['ProcessMonitoringRuleConditionArgs', 'ProcessMonitoringRuleConditionArgsDict']] condition: Condition
+        :param pulumi.Input[Union['ProcessMonitoringRuleConditionArgs', 'ProcessMonitoringRuleConditionArgsDict', 'outputs.ProcessMonitoringRuleCondition']] condition: Condition
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] host_group_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched

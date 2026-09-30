@@ -259,11 +259,11 @@ class DavisAnomalyDetectors(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 analyzer: pulumi.Input[Optional[Union['DavisAnomalyDetectorsAnalyzerArgs', 'DavisAnomalyDetectorsAnalyzerArgsDict']]] = None,
+                 analyzer: pulumi.Input[Optional[Union['DavisAnomalyDetectorsAnalyzerArgs', 'DavisAnomalyDetectorsAnalyzerArgsDict', 'outputs.DavisAnomalyDetectorsAnalyzer']]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-                 event_template: pulumi.Input[Optional[Union['DavisAnomalyDetectorsEventTemplateArgs', 'DavisAnomalyDetectorsEventTemplateArgsDict']]] = None,
-                 execution_settings: pulumi.Input[Optional[Union['DavisAnomalyDetectorsExecutionSettingsArgs', 'DavisAnomalyDetectorsExecutionSettingsArgsDict']]] = None,
+                 event_template: pulumi.Input[Optional[Union['DavisAnomalyDetectorsEventTemplateArgs', 'DavisAnomalyDetectorsEventTemplateArgsDict', 'outputs.DavisAnomalyDetectorsEventTemplate']]] = None,
+                 execution_settings: pulumi.Input[Optional[Union['DavisAnomalyDetectorsExecutionSettingsArgs', 'DavisAnomalyDetectorsExecutionSettingsArgsDict', 'outputs.DavisAnomalyDetectorsExecutionSettings']]] = None,
                  source: pulumi.Input[Optional[_builtins.str]] = None,
                  title: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -290,11 +290,11 @@ class DavisAnomalyDetectors(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['DavisAnomalyDetectorsAnalyzerArgs', 'DavisAnomalyDetectorsAnalyzerArgsDict']] analyzer: Analyzer input to initialize the analyzer
+        :param pulumi.Input[Union['DavisAnomalyDetectorsAnalyzerArgs', 'DavisAnomalyDetectorsAnalyzerArgsDict', 'outputs.DavisAnomalyDetectorsAnalyzer']] analyzer: Analyzer input to initialize the analyzer
         :param pulumi.Input[_builtins.str] description: The description of the anomaly detector
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[Union['DavisAnomalyDetectorsEventTemplateArgs', 'DavisAnomalyDetectorsEventTemplateArgsDict']] event_template: Defines additional fields on the davis events triggered by the anomaly detector
-        :param pulumi.Input[Union['DavisAnomalyDetectorsExecutionSettingsArgs', 'DavisAnomalyDetectorsExecutionSettingsArgsDict']] execution_settings: Defines the configuration parameters that influence how and under what context a query or evaluation is executed.
+        :param pulumi.Input[Union['DavisAnomalyDetectorsEventTemplateArgs', 'DavisAnomalyDetectorsEventTemplateArgsDict', 'outputs.DavisAnomalyDetectorsEventTemplate']] event_template: Defines additional fields on the davis events triggered by the anomaly detector
+        :param pulumi.Input[Union['DavisAnomalyDetectorsExecutionSettingsArgs', 'DavisAnomalyDetectorsExecutionSettingsArgsDict', 'outputs.DavisAnomalyDetectorsExecutionSettings']] execution_settings: Defines the configuration parameters that influence how and under what context a query or evaluation is executed.
         :param pulumi.Input[_builtins.str] source: The source which created the anomaly detector
         :param pulumi.Input[_builtins.str] title: The title of the anomaly detector
         """
@@ -340,11 +340,11 @@ class DavisAnomalyDetectors(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 analyzer: pulumi.Input[Optional[Union['DavisAnomalyDetectorsAnalyzerArgs', 'DavisAnomalyDetectorsAnalyzerArgsDict']]] = None,
+                 analyzer: pulumi.Input[Optional[Union['DavisAnomalyDetectorsAnalyzerArgs', 'DavisAnomalyDetectorsAnalyzerArgsDict', 'outputs.DavisAnomalyDetectorsAnalyzer']]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-                 event_template: pulumi.Input[Optional[Union['DavisAnomalyDetectorsEventTemplateArgs', 'DavisAnomalyDetectorsEventTemplateArgsDict']]] = None,
-                 execution_settings: pulumi.Input[Optional[Union['DavisAnomalyDetectorsExecutionSettingsArgs', 'DavisAnomalyDetectorsExecutionSettingsArgsDict']]] = None,
+                 event_template: pulumi.Input[Optional[Union['DavisAnomalyDetectorsEventTemplateArgs', 'DavisAnomalyDetectorsEventTemplateArgsDict', 'outputs.DavisAnomalyDetectorsEventTemplate']]] = None,
+                 execution_settings: pulumi.Input[Optional[Union['DavisAnomalyDetectorsExecutionSettingsArgs', 'DavisAnomalyDetectorsExecutionSettingsArgsDict', 'outputs.DavisAnomalyDetectorsExecutionSettings']]] = None,
                  source: pulumi.Input[Optional[_builtins.str]] = None,
                  title: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -387,11 +387,11 @@ class DavisAnomalyDetectors(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            analyzer: pulumi.Input[Optional[Union['DavisAnomalyDetectorsAnalyzerArgs', 'DavisAnomalyDetectorsAnalyzerArgsDict']]] = None,
+            analyzer: pulumi.Input[Optional[Union['DavisAnomalyDetectorsAnalyzerArgs', 'DavisAnomalyDetectorsAnalyzerArgsDict', 'outputs.DavisAnomalyDetectorsAnalyzer']]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
             enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-            event_template: pulumi.Input[Optional[Union['DavisAnomalyDetectorsEventTemplateArgs', 'DavisAnomalyDetectorsEventTemplateArgsDict']]] = None,
-            execution_settings: pulumi.Input[Optional[Union['DavisAnomalyDetectorsExecutionSettingsArgs', 'DavisAnomalyDetectorsExecutionSettingsArgsDict']]] = None,
+            event_template: pulumi.Input[Optional[Union['DavisAnomalyDetectorsEventTemplateArgs', 'DavisAnomalyDetectorsEventTemplateArgsDict', 'outputs.DavisAnomalyDetectorsEventTemplate']]] = None,
+            execution_settings: pulumi.Input[Optional[Union['DavisAnomalyDetectorsExecutionSettingsArgs', 'DavisAnomalyDetectorsExecutionSettingsArgsDict', 'outputs.DavisAnomalyDetectorsExecutionSettings']]] = None,
             source: pulumi.Input[Optional[_builtins.str]] = None,
             title: pulumi.Input[Optional[_builtins.str]] = None) -> 'DavisAnomalyDetectors':
         """
@@ -401,11 +401,11 @@ class DavisAnomalyDetectors(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['DavisAnomalyDetectorsAnalyzerArgs', 'DavisAnomalyDetectorsAnalyzerArgsDict']] analyzer: Analyzer input to initialize the analyzer
+        :param pulumi.Input[Union['DavisAnomalyDetectorsAnalyzerArgs', 'DavisAnomalyDetectorsAnalyzerArgsDict', 'outputs.DavisAnomalyDetectorsAnalyzer']] analyzer: Analyzer input to initialize the analyzer
         :param pulumi.Input[_builtins.str] description: The description of the anomaly detector
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[Union['DavisAnomalyDetectorsEventTemplateArgs', 'DavisAnomalyDetectorsEventTemplateArgsDict']] event_template: Defines additional fields on the davis events triggered by the anomaly detector
-        :param pulumi.Input[Union['DavisAnomalyDetectorsExecutionSettingsArgs', 'DavisAnomalyDetectorsExecutionSettingsArgsDict']] execution_settings: Defines the configuration parameters that influence how and under what context a query or evaluation is executed.
+        :param pulumi.Input[Union['DavisAnomalyDetectorsEventTemplateArgs', 'DavisAnomalyDetectorsEventTemplateArgsDict', 'outputs.DavisAnomalyDetectorsEventTemplate']] event_template: Defines additional fields on the davis events triggered by the anomaly detector
+        :param pulumi.Input[Union['DavisAnomalyDetectorsExecutionSettingsArgs', 'DavisAnomalyDetectorsExecutionSettingsArgsDict', 'outputs.DavisAnomalyDetectorsExecutionSettings']] execution_settings: Defines the configuration parameters that influence how and under what context a query or evaluation is executed.
         :param pulumi.Input[_builtins.str] source: The source which created the anomaly detector
         :param pulumi.Input[_builtins.str] title: The title of the anomaly detector
         """

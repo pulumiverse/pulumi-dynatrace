@@ -546,10 +546,10 @@ class AutomationWorkflow(pulumi.CustomResource):
                  owner_type: pulumi.Input[Optional[_builtins.str]] = None,
                  private: pulumi.Input[Optional[_builtins.bool]] = None,
                  result: pulumi.Input[Optional[_builtins.str]] = None,
-                 tasks: pulumi.Input[Optional[Union['AutomationWorkflowTasksArgs', 'AutomationWorkflowTasksArgsDict']]] = None,
-                 throttle: pulumi.Input[Optional[Union['AutomationWorkflowThrottleArgs', 'AutomationWorkflowThrottleArgsDict']]] = None,
+                 tasks: pulumi.Input[Optional[Union['AutomationWorkflowTasksArgs', 'AutomationWorkflowTasksArgsDict', 'outputs.AutomationWorkflowTasks']]] = None,
+                 throttle: pulumi.Input[Optional[Union['AutomationWorkflowThrottleArgs', 'AutomationWorkflowThrottleArgsDict', 'outputs.AutomationWorkflowThrottle']]] = None,
                  title: pulumi.Input[Optional[_builtins.str]] = None,
-                 trigger: pulumi.Input[Optional[Union['AutomationWorkflowTriggerArgs', 'AutomationWorkflowTriggerArgsDict']]] = None,
+                 trigger: pulumi.Input[Optional[Union['AutomationWorkflowTriggerArgs', 'AutomationWorkflowTriggerArgsDict', 'outputs.AutomationWorkflowTrigger']]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -697,10 +697,10 @@ class AutomationWorkflow(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] owner_type: The type of the owner. Possible values are `USER` and `GROUP`
         :param pulumi.Input[_builtins.bool] private: Defines whether this workflow is private to the owner or not. Default is `true`
         :param pulumi.Input[_builtins.str] result: The result of the workflow
-        :param pulumi.Input[Union['AutomationWorkflowTasksArgs', 'AutomationWorkflowTasksArgsDict']] tasks: The tasks to run for every execution of this workflow. Note: the order in which tasks are declared in HCL does not determine their layout - positions are not assigned incrementally based on declaration order. Set `position` explicitly on each task if you need a deterministic layout
-        :param pulumi.Input[Union['AutomationWorkflowThrottleArgs', 'AutomationWorkflowThrottleArgsDict']] throttle: Execution throttling state for the workflow. Server-computed - see `is_limit_hit`. Set only to reset an active throttle
+        :param pulumi.Input[Union['AutomationWorkflowTasksArgs', 'AutomationWorkflowTasksArgsDict', 'outputs.AutomationWorkflowTasks']] tasks: The tasks to run for every execution of this workflow. Note: the order in which tasks are declared in HCL does not determine their layout - positions are not assigned incrementally based on declaration order. Set `position` explicitly on each task if you need a deterministic layout
+        :param pulumi.Input[Union['AutomationWorkflowThrottleArgs', 'AutomationWorkflowThrottleArgsDict', 'outputs.AutomationWorkflowThrottle']] throttle: Execution throttling state for the workflow. Server-computed - see `is_limit_hit`. Set only to reset an active throttle
         :param pulumi.Input[_builtins.str] title: The title / name of the workflow
-        :param pulumi.Input[Union['AutomationWorkflowTriggerArgs', 'AutomationWorkflowTriggerArgsDict']] trigger: Configures how executions of the workflows are getting triggered. If no trigger is specified it means the workflow is getting manually triggered
+        :param pulumi.Input[Union['AutomationWorkflowTriggerArgs', 'AutomationWorkflowTriggerArgsDict', 'outputs.AutomationWorkflowTrigger']] trigger: Configures how executions of the workflows are getting triggered. If no trigger is specified it means the workflow is getting manually triggered
         :param pulumi.Input[_builtins.str] type: The type of the workflow. Possible values are `STANDARD` and `SIMPLE`. Defaults to `STANDARD`. Workflows of type `SIMPLE` are allowed to contain only one action
         """
         ...
@@ -867,10 +867,10 @@ class AutomationWorkflow(pulumi.CustomResource):
                  owner_type: pulumi.Input[Optional[_builtins.str]] = None,
                  private: pulumi.Input[Optional[_builtins.bool]] = None,
                  result: pulumi.Input[Optional[_builtins.str]] = None,
-                 tasks: pulumi.Input[Optional[Union['AutomationWorkflowTasksArgs', 'AutomationWorkflowTasksArgsDict']]] = None,
-                 throttle: pulumi.Input[Optional[Union['AutomationWorkflowThrottleArgs', 'AutomationWorkflowThrottleArgsDict']]] = None,
+                 tasks: pulumi.Input[Optional[Union['AutomationWorkflowTasksArgs', 'AutomationWorkflowTasksArgsDict', 'outputs.AutomationWorkflowTasks']]] = None,
+                 throttle: pulumi.Input[Optional[Union['AutomationWorkflowThrottleArgs', 'AutomationWorkflowThrottleArgsDict', 'outputs.AutomationWorkflowThrottle']]] = None,
                  title: pulumi.Input[Optional[_builtins.str]] = None,
-                 trigger: pulumi.Input[Optional[Union['AutomationWorkflowTriggerArgs', 'AutomationWorkflowTriggerArgsDict']]] = None,
+                 trigger: pulumi.Input[Optional[Union['AutomationWorkflowTriggerArgs', 'AutomationWorkflowTriggerArgsDict', 'outputs.AutomationWorkflowTrigger']]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -921,10 +921,10 @@ class AutomationWorkflow(pulumi.CustomResource):
             owner_type: pulumi.Input[Optional[_builtins.str]] = None,
             private: pulumi.Input[Optional[_builtins.bool]] = None,
             result: pulumi.Input[Optional[_builtins.str]] = None,
-            tasks: pulumi.Input[Optional[Union['AutomationWorkflowTasksArgs', 'AutomationWorkflowTasksArgsDict']]] = None,
-            throttle: pulumi.Input[Optional[Union['AutomationWorkflowThrottleArgs', 'AutomationWorkflowThrottleArgsDict']]] = None,
+            tasks: pulumi.Input[Optional[Union['AutomationWorkflowTasksArgs', 'AutomationWorkflowTasksArgsDict', 'outputs.AutomationWorkflowTasks']]] = None,
+            throttle: pulumi.Input[Optional[Union['AutomationWorkflowThrottleArgs', 'AutomationWorkflowThrottleArgsDict', 'outputs.AutomationWorkflowThrottle']]] = None,
             title: pulumi.Input[Optional[_builtins.str]] = None,
-            trigger: pulumi.Input[Optional[Union['AutomationWorkflowTriggerArgs', 'AutomationWorkflowTriggerArgsDict']]] = None,
+            trigger: pulumi.Input[Optional[Union['AutomationWorkflowTriggerArgs', 'AutomationWorkflowTriggerArgsDict', 'outputs.AutomationWorkflowTrigger']]] = None,
             type: pulumi.Input[Optional[_builtins.str]] = None,
             unacknowledged_skipped_schedule_at: pulumi.Input[Optional[_builtins.str]] = None) -> 'AutomationWorkflow':
         """
@@ -944,10 +944,10 @@ class AutomationWorkflow(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] owner_type: The type of the owner. Possible values are `USER` and `GROUP`
         :param pulumi.Input[_builtins.bool] private: Defines whether this workflow is private to the owner or not. Default is `true`
         :param pulumi.Input[_builtins.str] result: The result of the workflow
-        :param pulumi.Input[Union['AutomationWorkflowTasksArgs', 'AutomationWorkflowTasksArgsDict']] tasks: The tasks to run for every execution of this workflow. Note: the order in which tasks are declared in HCL does not determine their layout - positions are not assigned incrementally based on declaration order. Set `position` explicitly on each task if you need a deterministic layout
-        :param pulumi.Input[Union['AutomationWorkflowThrottleArgs', 'AutomationWorkflowThrottleArgsDict']] throttle: Execution throttling state for the workflow. Server-computed - see `is_limit_hit`. Set only to reset an active throttle
+        :param pulumi.Input[Union['AutomationWorkflowTasksArgs', 'AutomationWorkflowTasksArgsDict', 'outputs.AutomationWorkflowTasks']] tasks: The tasks to run for every execution of this workflow. Note: the order in which tasks are declared in HCL does not determine their layout - positions are not assigned incrementally based on declaration order. Set `position` explicitly on each task if you need a deterministic layout
+        :param pulumi.Input[Union['AutomationWorkflowThrottleArgs', 'AutomationWorkflowThrottleArgsDict', 'outputs.AutomationWorkflowThrottle']] throttle: Execution throttling state for the workflow. Server-computed - see `is_limit_hit`. Set only to reset an active throttle
         :param pulumi.Input[_builtins.str] title: The title / name of the workflow
-        :param pulumi.Input[Union['AutomationWorkflowTriggerArgs', 'AutomationWorkflowTriggerArgsDict']] trigger: Configures how executions of the workflows are getting triggered. If no trigger is specified it means the workflow is getting manually triggered
+        :param pulumi.Input[Union['AutomationWorkflowTriggerArgs', 'AutomationWorkflowTriggerArgsDict', 'outputs.AutomationWorkflowTrigger']] trigger: Configures how executions of the workflows are getting triggered. If no trigger is specified it means the workflow is getting manually triggered
         :param pulumi.Input[_builtins.str] type: The type of the workflow. Possible values are `STANDARD` and `SIMPLE`. Defaults to `STANDARD`. Workflows of type `SIMPLE` are allowed to contain only one action
         :param pulumi.Input[_builtins.str] unacknowledged_skipped_schedule_at: Timestamp of the earliest schedule that was skipped and not yet acknowledged
         """

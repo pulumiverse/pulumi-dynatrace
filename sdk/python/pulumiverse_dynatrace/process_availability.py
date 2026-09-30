@@ -299,11 +299,11 @@ class ProcessAvailability(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  insert_after: pulumi.Input[Optional[_builtins.str]] = None,
-                 metadata: pulumi.Input[Optional[Union['ProcessAvailabilityMetadataArgs', 'ProcessAvailabilityMetadataArgsDict']]] = None,
+                 metadata: pulumi.Input[Optional[Union['ProcessAvailabilityMetadataArgs', 'ProcessAvailabilityMetadataArgsDict', 'outputs.ProcessAvailabilityMetadata']]] = None,
                  minimum_processes: pulumi.Input[Optional[_builtins.int]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  operating_systems: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 rules: pulumi.Input[Optional[Union['ProcessAvailabilityRulesArgs', 'ProcessAvailabilityRulesArgsDict']]] = None,
+                 rules: pulumi.Input[Optional[Union['ProcessAvailabilityRulesArgs', 'ProcessAvailabilityRulesArgsDict', 'outputs.ProcessAvailabilityRules']]] = None,
                  scope: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -326,11 +326,11 @@ class ProcessAvailability(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
-        :param pulumi.Input[Union['ProcessAvailabilityMetadataArgs', 'ProcessAvailabilityMetadataArgsDict']] metadata: Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+).
+        :param pulumi.Input[Union['ProcessAvailabilityMetadataArgs', 'ProcessAvailabilityMetadataArgsDict', 'outputs.ProcessAvailabilityMetadata']] metadata: Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+).
         :param pulumi.Input[_builtins.int] minimum_processes: Specify a minimum number of processes matching the monitoring rule. An alert is triggered if any host falls below this threshold.
         :param pulumi.Input[_builtins.str] name: Monitoring rule name
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] operating_systems: Select the operating systems on which the monitoring rule should be applied. Possible values: `AIX`, `LINUX`, `WINDOWS`
-        :param pulumi.Input[Union['ProcessAvailabilityRulesArgs', 'ProcessAvailabilityRulesArgsDict']] rules: Define process detection rules by selecting a process property and a condition. Each monitoring rule can have multiple detection rules associated with it.
+        :param pulumi.Input[Union['ProcessAvailabilityRulesArgs', 'ProcessAvailabilityRulesArgsDict', 'outputs.ProcessAvailabilityRules']] rules: Define process detection rules by selecting a process property and a condition. Each monitoring rule can have multiple detection rules associated with it.
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
         """
         ...
@@ -372,11 +372,11 @@ class ProcessAvailability(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  insert_after: pulumi.Input[Optional[_builtins.str]] = None,
-                 metadata: pulumi.Input[Optional[Union['ProcessAvailabilityMetadataArgs', 'ProcessAvailabilityMetadataArgsDict']]] = None,
+                 metadata: pulumi.Input[Optional[Union['ProcessAvailabilityMetadataArgs', 'ProcessAvailabilityMetadataArgsDict', 'outputs.ProcessAvailabilityMetadata']]] = None,
                  minimum_processes: pulumi.Input[Optional[_builtins.int]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  operating_systems: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 rules: pulumi.Input[Optional[Union['ProcessAvailabilityRulesArgs', 'ProcessAvailabilityRulesArgsDict']]] = None,
+                 rules: pulumi.Input[Optional[Union['ProcessAvailabilityRulesArgs', 'ProcessAvailabilityRulesArgsDict', 'outputs.ProcessAvailabilityRules']]] = None,
                  scope: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -409,11 +409,11 @@ class ProcessAvailability(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             insert_after: pulumi.Input[Optional[_builtins.str]] = None,
-            metadata: pulumi.Input[Optional[Union['ProcessAvailabilityMetadataArgs', 'ProcessAvailabilityMetadataArgsDict']]] = None,
+            metadata: pulumi.Input[Optional[Union['ProcessAvailabilityMetadataArgs', 'ProcessAvailabilityMetadataArgsDict', 'outputs.ProcessAvailabilityMetadata']]] = None,
             minimum_processes: pulumi.Input[Optional[_builtins.int]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             operating_systems: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            rules: pulumi.Input[Optional[Union['ProcessAvailabilityRulesArgs', 'ProcessAvailabilityRulesArgsDict']]] = None,
+            rules: pulumi.Input[Optional[Union['ProcessAvailabilityRulesArgs', 'ProcessAvailabilityRulesArgsDict', 'outputs.ProcessAvailabilityRules']]] = None,
             scope: pulumi.Input[Optional[_builtins.str]] = None) -> 'ProcessAvailability':
         """
         Get an existing ProcessAvailability resource's state with the given name, id, and optional extra
@@ -424,11 +424,11 @@ class ProcessAvailability(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
-        :param pulumi.Input[Union['ProcessAvailabilityMetadataArgs', 'ProcessAvailabilityMetadataArgsDict']] metadata: Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+).
+        :param pulumi.Input[Union['ProcessAvailabilityMetadataArgs', 'ProcessAvailabilityMetadataArgsDict', 'outputs.ProcessAvailabilityMetadata']] metadata: Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+).
         :param pulumi.Input[_builtins.int] minimum_processes: Specify a minimum number of processes matching the monitoring rule. An alert is triggered if any host falls below this threshold.
         :param pulumi.Input[_builtins.str] name: Monitoring rule name
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] operating_systems: Select the operating systems on which the monitoring rule should be applied. Possible values: `AIX`, `LINUX`, `WINDOWS`
-        :param pulumi.Input[Union['ProcessAvailabilityRulesArgs', 'ProcessAvailabilityRulesArgsDict']] rules: Define process detection rules by selecting a process property and a condition. Each monitoring rule can have multiple detection rules associated with it.
+        :param pulumi.Input[Union['ProcessAvailabilityRulesArgs', 'ProcessAvailabilityRulesArgsDict', 'outputs.ProcessAvailabilityRules']] rules: Define process detection rules by selecting a process property and a condition. Each monitoring rule can have multiple detection rules associated with it.
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

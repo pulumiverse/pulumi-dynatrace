@@ -264,10 +264,10 @@ class ServiceExternalWebService(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 conditions: pulumi.Input[Optional[Union['ServiceExternalWebServiceConditionsArgs', 'ServiceExternalWebServiceConditionsArgsDict']]] = None,
+                 conditions: pulumi.Input[Optional[Union['ServiceExternalWebServiceConditionsArgs', 'ServiceExternalWebServiceConditionsArgsDict', 'outputs.ServiceExternalWebServiceConditions']]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-                 id_contributors: pulumi.Input[Optional[Union['ServiceExternalWebServiceIdContributorsArgs', 'ServiceExternalWebServiceIdContributorsArgsDict']]] = None,
+                 id_contributors: pulumi.Input[Optional[Union['ServiceExternalWebServiceIdContributorsArgs', 'ServiceExternalWebServiceIdContributorsArgsDict', 'outputs.ServiceExternalWebServiceIdContributors']]] = None,
                  insert_after: pulumi.Input[Optional[_builtins.str]] = None,
                  management_zones: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -290,10 +290,10 @@ class ServiceExternalWebService(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['ServiceExternalWebServiceConditionsArgs', 'ServiceExternalWebServiceConditionsArgsDict']] conditions: A list of conditions necessary for the rule to take effect. If multiple conditions are specified, they must **all** match a Request for the rule to apply. If there is no condition at all, the rule is always applied. Conditions are evaluated against attributes, but do not modify them.
+        :param pulumi.Input[Union['ServiceExternalWebServiceConditionsArgs', 'ServiceExternalWebServiceConditionsArgsDict', 'outputs.ServiceExternalWebServiceConditions']] conditions: A list of conditions necessary for the rule to take effect. If multiple conditions are specified, they must **all** match a Request for the rule to apply. If there is no condition at all, the rule is always applied. Conditions are evaluated against attributes, but do not modify them.
         :param pulumi.Input[_builtins.str] description: Description
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[Union['ServiceExternalWebServiceIdContributorsArgs', 'ServiceExternalWebServiceIdContributorsArgsDict']] id_contributors: Contributors to the Service Identifier calculation. URL path is always applied as an Id Contributor. You can exclude the port contribution by disabling the switch.
+        :param pulumi.Input[Union['ServiceExternalWebServiceIdContributorsArgs', 'ServiceExternalWebServiceIdContributorsArgsDict', 'outputs.ServiceExternalWebServiceIdContributors']] id_contributors: Contributors to the Service Identifier calculation. URL path is always applied as an Id Contributor. You can exclude the port contribution by disabling the switch.
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] management_zones: Define a management zone of the process group for which this service detection rule should be created.  Note: in case of external requests/services the PG might not always be known. See [here](https://dt-url.net/9i03b79)
         :param pulumi.Input[_builtins.str] name: Rule name
@@ -335,10 +335,10 @@ class ServiceExternalWebService(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 conditions: pulumi.Input[Optional[Union['ServiceExternalWebServiceConditionsArgs', 'ServiceExternalWebServiceConditionsArgsDict']]] = None,
+                 conditions: pulumi.Input[Optional[Union['ServiceExternalWebServiceConditionsArgs', 'ServiceExternalWebServiceConditionsArgsDict', 'outputs.ServiceExternalWebServiceConditions']]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-                 id_contributors: pulumi.Input[Optional[Union['ServiceExternalWebServiceIdContributorsArgs', 'ServiceExternalWebServiceIdContributorsArgsDict']]] = None,
+                 id_contributors: pulumi.Input[Optional[Union['ServiceExternalWebServiceIdContributorsArgs', 'ServiceExternalWebServiceIdContributorsArgsDict', 'outputs.ServiceExternalWebServiceIdContributors']]] = None,
                  insert_after: pulumi.Input[Optional[_builtins.str]] = None,
                  management_zones: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -372,10 +372,10 @@ class ServiceExternalWebService(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            conditions: pulumi.Input[Optional[Union['ServiceExternalWebServiceConditionsArgs', 'ServiceExternalWebServiceConditionsArgsDict']]] = None,
+            conditions: pulumi.Input[Optional[Union['ServiceExternalWebServiceConditionsArgs', 'ServiceExternalWebServiceConditionsArgsDict', 'outputs.ServiceExternalWebServiceConditions']]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
             enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-            id_contributors: pulumi.Input[Optional[Union['ServiceExternalWebServiceIdContributorsArgs', 'ServiceExternalWebServiceIdContributorsArgsDict']]] = None,
+            id_contributors: pulumi.Input[Optional[Union['ServiceExternalWebServiceIdContributorsArgs', 'ServiceExternalWebServiceIdContributorsArgsDict', 'outputs.ServiceExternalWebServiceIdContributors']]] = None,
             insert_after: pulumi.Input[Optional[_builtins.str]] = None,
             management_zones: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None) -> 'ServiceExternalWebService':
@@ -386,10 +386,10 @@ class ServiceExternalWebService(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['ServiceExternalWebServiceConditionsArgs', 'ServiceExternalWebServiceConditionsArgsDict']] conditions: A list of conditions necessary for the rule to take effect. If multiple conditions are specified, they must **all** match a Request for the rule to apply. If there is no condition at all, the rule is always applied. Conditions are evaluated against attributes, but do not modify them.
+        :param pulumi.Input[Union['ServiceExternalWebServiceConditionsArgs', 'ServiceExternalWebServiceConditionsArgsDict', 'outputs.ServiceExternalWebServiceConditions']] conditions: A list of conditions necessary for the rule to take effect. If multiple conditions are specified, they must **all** match a Request for the rule to apply. If there is no condition at all, the rule is always applied. Conditions are evaluated against attributes, but do not modify them.
         :param pulumi.Input[_builtins.str] description: Description
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[Union['ServiceExternalWebServiceIdContributorsArgs', 'ServiceExternalWebServiceIdContributorsArgsDict']] id_contributors: Contributors to the Service Identifier calculation. URL path is always applied as an Id Contributor. You can exclude the port contribution by disabling the switch.
+        :param pulumi.Input[Union['ServiceExternalWebServiceIdContributorsArgs', 'ServiceExternalWebServiceIdContributorsArgsDict', 'outputs.ServiceExternalWebServiceIdContributors']] id_contributors: Contributors to the Service Identifier calculation. URL path is always applied as an Id Contributor. You can exclude the port contribution by disabling the switch.
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] management_zones: Define a management zone of the process group for which this service detection rule should be created.  Note: in case of external requests/services the PG might not always be known. See [here](https://dt-url.net/9i03b79)
         :param pulumi.Input[_builtins.str] name: Rule name
