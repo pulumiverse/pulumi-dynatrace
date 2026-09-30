@@ -138,7 +138,7 @@ class BrowserMonitorPerformance(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  scope: pulumi.Input[Optional[_builtins.str]] = None,
-                 thresholds: pulumi.Input[Optional[Union['BrowserMonitorPerformanceThresholdsArgs', 'BrowserMonitorPerformanceThresholdsArgsDict']]] = None,
+                 thresholds: pulumi.Input[Optional[Union['BrowserMonitorPerformanceThresholdsArgs', 'BrowserMonitorPerformanceThresholdsArgsDict', 'outputs.BrowserMonitorPerformanceThresholds']]] = None,
                  __props__=None):
         """
         > Configuration of the synthetic test scope overlaps with dynatrace_browser_monitor, but this resource in addition provides an option for an environment scope.
@@ -229,7 +229,7 @@ class BrowserMonitorPerformance(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (SYNTHETIC_TEST)
-        :param pulumi.Input[Union['BrowserMonitorPerformanceThresholdsArgs', 'BrowserMonitorPerformanceThresholdsArgsDict']] thresholds: Performance thresholds
+        :param pulumi.Input[Union['BrowserMonitorPerformanceThresholdsArgs', 'BrowserMonitorPerformanceThresholdsArgsDict', 'outputs.BrowserMonitorPerformanceThresholds']] thresholds: Performance thresholds
         """
         ...
     @overload
@@ -339,7 +339,7 @@ class BrowserMonitorPerformance(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  scope: pulumi.Input[Optional[_builtins.str]] = None,
-                 thresholds: pulumi.Input[Optional[Union['BrowserMonitorPerformanceThresholdsArgs', 'BrowserMonitorPerformanceThresholdsArgsDict']]] = None,
+                 thresholds: pulumi.Input[Optional[Union['BrowserMonitorPerformanceThresholdsArgs', 'BrowserMonitorPerformanceThresholdsArgsDict', 'outputs.BrowserMonitorPerformanceThresholds']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -368,7 +368,7 @@ class BrowserMonitorPerformance(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             scope: pulumi.Input[Optional[_builtins.str]] = None,
-            thresholds: pulumi.Input[Optional[Union['BrowserMonitorPerformanceThresholdsArgs', 'BrowserMonitorPerformanceThresholdsArgsDict']]] = None) -> 'BrowserMonitorPerformance':
+            thresholds: pulumi.Input[Optional[Union['BrowserMonitorPerformanceThresholdsArgs', 'BrowserMonitorPerformanceThresholdsArgsDict', 'outputs.BrowserMonitorPerformanceThresholds']]] = None) -> 'BrowserMonitorPerformance':
         """
         Get an existing BrowserMonitorPerformance resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -378,7 +378,7 @@ class BrowserMonitorPerformance(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (SYNTHETIC_TEST)
-        :param pulumi.Input[Union['BrowserMonitorPerformanceThresholdsArgs', 'BrowserMonitorPerformanceThresholdsArgsDict']] thresholds: Performance thresholds
+        :param pulumi.Input[Union['BrowserMonitorPerformanceThresholdsArgs', 'BrowserMonitorPerformanceThresholdsArgsDict', 'outputs.BrowserMonitorPerformanceThresholds']] thresholds: Performance thresholds
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

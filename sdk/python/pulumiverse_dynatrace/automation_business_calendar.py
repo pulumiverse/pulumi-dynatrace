@@ -266,7 +266,7 @@ class AutomationBusinessCalendar(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
-                 holidays: pulumi.Input[Optional[Union['AutomationBusinessCalendarHolidaysArgs', 'AutomationBusinessCalendarHolidaysArgsDict']]] = None,
+                 holidays: pulumi.Input[Optional[Union['AutomationBusinessCalendarHolidaysArgs', 'AutomationBusinessCalendarHolidaysArgsDict', 'outputs.AutomationBusinessCalendarHolidays']]] = None,
                  title: pulumi.Input[Optional[_builtins.str]] = None,
                  valid_from: pulumi.Input[Optional[_builtins.str]] = None,
                  valid_to: pulumi.Input[Optional[_builtins.str]] = None,
@@ -288,7 +288,7 @@ class AutomationBusinessCalendar(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] description: An optional description for the Business Calendar
-        :param pulumi.Input[Union['AutomationBusinessCalendarHolidaysArgs', 'AutomationBusinessCalendarHolidaysArgsDict']] holidays: A list of holidays valid in this calendar
+        :param pulumi.Input[Union['AutomationBusinessCalendarHolidaysArgs', 'AutomationBusinessCalendarHolidaysArgsDict', 'outputs.AutomationBusinessCalendarHolidays']] holidays: A list of holidays valid in this calendar
         :param pulumi.Input[_builtins.str] title: The title / name of the Business Calendar
         :param pulumi.Input[_builtins.str] valid_from: The date from when on this calendar is valid from. Example: `2023-07-04` for July 4th 2023
         :param pulumi.Input[_builtins.str] valid_to: The date until when on this calendar is valid to. Example: `2023-07-04` for July 4th 2023
@@ -329,7 +329,7 @@ class AutomationBusinessCalendar(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
-                 holidays: pulumi.Input[Optional[Union['AutomationBusinessCalendarHolidaysArgs', 'AutomationBusinessCalendarHolidaysArgsDict']]] = None,
+                 holidays: pulumi.Input[Optional[Union['AutomationBusinessCalendarHolidaysArgs', 'AutomationBusinessCalendarHolidaysArgsDict', 'outputs.AutomationBusinessCalendarHolidays']]] = None,
                  title: pulumi.Input[Optional[_builtins.str]] = None,
                  valid_from: pulumi.Input[Optional[_builtins.str]] = None,
                  valid_to: pulumi.Input[Optional[_builtins.str]] = None,
@@ -364,7 +364,7 @@ class AutomationBusinessCalendar(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
-            holidays: pulumi.Input[Optional[Union['AutomationBusinessCalendarHolidaysArgs', 'AutomationBusinessCalendarHolidaysArgsDict']]] = None,
+            holidays: pulumi.Input[Optional[Union['AutomationBusinessCalendarHolidaysArgs', 'AutomationBusinessCalendarHolidaysArgsDict', 'outputs.AutomationBusinessCalendarHolidays']]] = None,
             title: pulumi.Input[Optional[_builtins.str]] = None,
             valid_from: pulumi.Input[Optional[_builtins.str]] = None,
             valid_to: pulumi.Input[Optional[_builtins.str]] = None,
@@ -378,7 +378,7 @@ class AutomationBusinessCalendar(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] description: An optional description for the Business Calendar
-        :param pulumi.Input[Union['AutomationBusinessCalendarHolidaysArgs', 'AutomationBusinessCalendarHolidaysArgsDict']] holidays: A list of holidays valid in this calendar
+        :param pulumi.Input[Union['AutomationBusinessCalendarHolidaysArgs', 'AutomationBusinessCalendarHolidaysArgsDict', 'outputs.AutomationBusinessCalendarHolidays']] holidays: A list of holidays valid in this calendar
         :param pulumi.Input[_builtins.str] title: The title / name of the Business Calendar
         :param pulumi.Input[_builtins.str] valid_from: The date from when on this calendar is valid from. Example: `2023-07-04` for July 4th 2023
         :param pulumi.Input[_builtins.str] valid_to: The date until when on this calendar is valid to. Example: `2023-07-04` for July 4th 2023

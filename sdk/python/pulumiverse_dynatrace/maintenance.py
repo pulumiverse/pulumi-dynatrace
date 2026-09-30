@@ -204,10 +204,10 @@ class Maintenance(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-                 filters: pulumi.Input[Optional[Union['MaintenanceFiltersArgs', 'MaintenanceFiltersArgsDict']]] = None,
-                 general_properties: pulumi.Input[Optional[Union['MaintenanceGeneralPropertiesArgs', 'MaintenanceGeneralPropertiesArgsDict']]] = None,
+                 filters: pulumi.Input[Optional[Union['MaintenanceFiltersArgs', 'MaintenanceFiltersArgsDict', 'outputs.MaintenanceFilters']]] = None,
+                 general_properties: pulumi.Input[Optional[Union['MaintenanceGeneralPropertiesArgs', 'MaintenanceGeneralPropertiesArgsDict', 'outputs.MaintenanceGeneralProperties']]] = None,
                  legacy_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 schedule: pulumi.Input[Optional[Union['MaintenanceScheduleArgs', 'MaintenanceScheduleArgsDict']]] = None,
+                 schedule: pulumi.Input[Optional[Union['MaintenanceScheduleArgs', 'MaintenanceScheduleArgsDict', 'outputs.MaintenanceSchedule']]] = None,
                  __props__=None):
         """
         > **Warning** This resource has been deprecated in favor of dynatrace_maintenance_windows.
@@ -230,11 +230,11 @@ class Maintenance(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[Union['MaintenanceFiltersArgs', 'MaintenanceFiltersArgsDict']] filters: ## Filters
+        :param pulumi.Input[Union['MaintenanceFiltersArgs', 'MaintenanceFiltersArgsDict', 'outputs.MaintenanceFilters']] filters: ## Filters
                Add filters to limit the scope of maintenance to only select matching entities. If no filter is defined, the maintenance window is valid for the whole environment. Each filter is evaluated separately (**OR**).
-        :param pulumi.Input[Union['MaintenanceGeneralPropertiesArgs', 'MaintenanceGeneralPropertiesArgsDict']] general_properties: The general properties of the maintenance window
+        :param pulumi.Input[Union['MaintenanceGeneralPropertiesArgs', 'MaintenanceGeneralPropertiesArgsDict', 'outputs.MaintenanceGeneralProperties']] general_properties: The general properties of the maintenance window
         :param pulumi.Input[_builtins.str] legacy_id: The ID of this setting when referred to by the Config REST API V1
-        :param pulumi.Input[Union['MaintenanceScheduleArgs', 'MaintenanceScheduleArgsDict']] schedule: The schedule of the maintenance window
+        :param pulumi.Input[Union['MaintenanceScheduleArgs', 'MaintenanceScheduleArgsDict', 'outputs.MaintenanceSchedule']] schedule: The schedule of the maintenance window
         """
         ...
     @overload
@@ -276,10 +276,10 @@ class Maintenance(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-                 filters: pulumi.Input[Optional[Union['MaintenanceFiltersArgs', 'MaintenanceFiltersArgsDict']]] = None,
-                 general_properties: pulumi.Input[Optional[Union['MaintenanceGeneralPropertiesArgs', 'MaintenanceGeneralPropertiesArgsDict']]] = None,
+                 filters: pulumi.Input[Optional[Union['MaintenanceFiltersArgs', 'MaintenanceFiltersArgsDict', 'outputs.MaintenanceFilters']]] = None,
+                 general_properties: pulumi.Input[Optional[Union['MaintenanceGeneralPropertiesArgs', 'MaintenanceGeneralPropertiesArgsDict', 'outputs.MaintenanceGeneralProperties']]] = None,
                  legacy_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 schedule: pulumi.Input[Optional[Union['MaintenanceScheduleArgs', 'MaintenanceScheduleArgsDict']]] = None,
+                 schedule: pulumi.Input[Optional[Union['MaintenanceScheduleArgs', 'MaintenanceScheduleArgsDict', 'outputs.MaintenanceSchedule']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -311,10 +311,10 @@ class Maintenance(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-            filters: pulumi.Input[Optional[Union['MaintenanceFiltersArgs', 'MaintenanceFiltersArgsDict']]] = None,
-            general_properties: pulumi.Input[Optional[Union['MaintenanceGeneralPropertiesArgs', 'MaintenanceGeneralPropertiesArgsDict']]] = None,
+            filters: pulumi.Input[Optional[Union['MaintenanceFiltersArgs', 'MaintenanceFiltersArgsDict', 'outputs.MaintenanceFilters']]] = None,
+            general_properties: pulumi.Input[Optional[Union['MaintenanceGeneralPropertiesArgs', 'MaintenanceGeneralPropertiesArgsDict', 'outputs.MaintenanceGeneralProperties']]] = None,
             legacy_id: pulumi.Input[Optional[_builtins.str]] = None,
-            schedule: pulumi.Input[Optional[Union['MaintenanceScheduleArgs', 'MaintenanceScheduleArgsDict']]] = None) -> 'Maintenance':
+            schedule: pulumi.Input[Optional[Union['MaintenanceScheduleArgs', 'MaintenanceScheduleArgsDict', 'outputs.MaintenanceSchedule']]] = None) -> 'Maintenance':
         """
         Get an existing Maintenance resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -323,11 +323,11 @@ class Maintenance(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[Union['MaintenanceFiltersArgs', 'MaintenanceFiltersArgsDict']] filters: ## Filters
+        :param pulumi.Input[Union['MaintenanceFiltersArgs', 'MaintenanceFiltersArgsDict', 'outputs.MaintenanceFilters']] filters: ## Filters
                Add filters to limit the scope of maintenance to only select matching entities. If no filter is defined, the maintenance window is valid for the whole environment. Each filter is evaluated separately (**OR**).
-        :param pulumi.Input[Union['MaintenanceGeneralPropertiesArgs', 'MaintenanceGeneralPropertiesArgsDict']] general_properties: The general properties of the maintenance window
+        :param pulumi.Input[Union['MaintenanceGeneralPropertiesArgs', 'MaintenanceGeneralPropertiesArgsDict', 'outputs.MaintenanceGeneralProperties']] general_properties: The general properties of the maintenance window
         :param pulumi.Input[_builtins.str] legacy_id: The ID of this setting when referred to by the Config REST API V1
-        :param pulumi.Input[Union['MaintenanceScheduleArgs', 'MaintenanceScheduleArgsDict']] schedule: The schedule of the maintenance window
+        :param pulumi.Input[Union['MaintenanceScheduleArgs', 'MaintenanceScheduleArgsDict', 'outputs.MaintenanceSchedule']] schedule: The schedule of the maintenance window
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

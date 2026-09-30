@@ -516,8 +516,8 @@ class OpenpipelineV2DavisProblemsDataforwarding(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 aws_connection: pulumi.Input[Optional[Union['OpenpipelineV2DavisProblemsDataforwardingAwsConnectionArgs', 'OpenpipelineV2DavisProblemsDataforwardingAwsConnectionArgsDict']]] = None,
-                 azure_connection: pulumi.Input[Optional[Union['OpenpipelineV2DavisProblemsDataforwardingAzureConnectionArgs', 'OpenpipelineV2DavisProblemsDataforwardingAzureConnectionArgsDict']]] = None,
+                 aws_connection: pulumi.Input[Optional[Union['OpenpipelineV2DavisProblemsDataforwardingAwsConnectionArgs', 'OpenpipelineV2DavisProblemsDataforwardingAwsConnectionArgsDict', 'outputs.OpenpipelineV2DavisProblemsDataforwardingAwsConnection']]] = None,
+                 azure_connection: pulumi.Input[Optional[Union['OpenpipelineV2DavisProblemsDataforwardingAzureConnectionArgs', 'OpenpipelineV2DavisProblemsDataforwardingAzureConnectionArgsDict', 'outputs.OpenpipelineV2DavisProblemsDataforwardingAzureConnection']]] = None,
                  builtin_ingest_sources: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  builtin_pipelines: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  bulk_pattern: pulumi.Input[Optional[_builtins.str]] = None,
@@ -526,11 +526,11 @@ class OpenpipelineV2DavisProblemsDataforwarding(pulumi.CustomResource):
                  data_forwarding_type: pulumi.Input[Optional[_builtins.str]] = None,
                  enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  forwarding_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 gcp_connection: pulumi.Input[Optional[Union['OpenpipelineV2DavisProblemsDataforwardingGcpConnectionArgs', 'OpenpipelineV2DavisProblemsDataforwardingGcpConnectionArgsDict']]] = None,
+                 gcp_connection: pulumi.Input[Optional[Union['OpenpipelineV2DavisProblemsDataforwardingGcpConnectionArgs', 'OpenpipelineV2DavisProblemsDataforwardingGcpConnectionArgsDict', 'outputs.OpenpipelineV2DavisProblemsDataforwardingGcpConnection']]] = None,
                  ingest_sources: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  matcher: pulumi.Input[Optional[_builtins.str]] = None,
                  pipelines: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 processing: pulumi.Input[Optional[Union['OpenpipelineV2DavisProblemsDataforwardingProcessingArgs', 'OpenpipelineV2DavisProblemsDataforwardingProcessingArgsDict']]] = None,
+                 processing: pulumi.Input[Optional[Union['OpenpipelineV2DavisProblemsDataforwardingProcessingArgs', 'OpenpipelineV2DavisProblemsDataforwardingProcessingArgsDict', 'outputs.OpenpipelineV2DavisProblemsDataforwardingProcessing']]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -677,8 +677,8 @@ class OpenpipelineV2DavisProblemsDataforwarding(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['OpenpipelineV2DavisProblemsDataforwardingAwsConnectionArgs', 'OpenpipelineV2DavisProblemsDataforwardingAwsConnectionArgsDict']] aws_connection: AWS Connection
-        :param pulumi.Input[Union['OpenpipelineV2DavisProblemsDataforwardingAzureConnectionArgs', 'OpenpipelineV2DavisProblemsDataforwardingAzureConnectionArgsDict']] azure_connection: Azure Connection
+        :param pulumi.Input[Union['OpenpipelineV2DavisProblemsDataforwardingAwsConnectionArgs', 'OpenpipelineV2DavisProblemsDataforwardingAwsConnectionArgsDict', 'outputs.OpenpipelineV2DavisProblemsDataforwardingAwsConnection']] aws_connection: AWS Connection
+        :param pulumi.Input[Union['OpenpipelineV2DavisProblemsDataforwardingAzureConnectionArgs', 'OpenpipelineV2DavisProblemsDataforwardingAzureConnectionArgsDict', 'outputs.OpenpipelineV2DavisProblemsDataforwardingAzureConnection']] azure_connection: Azure Connection
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] builtin_ingest_sources: List of built-in ingest sources
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] builtin_pipelines: Built-in pipelines
         :param pulumi.Input[_builtins.str] bulk_pattern: Segmentation and prefix of the data
@@ -687,11 +687,11 @@ class OpenpipelineV2DavisProblemsDataforwarding(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] data_forwarding_type: Pipeline Type. Possible values: `processed`, `raw`
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] forwarding_name: Forwarding name
-        :param pulumi.Input[Union['OpenpipelineV2DavisProblemsDataforwardingGcpConnectionArgs', 'OpenpipelineV2DavisProblemsDataforwardingGcpConnectionArgsDict']] gcp_connection: GCP Connection
+        :param pulumi.Input[Union['OpenpipelineV2DavisProblemsDataforwardingGcpConnectionArgs', 'OpenpipelineV2DavisProblemsDataforwardingGcpConnectionArgsDict', 'outputs.OpenpipelineV2DavisProblemsDataforwardingGcpConnection']] gcp_connection: GCP Connection
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] ingest_sources: List of ingest sources
         :param pulumi.Input[_builtins.str] matcher: Query which determines whether the record should be routed to the target pipeline of this rule.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] pipelines: Pipelines
-        :param pulumi.Input[Union['OpenpipelineV2DavisProblemsDataforwardingProcessingArgs', 'OpenpipelineV2DavisProblemsDataforwardingProcessingArgsDict']] processing: Processing
+        :param pulumi.Input[Union['OpenpipelineV2DavisProblemsDataforwardingProcessingArgs', 'OpenpipelineV2DavisProblemsDataforwardingProcessingArgsDict', 'outputs.OpenpipelineV2DavisProblemsDataforwardingProcessing']] processing: Processing
         """
         ...
     @overload
@@ -857,8 +857,8 @@ class OpenpipelineV2DavisProblemsDataforwarding(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 aws_connection: pulumi.Input[Optional[Union['OpenpipelineV2DavisProblemsDataforwardingAwsConnectionArgs', 'OpenpipelineV2DavisProblemsDataforwardingAwsConnectionArgsDict']]] = None,
-                 azure_connection: pulumi.Input[Optional[Union['OpenpipelineV2DavisProblemsDataforwardingAzureConnectionArgs', 'OpenpipelineV2DavisProblemsDataforwardingAzureConnectionArgsDict']]] = None,
+                 aws_connection: pulumi.Input[Optional[Union['OpenpipelineV2DavisProblemsDataforwardingAwsConnectionArgs', 'OpenpipelineV2DavisProblemsDataforwardingAwsConnectionArgsDict', 'outputs.OpenpipelineV2DavisProblemsDataforwardingAwsConnection']]] = None,
+                 azure_connection: pulumi.Input[Optional[Union['OpenpipelineV2DavisProblemsDataforwardingAzureConnectionArgs', 'OpenpipelineV2DavisProblemsDataforwardingAzureConnectionArgsDict', 'outputs.OpenpipelineV2DavisProblemsDataforwardingAzureConnection']]] = None,
                  builtin_ingest_sources: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  builtin_pipelines: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  bulk_pattern: pulumi.Input[Optional[_builtins.str]] = None,
@@ -867,11 +867,11 @@ class OpenpipelineV2DavisProblemsDataforwarding(pulumi.CustomResource):
                  data_forwarding_type: pulumi.Input[Optional[_builtins.str]] = None,
                  enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  forwarding_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 gcp_connection: pulumi.Input[Optional[Union['OpenpipelineV2DavisProblemsDataforwardingGcpConnectionArgs', 'OpenpipelineV2DavisProblemsDataforwardingGcpConnectionArgsDict']]] = None,
+                 gcp_connection: pulumi.Input[Optional[Union['OpenpipelineV2DavisProblemsDataforwardingGcpConnectionArgs', 'OpenpipelineV2DavisProblemsDataforwardingGcpConnectionArgsDict', 'outputs.OpenpipelineV2DavisProblemsDataforwardingGcpConnection']]] = None,
                  ingest_sources: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  matcher: pulumi.Input[Optional[_builtins.str]] = None,
                  pipelines: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 processing: pulumi.Input[Optional[Union['OpenpipelineV2DavisProblemsDataforwardingProcessingArgs', 'OpenpipelineV2DavisProblemsDataforwardingProcessingArgsDict']]] = None,
+                 processing: pulumi.Input[Optional[Union['OpenpipelineV2DavisProblemsDataforwardingProcessingArgs', 'OpenpipelineV2DavisProblemsDataforwardingProcessingArgsDict', 'outputs.OpenpipelineV2DavisProblemsDataforwardingProcessing']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -918,8 +918,8 @@ class OpenpipelineV2DavisProblemsDataforwarding(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            aws_connection: pulumi.Input[Optional[Union['OpenpipelineV2DavisProblemsDataforwardingAwsConnectionArgs', 'OpenpipelineV2DavisProblemsDataforwardingAwsConnectionArgsDict']]] = None,
-            azure_connection: pulumi.Input[Optional[Union['OpenpipelineV2DavisProblemsDataforwardingAzureConnectionArgs', 'OpenpipelineV2DavisProblemsDataforwardingAzureConnectionArgsDict']]] = None,
+            aws_connection: pulumi.Input[Optional[Union['OpenpipelineV2DavisProblemsDataforwardingAwsConnectionArgs', 'OpenpipelineV2DavisProblemsDataforwardingAwsConnectionArgsDict', 'outputs.OpenpipelineV2DavisProblemsDataforwardingAwsConnection']]] = None,
+            azure_connection: pulumi.Input[Optional[Union['OpenpipelineV2DavisProblemsDataforwardingAzureConnectionArgs', 'OpenpipelineV2DavisProblemsDataforwardingAzureConnectionArgsDict', 'outputs.OpenpipelineV2DavisProblemsDataforwardingAzureConnection']]] = None,
             builtin_ingest_sources: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             builtin_pipelines: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             bulk_pattern: pulumi.Input[Optional[_builtins.str]] = None,
@@ -928,11 +928,11 @@ class OpenpipelineV2DavisProblemsDataforwarding(pulumi.CustomResource):
             data_forwarding_type: pulumi.Input[Optional[_builtins.str]] = None,
             enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             forwarding_name: pulumi.Input[Optional[_builtins.str]] = None,
-            gcp_connection: pulumi.Input[Optional[Union['OpenpipelineV2DavisProblemsDataforwardingGcpConnectionArgs', 'OpenpipelineV2DavisProblemsDataforwardingGcpConnectionArgsDict']]] = None,
+            gcp_connection: pulumi.Input[Optional[Union['OpenpipelineV2DavisProblemsDataforwardingGcpConnectionArgs', 'OpenpipelineV2DavisProblemsDataforwardingGcpConnectionArgsDict', 'outputs.OpenpipelineV2DavisProblemsDataforwardingGcpConnection']]] = None,
             ingest_sources: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             matcher: pulumi.Input[Optional[_builtins.str]] = None,
             pipelines: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            processing: pulumi.Input[Optional[Union['OpenpipelineV2DavisProblemsDataforwardingProcessingArgs', 'OpenpipelineV2DavisProblemsDataforwardingProcessingArgsDict']]] = None) -> 'OpenpipelineV2DavisProblemsDataforwarding':
+            processing: pulumi.Input[Optional[Union['OpenpipelineV2DavisProblemsDataforwardingProcessingArgs', 'OpenpipelineV2DavisProblemsDataforwardingProcessingArgsDict', 'outputs.OpenpipelineV2DavisProblemsDataforwardingProcessing']]] = None) -> 'OpenpipelineV2DavisProblemsDataforwarding':
         """
         Get an existing OpenpipelineV2DavisProblemsDataforwarding resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -940,8 +940,8 @@ class OpenpipelineV2DavisProblemsDataforwarding(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['OpenpipelineV2DavisProblemsDataforwardingAwsConnectionArgs', 'OpenpipelineV2DavisProblemsDataforwardingAwsConnectionArgsDict']] aws_connection: AWS Connection
-        :param pulumi.Input[Union['OpenpipelineV2DavisProblemsDataforwardingAzureConnectionArgs', 'OpenpipelineV2DavisProblemsDataforwardingAzureConnectionArgsDict']] azure_connection: Azure Connection
+        :param pulumi.Input[Union['OpenpipelineV2DavisProblemsDataforwardingAwsConnectionArgs', 'OpenpipelineV2DavisProblemsDataforwardingAwsConnectionArgsDict', 'outputs.OpenpipelineV2DavisProblemsDataforwardingAwsConnection']] aws_connection: AWS Connection
+        :param pulumi.Input[Union['OpenpipelineV2DavisProblemsDataforwardingAzureConnectionArgs', 'OpenpipelineV2DavisProblemsDataforwardingAzureConnectionArgsDict', 'outputs.OpenpipelineV2DavisProblemsDataforwardingAzureConnection']] azure_connection: Azure Connection
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] builtin_ingest_sources: List of built-in ingest sources
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] builtin_pipelines: Built-in pipelines
         :param pulumi.Input[_builtins.str] bulk_pattern: Segmentation and prefix of the data
@@ -950,11 +950,11 @@ class OpenpipelineV2DavisProblemsDataforwarding(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] data_forwarding_type: Pipeline Type. Possible values: `processed`, `raw`
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] forwarding_name: Forwarding name
-        :param pulumi.Input[Union['OpenpipelineV2DavisProblemsDataforwardingGcpConnectionArgs', 'OpenpipelineV2DavisProblemsDataforwardingGcpConnectionArgsDict']] gcp_connection: GCP Connection
+        :param pulumi.Input[Union['OpenpipelineV2DavisProblemsDataforwardingGcpConnectionArgs', 'OpenpipelineV2DavisProblemsDataforwardingGcpConnectionArgsDict', 'outputs.OpenpipelineV2DavisProblemsDataforwardingGcpConnection']] gcp_connection: GCP Connection
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] ingest_sources: List of ingest sources
         :param pulumi.Input[_builtins.str] matcher: Query which determines whether the record should be routed to the target pipeline of this rule.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] pipelines: Pipelines
-        :param pulumi.Input[Union['OpenpipelineV2DavisProblemsDataforwardingProcessingArgs', 'OpenpipelineV2DavisProblemsDataforwardingProcessingArgsDict']] processing: Processing
+        :param pulumi.Input[Union['OpenpipelineV2DavisProblemsDataforwardingProcessingArgs', 'OpenpipelineV2DavisProblemsDataforwardingProcessingArgsDict', 'outputs.OpenpipelineV2DavisProblemsDataforwardingProcessing']] processing: Processing
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

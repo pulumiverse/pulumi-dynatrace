@@ -269,9 +269,9 @@ class BusinessEventsProcessing(pulumi.CustomResource):
                  insert_after: pulumi.Input[Optional[_builtins.str]] = None,
                  matcher: pulumi.Input[Optional[_builtins.str]] = None,
                  rule_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 rule_testing: pulumi.Input[Optional[Union['BusinessEventsProcessingRuleTestingArgs', 'BusinessEventsProcessingRuleTestingArgsDict']]] = None,
+                 rule_testing: pulumi.Input[Optional[Union['BusinessEventsProcessingRuleTestingArgs', 'BusinessEventsProcessingRuleTestingArgsDict', 'outputs.BusinessEventsProcessingRuleTesting']]] = None,
                  script: pulumi.Input[Optional[_builtins.str]] = None,
-                 transformation_fields: pulumi.Input[Optional[Union['BusinessEventsProcessingTransformationFieldsArgs', 'BusinessEventsProcessingTransformationFieldsArgsDict']]] = None,
+                 transformation_fields: pulumi.Input[Optional[Union['BusinessEventsProcessingTransformationFieldsArgs', 'BusinessEventsProcessingTransformationFieldsArgsDict', 'outputs.BusinessEventsProcessingTransformationFields']]] = None,
                  __props__=None):
         """
         > **Warning** This resource has been deprecated in favor of OpenPipeline.
@@ -298,10 +298,10 @@ class BusinessEventsProcessing(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[_builtins.str] matcher: [See our documentation](https://dt-url.net/bp234rv)
         :param pulumi.Input[_builtins.str] rule_name: Rule name
-        :param pulumi.Input[Union['BusinessEventsProcessingRuleTestingArgs', 'BusinessEventsProcessingRuleTestingArgsDict']] rule_testing: ## Rule testing
+        :param pulumi.Input[Union['BusinessEventsProcessingRuleTestingArgs', 'BusinessEventsProcessingRuleTestingArgsDict', 'outputs.BusinessEventsProcessingRuleTesting']] rule_testing: ## Rule testing
                ### 1. Paste an event sample
         :param pulumi.Input[_builtins.str] script: [See our documentation](https://dt-url.net/pz030w5)
-        :param pulumi.Input[Union['BusinessEventsProcessingTransformationFieldsArgs', 'BusinessEventsProcessingTransformationFieldsArgsDict']] transformation_fields: Transformation fields
+        :param pulumi.Input[Union['BusinessEventsProcessingTransformationFieldsArgs', 'BusinessEventsProcessingTransformationFieldsArgsDict', 'outputs.BusinessEventsProcessingTransformationFields']] transformation_fields: Transformation fields
         """
         ...
     @overload
@@ -347,9 +347,9 @@ class BusinessEventsProcessing(pulumi.CustomResource):
                  insert_after: pulumi.Input[Optional[_builtins.str]] = None,
                  matcher: pulumi.Input[Optional[_builtins.str]] = None,
                  rule_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 rule_testing: pulumi.Input[Optional[Union['BusinessEventsProcessingRuleTestingArgs', 'BusinessEventsProcessingRuleTestingArgsDict']]] = None,
+                 rule_testing: pulumi.Input[Optional[Union['BusinessEventsProcessingRuleTestingArgs', 'BusinessEventsProcessingRuleTestingArgsDict', 'outputs.BusinessEventsProcessingRuleTesting']]] = None,
                  script: pulumi.Input[Optional[_builtins.str]] = None,
-                 transformation_fields: pulumi.Input[Optional[Union['BusinessEventsProcessingTransformationFieldsArgs', 'BusinessEventsProcessingTransformationFieldsArgsDict']]] = None,
+                 transformation_fields: pulumi.Input[Optional[Union['BusinessEventsProcessingTransformationFieldsArgs', 'BusinessEventsProcessingTransformationFieldsArgsDict', 'outputs.BusinessEventsProcessingTransformationFields']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -390,9 +390,9 @@ class BusinessEventsProcessing(pulumi.CustomResource):
             insert_after: pulumi.Input[Optional[_builtins.str]] = None,
             matcher: pulumi.Input[Optional[_builtins.str]] = None,
             rule_name: pulumi.Input[Optional[_builtins.str]] = None,
-            rule_testing: pulumi.Input[Optional[Union['BusinessEventsProcessingRuleTestingArgs', 'BusinessEventsProcessingRuleTestingArgsDict']]] = None,
+            rule_testing: pulumi.Input[Optional[Union['BusinessEventsProcessingRuleTestingArgs', 'BusinessEventsProcessingRuleTestingArgsDict', 'outputs.BusinessEventsProcessingRuleTesting']]] = None,
             script: pulumi.Input[Optional[_builtins.str]] = None,
-            transformation_fields: pulumi.Input[Optional[Union['BusinessEventsProcessingTransformationFieldsArgs', 'BusinessEventsProcessingTransformationFieldsArgsDict']]] = None) -> 'BusinessEventsProcessing':
+            transformation_fields: pulumi.Input[Optional[Union['BusinessEventsProcessingTransformationFieldsArgs', 'BusinessEventsProcessingTransformationFieldsArgsDict', 'outputs.BusinessEventsProcessingTransformationFields']]] = None) -> 'BusinessEventsProcessing':
         """
         Get an existing BusinessEventsProcessing resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -404,10 +404,10 @@ class BusinessEventsProcessing(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[_builtins.str] matcher: [See our documentation](https://dt-url.net/bp234rv)
         :param pulumi.Input[_builtins.str] rule_name: Rule name
-        :param pulumi.Input[Union['BusinessEventsProcessingRuleTestingArgs', 'BusinessEventsProcessingRuleTestingArgsDict']] rule_testing: ## Rule testing
+        :param pulumi.Input[Union['BusinessEventsProcessingRuleTestingArgs', 'BusinessEventsProcessingRuleTestingArgsDict', 'outputs.BusinessEventsProcessingRuleTesting']] rule_testing: ## Rule testing
                ### 1. Paste an event sample
         :param pulumi.Input[_builtins.str] script: [See our documentation](https://dt-url.net/pz030w5)
-        :param pulumi.Input[Union['BusinessEventsProcessingTransformationFieldsArgs', 'BusinessEventsProcessingTransformationFieldsArgsDict']] transformation_fields: Transformation fields
+        :param pulumi.Input[Union['BusinessEventsProcessingTransformationFieldsArgs', 'BusinessEventsProcessingTransformationFieldsArgsDict', 'outputs.BusinessEventsProcessingTransformationFields']] transformation_fields: Transformation fields
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

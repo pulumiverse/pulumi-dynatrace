@@ -105,7 +105,7 @@ class MobileAppRequestErrors(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 error_rules: pulumi.Input[Optional[Union['MobileAppRequestErrorsErrorRulesArgs', 'MobileAppRequestErrorsErrorRulesArgsDict']]] = None,
+                 error_rules: pulumi.Input[Optional[Union['MobileAppRequestErrorsErrorRulesArgs', 'MobileAppRequestErrorsErrorRulesArgsDict', 'outputs.MobileAppRequestErrorsErrorRules']]] = None,
                  scope: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -150,7 +150,7 @@ class MobileAppRequestErrors(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['MobileAppRequestErrorsErrorRulesArgs', 'MobileAppRequestErrorsErrorRulesArgsDict']] error_rules: no documentation available
+        :param pulumi.Input[Union['MobileAppRequestErrorsErrorRulesArgs', 'MobileAppRequestErrorsErrorRulesArgsDict', 'outputs.MobileAppRequestErrorsErrorRules']] error_rules: no documentation available
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (MOBILE*APPLICATION, CUSTOM*APPLICATION)
         """
         ...
@@ -214,7 +214,7 @@ class MobileAppRequestErrors(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 error_rules: pulumi.Input[Optional[Union['MobileAppRequestErrorsErrorRulesArgs', 'MobileAppRequestErrorsErrorRulesArgsDict']]] = None,
+                 error_rules: pulumi.Input[Optional[Union['MobileAppRequestErrorsErrorRulesArgs', 'MobileAppRequestErrorsErrorRulesArgsDict', 'outputs.MobileAppRequestErrorsErrorRules']]] = None,
                  scope: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -239,7 +239,7 @@ class MobileAppRequestErrors(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            error_rules: pulumi.Input[Optional[Union['MobileAppRequestErrorsErrorRulesArgs', 'MobileAppRequestErrorsErrorRulesArgsDict']]] = None,
+            error_rules: pulumi.Input[Optional[Union['MobileAppRequestErrorsErrorRulesArgs', 'MobileAppRequestErrorsErrorRulesArgsDict', 'outputs.MobileAppRequestErrorsErrorRules']]] = None,
             scope: pulumi.Input[Optional[_builtins.str]] = None) -> 'MobileAppRequestErrors':
         """
         Get an existing MobileAppRequestErrors resource's state with the given name, id, and optional extra
@@ -248,7 +248,7 @@ class MobileAppRequestErrors(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['MobileAppRequestErrorsErrorRulesArgs', 'MobileAppRequestErrorsErrorRulesArgsDict']] error_rules: no documentation available
+        :param pulumi.Input[Union['MobileAppRequestErrorsErrorRulesArgs', 'MobileAppRequestErrorsErrorRulesArgsDict', 'outputs.MobileAppRequestErrorsErrorRules']] error_rules: no documentation available
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (MOBILE*APPLICATION, CUSTOM*APPLICATION)
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

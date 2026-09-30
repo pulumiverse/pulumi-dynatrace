@@ -331,12 +331,12 @@ class OpenpipelineV2DavisProblemsIngestsources(pulumi.CustomResource):
                  default_bucket: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-                 metadata_list: pulumi.Input[Optional[Union['OpenpipelineV2DavisProblemsIngestsourcesMetadataListArgs', 'OpenpipelineV2DavisProblemsIngestsourcesMetadataListArgsDict']]] = None,
+                 metadata_list: pulumi.Input[Optional[Union['OpenpipelineV2DavisProblemsIngestsourcesMetadataListArgs', 'OpenpipelineV2DavisProblemsIngestsourcesMetadataListArgsDict', 'outputs.OpenpipelineV2DavisProblemsIngestsourcesMetadataList']]] = None,
                  path_segment: pulumi.Input[Optional[_builtins.str]] = None,
-                 processing: pulumi.Input[Optional[Union['OpenpipelineV2DavisProblemsIngestsourcesProcessingArgs', 'OpenpipelineV2DavisProblemsIngestsourcesProcessingArgsDict']]] = None,
+                 processing: pulumi.Input[Optional[Union['OpenpipelineV2DavisProblemsIngestsourcesProcessingArgs', 'OpenpipelineV2DavisProblemsIngestsourcesProcessingArgsDict', 'outputs.OpenpipelineV2DavisProblemsIngestsourcesProcessing']]] = None,
                  source: pulumi.Input[Optional[_builtins.str]] = None,
                  source_type: pulumi.Input[Optional[_builtins.str]] = None,
-                 static_routing: pulumi.Input[Optional[Union['OpenpipelineV2DavisProblemsIngestsourcesStaticRoutingArgs', 'OpenpipelineV2DavisProblemsIngestsourcesStaticRoutingArgsDict']]] = None,
+                 static_routing: pulumi.Input[Optional[Union['OpenpipelineV2DavisProblemsIngestsourcesStaticRoutingArgs', 'OpenpipelineV2DavisProblemsIngestsourcesStaticRoutingArgsDict', 'outputs.OpenpipelineV2DavisProblemsIngestsourcesStaticRouting']]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -476,12 +476,12 @@ class OpenpipelineV2DavisProblemsIngestsources(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] default_bucket: Default Bucket
         :param pulumi.Input[_builtins.str] display_name: Endpoint display name
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[Union['OpenpipelineV2DavisProblemsIngestsourcesMetadataListArgs', 'OpenpipelineV2DavisProblemsIngestsourcesMetadataListArgsDict']] metadata_list: Ingest source metadata list
+        :param pulumi.Input[Union['OpenpipelineV2DavisProblemsIngestsourcesMetadataListArgs', 'OpenpipelineV2DavisProblemsIngestsourcesMetadataListArgsDict', 'outputs.OpenpipelineV2DavisProblemsIngestsourcesMetadataList']] metadata_list: Ingest source metadata list
         :param pulumi.Input[_builtins.str] path_segment: Endpoint segment
-        :param pulumi.Input[Union['OpenpipelineV2DavisProblemsIngestsourcesProcessingArgs', 'OpenpipelineV2DavisProblemsIngestsourcesProcessingArgsDict']] processing: Processing stage
+        :param pulumi.Input[Union['OpenpipelineV2DavisProblemsIngestsourcesProcessingArgs', 'OpenpipelineV2DavisProblemsIngestsourcesProcessingArgsDict', 'outputs.OpenpipelineV2DavisProblemsIngestsourcesProcessing']] processing: Processing stage
         :param pulumi.Input[_builtins.str] source: Source
         :param pulumi.Input[_builtins.str] source_type: Source Type. Possible values: `extension`, `http`
-        :param pulumi.Input[Union['OpenpipelineV2DavisProblemsIngestsourcesStaticRoutingArgs', 'OpenpipelineV2DavisProblemsIngestsourcesStaticRoutingArgsDict']] static_routing: Static routing of endpoint
+        :param pulumi.Input[Union['OpenpipelineV2DavisProblemsIngestsourcesStaticRoutingArgs', 'OpenpipelineV2DavisProblemsIngestsourcesStaticRoutingArgsDict', 'outputs.OpenpipelineV2DavisProblemsIngestsourcesStaticRouting']] static_routing: Static routing of endpoint
         """
         ...
     @overload
@@ -640,12 +640,12 @@ class OpenpipelineV2DavisProblemsIngestsources(pulumi.CustomResource):
                  default_bucket: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-                 metadata_list: pulumi.Input[Optional[Union['OpenpipelineV2DavisProblemsIngestsourcesMetadataListArgs', 'OpenpipelineV2DavisProblemsIngestsourcesMetadataListArgsDict']]] = None,
+                 metadata_list: pulumi.Input[Optional[Union['OpenpipelineV2DavisProblemsIngestsourcesMetadataListArgs', 'OpenpipelineV2DavisProblemsIngestsourcesMetadataListArgsDict', 'outputs.OpenpipelineV2DavisProblemsIngestsourcesMetadataList']]] = None,
                  path_segment: pulumi.Input[Optional[_builtins.str]] = None,
-                 processing: pulumi.Input[Optional[Union['OpenpipelineV2DavisProblemsIngestsourcesProcessingArgs', 'OpenpipelineV2DavisProblemsIngestsourcesProcessingArgsDict']]] = None,
+                 processing: pulumi.Input[Optional[Union['OpenpipelineV2DavisProblemsIngestsourcesProcessingArgs', 'OpenpipelineV2DavisProblemsIngestsourcesProcessingArgsDict', 'outputs.OpenpipelineV2DavisProblemsIngestsourcesProcessing']]] = None,
                  source: pulumi.Input[Optional[_builtins.str]] = None,
                  source_type: pulumi.Input[Optional[_builtins.str]] = None,
-                 static_routing: pulumi.Input[Optional[Union['OpenpipelineV2DavisProblemsIngestsourcesStaticRoutingArgs', 'OpenpipelineV2DavisProblemsIngestsourcesStaticRoutingArgsDict']]] = None,
+                 static_routing: pulumi.Input[Optional[Union['OpenpipelineV2DavisProblemsIngestsourcesStaticRoutingArgs', 'OpenpipelineV2DavisProblemsIngestsourcesStaticRoutingArgsDict', 'outputs.OpenpipelineV2DavisProblemsIngestsourcesStaticRouting']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -681,12 +681,12 @@ class OpenpipelineV2DavisProblemsIngestsources(pulumi.CustomResource):
             default_bucket: pulumi.Input[Optional[_builtins.str]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-            metadata_list: pulumi.Input[Optional[Union['OpenpipelineV2DavisProblemsIngestsourcesMetadataListArgs', 'OpenpipelineV2DavisProblemsIngestsourcesMetadataListArgsDict']]] = None,
+            metadata_list: pulumi.Input[Optional[Union['OpenpipelineV2DavisProblemsIngestsourcesMetadataListArgs', 'OpenpipelineV2DavisProblemsIngestsourcesMetadataListArgsDict', 'outputs.OpenpipelineV2DavisProblemsIngestsourcesMetadataList']]] = None,
             path_segment: pulumi.Input[Optional[_builtins.str]] = None,
-            processing: pulumi.Input[Optional[Union['OpenpipelineV2DavisProblemsIngestsourcesProcessingArgs', 'OpenpipelineV2DavisProblemsIngestsourcesProcessingArgsDict']]] = None,
+            processing: pulumi.Input[Optional[Union['OpenpipelineV2DavisProblemsIngestsourcesProcessingArgs', 'OpenpipelineV2DavisProblemsIngestsourcesProcessingArgsDict', 'outputs.OpenpipelineV2DavisProblemsIngestsourcesProcessing']]] = None,
             source: pulumi.Input[Optional[_builtins.str]] = None,
             source_type: pulumi.Input[Optional[_builtins.str]] = None,
-            static_routing: pulumi.Input[Optional[Union['OpenpipelineV2DavisProblemsIngestsourcesStaticRoutingArgs', 'OpenpipelineV2DavisProblemsIngestsourcesStaticRoutingArgsDict']]] = None) -> 'OpenpipelineV2DavisProblemsIngestsources':
+            static_routing: pulumi.Input[Optional[Union['OpenpipelineV2DavisProblemsIngestsourcesStaticRoutingArgs', 'OpenpipelineV2DavisProblemsIngestsourcesStaticRoutingArgsDict', 'outputs.OpenpipelineV2DavisProblemsIngestsourcesStaticRouting']]] = None) -> 'OpenpipelineV2DavisProblemsIngestsources':
         """
         Get an existing OpenpipelineV2DavisProblemsIngestsources resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -697,12 +697,12 @@ class OpenpipelineV2DavisProblemsIngestsources(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] default_bucket: Default Bucket
         :param pulumi.Input[_builtins.str] display_name: Endpoint display name
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[Union['OpenpipelineV2DavisProblemsIngestsourcesMetadataListArgs', 'OpenpipelineV2DavisProblemsIngestsourcesMetadataListArgsDict']] metadata_list: Ingest source metadata list
+        :param pulumi.Input[Union['OpenpipelineV2DavisProblemsIngestsourcesMetadataListArgs', 'OpenpipelineV2DavisProblemsIngestsourcesMetadataListArgsDict', 'outputs.OpenpipelineV2DavisProblemsIngestsourcesMetadataList']] metadata_list: Ingest source metadata list
         :param pulumi.Input[_builtins.str] path_segment: Endpoint segment
-        :param pulumi.Input[Union['OpenpipelineV2DavisProblemsIngestsourcesProcessingArgs', 'OpenpipelineV2DavisProblemsIngestsourcesProcessingArgsDict']] processing: Processing stage
+        :param pulumi.Input[Union['OpenpipelineV2DavisProblemsIngestsourcesProcessingArgs', 'OpenpipelineV2DavisProblemsIngestsourcesProcessingArgsDict', 'outputs.OpenpipelineV2DavisProblemsIngestsourcesProcessing']] processing: Processing stage
         :param pulumi.Input[_builtins.str] source: Source
         :param pulumi.Input[_builtins.str] source_type: Source Type. Possible values: `extension`, `http`
-        :param pulumi.Input[Union['OpenpipelineV2DavisProblemsIngestsourcesStaticRoutingArgs', 'OpenpipelineV2DavisProblemsIngestsourcesStaticRoutingArgsDict']] static_routing: Static routing of endpoint
+        :param pulumi.Input[Union['OpenpipelineV2DavisProblemsIngestsourcesStaticRoutingArgs', 'OpenpipelineV2DavisProblemsIngestsourcesStaticRoutingArgsDict', 'outputs.OpenpipelineV2DavisProblemsIngestsourcesStaticRouting']] static_routing: Static routing of endpoint
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

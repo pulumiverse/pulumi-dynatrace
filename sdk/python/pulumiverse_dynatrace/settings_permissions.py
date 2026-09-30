@@ -154,9 +154,9 @@ class SettingsPermissions(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  all_users: pulumi.Input[Optional[_builtins.str]] = None,
-                 groups: pulumi.Input[Optional[Union['SettingsPermissionsGroupsArgs', 'SettingsPermissionsGroupsArgsDict']]] = None,
+                 groups: pulumi.Input[Optional[Union['SettingsPermissionsGroupsArgs', 'SettingsPermissionsGroupsArgsDict', 'outputs.SettingsPermissionsGroups']]] = None,
                  settings_object_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 users: pulumi.Input[Optional[Union['SettingsPermissionsUsersArgs', 'SettingsPermissionsUsersArgsDict']]] = None,
+                 users: pulumi.Input[Optional[Union['SettingsPermissionsUsersArgs', 'SettingsPermissionsUsersArgsDict', 'outputs.SettingsPermissionsUsers']]] = None,
                  __props__=None):
         """
         > **Dynatrace SaaS only**
@@ -335,9 +335,9 @@ class SettingsPermissions(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  all_users: pulumi.Input[Optional[_builtins.str]] = None,
-                 groups: pulumi.Input[Optional[Union['SettingsPermissionsGroupsArgs', 'SettingsPermissionsGroupsArgsDict']]] = None,
+                 groups: pulumi.Input[Optional[Union['SettingsPermissionsGroupsArgs', 'SettingsPermissionsGroupsArgsDict', 'outputs.SettingsPermissionsGroups']]] = None,
                  settings_object_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 users: pulumi.Input[Optional[Union['SettingsPermissionsUsersArgs', 'SettingsPermissionsUsersArgsDict']]] = None,
+                 users: pulumi.Input[Optional[Union['SettingsPermissionsUsersArgs', 'SettingsPermissionsUsersArgsDict', 'outputs.SettingsPermissionsUsers']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -364,9 +364,9 @@ class SettingsPermissions(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             all_users: pulumi.Input[Optional[_builtins.str]] = None,
-            groups: pulumi.Input[Optional[Union['SettingsPermissionsGroupsArgs', 'SettingsPermissionsGroupsArgsDict']]] = None,
+            groups: pulumi.Input[Optional[Union['SettingsPermissionsGroupsArgs', 'SettingsPermissionsGroupsArgsDict', 'outputs.SettingsPermissionsGroups']]] = None,
             settings_object_id: pulumi.Input[Optional[_builtins.str]] = None,
-            users: pulumi.Input[Optional[Union['SettingsPermissionsUsersArgs', 'SettingsPermissionsUsersArgsDict']]] = None) -> 'SettingsPermissions':
+            users: pulumi.Input[Optional[Union['SettingsPermissionsUsersArgs', 'SettingsPermissionsUsersArgsDict', 'outputs.SettingsPermissionsUsers']]] = None) -> 'SettingsPermissions':
         """
         Get an existing SettingsPermissions resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

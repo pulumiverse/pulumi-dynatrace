@@ -171,7 +171,7 @@ class ActivegateUpdates(pulumi.CustomResource):
                  scope: pulumi.Input[Optional[_builtins.str]] = None,
                  target_version: pulumi.Input[Optional[_builtins.str]] = None,
                  update_mode: pulumi.Input[Optional[_builtins.str]] = None,
-                 update_windows: pulumi.Input[Optional[Union['ActivegateUpdatesUpdateWindowsArgs', 'ActivegateUpdatesUpdateWindowsArgsDict']]] = None,
+                 update_windows: pulumi.Input[Optional[Union['ActivegateUpdatesUpdateWindowsArgs', 'ActivegateUpdatesUpdateWindowsArgsDict', 'outputs.ActivegateUpdatesUpdateWindows']]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -221,7 +221,7 @@ class ActivegateUpdates(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (ENVIRONMENT*ACTIVE*GATE). Omit this property if you want to cover the whole environment.
         :param pulumi.Input[_builtins.str] target_version: Target version
         :param pulumi.Input[_builtins.str] update_mode: Update mode. Possible values: `AUTOMATIC`, `AUTOMATIC_DURING_UW`, `MANUAL`
-        :param pulumi.Input[Union['ActivegateUpdatesUpdateWindowsArgs', 'ActivegateUpdatesUpdateWindowsArgsDict']] update_windows: Update windows
+        :param pulumi.Input[Union['ActivegateUpdatesUpdateWindowsArgs', 'ActivegateUpdatesUpdateWindowsArgsDict', 'outputs.ActivegateUpdatesUpdateWindows']] update_windows: Update windows
         """
         ...
     @overload
@@ -290,7 +290,7 @@ class ActivegateUpdates(pulumi.CustomResource):
                  scope: pulumi.Input[Optional[_builtins.str]] = None,
                  target_version: pulumi.Input[Optional[_builtins.str]] = None,
                  update_mode: pulumi.Input[Optional[_builtins.str]] = None,
-                 update_windows: pulumi.Input[Optional[Union['ActivegateUpdatesUpdateWindowsArgs', 'ActivegateUpdatesUpdateWindowsArgsDict']]] = None,
+                 update_windows: pulumi.Input[Optional[Union['ActivegateUpdatesUpdateWindowsArgs', 'ActivegateUpdatesUpdateWindowsArgsDict', 'outputs.ActivegateUpdatesUpdateWindows']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -321,7 +321,7 @@ class ActivegateUpdates(pulumi.CustomResource):
             scope: pulumi.Input[Optional[_builtins.str]] = None,
             target_version: pulumi.Input[Optional[_builtins.str]] = None,
             update_mode: pulumi.Input[Optional[_builtins.str]] = None,
-            update_windows: pulumi.Input[Optional[Union['ActivegateUpdatesUpdateWindowsArgs', 'ActivegateUpdatesUpdateWindowsArgsDict']]] = None) -> 'ActivegateUpdates':
+            update_windows: pulumi.Input[Optional[Union['ActivegateUpdatesUpdateWindowsArgs', 'ActivegateUpdatesUpdateWindowsArgsDict', 'outputs.ActivegateUpdatesUpdateWindows']]] = None) -> 'ActivegateUpdates':
         """
         Get an existing ActivegateUpdates resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -332,7 +332,7 @@ class ActivegateUpdates(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (ENVIRONMENT*ACTIVE*GATE). Omit this property if you want to cover the whole environment.
         :param pulumi.Input[_builtins.str] target_version: Target version
         :param pulumi.Input[_builtins.str] update_mode: Update mode. Possible values: `AUTOMATIC`, `AUTOMATIC_DURING_UW`, `MANUAL`
-        :param pulumi.Input[Union['ActivegateUpdatesUpdateWindowsArgs', 'ActivegateUpdatesUpdateWindowsArgsDict']] update_windows: Update windows
+        :param pulumi.Input[Union['ActivegateUpdatesUpdateWindowsArgs', 'ActivegateUpdatesUpdateWindowsArgsDict', 'outputs.ActivegateUpdatesUpdateWindows']] update_windows: Update windows
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

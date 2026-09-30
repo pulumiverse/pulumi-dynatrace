@@ -426,18 +426,18 @@ class Notification(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 ansible_tower: pulumi.Input[Optional[Union['NotificationAnsibleTowerArgs', 'NotificationAnsibleTowerArgsDict']]] = None,
-                 config: pulumi.Input[Optional[Union['NotificationConfigArgs', 'NotificationConfigArgsDict']]] = None,
-                 email: pulumi.Input[Optional[Union['NotificationEmailArgs', 'NotificationEmailArgsDict']]] = None,
-                 jira: pulumi.Input[Optional[Union['NotificationJiraArgs', 'NotificationJiraArgsDict']]] = None,
-                 ops_genie: pulumi.Input[Optional[Union['NotificationOpsGenieArgs', 'NotificationOpsGenieArgsDict']]] = None,
-                 pager_duty: pulumi.Input[Optional[Union['NotificationPagerDutyArgs', 'NotificationPagerDutyArgsDict']]] = None,
-                 service_now: pulumi.Input[Optional[Union['NotificationServiceNowArgs', 'NotificationServiceNowArgsDict']]] = None,
-                 slack: pulumi.Input[Optional[Union['NotificationSlackArgs', 'NotificationSlackArgsDict']]] = None,
-                 trello: pulumi.Input[Optional[Union['NotificationTrelloArgs', 'NotificationTrelloArgsDict']]] = None,
-                 victor_ops: pulumi.Input[Optional[Union['NotificationVictorOpsArgs', 'NotificationVictorOpsArgsDict']]] = None,
-                 web_hook: pulumi.Input[Optional[Union['NotificationWebHookArgs', 'NotificationWebHookArgsDict']]] = None,
-                 xmatters: pulumi.Input[Optional[Union['NotificationXmattersArgs', 'NotificationXmattersArgsDict']]] = None,
+                 ansible_tower: pulumi.Input[Optional[Union['NotificationAnsibleTowerArgs', 'NotificationAnsibleTowerArgsDict', 'outputs.NotificationAnsibleTower']]] = None,
+                 config: pulumi.Input[Optional[Union['NotificationConfigArgs', 'NotificationConfigArgsDict', 'outputs.NotificationConfig']]] = None,
+                 email: pulumi.Input[Optional[Union['NotificationEmailArgs', 'NotificationEmailArgsDict', 'outputs.NotificationEmail']]] = None,
+                 jira: pulumi.Input[Optional[Union['NotificationJiraArgs', 'NotificationJiraArgsDict', 'outputs.NotificationJira']]] = None,
+                 ops_genie: pulumi.Input[Optional[Union['NotificationOpsGenieArgs', 'NotificationOpsGenieArgsDict', 'outputs.NotificationOpsGenie']]] = None,
+                 pager_duty: pulumi.Input[Optional[Union['NotificationPagerDutyArgs', 'NotificationPagerDutyArgsDict', 'outputs.NotificationPagerDuty']]] = None,
+                 service_now: pulumi.Input[Optional[Union['NotificationServiceNowArgs', 'NotificationServiceNowArgsDict', 'outputs.NotificationServiceNow']]] = None,
+                 slack: pulumi.Input[Optional[Union['NotificationSlackArgs', 'NotificationSlackArgsDict', 'outputs.NotificationSlack']]] = None,
+                 trello: pulumi.Input[Optional[Union['NotificationTrelloArgs', 'NotificationTrelloArgsDict', 'outputs.NotificationTrello']]] = None,
+                 victor_ops: pulumi.Input[Optional[Union['NotificationVictorOpsArgs', 'NotificationVictorOpsArgsDict', 'outputs.NotificationVictorOps']]] = None,
+                 web_hook: pulumi.Input[Optional[Union['NotificationWebHookArgs', 'NotificationWebHookArgsDict', 'outputs.NotificationWebHook']]] = None,
+                 xmatters: pulumi.Input[Optional[Union['NotificationXmattersArgs', 'NotificationXmattersArgsDict', 'outputs.NotificationXmatters']]] = None,
                  __props__=None):
         """
         > This resource API endpoint has been deprecated, please use dynatrace_{notificationtype}_notification instead.
@@ -460,18 +460,18 @@ class Notification(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['NotificationAnsibleTowerArgs', 'NotificationAnsibleTowerArgsDict']] ansible_tower: Configuration for Ansible Tower Notification
-        :param pulumi.Input[Union['NotificationConfigArgs', 'NotificationConfigArgsDict']] config: Configuration for Generic Notification
-        :param pulumi.Input[Union['NotificationEmailArgs', 'NotificationEmailArgsDict']] email: Configuration for Email Notification
-        :param pulumi.Input[Union['NotificationJiraArgs', 'NotificationJiraArgsDict']] jira: Configuration for Jira Notification
-        :param pulumi.Input[Union['NotificationOpsGenieArgs', 'NotificationOpsGenieArgsDict']] ops_genie: Configuration for OpsGenie Notification
-        :param pulumi.Input[Union['NotificationPagerDutyArgs', 'NotificationPagerDutyArgsDict']] pager_duty: Configuration for PagerDuty Notification
-        :param pulumi.Input[Union['NotificationServiceNowArgs', 'NotificationServiceNowArgsDict']] service_now: Configuration for ServiceNow Notification
-        :param pulumi.Input[Union['NotificationSlackArgs', 'NotificationSlackArgsDict']] slack: Configuration for Slack Notification
-        :param pulumi.Input[Union['NotificationTrelloArgs', 'NotificationTrelloArgsDict']] trello: Configuration for Trello Notification
-        :param pulumi.Input[Union['NotificationVictorOpsArgs', 'NotificationVictorOpsArgsDict']] victor_ops: Configuration for VictorOps Notification
-        :param pulumi.Input[Union['NotificationWebHookArgs', 'NotificationWebHookArgsDict']] web_hook: Configuration for WebHook Notification
-        :param pulumi.Input[Union['NotificationXmattersArgs', 'NotificationXmattersArgsDict']] xmatters: Configuration for XMatters Notification
+        :param pulumi.Input[Union['NotificationAnsibleTowerArgs', 'NotificationAnsibleTowerArgsDict', 'outputs.NotificationAnsibleTower']] ansible_tower: Configuration for Ansible Tower Notification
+        :param pulumi.Input[Union['NotificationConfigArgs', 'NotificationConfigArgsDict', 'outputs.NotificationConfig']] config: Configuration for Generic Notification
+        :param pulumi.Input[Union['NotificationEmailArgs', 'NotificationEmailArgsDict', 'outputs.NotificationEmail']] email: Configuration for Email Notification
+        :param pulumi.Input[Union['NotificationJiraArgs', 'NotificationJiraArgsDict', 'outputs.NotificationJira']] jira: Configuration for Jira Notification
+        :param pulumi.Input[Union['NotificationOpsGenieArgs', 'NotificationOpsGenieArgsDict', 'outputs.NotificationOpsGenie']] ops_genie: Configuration for OpsGenie Notification
+        :param pulumi.Input[Union['NotificationPagerDutyArgs', 'NotificationPagerDutyArgsDict', 'outputs.NotificationPagerDuty']] pager_duty: Configuration for PagerDuty Notification
+        :param pulumi.Input[Union['NotificationServiceNowArgs', 'NotificationServiceNowArgsDict', 'outputs.NotificationServiceNow']] service_now: Configuration for ServiceNow Notification
+        :param pulumi.Input[Union['NotificationSlackArgs', 'NotificationSlackArgsDict', 'outputs.NotificationSlack']] slack: Configuration for Slack Notification
+        :param pulumi.Input[Union['NotificationTrelloArgs', 'NotificationTrelloArgsDict', 'outputs.NotificationTrello']] trello: Configuration for Trello Notification
+        :param pulumi.Input[Union['NotificationVictorOpsArgs', 'NotificationVictorOpsArgsDict', 'outputs.NotificationVictorOps']] victor_ops: Configuration for VictorOps Notification
+        :param pulumi.Input[Union['NotificationWebHookArgs', 'NotificationWebHookArgsDict', 'outputs.NotificationWebHook']] web_hook: Configuration for WebHook Notification
+        :param pulumi.Input[Union['NotificationXmattersArgs', 'NotificationXmattersArgsDict', 'outputs.NotificationXmatters']] xmatters: Configuration for XMatters Notification
         """
         ...
     @overload
@@ -513,18 +513,18 @@ class Notification(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 ansible_tower: pulumi.Input[Optional[Union['NotificationAnsibleTowerArgs', 'NotificationAnsibleTowerArgsDict']]] = None,
-                 config: pulumi.Input[Optional[Union['NotificationConfigArgs', 'NotificationConfigArgsDict']]] = None,
-                 email: pulumi.Input[Optional[Union['NotificationEmailArgs', 'NotificationEmailArgsDict']]] = None,
-                 jira: pulumi.Input[Optional[Union['NotificationJiraArgs', 'NotificationJiraArgsDict']]] = None,
-                 ops_genie: pulumi.Input[Optional[Union['NotificationOpsGenieArgs', 'NotificationOpsGenieArgsDict']]] = None,
-                 pager_duty: pulumi.Input[Optional[Union['NotificationPagerDutyArgs', 'NotificationPagerDutyArgsDict']]] = None,
-                 service_now: pulumi.Input[Optional[Union['NotificationServiceNowArgs', 'NotificationServiceNowArgsDict']]] = None,
-                 slack: pulumi.Input[Optional[Union['NotificationSlackArgs', 'NotificationSlackArgsDict']]] = None,
-                 trello: pulumi.Input[Optional[Union['NotificationTrelloArgs', 'NotificationTrelloArgsDict']]] = None,
-                 victor_ops: pulumi.Input[Optional[Union['NotificationVictorOpsArgs', 'NotificationVictorOpsArgsDict']]] = None,
-                 web_hook: pulumi.Input[Optional[Union['NotificationWebHookArgs', 'NotificationWebHookArgsDict']]] = None,
-                 xmatters: pulumi.Input[Optional[Union['NotificationXmattersArgs', 'NotificationXmattersArgsDict']]] = None,
+                 ansible_tower: pulumi.Input[Optional[Union['NotificationAnsibleTowerArgs', 'NotificationAnsibleTowerArgsDict', 'outputs.NotificationAnsibleTower']]] = None,
+                 config: pulumi.Input[Optional[Union['NotificationConfigArgs', 'NotificationConfigArgsDict', 'outputs.NotificationConfig']]] = None,
+                 email: pulumi.Input[Optional[Union['NotificationEmailArgs', 'NotificationEmailArgsDict', 'outputs.NotificationEmail']]] = None,
+                 jira: pulumi.Input[Optional[Union['NotificationJiraArgs', 'NotificationJiraArgsDict', 'outputs.NotificationJira']]] = None,
+                 ops_genie: pulumi.Input[Optional[Union['NotificationOpsGenieArgs', 'NotificationOpsGenieArgsDict', 'outputs.NotificationOpsGenie']]] = None,
+                 pager_duty: pulumi.Input[Optional[Union['NotificationPagerDutyArgs', 'NotificationPagerDutyArgsDict', 'outputs.NotificationPagerDuty']]] = None,
+                 service_now: pulumi.Input[Optional[Union['NotificationServiceNowArgs', 'NotificationServiceNowArgsDict', 'outputs.NotificationServiceNow']]] = None,
+                 slack: pulumi.Input[Optional[Union['NotificationSlackArgs', 'NotificationSlackArgsDict', 'outputs.NotificationSlack']]] = None,
+                 trello: pulumi.Input[Optional[Union['NotificationTrelloArgs', 'NotificationTrelloArgsDict', 'outputs.NotificationTrello']]] = None,
+                 victor_ops: pulumi.Input[Optional[Union['NotificationVictorOpsArgs', 'NotificationVictorOpsArgsDict', 'outputs.NotificationVictorOps']]] = None,
+                 web_hook: pulumi.Input[Optional[Union['NotificationWebHookArgs', 'NotificationWebHookArgsDict', 'outputs.NotificationWebHook']]] = None,
+                 xmatters: pulumi.Input[Optional[Union['NotificationXmattersArgs', 'NotificationXmattersArgsDict', 'outputs.NotificationXmatters']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -556,18 +556,18 @@ class Notification(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            ansible_tower: pulumi.Input[Optional[Union['NotificationAnsibleTowerArgs', 'NotificationAnsibleTowerArgsDict']]] = None,
-            config: pulumi.Input[Optional[Union['NotificationConfigArgs', 'NotificationConfigArgsDict']]] = None,
-            email: pulumi.Input[Optional[Union['NotificationEmailArgs', 'NotificationEmailArgsDict']]] = None,
-            jira: pulumi.Input[Optional[Union['NotificationJiraArgs', 'NotificationJiraArgsDict']]] = None,
-            ops_genie: pulumi.Input[Optional[Union['NotificationOpsGenieArgs', 'NotificationOpsGenieArgsDict']]] = None,
-            pager_duty: pulumi.Input[Optional[Union['NotificationPagerDutyArgs', 'NotificationPagerDutyArgsDict']]] = None,
-            service_now: pulumi.Input[Optional[Union['NotificationServiceNowArgs', 'NotificationServiceNowArgsDict']]] = None,
-            slack: pulumi.Input[Optional[Union['NotificationSlackArgs', 'NotificationSlackArgsDict']]] = None,
-            trello: pulumi.Input[Optional[Union['NotificationTrelloArgs', 'NotificationTrelloArgsDict']]] = None,
-            victor_ops: pulumi.Input[Optional[Union['NotificationVictorOpsArgs', 'NotificationVictorOpsArgsDict']]] = None,
-            web_hook: pulumi.Input[Optional[Union['NotificationWebHookArgs', 'NotificationWebHookArgsDict']]] = None,
-            xmatters: pulumi.Input[Optional[Union['NotificationXmattersArgs', 'NotificationXmattersArgsDict']]] = None) -> 'Notification':
+            ansible_tower: pulumi.Input[Optional[Union['NotificationAnsibleTowerArgs', 'NotificationAnsibleTowerArgsDict', 'outputs.NotificationAnsibleTower']]] = None,
+            config: pulumi.Input[Optional[Union['NotificationConfigArgs', 'NotificationConfigArgsDict', 'outputs.NotificationConfig']]] = None,
+            email: pulumi.Input[Optional[Union['NotificationEmailArgs', 'NotificationEmailArgsDict', 'outputs.NotificationEmail']]] = None,
+            jira: pulumi.Input[Optional[Union['NotificationJiraArgs', 'NotificationJiraArgsDict', 'outputs.NotificationJira']]] = None,
+            ops_genie: pulumi.Input[Optional[Union['NotificationOpsGenieArgs', 'NotificationOpsGenieArgsDict', 'outputs.NotificationOpsGenie']]] = None,
+            pager_duty: pulumi.Input[Optional[Union['NotificationPagerDutyArgs', 'NotificationPagerDutyArgsDict', 'outputs.NotificationPagerDuty']]] = None,
+            service_now: pulumi.Input[Optional[Union['NotificationServiceNowArgs', 'NotificationServiceNowArgsDict', 'outputs.NotificationServiceNow']]] = None,
+            slack: pulumi.Input[Optional[Union['NotificationSlackArgs', 'NotificationSlackArgsDict', 'outputs.NotificationSlack']]] = None,
+            trello: pulumi.Input[Optional[Union['NotificationTrelloArgs', 'NotificationTrelloArgsDict', 'outputs.NotificationTrello']]] = None,
+            victor_ops: pulumi.Input[Optional[Union['NotificationVictorOpsArgs', 'NotificationVictorOpsArgsDict', 'outputs.NotificationVictorOps']]] = None,
+            web_hook: pulumi.Input[Optional[Union['NotificationWebHookArgs', 'NotificationWebHookArgsDict', 'outputs.NotificationWebHook']]] = None,
+            xmatters: pulumi.Input[Optional[Union['NotificationXmattersArgs', 'NotificationXmattersArgsDict', 'outputs.NotificationXmatters']]] = None) -> 'Notification':
         """
         Get an existing Notification resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -575,18 +575,18 @@ class Notification(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['NotificationAnsibleTowerArgs', 'NotificationAnsibleTowerArgsDict']] ansible_tower: Configuration for Ansible Tower Notification
-        :param pulumi.Input[Union['NotificationConfigArgs', 'NotificationConfigArgsDict']] config: Configuration for Generic Notification
-        :param pulumi.Input[Union['NotificationEmailArgs', 'NotificationEmailArgsDict']] email: Configuration for Email Notification
-        :param pulumi.Input[Union['NotificationJiraArgs', 'NotificationJiraArgsDict']] jira: Configuration for Jira Notification
-        :param pulumi.Input[Union['NotificationOpsGenieArgs', 'NotificationOpsGenieArgsDict']] ops_genie: Configuration for OpsGenie Notification
-        :param pulumi.Input[Union['NotificationPagerDutyArgs', 'NotificationPagerDutyArgsDict']] pager_duty: Configuration for PagerDuty Notification
-        :param pulumi.Input[Union['NotificationServiceNowArgs', 'NotificationServiceNowArgsDict']] service_now: Configuration for ServiceNow Notification
-        :param pulumi.Input[Union['NotificationSlackArgs', 'NotificationSlackArgsDict']] slack: Configuration for Slack Notification
-        :param pulumi.Input[Union['NotificationTrelloArgs', 'NotificationTrelloArgsDict']] trello: Configuration for Trello Notification
-        :param pulumi.Input[Union['NotificationVictorOpsArgs', 'NotificationVictorOpsArgsDict']] victor_ops: Configuration for VictorOps Notification
-        :param pulumi.Input[Union['NotificationWebHookArgs', 'NotificationWebHookArgsDict']] web_hook: Configuration for WebHook Notification
-        :param pulumi.Input[Union['NotificationXmattersArgs', 'NotificationXmattersArgsDict']] xmatters: Configuration for XMatters Notification
+        :param pulumi.Input[Union['NotificationAnsibleTowerArgs', 'NotificationAnsibleTowerArgsDict', 'outputs.NotificationAnsibleTower']] ansible_tower: Configuration for Ansible Tower Notification
+        :param pulumi.Input[Union['NotificationConfigArgs', 'NotificationConfigArgsDict', 'outputs.NotificationConfig']] config: Configuration for Generic Notification
+        :param pulumi.Input[Union['NotificationEmailArgs', 'NotificationEmailArgsDict', 'outputs.NotificationEmail']] email: Configuration for Email Notification
+        :param pulumi.Input[Union['NotificationJiraArgs', 'NotificationJiraArgsDict', 'outputs.NotificationJira']] jira: Configuration for Jira Notification
+        :param pulumi.Input[Union['NotificationOpsGenieArgs', 'NotificationOpsGenieArgsDict', 'outputs.NotificationOpsGenie']] ops_genie: Configuration for OpsGenie Notification
+        :param pulumi.Input[Union['NotificationPagerDutyArgs', 'NotificationPagerDutyArgsDict', 'outputs.NotificationPagerDuty']] pager_duty: Configuration for PagerDuty Notification
+        :param pulumi.Input[Union['NotificationServiceNowArgs', 'NotificationServiceNowArgsDict', 'outputs.NotificationServiceNow']] service_now: Configuration for ServiceNow Notification
+        :param pulumi.Input[Union['NotificationSlackArgs', 'NotificationSlackArgsDict', 'outputs.NotificationSlack']] slack: Configuration for Slack Notification
+        :param pulumi.Input[Union['NotificationTrelloArgs', 'NotificationTrelloArgsDict', 'outputs.NotificationTrello']] trello: Configuration for Trello Notification
+        :param pulumi.Input[Union['NotificationVictorOpsArgs', 'NotificationVictorOpsArgsDict', 'outputs.NotificationVictorOps']] victor_ops: Configuration for VictorOps Notification
+        :param pulumi.Input[Union['NotificationWebHookArgs', 'NotificationWebHookArgsDict', 'outputs.NotificationWebHook']] web_hook: Configuration for WebHook Notification
+        :param pulumi.Input[Union['NotificationXmattersArgs', 'NotificationXmattersArgsDict', 'outputs.NotificationXmatters']] xmatters: Configuration for XMatters Notification
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

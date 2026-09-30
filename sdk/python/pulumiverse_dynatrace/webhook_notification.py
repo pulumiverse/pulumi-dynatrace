@@ -500,13 +500,13 @@ class WebhookNotification(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  active: pulumi.Input[Optional[_builtins.bool]] = None,
-                 headers: pulumi.Input[Optional[Union['WebhookNotificationHeadersArgs', 'WebhookNotificationHeadersArgsDict']]] = None,
+                 headers: pulumi.Input[Optional[Union['WebhookNotificationHeadersArgs', 'WebhookNotificationHeadersArgsDict', 'outputs.WebhookNotificationHeaders']]] = None,
                  insecure: pulumi.Input[Optional[_builtins.bool]] = None,
                  legacy_id: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  notify_closed_problems: pulumi.Input[Optional[_builtins.bool]] = None,
                  notify_event_merges: pulumi.Input[Optional[_builtins.bool]] = None,
-                 oauth2_credentials: pulumi.Input[Optional[Union['WebhookNotificationOauth2CredentialsArgs', 'WebhookNotificationOauth2CredentialsArgsDict']]] = None,
+                 oauth2_credentials: pulumi.Input[Optional[Union['WebhookNotificationOauth2CredentialsArgs', 'WebhookNotificationOauth2CredentialsArgsDict', 'outputs.WebhookNotificationOauth2Credentials']]] = None,
                  payload: pulumi.Input[Optional[_builtins.str]] = None,
                  profile: pulumi.Input[Optional[_builtins.str]] = None,
                  secret_url: pulumi.Input[Optional[_builtins.str]] = None,
@@ -533,13 +533,13 @@ class WebhookNotification(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] active: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[Union['WebhookNotificationHeadersArgs', 'WebhookNotificationHeadersArgsDict']] headers: A list of the additional HTTP headers.
+        :param pulumi.Input[Union['WebhookNotificationHeadersArgs', 'WebhookNotificationHeadersArgsDict', 'outputs.WebhookNotificationHeaders']] headers: A list of the additional HTTP headers.
         :param pulumi.Input[_builtins.bool] insecure: Accept any SSL certificate (including self-signed and invalid certificates)
         :param pulumi.Input[_builtins.str] legacy_id: The ID of these settings when referred to from resources requiring the REST API V1 keys
         :param pulumi.Input[_builtins.str] name: The name of the notification configuration.
         :param pulumi.Input[_builtins.bool] notify_closed_problems: Call webhook if problem is closed
         :param pulumi.Input[_builtins.bool] notify_event_merges: Call webhook if new events merge into existing problems
-        :param pulumi.Input[Union['WebhookNotificationOauth2CredentialsArgs', 'WebhookNotificationOauth2CredentialsArgsDict']] oauth2_credentials: To authenticate your integration, the OAuth 2.0 *Client Credentials* Flow (Grant Type) is used. For details see [Client Credentials Flow](https://dt-url.net/ym22wsm)).
+        :param pulumi.Input[Union['WebhookNotificationOauth2CredentialsArgs', 'WebhookNotificationOauth2CredentialsArgsDict', 'outputs.WebhookNotificationOauth2Credentials']] oauth2_credentials: To authenticate your integration, the OAuth 2.0 *Client Credentials* Flow (Grant Type) is used. For details see [Client Credentials Flow](https://dt-url.net/ym22wsm)).
                
                The obtained Access Token is subsequently provided in the *Authorization* header of the request carrying the notification payload.
         :param pulumi.Input[_builtins.str] payload: The content of the notification message. Type '{' for placeholder suggestions.. #### Available placeholders
@@ -588,13 +588,13 @@ class WebhookNotification(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  active: pulumi.Input[Optional[_builtins.bool]] = None,
-                 headers: pulumi.Input[Optional[Union['WebhookNotificationHeadersArgs', 'WebhookNotificationHeadersArgsDict']]] = None,
+                 headers: pulumi.Input[Optional[Union['WebhookNotificationHeadersArgs', 'WebhookNotificationHeadersArgsDict', 'outputs.WebhookNotificationHeaders']]] = None,
                  insecure: pulumi.Input[Optional[_builtins.bool]] = None,
                  legacy_id: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  notify_closed_problems: pulumi.Input[Optional[_builtins.bool]] = None,
                  notify_event_merges: pulumi.Input[Optional[_builtins.bool]] = None,
-                 oauth2_credentials: pulumi.Input[Optional[Union['WebhookNotificationOauth2CredentialsArgs', 'WebhookNotificationOauth2CredentialsArgsDict']]] = None,
+                 oauth2_credentials: pulumi.Input[Optional[Union['WebhookNotificationOauth2CredentialsArgs', 'WebhookNotificationOauth2CredentialsArgsDict', 'outputs.WebhookNotificationOauth2Credentials']]] = None,
                  payload: pulumi.Input[Optional[_builtins.str]] = None,
                  profile: pulumi.Input[Optional[_builtins.str]] = None,
                  secret_url: pulumi.Input[Optional[_builtins.str]] = None,
@@ -643,13 +643,13 @@ class WebhookNotification(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             active: pulumi.Input[Optional[_builtins.bool]] = None,
-            headers: pulumi.Input[Optional[Union['WebhookNotificationHeadersArgs', 'WebhookNotificationHeadersArgsDict']]] = None,
+            headers: pulumi.Input[Optional[Union['WebhookNotificationHeadersArgs', 'WebhookNotificationHeadersArgsDict', 'outputs.WebhookNotificationHeaders']]] = None,
             insecure: pulumi.Input[Optional[_builtins.bool]] = None,
             legacy_id: pulumi.Input[Optional[_builtins.str]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             notify_closed_problems: pulumi.Input[Optional[_builtins.bool]] = None,
             notify_event_merges: pulumi.Input[Optional[_builtins.bool]] = None,
-            oauth2_credentials: pulumi.Input[Optional[Union['WebhookNotificationOauth2CredentialsArgs', 'WebhookNotificationOauth2CredentialsArgsDict']]] = None,
+            oauth2_credentials: pulumi.Input[Optional[Union['WebhookNotificationOauth2CredentialsArgs', 'WebhookNotificationOauth2CredentialsArgsDict', 'outputs.WebhookNotificationOauth2Credentials']]] = None,
             payload: pulumi.Input[Optional[_builtins.str]] = None,
             profile: pulumi.Input[Optional[_builtins.str]] = None,
             secret_url: pulumi.Input[Optional[_builtins.str]] = None,
@@ -664,13 +664,13 @@ class WebhookNotification(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] active: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[Union['WebhookNotificationHeadersArgs', 'WebhookNotificationHeadersArgsDict']] headers: A list of the additional HTTP headers.
+        :param pulumi.Input[Union['WebhookNotificationHeadersArgs', 'WebhookNotificationHeadersArgsDict', 'outputs.WebhookNotificationHeaders']] headers: A list of the additional HTTP headers.
         :param pulumi.Input[_builtins.bool] insecure: Accept any SSL certificate (including self-signed and invalid certificates)
         :param pulumi.Input[_builtins.str] legacy_id: The ID of these settings when referred to from resources requiring the REST API V1 keys
         :param pulumi.Input[_builtins.str] name: The name of the notification configuration.
         :param pulumi.Input[_builtins.bool] notify_closed_problems: Call webhook if problem is closed
         :param pulumi.Input[_builtins.bool] notify_event_merges: Call webhook if new events merge into existing problems
-        :param pulumi.Input[Union['WebhookNotificationOauth2CredentialsArgs', 'WebhookNotificationOauth2CredentialsArgsDict']] oauth2_credentials: To authenticate your integration, the OAuth 2.0 *Client Credentials* Flow (Grant Type) is used. For details see [Client Credentials Flow](https://dt-url.net/ym22wsm)).
+        :param pulumi.Input[Union['WebhookNotificationOauth2CredentialsArgs', 'WebhookNotificationOauth2CredentialsArgsDict', 'outputs.WebhookNotificationOauth2Credentials']] oauth2_credentials: To authenticate your integration, the OAuth 2.0 *Client Credentials* Flow (Grant Type) is used. For details see [Client Credentials Flow](https://dt-url.net/ym22wsm)).
                
                The obtained Access Token is subsequently provided in the *Authorization* header of the request carrying the notification payload.
         :param pulumi.Input[_builtins.str] payload: The content of the notification message. Type '{' for placeholder suggestions.. #### Available placeholders

@@ -235,7 +235,7 @@ class MaintenanceWindows(pulumi.CustomResource):
                  enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  filter: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 schedule: pulumi.Input[Optional[Union['MaintenanceWindowsScheduleArgs', 'MaintenanceWindowsScheduleArgsDict']]] = None,
+                 schedule: pulumi.Input[Optional[Union['MaintenanceWindowsScheduleArgs', 'MaintenanceWindowsScheduleArgsDict', 'outputs.MaintenanceWindowsSchedule']]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -302,7 +302,7 @@ class MaintenanceWindows(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] filter: DQL Filter
         :param pulumi.Input[_builtins.str] name: Name of the maintenance window
-        :param pulumi.Input[Union['MaintenanceWindowsScheduleArgs', 'MaintenanceWindowsScheduleArgsDict']] schedule: Schedule definition
+        :param pulumi.Input[Union['MaintenanceWindowsScheduleArgs', 'MaintenanceWindowsScheduleArgsDict', 'outputs.MaintenanceWindowsSchedule']] schedule: Schedule definition
         """
         ...
     @overload
@@ -388,7 +388,7 @@ class MaintenanceWindows(pulumi.CustomResource):
                  enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  filter: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 schedule: pulumi.Input[Optional[Union['MaintenanceWindowsScheduleArgs', 'MaintenanceWindowsScheduleArgsDict']]] = None,
+                 schedule: pulumi.Input[Optional[Union['MaintenanceWindowsScheduleArgs', 'MaintenanceWindowsScheduleArgsDict', 'outputs.MaintenanceWindowsSchedule']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -427,7 +427,7 @@ class MaintenanceWindows(pulumi.CustomResource):
             enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             filter: pulumi.Input[Optional[_builtins.str]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
-            schedule: pulumi.Input[Optional[Union['MaintenanceWindowsScheduleArgs', 'MaintenanceWindowsScheduleArgsDict']]] = None) -> 'MaintenanceWindows':
+            schedule: pulumi.Input[Optional[Union['MaintenanceWindowsScheduleArgs', 'MaintenanceWindowsScheduleArgsDict', 'outputs.MaintenanceWindowsSchedule']]] = None) -> 'MaintenanceWindows':
         """
         Get an existing MaintenanceWindows resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -440,7 +440,7 @@ class MaintenanceWindows(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] filter: DQL Filter
         :param pulumi.Input[_builtins.str] name: Name of the maintenance window
-        :param pulumi.Input[Union['MaintenanceWindowsScheduleArgs', 'MaintenanceWindowsScheduleArgsDict']] schedule: Schedule definition
+        :param pulumi.Input[Union['MaintenanceWindowsScheduleArgs', 'MaintenanceWindowsScheduleArgsDict', 'outputs.MaintenanceWindowsSchedule']] schedule: Schedule definition
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

@@ -170,7 +170,7 @@ class SessionReplayWebPrivacy(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  application_id: pulumi.Input[Optional[_builtins.str]] = None,
                  enable_opt_in_mode: pulumi.Input[Optional[_builtins.bool]] = None,
-                 masking_presets: pulumi.Input[Optional[Union['SessionReplayWebPrivacyMaskingPresetsArgs', 'SessionReplayWebPrivacyMaskingPresetsArgsDict']]] = None,
+                 masking_presets: pulumi.Input[Optional[Union['SessionReplayWebPrivacyMaskingPresetsArgs', 'SessionReplayWebPrivacyMaskingPresetsArgsDict', 'outputs.SessionReplayWebPrivacyMaskingPresets']]] = None,
                  url_exclusion_pattern_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
@@ -193,7 +193,7 @@ class SessionReplayWebPrivacy(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         :param pulumi.Input[_builtins.bool] enable_opt_in_mode: (Field has overlap with `ApplicationDataPrivacy`) When [Session Replay opt-in mode](https://dt-url.net/sr-opt-in-mode) is turned on, Session Replay is deactivated until explicitly activated via an API call.
-        :param pulumi.Input[Union['SessionReplayWebPrivacyMaskingPresetsArgs', 'SessionReplayWebPrivacyMaskingPresetsArgsDict']] masking_presets: (Field has overlap with `ApplicationDataPrivacy`) To protect your end users' privacy, select or customize [predefined masking options](https://dt-url.net/sr-masking-preset-options) that suit your content recording and playback requirements.
+        :param pulumi.Input[Union['SessionReplayWebPrivacyMaskingPresetsArgs', 'SessionReplayWebPrivacyMaskingPresetsArgsDict', 'outputs.SessionReplayWebPrivacyMaskingPresets']] masking_presets: (Field has overlap with `ApplicationDataPrivacy`) To protect your end users' privacy, select or customize [predefined masking options](https://dt-url.net/sr-masking-preset-options) that suit your content recording and playback requirements.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] url_exclusion_pattern_lists: (Field has overlap with `ApplicationDataPrivacy`) Exclude webpages or views from Session Replay recording by adding [URL exclusion rules](https://dt-url.net/sr-url-exclusion)
         """
         ...
@@ -235,7 +235,7 @@ class SessionReplayWebPrivacy(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  application_id: pulumi.Input[Optional[_builtins.str]] = None,
                  enable_opt_in_mode: pulumi.Input[Optional[_builtins.bool]] = None,
-                 masking_presets: pulumi.Input[Optional[Union['SessionReplayWebPrivacyMaskingPresetsArgs', 'SessionReplayWebPrivacyMaskingPresetsArgsDict']]] = None,
+                 masking_presets: pulumi.Input[Optional[Union['SessionReplayWebPrivacyMaskingPresetsArgs', 'SessionReplayWebPrivacyMaskingPresetsArgsDict', 'outputs.SessionReplayWebPrivacyMaskingPresets']]] = None,
                  url_exclusion_pattern_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -266,7 +266,7 @@ class SessionReplayWebPrivacy(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             application_id: pulumi.Input[Optional[_builtins.str]] = None,
             enable_opt_in_mode: pulumi.Input[Optional[_builtins.bool]] = None,
-            masking_presets: pulumi.Input[Optional[Union['SessionReplayWebPrivacyMaskingPresetsArgs', 'SessionReplayWebPrivacyMaskingPresetsArgsDict']]] = None,
+            masking_presets: pulumi.Input[Optional[Union['SessionReplayWebPrivacyMaskingPresetsArgs', 'SessionReplayWebPrivacyMaskingPresetsArgsDict', 'outputs.SessionReplayWebPrivacyMaskingPresets']]] = None,
             url_exclusion_pattern_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'SessionReplayWebPrivacy':
         """
         Get an existing SessionReplayWebPrivacy resource's state with the given name, id, and optional extra
@@ -277,7 +277,7 @@ class SessionReplayWebPrivacy(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         :param pulumi.Input[_builtins.bool] enable_opt_in_mode: (Field has overlap with `ApplicationDataPrivacy`) When [Session Replay opt-in mode](https://dt-url.net/sr-opt-in-mode) is turned on, Session Replay is deactivated until explicitly activated via an API call.
-        :param pulumi.Input[Union['SessionReplayWebPrivacyMaskingPresetsArgs', 'SessionReplayWebPrivacyMaskingPresetsArgsDict']] masking_presets: (Field has overlap with `ApplicationDataPrivacy`) To protect your end users' privacy, select or customize [predefined masking options](https://dt-url.net/sr-masking-preset-options) that suit your content recording and playback requirements.
+        :param pulumi.Input[Union['SessionReplayWebPrivacyMaskingPresetsArgs', 'SessionReplayWebPrivacyMaskingPresetsArgsDict', 'outputs.SessionReplayWebPrivacyMaskingPresets']] masking_presets: (Field has overlap with `ApplicationDataPrivacy`) To protect your end users' privacy, select or customize [predefined masking options](https://dt-url.net/sr-masking-preset-options) that suit your content recording and playback requirements.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] url_exclusion_pattern_lists: (Field has overlap with `ApplicationDataPrivacy`) Exclude webpages or views from Session Replay recording by adding [URL exclusion rules](https://dt-url.net/sr-url-exclusion)
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

@@ -171,7 +171,7 @@ class CustomTags(pulumi.CustomResource):
                  current_state: pulumi.Input[Optional[_builtins.str]] = None,
                  entity_selector: pulumi.Input[Optional[_builtins.str]] = None,
                  matched_entities: pulumi.Input[Optional[_builtins.int]] = None,
-                 tags: pulumi.Input[Optional[Union['CustomTagsTagsArgs', 'CustomTagsTagsArgsDict']]] = None,
+                 tags: pulumi.Input[Optional[Union['CustomTagsTagsArgs', 'CustomTagsTagsArgsDict', 'outputs.CustomTagsTags']]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read entities** (`entities.read`) and **Write entities** (`entities.write`)
@@ -226,7 +226,7 @@ class CustomTags(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] current_state: For internal use: current state of tags in JSON format
         :param pulumi.Input[_builtins.str] entity_selector: Specifies the entities where you want to update tags
         :param pulumi.Input[_builtins.int] matched_entities: The number of monitored entities where the tags have been added.
-        :param pulumi.Input[Union['CustomTagsTagsArgs', 'CustomTagsTagsArgsDict']] tags: Specifies the entities where you want to update tags
+        :param pulumi.Input[Union['CustomTagsTagsArgs', 'CustomTagsTagsArgsDict', 'outputs.CustomTagsTags']] tags: Specifies the entities where you want to update tags
         """
         ...
     @overload
@@ -300,7 +300,7 @@ class CustomTags(pulumi.CustomResource):
                  current_state: pulumi.Input[Optional[_builtins.str]] = None,
                  entity_selector: pulumi.Input[Optional[_builtins.str]] = None,
                  matched_entities: pulumi.Input[Optional[_builtins.int]] = None,
-                 tags: pulumi.Input[Optional[Union['CustomTagsTagsArgs', 'CustomTagsTagsArgsDict']]] = None,
+                 tags: pulumi.Input[Optional[Union['CustomTagsTagsArgs', 'CustomTagsTagsArgsDict', 'outputs.CustomTagsTags']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -331,7 +331,7 @@ class CustomTags(pulumi.CustomResource):
             current_state: pulumi.Input[Optional[_builtins.str]] = None,
             entity_selector: pulumi.Input[Optional[_builtins.str]] = None,
             matched_entities: pulumi.Input[Optional[_builtins.int]] = None,
-            tags: pulumi.Input[Optional[Union['CustomTagsTagsArgs', 'CustomTagsTagsArgsDict']]] = None) -> 'CustomTags':
+            tags: pulumi.Input[Optional[Union['CustomTagsTagsArgs', 'CustomTagsTagsArgsDict', 'outputs.CustomTagsTags']]] = None) -> 'CustomTags':
         """
         Get an existing CustomTags resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -342,7 +342,7 @@ class CustomTags(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] current_state: For internal use: current state of tags in JSON format
         :param pulumi.Input[_builtins.str] entity_selector: Specifies the entities where you want to update tags
         :param pulumi.Input[_builtins.int] matched_entities: The number of monitored entities where the tags have been added.
-        :param pulumi.Input[Union['CustomTagsTagsArgs', 'CustomTagsTagsArgsDict']] tags: Specifies the entities where you want to update tags
+        :param pulumi.Input[Union['CustomTagsTagsArgs', 'CustomTagsTagsArgsDict', 'outputs.CustomTagsTags']] tags: Specifies the entities where you want to update tags
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

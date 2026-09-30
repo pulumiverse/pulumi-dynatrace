@@ -138,9 +138,9 @@ class OpenpipelineMetrics(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 endpoints: pulumi.Input[Optional[Union['OpenpipelineMetricsEndpointsArgs', 'OpenpipelineMetricsEndpointsArgsDict']]] = None,
-                 pipelines: pulumi.Input[Optional[Union['OpenpipelineMetricsPipelinesArgs', 'OpenpipelineMetricsPipelinesArgsDict']]] = None,
-                 routing: pulumi.Input[Optional[Union['OpenpipelineMetricsRoutingArgs', 'OpenpipelineMetricsRoutingArgsDict']]] = None,
+                 endpoints: pulumi.Input[Optional[Union['OpenpipelineMetricsEndpointsArgs', 'OpenpipelineMetricsEndpointsArgsDict', 'outputs.OpenpipelineMetricsEndpoints']]] = None,
+                 pipelines: pulumi.Input[Optional[Union['OpenpipelineMetricsPipelinesArgs', 'OpenpipelineMetricsPipelinesArgsDict', 'outputs.OpenpipelineMetricsPipelines']]] = None,
+                 routing: pulumi.Input[Optional[Union['OpenpipelineMetricsRoutingArgs', 'OpenpipelineMetricsRoutingArgsDict', 'outputs.OpenpipelineMetricsRouting']]] = None,
                  __props__=None):
         """
         > This resource API endpoint has been deprecated, please migrate your OpenPipeline configurations and use `dynatrace_openpipeline_v2_metrics_*` instead.
@@ -189,9 +189,9 @@ class OpenpipelineMetrics(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['OpenpipelineMetricsEndpointsArgs', 'OpenpipelineMetricsEndpointsArgsDict']] endpoints: List of all ingest sources of the configuration
-        :param pulumi.Input[Union['OpenpipelineMetricsPipelinesArgs', 'OpenpipelineMetricsPipelinesArgsDict']] pipelines: List of all pipelines of the configuration
-        :param pulumi.Input[Union['OpenpipelineMetricsRoutingArgs', 'OpenpipelineMetricsRoutingArgsDict']] routing: Dynamic routing definition
+        :param pulumi.Input[Union['OpenpipelineMetricsEndpointsArgs', 'OpenpipelineMetricsEndpointsArgsDict', 'outputs.OpenpipelineMetricsEndpoints']] endpoints: List of all ingest sources of the configuration
+        :param pulumi.Input[Union['OpenpipelineMetricsPipelinesArgs', 'OpenpipelineMetricsPipelinesArgsDict', 'outputs.OpenpipelineMetricsPipelines']] pipelines: List of all pipelines of the configuration
+        :param pulumi.Input[Union['OpenpipelineMetricsRoutingArgs', 'OpenpipelineMetricsRoutingArgsDict', 'outputs.OpenpipelineMetricsRouting']] routing: Dynamic routing definition
         """
         ...
     @overload
@@ -259,9 +259,9 @@ class OpenpipelineMetrics(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 endpoints: pulumi.Input[Optional[Union['OpenpipelineMetricsEndpointsArgs', 'OpenpipelineMetricsEndpointsArgsDict']]] = None,
-                 pipelines: pulumi.Input[Optional[Union['OpenpipelineMetricsPipelinesArgs', 'OpenpipelineMetricsPipelinesArgsDict']]] = None,
-                 routing: pulumi.Input[Optional[Union['OpenpipelineMetricsRoutingArgs', 'OpenpipelineMetricsRoutingArgsDict']]] = None,
+                 endpoints: pulumi.Input[Optional[Union['OpenpipelineMetricsEndpointsArgs', 'OpenpipelineMetricsEndpointsArgsDict', 'outputs.OpenpipelineMetricsEndpoints']]] = None,
+                 pipelines: pulumi.Input[Optional[Union['OpenpipelineMetricsPipelinesArgs', 'OpenpipelineMetricsPipelinesArgsDict', 'outputs.OpenpipelineMetricsPipelines']]] = None,
+                 routing: pulumi.Input[Optional[Union['OpenpipelineMetricsRoutingArgs', 'OpenpipelineMetricsRoutingArgsDict', 'outputs.OpenpipelineMetricsRouting']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -284,9 +284,9 @@ class OpenpipelineMetrics(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            endpoints: pulumi.Input[Optional[Union['OpenpipelineMetricsEndpointsArgs', 'OpenpipelineMetricsEndpointsArgsDict']]] = None,
-            pipelines: pulumi.Input[Optional[Union['OpenpipelineMetricsPipelinesArgs', 'OpenpipelineMetricsPipelinesArgsDict']]] = None,
-            routing: pulumi.Input[Optional[Union['OpenpipelineMetricsRoutingArgs', 'OpenpipelineMetricsRoutingArgsDict']]] = None) -> 'OpenpipelineMetrics':
+            endpoints: pulumi.Input[Optional[Union['OpenpipelineMetricsEndpointsArgs', 'OpenpipelineMetricsEndpointsArgsDict', 'outputs.OpenpipelineMetricsEndpoints']]] = None,
+            pipelines: pulumi.Input[Optional[Union['OpenpipelineMetricsPipelinesArgs', 'OpenpipelineMetricsPipelinesArgsDict', 'outputs.OpenpipelineMetricsPipelines']]] = None,
+            routing: pulumi.Input[Optional[Union['OpenpipelineMetricsRoutingArgs', 'OpenpipelineMetricsRoutingArgsDict', 'outputs.OpenpipelineMetricsRouting']]] = None) -> 'OpenpipelineMetrics':
         """
         Get an existing OpenpipelineMetrics resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -294,9 +294,9 @@ class OpenpipelineMetrics(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['OpenpipelineMetricsEndpointsArgs', 'OpenpipelineMetricsEndpointsArgsDict']] endpoints: List of all ingest sources of the configuration
-        :param pulumi.Input[Union['OpenpipelineMetricsPipelinesArgs', 'OpenpipelineMetricsPipelinesArgsDict']] pipelines: List of all pipelines of the configuration
-        :param pulumi.Input[Union['OpenpipelineMetricsRoutingArgs', 'OpenpipelineMetricsRoutingArgsDict']] routing: Dynamic routing definition
+        :param pulumi.Input[Union['OpenpipelineMetricsEndpointsArgs', 'OpenpipelineMetricsEndpointsArgsDict', 'outputs.OpenpipelineMetricsEndpoints']] endpoints: List of all ingest sources of the configuration
+        :param pulumi.Input[Union['OpenpipelineMetricsPipelinesArgs', 'OpenpipelineMetricsPipelinesArgsDict', 'outputs.OpenpipelineMetricsPipelines']] pipelines: List of all pipelines of the configuration
+        :param pulumi.Input[Union['OpenpipelineMetricsRoutingArgs', 'OpenpipelineMetricsRoutingArgsDict', 'outputs.OpenpipelineMetricsRouting']] routing: Dynamic routing definition
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

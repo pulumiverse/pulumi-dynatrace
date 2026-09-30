@@ -322,13 +322,13 @@ class OpentelemetryMetrics(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 additional_attributes: pulumi.Input[Optional[Union['OpentelemetryMetricsAdditionalAttributesArgs', 'OpentelemetryMetricsAdditionalAttributesArgsDict']]] = None,
+                 additional_attributes: pulumi.Input[Optional[Union['OpentelemetryMetricsAdditionalAttributesArgs', 'OpentelemetryMetricsAdditionalAttributesArgsDict', 'outputs.OpentelemetryMetricsAdditionalAttributes']]] = None,
                  additional_attributes_to_dimension_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  enable_mint_v2_ingest: pulumi.Input[Optional[_builtins.bool]] = None,
                  meter_name_to_dimension_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  mode: pulumi.Input[Optional[_builtins.str]] = None,
                  scope: pulumi.Input[Optional[_builtins.str]] = None,
-                 to_drop_attributes: pulumi.Input[Optional[Union['OpentelemetryMetricsToDropAttributesArgs', 'OpentelemetryMetricsToDropAttributesArgsDict']]] = None,
+                 to_drop_attributes: pulumi.Input[Optional[Union['OpentelemetryMetricsToDropAttributesArgs', 'OpentelemetryMetricsToDropAttributesArgsDict', 'outputs.OpentelemetryMetricsToDropAttributes']]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -348,7 +348,7 @@ class OpentelemetryMetrics(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['OpentelemetryMetricsAdditionalAttributesArgs', 'OpentelemetryMetricsAdditionalAttributesArgsDict']] additional_attributes: When enabled, the attributes defined in the list below will be added as dimensions to ingested OTLP metrics if they are present in the OpenTelemetry resource or in the instrumentation scope.
+        :param pulumi.Input[Union['OpentelemetryMetricsAdditionalAttributesArgs', 'OpentelemetryMetricsAdditionalAttributesArgsDict', 'outputs.OpentelemetryMetricsAdditionalAttributes']] additional_attributes: When enabled, the attributes defined in the list below will be added as dimensions to ingested OTLP metrics if they are present in the OpenTelemetry resource or in the instrumentation scope.
         :param pulumi.Input[_builtins.bool] additional_attributes_to_dimension_enabled: Add the resource and scope attributes configured below as dimensions (Metrics Classic)
         :param pulumi.Input[_builtins.bool] enable_mint_v2_ingest: Enable advanced OpenTelemetry metric capabilities with Grail, including primary field enrichment, flexible dimensions, enhanced routing, cost allocation, and support for high-cardinality queries. For more details about this and its effect on enrichment with the `dt.entity.service` dimension, please see [this post](https://dt-url.net/otlp-metrics-advanced).
         :param pulumi.Input[_builtins.bool] meter_name_to_dimension_enabled: When enabled, the Meter name (also referred to as InstrumentationScope or InstrumentationLibrary in OpenTelemetry SDKs) and version will be added as dimensions (`otel.scope.name` and `otel.scope.version`) to ingested OTLP metrics.
@@ -360,7 +360,7 @@ class OpentelemetryMetrics(pulumi.CustomResource):
                
                **Note:** Using `ADDITIVE` and `EXPLICIT` at the same time within differnt resource instances will lead to unexpected results.
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (environment-default). Omit this property if you want to cover the whole environment.
-        :param pulumi.Input[Union['OpentelemetryMetricsToDropAttributesArgs', 'OpentelemetryMetricsToDropAttributesArgsDict']] to_drop_attributes: The attributes defined in the list below will be dropped from all ingested OTLP metrics.
+        :param pulumi.Input[Union['OpentelemetryMetricsToDropAttributesArgs', 'OpentelemetryMetricsToDropAttributesArgsDict', 'outputs.OpentelemetryMetricsToDropAttributes']] to_drop_attributes: The attributes defined in the list below will be dropped from all ingested OTLP metrics.
                
                  **Notes:**
                
@@ -407,13 +407,13 @@ class OpentelemetryMetrics(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 additional_attributes: pulumi.Input[Optional[Union['OpentelemetryMetricsAdditionalAttributesArgs', 'OpentelemetryMetricsAdditionalAttributesArgsDict']]] = None,
+                 additional_attributes: pulumi.Input[Optional[Union['OpentelemetryMetricsAdditionalAttributesArgs', 'OpentelemetryMetricsAdditionalAttributesArgsDict', 'outputs.OpentelemetryMetricsAdditionalAttributes']]] = None,
                  additional_attributes_to_dimension_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  enable_mint_v2_ingest: pulumi.Input[Optional[_builtins.bool]] = None,
                  meter_name_to_dimension_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  mode: pulumi.Input[Optional[_builtins.str]] = None,
                  scope: pulumi.Input[Optional[_builtins.str]] = None,
-                 to_drop_attributes: pulumi.Input[Optional[Union['OpentelemetryMetricsToDropAttributesArgs', 'OpentelemetryMetricsToDropAttributesArgsDict']]] = None,
+                 to_drop_attributes: pulumi.Input[Optional[Union['OpentelemetryMetricsToDropAttributesArgs', 'OpentelemetryMetricsToDropAttributesArgsDict', 'outputs.OpentelemetryMetricsToDropAttributes']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -440,13 +440,13 @@ class OpentelemetryMetrics(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            additional_attributes: pulumi.Input[Optional[Union['OpentelemetryMetricsAdditionalAttributesArgs', 'OpentelemetryMetricsAdditionalAttributesArgsDict']]] = None,
+            additional_attributes: pulumi.Input[Optional[Union['OpentelemetryMetricsAdditionalAttributesArgs', 'OpentelemetryMetricsAdditionalAttributesArgsDict', 'outputs.OpentelemetryMetricsAdditionalAttributes']]] = None,
             additional_attributes_to_dimension_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             enable_mint_v2_ingest: pulumi.Input[Optional[_builtins.bool]] = None,
             meter_name_to_dimension_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             mode: pulumi.Input[Optional[_builtins.str]] = None,
             scope: pulumi.Input[Optional[_builtins.str]] = None,
-            to_drop_attributes: pulumi.Input[Optional[Union['OpentelemetryMetricsToDropAttributesArgs', 'OpentelemetryMetricsToDropAttributesArgsDict']]] = None) -> 'OpentelemetryMetrics':
+            to_drop_attributes: pulumi.Input[Optional[Union['OpentelemetryMetricsToDropAttributesArgs', 'OpentelemetryMetricsToDropAttributesArgsDict', 'outputs.OpentelemetryMetricsToDropAttributes']]] = None) -> 'OpentelemetryMetrics':
         """
         Get an existing OpentelemetryMetrics resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -454,7 +454,7 @@ class OpentelemetryMetrics(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['OpentelemetryMetricsAdditionalAttributesArgs', 'OpentelemetryMetricsAdditionalAttributesArgsDict']] additional_attributes: When enabled, the attributes defined in the list below will be added as dimensions to ingested OTLP metrics if they are present in the OpenTelemetry resource or in the instrumentation scope.
+        :param pulumi.Input[Union['OpentelemetryMetricsAdditionalAttributesArgs', 'OpentelemetryMetricsAdditionalAttributesArgsDict', 'outputs.OpentelemetryMetricsAdditionalAttributes']] additional_attributes: When enabled, the attributes defined in the list below will be added as dimensions to ingested OTLP metrics if they are present in the OpenTelemetry resource or in the instrumentation scope.
         :param pulumi.Input[_builtins.bool] additional_attributes_to_dimension_enabled: Add the resource and scope attributes configured below as dimensions (Metrics Classic)
         :param pulumi.Input[_builtins.bool] enable_mint_v2_ingest: Enable advanced OpenTelemetry metric capabilities with Grail, including primary field enrichment, flexible dimensions, enhanced routing, cost allocation, and support for high-cardinality queries. For more details about this and its effect on enrichment with the `dt.entity.service` dimension, please see [this post](https://dt-url.net/otlp-metrics-advanced).
         :param pulumi.Input[_builtins.bool] meter_name_to_dimension_enabled: When enabled, the Meter name (also referred to as InstrumentationScope or InstrumentationLibrary in OpenTelemetry SDKs) and version will be added as dimensions (`otel.scope.name` and `otel.scope.version`) to ingested OTLP metrics.
@@ -466,7 +466,7 @@ class OpentelemetryMetrics(pulumi.CustomResource):
                
                **Note:** Using `ADDITIVE` and `EXPLICIT` at the same time within differnt resource instances will lead to unexpected results.
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (environment-default). Omit this property if you want to cover the whole environment.
-        :param pulumi.Input[Union['OpentelemetryMetricsToDropAttributesArgs', 'OpentelemetryMetricsToDropAttributesArgsDict']] to_drop_attributes: The attributes defined in the list below will be dropped from all ingested OTLP metrics.
+        :param pulumi.Input[Union['OpentelemetryMetricsToDropAttributesArgs', 'OpentelemetryMetricsToDropAttributesArgsDict', 'outputs.OpentelemetryMetricsToDropAttributes']] to_drop_attributes: The attributes defined in the list below will be dropped from all ingested OTLP metrics.
                
                  **Notes:**
                

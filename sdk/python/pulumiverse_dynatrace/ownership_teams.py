@@ -328,15 +328,15 @@ class OwnershipTeams(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 additional_information: pulumi.Input[Optional[Union['OwnershipTeamsAdditionalInformationArgs', 'OwnershipTeamsAdditionalInformationArgsDict']]] = None,
-                 contact_details: pulumi.Input[Optional[Union['OwnershipTeamsContactDetailsArgs', 'OwnershipTeamsContactDetailsArgsDict']]] = None,
+                 additional_information: pulumi.Input[Optional[Union['OwnershipTeamsAdditionalInformationArgs', 'OwnershipTeamsAdditionalInformationArgsDict', 'outputs.OwnershipTeamsAdditionalInformation']]] = None,
+                 contact_details: pulumi.Input[Optional[Union['OwnershipTeamsContactDetailsArgs', 'OwnershipTeamsContactDetailsArgsDict', 'outputs.OwnershipTeamsContactDetails']]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  external_id: pulumi.Input[Optional[_builtins.str]] = None,
                  identifier: pulumi.Input[Optional[_builtins.str]] = None,
-                 links: pulumi.Input[Optional[Union['OwnershipTeamsLinksArgs', 'OwnershipTeamsLinksArgsDict']]] = None,
+                 links: pulumi.Input[Optional[Union['OwnershipTeamsLinksArgs', 'OwnershipTeamsLinksArgsDict', 'outputs.OwnershipTeamsLinks']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 responsibilities: pulumi.Input[Optional[Union['OwnershipTeamsResponsibilitiesArgs', 'OwnershipTeamsResponsibilitiesArgsDict']]] = None,
-                 supplementary_identifiers: pulumi.Input[Optional[Union['OwnershipTeamsSupplementaryIdentifiersArgs', 'OwnershipTeamsSupplementaryIdentifiersArgsDict']]] = None,
+                 responsibilities: pulumi.Input[Optional[Union['OwnershipTeamsResponsibilitiesArgs', 'OwnershipTeamsResponsibilitiesArgsDict', 'outputs.OwnershipTeamsResponsibilities']]] = None,
+                 supplementary_identifiers: pulumi.Input[Optional[Union['OwnershipTeamsSupplementaryIdentifiersArgs', 'OwnershipTeamsSupplementaryIdentifiersArgsDict', 'outputs.OwnershipTeamsSupplementaryIdentifiers']]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -356,15 +356,15 @@ class OwnershipTeams(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['OwnershipTeamsAdditionalInformationArgs', 'OwnershipTeamsAdditionalInformationArgsDict']] additional_information: Define key/value pairs that further describe this team — for example, cost center, solution type, or business unit assignments.
-        :param pulumi.Input[Union['OwnershipTeamsContactDetailsArgs', 'OwnershipTeamsContactDetailsArgsDict']] contact_details: Define options for messaging integration or other means of contacting this team.
+        :param pulumi.Input[Union['OwnershipTeamsAdditionalInformationArgs', 'OwnershipTeamsAdditionalInformationArgsDict', 'outputs.OwnershipTeamsAdditionalInformation']] additional_information: Define key/value pairs that further describe this team — for example, cost center, solution type, or business unit assignments.
+        :param pulumi.Input[Union['OwnershipTeamsContactDetailsArgs', 'OwnershipTeamsContactDetailsArgsDict', 'outputs.OwnershipTeamsContactDetails']] contact_details: Define options for messaging integration or other means of contacting this team.
         :param pulumi.Input[_builtins.str] description: Description
         :param pulumi.Input[_builtins.str] external_id: This field should only be used for the automation purpose when importing team information.
         :param pulumi.Input[_builtins.str] identifier: The team identifier is used to reference the team from any entity in Dynatrace. If you are using Kubernetes labels, keep in mind the 63 character limit that they enforce.
-        :param pulumi.Input[Union['OwnershipTeamsLinksArgs', 'OwnershipTeamsLinksArgsDict']] links: Include links to online resources where information relevant to this team’s responsibilities can be found.
+        :param pulumi.Input[Union['OwnershipTeamsLinksArgs', 'OwnershipTeamsLinksArgsDict', 'outputs.OwnershipTeamsLinks']] links: Include links to online resources where information relevant to this team’s responsibilities can be found.
         :param pulumi.Input[_builtins.str] name: Team name
-        :param pulumi.Input[Union['OwnershipTeamsResponsibilitiesArgs', 'OwnershipTeamsResponsibilitiesArgsDict']] responsibilities: Turn on all responsibility assignments that apply to this team.
-        :param pulumi.Input[Union['OwnershipTeamsSupplementaryIdentifiersArgs', 'OwnershipTeamsSupplementaryIdentifiersArgsDict']] supplementary_identifiers: The supplementary team identifiers can be optionally used in addition to the main team identifier to reference this team from any entity in Dynatrace. Up to 3 supplementary identifiers are supported.
+        :param pulumi.Input[Union['OwnershipTeamsResponsibilitiesArgs', 'OwnershipTeamsResponsibilitiesArgsDict', 'outputs.OwnershipTeamsResponsibilities']] responsibilities: Turn on all responsibility assignments that apply to this team.
+        :param pulumi.Input[Union['OwnershipTeamsSupplementaryIdentifiersArgs', 'OwnershipTeamsSupplementaryIdentifiersArgsDict', 'outputs.OwnershipTeamsSupplementaryIdentifiers']] supplementary_identifiers: The supplementary team identifiers can be optionally used in addition to the main team identifier to reference this team from any entity in Dynatrace. Up to 3 supplementary identifiers are supported.
         """
         ...
     @overload
@@ -403,15 +403,15 @@ class OwnershipTeams(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 additional_information: pulumi.Input[Optional[Union['OwnershipTeamsAdditionalInformationArgs', 'OwnershipTeamsAdditionalInformationArgsDict']]] = None,
-                 contact_details: pulumi.Input[Optional[Union['OwnershipTeamsContactDetailsArgs', 'OwnershipTeamsContactDetailsArgsDict']]] = None,
+                 additional_information: pulumi.Input[Optional[Union['OwnershipTeamsAdditionalInformationArgs', 'OwnershipTeamsAdditionalInformationArgsDict', 'outputs.OwnershipTeamsAdditionalInformation']]] = None,
+                 contact_details: pulumi.Input[Optional[Union['OwnershipTeamsContactDetailsArgs', 'OwnershipTeamsContactDetailsArgsDict', 'outputs.OwnershipTeamsContactDetails']]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  external_id: pulumi.Input[Optional[_builtins.str]] = None,
                  identifier: pulumi.Input[Optional[_builtins.str]] = None,
-                 links: pulumi.Input[Optional[Union['OwnershipTeamsLinksArgs', 'OwnershipTeamsLinksArgsDict']]] = None,
+                 links: pulumi.Input[Optional[Union['OwnershipTeamsLinksArgs', 'OwnershipTeamsLinksArgsDict', 'outputs.OwnershipTeamsLinks']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 responsibilities: pulumi.Input[Optional[Union['OwnershipTeamsResponsibilitiesArgs', 'OwnershipTeamsResponsibilitiesArgsDict']]] = None,
-                 supplementary_identifiers: pulumi.Input[Optional[Union['OwnershipTeamsSupplementaryIdentifiersArgs', 'OwnershipTeamsSupplementaryIdentifiersArgsDict']]] = None,
+                 responsibilities: pulumi.Input[Optional[Union['OwnershipTeamsResponsibilitiesArgs', 'OwnershipTeamsResponsibilitiesArgsDict', 'outputs.OwnershipTeamsResponsibilities']]] = None,
+                 supplementary_identifiers: pulumi.Input[Optional[Union['OwnershipTeamsSupplementaryIdentifiersArgs', 'OwnershipTeamsSupplementaryIdentifiersArgsDict', 'outputs.OwnershipTeamsSupplementaryIdentifiers']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -444,15 +444,15 @@ class OwnershipTeams(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            additional_information: pulumi.Input[Optional[Union['OwnershipTeamsAdditionalInformationArgs', 'OwnershipTeamsAdditionalInformationArgsDict']]] = None,
-            contact_details: pulumi.Input[Optional[Union['OwnershipTeamsContactDetailsArgs', 'OwnershipTeamsContactDetailsArgsDict']]] = None,
+            additional_information: pulumi.Input[Optional[Union['OwnershipTeamsAdditionalInformationArgs', 'OwnershipTeamsAdditionalInformationArgsDict', 'outputs.OwnershipTeamsAdditionalInformation']]] = None,
+            contact_details: pulumi.Input[Optional[Union['OwnershipTeamsContactDetailsArgs', 'OwnershipTeamsContactDetailsArgsDict', 'outputs.OwnershipTeamsContactDetails']]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
             external_id: pulumi.Input[Optional[_builtins.str]] = None,
             identifier: pulumi.Input[Optional[_builtins.str]] = None,
-            links: pulumi.Input[Optional[Union['OwnershipTeamsLinksArgs', 'OwnershipTeamsLinksArgsDict']]] = None,
+            links: pulumi.Input[Optional[Union['OwnershipTeamsLinksArgs', 'OwnershipTeamsLinksArgsDict', 'outputs.OwnershipTeamsLinks']]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
-            responsibilities: pulumi.Input[Optional[Union['OwnershipTeamsResponsibilitiesArgs', 'OwnershipTeamsResponsibilitiesArgsDict']]] = None,
-            supplementary_identifiers: pulumi.Input[Optional[Union['OwnershipTeamsSupplementaryIdentifiersArgs', 'OwnershipTeamsSupplementaryIdentifiersArgsDict']]] = None) -> 'OwnershipTeams':
+            responsibilities: pulumi.Input[Optional[Union['OwnershipTeamsResponsibilitiesArgs', 'OwnershipTeamsResponsibilitiesArgsDict', 'outputs.OwnershipTeamsResponsibilities']]] = None,
+            supplementary_identifiers: pulumi.Input[Optional[Union['OwnershipTeamsSupplementaryIdentifiersArgs', 'OwnershipTeamsSupplementaryIdentifiersArgsDict', 'outputs.OwnershipTeamsSupplementaryIdentifiers']]] = None) -> 'OwnershipTeams':
         """
         Get an existing OwnershipTeams resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -460,15 +460,15 @@ class OwnershipTeams(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['OwnershipTeamsAdditionalInformationArgs', 'OwnershipTeamsAdditionalInformationArgsDict']] additional_information: Define key/value pairs that further describe this team — for example, cost center, solution type, or business unit assignments.
-        :param pulumi.Input[Union['OwnershipTeamsContactDetailsArgs', 'OwnershipTeamsContactDetailsArgsDict']] contact_details: Define options for messaging integration or other means of contacting this team.
+        :param pulumi.Input[Union['OwnershipTeamsAdditionalInformationArgs', 'OwnershipTeamsAdditionalInformationArgsDict', 'outputs.OwnershipTeamsAdditionalInformation']] additional_information: Define key/value pairs that further describe this team — for example, cost center, solution type, or business unit assignments.
+        :param pulumi.Input[Union['OwnershipTeamsContactDetailsArgs', 'OwnershipTeamsContactDetailsArgsDict', 'outputs.OwnershipTeamsContactDetails']] contact_details: Define options for messaging integration or other means of contacting this team.
         :param pulumi.Input[_builtins.str] description: Description
         :param pulumi.Input[_builtins.str] external_id: This field should only be used for the automation purpose when importing team information.
         :param pulumi.Input[_builtins.str] identifier: The team identifier is used to reference the team from any entity in Dynatrace. If you are using Kubernetes labels, keep in mind the 63 character limit that they enforce.
-        :param pulumi.Input[Union['OwnershipTeamsLinksArgs', 'OwnershipTeamsLinksArgsDict']] links: Include links to online resources where information relevant to this team’s responsibilities can be found.
+        :param pulumi.Input[Union['OwnershipTeamsLinksArgs', 'OwnershipTeamsLinksArgsDict', 'outputs.OwnershipTeamsLinks']] links: Include links to online resources where information relevant to this team’s responsibilities can be found.
         :param pulumi.Input[_builtins.str] name: Team name
-        :param pulumi.Input[Union['OwnershipTeamsResponsibilitiesArgs', 'OwnershipTeamsResponsibilitiesArgsDict']] responsibilities: Turn on all responsibility assignments that apply to this team.
-        :param pulumi.Input[Union['OwnershipTeamsSupplementaryIdentifiersArgs', 'OwnershipTeamsSupplementaryIdentifiersArgsDict']] supplementary_identifiers: The supplementary team identifiers can be optionally used in addition to the main team identifier to reference this team from any entity in Dynatrace. Up to 3 supplementary identifiers are supported.
+        :param pulumi.Input[Union['OwnershipTeamsResponsibilitiesArgs', 'OwnershipTeamsResponsibilitiesArgsDict', 'outputs.OwnershipTeamsResponsibilities']] responsibilities: Turn on all responsibility assignments that apply to this team.
+        :param pulumi.Input[Union['OwnershipTeamsSupplementaryIdentifiersArgs', 'OwnershipTeamsSupplementaryIdentifiersArgsDict', 'outputs.OwnershipTeamsSupplementaryIdentifiers']] supplementary_identifiers: The supplementary team identifiers can be optionally used in addition to the main team identifier to reference this team from any entity in Dynatrace. Up to 3 supplementary identifiers are supported.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

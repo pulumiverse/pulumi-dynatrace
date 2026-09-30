@@ -106,7 +106,7 @@ class KubernetesEnrichment(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 rules: pulumi.Input[Optional[Union['KubernetesEnrichmentRulesArgs', 'KubernetesEnrichmentRulesArgsDict']]] = None,
+                 rules: pulumi.Input[Optional[Union['KubernetesEnrichmentRulesArgs', 'KubernetesEnrichmentRulesArgsDict', 'outputs.KubernetesEnrichmentRules']]] = None,
                  scope: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -127,7 +127,7 @@ class KubernetesEnrichment(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['KubernetesEnrichmentRulesArgs', 'KubernetesEnrichmentRulesArgsDict']] rules: Kubernetes Telemetry Enrichment empowers you to effectively tag your telemetry data using Kubernetes namespace labels and annotations. Additionally, it enables you to tag it for cost allocation and permission purposes.
+        :param pulumi.Input[Union['KubernetesEnrichmentRulesArgs', 'KubernetesEnrichmentRulesArgsDict', 'outputs.KubernetesEnrichmentRules']] rules: Kubernetes Telemetry Enrichment empowers you to effectively tag your telemetry data using Kubernetes namespace labels and annotations. Additionally, it enables you to tag it for cost allocation and permission purposes.
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
         """
         ...
@@ -167,7 +167,7 @@ class KubernetesEnrichment(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 rules: pulumi.Input[Optional[Union['KubernetesEnrichmentRulesArgs', 'KubernetesEnrichmentRulesArgsDict']]] = None,
+                 rules: pulumi.Input[Optional[Union['KubernetesEnrichmentRulesArgs', 'KubernetesEnrichmentRulesArgsDict', 'outputs.KubernetesEnrichmentRules']]] = None,
                  scope: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -190,7 +190,7 @@ class KubernetesEnrichment(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            rules: pulumi.Input[Optional[Union['KubernetesEnrichmentRulesArgs', 'KubernetesEnrichmentRulesArgsDict']]] = None,
+            rules: pulumi.Input[Optional[Union['KubernetesEnrichmentRulesArgs', 'KubernetesEnrichmentRulesArgsDict', 'outputs.KubernetesEnrichmentRules']]] = None,
             scope: pulumi.Input[Optional[_builtins.str]] = None) -> 'KubernetesEnrichment':
         """
         Get an existing KubernetesEnrichment resource's state with the given name, id, and optional extra
@@ -199,7 +199,7 @@ class KubernetesEnrichment(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['KubernetesEnrichmentRulesArgs', 'KubernetesEnrichmentRulesArgsDict']] rules: Kubernetes Telemetry Enrichment empowers you to effectively tag your telemetry data using Kubernetes namespace labels and annotations. Additionally, it enables you to tag it for cost allocation and permission purposes.
+        :param pulumi.Input[Union['KubernetesEnrichmentRulesArgs', 'KubernetesEnrichmentRulesArgsDict', 'outputs.KubernetesEnrichmentRules']] rules: Kubernetes Telemetry Enrichment empowers you to effectively tag your telemetry data using Kubernetes namespace labels and annotations. Additionally, it enables you to tag it for cost allocation and permission purposes.
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

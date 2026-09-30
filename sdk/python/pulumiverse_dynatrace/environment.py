@@ -233,9 +233,9 @@ class Environment(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 quotas: pulumi.Input[Optional[Union['EnvironmentQuotasArgs', 'EnvironmentQuotasArgsDict']]] = None,
+                 quotas: pulumi.Input[Optional[Union['EnvironmentQuotasArgs', 'EnvironmentQuotasArgsDict', 'outputs.EnvironmentQuotas']]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
-                 storage: pulumi.Input[Optional[Union['EnvironmentStorageArgs', 'EnvironmentStorageArgsDict']]] = None,
+                 storage: pulumi.Input[Optional[Union['EnvironmentStorageArgs', 'EnvironmentStorageArgsDict', 'outputs.EnvironmentStorage']]] = None,
                  tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  trial: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
@@ -252,9 +252,9 @@ class Environment(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] name: The display name of the environment
-        :param pulumi.Input[Union['EnvironmentQuotasArgs', 'EnvironmentQuotasArgsDict']] quotas: Environment level consumption and quotas information
+        :param pulumi.Input[Union['EnvironmentQuotasArgs', 'EnvironmentQuotasArgsDict', 'outputs.EnvironmentQuotas']] quotas: Environment level consumption and quotas information
         :param pulumi.Input[_builtins.str] state: Indicates whether the environment is enabled or disabled. Possible values are `ENABLED` and `DISABLED`. The default value is ENABLED
-        :param pulumi.Input[Union['EnvironmentStorageArgs', 'EnvironmentStorageArgsDict']] storage: Environment level storage usage and limit information
+        :param pulumi.Input[Union['EnvironmentStorageArgs', 'EnvironmentStorageArgsDict', 'outputs.EnvironmentStorage']] storage: Environment level storage usage and limit information
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] tags: A set of tags that are assigned to this environment. Every tag can have a maximum length of 100 characters
         :param pulumi.Input[_builtins.bool] trial: Specifies whether the environment is a trial environment or a non-trial environment. Creating a trial environment is only possible if your license allows that. The default value is false (non-trial)
         """
@@ -290,9 +290,9 @@ class Environment(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 quotas: pulumi.Input[Optional[Union['EnvironmentQuotasArgs', 'EnvironmentQuotasArgsDict']]] = None,
+                 quotas: pulumi.Input[Optional[Union['EnvironmentQuotasArgs', 'EnvironmentQuotasArgsDict', 'outputs.EnvironmentQuotas']]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
-                 storage: pulumi.Input[Optional[Union['EnvironmentStorageArgs', 'EnvironmentStorageArgsDict']]] = None,
+                 storage: pulumi.Input[Optional[Union['EnvironmentStorageArgs', 'EnvironmentStorageArgsDict', 'outputs.EnvironmentStorage']]] = None,
                  tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  trial: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
@@ -325,9 +325,9 @@ class Environment(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
-            quotas: pulumi.Input[Optional[Union['EnvironmentQuotasArgs', 'EnvironmentQuotasArgsDict']]] = None,
+            quotas: pulumi.Input[Optional[Union['EnvironmentQuotasArgs', 'EnvironmentQuotasArgsDict', 'outputs.EnvironmentQuotas']]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
-            storage: pulumi.Input[Optional[Union['EnvironmentStorageArgs', 'EnvironmentStorageArgsDict']]] = None,
+            storage: pulumi.Input[Optional[Union['EnvironmentStorageArgs', 'EnvironmentStorageArgsDict', 'outputs.EnvironmentStorage']]] = None,
             tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             trial: pulumi.Input[Optional[_builtins.bool]] = None) -> 'Environment':
         """
@@ -338,9 +338,9 @@ class Environment(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] name: The display name of the environment
-        :param pulumi.Input[Union['EnvironmentQuotasArgs', 'EnvironmentQuotasArgsDict']] quotas: Environment level consumption and quotas information
+        :param pulumi.Input[Union['EnvironmentQuotasArgs', 'EnvironmentQuotasArgsDict', 'outputs.EnvironmentQuotas']] quotas: Environment level consumption and quotas information
         :param pulumi.Input[_builtins.str] state: Indicates whether the environment is enabled or disabled. Possible values are `ENABLED` and `DISABLED`. The default value is ENABLED
-        :param pulumi.Input[Union['EnvironmentStorageArgs', 'EnvironmentStorageArgsDict']] storage: Environment level storage usage and limit information
+        :param pulumi.Input[Union['EnvironmentStorageArgs', 'EnvironmentStorageArgsDict', 'outputs.EnvironmentStorage']] storage: Environment level storage usage and limit information
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] tags: A set of tags that are assigned to this environment. Every tag can have a maximum length of 100 characters
         :param pulumi.Input[_builtins.bool] trial: Specifies whether the environment is a trial environment or a non-trial environment. Creating a trial environment is only possible if your license allows that. The default value is false (non-trial)
         """

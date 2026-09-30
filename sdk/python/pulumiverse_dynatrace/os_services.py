@@ -620,11 +620,11 @@ class OsServices(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  alert_activation_duration: pulumi.Input[Optional[_builtins.int]] = None,
                  alerting: pulumi.Input[Optional[_builtins.bool]] = None,
-                 detection_conditions_linux: pulumi.Input[Optional[Union['OsServicesDetectionConditionsLinuxArgs', 'OsServicesDetectionConditionsLinuxArgsDict']]] = None,
-                 detection_conditions_windows: pulumi.Input[Optional[Union['OsServicesDetectionConditionsWindowsArgs', 'OsServicesDetectionConditionsWindowsArgsDict']]] = None,
+                 detection_conditions_linux: pulumi.Input[Optional[Union['OsServicesDetectionConditionsLinuxArgs', 'OsServicesDetectionConditionsLinuxArgsDict', 'outputs.OsServicesDetectionConditionsLinux']]] = None,
+                 detection_conditions_windows: pulumi.Input[Optional[Union['OsServicesDetectionConditionsWindowsArgs', 'OsServicesDetectionConditionsWindowsArgsDict', 'outputs.OsServicesDetectionConditionsWindows']]] = None,
                  enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  insert_after: pulumi.Input[Optional[_builtins.str]] = None,
-                 metadata: pulumi.Input[Optional[Union['OsServicesMetadataArgs', 'OsServicesMetadataArgsDict']]] = None,
+                 metadata: pulumi.Input[Optional[Union['OsServicesMetadataArgs', 'OsServicesMetadataArgsDict', 'outputs.OsServicesMetadata']]] = None,
                  monitoring: pulumi.Input[Optional[_builtins.bool]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  not_installed_alerting: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -653,11 +653,11 @@ class OsServices(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] alert_activation_duration: The number of **10-second measurement cycles** before alerting is triggered
         :param pulumi.Input[_builtins.bool] alerting: Toggle the switch in order to enable or disable alerting for this policy
-        :param pulumi.Input[Union['OsServicesDetectionConditionsLinuxArgs', 'OsServicesDetectionConditionsLinuxArgsDict']] detection_conditions_linux: Detection rules
-        :param pulumi.Input[Union['OsServicesDetectionConditionsWindowsArgs', 'OsServicesDetectionConditionsWindowsArgsDict']] detection_conditions_windows: Detection rules
+        :param pulumi.Input[Union['OsServicesDetectionConditionsLinuxArgs', 'OsServicesDetectionConditionsLinuxArgsDict', 'outputs.OsServicesDetectionConditionsLinux']] detection_conditions_linux: Detection rules
+        :param pulumi.Input[Union['OsServicesDetectionConditionsWindowsArgs', 'OsServicesDetectionConditionsWindowsArgsDict', 'outputs.OsServicesDetectionConditionsWindows']] detection_conditions_windows: Detection rules
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
-        :param pulumi.Input[Union['OsServicesMetadataArgs', 'OsServicesMetadataArgsDict']] metadata: Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+).
+        :param pulumi.Input[Union['OsServicesMetadataArgs', 'OsServicesMetadataArgsDict', 'outputs.OsServicesMetadata']] metadata: Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+).
         :param pulumi.Input[_builtins.bool] monitoring: Toggle the switch in order to enable or disable availability metric monitoring for this policy. Availability metrics produce custom metrics. Refer to [documentation](https://dt-url.net/vl03xzk) for consumption examples. Each monitored service consumes one custom metric.
                
                  **The feature can't be configured on hosts in Discovery mode**
@@ -738,11 +738,11 @@ class OsServices(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  alert_activation_duration: pulumi.Input[Optional[_builtins.int]] = None,
                  alerting: pulumi.Input[Optional[_builtins.bool]] = None,
-                 detection_conditions_linux: pulumi.Input[Optional[Union['OsServicesDetectionConditionsLinuxArgs', 'OsServicesDetectionConditionsLinuxArgsDict']]] = None,
-                 detection_conditions_windows: pulumi.Input[Optional[Union['OsServicesDetectionConditionsWindowsArgs', 'OsServicesDetectionConditionsWindowsArgsDict']]] = None,
+                 detection_conditions_linux: pulumi.Input[Optional[Union['OsServicesDetectionConditionsLinuxArgs', 'OsServicesDetectionConditionsLinuxArgsDict', 'outputs.OsServicesDetectionConditionsLinux']]] = None,
+                 detection_conditions_windows: pulumi.Input[Optional[Union['OsServicesDetectionConditionsWindowsArgs', 'OsServicesDetectionConditionsWindowsArgsDict', 'outputs.OsServicesDetectionConditionsWindows']]] = None,
                  enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  insert_after: pulumi.Input[Optional[_builtins.str]] = None,
-                 metadata: pulumi.Input[Optional[Union['OsServicesMetadataArgs', 'OsServicesMetadataArgsDict']]] = None,
+                 metadata: pulumi.Input[Optional[Union['OsServicesMetadataArgs', 'OsServicesMetadataArgsDict', 'outputs.OsServicesMetadata']]] = None,
                  monitoring: pulumi.Input[Optional[_builtins.bool]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  not_installed_alerting: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -793,11 +793,11 @@ class OsServices(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             alert_activation_duration: pulumi.Input[Optional[_builtins.int]] = None,
             alerting: pulumi.Input[Optional[_builtins.bool]] = None,
-            detection_conditions_linux: pulumi.Input[Optional[Union['OsServicesDetectionConditionsLinuxArgs', 'OsServicesDetectionConditionsLinuxArgsDict']]] = None,
-            detection_conditions_windows: pulumi.Input[Optional[Union['OsServicesDetectionConditionsWindowsArgs', 'OsServicesDetectionConditionsWindowsArgsDict']]] = None,
+            detection_conditions_linux: pulumi.Input[Optional[Union['OsServicesDetectionConditionsLinuxArgs', 'OsServicesDetectionConditionsLinuxArgsDict', 'outputs.OsServicesDetectionConditionsLinux']]] = None,
+            detection_conditions_windows: pulumi.Input[Optional[Union['OsServicesDetectionConditionsWindowsArgs', 'OsServicesDetectionConditionsWindowsArgsDict', 'outputs.OsServicesDetectionConditionsWindows']]] = None,
             enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             insert_after: pulumi.Input[Optional[_builtins.str]] = None,
-            metadata: pulumi.Input[Optional[Union['OsServicesMetadataArgs', 'OsServicesMetadataArgsDict']]] = None,
+            metadata: pulumi.Input[Optional[Union['OsServicesMetadataArgs', 'OsServicesMetadataArgsDict', 'outputs.OsServicesMetadata']]] = None,
             monitoring: pulumi.Input[Optional[_builtins.bool]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             not_installed_alerting: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -814,11 +814,11 @@ class OsServices(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] alert_activation_duration: The number of **10-second measurement cycles** before alerting is triggered
         :param pulumi.Input[_builtins.bool] alerting: Toggle the switch in order to enable or disable alerting for this policy
-        :param pulumi.Input[Union['OsServicesDetectionConditionsLinuxArgs', 'OsServicesDetectionConditionsLinuxArgsDict']] detection_conditions_linux: Detection rules
-        :param pulumi.Input[Union['OsServicesDetectionConditionsWindowsArgs', 'OsServicesDetectionConditionsWindowsArgsDict']] detection_conditions_windows: Detection rules
+        :param pulumi.Input[Union['OsServicesDetectionConditionsLinuxArgs', 'OsServicesDetectionConditionsLinuxArgsDict', 'outputs.OsServicesDetectionConditionsLinux']] detection_conditions_linux: Detection rules
+        :param pulumi.Input[Union['OsServicesDetectionConditionsWindowsArgs', 'OsServicesDetectionConditionsWindowsArgsDict', 'outputs.OsServicesDetectionConditionsWindows']] detection_conditions_windows: Detection rules
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
-        :param pulumi.Input[Union['OsServicesMetadataArgs', 'OsServicesMetadataArgsDict']] metadata: Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+).
+        :param pulumi.Input[Union['OsServicesMetadataArgs', 'OsServicesMetadataArgsDict', 'outputs.OsServicesMetadata']] metadata: Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+).
         :param pulumi.Input[_builtins.bool] monitoring: Toggle the switch in order to enable or disable availability metric monitoring for this policy. Availability metrics produce custom metrics. Refer to [documentation](https://dt-url.net/vl03xzk) for consumption examples. Each monitored service consumes one custom metric.
                
                  **The feature can't be configured on hosts in Discovery mode**

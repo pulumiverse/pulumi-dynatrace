@@ -170,7 +170,7 @@ class SpanCaptureRule(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  action: pulumi.Input[Optional[_builtins.str]] = None,
                  insert_after: pulumi.Input[Optional[_builtins.str]] = None,
-                 matches: pulumi.Input[Optional[Union['SpanCaptureRuleMatchesArgs', 'SpanCaptureRuleMatchesArgsDict']]] = None,
+                 matches: pulumi.Input[Optional[Union['SpanCaptureRuleMatchesArgs', 'SpanCaptureRuleMatchesArgsDict', 'outputs.SpanCaptureRuleMatches']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -193,7 +193,7 @@ class SpanCaptureRule(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] action: Whether to create an entry point or not
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
-        :param pulumi.Input[Union['SpanCaptureRuleMatchesArgs', 'SpanCaptureRuleMatchesArgsDict']] matches: Matching strategies for the Span
+        :param pulumi.Input[Union['SpanCaptureRuleMatchesArgs', 'SpanCaptureRuleMatchesArgsDict', 'outputs.SpanCaptureRuleMatches']] matches: Matching strategies for the Span
         :param pulumi.Input[_builtins.str] name: The name of the rule
         """
         ...
@@ -235,7 +235,7 @@ class SpanCaptureRule(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  action: pulumi.Input[Optional[_builtins.str]] = None,
                  insert_after: pulumi.Input[Optional[_builtins.str]] = None,
-                 matches: pulumi.Input[Optional[Union['SpanCaptureRuleMatchesArgs', 'SpanCaptureRuleMatchesArgsDict']]] = None,
+                 matches: pulumi.Input[Optional[Union['SpanCaptureRuleMatchesArgs', 'SpanCaptureRuleMatchesArgsDict', 'outputs.SpanCaptureRuleMatches']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -266,7 +266,7 @@ class SpanCaptureRule(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             action: pulumi.Input[Optional[_builtins.str]] = None,
             insert_after: pulumi.Input[Optional[_builtins.str]] = None,
-            matches: pulumi.Input[Optional[Union['SpanCaptureRuleMatchesArgs', 'SpanCaptureRuleMatchesArgsDict']]] = None,
+            matches: pulumi.Input[Optional[Union['SpanCaptureRuleMatchesArgs', 'SpanCaptureRuleMatchesArgsDict', 'outputs.SpanCaptureRuleMatches']]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None) -> 'SpanCaptureRule':
         """
         Get an existing SpanCaptureRule resource's state with the given name, id, and optional extra
@@ -277,7 +277,7 @@ class SpanCaptureRule(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] action: Whether to create an entry point or not
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
-        :param pulumi.Input[Union['SpanCaptureRuleMatchesArgs', 'SpanCaptureRuleMatchesArgsDict']] matches: Matching strategies for the Span
+        :param pulumi.Input[Union['SpanCaptureRuleMatchesArgs', 'SpanCaptureRuleMatchesArgsDict', 'outputs.SpanCaptureRuleMatches']] matches: Matching strategies for the Span
         :param pulumi.Input[_builtins.str] name: The name of the rule
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

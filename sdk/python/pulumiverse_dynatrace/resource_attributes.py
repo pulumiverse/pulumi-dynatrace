@@ -74,7 +74,7 @@ class ResourceAttributes(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 keys: pulumi.Input[Optional[Union['ResourceAttributesKeysArgs', 'ResourceAttributesKeysArgsDict']]] = None,
+                 keys: pulumi.Input[Optional[Union['ResourceAttributesKeysArgs', 'ResourceAttributesKeysArgsDict', 'outputs.ResourceAttributesKeys']]] = None,
                  __props__=None):
         """
         > This resource API endpoint has been deprecated, please use AttributeAllowList and AttributeMasking instead.
@@ -96,7 +96,7 @@ class ResourceAttributes(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['ResourceAttributesKeysArgs', 'ResourceAttributesKeysArgsDict']] keys: Attribute key allow-list
+        :param pulumi.Input[Union['ResourceAttributesKeysArgs', 'ResourceAttributesKeysArgsDict', 'outputs.ResourceAttributesKeys']] keys: Attribute key allow-list
         """
         ...
     @overload
@@ -137,7 +137,7 @@ class ResourceAttributes(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 keys: pulumi.Input[Optional[Union['ResourceAttributesKeysArgs', 'ResourceAttributesKeysArgsDict']]] = None,
+                 keys: pulumi.Input[Optional[Union['ResourceAttributesKeysArgs', 'ResourceAttributesKeysArgsDict', 'outputs.ResourceAttributesKeys']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -158,7 +158,7 @@ class ResourceAttributes(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            keys: pulumi.Input[Optional[Union['ResourceAttributesKeysArgs', 'ResourceAttributesKeysArgsDict']]] = None) -> 'ResourceAttributes':
+            keys: pulumi.Input[Optional[Union['ResourceAttributesKeysArgs', 'ResourceAttributesKeysArgsDict', 'outputs.ResourceAttributesKeys']]] = None) -> 'ResourceAttributes':
         """
         Get an existing ResourceAttributes resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -166,7 +166,7 @@ class ResourceAttributes(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['ResourceAttributesKeysArgs', 'ResourceAttributesKeysArgsDict']] keys: Attribute key allow-list
+        :param pulumi.Input[Union['ResourceAttributesKeysArgs', 'ResourceAttributesKeysArgsDict', 'outputs.ResourceAttributesKeys']] keys: Attribute key allow-list
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

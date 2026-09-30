@@ -200,10 +200,10 @@ class WebAppManualInsertion(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  application_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 code_snippet: pulumi.Input[Optional[Union['WebAppManualInsertionCodeSnippetArgs', 'WebAppManualInsertionCodeSnippetArgsDict']]] = None,
-                 javascript_tag: pulumi.Input[Optional[Union['WebAppManualInsertionJavascriptTagArgs', 'WebAppManualInsertionJavascriptTagArgsDict']]] = None,
-                 oneagent_javascript_tag: pulumi.Input[Optional[Union['WebAppManualInsertionOneagentJavascriptTagArgs', 'WebAppManualInsertionOneagentJavascriptTagArgsDict']]] = None,
-                 oneagent_javascript_tag_sri: pulumi.Input[Optional[Union['WebAppManualInsertionOneagentJavascriptTagSriArgs', 'WebAppManualInsertionOneagentJavascriptTagSriArgsDict']]] = None,
+                 code_snippet: pulumi.Input[Optional[Union['WebAppManualInsertionCodeSnippetArgs', 'WebAppManualInsertionCodeSnippetArgsDict', 'outputs.WebAppManualInsertionCodeSnippet']]] = None,
+                 javascript_tag: pulumi.Input[Optional[Union['WebAppManualInsertionJavascriptTagArgs', 'WebAppManualInsertionJavascriptTagArgsDict', 'outputs.WebAppManualInsertionJavascriptTag']]] = None,
+                 oneagent_javascript_tag: pulumi.Input[Optional[Union['WebAppManualInsertionOneagentJavascriptTagArgs', 'WebAppManualInsertionOneagentJavascriptTagArgsDict', 'outputs.WebAppManualInsertionOneagentJavascriptTag']]] = None,
+                 oneagent_javascript_tag_sri: pulumi.Input[Optional[Union['WebAppManualInsertionOneagentJavascriptTagSriArgs', 'WebAppManualInsertionOneagentJavascriptTagSriArgsDict', 'outputs.WebAppManualInsertionOneagentJavascriptTagSri']]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -218,10 +218,10 @@ class WebAppManualInsertion(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
-        :param pulumi.Input[Union['WebAppManualInsertionCodeSnippetArgs', 'WebAppManualInsertionCodeSnippetArgsDict']] code_snippet: Code snippet is a piece of inline code that implements basic functionality and loads the full functionality either synchronously or deferred. Even though it implements an update mechanism, regular updates are still required to guarantee compatibility.
-        :param pulumi.Input[Union['WebAppManualInsertionJavascriptTagArgs', 'WebAppManualInsertionJavascriptTagArgsDict']] javascript_tag: JavaScript tag references an external file containing monitoring code and configuration. Due to its dynamic update mechanism, it is recommended for most use cases.
-        :param pulumi.Input[Union['WebAppManualInsertionOneagentJavascriptTagArgs', 'WebAppManualInsertionOneagentJavascriptTagArgsDict']] oneagent_javascript_tag: OneAgent JavaScript tag includes configuration and a reference to an external file containing the monitoring code. It needs to be updated after configuration changes and monitoring code updates.
-        :param pulumi.Input[Union['WebAppManualInsertionOneagentJavascriptTagSriArgs', 'WebAppManualInsertionOneagentJavascriptTagSriArgsDict']] oneagent_javascript_tag_sri: OneAgent JavaScript tag with SRI includes configuration, a reference to an external file containing the monitoring code, and a hash that allows the browser to verify the integrity of the monitoring code before executing it. It needs to be updated after configuration changes and monitoring code updates.
+        :param pulumi.Input[Union['WebAppManualInsertionCodeSnippetArgs', 'WebAppManualInsertionCodeSnippetArgsDict', 'outputs.WebAppManualInsertionCodeSnippet']] code_snippet: Code snippet is a piece of inline code that implements basic functionality and loads the full functionality either synchronously or deferred. Even though it implements an update mechanism, regular updates are still required to guarantee compatibility.
+        :param pulumi.Input[Union['WebAppManualInsertionJavascriptTagArgs', 'WebAppManualInsertionJavascriptTagArgsDict', 'outputs.WebAppManualInsertionJavascriptTag']] javascript_tag: JavaScript tag references an external file containing monitoring code and configuration. Due to its dynamic update mechanism, it is recommended for most use cases.
+        :param pulumi.Input[Union['WebAppManualInsertionOneagentJavascriptTagArgs', 'WebAppManualInsertionOneagentJavascriptTagArgsDict', 'outputs.WebAppManualInsertionOneagentJavascriptTag']] oneagent_javascript_tag: OneAgent JavaScript tag includes configuration and a reference to an external file containing the monitoring code. It needs to be updated after configuration changes and monitoring code updates.
+        :param pulumi.Input[Union['WebAppManualInsertionOneagentJavascriptTagSriArgs', 'WebAppManualInsertionOneagentJavascriptTagSriArgsDict', 'outputs.WebAppManualInsertionOneagentJavascriptTagSri']] oneagent_javascript_tag_sri: OneAgent JavaScript tag with SRI includes configuration, a reference to an external file containing the monitoring code, and a hash that allows the browser to verify the integrity of the monitoring code before executing it. It needs to be updated after configuration changes and monitoring code updates.
         """
         ...
     @overload
@@ -255,10 +255,10 @@ class WebAppManualInsertion(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  application_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 code_snippet: pulumi.Input[Optional[Union['WebAppManualInsertionCodeSnippetArgs', 'WebAppManualInsertionCodeSnippetArgsDict']]] = None,
-                 javascript_tag: pulumi.Input[Optional[Union['WebAppManualInsertionJavascriptTagArgs', 'WebAppManualInsertionJavascriptTagArgsDict']]] = None,
-                 oneagent_javascript_tag: pulumi.Input[Optional[Union['WebAppManualInsertionOneagentJavascriptTagArgs', 'WebAppManualInsertionOneagentJavascriptTagArgsDict']]] = None,
-                 oneagent_javascript_tag_sri: pulumi.Input[Optional[Union['WebAppManualInsertionOneagentJavascriptTagSriArgs', 'WebAppManualInsertionOneagentJavascriptTagSriArgsDict']]] = None,
+                 code_snippet: pulumi.Input[Optional[Union['WebAppManualInsertionCodeSnippetArgs', 'WebAppManualInsertionCodeSnippetArgsDict', 'outputs.WebAppManualInsertionCodeSnippet']]] = None,
+                 javascript_tag: pulumi.Input[Optional[Union['WebAppManualInsertionJavascriptTagArgs', 'WebAppManualInsertionJavascriptTagArgsDict', 'outputs.WebAppManualInsertionJavascriptTag']]] = None,
+                 oneagent_javascript_tag: pulumi.Input[Optional[Union['WebAppManualInsertionOneagentJavascriptTagArgs', 'WebAppManualInsertionOneagentJavascriptTagArgsDict', 'outputs.WebAppManualInsertionOneagentJavascriptTag']]] = None,
+                 oneagent_javascript_tag_sri: pulumi.Input[Optional[Union['WebAppManualInsertionOneagentJavascriptTagSriArgs', 'WebAppManualInsertionOneagentJavascriptTagSriArgsDict', 'outputs.WebAppManualInsertionOneagentJavascriptTagSri']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -290,10 +290,10 @@ class WebAppManualInsertion(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             application_id: pulumi.Input[Optional[_builtins.str]] = None,
-            code_snippet: pulumi.Input[Optional[Union['WebAppManualInsertionCodeSnippetArgs', 'WebAppManualInsertionCodeSnippetArgsDict']]] = None,
-            javascript_tag: pulumi.Input[Optional[Union['WebAppManualInsertionJavascriptTagArgs', 'WebAppManualInsertionJavascriptTagArgsDict']]] = None,
-            oneagent_javascript_tag: pulumi.Input[Optional[Union['WebAppManualInsertionOneagentJavascriptTagArgs', 'WebAppManualInsertionOneagentJavascriptTagArgsDict']]] = None,
-            oneagent_javascript_tag_sri: pulumi.Input[Optional[Union['WebAppManualInsertionOneagentJavascriptTagSriArgs', 'WebAppManualInsertionOneagentJavascriptTagSriArgsDict']]] = None) -> 'WebAppManualInsertion':
+            code_snippet: pulumi.Input[Optional[Union['WebAppManualInsertionCodeSnippetArgs', 'WebAppManualInsertionCodeSnippetArgsDict', 'outputs.WebAppManualInsertionCodeSnippet']]] = None,
+            javascript_tag: pulumi.Input[Optional[Union['WebAppManualInsertionJavascriptTagArgs', 'WebAppManualInsertionJavascriptTagArgsDict', 'outputs.WebAppManualInsertionJavascriptTag']]] = None,
+            oneagent_javascript_tag: pulumi.Input[Optional[Union['WebAppManualInsertionOneagentJavascriptTagArgs', 'WebAppManualInsertionOneagentJavascriptTagArgsDict', 'outputs.WebAppManualInsertionOneagentJavascriptTag']]] = None,
+            oneagent_javascript_tag_sri: pulumi.Input[Optional[Union['WebAppManualInsertionOneagentJavascriptTagSriArgs', 'WebAppManualInsertionOneagentJavascriptTagSriArgsDict', 'outputs.WebAppManualInsertionOneagentJavascriptTagSri']]] = None) -> 'WebAppManualInsertion':
         """
         Get an existing WebAppManualInsertion resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -302,10 +302,10 @@ class WebAppManualInsertion(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
-        :param pulumi.Input[Union['WebAppManualInsertionCodeSnippetArgs', 'WebAppManualInsertionCodeSnippetArgsDict']] code_snippet: Code snippet is a piece of inline code that implements basic functionality and loads the full functionality either synchronously or deferred. Even though it implements an update mechanism, regular updates are still required to guarantee compatibility.
-        :param pulumi.Input[Union['WebAppManualInsertionJavascriptTagArgs', 'WebAppManualInsertionJavascriptTagArgsDict']] javascript_tag: JavaScript tag references an external file containing monitoring code and configuration. Due to its dynamic update mechanism, it is recommended for most use cases.
-        :param pulumi.Input[Union['WebAppManualInsertionOneagentJavascriptTagArgs', 'WebAppManualInsertionOneagentJavascriptTagArgsDict']] oneagent_javascript_tag: OneAgent JavaScript tag includes configuration and a reference to an external file containing the monitoring code. It needs to be updated after configuration changes and monitoring code updates.
-        :param pulumi.Input[Union['WebAppManualInsertionOneagentJavascriptTagSriArgs', 'WebAppManualInsertionOneagentJavascriptTagSriArgsDict']] oneagent_javascript_tag_sri: OneAgent JavaScript tag with SRI includes configuration, a reference to an external file containing the monitoring code, and a hash that allows the browser to verify the integrity of the monitoring code before executing it. It needs to be updated after configuration changes and monitoring code updates.
+        :param pulumi.Input[Union['WebAppManualInsertionCodeSnippetArgs', 'WebAppManualInsertionCodeSnippetArgsDict', 'outputs.WebAppManualInsertionCodeSnippet']] code_snippet: Code snippet is a piece of inline code that implements basic functionality and loads the full functionality either synchronously or deferred. Even though it implements an update mechanism, regular updates are still required to guarantee compatibility.
+        :param pulumi.Input[Union['WebAppManualInsertionJavascriptTagArgs', 'WebAppManualInsertionJavascriptTagArgsDict', 'outputs.WebAppManualInsertionJavascriptTag']] javascript_tag: JavaScript tag references an external file containing monitoring code and configuration. Due to its dynamic update mechanism, it is recommended for most use cases.
+        :param pulumi.Input[Union['WebAppManualInsertionOneagentJavascriptTagArgs', 'WebAppManualInsertionOneagentJavascriptTagArgsDict', 'outputs.WebAppManualInsertionOneagentJavascriptTag']] oneagent_javascript_tag: OneAgent JavaScript tag includes configuration and a reference to an external file containing the monitoring code. It needs to be updated after configuration changes and monitoring code updates.
+        :param pulumi.Input[Union['WebAppManualInsertionOneagentJavascriptTagSriArgs', 'WebAppManualInsertionOneagentJavascriptTagSriArgsDict', 'outputs.WebAppManualInsertionOneagentJavascriptTagSri']] oneagent_javascript_tag_sri: OneAgent JavaScript tag with SRI includes configuration, a reference to an external file containing the monitoring code, and a hash that allows the browser to verify the integrity of the monitoring code before executing it. It needs to be updated after configuration changes and monitoring code updates.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

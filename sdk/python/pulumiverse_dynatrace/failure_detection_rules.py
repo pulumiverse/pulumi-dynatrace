@@ -231,7 +231,7 @@ class FailureDetectionRules(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 conditions: pulumi.Input[Optional[Union['FailureDetectionRulesConditionsArgs', 'FailureDetectionRulesConditionsArgsDict']]] = None,
+                 conditions: pulumi.Input[Optional[Union['FailureDetectionRulesConditionsArgs', 'FailureDetectionRulesConditionsArgsDict', 'outputs.FailureDetectionRulesConditions']]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  insert_after: pulumi.Input[Optional[_builtins.str]] = None,
@@ -256,7 +256,7 @@ class FailureDetectionRules(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['FailureDetectionRulesConditionsArgs', 'FailureDetectionRulesConditionsArgsDict']] conditions: A list of conditions for this rule. All conditions must be fulfilled for the rule to match a service.
+        :param pulumi.Input[Union['FailureDetectionRulesConditionsArgs', 'FailureDetectionRulesConditionsArgsDict', 'outputs.FailureDetectionRulesConditions']] conditions: A list of conditions for this rule. All conditions must be fulfilled for the rule to match a service.
         :param pulumi.Input[_builtins.str] description: A short description of this failure detection rule.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
@@ -300,7 +300,7 @@ class FailureDetectionRules(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 conditions: pulumi.Input[Optional[Union['FailureDetectionRulesConditionsArgs', 'FailureDetectionRulesConditionsArgsDict']]] = None,
+                 conditions: pulumi.Input[Optional[Union['FailureDetectionRulesConditionsArgs', 'FailureDetectionRulesConditionsArgsDict', 'outputs.FailureDetectionRulesConditions']]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  insert_after: pulumi.Input[Optional[_builtins.str]] = None,
@@ -337,7 +337,7 @@ class FailureDetectionRules(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            conditions: pulumi.Input[Optional[Union['FailureDetectionRulesConditionsArgs', 'FailureDetectionRulesConditionsArgsDict']]] = None,
+            conditions: pulumi.Input[Optional[Union['FailureDetectionRulesConditionsArgs', 'FailureDetectionRulesConditionsArgsDict', 'outputs.FailureDetectionRulesConditions']]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
             enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             insert_after: pulumi.Input[Optional[_builtins.str]] = None,
@@ -350,7 +350,7 @@ class FailureDetectionRules(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['FailureDetectionRulesConditionsArgs', 'FailureDetectionRulesConditionsArgsDict']] conditions: A list of conditions for this rule. All conditions must be fulfilled for the rule to match a service.
+        :param pulumi.Input[Union['FailureDetectionRulesConditionsArgs', 'FailureDetectionRulesConditionsArgsDict', 'outputs.FailureDetectionRulesConditions']] conditions: A list of conditions for this rule. All conditions must be fulfilled for the rule to match a service.
         :param pulumi.Input[_builtins.str] description: A short description of this failure detection rule.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched

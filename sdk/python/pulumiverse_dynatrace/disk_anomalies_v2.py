@@ -104,7 +104,7 @@ class DiskAnomaliesV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 disk: pulumi.Input[Optional[Union['DiskAnomaliesV2DiskArgs', 'DiskAnomaliesV2DiskArgsDict']]] = None,
+                 disk: pulumi.Input[Optional[Union['DiskAnomaliesV2DiskArgs', 'DiskAnomaliesV2DiskArgsDict', 'outputs.DiskAnomaliesV2Disk']]] = None,
                  scope: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -125,7 +125,7 @@ class DiskAnomaliesV2(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['DiskAnomaliesV2DiskArgs', 'DiskAnomaliesV2DiskArgsDict']] disk: Disk
+        :param pulumi.Input[Union['DiskAnomaliesV2DiskArgs', 'DiskAnomaliesV2DiskArgsDict', 'outputs.DiskAnomaliesV2Disk']] disk: Disk
         :param pulumi.Input[_builtins.str] scope: The scope for the disk anomaly detection
         """
         ...
@@ -165,7 +165,7 @@ class DiskAnomaliesV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 disk: pulumi.Input[Optional[Union['DiskAnomaliesV2DiskArgs', 'DiskAnomaliesV2DiskArgsDict']]] = None,
+                 disk: pulumi.Input[Optional[Union['DiskAnomaliesV2DiskArgs', 'DiskAnomaliesV2DiskArgsDict', 'outputs.DiskAnomaliesV2Disk']]] = None,
                  scope: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -192,7 +192,7 @@ class DiskAnomaliesV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            disk: pulumi.Input[Optional[Union['DiskAnomaliesV2DiskArgs', 'DiskAnomaliesV2DiskArgsDict']]] = None,
+            disk: pulumi.Input[Optional[Union['DiskAnomaliesV2DiskArgs', 'DiskAnomaliesV2DiskArgsDict', 'outputs.DiskAnomaliesV2Disk']]] = None,
             scope: pulumi.Input[Optional[_builtins.str]] = None) -> 'DiskAnomaliesV2':
         """
         Get an existing DiskAnomaliesV2 resource's state with the given name, id, and optional extra
@@ -201,7 +201,7 @@ class DiskAnomaliesV2(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['DiskAnomaliesV2DiskArgs', 'DiskAnomaliesV2DiskArgsDict']] disk: Disk
+        :param pulumi.Input[Union['DiskAnomaliesV2DiskArgs', 'DiskAnomaliesV2DiskArgsDict', 'outputs.DiskAnomaliesV2Disk']] disk: Disk
         :param pulumi.Input[_builtins.str] scope: The scope for the disk anomaly detection
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

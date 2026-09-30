@@ -136,7 +136,7 @@ class AppMonitoring(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 app_monitoring: pulumi.Input[Optional[Union['AppMonitoringAppMonitoringArgs', 'AppMonitoringAppMonitoringArgsDict']]] = None,
+                 app_monitoring: pulumi.Input[Optional[Union['AppMonitoringAppMonitoringArgs', 'AppMonitoringAppMonitoringArgsDict', 'outputs.AppMonitoringAppMonitoring']]] = None,
                  default_log_level: pulumi.Input[Optional[_builtins.str]] = None,
                  default_trace_level: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -158,7 +158,7 @@ class AppMonitoring(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['AppMonitoringAppMonitoringArgs', 'AppMonitoringAppMonitoringArgsDict']] app_monitoring: You can override the default monitoring setting for each app separately
+        :param pulumi.Input[Union['AppMonitoringAppMonitoringArgs', 'AppMonitoringAppMonitoringArgsDict', 'outputs.AppMonitoringAppMonitoring']] app_monitoring: You can override the default monitoring setting for each app separately
         :param pulumi.Input[_builtins.str] default_log_level: Default log level. Possible values: `debug`, `error`, `info`, `off`, `warn`
         :param pulumi.Input[_builtins.str] default_trace_level: App function traces. Possible values: `off`, `on`
         """
@@ -199,7 +199,7 @@ class AppMonitoring(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 app_monitoring: pulumi.Input[Optional[Union['AppMonitoringAppMonitoringArgs', 'AppMonitoringAppMonitoringArgsDict']]] = None,
+                 app_monitoring: pulumi.Input[Optional[Union['AppMonitoringAppMonitoringArgs', 'AppMonitoringAppMonitoringArgsDict', 'outputs.AppMonitoringAppMonitoring']]] = None,
                  default_log_level: pulumi.Input[Optional[_builtins.str]] = None,
                  default_trace_level: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -228,7 +228,7 @@ class AppMonitoring(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            app_monitoring: pulumi.Input[Optional[Union['AppMonitoringAppMonitoringArgs', 'AppMonitoringAppMonitoringArgsDict']]] = None,
+            app_monitoring: pulumi.Input[Optional[Union['AppMonitoringAppMonitoringArgs', 'AppMonitoringAppMonitoringArgsDict', 'outputs.AppMonitoringAppMonitoring']]] = None,
             default_log_level: pulumi.Input[Optional[_builtins.str]] = None,
             default_trace_level: pulumi.Input[Optional[_builtins.str]] = None) -> 'AppMonitoring':
         """
@@ -238,7 +238,7 @@ class AppMonitoring(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['AppMonitoringAppMonitoringArgs', 'AppMonitoringAppMonitoringArgsDict']] app_monitoring: You can override the default monitoring setting for each app separately
+        :param pulumi.Input[Union['AppMonitoringAppMonitoringArgs', 'AppMonitoringAppMonitoringArgsDict', 'outputs.AppMonitoringAppMonitoring']] app_monitoring: You can override the default monitoring setting for each app separately
         :param pulumi.Input[_builtins.str] default_log_level: Default log level. Possible values: `debug`, `error`, `info`, `off`, `warn`
         :param pulumi.Input[_builtins.str] default_trace_level: App function traces. Possible values: `off`, `on`
         """

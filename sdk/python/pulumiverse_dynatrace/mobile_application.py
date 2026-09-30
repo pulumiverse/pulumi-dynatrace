@@ -472,7 +472,7 @@ class MobileApplication(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 apdex: pulumi.Input[Optional[Union['MobileApplicationApdexArgs', 'MobileApplicationApdexArgsDict']]] = None,
+                 apdex: pulumi.Input[Optional[Union['MobileApplicationApdexArgs', 'MobileApplicationApdexArgsDict', 'outputs.MobileApplicationApdex']]] = None,
                  application_id: pulumi.Input[Optional[_builtins.str]] = None,
                  application_type: pulumi.Input[Optional[_builtins.str]] = None,
                  beacon_endpoint_type: pulumi.Input[Optional[_builtins.str]] = None,
@@ -481,7 +481,7 @@ class MobileApplication(pulumi.CustomResource):
                  key_user_actions: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  opt_in_mode: pulumi.Input[Optional[_builtins.bool]] = None,
-                 properties: pulumi.Input[Optional[Union['MobileApplicationPropertiesArgs', 'MobileApplicationPropertiesArgsDict']]] = None,
+                 properties: pulumi.Input[Optional[Union['MobileApplicationPropertiesArgs', 'MobileApplicationPropertiesArgsDict', 'outputs.MobileApplicationProperties']]] = None,
                  session_replay: pulumi.Input[Optional[_builtins.bool]] = None,
                  session_replay_on_crash: pulumi.Input[Optional[_builtins.bool]] = None,
                  user_session_percentage: pulumi.Input[Optional[_builtins.int]] = None,
@@ -574,7 +574,7 @@ class MobileApplication(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['MobileApplicationApdexArgs', 'MobileApplicationApdexArgsDict']] apdex: Apdex configuration of a mobile application. A duration less than the **tolerable** threshold is considered satisfied
+        :param pulumi.Input[Union['MobileApplicationApdexArgs', 'MobileApplicationApdexArgsDict', 'outputs.MobileApplicationApdex']] apdex: Apdex configuration of a mobile application. A duration less than the **tolerable** threshold is considered satisfied
         :param pulumi.Input[_builtins.str] application_id: The UUID of the application.
         :param pulumi.Input[_builtins.str] application_type: The type of the application. Either `CUSTOM_APPLICATION` or `MOBILE_APPLICATION`.
         :param pulumi.Input[_builtins.str] beacon_endpoint_type: The type of the beacon endpoint. Possible values are `CLUSTER_ACTIVE_GATE`, `ENVIRONMENT_ACTIVE_GATE` and `INSTRUMENTED_WEB_SERVER`.
@@ -585,7 +585,7 @@ class MobileApplication(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] key_user_actions: User Action names to be flagged as Key User Actions
         :param pulumi.Input[_builtins.str] name: The name of the application
         :param pulumi.Input[_builtins.bool] opt_in_mode: The opt-in mode is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[Union['MobileApplicationPropertiesArgs', 'MobileApplicationPropertiesArgsDict']] properties: User Action and Session Properties
+        :param pulumi.Input[Union['MobileApplicationPropertiesArgs', 'MobileApplicationPropertiesArgsDict', 'outputs.MobileApplicationProperties']] properties: User Action and Session Properties
         :param pulumi.Input[_builtins.bool] session_replay: (Field has overlap with `MobileAppEnablement`) The session replay is enabled (`true`) or disabled (`false`).
         :param pulumi.Input[_builtins.bool] session_replay_on_crash: The session replay on crash is enabled (`true`) or disabled (`false`).
                
@@ -699,7 +699,7 @@ class MobileApplication(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 apdex: pulumi.Input[Optional[Union['MobileApplicationApdexArgs', 'MobileApplicationApdexArgsDict']]] = None,
+                 apdex: pulumi.Input[Optional[Union['MobileApplicationApdexArgs', 'MobileApplicationApdexArgsDict', 'outputs.MobileApplicationApdex']]] = None,
                  application_id: pulumi.Input[Optional[_builtins.str]] = None,
                  application_type: pulumi.Input[Optional[_builtins.str]] = None,
                  beacon_endpoint_type: pulumi.Input[Optional[_builtins.str]] = None,
@@ -708,7 +708,7 @@ class MobileApplication(pulumi.CustomResource):
                  key_user_actions: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  opt_in_mode: pulumi.Input[Optional[_builtins.bool]] = None,
-                 properties: pulumi.Input[Optional[Union['MobileApplicationPropertiesArgs', 'MobileApplicationPropertiesArgsDict']]] = None,
+                 properties: pulumi.Input[Optional[Union['MobileApplicationPropertiesArgs', 'MobileApplicationPropertiesArgsDict', 'outputs.MobileApplicationProperties']]] = None,
                  session_replay: pulumi.Input[Optional[_builtins.bool]] = None,
                  session_replay_on_crash: pulumi.Input[Optional[_builtins.bool]] = None,
                  user_session_percentage: pulumi.Input[Optional[_builtins.int]] = None,
@@ -748,7 +748,7 @@ class MobileApplication(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            apdex: pulumi.Input[Optional[Union['MobileApplicationApdexArgs', 'MobileApplicationApdexArgsDict']]] = None,
+            apdex: pulumi.Input[Optional[Union['MobileApplicationApdexArgs', 'MobileApplicationApdexArgsDict', 'outputs.MobileApplicationApdex']]] = None,
             application_id: pulumi.Input[Optional[_builtins.str]] = None,
             application_type: pulumi.Input[Optional[_builtins.str]] = None,
             beacon_endpoint_type: pulumi.Input[Optional[_builtins.str]] = None,
@@ -757,7 +757,7 @@ class MobileApplication(pulumi.CustomResource):
             key_user_actions: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             opt_in_mode: pulumi.Input[Optional[_builtins.bool]] = None,
-            properties: pulumi.Input[Optional[Union['MobileApplicationPropertiesArgs', 'MobileApplicationPropertiesArgsDict']]] = None,
+            properties: pulumi.Input[Optional[Union['MobileApplicationPropertiesArgs', 'MobileApplicationPropertiesArgsDict', 'outputs.MobileApplicationProperties']]] = None,
             session_replay: pulumi.Input[Optional[_builtins.bool]] = None,
             session_replay_on_crash: pulumi.Input[Optional[_builtins.bool]] = None,
             user_session_percentage: pulumi.Input[Optional[_builtins.int]] = None) -> 'MobileApplication':
@@ -768,7 +768,7 @@ class MobileApplication(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['MobileApplicationApdexArgs', 'MobileApplicationApdexArgsDict']] apdex: Apdex configuration of a mobile application. A duration less than the **tolerable** threshold is considered satisfied
+        :param pulumi.Input[Union['MobileApplicationApdexArgs', 'MobileApplicationApdexArgsDict', 'outputs.MobileApplicationApdex']] apdex: Apdex configuration of a mobile application. A duration less than the **tolerable** threshold is considered satisfied
         :param pulumi.Input[_builtins.str] application_id: The UUID of the application.
         :param pulumi.Input[_builtins.str] application_type: The type of the application. Either `CUSTOM_APPLICATION` or `MOBILE_APPLICATION`.
         :param pulumi.Input[_builtins.str] beacon_endpoint_type: The type of the beacon endpoint. Possible values are `CLUSTER_ACTIVE_GATE`, `ENVIRONMENT_ACTIVE_GATE` and `INSTRUMENTED_WEB_SERVER`.
@@ -779,7 +779,7 @@ class MobileApplication(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] key_user_actions: User Action names to be flagged as Key User Actions
         :param pulumi.Input[_builtins.str] name: The name of the application
         :param pulumi.Input[_builtins.bool] opt_in_mode: The opt-in mode is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[Union['MobileApplicationPropertiesArgs', 'MobileApplicationPropertiesArgsDict']] properties: User Action and Session Properties
+        :param pulumi.Input[Union['MobileApplicationPropertiesArgs', 'MobileApplicationPropertiesArgsDict', 'outputs.MobileApplicationProperties']] properties: User Action and Session Properties
         :param pulumi.Input[_builtins.bool] session_replay: (Field has overlap with `MobileAppEnablement`) The session replay is enabled (`true`) or disabled (`false`).
         :param pulumi.Input[_builtins.bool] session_replay_on_crash: The session replay on crash is enabled (`true`) or disabled (`false`).
                

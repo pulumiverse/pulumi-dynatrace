@@ -331,12 +331,12 @@ class OpenpipelineV2EventsSdlcIngestsources(pulumi.CustomResource):
                  default_bucket: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-                 metadata_list: pulumi.Input[Optional[Union['OpenpipelineV2EventsSdlcIngestsourcesMetadataListArgs', 'OpenpipelineV2EventsSdlcIngestsourcesMetadataListArgsDict']]] = None,
+                 metadata_list: pulumi.Input[Optional[Union['OpenpipelineV2EventsSdlcIngestsourcesMetadataListArgs', 'OpenpipelineV2EventsSdlcIngestsourcesMetadataListArgsDict', 'outputs.OpenpipelineV2EventsSdlcIngestsourcesMetadataList']]] = None,
                  path_segment: pulumi.Input[Optional[_builtins.str]] = None,
-                 processing: pulumi.Input[Optional[Union['OpenpipelineV2EventsSdlcIngestsourcesProcessingArgs', 'OpenpipelineV2EventsSdlcIngestsourcesProcessingArgsDict']]] = None,
+                 processing: pulumi.Input[Optional[Union['OpenpipelineV2EventsSdlcIngestsourcesProcessingArgs', 'OpenpipelineV2EventsSdlcIngestsourcesProcessingArgsDict', 'outputs.OpenpipelineV2EventsSdlcIngestsourcesProcessing']]] = None,
                  source: pulumi.Input[Optional[_builtins.str]] = None,
                  source_type: pulumi.Input[Optional[_builtins.str]] = None,
-                 static_routing: pulumi.Input[Optional[Union['OpenpipelineV2EventsSdlcIngestsourcesStaticRoutingArgs', 'OpenpipelineV2EventsSdlcIngestsourcesStaticRoutingArgsDict']]] = None,
+                 static_routing: pulumi.Input[Optional[Union['OpenpipelineV2EventsSdlcIngestsourcesStaticRoutingArgs', 'OpenpipelineV2EventsSdlcIngestsourcesStaticRoutingArgsDict', 'outputs.OpenpipelineV2EventsSdlcIngestsourcesStaticRouting']]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -476,12 +476,12 @@ class OpenpipelineV2EventsSdlcIngestsources(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] default_bucket: Default Bucket
         :param pulumi.Input[_builtins.str] display_name: Endpoint display name
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[Union['OpenpipelineV2EventsSdlcIngestsourcesMetadataListArgs', 'OpenpipelineV2EventsSdlcIngestsourcesMetadataListArgsDict']] metadata_list: Ingest source metadata list
+        :param pulumi.Input[Union['OpenpipelineV2EventsSdlcIngestsourcesMetadataListArgs', 'OpenpipelineV2EventsSdlcIngestsourcesMetadataListArgsDict', 'outputs.OpenpipelineV2EventsSdlcIngestsourcesMetadataList']] metadata_list: Ingest source metadata list
         :param pulumi.Input[_builtins.str] path_segment: Endpoint segment
-        :param pulumi.Input[Union['OpenpipelineV2EventsSdlcIngestsourcesProcessingArgs', 'OpenpipelineV2EventsSdlcIngestsourcesProcessingArgsDict']] processing: Processing stage
+        :param pulumi.Input[Union['OpenpipelineV2EventsSdlcIngestsourcesProcessingArgs', 'OpenpipelineV2EventsSdlcIngestsourcesProcessingArgsDict', 'outputs.OpenpipelineV2EventsSdlcIngestsourcesProcessing']] processing: Processing stage
         :param pulumi.Input[_builtins.str] source: Source
         :param pulumi.Input[_builtins.str] source_type: Source Type. Possible values: `extension`, `http`
-        :param pulumi.Input[Union['OpenpipelineV2EventsSdlcIngestsourcesStaticRoutingArgs', 'OpenpipelineV2EventsSdlcIngestsourcesStaticRoutingArgsDict']] static_routing: Static routing of endpoint
+        :param pulumi.Input[Union['OpenpipelineV2EventsSdlcIngestsourcesStaticRoutingArgs', 'OpenpipelineV2EventsSdlcIngestsourcesStaticRoutingArgsDict', 'outputs.OpenpipelineV2EventsSdlcIngestsourcesStaticRouting']] static_routing: Static routing of endpoint
         """
         ...
     @overload
@@ -640,12 +640,12 @@ class OpenpipelineV2EventsSdlcIngestsources(pulumi.CustomResource):
                  default_bucket: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-                 metadata_list: pulumi.Input[Optional[Union['OpenpipelineV2EventsSdlcIngestsourcesMetadataListArgs', 'OpenpipelineV2EventsSdlcIngestsourcesMetadataListArgsDict']]] = None,
+                 metadata_list: pulumi.Input[Optional[Union['OpenpipelineV2EventsSdlcIngestsourcesMetadataListArgs', 'OpenpipelineV2EventsSdlcIngestsourcesMetadataListArgsDict', 'outputs.OpenpipelineV2EventsSdlcIngestsourcesMetadataList']]] = None,
                  path_segment: pulumi.Input[Optional[_builtins.str]] = None,
-                 processing: pulumi.Input[Optional[Union['OpenpipelineV2EventsSdlcIngestsourcesProcessingArgs', 'OpenpipelineV2EventsSdlcIngestsourcesProcessingArgsDict']]] = None,
+                 processing: pulumi.Input[Optional[Union['OpenpipelineV2EventsSdlcIngestsourcesProcessingArgs', 'OpenpipelineV2EventsSdlcIngestsourcesProcessingArgsDict', 'outputs.OpenpipelineV2EventsSdlcIngestsourcesProcessing']]] = None,
                  source: pulumi.Input[Optional[_builtins.str]] = None,
                  source_type: pulumi.Input[Optional[_builtins.str]] = None,
-                 static_routing: pulumi.Input[Optional[Union['OpenpipelineV2EventsSdlcIngestsourcesStaticRoutingArgs', 'OpenpipelineV2EventsSdlcIngestsourcesStaticRoutingArgsDict']]] = None,
+                 static_routing: pulumi.Input[Optional[Union['OpenpipelineV2EventsSdlcIngestsourcesStaticRoutingArgs', 'OpenpipelineV2EventsSdlcIngestsourcesStaticRoutingArgsDict', 'outputs.OpenpipelineV2EventsSdlcIngestsourcesStaticRouting']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -681,12 +681,12 @@ class OpenpipelineV2EventsSdlcIngestsources(pulumi.CustomResource):
             default_bucket: pulumi.Input[Optional[_builtins.str]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-            metadata_list: pulumi.Input[Optional[Union['OpenpipelineV2EventsSdlcIngestsourcesMetadataListArgs', 'OpenpipelineV2EventsSdlcIngestsourcesMetadataListArgsDict']]] = None,
+            metadata_list: pulumi.Input[Optional[Union['OpenpipelineV2EventsSdlcIngestsourcesMetadataListArgs', 'OpenpipelineV2EventsSdlcIngestsourcesMetadataListArgsDict', 'outputs.OpenpipelineV2EventsSdlcIngestsourcesMetadataList']]] = None,
             path_segment: pulumi.Input[Optional[_builtins.str]] = None,
-            processing: pulumi.Input[Optional[Union['OpenpipelineV2EventsSdlcIngestsourcesProcessingArgs', 'OpenpipelineV2EventsSdlcIngestsourcesProcessingArgsDict']]] = None,
+            processing: pulumi.Input[Optional[Union['OpenpipelineV2EventsSdlcIngestsourcesProcessingArgs', 'OpenpipelineV2EventsSdlcIngestsourcesProcessingArgsDict', 'outputs.OpenpipelineV2EventsSdlcIngestsourcesProcessing']]] = None,
             source: pulumi.Input[Optional[_builtins.str]] = None,
             source_type: pulumi.Input[Optional[_builtins.str]] = None,
-            static_routing: pulumi.Input[Optional[Union['OpenpipelineV2EventsSdlcIngestsourcesStaticRoutingArgs', 'OpenpipelineV2EventsSdlcIngestsourcesStaticRoutingArgsDict']]] = None) -> 'OpenpipelineV2EventsSdlcIngestsources':
+            static_routing: pulumi.Input[Optional[Union['OpenpipelineV2EventsSdlcIngestsourcesStaticRoutingArgs', 'OpenpipelineV2EventsSdlcIngestsourcesStaticRoutingArgsDict', 'outputs.OpenpipelineV2EventsSdlcIngestsourcesStaticRouting']]] = None) -> 'OpenpipelineV2EventsSdlcIngestsources':
         """
         Get an existing OpenpipelineV2EventsSdlcIngestsources resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -697,12 +697,12 @@ class OpenpipelineV2EventsSdlcIngestsources(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] default_bucket: Default Bucket
         :param pulumi.Input[_builtins.str] display_name: Endpoint display name
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[Union['OpenpipelineV2EventsSdlcIngestsourcesMetadataListArgs', 'OpenpipelineV2EventsSdlcIngestsourcesMetadataListArgsDict']] metadata_list: Ingest source metadata list
+        :param pulumi.Input[Union['OpenpipelineV2EventsSdlcIngestsourcesMetadataListArgs', 'OpenpipelineV2EventsSdlcIngestsourcesMetadataListArgsDict', 'outputs.OpenpipelineV2EventsSdlcIngestsourcesMetadataList']] metadata_list: Ingest source metadata list
         :param pulumi.Input[_builtins.str] path_segment: Endpoint segment
-        :param pulumi.Input[Union['OpenpipelineV2EventsSdlcIngestsourcesProcessingArgs', 'OpenpipelineV2EventsSdlcIngestsourcesProcessingArgsDict']] processing: Processing stage
+        :param pulumi.Input[Union['OpenpipelineV2EventsSdlcIngestsourcesProcessingArgs', 'OpenpipelineV2EventsSdlcIngestsourcesProcessingArgsDict', 'outputs.OpenpipelineV2EventsSdlcIngestsourcesProcessing']] processing: Processing stage
         :param pulumi.Input[_builtins.str] source: Source
         :param pulumi.Input[_builtins.str] source_type: Source Type. Possible values: `extension`, `http`
-        :param pulumi.Input[Union['OpenpipelineV2EventsSdlcIngestsourcesStaticRoutingArgs', 'OpenpipelineV2EventsSdlcIngestsourcesStaticRoutingArgsDict']] static_routing: Static routing of endpoint
+        :param pulumi.Input[Union['OpenpipelineV2EventsSdlcIngestsourcesStaticRoutingArgs', 'OpenpipelineV2EventsSdlcIngestsourcesStaticRoutingArgsDict', 'outputs.OpenpipelineV2EventsSdlcIngestsourcesStaticRouting']] static_routing: Static routing of endpoint
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

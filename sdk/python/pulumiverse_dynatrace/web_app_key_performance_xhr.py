@@ -167,10 +167,10 @@ class WebAppKeyPerformanceXhr(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 fallback_thresholds: pulumi.Input[Optional[Union['WebAppKeyPerformanceXhrFallbackThresholdsArgs', 'WebAppKeyPerformanceXhrFallbackThresholdsArgsDict']]] = None,
+                 fallback_thresholds: pulumi.Input[Optional[Union['WebAppKeyPerformanceXhrFallbackThresholdsArgs', 'WebAppKeyPerformanceXhrFallbackThresholdsArgsDict', 'outputs.WebAppKeyPerformanceXhrFallbackThresholds']]] = None,
                  kpm: pulumi.Input[Optional[_builtins.str]] = None,
                  scope: pulumi.Input[Optional[_builtins.str]] = None,
-                 thresholds: pulumi.Input[Optional[Union['WebAppKeyPerformanceXhrThresholdsArgs', 'WebAppKeyPerformanceXhrThresholdsArgsDict']]] = None,
+                 thresholds: pulumi.Input[Optional[Union['WebAppKeyPerformanceXhrThresholdsArgs', 'WebAppKeyPerformanceXhrThresholdsArgsDict', 'outputs.WebAppKeyPerformanceXhrThresholds']]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -190,10 +190,10 @@ class WebAppKeyPerformanceXhr(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['WebAppKeyPerformanceXhrFallbackThresholdsArgs', 'WebAppKeyPerformanceXhrFallbackThresholdsArgsDict']] fallback_thresholds: If the selected key performance metric is not detected, the **User action duration** metric is used instead.
+        :param pulumi.Input[Union['WebAppKeyPerformanceXhrFallbackThresholdsArgs', 'WebAppKeyPerformanceXhrFallbackThresholdsArgsDict', 'outputs.WebAppKeyPerformanceXhrFallbackThresholds']] fallback_thresholds: If the selected key performance metric is not detected, the **User action duration** metric is used instead.
         :param pulumi.Input[_builtins.str] kpm: Key performance metric. Possible values: `RESPONSE_END`, `RESPONSE_START`, `USER_ACTION_DURATION`, `VISUALLY_COMPLETE`
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (APPLICATION_METHOD, APPLICATION)
-        :param pulumi.Input[Union['WebAppKeyPerformanceXhrThresholdsArgs', 'WebAppKeyPerformanceXhrThresholdsArgsDict']] thresholds: Set the Tolerating and Frustrated performance thresholds for this action type.
+        :param pulumi.Input[Union['WebAppKeyPerformanceXhrThresholdsArgs', 'WebAppKeyPerformanceXhrThresholdsArgsDict', 'outputs.WebAppKeyPerformanceXhrThresholds']] thresholds: Set the Tolerating and Frustrated performance thresholds for this action type.
         """
         ...
     @overload
@@ -232,10 +232,10 @@ class WebAppKeyPerformanceXhr(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 fallback_thresholds: pulumi.Input[Optional[Union['WebAppKeyPerformanceXhrFallbackThresholdsArgs', 'WebAppKeyPerformanceXhrFallbackThresholdsArgsDict']]] = None,
+                 fallback_thresholds: pulumi.Input[Optional[Union['WebAppKeyPerformanceXhrFallbackThresholdsArgs', 'WebAppKeyPerformanceXhrFallbackThresholdsArgsDict', 'outputs.WebAppKeyPerformanceXhrFallbackThresholds']]] = None,
                  kpm: pulumi.Input[Optional[_builtins.str]] = None,
                  scope: pulumi.Input[Optional[_builtins.str]] = None,
-                 thresholds: pulumi.Input[Optional[Union['WebAppKeyPerformanceXhrThresholdsArgs', 'WebAppKeyPerformanceXhrThresholdsArgsDict']]] = None,
+                 thresholds: pulumi.Input[Optional[Union['WebAppKeyPerformanceXhrThresholdsArgs', 'WebAppKeyPerformanceXhrThresholdsArgsDict', 'outputs.WebAppKeyPerformanceXhrThresholds']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -265,10 +265,10 @@ class WebAppKeyPerformanceXhr(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            fallback_thresholds: pulumi.Input[Optional[Union['WebAppKeyPerformanceXhrFallbackThresholdsArgs', 'WebAppKeyPerformanceXhrFallbackThresholdsArgsDict']]] = None,
+            fallback_thresholds: pulumi.Input[Optional[Union['WebAppKeyPerformanceXhrFallbackThresholdsArgs', 'WebAppKeyPerformanceXhrFallbackThresholdsArgsDict', 'outputs.WebAppKeyPerformanceXhrFallbackThresholds']]] = None,
             kpm: pulumi.Input[Optional[_builtins.str]] = None,
             scope: pulumi.Input[Optional[_builtins.str]] = None,
-            thresholds: pulumi.Input[Optional[Union['WebAppKeyPerformanceXhrThresholdsArgs', 'WebAppKeyPerformanceXhrThresholdsArgsDict']]] = None) -> 'WebAppKeyPerformanceXhr':
+            thresholds: pulumi.Input[Optional[Union['WebAppKeyPerformanceXhrThresholdsArgs', 'WebAppKeyPerformanceXhrThresholdsArgsDict', 'outputs.WebAppKeyPerformanceXhrThresholds']]] = None) -> 'WebAppKeyPerformanceXhr':
         """
         Get an existing WebAppKeyPerformanceXhr resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -276,10 +276,10 @@ class WebAppKeyPerformanceXhr(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['WebAppKeyPerformanceXhrFallbackThresholdsArgs', 'WebAppKeyPerformanceXhrFallbackThresholdsArgsDict']] fallback_thresholds: If the selected key performance metric is not detected, the **User action duration** metric is used instead.
+        :param pulumi.Input[Union['WebAppKeyPerformanceXhrFallbackThresholdsArgs', 'WebAppKeyPerformanceXhrFallbackThresholdsArgsDict', 'outputs.WebAppKeyPerformanceXhrFallbackThresholds']] fallback_thresholds: If the selected key performance metric is not detected, the **User action duration** metric is used instead.
         :param pulumi.Input[_builtins.str] kpm: Key performance metric. Possible values: `RESPONSE_END`, `RESPONSE_START`, `USER_ACTION_DURATION`, `VISUALLY_COMPLETE`
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (APPLICATION_METHOD, APPLICATION)
-        :param pulumi.Input[Union['WebAppKeyPerformanceXhrThresholdsArgs', 'WebAppKeyPerformanceXhrThresholdsArgsDict']] thresholds: Set the Tolerating and Frustrated performance thresholds for this action type.
+        :param pulumi.Input[Union['WebAppKeyPerformanceXhrThresholdsArgs', 'WebAppKeyPerformanceXhrThresholdsArgsDict', 'outputs.WebAppKeyPerformanceXhrThresholds']] thresholds: Set the Tolerating and Frustrated performance thresholds for this action type.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

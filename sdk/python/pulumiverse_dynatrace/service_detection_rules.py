@@ -170,7 +170,7 @@ class ServiceDetectionRules(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  insert_after: pulumi.Input[Optional[_builtins.str]] = None,
-                 rule: pulumi.Input[Optional[Union['ServiceDetectionRulesRuleArgs', 'ServiceDetectionRulesRuleArgsDict']]] = None,
+                 rule: pulumi.Input[Optional[Union['ServiceDetectionRulesRuleArgs', 'ServiceDetectionRulesRuleArgsDict', 'outputs.ServiceDetectionRulesRule']]] = None,
                  scope: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -187,7 +187,7 @@ class ServiceDetectionRules(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
-        :param pulumi.Input[Union['ServiceDetectionRulesRuleArgs', 'ServiceDetectionRulesRuleArgsDict']] rule: Rule
+        :param pulumi.Input[Union['ServiceDetectionRulesRuleArgs', 'ServiceDetectionRulesRuleArgsDict', 'outputs.ServiceDetectionRulesRule']] rule: Rule
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (CLOUD*APPLICATION*NAMESPACE, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
         """
         ...
@@ -223,7 +223,7 @@ class ServiceDetectionRules(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  insert_after: pulumi.Input[Optional[_builtins.str]] = None,
-                 rule: pulumi.Input[Optional[Union['ServiceDetectionRulesRuleArgs', 'ServiceDetectionRulesRuleArgsDict']]] = None,
+                 rule: pulumi.Input[Optional[Union['ServiceDetectionRulesRuleArgs', 'ServiceDetectionRulesRuleArgsDict', 'outputs.ServiceDetectionRulesRule']]] = None,
                  scope: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -254,7 +254,7 @@ class ServiceDetectionRules(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             insert_after: pulumi.Input[Optional[_builtins.str]] = None,
-            rule: pulumi.Input[Optional[Union['ServiceDetectionRulesRuleArgs', 'ServiceDetectionRulesRuleArgsDict']]] = None,
+            rule: pulumi.Input[Optional[Union['ServiceDetectionRulesRuleArgs', 'ServiceDetectionRulesRuleArgsDict', 'outputs.ServiceDetectionRulesRule']]] = None,
             scope: pulumi.Input[Optional[_builtins.str]] = None) -> 'ServiceDetectionRules':
         """
         Get an existing ServiceDetectionRules resource's state with the given name, id, and optional extra
@@ -265,7 +265,7 @@ class ServiceDetectionRules(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
-        :param pulumi.Input[Union['ServiceDetectionRulesRuleArgs', 'ServiceDetectionRulesRuleArgsDict']] rule: Rule
+        :param pulumi.Input[Union['ServiceDetectionRulesRuleArgs', 'ServiceDetectionRulesRuleArgsDict', 'outputs.ServiceDetectionRulesRule']] rule: Rule
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (CLOUD*APPLICATION*NAMESPACE, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

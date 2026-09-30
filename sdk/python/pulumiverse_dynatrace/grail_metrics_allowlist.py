@@ -74,7 +74,7 @@ class GrailMetricsAllowlist(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 allow_rules: pulumi.Input[Optional[Union['GrailMetricsAllowlistAllowRulesArgs', 'GrailMetricsAllowlistAllowRulesArgsDict']]] = None,
+                 allow_rules: pulumi.Input[Optional[Union['GrailMetricsAllowlistAllowRulesArgs', 'GrailMetricsAllowlistAllowRulesArgsDict', 'outputs.GrailMetricsAllowlistAllowRules']]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -94,7 +94,7 @@ class GrailMetricsAllowlist(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['GrailMetricsAllowlistAllowRulesArgs', 'GrailMetricsAllowlistAllowRulesArgsDict']] allow_rules: Specify rules for forwarding metrics
+        :param pulumi.Input[Union['GrailMetricsAllowlistAllowRulesArgs', 'GrailMetricsAllowlistAllowRulesArgsDict', 'outputs.GrailMetricsAllowlistAllowRules']] allow_rules: Specify rules for forwarding metrics
         """
         ...
     @overload
@@ -133,7 +133,7 @@ class GrailMetricsAllowlist(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 allow_rules: pulumi.Input[Optional[Union['GrailMetricsAllowlistAllowRulesArgs', 'GrailMetricsAllowlistAllowRulesArgsDict']]] = None,
+                 allow_rules: pulumi.Input[Optional[Union['GrailMetricsAllowlistAllowRulesArgs', 'GrailMetricsAllowlistAllowRulesArgsDict', 'outputs.GrailMetricsAllowlistAllowRules']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -154,7 +154,7 @@ class GrailMetricsAllowlist(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            allow_rules: pulumi.Input[Optional[Union['GrailMetricsAllowlistAllowRulesArgs', 'GrailMetricsAllowlistAllowRulesArgsDict']]] = None) -> 'GrailMetricsAllowlist':
+            allow_rules: pulumi.Input[Optional[Union['GrailMetricsAllowlistAllowRulesArgs', 'GrailMetricsAllowlistAllowRulesArgsDict', 'outputs.GrailMetricsAllowlistAllowRules']]] = None) -> 'GrailMetricsAllowlist':
         """
         Get an existing GrailMetricsAllowlist resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -162,7 +162,7 @@ class GrailMetricsAllowlist(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['GrailMetricsAllowlistAllowRulesArgs', 'GrailMetricsAllowlistAllowRulesArgsDict']] allow_rules: Specify rules for forwarding metrics
+        :param pulumi.Input[Union['GrailMetricsAllowlistAllowRulesArgs', 'GrailMetricsAllowlistAllowRulesArgsDict', 'outputs.GrailMetricsAllowlistAllowRules']] allow_rules: Specify rules for forwarding metrics
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

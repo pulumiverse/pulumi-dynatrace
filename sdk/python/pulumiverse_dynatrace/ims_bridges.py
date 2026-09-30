@@ -107,7 +107,7 @@ class ImsBridges(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 queue_managers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImsBridgesQueueManagerArgs', 'ImsBridgesQueueManagerArgsDict']]]]] = None,
+                 queue_managers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImsBridgesQueueManagerArgs', 'ImsBridgesQueueManagerArgsDict', 'outputs.ImsBridgesQueueManager']]]]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -128,7 +128,7 @@ class ImsBridges(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] name: The name of the IMS bridge
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ImsBridgesQueueManagerArgs', 'ImsBridgesQueueManagerArgsDict']]]] queue_managers: Queue manager(s) that belong to the IMS bridge
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ImsBridgesQueueManagerArgs', 'ImsBridgesQueueManagerArgsDict', 'outputs.ImsBridgesQueueManager']]]] queue_managers: Queue manager(s) that belong to the IMS bridge
         """
         ...
     @overload
@@ -168,7 +168,7 @@ class ImsBridges(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 queue_managers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImsBridgesQueueManagerArgs', 'ImsBridgesQueueManagerArgsDict']]]]] = None,
+                 queue_managers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImsBridgesQueueManagerArgs', 'ImsBridgesQueueManagerArgsDict', 'outputs.ImsBridgesQueueManager']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -191,7 +191,7 @@ class ImsBridges(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
-            queue_managers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImsBridgesQueueManagerArgs', 'ImsBridgesQueueManagerArgsDict']]]]] = None) -> 'ImsBridges':
+            queue_managers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImsBridgesQueueManagerArgs', 'ImsBridgesQueueManagerArgsDict', 'outputs.ImsBridgesQueueManager']]]]] = None) -> 'ImsBridges':
         """
         Get an existing ImsBridges resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -200,7 +200,7 @@ class ImsBridges(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] name: The name of the IMS bridge
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ImsBridgesQueueManagerArgs', 'ImsBridgesQueueManagerArgsDict']]]] queue_managers: Queue manager(s) that belong to the IMS bridge
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ImsBridgesQueueManagerArgs', 'ImsBridgesQueueManagerArgsDict', 'outputs.ImsBridgesQueueManager']]]] queue_managers: Queue manager(s) that belong to the IMS bridge
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

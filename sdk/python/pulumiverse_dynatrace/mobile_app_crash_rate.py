@@ -106,7 +106,7 @@ class MobileAppCrashRate(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  application_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 crash_rate_increase: pulumi.Input[Optional[Union['MobileAppCrashRateCrashRateIncreaseArgs', 'MobileAppCrashRateCrashRateIncreaseArgsDict']]] = None,
+                 crash_rate_increase: pulumi.Input[Optional[Union['MobileAppCrashRateCrashRateIncreaseArgs', 'MobileAppCrashRateCrashRateIncreaseArgsDict', 'outputs.MobileAppCrashRateCrashRateIncrease']]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -147,7 +147,7 @@ class MobileAppCrashRate(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
-        :param pulumi.Input[Union['MobileAppCrashRateCrashRateIncreaseArgs', 'MobileAppCrashRateCrashRateIncreaseArgsDict']] crash_rate_increase: Crash rate increase
+        :param pulumi.Input[Union['MobileAppCrashRateCrashRateIncreaseArgs', 'MobileAppCrashRateCrashRateIncreaseArgsDict', 'outputs.MobileAppCrashRateCrashRateIncrease']] crash_rate_increase: Crash rate increase
         """
         ...
     @overload
@@ -207,7 +207,7 @@ class MobileAppCrashRate(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  application_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 crash_rate_increase: pulumi.Input[Optional[Union['MobileAppCrashRateCrashRateIncreaseArgs', 'MobileAppCrashRateCrashRateIncreaseArgsDict']]] = None,
+                 crash_rate_increase: pulumi.Input[Optional[Union['MobileAppCrashRateCrashRateIncreaseArgs', 'MobileAppCrashRateCrashRateIncreaseArgsDict', 'outputs.MobileAppCrashRateCrashRateIncrease']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -232,7 +232,7 @@ class MobileAppCrashRate(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             application_id: pulumi.Input[Optional[_builtins.str]] = None,
-            crash_rate_increase: pulumi.Input[Optional[Union['MobileAppCrashRateCrashRateIncreaseArgs', 'MobileAppCrashRateCrashRateIncreaseArgsDict']]] = None) -> 'MobileAppCrashRate':
+            crash_rate_increase: pulumi.Input[Optional[Union['MobileAppCrashRateCrashRateIncreaseArgs', 'MobileAppCrashRateCrashRateIncreaseArgsDict', 'outputs.MobileAppCrashRateCrashRateIncrease']]] = None) -> 'MobileAppCrashRate':
         """
         Get an existing MobileAppCrashRate resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -241,7 +241,7 @@ class MobileAppCrashRate(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
-        :param pulumi.Input[Union['MobileAppCrashRateCrashRateIncreaseArgs', 'MobileAppCrashRateCrashRateIncreaseArgsDict']] crash_rate_increase: Crash rate increase
+        :param pulumi.Input[Union['MobileAppCrashRateCrashRateIncreaseArgs', 'MobileAppCrashRateCrashRateIncreaseArgsDict', 'outputs.MobileAppCrashRateCrashRateIncrease']] crash_rate_increase: Crash rate increase
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

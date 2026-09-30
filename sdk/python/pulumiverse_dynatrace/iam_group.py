@@ -147,7 +147,7 @@ class IamGroup(pulumi.CustomResource):
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  federated_attribute_values: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 permissions: pulumi.Input[Optional[Union['IamGroupPermissionsArgs', 'IamGroupPermissionsArgsDict']]] = None,
+                 permissions: pulumi.Input[Optional[Union['IamGroupPermissionsArgs', 'IamGroupPermissionsArgsDict', 'outputs.IamGroupPermissions']]] = None,
                  __props__=None):
         """
         > **Dynatrace SaaS only**
@@ -262,7 +262,7 @@ class IamGroup(pulumi.CustomResource):
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  federated_attribute_values: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 permissions: pulumi.Input[Optional[Union['IamGroupPermissionsArgs', 'IamGroupPermissionsArgsDict']]] = None,
+                 permissions: pulumi.Input[Optional[Union['IamGroupPermissionsArgs', 'IamGroupPermissionsArgsDict', 'outputs.IamGroupPermissions']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -289,7 +289,7 @@ class IamGroup(pulumi.CustomResource):
             description: pulumi.Input[Optional[_builtins.str]] = None,
             federated_attribute_values: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
-            permissions: pulumi.Input[Optional[Union['IamGroupPermissionsArgs', 'IamGroupPermissionsArgsDict']]] = None) -> 'IamGroup':
+            permissions: pulumi.Input[Optional[Union['IamGroupPermissionsArgs', 'IamGroupPermissionsArgsDict', 'outputs.IamGroupPermissions']]] = None) -> 'IamGroup':
         """
         Get an existing IamGroup resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

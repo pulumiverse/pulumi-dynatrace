@@ -296,12 +296,12 @@ class CalculatedMobileMetric(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  app_identifier: pulumi.Input[Optional[_builtins.str]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
-                 dimensions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CalculatedMobileMetricDimensionArgs', 'CalculatedMobileMetricDimensionArgsDict']]]]] = None,
+                 dimensions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CalculatedMobileMetricDimensionArgs', 'CalculatedMobileMetricDimensionArgsDict', 'outputs.CalculatedMobileMetricDimension']]]]] = None,
                  enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  metric_key: pulumi.Input[Optional[_builtins.str]] = None,
                  metric_type: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 user_action_filter: pulumi.Input[Optional[Union['CalculatedMobileMetricUserActionFilterArgs', 'CalculatedMobileMetricUserActionFilterArgsDict']]] = None,
+                 user_action_filter: pulumi.Input[Optional[Union['CalculatedMobileMetricUserActionFilterArgs', 'CalculatedMobileMetricUserActionFilterArgsDict', 'outputs.CalculatedMobileMetricUserActionFilter']]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
@@ -345,12 +345,12 @@ class CalculatedMobileMetric(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] app_identifier: The Dynatrace entity ID of the application to which the metric belongs.
         :param pulumi.Input[_builtins.str] description: Descriptor of a calculated mobile/custom app metric.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['CalculatedMobileMetricDimensionArgs', 'CalculatedMobileMetricDimensionArgsDict']]]] dimensions: Parameters of a definition of a calculated mobile/custom app metric.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CalculatedMobileMetricDimensionArgs', 'CalculatedMobileMetricDimensionArgsDict', 'outputs.CalculatedMobileMetricDimension']]]] dimensions: Parameters of a definition of a calculated mobile/custom app metric.
         :param pulumi.Input[_builtins.bool] enabled: The metric is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] metric_key: The unique key of the calculated mobile/custom app metric.
         :param pulumi.Input[_builtins.str] metric_type: The type of the metric. Possible values: [ REPORTED*ERROR*COUNT, USER*ACTION*DURATION, WEB*REQUEST*COUNT, WEB*REQUEST*ERROR_COUNT ]
         :param pulumi.Input[_builtins.str] name: The displayed name of the metric.
-        :param pulumi.Input[Union['CalculatedMobileMetricUserActionFilterArgs', 'CalculatedMobileMetricUserActionFilterArgsDict']] user_action_filter: Parameters of a definition of a calculated mobile/custom app metric.
+        :param pulumi.Input[Union['CalculatedMobileMetricUserActionFilterArgs', 'CalculatedMobileMetricUserActionFilterArgsDict', 'outputs.CalculatedMobileMetricUserActionFilter']] user_action_filter: Parameters of a definition of a calculated mobile/custom app metric.
         """
         ...
     @overload
@@ -413,12 +413,12 @@ class CalculatedMobileMetric(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  app_identifier: pulumi.Input[Optional[_builtins.str]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
-                 dimensions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CalculatedMobileMetricDimensionArgs', 'CalculatedMobileMetricDimensionArgsDict']]]]] = None,
+                 dimensions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CalculatedMobileMetricDimensionArgs', 'CalculatedMobileMetricDimensionArgsDict', 'outputs.CalculatedMobileMetricDimension']]]]] = None,
                  enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  metric_key: pulumi.Input[Optional[_builtins.str]] = None,
                  metric_type: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 user_action_filter: pulumi.Input[Optional[Union['CalculatedMobileMetricUserActionFilterArgs', 'CalculatedMobileMetricUserActionFilterArgsDict']]] = None,
+                 user_action_filter: pulumi.Input[Optional[Union['CalculatedMobileMetricUserActionFilterArgs', 'CalculatedMobileMetricUserActionFilterArgsDict', 'outputs.CalculatedMobileMetricUserActionFilter']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -456,12 +456,12 @@ class CalculatedMobileMetric(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             app_identifier: pulumi.Input[Optional[_builtins.str]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
-            dimensions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CalculatedMobileMetricDimensionArgs', 'CalculatedMobileMetricDimensionArgsDict']]]]] = None,
+            dimensions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CalculatedMobileMetricDimensionArgs', 'CalculatedMobileMetricDimensionArgsDict', 'outputs.CalculatedMobileMetricDimension']]]]] = None,
             enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             metric_key: pulumi.Input[Optional[_builtins.str]] = None,
             metric_type: pulumi.Input[Optional[_builtins.str]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
-            user_action_filter: pulumi.Input[Optional[Union['CalculatedMobileMetricUserActionFilterArgs', 'CalculatedMobileMetricUserActionFilterArgsDict']]] = None) -> 'CalculatedMobileMetric':
+            user_action_filter: pulumi.Input[Optional[Union['CalculatedMobileMetricUserActionFilterArgs', 'CalculatedMobileMetricUserActionFilterArgsDict', 'outputs.CalculatedMobileMetricUserActionFilter']]] = None) -> 'CalculatedMobileMetric':
         """
         Get an existing CalculatedMobileMetric resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -471,12 +471,12 @@ class CalculatedMobileMetric(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] app_identifier: The Dynatrace entity ID of the application to which the metric belongs.
         :param pulumi.Input[_builtins.str] description: Descriptor of a calculated mobile/custom app metric.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['CalculatedMobileMetricDimensionArgs', 'CalculatedMobileMetricDimensionArgsDict']]]] dimensions: Parameters of a definition of a calculated mobile/custom app metric.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CalculatedMobileMetricDimensionArgs', 'CalculatedMobileMetricDimensionArgsDict', 'outputs.CalculatedMobileMetricDimension']]]] dimensions: Parameters of a definition of a calculated mobile/custom app metric.
         :param pulumi.Input[_builtins.bool] enabled: The metric is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] metric_key: The unique key of the calculated mobile/custom app metric.
         :param pulumi.Input[_builtins.str] metric_type: The type of the metric. Possible values: [ REPORTED*ERROR*COUNT, USER*ACTION*DURATION, WEB*REQUEST*COUNT, WEB*REQUEST*ERROR_COUNT ]
         :param pulumi.Input[_builtins.str] name: The displayed name of the metric.
-        :param pulumi.Input[Union['CalculatedMobileMetricUserActionFilterArgs', 'CalculatedMobileMetricUserActionFilterArgsDict']] user_action_filter: Parameters of a definition of a calculated mobile/custom app metric.
+        :param pulumi.Input[Union['CalculatedMobileMetricUserActionFilterArgs', 'CalculatedMobileMetricUserActionFilterArgsDict', 'outputs.CalculatedMobileMetricUserActionFilter']] user_action_filter: Parameters of a definition of a calculated mobile/custom app metric.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

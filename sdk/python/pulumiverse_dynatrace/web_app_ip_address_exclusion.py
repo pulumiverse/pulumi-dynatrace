@@ -150,7 +150,7 @@ class WebAppIpAddressExclusion(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  application_id: pulumi.Input[Optional[_builtins.str]] = None,
                  ip_address_exclusion_include: pulumi.Input[Optional[_builtins.bool]] = None,
-                 ip_exclusion_list: pulumi.Input[Optional[Union['WebAppIpAddressExclusionIpExclusionListArgs', 'WebAppIpAddressExclusionIpExclusionListArgsDict']]] = None,
+                 ip_exclusion_list: pulumi.Input[Optional[Union['WebAppIpAddressExclusionIpExclusionListArgs', 'WebAppIpAddressExclusionIpExclusionListArgsDict', 'outputs.WebAppIpAddressExclusionIpExclusionList']]] = None,
                  __props__=None):
         """
         > Configuration overlaps with dynatrace_web_application.
@@ -168,7 +168,7 @@ class WebAppIpAddressExclusion(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         :param pulumi.Input[_builtins.bool] ip_address_exclusion_include: These are the only IP addresses that should be monitored
-        :param pulumi.Input[Union['WebAppIpAddressExclusionIpExclusionListArgs', 'WebAppIpAddressExclusionIpExclusionListArgsDict']] ip_exclusion_list: **Examples:**
+        :param pulumi.Input[Union['WebAppIpAddressExclusionIpExclusionListArgs', 'WebAppIpAddressExclusionIpExclusionListArgsDict', 'outputs.WebAppIpAddressExclusionIpExclusionList']] ip_exclusion_list: **Examples:**
                
                     - 84.112.10.5
                    - fe80::10a1:c6b2:5f68:785d
@@ -208,7 +208,7 @@ class WebAppIpAddressExclusion(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  application_id: pulumi.Input[Optional[_builtins.str]] = None,
                  ip_address_exclusion_include: pulumi.Input[Optional[_builtins.bool]] = None,
-                 ip_exclusion_list: pulumi.Input[Optional[Union['WebAppIpAddressExclusionIpExclusionListArgs', 'WebAppIpAddressExclusionIpExclusionListArgsDict']]] = None,
+                 ip_exclusion_list: pulumi.Input[Optional[Union['WebAppIpAddressExclusionIpExclusionListArgs', 'WebAppIpAddressExclusionIpExclusionListArgsDict', 'outputs.WebAppIpAddressExclusionIpExclusionList']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -237,7 +237,7 @@ class WebAppIpAddressExclusion(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             application_id: pulumi.Input[Optional[_builtins.str]] = None,
             ip_address_exclusion_include: pulumi.Input[Optional[_builtins.bool]] = None,
-            ip_exclusion_list: pulumi.Input[Optional[Union['WebAppIpAddressExclusionIpExclusionListArgs', 'WebAppIpAddressExclusionIpExclusionListArgsDict']]] = None) -> 'WebAppIpAddressExclusion':
+            ip_exclusion_list: pulumi.Input[Optional[Union['WebAppIpAddressExclusionIpExclusionListArgs', 'WebAppIpAddressExclusionIpExclusionListArgsDict', 'outputs.WebAppIpAddressExclusionIpExclusionList']]] = None) -> 'WebAppIpAddressExclusion':
         """
         Get an existing WebAppIpAddressExclusion resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -247,7 +247,7 @@ class WebAppIpAddressExclusion(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         :param pulumi.Input[_builtins.bool] ip_address_exclusion_include: These are the only IP addresses that should be monitored
-        :param pulumi.Input[Union['WebAppIpAddressExclusionIpExclusionListArgs', 'WebAppIpAddressExclusionIpExclusionListArgsDict']] ip_exclusion_list: **Examples:**
+        :param pulumi.Input[Union['WebAppIpAddressExclusionIpExclusionListArgs', 'WebAppIpAddressExclusionIpExclusionListArgsDict', 'outputs.WebAppIpAddressExclusionIpExclusionList']] ip_exclusion_list: **Examples:**
                
                     - 84.112.10.5
                    - fe80::10a1:c6b2:5f68:785d

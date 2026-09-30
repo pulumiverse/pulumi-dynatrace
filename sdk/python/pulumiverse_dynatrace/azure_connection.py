@@ -169,8 +169,8 @@ class AzureConnection(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 client_secret: pulumi.Input[Optional[Union['AzureConnectionClientSecretArgs', 'AzureConnectionClientSecretArgsDict']]] = None,
-                 federated_identity_credential: pulumi.Input[Optional[Union['AzureConnectionFederatedIdentityCredentialArgs', 'AzureConnectionFederatedIdentityCredentialArgsDict']]] = None,
+                 client_secret: pulumi.Input[Optional[Union['AzureConnectionClientSecretArgs', 'AzureConnectionClientSecretArgsDict', 'outputs.AzureConnectionClientSecret']]] = None,
+                 federated_identity_credential: pulumi.Input[Optional[Union['AzureConnectionFederatedIdentityCredentialArgs', 'AzureConnectionFederatedIdentityCredentialArgsDict', 'outputs.AzureConnectionFederatedIdentityCredential']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -279,8 +279,8 @@ class AzureConnection(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['AzureConnectionClientSecretArgs', 'AzureConnectionClientSecretArgsDict']] client_secret: No documentation available
-        :param pulumi.Input[Union['AzureConnectionFederatedIdentityCredentialArgs', 'AzureConnectionFederatedIdentityCredentialArgsDict']] federated_identity_credential: No documentation available
+        :param pulumi.Input[Union['AzureConnectionClientSecretArgs', 'AzureConnectionClientSecretArgsDict', 'outputs.AzureConnectionClientSecret']] client_secret: No documentation available
+        :param pulumi.Input[Union['AzureConnectionFederatedIdentityCredentialArgs', 'AzureConnectionFederatedIdentityCredentialArgsDict', 'outputs.AzureConnectionFederatedIdentityCredential']] federated_identity_credential: No documentation available
         :param pulumi.Input[_builtins.str] name: The name of the connection
         :param pulumi.Input[_builtins.str] type: Azure Authentication mechanism to be used by the connection. Possible values: `clientSecret`, `federatedIdentityCredential`
         """
@@ -408,8 +408,8 @@ class AzureConnection(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 client_secret: pulumi.Input[Optional[Union['AzureConnectionClientSecretArgs', 'AzureConnectionClientSecretArgsDict']]] = None,
-                 federated_identity_credential: pulumi.Input[Optional[Union['AzureConnectionFederatedIdentityCredentialArgs', 'AzureConnectionFederatedIdentityCredentialArgsDict']]] = None,
+                 client_secret: pulumi.Input[Optional[Union['AzureConnectionClientSecretArgs', 'AzureConnectionClientSecretArgsDict', 'outputs.AzureConnectionClientSecret']]] = None,
+                 federated_identity_credential: pulumi.Input[Optional[Union['AzureConnectionFederatedIdentityCredentialArgs', 'AzureConnectionFederatedIdentityCredentialArgsDict', 'outputs.AzureConnectionFederatedIdentityCredential']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -437,8 +437,8 @@ class AzureConnection(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            client_secret: pulumi.Input[Optional[Union['AzureConnectionClientSecretArgs', 'AzureConnectionClientSecretArgsDict']]] = None,
-            federated_identity_credential: pulumi.Input[Optional[Union['AzureConnectionFederatedIdentityCredentialArgs', 'AzureConnectionFederatedIdentityCredentialArgsDict']]] = None,
+            client_secret: pulumi.Input[Optional[Union['AzureConnectionClientSecretArgs', 'AzureConnectionClientSecretArgsDict', 'outputs.AzureConnectionClientSecret']]] = None,
+            federated_identity_credential: pulumi.Input[Optional[Union['AzureConnectionFederatedIdentityCredentialArgs', 'AzureConnectionFederatedIdentityCredentialArgsDict', 'outputs.AzureConnectionFederatedIdentityCredential']]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             type: pulumi.Input[Optional[_builtins.str]] = None) -> 'AzureConnection':
         """
@@ -448,8 +448,8 @@ class AzureConnection(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['AzureConnectionClientSecretArgs', 'AzureConnectionClientSecretArgsDict']] client_secret: No documentation available
-        :param pulumi.Input[Union['AzureConnectionFederatedIdentityCredentialArgs', 'AzureConnectionFederatedIdentityCredentialArgsDict']] federated_identity_credential: No documentation available
+        :param pulumi.Input[Union['AzureConnectionClientSecretArgs', 'AzureConnectionClientSecretArgsDict', 'outputs.AzureConnectionClientSecret']] client_secret: No documentation available
+        :param pulumi.Input[Union['AzureConnectionFederatedIdentityCredentialArgs', 'AzureConnectionFederatedIdentityCredentialArgsDict', 'outputs.AzureConnectionFederatedIdentityCredential']] federated_identity_credential: No documentation available
         :param pulumi.Input[_builtins.str] name: The name of the connection
         :param pulumi.Input[_builtins.str] type: Azure Authentication mechanism to be used by the connection. Possible values: `clientSecret`, `federatedIdentityCredential`
         """

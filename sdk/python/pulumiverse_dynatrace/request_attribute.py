@@ -329,7 +329,7 @@ class RequestAttribute(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  aggregation: pulumi.Input[Optional[_builtins.str]] = None,
                  confidential: pulumi.Input[Optional[_builtins.bool]] = None,
-                 data_sources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RequestAttributeDataSourceArgs', 'RequestAttributeDataSourceArgsDict']]]]] = None,
+                 data_sources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RequestAttributeDataSourceArgs', 'RequestAttributeDataSourceArgsDict', 'outputs.RequestAttributeDataSource']]]]] = None,
                  data_type: pulumi.Input[Optional[_builtins.str]] = None,
                  enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -357,7 +357,7 @@ class RequestAttribute(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] aggregation: Aggregation type for the request values
         :param pulumi.Input[_builtins.bool] confidential: Confidential data flag. Set `true` to treat the captured data as confidential
-        :param pulumi.Input[Sequence[pulumi.Input[Union['RequestAttributeDataSourceArgs', 'RequestAttributeDataSourceArgsDict']]]] data_sources: The list of data sources
+        :param pulumi.Input[Sequence[pulumi.Input[Union['RequestAttributeDataSourceArgs', 'RequestAttributeDataSourceArgsDict', 'outputs.RequestAttributeDataSource']]]] data_sources: The list of data sources
         :param pulumi.Input[_builtins.str] data_type: The data type of the request attribute
         :param pulumi.Input[_builtins.bool] enabled: The request attribute is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] name: The name of the request attribute
@@ -404,7 +404,7 @@ class RequestAttribute(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  aggregation: pulumi.Input[Optional[_builtins.str]] = None,
                  confidential: pulumi.Input[Optional[_builtins.bool]] = None,
-                 data_sources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RequestAttributeDataSourceArgs', 'RequestAttributeDataSourceArgsDict']]]]] = None,
+                 data_sources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RequestAttributeDataSourceArgs', 'RequestAttributeDataSourceArgsDict', 'outputs.RequestAttributeDataSource']]]]] = None,
                  data_type: pulumi.Input[Optional[_builtins.str]] = None,
                  enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -447,7 +447,7 @@ class RequestAttribute(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             aggregation: pulumi.Input[Optional[_builtins.str]] = None,
             confidential: pulumi.Input[Optional[_builtins.bool]] = None,
-            data_sources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RequestAttributeDataSourceArgs', 'RequestAttributeDataSourceArgsDict']]]]] = None,
+            data_sources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RequestAttributeDataSourceArgs', 'RequestAttributeDataSourceArgsDict', 'outputs.RequestAttributeDataSource']]]]] = None,
             data_type: pulumi.Input[Optional[_builtins.str]] = None,
             enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -463,7 +463,7 @@ class RequestAttribute(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] aggregation: Aggregation type for the request values
         :param pulumi.Input[_builtins.bool] confidential: Confidential data flag. Set `true` to treat the captured data as confidential
-        :param pulumi.Input[Sequence[pulumi.Input[Union['RequestAttributeDataSourceArgs', 'RequestAttributeDataSourceArgsDict']]]] data_sources: The list of data sources
+        :param pulumi.Input[Sequence[pulumi.Input[Union['RequestAttributeDataSourceArgs', 'RequestAttributeDataSourceArgsDict', 'outputs.RequestAttributeDataSource']]]] data_sources: The list of data sources
         :param pulumi.Input[_builtins.str] data_type: The data type of the request attribute
         :param pulumi.Input[_builtins.bool] enabled: The request attribute is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] name: The name of the request attribute

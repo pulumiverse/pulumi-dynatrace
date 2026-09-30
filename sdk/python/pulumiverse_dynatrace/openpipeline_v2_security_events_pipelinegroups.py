@@ -168,10 +168,10 @@ class OpenpipelineV2SecurityEventsPipelinegroups(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 composition: pulumi.Input[Optional[Union['OpenpipelineV2SecurityEventsPipelinegroupsCompositionArgs', 'OpenpipelineV2SecurityEventsPipelinegroupsCompositionArgsDict']]] = None,
+                 composition: pulumi.Input[Optional[Union['OpenpipelineV2SecurityEventsPipelinegroupsCompositionArgs', 'OpenpipelineV2SecurityEventsPipelinegroupsCompositionArgsDict', 'outputs.OpenpipelineV2SecurityEventsPipelinegroupsComposition']]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  member_pipelines: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 member_stages: pulumi.Input[Optional[Union['OpenpipelineV2SecurityEventsPipelinegroupsMemberStagesArgs', 'OpenpipelineV2SecurityEventsPipelinegroupsMemberStagesArgsDict']]] = None,
+                 member_stages: pulumi.Input[Optional[Union['OpenpipelineV2SecurityEventsPipelinegroupsMemberStagesArgs', 'OpenpipelineV2SecurityEventsPipelinegroupsMemberStagesArgsDict', 'outputs.OpenpipelineV2SecurityEventsPipelinegroupsMemberStages']]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -408,10 +408,10 @@ class OpenpipelineV2SecurityEventsPipelinegroups(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['OpenpipelineV2SecurityEventsPipelinegroupsCompositionArgs', 'OpenpipelineV2SecurityEventsPipelinegroupsCompositionArgsDict']] composition: Composition
+        :param pulumi.Input[Union['OpenpipelineV2SecurityEventsPipelinegroupsCompositionArgs', 'OpenpipelineV2SecurityEventsPipelinegroupsCompositionArgsDict', 'outputs.OpenpipelineV2SecurityEventsPipelinegroupsComposition']] composition: Composition
         :param pulumi.Input[_builtins.str] display_name: Display name
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] member_pipelines: Pipelines wrapped by this group
-        :param pulumi.Input[Union['OpenpipelineV2SecurityEventsPipelinegroupsMemberStagesArgs', 'OpenpipelineV2SecurityEventsPipelinegroupsMemberStagesArgsDict']] member_stages: stage configuration of the member pipelines
+        :param pulumi.Input[Union['OpenpipelineV2SecurityEventsPipelinegroupsMemberStagesArgs', 'OpenpipelineV2SecurityEventsPipelinegroupsMemberStagesArgsDict', 'outputs.OpenpipelineV2SecurityEventsPipelinegroupsMemberStages']] member_stages: stage configuration of the member pipelines
         """
         ...
     @overload
@@ -667,10 +667,10 @@ class OpenpipelineV2SecurityEventsPipelinegroups(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 composition: pulumi.Input[Optional[Union['OpenpipelineV2SecurityEventsPipelinegroupsCompositionArgs', 'OpenpipelineV2SecurityEventsPipelinegroupsCompositionArgsDict']]] = None,
+                 composition: pulumi.Input[Optional[Union['OpenpipelineV2SecurityEventsPipelinegroupsCompositionArgs', 'OpenpipelineV2SecurityEventsPipelinegroupsCompositionArgsDict', 'outputs.OpenpipelineV2SecurityEventsPipelinegroupsComposition']]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  member_pipelines: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 member_stages: pulumi.Input[Optional[Union['OpenpipelineV2SecurityEventsPipelinegroupsMemberStagesArgs', 'OpenpipelineV2SecurityEventsPipelinegroupsMemberStagesArgsDict']]] = None,
+                 member_stages: pulumi.Input[Optional[Union['OpenpipelineV2SecurityEventsPipelinegroupsMemberStagesArgs', 'OpenpipelineV2SecurityEventsPipelinegroupsMemberStagesArgsDict', 'outputs.OpenpipelineV2SecurityEventsPipelinegroupsMemberStages']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -698,10 +698,10 @@ class OpenpipelineV2SecurityEventsPipelinegroups(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            composition: pulumi.Input[Optional[Union['OpenpipelineV2SecurityEventsPipelinegroupsCompositionArgs', 'OpenpipelineV2SecurityEventsPipelinegroupsCompositionArgsDict']]] = None,
+            composition: pulumi.Input[Optional[Union['OpenpipelineV2SecurityEventsPipelinegroupsCompositionArgs', 'OpenpipelineV2SecurityEventsPipelinegroupsCompositionArgsDict', 'outputs.OpenpipelineV2SecurityEventsPipelinegroupsComposition']]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             member_pipelines: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            member_stages: pulumi.Input[Optional[Union['OpenpipelineV2SecurityEventsPipelinegroupsMemberStagesArgs', 'OpenpipelineV2SecurityEventsPipelinegroupsMemberStagesArgsDict']]] = None) -> 'OpenpipelineV2SecurityEventsPipelinegroups':
+            member_stages: pulumi.Input[Optional[Union['OpenpipelineV2SecurityEventsPipelinegroupsMemberStagesArgs', 'OpenpipelineV2SecurityEventsPipelinegroupsMemberStagesArgsDict', 'outputs.OpenpipelineV2SecurityEventsPipelinegroupsMemberStages']]] = None) -> 'OpenpipelineV2SecurityEventsPipelinegroups':
         """
         Get an existing OpenpipelineV2SecurityEventsPipelinegroups resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -709,10 +709,10 @@ class OpenpipelineV2SecurityEventsPipelinegroups(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['OpenpipelineV2SecurityEventsPipelinegroupsCompositionArgs', 'OpenpipelineV2SecurityEventsPipelinegroupsCompositionArgsDict']] composition: Composition
+        :param pulumi.Input[Union['OpenpipelineV2SecurityEventsPipelinegroupsCompositionArgs', 'OpenpipelineV2SecurityEventsPipelinegroupsCompositionArgsDict', 'outputs.OpenpipelineV2SecurityEventsPipelinegroupsComposition']] composition: Composition
         :param pulumi.Input[_builtins.str] display_name: Display name
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] member_pipelines: Pipelines wrapped by this group
-        :param pulumi.Input[Union['OpenpipelineV2SecurityEventsPipelinegroupsMemberStagesArgs', 'OpenpipelineV2SecurityEventsPipelinegroupsMemberStagesArgsDict']] member_stages: stage configuration of the member pipelines
+        :param pulumi.Input[Union['OpenpipelineV2SecurityEventsPipelinegroupsMemberStagesArgs', 'OpenpipelineV2SecurityEventsPipelinegroupsMemberStagesArgsDict', 'outputs.OpenpipelineV2SecurityEventsPipelinegroupsMemberStages']] member_stages: stage configuration of the member pipelines
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

@@ -497,7 +497,7 @@ class Slo(pulumi.CustomResource):
                  denominator: pulumi.Input[Optional[_builtins.str]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  disabled: pulumi.Input[Optional[_builtins.bool]] = None,
-                 error_budget_burn_rate: pulumi.Input[Optional[Union['SloErrorBudgetBurnRateArgs', 'SloErrorBudgetBurnRateArgsDict']]] = None,
+                 error_budget_burn_rate: pulumi.Input[Optional[Union['SloErrorBudgetBurnRateArgs', 'SloErrorBudgetBurnRateArgsDict', 'outputs.SloErrorBudgetBurnRate']]] = None,
                  evaluation: pulumi.Input[Optional[_builtins.str]] = None,
                  filter: pulumi.Input[Optional[_builtins.str]] = None,
                  metric_expression: pulumi.Input[Optional[_builtins.str]] = None,
@@ -532,7 +532,7 @@ class Slo(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] denominator: The total count metric (the denominator in rate calculation)
         :param pulumi.Input[_builtins.str] description: The custom description of the SLO (optional)
         :param pulumi.Input[_builtins.bool] disabled: The SLO is enabled (`false`) or disabled (`true`)
-        :param pulumi.Input[Union['SloErrorBudgetBurnRateArgs', 'SloErrorBudgetBurnRateArgsDict']] error_budget_burn_rate: Error budget burn rate configuration of a service-level objective (SLO).
+        :param pulumi.Input[Union['SloErrorBudgetBurnRateArgs', 'SloErrorBudgetBurnRateArgsDict', 'outputs.SloErrorBudgetBurnRate']] error_budget_burn_rate: Error budget burn rate configuration of a service-level objective (SLO).
         :param pulumi.Input[_builtins.str] evaluation: The evaluation type of the SLO. Currently only `AGGREGATE` is supported
         :param pulumi.Input[_builtins.str] filter: The entity filter for the SLO evaluation. Use the [syntax of entity selector](https://dt-url.net/entityselector)
         :param pulumi.Input[_builtins.str] metric_expression: The percentage-based metric expression for the calculation of the SLO
@@ -586,7 +586,7 @@ class Slo(pulumi.CustomResource):
                  denominator: pulumi.Input[Optional[_builtins.str]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  disabled: pulumi.Input[Optional[_builtins.bool]] = None,
-                 error_budget_burn_rate: pulumi.Input[Optional[Union['SloErrorBudgetBurnRateArgs', 'SloErrorBudgetBurnRateArgsDict']]] = None,
+                 error_budget_burn_rate: pulumi.Input[Optional[Union['SloErrorBudgetBurnRateArgs', 'SloErrorBudgetBurnRateArgsDict', 'outputs.SloErrorBudgetBurnRate']]] = None,
                  evaluation: pulumi.Input[Optional[_builtins.str]] = None,
                  filter: pulumi.Input[Optional[_builtins.str]] = None,
                  metric_expression: pulumi.Input[Optional[_builtins.str]] = None,
@@ -641,7 +641,7 @@ class Slo(pulumi.CustomResource):
             denominator: pulumi.Input[Optional[_builtins.str]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
             disabled: pulumi.Input[Optional[_builtins.bool]] = None,
-            error_budget_burn_rate: pulumi.Input[Optional[Union['SloErrorBudgetBurnRateArgs', 'SloErrorBudgetBurnRateArgsDict']]] = None,
+            error_budget_burn_rate: pulumi.Input[Optional[Union['SloErrorBudgetBurnRateArgs', 'SloErrorBudgetBurnRateArgsDict', 'outputs.SloErrorBudgetBurnRate']]] = None,
             evaluation: pulumi.Input[Optional[_builtins.str]] = None,
             filter: pulumi.Input[Optional[_builtins.str]] = None,
             metric_expression: pulumi.Input[Optional[_builtins.str]] = None,
@@ -662,7 +662,7 @@ class Slo(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] denominator: The total count metric (the denominator in rate calculation)
         :param pulumi.Input[_builtins.str] description: The custom description of the SLO (optional)
         :param pulumi.Input[_builtins.bool] disabled: The SLO is enabled (`false`) or disabled (`true`)
-        :param pulumi.Input[Union['SloErrorBudgetBurnRateArgs', 'SloErrorBudgetBurnRateArgsDict']] error_budget_burn_rate: Error budget burn rate configuration of a service-level objective (SLO).
+        :param pulumi.Input[Union['SloErrorBudgetBurnRateArgs', 'SloErrorBudgetBurnRateArgsDict', 'outputs.SloErrorBudgetBurnRate']] error_budget_burn_rate: Error budget burn rate configuration of a service-level objective (SLO).
         :param pulumi.Input[_builtins.str] evaluation: The evaluation type of the SLO. Currently only `AGGREGATE` is supported
         :param pulumi.Input[_builtins.str] filter: The entity filter for the SLO evaluation. Use the [syntax of entity selector](https://dt-url.net/entityselector)
         :param pulumi.Input[_builtins.str] metric_expression: The percentage-based metric expression for the calculation of the SLO

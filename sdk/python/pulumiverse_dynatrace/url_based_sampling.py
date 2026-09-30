@@ -367,7 +367,7 @@ class UrlBasedSampling(pulumi.CustomResource):
                  insert_after: pulumi.Input[Optional[_builtins.str]] = None,
                  path: pulumi.Input[Optional[_builtins.str]] = None,
                  path_comparison_type: pulumi.Input[Optional[_builtins.str]] = None,
-                 query_parameters: pulumi.Input[Optional[Union['UrlBasedSamplingQueryParametersArgs', 'UrlBasedSamplingQueryParametersArgsDict']]] = None,
+                 query_parameters: pulumi.Input[Optional[Union['UrlBasedSamplingQueryParametersArgs', 'UrlBasedSamplingQueryParametersArgsDict', 'outputs.UrlBasedSamplingQueryParameters']]] = None,
                  scope: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -398,7 +398,7 @@ class UrlBasedSampling(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[_builtins.str] path: Path of the URL.
         :param pulumi.Input[_builtins.str] path_comparison_type: Path comparison condition. Possible values: `EQUALS`, `DOES_NOT_EQUAL`, `CONTAINS`, `DOES_NOT_CONTAIN`, `STARTS_WITH`, `DOES_NOT_START_WITH`, `ENDS_WITH`, `DOES_NOT_END_WITH`
-        :param pulumi.Input[Union['UrlBasedSamplingQueryParametersArgs', 'UrlBasedSamplingQueryParametersArgsDict']] query_parameters: Add URL parameters in any order. **All** specified parameters must be present in the query of an URL to get a match.
+        :param pulumi.Input[Union['UrlBasedSamplingQueryParametersArgs', 'UrlBasedSamplingQueryParametersArgsDict', 'outputs.UrlBasedSamplingQueryParameters']] query_parameters: Add URL parameters in any order. **All** specified parameters must be present in the query of an URL to get a match.
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (PROCESS*GROUP*INSTANCE, PROCESS_GROUP). Omit this property if you want to cover the whole environment.
         """
         ...
@@ -448,7 +448,7 @@ class UrlBasedSampling(pulumi.CustomResource):
                  insert_after: pulumi.Input[Optional[_builtins.str]] = None,
                  path: pulumi.Input[Optional[_builtins.str]] = None,
                  path_comparison_type: pulumi.Input[Optional[_builtins.str]] = None,
-                 query_parameters: pulumi.Input[Optional[Union['UrlBasedSamplingQueryParametersArgs', 'UrlBasedSamplingQueryParametersArgsDict']]] = None,
+                 query_parameters: pulumi.Input[Optional[Union['UrlBasedSamplingQueryParametersArgs', 'UrlBasedSamplingQueryParametersArgsDict', 'outputs.UrlBasedSamplingQueryParameters']]] = None,
                  scope: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -493,7 +493,7 @@ class UrlBasedSampling(pulumi.CustomResource):
             insert_after: pulumi.Input[Optional[_builtins.str]] = None,
             path: pulumi.Input[Optional[_builtins.str]] = None,
             path_comparison_type: pulumi.Input[Optional[_builtins.str]] = None,
-            query_parameters: pulumi.Input[Optional[Union['UrlBasedSamplingQueryParametersArgs', 'UrlBasedSamplingQueryParametersArgsDict']]] = None,
+            query_parameters: pulumi.Input[Optional[Union['UrlBasedSamplingQueryParametersArgs', 'UrlBasedSamplingQueryParametersArgsDict', 'outputs.UrlBasedSamplingQueryParameters']]] = None,
             scope: pulumi.Input[Optional[_builtins.str]] = None) -> 'UrlBasedSampling':
         """
         Get an existing UrlBasedSampling resource's state with the given name, id, and optional extra
@@ -510,7 +510,7 @@ class UrlBasedSampling(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[_builtins.str] path: Path of the URL.
         :param pulumi.Input[_builtins.str] path_comparison_type: Path comparison condition. Possible values: `EQUALS`, `DOES_NOT_EQUAL`, `CONTAINS`, `DOES_NOT_CONTAIN`, `STARTS_WITH`, `DOES_NOT_START_WITH`, `ENDS_WITH`, `DOES_NOT_END_WITH`
-        :param pulumi.Input[Union['UrlBasedSamplingQueryParametersArgs', 'UrlBasedSamplingQueryParametersArgsDict']] query_parameters: Add URL parameters in any order. **All** specified parameters must be present in the query of an URL to get a match.
+        :param pulumi.Input[Union['UrlBasedSamplingQueryParametersArgs', 'UrlBasedSamplingQueryParametersArgsDict', 'outputs.UrlBasedSamplingQueryParameters']] query_parameters: Add URL parameters in any order. **All** specified parameters must be present in the query of an URL to get a match.
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (PROCESS*GROUP*INSTANCE, PROCESS_GROUP). Omit this property if you want to cover the whole environment.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
