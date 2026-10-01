@@ -33,6 +33,12 @@ import * as utilities from "./utilities";
  *     filter: "matchesValue(result.state, \"FAIL\")",
  *     autoDelete: true,
  *     enabled: true,
+ *     objectScopes: {
+ *         syntheticMonitors: {
+ *             disableSyntheticMonitorFilter: "status == \"OPEN\" AND severity == \"HIGH\"",
+ *             disableSyntheticMonitors: true,
+ *         },
+ *     },
  *     schedule: {
  *         duration: 60,
  *         timezone: "UTC",
@@ -114,6 +120,10 @@ export class MaintenanceWindows extends pulumi.CustomResource {
      */
     declare public readonly name: pulumi.Output<string>;
     /**
+     * Object scopes
+     */
+    declare public readonly objectScopes: pulumi.Output<outputs.MaintenanceWindowsObjectScopes | undefined>;
+    /**
      * Schedule definition
      */
     declare public readonly schedule: pulumi.Output<outputs.MaintenanceWindowsSchedule>;
@@ -136,6 +146,7 @@ export class MaintenanceWindows extends pulumi.CustomResource {
             resourceInputs["enabled"] = state?.enabled;
             resourceInputs["filter"] = state?.filter;
             resourceInputs["name"] = state?.name;
+            resourceInputs["objectScopes"] = state?.objectScopes;
             resourceInputs["schedule"] = state?.schedule;
         } else {
             const args = argsOrState as MaintenanceWindowsArgs | undefined;
@@ -156,6 +167,7 @@ export class MaintenanceWindows extends pulumi.CustomResource {
             resourceInputs["enabled"] = args?.enabled;
             resourceInputs["filter"] = args?.filter;
             resourceInputs["name"] = args?.name;
+            resourceInputs["objectScopes"] = args?.objectScopes;
             resourceInputs["schedule"] = args?.schedule;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -188,6 +200,10 @@ export interface MaintenanceWindowsState {
      */
     name?: pulumi.Input<string | undefined>;
     /**
+     * Object scopes
+     */
+    objectScopes?: pulumi.Input<inputs.MaintenanceWindowsObjectScopes | undefined>;
+    /**
      * Schedule definition
      */
     schedule?: pulumi.Input<inputs.MaintenanceWindowsSchedule | undefined>;
@@ -217,6 +233,10 @@ export interface MaintenanceWindowsArgs {
      * Name of the maintenance window
      */
     name?: pulumi.Input<string | undefined>;
+    /**
+     * Object scopes
+     */
+    objectScopes?: pulumi.Input<inputs.MaintenanceWindowsObjectScopes | undefined>;
     /**
      * Schedule definition
      */

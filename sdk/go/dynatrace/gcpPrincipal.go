@@ -81,7 +81,7 @@ import (
 //				ServiceAccountImpersonation: &dynatrace.GcpConnectionServiceAccountImpersonationArgs{
 //					ServiceAccountId: impersonableServiceAccount.Email,
 //					Consumers: pulumi.StringArray{
-//						pulumi.String("SVC:com.dynatrace.da"),
+//						pulumi.String("SVC:com.dynatrace.openpipeline"),
 //					},
 //				},
 //			}, pulumi.DependsOn([]pulumi.Resource{

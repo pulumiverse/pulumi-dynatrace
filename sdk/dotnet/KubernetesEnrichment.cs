@@ -24,6 +24,69 @@ namespace Pulumiverse.Dynatrace
     /// - `terraform-provider-dynatrace -export dynatrace.KubernetesEnrichment` downloads all existing generic metadata enrichment rules for Kubernetes
     /// 
     /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// 
+    /// ## Resource Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var example = new Dynatrace.KubernetesEnrichment("example", new()
+    ///     {
+    ///         Scope = "environment",
+    ///         UseIngestEnrichmentConfigSchema = true,
+    ///         Rules = new Dynatrace.Inputs.KubernetesEnrichmentRulesArgs
+    ///         {
+    ///             Rules = new[]
+    ///             {
+    ///                 new Dynatrace.Inputs.KubernetesEnrichmentRulesRuleArgs
+    ///                 {
+    ///                     Type = "LABEL",
+    ///                     Source = "#name#",
+    ///                     Target = "dt.cost.product",
+    ///                 },
+    ///                 new Dynatrace.Inputs.KubernetesEnrichmentRulesRuleArgs
+    ///                 {
+    ///                     Type = "LABEL",
+    ///                     Source = "#name#",
+    ///                     PrimaryGrailTag = true,
+    ///                 },
+    ///                 new Dynatrace.Inputs.KubernetesEnrichmentRulesRuleArgs
+    ///                 {
+    ///                     Type = "LABEL",
+    ///                     Source = "#name#",
+    ///                     Target = "dt.cost.product",
+    ///                     PrimaryGrailTag = false,
+    ///                 },
+    ///                 new Dynatrace.Inputs.KubernetesEnrichmentRulesRuleArgs
+    ///                 {
+    ///                     Type = "ANNOTATION",
+    ///                     Source = "#name#",
+    ///                     Target = "dt.security_context",
+    ///                 },
+    ///                 new Dynatrace.Inputs.KubernetesEnrichmentRulesRuleArgs
+    ///                 {
+    ///                     Type = "ANNOTATION",
+    ///                     Source = "#name#",
+    ///                     PrimaryGrailTag = true,
+    ///                 },
+    ///                 new Dynatrace.Inputs.KubernetesEnrichmentRulesRuleArgs
+    ///                 {
+    ///                     Type = "ANNOTATION",
+    ///                     Source = "#name#",
+    ///                     Target = "dt.security_context",
+    ///                     PrimaryGrailTag = false,
+    ///                 },
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [DynatraceResourceType("dynatrace:index/kubernetesEnrichment:KubernetesEnrichment")]
     public partial class KubernetesEnrichment : global::Pulumi.CustomResource
@@ -39,6 +102,13 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         [Output("scope")]
         public Output<string?> Scope { get; private set; } = null!;
+
+        /// <summary>
+        /// Opt-in to experience the new unified enrichment settings view ahead of future rollout.
+        ///  Enabling this toggle may trigger migration of rules to the new enrichment settings. Learn more in our [documentation](https://dt-url.net/qm02uk2).
+        /// </summary>
+        [Output("useIngestEnrichmentConfigSchema")]
+        public Output<bool?> UseIngestEnrichmentConfigSchema { get; private set; } = null!;
 
 
         /// <summary>
@@ -99,6 +169,13 @@ namespace Pulumiverse.Dynatrace
         [Input("scope")]
         public Input<string>? Scope { get; set; }
 
+        /// <summary>
+        /// Opt-in to experience the new unified enrichment settings view ahead of future rollout.
+        ///  Enabling this toggle may trigger migration of rules to the new enrichment settings. Learn more in our [documentation](https://dt-url.net/qm02uk2).
+        /// </summary>
+        [Input("useIngestEnrichmentConfigSchema")]
+        public Input<bool>? UseIngestEnrichmentConfigSchema { get; set; }
+
         public KubernetesEnrichmentArgs()
         {
         }
@@ -118,6 +195,13 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         [Input("scope")]
         public Input<string>? Scope { get; set; }
+
+        /// <summary>
+        /// Opt-in to experience the new unified enrichment settings view ahead of future rollout.
+        ///  Enabling this toggle may trigger migration of rules to the new enrichment settings. Learn more in our [documentation](https://dt-url.net/qm02uk2).
+        /// </summary>
+        [Input("useIngestEnrichmentConfigSchema")]
+        public Input<bool>? UseIngestEnrichmentConfigSchema { get; set; }
 
         public KubernetesEnrichmentState()
         {

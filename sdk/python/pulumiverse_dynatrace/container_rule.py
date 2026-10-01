@@ -29,9 +29,9 @@ class ContainerRuleArgs:
         The set of arguments for constructing a ContainerRule resource.
 
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[_builtins.str] mode: Possible Values: `MONITORING_OFF`, `MONITORING_ON`
-        :param pulumi.Input[_builtins.str] operator: Possible Values: `CONTAINS`, `ENDS`, `EQUALS`, `EXISTS`, `NOT_CONTAINS`, `NOT_ENDS`, `NOT_EQUALS`, `NOT_EXISTS`, `NOT_STARTS`, `STARTS`
-        :param pulumi.Input[_builtins.str] property: Possible Values: `CONTAINER_NAME`, `IMAGE_NAME`, `KUBERNETES_BASEPODNAME`, `KUBERNETES_CONTAINERNAME`, `KUBERNETES_FULLPODNAME`, `KUBERNETES_NAMESPACE`, `KUBERNETES_PODUID`
+        :param pulumi.Input[_builtins.str] mode: Mode. Possible values: `MONITORING_OFF`, `MONITORING_ON`
+        :param pulumi.Input[_builtins.str] operator: Condition operator. Possible values: `CONTAINS`, `ENDS`, `EQUALS`, `EXISTS`, `NOT_CONTAINS`, `NOT_ENDS`, `NOT_EQUALS`, `NOT_EXISTS`, `NOT_STARTS`, `STARTS`
+        :param pulumi.Input[_builtins.str] property: Container property. Possible values: `CONTAINER_NAME`, `IMAGE_NAME`, `KUBERNETES_BASEPODNAME`, `KUBERNETES_CONTAINERNAME`, `KUBERNETES_FULLPODNAME`, `KUBERNETES_NAMESPACE`, `KUBERNETES_PODUID`
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[_builtins.str] value: Condition value
         """
@@ -60,7 +60,7 @@ class ContainerRuleArgs:
     @pulumi.getter
     def mode(self) -> pulumi.Input[_builtins.str]:
         """
-        Possible Values: `MONITORING_OFF`, `MONITORING_ON`
+        Mode. Possible values: `MONITORING_OFF`, `MONITORING_ON`
         """
         return pulumi.get(self, "mode")
 
@@ -72,7 +72,7 @@ class ContainerRuleArgs:
     @pulumi.getter
     def operator(self) -> pulumi.Input[_builtins.str]:
         """
-        Possible Values: `CONTAINS`, `ENDS`, `EQUALS`, `EXISTS`, `NOT_CONTAINS`, `NOT_ENDS`, `NOT_EQUALS`, `NOT_EXISTS`, `NOT_STARTS`, `STARTS`
+        Condition operator. Possible values: `CONTAINS`, `ENDS`, `EQUALS`, `EXISTS`, `NOT_CONTAINS`, `NOT_ENDS`, `NOT_EQUALS`, `NOT_EXISTS`, `NOT_STARTS`, `STARTS`
         """
         return pulumi.get(self, "operator")
 
@@ -84,7 +84,7 @@ class ContainerRuleArgs:
     @pulumi.getter
     def property(self) -> pulumi.Input[_builtins.str]:
         """
-        Possible Values: `CONTAINER_NAME`, `IMAGE_NAME`, `KUBERNETES_BASEPODNAME`, `KUBERNETES_CONTAINERNAME`, `KUBERNETES_FULLPODNAME`, `KUBERNETES_NAMESPACE`, `KUBERNETES_PODUID`
+        Container property. Possible values: `CONTAINER_NAME`, `IMAGE_NAME`, `KUBERNETES_BASEPODNAME`, `KUBERNETES_CONTAINERNAME`, `KUBERNETES_FULLPODNAME`, `KUBERNETES_NAMESPACE`, `KUBERNETES_PODUID`
         """
         return pulumi.get(self, "property")
 
@@ -131,9 +131,9 @@ class _ContainerRuleState:
 
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
-        :param pulumi.Input[_builtins.str] mode: Possible Values: `MONITORING_OFF`, `MONITORING_ON`
-        :param pulumi.Input[_builtins.str] operator: Possible Values: `CONTAINS`, `ENDS`, `EQUALS`, `EXISTS`, `NOT_CONTAINS`, `NOT_ENDS`, `NOT_EQUALS`, `NOT_EXISTS`, `NOT_STARTS`, `STARTS`
-        :param pulumi.Input[_builtins.str] property: Possible Values: `CONTAINER_NAME`, `IMAGE_NAME`, `KUBERNETES_BASEPODNAME`, `KUBERNETES_CONTAINERNAME`, `KUBERNETES_FULLPODNAME`, `KUBERNETES_NAMESPACE`, `KUBERNETES_PODUID`
+        :param pulumi.Input[_builtins.str] mode: Mode. Possible values: `MONITORING_OFF`, `MONITORING_ON`
+        :param pulumi.Input[_builtins.str] operator: Condition operator. Possible values: `CONTAINS`, `ENDS`, `EQUALS`, `EXISTS`, `NOT_CONTAINS`, `NOT_ENDS`, `NOT_EQUALS`, `NOT_EXISTS`, `NOT_STARTS`, `STARTS`
+        :param pulumi.Input[_builtins.str] property: Container property. Possible values: `CONTAINER_NAME`, `IMAGE_NAME`, `KUBERNETES_BASEPODNAME`, `KUBERNETES_CONTAINERNAME`, `KUBERNETES_FULLPODNAME`, `KUBERNETES_NAMESPACE`, `KUBERNETES_PODUID`
         :param pulumi.Input[_builtins.str] value: Condition value
         """
         if enabled is not None:
@@ -177,7 +177,7 @@ class _ContainerRuleState:
     @pulumi.getter
     def mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Possible Values: `MONITORING_OFF`, `MONITORING_ON`
+        Mode. Possible values: `MONITORING_OFF`, `MONITORING_ON`
         """
         return pulumi.get(self, "mode")
 
@@ -189,7 +189,7 @@ class _ContainerRuleState:
     @pulumi.getter
     def operator(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Possible Values: `CONTAINS`, `ENDS`, `EQUALS`, `EXISTS`, `NOT_CONTAINS`, `NOT_ENDS`, `NOT_EQUALS`, `NOT_EXISTS`, `NOT_STARTS`, `STARTS`
+        Condition operator. Possible values: `CONTAINS`, `ENDS`, `EQUALS`, `EXISTS`, `NOT_CONTAINS`, `NOT_ENDS`, `NOT_EQUALS`, `NOT_EXISTS`, `NOT_STARTS`, `STARTS`
         """
         return pulumi.get(self, "operator")
 
@@ -201,7 +201,7 @@ class _ContainerRuleState:
     @pulumi.getter
     def property(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Possible Values: `CONTAINER_NAME`, `IMAGE_NAME`, `KUBERNETES_BASEPODNAME`, `KUBERNETES_CONTAINERNAME`, `KUBERNETES_FULLPODNAME`, `KUBERNETES_NAMESPACE`, `KUBERNETES_PODUID`
+        Container property. Possible values: `CONTAINER_NAME`, `IMAGE_NAME`, `KUBERNETES_BASEPODNAME`, `KUBERNETES_CONTAINERNAME`, `KUBERNETES_FULLPODNAME`, `KUBERNETES_NAMESPACE`, `KUBERNETES_PODUID`
         """
         return pulumi.get(self, "property")
 
@@ -255,9 +255,9 @@ class ContainerRule(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
-        :param pulumi.Input[_builtins.str] mode: Possible Values: `MONITORING_OFF`, `MONITORING_ON`
-        :param pulumi.Input[_builtins.str] operator: Possible Values: `CONTAINS`, `ENDS`, `EQUALS`, `EXISTS`, `NOT_CONTAINS`, `NOT_ENDS`, `NOT_EQUALS`, `NOT_EXISTS`, `NOT_STARTS`, `STARTS`
-        :param pulumi.Input[_builtins.str] property: Possible Values: `CONTAINER_NAME`, `IMAGE_NAME`, `KUBERNETES_BASEPODNAME`, `KUBERNETES_CONTAINERNAME`, `KUBERNETES_FULLPODNAME`, `KUBERNETES_NAMESPACE`, `KUBERNETES_PODUID`
+        :param pulumi.Input[_builtins.str] mode: Mode. Possible values: `MONITORING_OFF`, `MONITORING_ON`
+        :param pulumi.Input[_builtins.str] operator: Condition operator. Possible values: `CONTAINS`, `ENDS`, `EQUALS`, `EXISTS`, `NOT_CONTAINS`, `NOT_ENDS`, `NOT_EQUALS`, `NOT_EXISTS`, `NOT_STARTS`, `STARTS`
+        :param pulumi.Input[_builtins.str] property: Container property. Possible values: `CONTAINER_NAME`, `IMAGE_NAME`, `KUBERNETES_BASEPODNAME`, `KUBERNETES_CONTAINERNAME`, `KUBERNETES_FULLPODNAME`, `KUBERNETES_NAMESPACE`, `KUBERNETES_PODUID`
         :param pulumi.Input[_builtins.str] value: Condition value
         """
         ...
@@ -351,9 +351,9 @@ class ContainerRule(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
-        :param pulumi.Input[_builtins.str] mode: Possible Values: `MONITORING_OFF`, `MONITORING_ON`
-        :param pulumi.Input[_builtins.str] operator: Possible Values: `CONTAINS`, `ENDS`, `EQUALS`, `EXISTS`, `NOT_CONTAINS`, `NOT_ENDS`, `NOT_EQUALS`, `NOT_EXISTS`, `NOT_STARTS`, `STARTS`
-        :param pulumi.Input[_builtins.str] property: Possible Values: `CONTAINER_NAME`, `IMAGE_NAME`, `KUBERNETES_BASEPODNAME`, `KUBERNETES_CONTAINERNAME`, `KUBERNETES_FULLPODNAME`, `KUBERNETES_NAMESPACE`, `KUBERNETES_PODUID`
+        :param pulumi.Input[_builtins.str] mode: Mode. Possible values: `MONITORING_OFF`, `MONITORING_ON`
+        :param pulumi.Input[_builtins.str] operator: Condition operator. Possible values: `CONTAINS`, `ENDS`, `EQUALS`, `EXISTS`, `NOT_CONTAINS`, `NOT_ENDS`, `NOT_EQUALS`, `NOT_EXISTS`, `NOT_STARTS`, `STARTS`
+        :param pulumi.Input[_builtins.str] property: Container property. Possible values: `CONTAINER_NAME`, `IMAGE_NAME`, `KUBERNETES_BASEPODNAME`, `KUBERNETES_CONTAINERNAME`, `KUBERNETES_FULLPODNAME`, `KUBERNETES_NAMESPACE`, `KUBERNETES_PODUID`
         :param pulumi.Input[_builtins.str] value: Condition value
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -388,7 +388,7 @@ class ContainerRule(pulumi.CustomResource):
     @pulumi.getter
     def mode(self) -> pulumi.Output[_builtins.str]:
         """
-        Possible Values: `MONITORING_OFF`, `MONITORING_ON`
+        Mode. Possible values: `MONITORING_OFF`, `MONITORING_ON`
         """
         return pulumi.get(self, "mode")
 
@@ -396,7 +396,7 @@ class ContainerRule(pulumi.CustomResource):
     @pulumi.getter
     def operator(self) -> pulumi.Output[_builtins.str]:
         """
-        Possible Values: `CONTAINS`, `ENDS`, `EQUALS`, `EXISTS`, `NOT_CONTAINS`, `NOT_ENDS`, `NOT_EQUALS`, `NOT_EXISTS`, `NOT_STARTS`, `STARTS`
+        Condition operator. Possible values: `CONTAINS`, `ENDS`, `EQUALS`, `EXISTS`, `NOT_CONTAINS`, `NOT_ENDS`, `NOT_EQUALS`, `NOT_EXISTS`, `NOT_STARTS`, `STARTS`
         """
         return pulumi.get(self, "operator")
 
@@ -404,7 +404,7 @@ class ContainerRule(pulumi.CustomResource):
     @pulumi.getter
     def property(self) -> pulumi.Output[_builtins.str]:
         """
-        Possible Values: `CONTAINER_NAME`, `IMAGE_NAME`, `KUBERNETES_BASEPODNAME`, `KUBERNETES_CONTAINERNAME`, `KUBERNETES_FULLPODNAME`, `KUBERNETES_NAMESPACE`, `KUBERNETES_PODUID`
+        Container property. Possible values: `CONTAINER_NAME`, `IMAGE_NAME`, `KUBERNETES_BASEPODNAME`, `KUBERNETES_CONTAINERNAME`, `KUBERNETES_FULLPODNAME`, `KUBERNETES_NAMESPACE`, `KUBERNETES_PODUID`
         """
         return pulumi.get(self, "property")
 

@@ -21,7 +21,6 @@ __all__ = ['OpenpipelineV2MetricsDataforwardingArgs', 'OpenpipelineV2MetricsData
 @pulumi.input_type
 class OpenpipelineV2MetricsDataforwardingArgs:
     def __init__(__self__, *,
-                 bulk_pattern: pulumi.Input[_builtins.str],
                  cloud_vendor_type: pulumi.Input[_builtins.str],
                  data_forwarding_type: pulumi.Input[_builtins.str],
                  enabled: pulumi.Input[_builtins.bool],
@@ -31,16 +30,17 @@ class OpenpipelineV2MetricsDataforwardingArgs:
                  azure_connection: pulumi.Input[Optional['OpenpipelineV2MetricsDataforwardingAzureConnectionArgs']] = None,
                  builtin_ingest_sources: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  builtin_pipelines: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 bulk_pattern: pulumi.Input[Optional[_builtins.str]] = None,
                  bulk_size: pulumi.Input[Optional[_builtins.int]] = None,
                  gcp_connection: pulumi.Input[Optional['OpenpipelineV2MetricsDataforwardingGcpConnectionArgs']] = None,
                  ingest_sources: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 otlp_connection: pulumi.Input[Optional['OpenpipelineV2MetricsDataforwardingOtlpConnectionArgs']] = None,
                  pipelines: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  processing: pulumi.Input[Optional['OpenpipelineV2MetricsDataforwardingProcessingArgs']] = None):
         """
         The set of arguments for constructing a OpenpipelineV2MetricsDataforwarding resource.
 
-        :param pulumi.Input[_builtins.str] bulk_pattern: Segmentation and prefix of the data
-        :param pulumi.Input[_builtins.str] cloud_vendor_type: Cloud Vendor Type. Possible values: `aws`, `azure`, `gcp`
+        :param pulumi.Input[_builtins.str] cloud_vendor_type: Cloud Vendor Type. Possible values: `aws`, `azure`, `gcp`, `otlp`
         :param pulumi.Input[_builtins.str] data_forwarding_type: Pipeline Type. Possible values: `processed`, `raw`
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] forwarding_name: Forwarding name
@@ -49,13 +49,14 @@ class OpenpipelineV2MetricsDataforwardingArgs:
         :param pulumi.Input['OpenpipelineV2MetricsDataforwardingAzureConnectionArgs'] azure_connection: Azure Connection
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] builtin_ingest_sources: List of built-in ingest sources
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] builtin_pipelines: Built-in pipelines
+        :param pulumi.Input[_builtins.str] bulk_pattern: Segmentation and prefix of the data
         :param pulumi.Input[_builtins.int] bulk_size: Bulk size for transmission
         :param pulumi.Input['OpenpipelineV2MetricsDataforwardingGcpConnectionArgs'] gcp_connection: GCP Connection
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] ingest_sources: List of ingest sources
+        :param pulumi.Input['OpenpipelineV2MetricsDataforwardingOtlpConnectionArgs'] otlp_connection: [IN_DEVELOPMENT]
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] pipelines: Pipelines
         :param pulumi.Input['OpenpipelineV2MetricsDataforwardingProcessingArgs'] processing: Processing
         """
-        pulumi.set(__self__, "bulk_pattern", bulk_pattern)
         pulumi.set(__self__, "cloud_vendor_type", cloud_vendor_type)
         pulumi.set(__self__, "data_forwarding_type", data_forwarding_type)
         pulumi.set(__self__, "enabled", enabled)
@@ -69,34 +70,26 @@ class OpenpipelineV2MetricsDataforwardingArgs:
             pulumi.set(__self__, "builtin_ingest_sources", builtin_ingest_sources)
         if builtin_pipelines is not None:
             pulumi.set(__self__, "builtin_pipelines", builtin_pipelines)
+        if bulk_pattern is not None:
+            pulumi.set(__self__, "bulk_pattern", bulk_pattern)
         if bulk_size is not None:
             pulumi.set(__self__, "bulk_size", bulk_size)
         if gcp_connection is not None:
             pulumi.set(__self__, "gcp_connection", gcp_connection)
         if ingest_sources is not None:
             pulumi.set(__self__, "ingest_sources", ingest_sources)
+        if otlp_connection is not None:
+            pulumi.set(__self__, "otlp_connection", otlp_connection)
         if pipelines is not None:
             pulumi.set(__self__, "pipelines", pipelines)
         if processing is not None:
             pulumi.set(__self__, "processing", processing)
 
     @_builtins.property
-    @pulumi.getter(name="bulkPattern")
-    def bulk_pattern(self) -> pulumi.Input[_builtins.str]:
-        """
-        Segmentation and prefix of the data
-        """
-        return pulumi.get(self, "bulk_pattern")
-
-    @bulk_pattern.setter
-    def bulk_pattern(self, value: pulumi.Input[_builtins.str]):
-        pulumi.set(self, "bulk_pattern", value)
-
-    @_builtins.property
     @pulumi.getter(name="cloudVendorType")
     def cloud_vendor_type(self) -> pulumi.Input[_builtins.str]:
         """
-        Cloud Vendor Type. Possible values: `aws`, `azure`, `gcp`
+        Cloud Vendor Type. Possible values: `aws`, `azure`, `gcp`, `otlp`
         """
         return pulumi.get(self, "cloud_vendor_type")
 
@@ -201,6 +194,18 @@ class OpenpipelineV2MetricsDataforwardingArgs:
         pulumi.set(self, "builtin_pipelines", value)
 
     @_builtins.property
+    @pulumi.getter(name="bulkPattern")
+    def bulk_pattern(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Segmentation and prefix of the data
+        """
+        return pulumi.get(self, "bulk_pattern")
+
+    @bulk_pattern.setter
+    def bulk_pattern(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "bulk_pattern", value)
+
+    @_builtins.property
     @pulumi.getter(name="bulkSize")
     def bulk_size(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
@@ -235,6 +240,18 @@ class OpenpipelineV2MetricsDataforwardingArgs:
     @ingest_sources.setter
     def ingest_sources(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "ingest_sources", value)
+
+    @_builtins.property
+    @pulumi.getter(name="otlpConnection")
+    def otlp_connection(self) -> pulumi.Input[Optional['OpenpipelineV2MetricsDataforwardingOtlpConnectionArgs']]:
+        """
+        [IN_DEVELOPMENT]
+        """
+        return pulumi.get(self, "otlp_connection")
+
+    @otlp_connection.setter
+    def otlp_connection(self, value: pulumi.Input[Optional['OpenpipelineV2MetricsDataforwardingOtlpConnectionArgs']]):
+        pulumi.set(self, "otlp_connection", value)
 
     @_builtins.property
     @pulumi.getter
@@ -277,6 +294,7 @@ class _OpenpipelineV2MetricsDataforwardingState:
                  gcp_connection: pulumi.Input[Optional['OpenpipelineV2MetricsDataforwardingGcpConnectionArgs']] = None,
                  ingest_sources: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  matcher: pulumi.Input[Optional[_builtins.str]] = None,
+                 otlp_connection: pulumi.Input[Optional['OpenpipelineV2MetricsDataforwardingOtlpConnectionArgs']] = None,
                  pipelines: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  processing: pulumi.Input[Optional['OpenpipelineV2MetricsDataforwardingProcessingArgs']] = None):
         """
@@ -288,13 +306,14 @@ class _OpenpipelineV2MetricsDataforwardingState:
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] builtin_pipelines: Built-in pipelines
         :param pulumi.Input[_builtins.str] bulk_pattern: Segmentation and prefix of the data
         :param pulumi.Input[_builtins.int] bulk_size: Bulk size for transmission
-        :param pulumi.Input[_builtins.str] cloud_vendor_type: Cloud Vendor Type. Possible values: `aws`, `azure`, `gcp`
+        :param pulumi.Input[_builtins.str] cloud_vendor_type: Cloud Vendor Type. Possible values: `aws`, `azure`, `gcp`, `otlp`
         :param pulumi.Input[_builtins.str] data_forwarding_type: Pipeline Type. Possible values: `processed`, `raw`
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] forwarding_name: Forwarding name
         :param pulumi.Input['OpenpipelineV2MetricsDataforwardingGcpConnectionArgs'] gcp_connection: GCP Connection
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] ingest_sources: List of ingest sources
         :param pulumi.Input[_builtins.str] matcher: Query which determines whether the record should be routed to the target pipeline of this rule.
+        :param pulumi.Input['OpenpipelineV2MetricsDataforwardingOtlpConnectionArgs'] otlp_connection: [IN_DEVELOPMENT]
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] pipelines: Pipelines
         :param pulumi.Input['OpenpipelineV2MetricsDataforwardingProcessingArgs'] processing: Processing
         """
@@ -324,6 +343,8 @@ class _OpenpipelineV2MetricsDataforwardingState:
             pulumi.set(__self__, "ingest_sources", ingest_sources)
         if matcher is not None:
             pulumi.set(__self__, "matcher", matcher)
+        if otlp_connection is not None:
+            pulumi.set(__self__, "otlp_connection", otlp_connection)
         if pipelines is not None:
             pulumi.set(__self__, "pipelines", pipelines)
         if processing is not None:
@@ -405,7 +426,7 @@ class _OpenpipelineV2MetricsDataforwardingState:
     @pulumi.getter(name="cloudVendorType")
     def cloud_vendor_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Cloud Vendor Type. Possible values: `aws`, `azure`, `gcp`
+        Cloud Vendor Type. Possible values: `aws`, `azure`, `gcp`, `otlp`
         """
         return pulumi.get(self, "cloud_vendor_type")
 
@@ -486,6 +507,18 @@ class _OpenpipelineV2MetricsDataforwardingState:
         pulumi.set(self, "matcher", value)
 
     @_builtins.property
+    @pulumi.getter(name="otlpConnection")
+    def otlp_connection(self) -> pulumi.Input[Optional['OpenpipelineV2MetricsDataforwardingOtlpConnectionArgs']]:
+        """
+        [IN_DEVELOPMENT]
+        """
+        return pulumi.get(self, "otlp_connection")
+
+    @otlp_connection.setter
+    def otlp_connection(self, value: pulumi.Input[Optional['OpenpipelineV2MetricsDataforwardingOtlpConnectionArgs']]):
+        pulumi.set(self, "otlp_connection", value)
+
+    @_builtins.property
     @pulumi.getter
     def pipelines(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
@@ -529,6 +562,7 @@ class OpenpipelineV2MetricsDataforwarding(pulumi.CustomResource):
                  gcp_connection: pulumi.Input[Optional[Union['OpenpipelineV2MetricsDataforwardingGcpConnectionArgs', 'OpenpipelineV2MetricsDataforwardingGcpConnectionArgsDict', 'outputs.OpenpipelineV2MetricsDataforwardingGcpConnection']]] = None,
                  ingest_sources: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  matcher: pulumi.Input[Optional[_builtins.str]] = None,
+                 otlp_connection: pulumi.Input[Optional[Union['OpenpipelineV2MetricsDataforwardingOtlpConnectionArgs', 'OpenpipelineV2MetricsDataforwardingOtlpConnectionArgsDict', 'outputs.OpenpipelineV2MetricsDataforwardingOtlpConnection']]] = None,
                  pipelines: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  processing: pulumi.Input[Optional[Union['OpenpipelineV2MetricsDataforwardingProcessingArgs', 'OpenpipelineV2MetricsDataforwardingProcessingArgsDict', 'outputs.OpenpipelineV2MetricsDataforwardingProcessing']]] = None,
                  __props__=None):
@@ -683,13 +717,14 @@ class OpenpipelineV2MetricsDataforwarding(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] builtin_pipelines: Built-in pipelines
         :param pulumi.Input[_builtins.str] bulk_pattern: Segmentation and prefix of the data
         :param pulumi.Input[_builtins.int] bulk_size: Bulk size for transmission
-        :param pulumi.Input[_builtins.str] cloud_vendor_type: Cloud Vendor Type. Possible values: `aws`, `azure`, `gcp`
+        :param pulumi.Input[_builtins.str] cloud_vendor_type: Cloud Vendor Type. Possible values: `aws`, `azure`, `gcp`, `otlp`
         :param pulumi.Input[_builtins.str] data_forwarding_type: Pipeline Type. Possible values: `processed`, `raw`
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] forwarding_name: Forwarding name
         :param pulumi.Input[Union['OpenpipelineV2MetricsDataforwardingGcpConnectionArgs', 'OpenpipelineV2MetricsDataforwardingGcpConnectionArgsDict', 'outputs.OpenpipelineV2MetricsDataforwardingGcpConnection']] gcp_connection: GCP Connection
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] ingest_sources: List of ingest sources
         :param pulumi.Input[_builtins.str] matcher: Query which determines whether the record should be routed to the target pipeline of this rule.
+        :param pulumi.Input[Union['OpenpipelineV2MetricsDataforwardingOtlpConnectionArgs', 'OpenpipelineV2MetricsDataforwardingOtlpConnectionArgsDict', 'outputs.OpenpipelineV2MetricsDataforwardingOtlpConnection']] otlp_connection: [IN_DEVELOPMENT]
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] pipelines: Pipelines
         :param pulumi.Input[Union['OpenpipelineV2MetricsDataforwardingProcessingArgs', 'OpenpipelineV2MetricsDataforwardingProcessingArgsDict', 'outputs.OpenpipelineV2MetricsDataforwardingProcessing']] processing: Processing
         """
@@ -870,6 +905,7 @@ class OpenpipelineV2MetricsDataforwarding(pulumi.CustomResource):
                  gcp_connection: pulumi.Input[Optional[Union['OpenpipelineV2MetricsDataforwardingGcpConnectionArgs', 'OpenpipelineV2MetricsDataforwardingGcpConnectionArgsDict', 'outputs.OpenpipelineV2MetricsDataforwardingGcpConnection']]] = None,
                  ingest_sources: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  matcher: pulumi.Input[Optional[_builtins.str]] = None,
+                 otlp_connection: pulumi.Input[Optional[Union['OpenpipelineV2MetricsDataforwardingOtlpConnectionArgs', 'OpenpipelineV2MetricsDataforwardingOtlpConnectionArgsDict', 'outputs.OpenpipelineV2MetricsDataforwardingOtlpConnection']]] = None,
                  pipelines: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  processing: pulumi.Input[Optional[Union['OpenpipelineV2MetricsDataforwardingProcessingArgs', 'OpenpipelineV2MetricsDataforwardingProcessingArgsDict', 'outputs.OpenpipelineV2MetricsDataforwardingProcessing']]] = None,
                  __props__=None):
@@ -885,8 +921,6 @@ class OpenpipelineV2MetricsDataforwarding(pulumi.CustomResource):
             __props__.__dict__["azure_connection"] = azure_connection
             __props__.__dict__["builtin_ingest_sources"] = builtin_ingest_sources
             __props__.__dict__["builtin_pipelines"] = builtin_pipelines
-            if bulk_pattern is None and not opts.urn:
-                raise TypeError("Missing required property 'bulk_pattern'")
             __props__.__dict__["bulk_pattern"] = bulk_pattern
             __props__.__dict__["bulk_size"] = bulk_size
             if cloud_vendor_type is None and not opts.urn:
@@ -906,6 +940,7 @@ class OpenpipelineV2MetricsDataforwarding(pulumi.CustomResource):
             if matcher is None and not opts.urn:
                 raise TypeError("Missing required property 'matcher'")
             __props__.__dict__["matcher"] = matcher
+            __props__.__dict__["otlp_connection"] = otlp_connection
             __props__.__dict__["pipelines"] = pipelines
             __props__.__dict__["processing"] = processing
         super(OpenpipelineV2MetricsDataforwarding, __self__).__init__(
@@ -931,6 +966,7 @@ class OpenpipelineV2MetricsDataforwarding(pulumi.CustomResource):
             gcp_connection: pulumi.Input[Optional[Union['OpenpipelineV2MetricsDataforwardingGcpConnectionArgs', 'OpenpipelineV2MetricsDataforwardingGcpConnectionArgsDict', 'outputs.OpenpipelineV2MetricsDataforwardingGcpConnection']]] = None,
             ingest_sources: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             matcher: pulumi.Input[Optional[_builtins.str]] = None,
+            otlp_connection: pulumi.Input[Optional[Union['OpenpipelineV2MetricsDataforwardingOtlpConnectionArgs', 'OpenpipelineV2MetricsDataforwardingOtlpConnectionArgsDict', 'outputs.OpenpipelineV2MetricsDataforwardingOtlpConnection']]] = None,
             pipelines: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             processing: pulumi.Input[Optional[Union['OpenpipelineV2MetricsDataforwardingProcessingArgs', 'OpenpipelineV2MetricsDataforwardingProcessingArgsDict', 'outputs.OpenpipelineV2MetricsDataforwardingProcessing']]] = None) -> 'OpenpipelineV2MetricsDataforwarding':
         """
@@ -946,13 +982,14 @@ class OpenpipelineV2MetricsDataforwarding(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] builtin_pipelines: Built-in pipelines
         :param pulumi.Input[_builtins.str] bulk_pattern: Segmentation and prefix of the data
         :param pulumi.Input[_builtins.int] bulk_size: Bulk size for transmission
-        :param pulumi.Input[_builtins.str] cloud_vendor_type: Cloud Vendor Type. Possible values: `aws`, `azure`, `gcp`
+        :param pulumi.Input[_builtins.str] cloud_vendor_type: Cloud Vendor Type. Possible values: `aws`, `azure`, `gcp`, `otlp`
         :param pulumi.Input[_builtins.str] data_forwarding_type: Pipeline Type. Possible values: `processed`, `raw`
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] forwarding_name: Forwarding name
         :param pulumi.Input[Union['OpenpipelineV2MetricsDataforwardingGcpConnectionArgs', 'OpenpipelineV2MetricsDataforwardingGcpConnectionArgsDict', 'outputs.OpenpipelineV2MetricsDataforwardingGcpConnection']] gcp_connection: GCP Connection
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] ingest_sources: List of ingest sources
         :param pulumi.Input[_builtins.str] matcher: Query which determines whether the record should be routed to the target pipeline of this rule.
+        :param pulumi.Input[Union['OpenpipelineV2MetricsDataforwardingOtlpConnectionArgs', 'OpenpipelineV2MetricsDataforwardingOtlpConnectionArgsDict', 'outputs.OpenpipelineV2MetricsDataforwardingOtlpConnection']] otlp_connection: [IN_DEVELOPMENT]
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] pipelines: Pipelines
         :param pulumi.Input[Union['OpenpipelineV2MetricsDataforwardingProcessingArgs', 'OpenpipelineV2MetricsDataforwardingProcessingArgsDict', 'outputs.OpenpipelineV2MetricsDataforwardingProcessing']] processing: Processing
         """
@@ -973,6 +1010,7 @@ class OpenpipelineV2MetricsDataforwarding(pulumi.CustomResource):
         __props__.__dict__["gcp_connection"] = gcp_connection
         __props__.__dict__["ingest_sources"] = ingest_sources
         __props__.__dict__["matcher"] = matcher
+        __props__.__dict__["otlp_connection"] = otlp_connection
         __props__.__dict__["pipelines"] = pipelines
         __props__.__dict__["processing"] = processing
         return OpenpipelineV2MetricsDataforwarding(resource_name, opts=opts, __props__=__props__)
@@ -1011,7 +1049,7 @@ class OpenpipelineV2MetricsDataforwarding(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="bulkPattern")
-    def bulk_pattern(self) -> pulumi.Output[_builtins.str]:
+    def bulk_pattern(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
         Segmentation and prefix of the data
         """
@@ -1029,7 +1067,7 @@ class OpenpipelineV2MetricsDataforwarding(pulumi.CustomResource):
     @pulumi.getter(name="cloudVendorType")
     def cloud_vendor_type(self) -> pulumi.Output[_builtins.str]:
         """
-        Cloud Vendor Type. Possible values: `aws`, `azure`, `gcp`
+        Cloud Vendor Type. Possible values: `aws`, `azure`, `gcp`, `otlp`
         """
         return pulumi.get(self, "cloud_vendor_type")
 
@@ -1080,6 +1118,14 @@ class OpenpipelineV2MetricsDataforwarding(pulumi.CustomResource):
         Query which determines whether the record should be routed to the target pipeline of this rule.
         """
         return pulumi.get(self, "matcher")
+
+    @_builtins.property
+    @pulumi.getter(name="otlpConnection")
+    def otlp_connection(self) -> pulumi.Output[Optional['outputs.OpenpipelineV2MetricsDataforwardingOtlpConnection']]:
+        """
+        [IN_DEVELOPMENT]
+        """
+        return pulumi.get(self, "otlp_connection")
 
     @_builtins.property
     @pulumi.getter

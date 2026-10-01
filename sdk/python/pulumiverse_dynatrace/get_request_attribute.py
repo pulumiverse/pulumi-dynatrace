@@ -61,6 +61,9 @@ class AwaitableGetRequestAttributeResult(GetRequestAttributeResult):
 def get_request_attribute(name: Optional[_builtins.str] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRequestAttributeResult:
     """
+    > This data source requires the API token scope **Read configuration** (`ReadConfig`)
+    or the OAuth scope `settings:objects:read`
+
     The `RequestAttribute` data source allows the request attribute ID to be retrieved by its name.
 
     - `name` (String) - The name of the request attribute
@@ -86,6 +89,9 @@ def get_request_attribute(name: Optional[_builtins.str] = None,
 def get_request_attribute_output(name: pulumi.Input[Optional[_builtins.str]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRequestAttributeResult]:
     """
+    > This data source requires the API token scope **Read configuration** (`ReadConfig`)
+    or the OAuth scope `settings:objects:read`
+
     The `RequestAttribute` data source allows the request attribute ID to be retrieved by its name.
 
     - `name` (String) - The name of the request attribute

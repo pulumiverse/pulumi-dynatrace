@@ -198,13 +198,13 @@ export class OpenpipelineV2EventsSecurityDataforwarding extends pulumi.CustomRes
     /**
      * Segmentation and prefix of the data
      */
-    declare public readonly bulkPattern: pulumi.Output<string>;
+    declare public readonly bulkPattern: pulumi.Output<string | undefined>;
     /**
      * Bulk size for transmission
      */
     declare public readonly bulkSize: pulumi.Output<number | undefined>;
     /**
-     * Cloud Vendor Type. Possible values: `aws`, `azure`, `gcp`
+     * Cloud Vendor Type. Possible values: `aws`, `azure`, `gcp`, `otlp`
      */
     declare public readonly cloudVendorType: pulumi.Output<string>;
     /**
@@ -231,6 +231,10 @@ export class OpenpipelineV2EventsSecurityDataforwarding extends pulumi.CustomRes
      * Query which determines whether the record should be routed to the target pipeline of this rule.
      */
     declare public readonly matcher: pulumi.Output<string>;
+    /**
+     * [IN_DEVELOPMENT]
+     */
+    declare public readonly otlpConnection: pulumi.Output<outputs.OpenpipelineV2EventsSecurityDataforwardingOtlpConnection | undefined>;
     /**
      * Pipelines
      */
@@ -266,13 +270,11 @@ export class OpenpipelineV2EventsSecurityDataforwarding extends pulumi.CustomRes
             resourceInputs["gcpConnection"] = state?.gcpConnection;
             resourceInputs["ingestSources"] = state?.ingestSources;
             resourceInputs["matcher"] = state?.matcher;
+            resourceInputs["otlpConnection"] = state?.otlpConnection;
             resourceInputs["pipelines"] = state?.pipelines;
             resourceInputs["processing"] = state?.processing;
         } else {
             const args = argsOrState as OpenpipelineV2EventsSecurityDataforwardingArgs | undefined;
-            if (args?.bulkPattern === undefined && !opts.urn) {
-                throw new Error("Missing required property 'bulkPattern'");
-            }
             if (args?.cloudVendorType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'cloudVendorType'");
             }
@@ -301,6 +303,7 @@ export class OpenpipelineV2EventsSecurityDataforwarding extends pulumi.CustomRes
             resourceInputs["gcpConnection"] = args?.gcpConnection;
             resourceInputs["ingestSources"] = args?.ingestSources;
             resourceInputs["matcher"] = args?.matcher;
+            resourceInputs["otlpConnection"] = args?.otlpConnection;
             resourceInputs["pipelines"] = args?.pipelines;
             resourceInputs["processing"] = args?.processing;
         }
@@ -338,7 +341,7 @@ export interface OpenpipelineV2EventsSecurityDataforwardingState {
      */
     bulkSize?: pulumi.Input<number | undefined>;
     /**
-     * Cloud Vendor Type. Possible values: `aws`, `azure`, `gcp`
+     * Cloud Vendor Type. Possible values: `aws`, `azure`, `gcp`, `otlp`
      */
     cloudVendorType?: pulumi.Input<string | undefined>;
     /**
@@ -365,6 +368,10 @@ export interface OpenpipelineV2EventsSecurityDataforwardingState {
      * Query which determines whether the record should be routed to the target pipeline of this rule.
      */
     matcher?: pulumi.Input<string | undefined>;
+    /**
+     * [IN_DEVELOPMENT]
+     */
+    otlpConnection?: pulumi.Input<inputs.OpenpipelineV2EventsSecurityDataforwardingOtlpConnection | undefined>;
     /**
      * Pipelines
      */
@@ -398,13 +405,13 @@ export interface OpenpipelineV2EventsSecurityDataforwardingArgs {
     /**
      * Segmentation and prefix of the data
      */
-    bulkPattern: pulumi.Input<string>;
+    bulkPattern?: pulumi.Input<string | undefined>;
     /**
      * Bulk size for transmission
      */
     bulkSize?: pulumi.Input<number | undefined>;
     /**
-     * Cloud Vendor Type. Possible values: `aws`, `azure`, `gcp`
+     * Cloud Vendor Type. Possible values: `aws`, `azure`, `gcp`, `otlp`
      */
     cloudVendorType: pulumi.Input<string>;
     /**
@@ -431,6 +438,10 @@ export interface OpenpipelineV2EventsSecurityDataforwardingArgs {
      * Query which determines whether the record should be routed to the target pipeline of this rule.
      */
     matcher: pulumi.Input<string>;
+    /**
+     * [IN_DEVELOPMENT]
+     */
+    otlpConnection?: pulumi.Input<inputs.OpenpipelineV2EventsSecurityDataforwardingOtlpConnection | undefined>;
     /**
      * Pipelines
      */

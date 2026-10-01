@@ -13,6 +13,393 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type ManagementZoneRuleConditionMobilePlatform struct {
+	// Reverses the operator. For example it turns the **begins with** into **does not begin with**
+	Negate *bool `pulumi:"negate"`
+	// Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+	Operator string `pulumi:"operator"`
+	// Any attributes that aren't yet supported by this provider
+	Unknowns *string `pulumi:"unknowns"`
+	// The value to compare to. Possible values are ANDROID, IOS, LINUX, MAC_OS, OTHER, TVOS and WINDOWS.
+	Value *string `pulumi:"value"`
+}
+
+// ManagementZoneRuleConditionMobilePlatformInput is an input type that accepts ManagementZoneRuleConditionMobilePlatformArgs and ManagementZoneRuleConditionMobilePlatformOutput values.
+// You can construct a concrete instance of `ManagementZoneRuleConditionMobilePlatformInput` via:
+//
+//	ManagementZoneRuleConditionMobilePlatformArgs{...}
+type ManagementZoneRuleConditionMobilePlatformInput interface {
+	pulumi.Input
+
+	ToManagementZoneRuleConditionMobilePlatformOutput() ManagementZoneRuleConditionMobilePlatformOutput
+	ToManagementZoneRuleConditionMobilePlatformOutputWithContext(context.Context) ManagementZoneRuleConditionMobilePlatformOutput
+}
+
+type ManagementZoneRuleConditionMobilePlatformArgs struct {
+	// Reverses the operator. For example it turns the **begins with** into **does not begin with**
+	Negate pulumi.BoolPtrInput `pulumi:"negate"`
+	// Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+	Operator pulumi.StringInput `pulumi:"operator"`
+	// Any attributes that aren't yet supported by this provider
+	Unknowns pulumi.StringPtrInput `pulumi:"unknowns"`
+	// The value to compare to. Possible values are ANDROID, IOS, LINUX, MAC_OS, OTHER, TVOS and WINDOWS.
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (ManagementZoneRuleConditionMobilePlatformArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagementZoneRuleConditionMobilePlatform)(nil)).Elem()
+}
+
+func (i ManagementZoneRuleConditionMobilePlatformArgs) ToManagementZoneRuleConditionMobilePlatformOutput() ManagementZoneRuleConditionMobilePlatformOutput {
+	return i.ToManagementZoneRuleConditionMobilePlatformOutputWithContext(context.Background())
+}
+
+func (i ManagementZoneRuleConditionMobilePlatformArgs) ToManagementZoneRuleConditionMobilePlatformOutputWithContext(ctx context.Context) ManagementZoneRuleConditionMobilePlatformOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagementZoneRuleConditionMobilePlatformOutput)
+}
+
+// ManagementZoneRuleConditionMobilePlatformArrayInput is an input type that accepts ManagementZoneRuleConditionMobilePlatformArray and ManagementZoneRuleConditionMobilePlatformArrayOutput values.
+// You can construct a concrete instance of `ManagementZoneRuleConditionMobilePlatformArrayInput` via:
+//
+//	ManagementZoneRuleConditionMobilePlatformArray{ ManagementZoneRuleConditionMobilePlatformArgs{...} }
+type ManagementZoneRuleConditionMobilePlatformArrayInput interface {
+	pulumi.Input
+
+	ToManagementZoneRuleConditionMobilePlatformArrayOutput() ManagementZoneRuleConditionMobilePlatformArrayOutput
+	ToManagementZoneRuleConditionMobilePlatformArrayOutputWithContext(context.Context) ManagementZoneRuleConditionMobilePlatformArrayOutput
+}
+
+type ManagementZoneRuleConditionMobilePlatformArray []ManagementZoneRuleConditionMobilePlatformInput
+
+func (ManagementZoneRuleConditionMobilePlatformArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ManagementZoneRuleConditionMobilePlatform)(nil)).Elem()
+}
+
+func (i ManagementZoneRuleConditionMobilePlatformArray) ToManagementZoneRuleConditionMobilePlatformArrayOutput() ManagementZoneRuleConditionMobilePlatformArrayOutput {
+	return i.ToManagementZoneRuleConditionMobilePlatformArrayOutputWithContext(context.Background())
+}
+
+func (i ManagementZoneRuleConditionMobilePlatformArray) ToManagementZoneRuleConditionMobilePlatformArrayOutputWithContext(ctx context.Context) ManagementZoneRuleConditionMobilePlatformArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagementZoneRuleConditionMobilePlatformArrayOutput)
+}
+
+type ManagementZoneRuleConditionMobilePlatformOutput struct{ *pulumi.OutputState }
+
+func (ManagementZoneRuleConditionMobilePlatformOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagementZoneRuleConditionMobilePlatform)(nil)).Elem()
+}
+
+func (o ManagementZoneRuleConditionMobilePlatformOutput) ToManagementZoneRuleConditionMobilePlatformOutput() ManagementZoneRuleConditionMobilePlatformOutput {
+	return o
+}
+
+func (o ManagementZoneRuleConditionMobilePlatformOutput) ToManagementZoneRuleConditionMobilePlatformOutputWithContext(ctx context.Context) ManagementZoneRuleConditionMobilePlatformOutput {
+	return o
+}
+
+// Reverses the operator. For example it turns the **begins with** into **does not begin with**
+func (o ManagementZoneRuleConditionMobilePlatformOutput) Negate() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ManagementZoneRuleConditionMobilePlatform) *bool { return v.Negate }).(pulumi.BoolPtrOutput)
+}
+
+// Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+func (o ManagementZoneRuleConditionMobilePlatformOutput) Operator() pulumi.StringOutput {
+	return o.ApplyT(func(v ManagementZoneRuleConditionMobilePlatform) string { return v.Operator }).(pulumi.StringOutput)
+}
+
+// Any attributes that aren't yet supported by this provider
+func (o ManagementZoneRuleConditionMobilePlatformOutput) Unknowns() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagementZoneRuleConditionMobilePlatform) *string { return v.Unknowns }).(pulumi.StringPtrOutput)
+}
+
+// The value to compare to. Possible values are ANDROID, IOS, LINUX, MAC_OS, OTHER, TVOS and WINDOWS.
+func (o ManagementZoneRuleConditionMobilePlatformOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagementZoneRuleConditionMobilePlatform) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type ManagementZoneRuleConditionMobilePlatformArrayOutput struct{ *pulumi.OutputState }
+
+func (ManagementZoneRuleConditionMobilePlatformArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ManagementZoneRuleConditionMobilePlatform)(nil)).Elem()
+}
+
+func (o ManagementZoneRuleConditionMobilePlatformArrayOutput) ToManagementZoneRuleConditionMobilePlatformArrayOutput() ManagementZoneRuleConditionMobilePlatformArrayOutput {
+	return o
+}
+
+func (o ManagementZoneRuleConditionMobilePlatformArrayOutput) ToManagementZoneRuleConditionMobilePlatformArrayOutputWithContext(ctx context.Context) ManagementZoneRuleConditionMobilePlatformArrayOutput {
+	return o
+}
+
+func (o ManagementZoneRuleConditionMobilePlatformArrayOutput) Index(i pulumi.IntInput) ManagementZoneRuleConditionMobilePlatformOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ManagementZoneRuleConditionMobilePlatform {
+		return vs[0].([]ManagementZoneRuleConditionMobilePlatform)[vs[1].(int)]
+	}).(ManagementZoneRuleConditionMobilePlatformOutput)
+}
+
+type ManagementZoneRuleConditionMobilePlatformComparison struct {
+	// Reverses the operator. For example it turns the **begins with** into **does not begin with**
+	Negate *bool `pulumi:"negate"`
+	// Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+	Operator string `pulumi:"operator"`
+	// if specified, needs to be MOBILE_PLATFORM
+	//
+	// Deprecated: The value of the attribute type is implicit, therefore shouldn't get specified
+	Type *string `pulumi:"type"`
+	// Any attributes that aren't yet supported by this provider
+	Unknowns *string `pulumi:"unknowns"`
+	// The value to compare to. Possible values are ANDROID, IOS, LINUX, MAC_OS, OTHER, TVOS and WINDOWS.
+	Value *string `pulumi:"value"`
+}
+
+// ManagementZoneRuleConditionMobilePlatformComparisonInput is an input type that accepts ManagementZoneRuleConditionMobilePlatformComparisonArgs and ManagementZoneRuleConditionMobilePlatformComparisonOutput values.
+// You can construct a concrete instance of `ManagementZoneRuleConditionMobilePlatformComparisonInput` via:
+//
+//	ManagementZoneRuleConditionMobilePlatformComparisonArgs{...}
+type ManagementZoneRuleConditionMobilePlatformComparisonInput interface {
+	pulumi.Input
+
+	ToManagementZoneRuleConditionMobilePlatformComparisonOutput() ManagementZoneRuleConditionMobilePlatformComparisonOutput
+	ToManagementZoneRuleConditionMobilePlatformComparisonOutputWithContext(context.Context) ManagementZoneRuleConditionMobilePlatformComparisonOutput
+}
+
+type ManagementZoneRuleConditionMobilePlatformComparisonArgs struct {
+	// Reverses the operator. For example it turns the **begins with** into **does not begin with**
+	Negate pulumi.BoolPtrInput `pulumi:"negate"`
+	// Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+	Operator pulumi.StringInput `pulumi:"operator"`
+	// if specified, needs to be MOBILE_PLATFORM
+	//
+	// Deprecated: The value of the attribute type is implicit, therefore shouldn't get specified
+	Type pulumi.StringPtrInput `pulumi:"type"`
+	// Any attributes that aren't yet supported by this provider
+	Unknowns pulumi.StringPtrInput `pulumi:"unknowns"`
+	// The value to compare to. Possible values are ANDROID, IOS, LINUX, MAC_OS, OTHER, TVOS and WINDOWS.
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (ManagementZoneRuleConditionMobilePlatformComparisonArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagementZoneRuleConditionMobilePlatformComparison)(nil)).Elem()
+}
+
+func (i ManagementZoneRuleConditionMobilePlatformComparisonArgs) ToManagementZoneRuleConditionMobilePlatformComparisonOutput() ManagementZoneRuleConditionMobilePlatformComparisonOutput {
+	return i.ToManagementZoneRuleConditionMobilePlatformComparisonOutputWithContext(context.Background())
+}
+
+func (i ManagementZoneRuleConditionMobilePlatformComparisonArgs) ToManagementZoneRuleConditionMobilePlatformComparisonOutputWithContext(ctx context.Context) ManagementZoneRuleConditionMobilePlatformComparisonOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagementZoneRuleConditionMobilePlatformComparisonOutput)
+}
+
+// ManagementZoneRuleConditionMobilePlatformComparisonArrayInput is an input type that accepts ManagementZoneRuleConditionMobilePlatformComparisonArray and ManagementZoneRuleConditionMobilePlatformComparisonArrayOutput values.
+// You can construct a concrete instance of `ManagementZoneRuleConditionMobilePlatformComparisonArrayInput` via:
+//
+//	ManagementZoneRuleConditionMobilePlatformComparisonArray{ ManagementZoneRuleConditionMobilePlatformComparisonArgs{...} }
+type ManagementZoneRuleConditionMobilePlatformComparisonArrayInput interface {
+	pulumi.Input
+
+	ToManagementZoneRuleConditionMobilePlatformComparisonArrayOutput() ManagementZoneRuleConditionMobilePlatformComparisonArrayOutput
+	ToManagementZoneRuleConditionMobilePlatformComparisonArrayOutputWithContext(context.Context) ManagementZoneRuleConditionMobilePlatformComparisonArrayOutput
+}
+
+type ManagementZoneRuleConditionMobilePlatformComparisonArray []ManagementZoneRuleConditionMobilePlatformComparisonInput
+
+func (ManagementZoneRuleConditionMobilePlatformComparisonArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ManagementZoneRuleConditionMobilePlatformComparison)(nil)).Elem()
+}
+
+func (i ManagementZoneRuleConditionMobilePlatformComparisonArray) ToManagementZoneRuleConditionMobilePlatformComparisonArrayOutput() ManagementZoneRuleConditionMobilePlatformComparisonArrayOutput {
+	return i.ToManagementZoneRuleConditionMobilePlatformComparisonArrayOutputWithContext(context.Background())
+}
+
+func (i ManagementZoneRuleConditionMobilePlatformComparisonArray) ToManagementZoneRuleConditionMobilePlatformComparisonArrayOutputWithContext(ctx context.Context) ManagementZoneRuleConditionMobilePlatformComparisonArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagementZoneRuleConditionMobilePlatformComparisonArrayOutput)
+}
+
+type ManagementZoneRuleConditionMobilePlatformComparisonOutput struct{ *pulumi.OutputState }
+
+func (ManagementZoneRuleConditionMobilePlatformComparisonOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagementZoneRuleConditionMobilePlatformComparison)(nil)).Elem()
+}
+
+func (o ManagementZoneRuleConditionMobilePlatformComparisonOutput) ToManagementZoneRuleConditionMobilePlatformComparisonOutput() ManagementZoneRuleConditionMobilePlatformComparisonOutput {
+	return o
+}
+
+func (o ManagementZoneRuleConditionMobilePlatformComparisonOutput) ToManagementZoneRuleConditionMobilePlatformComparisonOutputWithContext(ctx context.Context) ManagementZoneRuleConditionMobilePlatformComparisonOutput {
+	return o
+}
+
+// Reverses the operator. For example it turns the **begins with** into **does not begin with**
+func (o ManagementZoneRuleConditionMobilePlatformComparisonOutput) Negate() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ManagementZoneRuleConditionMobilePlatformComparison) *bool { return v.Negate }).(pulumi.BoolPtrOutput)
+}
+
+// Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+func (o ManagementZoneRuleConditionMobilePlatformComparisonOutput) Operator() pulumi.StringOutput {
+	return o.ApplyT(func(v ManagementZoneRuleConditionMobilePlatformComparison) string { return v.Operator }).(pulumi.StringOutput)
+}
+
+// if specified, needs to be MOBILE_PLATFORM
+//
+// Deprecated: The value of the attribute type is implicit, therefore shouldn't get specified
+func (o ManagementZoneRuleConditionMobilePlatformComparisonOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagementZoneRuleConditionMobilePlatformComparison) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+// Any attributes that aren't yet supported by this provider
+func (o ManagementZoneRuleConditionMobilePlatformComparisonOutput) Unknowns() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagementZoneRuleConditionMobilePlatformComparison) *string { return v.Unknowns }).(pulumi.StringPtrOutput)
+}
+
+// The value to compare to. Possible values are ANDROID, IOS, LINUX, MAC_OS, OTHER, TVOS and WINDOWS.
+func (o ManagementZoneRuleConditionMobilePlatformComparisonOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagementZoneRuleConditionMobilePlatformComparison) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type ManagementZoneRuleConditionMobilePlatformComparisonArrayOutput struct{ *pulumi.OutputState }
+
+func (ManagementZoneRuleConditionMobilePlatformComparisonArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ManagementZoneRuleConditionMobilePlatformComparison)(nil)).Elem()
+}
+
+func (o ManagementZoneRuleConditionMobilePlatformComparisonArrayOutput) ToManagementZoneRuleConditionMobilePlatformComparisonArrayOutput() ManagementZoneRuleConditionMobilePlatformComparisonArrayOutput {
+	return o
+}
+
+func (o ManagementZoneRuleConditionMobilePlatformComparisonArrayOutput) ToManagementZoneRuleConditionMobilePlatformComparisonArrayOutputWithContext(ctx context.Context) ManagementZoneRuleConditionMobilePlatformComparisonArrayOutput {
+	return o
+}
+
+func (o ManagementZoneRuleConditionMobilePlatformComparisonArrayOutput) Index(i pulumi.IntInput) ManagementZoneRuleConditionMobilePlatformComparisonOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ManagementZoneRuleConditionMobilePlatformComparison {
+		return vs[0].([]ManagementZoneRuleConditionMobilePlatformComparison)[vs[1].(int)]
+	}).(ManagementZoneRuleConditionMobilePlatformComparisonOutput)
+}
+
+type ManagementZoneRuleConditionOsArch struct {
+	// Reverses the operator. For example it turns the **begins with** into **does not begin with**
+	Negate *bool `pulumi:"negate"`
+	// Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+	Operator string `pulumi:"operator"`
+	// Any attributes that aren't yet supported by this provider
+	Unknowns *string `pulumi:"unknowns"`
+	// The value to compare to. Possible values are ARM, IA64, PARISC, PPC, PPCLE, S390, SPARC, X86 and ZOS.
+	Value *string `pulumi:"value"`
+}
+
+// ManagementZoneRuleConditionOsArchInput is an input type that accepts ManagementZoneRuleConditionOsArchArgs and ManagementZoneRuleConditionOsArchOutput values.
+// You can construct a concrete instance of `ManagementZoneRuleConditionOsArchInput` via:
+//
+//	ManagementZoneRuleConditionOsArchArgs{...}
+type ManagementZoneRuleConditionOsArchInput interface {
+	pulumi.Input
+
+	ToManagementZoneRuleConditionOsArchOutput() ManagementZoneRuleConditionOsArchOutput
+	ToManagementZoneRuleConditionOsArchOutputWithContext(context.Context) ManagementZoneRuleConditionOsArchOutput
+}
+
+type ManagementZoneRuleConditionOsArchArgs struct {
+	// Reverses the operator. For example it turns the **begins with** into **does not begin with**
+	Negate pulumi.BoolPtrInput `pulumi:"negate"`
+	// Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+	Operator pulumi.StringInput `pulumi:"operator"`
+	// Any attributes that aren't yet supported by this provider
+	Unknowns pulumi.StringPtrInput `pulumi:"unknowns"`
+	// The value to compare to. Possible values are ARM, IA64, PARISC, PPC, PPCLE, S390, SPARC, X86 and ZOS.
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (ManagementZoneRuleConditionOsArchArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagementZoneRuleConditionOsArch)(nil)).Elem()
+}
+
+func (i ManagementZoneRuleConditionOsArchArgs) ToManagementZoneRuleConditionOsArchOutput() ManagementZoneRuleConditionOsArchOutput {
+	return i.ToManagementZoneRuleConditionOsArchOutputWithContext(context.Background())
+}
+
+func (i ManagementZoneRuleConditionOsArchArgs) ToManagementZoneRuleConditionOsArchOutputWithContext(ctx context.Context) ManagementZoneRuleConditionOsArchOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagementZoneRuleConditionOsArchOutput)
+}
+
+// ManagementZoneRuleConditionOsArchArrayInput is an input type that accepts ManagementZoneRuleConditionOsArchArray and ManagementZoneRuleConditionOsArchArrayOutput values.
+// You can construct a concrete instance of `ManagementZoneRuleConditionOsArchArrayInput` via:
+//
+//	ManagementZoneRuleConditionOsArchArray{ ManagementZoneRuleConditionOsArchArgs{...} }
+type ManagementZoneRuleConditionOsArchArrayInput interface {
+	pulumi.Input
+
+	ToManagementZoneRuleConditionOsArchArrayOutput() ManagementZoneRuleConditionOsArchArrayOutput
+	ToManagementZoneRuleConditionOsArchArrayOutputWithContext(context.Context) ManagementZoneRuleConditionOsArchArrayOutput
+}
+
+type ManagementZoneRuleConditionOsArchArray []ManagementZoneRuleConditionOsArchInput
+
+func (ManagementZoneRuleConditionOsArchArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ManagementZoneRuleConditionOsArch)(nil)).Elem()
+}
+
+func (i ManagementZoneRuleConditionOsArchArray) ToManagementZoneRuleConditionOsArchArrayOutput() ManagementZoneRuleConditionOsArchArrayOutput {
+	return i.ToManagementZoneRuleConditionOsArchArrayOutputWithContext(context.Background())
+}
+
+func (i ManagementZoneRuleConditionOsArchArray) ToManagementZoneRuleConditionOsArchArrayOutputWithContext(ctx context.Context) ManagementZoneRuleConditionOsArchArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagementZoneRuleConditionOsArchArrayOutput)
+}
+
+type ManagementZoneRuleConditionOsArchOutput struct{ *pulumi.OutputState }
+
+func (ManagementZoneRuleConditionOsArchOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagementZoneRuleConditionOsArch)(nil)).Elem()
+}
+
+func (o ManagementZoneRuleConditionOsArchOutput) ToManagementZoneRuleConditionOsArchOutput() ManagementZoneRuleConditionOsArchOutput {
+	return o
+}
+
+func (o ManagementZoneRuleConditionOsArchOutput) ToManagementZoneRuleConditionOsArchOutputWithContext(ctx context.Context) ManagementZoneRuleConditionOsArchOutput {
+	return o
+}
+
+// Reverses the operator. For example it turns the **begins with** into **does not begin with**
+func (o ManagementZoneRuleConditionOsArchOutput) Negate() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ManagementZoneRuleConditionOsArch) *bool { return v.Negate }).(pulumi.BoolPtrOutput)
+}
+
+// Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+func (o ManagementZoneRuleConditionOsArchOutput) Operator() pulumi.StringOutput {
+	return o.ApplyT(func(v ManagementZoneRuleConditionOsArch) string { return v.Operator }).(pulumi.StringOutput)
+}
+
+// Any attributes that aren't yet supported by this provider
+func (o ManagementZoneRuleConditionOsArchOutput) Unknowns() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagementZoneRuleConditionOsArch) *string { return v.Unknowns }).(pulumi.StringPtrOutput)
+}
+
+// The value to compare to. Possible values are ARM, IA64, PARISC, PPC, PPCLE, S390, SPARC, X86 and ZOS.
+func (o ManagementZoneRuleConditionOsArchOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagementZoneRuleConditionOsArch) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type ManagementZoneRuleConditionOsArchArrayOutput struct{ *pulumi.OutputState }
+
+func (ManagementZoneRuleConditionOsArchArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ManagementZoneRuleConditionOsArch)(nil)).Elem()
+}
+
+func (o ManagementZoneRuleConditionOsArchArrayOutput) ToManagementZoneRuleConditionOsArchArrayOutput() ManagementZoneRuleConditionOsArchArrayOutput {
+	return o
+}
+
+func (o ManagementZoneRuleConditionOsArchArrayOutput) ToManagementZoneRuleConditionOsArchArrayOutputWithContext(ctx context.Context) ManagementZoneRuleConditionOsArchArrayOutput {
+	return o
+}
+
+func (o ManagementZoneRuleConditionOsArchArrayOutput) Index(i pulumi.IntInput) ManagementZoneRuleConditionOsArchOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ManagementZoneRuleConditionOsArch {
+		return vs[0].([]ManagementZoneRuleConditionOsArch)[vs[1].(int)]
+	}).(ManagementZoneRuleConditionOsArchOutput)
+}
+
 type ManagementZoneRuleConditionOsType struct {
 	// Reverses the operator. For example it turns the **begins with** into **does not begin with**
 	Negate *bool `pulumi:"negate"`
@@ -90575,697 +90962,13 @@ func (o OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorAzureLogFo
 	}).(pulumi.StringPtrOutput)
 }
 
-type OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessor struct {
-	// Name or description of the processor
-	Description string `pulumi:"description"`
-	// Indicates if the object is active
-	Enabled bool `pulumi:"enabled"`
-	// Strategy to assign a value
-	EventProvider OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProvider `pulumi:"eventProvider"`
-	// Strategy to assign a value
-	EventType OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventType `pulumi:"eventType"`
-	// Definition of the field extraction
-	FieldExtraction *OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorFieldExtraction `pulumi:"fieldExtraction"`
-	// Identifier of the processor. Must be unique within a stage.
-	Id string `pulumi:"id"`
-	// Matching condition to apply on incoming records
-	Matcher string `pulumi:"matcher"`
-	// Sample data related to the processor for documentation or testing
-	SampleData *string `pulumi:"sampleData"`
-}
-
-// OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorInput is an input type that accepts OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorArgs and OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorOutput values.
-// You can construct a concrete instance of `OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorInput` via:
-//
-//	OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorArgs{...}
-type OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorInput interface {
-	pulumi.Input
-
-	ToOpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorOutput() OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorOutput
-	ToOpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorOutputWithContext(context.Context) OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorOutput
-}
-
-type OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorArgs struct {
-	// Name or description of the processor
-	Description pulumi.StringInput `pulumi:"description"`
-	// Indicates if the object is active
-	Enabled pulumi.BoolInput `pulumi:"enabled"`
-	// Strategy to assign a value
-	EventProvider OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderInput `pulumi:"eventProvider"`
-	// Strategy to assign a value
-	EventType OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypeInput `pulumi:"eventType"`
-	// Definition of the field extraction
-	FieldExtraction OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorFieldExtractionPtrInput `pulumi:"fieldExtraction"`
-	// Identifier of the processor. Must be unique within a stage.
-	Id pulumi.StringInput `pulumi:"id"`
-	// Matching condition to apply on incoming records
-	Matcher pulumi.StringInput `pulumi:"matcher"`
-	// Sample data related to the processor for documentation or testing
-	SampleData pulumi.StringPtrInput `pulumi:"sampleData"`
-}
-
-func (OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessor)(nil)).Elem()
-}
-
-func (i OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorArgs) ToOpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorOutput() OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorOutput {
-	return i.ToOpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorOutputWithContext(context.Background())
-}
-
-func (i OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorArgs) ToOpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorOutputWithContext(ctx context.Context) OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorOutput)
-}
-
-func (i OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorArgs) ToOpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorPtrOutput() OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorPtrOutput {
-	return i.ToOpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorPtrOutputWithContext(context.Background())
-}
-
-func (i OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorArgs) ToOpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorPtrOutputWithContext(ctx context.Context) OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorOutput).ToOpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorPtrOutputWithContext(ctx)
-}
-
-// OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorPtrInput is an input type that accepts OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorArgs, OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorPtr and OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorPtrOutput values.
-// You can construct a concrete instance of `OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorPtrInput` via:
-//
-//	        OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorArgs{...}
-//
-//	or:
-//
-//	        nil
-type OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorPtrInput interface {
-	pulumi.Input
-
-	ToOpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorPtrOutput() OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorPtrOutput
-	ToOpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorPtrOutputWithContext(context.Context) OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorPtrOutput
-}
-
-type openpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorPtrType OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorArgs
-
-func OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorPtr(v *OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorArgs) OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorPtrInput {
-	return (*openpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorPtrType)(v)
-}
-
-func (*openpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessor)(nil)).Elem()
-}
-
-func (i *openpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorPtrType) ToOpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorPtrOutput() OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorPtrOutput {
-	return i.ToOpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorPtrOutputWithContext(context.Background())
-}
-
-func (i *openpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorPtrType) ToOpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorPtrOutputWithContext(ctx context.Context) OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorPtrOutput)
-}
-
-type OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorOutput struct{ *pulumi.OutputState }
-
-func (OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessor)(nil)).Elem()
-}
-
-func (o OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorOutput) ToOpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorOutput() OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorOutput {
-	return o
-}
-
-func (o OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorOutput) ToOpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorOutputWithContext(ctx context.Context) OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorOutput {
-	return o
-}
-
-func (o OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorOutput) ToOpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorPtrOutput() OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorPtrOutput {
-	return o.ToOpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorPtrOutputWithContext(context.Background())
-}
-
-func (o OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorOutput) ToOpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorPtrOutputWithContext(ctx context.Context) OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessor) *OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessor {
-		return &v
-	}).(OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorPtrOutput)
-}
-
-// Name or description of the processor
-func (o OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessor) string {
-		return v.Description
-	}).(pulumi.StringOutput)
-}
-
-// Indicates if the object is active
-func (o OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorOutput) Enabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessor) bool {
-		return v.Enabled
-	}).(pulumi.BoolOutput)
-}
-
-// Strategy to assign a value
-func (o OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorOutput) EventProvider() OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderOutput {
-	return o.ApplyT(func(v OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessor) OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProvider {
-		return v.EventProvider
-	}).(OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderOutput)
-}
-
-// Strategy to assign a value
-func (o OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorOutput) EventType() OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypeOutput {
-	return o.ApplyT(func(v OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessor) OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventType {
-		return v.EventType
-	}).(OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypeOutput)
-}
-
-// Definition of the field extraction
-func (o OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorOutput) FieldExtraction() OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorFieldExtractionPtrOutput {
-	return o.ApplyT(func(v OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessor) *OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorFieldExtraction {
-		return v.FieldExtraction
-	}).(OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorFieldExtractionPtrOutput)
-}
-
-// Identifier of the processor. Must be unique within a stage.
-func (o OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessor) string {
-		return v.Id
-	}).(pulumi.StringOutput)
-}
-
-// Matching condition to apply on incoming records
-func (o OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorOutput) Matcher() pulumi.StringOutput {
-	return o.ApplyT(func(v OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessor) string {
-		return v.Matcher
-	}).(pulumi.StringOutput)
-}
-
-// Sample data related to the processor for documentation or testing
-func (o OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorOutput) SampleData() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessor) *string {
-		return v.SampleData
-	}).(pulumi.StringPtrOutput)
-}
-
-type OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorPtrOutput struct{ *pulumi.OutputState }
-
-func (OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessor)(nil)).Elem()
-}
-
-func (o OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorPtrOutput) ToOpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorPtrOutput() OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorPtrOutput {
-	return o
-}
-
-func (o OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorPtrOutput) ToOpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorPtrOutputWithContext(ctx context.Context) OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorPtrOutput {
-	return o
-}
-
-func (o OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorPtrOutput) Elem() OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorOutput {
-	return o.ApplyT(func(v *OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessor) OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessor {
-		if v != nil {
-			return *v
-		}
-		var ret OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessor
-		return ret
-	}).(OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorOutput)
-}
-
-// Name or description of the processor
-func (o OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorPtrOutput) Description() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessor) *string {
-		if v == nil {
-			return nil
-		}
-		return &v.Description
-	}).(pulumi.StringPtrOutput)
-}
-
-// Indicates if the object is active
-func (o OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorPtrOutput) Enabled() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v *OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessor) *bool {
-		if v == nil {
-			return nil
-		}
-		return &v.Enabled
-	}).(pulumi.BoolPtrOutput)
-}
-
-// Strategy to assign a value
-func (o OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorPtrOutput) EventProvider() OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderPtrOutput {
-	return o.ApplyT(func(v *OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessor) *OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProvider {
-		if v == nil {
-			return nil
-		}
-		return &v.EventProvider
-	}).(OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderPtrOutput)
-}
-
-// Strategy to assign a value
-func (o OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorPtrOutput) EventType() OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypePtrOutput {
-	return o.ApplyT(func(v *OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessor) *OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventType {
-		if v == nil {
-			return nil
-		}
-		return &v.EventType
-	}).(OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypePtrOutput)
-}
-
-// Definition of the field extraction
-func (o OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorPtrOutput) FieldExtraction() OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorFieldExtractionPtrOutput {
-	return o.ApplyT(func(v *OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessor) *OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorFieldExtraction {
-		if v == nil {
-			return nil
-		}
-		return v.FieldExtraction
-	}).(OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorFieldExtractionPtrOutput)
-}
-
-// Identifier of the processor. Must be unique within a stage.
-func (o OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorPtrOutput) Id() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessor) *string {
-		if v == nil {
-			return nil
-		}
-		return &v.Id
-	}).(pulumi.StringPtrOutput)
-}
-
-// Matching condition to apply on incoming records
-func (o OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorPtrOutput) Matcher() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessor) *string {
-		if v == nil {
-			return nil
-		}
-		return &v.Matcher
-	}).(pulumi.StringPtrOutput)
-}
-
-// Sample data related to the processor for documentation or testing
-func (o OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorPtrOutput) SampleData() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessor) *string {
-		if v == nil {
-			return nil
-		}
-		return v.SampleData
-	}).(pulumi.StringPtrOutput)
-}
-
-type OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProvider struct {
-	// Assign a constant value. Can only be used if 'type' is set to 'constant'
-	Constant *string `pulumi:"constant"`
-	// Assign a value extracted from a field. Can only be used if 'type' is set to 'field'
-	Field *string `pulumi:"field"`
-	// The constant multi value to assign. Can only be used if 'type' is set to 'multiValueConstant'
-	MultiValueConstants []string `pulumi:"multiValueConstants"`
-	// Strategy to assign a value. Possible values: 'constant', 'field', 'multiValueConstant'
-	Type string `pulumi:"type"`
-}
-
-// OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderInput is an input type that accepts OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderArgs and OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderOutput values.
-// You can construct a concrete instance of `OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderInput` via:
-//
-//	OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderArgs{...}
-type OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderInput interface {
-	pulumi.Input
-
-	ToOpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderOutput() OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderOutput
-	ToOpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderOutputWithContext(context.Context) OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderOutput
-}
-
-type OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderArgs struct {
-	// Assign a constant value. Can only be used if 'type' is set to 'constant'
-	Constant pulumi.StringPtrInput `pulumi:"constant"`
-	// Assign a value extracted from a field. Can only be used if 'type' is set to 'field'
-	Field pulumi.StringPtrInput `pulumi:"field"`
-	// The constant multi value to assign. Can only be used if 'type' is set to 'multiValueConstant'
-	MultiValueConstants pulumi.StringArrayInput `pulumi:"multiValueConstants"`
-	// Strategy to assign a value. Possible values: 'constant', 'field', 'multiValueConstant'
-	Type pulumi.StringInput `pulumi:"type"`
-}
-
-func (OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProvider)(nil)).Elem()
-}
-
-func (i OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderArgs) ToOpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderOutput() OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderOutput {
-	return i.ToOpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderOutputWithContext(context.Background())
-}
-
-func (i OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderArgs) ToOpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderOutputWithContext(ctx context.Context) OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderOutput)
-}
-
-func (i OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderArgs) ToOpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderPtrOutput() OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderPtrOutput {
-	return i.ToOpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderPtrOutputWithContext(context.Background())
-}
-
-func (i OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderArgs) ToOpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderPtrOutputWithContext(ctx context.Context) OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderOutput).ToOpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderPtrOutputWithContext(ctx)
-}
-
-// OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderPtrInput is an input type that accepts OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderArgs, OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderPtr and OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderPtrOutput values.
-// You can construct a concrete instance of `OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderPtrInput` via:
-//
-//	        OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderArgs{...}
-//
-//	or:
-//
-//	        nil
-type OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderPtrInput interface {
-	pulumi.Input
-
-	ToOpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderPtrOutput() OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderPtrOutput
-	ToOpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderPtrOutputWithContext(context.Context) OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderPtrOutput
-}
-
-type openpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderPtrType OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderArgs
-
-func OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderPtr(v *OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderArgs) OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderPtrInput {
-	return (*openpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderPtrType)(v)
-}
-
-func (*openpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProvider)(nil)).Elem()
-}
-
-func (i *openpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderPtrType) ToOpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderPtrOutput() OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderPtrOutput {
-	return i.ToOpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderPtrOutputWithContext(context.Background())
-}
-
-func (i *openpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderPtrType) ToOpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderPtrOutputWithContext(ctx context.Context) OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderPtrOutput)
-}
-
-type OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderOutput struct{ *pulumi.OutputState }
-
-func (OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProvider)(nil)).Elem()
-}
-
-func (o OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderOutput) ToOpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderOutput() OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderOutput {
-	return o
-}
-
-func (o OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderOutput) ToOpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderOutputWithContext(ctx context.Context) OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderOutput {
-	return o
-}
-
-func (o OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderOutput) ToOpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderPtrOutput() OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderPtrOutput {
-	return o.ToOpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderPtrOutputWithContext(context.Background())
-}
-
-func (o OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderOutput) ToOpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderPtrOutputWithContext(ctx context.Context) OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProvider) *OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProvider {
-		return &v
-	}).(OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderPtrOutput)
-}
-
-// Assign a constant value. Can only be used if 'type' is set to 'constant'
-func (o OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderOutput) Constant() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProvider) *string {
-		return v.Constant
-	}).(pulumi.StringPtrOutput)
-}
-
-// Assign a value extracted from a field. Can only be used if 'type' is set to 'field'
-func (o OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderOutput) Field() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProvider) *string {
-		return v.Field
-	}).(pulumi.StringPtrOutput)
-}
-
-// The constant multi value to assign. Can only be used if 'type' is set to 'multiValueConstant'
-func (o OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderOutput) MultiValueConstants() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProvider) []string {
-		return v.MultiValueConstants
-	}).(pulumi.StringArrayOutput)
-}
-
-// Strategy to assign a value. Possible values: 'constant', 'field', 'multiValueConstant'
-func (o OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProvider) string {
-		return v.Type
-	}).(pulumi.StringOutput)
-}
-
-type OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderPtrOutput struct{ *pulumi.OutputState }
-
-func (OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProvider)(nil)).Elem()
-}
-
-func (o OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderPtrOutput) ToOpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderPtrOutput() OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderPtrOutput {
-	return o
-}
-
-func (o OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderPtrOutput) ToOpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderPtrOutputWithContext(ctx context.Context) OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderPtrOutput {
-	return o
-}
-
-func (o OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderPtrOutput) Elem() OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderOutput {
-	return o.ApplyT(func(v *OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProvider) OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProvider {
-		if v != nil {
-			return *v
-		}
-		var ret OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProvider
-		return ret
-	}).(OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderOutput)
-}
-
-// Assign a constant value. Can only be used if 'type' is set to 'constant'
-func (o OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderPtrOutput) Constant() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProvider) *string {
-		if v == nil {
-			return nil
-		}
-		return v.Constant
-	}).(pulumi.StringPtrOutput)
-}
-
-// Assign a value extracted from a field. Can only be used if 'type' is set to 'field'
-func (o OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderPtrOutput) Field() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProvider) *string {
-		if v == nil {
-			return nil
-		}
-		return v.Field
-	}).(pulumi.StringPtrOutput)
-}
-
-// The constant multi value to assign. Can only be used if 'type' is set to 'multiValueConstant'
-func (o OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderPtrOutput) MultiValueConstants() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v *OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProvider) []string {
-		if v == nil {
-			return nil
-		}
-		return v.MultiValueConstants
-	}).(pulumi.StringArrayOutput)
-}
-
-// Strategy to assign a value. Possible values: 'constant', 'field', 'multiValueConstant'
-func (o OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderPtrOutput) Type() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProvider) *string {
-		if v == nil {
-			return nil
-		}
-		return &v.Type
-	}).(pulumi.StringPtrOutput)
-}
-
-type OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventType struct {
-	// Assign a constant value. Can only be used if 'type' is set to 'constant'
-	Constant *string `pulumi:"constant"`
-	// Assign a value extracted from a field. Can only be used if 'type' is set to 'field'
-	Field *string `pulumi:"field"`
-	// The constant multi value to assign. Can only be used if 'type' is set to 'multiValueConstant'
-	MultiValueConstants []string `pulumi:"multiValueConstants"`
-	// Strategy to assign a value. Possible values: 'constant', 'field', 'multiValueConstant'
-	Type string `pulumi:"type"`
-}
-
-// OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypeInput is an input type that accepts OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypeArgs and OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypeOutput values.
-// You can construct a concrete instance of `OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypeInput` via:
-//
-//	OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypeArgs{...}
-type OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypeInput interface {
-	pulumi.Input
-
-	ToOpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypeOutput() OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypeOutput
-	ToOpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypeOutputWithContext(context.Context) OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypeOutput
-}
-
-type OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypeArgs struct {
-	// Assign a constant value. Can only be used if 'type' is set to 'constant'
-	Constant pulumi.StringPtrInput `pulumi:"constant"`
-	// Assign a value extracted from a field. Can only be used if 'type' is set to 'field'
-	Field pulumi.StringPtrInput `pulumi:"field"`
-	// The constant multi value to assign. Can only be used if 'type' is set to 'multiValueConstant'
-	MultiValueConstants pulumi.StringArrayInput `pulumi:"multiValueConstants"`
-	// Strategy to assign a value. Possible values: 'constant', 'field', 'multiValueConstant'
-	Type pulumi.StringInput `pulumi:"type"`
-}
-
-func (OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypeArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventType)(nil)).Elem()
-}
-
-func (i OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypeArgs) ToOpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypeOutput() OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypeOutput {
-	return i.ToOpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypeOutputWithContext(context.Background())
-}
-
-func (i OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypeArgs) ToOpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypeOutputWithContext(ctx context.Context) OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypeOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypeOutput)
-}
-
-func (i OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypeArgs) ToOpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypePtrOutput() OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypePtrOutput {
-	return i.ToOpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypePtrOutputWithContext(context.Background())
-}
-
-func (i OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypeArgs) ToOpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypePtrOutputWithContext(ctx context.Context) OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypePtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypeOutput).ToOpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypePtrOutputWithContext(ctx)
-}
-
-// OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypePtrInput is an input type that accepts OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypeArgs, OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypePtr and OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypePtrOutput values.
-// You can construct a concrete instance of `OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypePtrInput` via:
-//
-//	        OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypeArgs{...}
-//
-//	or:
-//
-//	        nil
-type OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypePtrInput interface {
-	pulumi.Input
-
-	ToOpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypePtrOutput() OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypePtrOutput
-	ToOpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypePtrOutputWithContext(context.Context) OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypePtrOutput
-}
-
-type openpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypePtrType OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypeArgs
-
-func OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypePtr(v *OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypeArgs) OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypePtrInput {
-	return (*openpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypePtrType)(v)
-}
-
-func (*openpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypePtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventType)(nil)).Elem()
-}
-
-func (i *openpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypePtrType) ToOpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypePtrOutput() OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypePtrOutput {
-	return i.ToOpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypePtrOutputWithContext(context.Background())
-}
-
-func (i *openpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypePtrType) ToOpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypePtrOutputWithContext(ctx context.Context) OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypePtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypePtrOutput)
-}
-
-type OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypeOutput struct{ *pulumi.OutputState }
-
-func (OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypeOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventType)(nil)).Elem()
-}
-
-func (o OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypeOutput) ToOpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypeOutput() OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypeOutput {
-	return o
-}
-
-func (o OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypeOutput) ToOpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypeOutputWithContext(ctx context.Context) OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypeOutput {
-	return o
-}
-
-func (o OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypeOutput) ToOpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypePtrOutput() OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypePtrOutput {
-	return o.ToOpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypePtrOutputWithContext(context.Background())
-}
-
-func (o OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypeOutput) ToOpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypePtrOutputWithContext(ctx context.Context) OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypePtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventType) *OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventType {
-		return &v
-	}).(OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypePtrOutput)
-}
-
-// Assign a constant value. Can only be used if 'type' is set to 'constant'
-func (o OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypeOutput) Constant() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventType) *string {
-		return v.Constant
-	}).(pulumi.StringPtrOutput)
-}
-
-// Assign a value extracted from a field. Can only be used if 'type' is set to 'field'
-func (o OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypeOutput) Field() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventType) *string {
-		return v.Field
-	}).(pulumi.StringPtrOutput)
-}
-
-// The constant multi value to assign. Can only be used if 'type' is set to 'multiValueConstant'
-func (o OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypeOutput) MultiValueConstants() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventType) []string {
-		return v.MultiValueConstants
-	}).(pulumi.StringArrayOutput)
-}
-
-// Strategy to assign a value. Possible values: 'constant', 'field', 'multiValueConstant'
-func (o OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypeOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventType) string {
-		return v.Type
-	}).(pulumi.StringOutput)
-}
-
-type OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypePtrOutput struct{ *pulumi.OutputState }
-
-func (OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypePtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventType)(nil)).Elem()
-}
-
-func (o OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypePtrOutput) ToOpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypePtrOutput() OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypePtrOutput {
-	return o
-}
-
-func (o OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypePtrOutput) ToOpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypePtrOutputWithContext(ctx context.Context) OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypePtrOutput {
-	return o
-}
-
-func (o OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypePtrOutput) Elem() OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypeOutput {
-	return o.ApplyT(func(v *OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventType) OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventType {
-		if v != nil {
-			return *v
-		}
-		var ret OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventType
-		return ret
-	}).(OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypeOutput)
-}
-
-// Assign a constant value. Can only be used if 'type' is set to 'constant'
-func (o OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypePtrOutput) Constant() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventType) *string {
-		if v == nil {
-			return nil
-		}
-		return v.Constant
-	}).(pulumi.StringPtrOutput)
-}
-
-// Assign a value extracted from a field. Can only be used if 'type' is set to 'field'
-func (o OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypePtrOutput) Field() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventType) *string {
-		if v == nil {
-			return nil
-		}
-		return v.Field
-	}).(pulumi.StringPtrOutput)
-}
-
-// The constant multi value to assign. Can only be used if 'type' is set to 'multiValueConstant'
-func (o OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypePtrOutput) MultiValueConstants() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v *OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventType) []string {
-		if v == nil {
-			return nil
-		}
-		return v.MultiValueConstants
-	}).(pulumi.StringArrayOutput)
-}
-
-// Strategy to assign a value. Possible values: 'constant', 'field', 'multiValueConstant'
-func (o OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypePtrOutput) Type() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventType) *string {
-		if v == nil {
-			return nil
-		}
-		return &v.Type
-	}).(pulumi.StringPtrOutput)
-}
-
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionMobilePlatformInput)(nil)).Elem(), ManagementZoneRuleConditionMobilePlatformArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionMobilePlatformArrayInput)(nil)).Elem(), ManagementZoneRuleConditionMobilePlatformArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionMobilePlatformComparisonInput)(nil)).Elem(), ManagementZoneRuleConditionMobilePlatformComparisonArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionMobilePlatformComparisonArrayInput)(nil)).Elem(), ManagementZoneRuleConditionMobilePlatformComparisonArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionOsArchInput)(nil)).Elem(), ManagementZoneRuleConditionOsArchArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionOsArchArrayInput)(nil)).Elem(), ManagementZoneRuleConditionOsArchArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionOsTypeInput)(nil)).Elem(), ManagementZoneRuleConditionOsTypeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionOsTypeArrayInput)(nil)).Elem(), ManagementZoneRuleConditionOsTypeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionOsarchitectureComparisonInput)(nil)).Elem(), ManagementZoneRuleConditionOsarchitectureComparisonArgs{})
@@ -92253,12 +91956,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorAzureLogForwardingProcessorPtrInput)(nil)).Elem(), OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorAzureLogForwardingProcessorArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorAzureLogForwardingProcessorFieldExtractionInput)(nil)).Elem(), OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorAzureLogForwardingProcessorFieldExtractionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorAzureLogForwardingProcessorFieldExtractionPtrInput)(nil)).Elem(), OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorAzureLogForwardingProcessorFieldExtractionArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorInput)(nil)).Elem(), OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorPtrInput)(nil)).Elem(), OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderInput)(nil)).Elem(), OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderPtrInput)(nil)).Elem(), OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypeInput)(nil)).Elem(), OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypeArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypePtrInput)(nil)).Elem(), OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypeArgs{})
+	pulumi.RegisterOutputType(ManagementZoneRuleConditionMobilePlatformOutput{})
+	pulumi.RegisterOutputType(ManagementZoneRuleConditionMobilePlatformArrayOutput{})
+	pulumi.RegisterOutputType(ManagementZoneRuleConditionMobilePlatformComparisonOutput{})
+	pulumi.RegisterOutputType(ManagementZoneRuleConditionMobilePlatformComparisonArrayOutput{})
+	pulumi.RegisterOutputType(ManagementZoneRuleConditionOsArchOutput{})
+	pulumi.RegisterOutputType(ManagementZoneRuleConditionOsArchArrayOutput{})
 	pulumi.RegisterOutputType(ManagementZoneRuleConditionOsTypeOutput{})
 	pulumi.RegisterOutputType(ManagementZoneRuleConditionOsTypeArrayOutput{})
 	pulumi.RegisterOutputType(ManagementZoneRuleConditionOsarchitectureComparisonOutput{})
@@ -93246,10 +92949,4 @@ func init() {
 	pulumi.RegisterOutputType(OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorAzureLogForwardingProcessorPtrOutput{})
 	pulumi.RegisterOutputType(OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorAzureLogForwardingProcessorFieldExtractionOutput{})
 	pulumi.RegisterOutputType(OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorAzureLogForwardingProcessorFieldExtractionPtrOutput{})
-	pulumi.RegisterOutputType(OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorOutput{})
-	pulumi.RegisterOutputType(OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorPtrOutput{})
-	pulumi.RegisterOutputType(OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderOutput{})
-	pulumi.RegisterOutputType(OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderPtrOutput{})
-	pulumi.RegisterOutputType(OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypeOutput{})
-	pulumi.RegisterOutputType(OpenpipelineSdlcEventsPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypePtrOutput{})
 }

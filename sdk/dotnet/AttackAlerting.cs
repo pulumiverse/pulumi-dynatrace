@@ -37,7 +37,7 @@ namespace Pulumiverse.Dynatrace
         public Output<bool> Enabled { get; private set; } = null!;
 
         /// <summary>
-        /// Attack State
+        /// Attack State. Possible values: `BLOCKED_WITH_EXCEPTION`, `NONE_ALLOWLISTED`, `NONE_BLOCKING_DISABLED`
         /// </summary>
         [Output("enabledAttackMitigations")]
         public Output<ImmutableArray<string>> EnabledAttackMitigations { get; private set; } = null!;
@@ -105,7 +105,7 @@ namespace Pulumiverse.Dynatrace
         private InputList<string>? _enabledAttackMitigations;
 
         /// <summary>
-        /// Attack State
+        /// Attack State. Possible values: `BLOCKED_WITH_EXCEPTION`, `NONE_ALLOWLISTED`, `NONE_BLOCKING_DISABLED`
         /// </summary>
         public InputList<string> EnabledAttackMitigations
         {
@@ -137,7 +137,7 @@ namespace Pulumiverse.Dynatrace
         private InputList<string>? _enabledAttackMitigations;
 
         /// <summary>
-        /// Attack State
+        /// Attack State. Possible values: `BLOCKED_WITH_EXCEPTION`, `NONE_ALLOWLISTED`, `NONE_BLOCKING_DISABLED`
         /// </summary>
         public InputList<string> EnabledAttackMitigations
         {

@@ -1159,7 +1159,7 @@ export interface AutomationSchedulingRuleRecurrence {
     /**
      * Possible values are `WORKING` (Work days), `HOLIDAYS` (Holidays) and `OFF` (Weekends + Holidays)
      */
-    workdays: string;
+    workdays?: string;
 }
 
 export interface AutomationSchedulingRuleRelativeOffset {
@@ -4081,7 +4081,7 @@ export interface AwsAnomaliesRdsRestartsSequenceDetectionCustomThresholds {
 
 export interface AwsConnectionRoleBasedAuth {
     /**
-     * Dynatrace integrations that can use this connection. Possible values: `DA`, `NONE`, `SVC:com.dynatrace.bo`, `SVC:com.dynatrace.da`, `SVC:com.dynatrace.grail`, `SVC:com.dynatrace.openpipeline`
+     * Dynatrace integrations that can use this connection. Possible values: `SVC:com.dynatrace.bo`, `SVC:com.dynatrace.da`, `SVC:com.dynatrace.grail`, `SVC:com.dynatrace.openpipeline`
      */
     consumers?: string;
 }
@@ -4194,7 +4194,7 @@ export interface AzureConnectionClientSecret {
      */
     clientSecret: string;
     /**
-     * Dynatrace integrations that can use this connection. Possible values: `DA`, `NONE`, `SVC:com.dynatrace.da`
+     * Dynatrace integrations that can use this connection. Possible values: `SVC:com.dynatrace.da`
      */
     consumers?: string[];
     /**
@@ -4205,7 +4205,7 @@ export interface AzureConnectionClientSecret {
 
 export interface AzureConnectionFederatedIdentityCredential {
     /**
-     * Consumers that can use the connection. Possible values: `APP:dynatrace.microsoft.azure.connector`, `DA`, `NONE`, `SVC:com.dynatrace.bo`, `SVC:com.dynatrace.da`, `SVC:com.dynatrace.grail`, `SVC:com.dynatrace.openpipeline`
+     * Consumers that can use the connection. Possible values: `APP:dynatrace.microsoft.azure.connector`, `SVC:com.dynatrace.bo`, `SVC:com.dynatrace.da`, `SVC:com.dynatrace.grail`, `SVC:com.dynatrace.openpipeline`
      */
     consumers?: string[];
 }
@@ -4777,8 +4777,7 @@ export interface BrowserMonitorScriptEventsEventClickValidateValidation {
      */
     failIfFound?: boolean;
     /**
-     * The content to look for on the page.
-     * Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `contentMatch`, optional for `elementMatch`.
+     * The content to look for on the page. Regular expressions are allowed. In that case set `regex` as `true`. Required for `contentMatch` and `textMatch`, optional for `elementMatch`.
      */
     match?: string;
     /**
@@ -4790,7 +4789,7 @@ export interface BrowserMonitorScriptEventsEventClickValidateValidation {
      */
     target?: outputs.BrowserMonitorScriptEventsEventClickValidateValidationTarget;
     /**
-     * The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element).
+     * The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element), `textMatch` (check page for the specific text).
      */
     type: string;
 }
@@ -4850,8 +4849,7 @@ export interface BrowserMonitorScriptEventsEventClickWaitValidation {
      */
     failIfFound?: boolean;
     /**
-     * The content to look for on the page.
-     * Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `contentMatch`, optional for `elementMatch`.
+     * The content to look for on the page. Regular expressions are allowed. In that case set `regex` as `true`. Required for `contentMatch` and `textMatch`, optional for `elementMatch`.
      */
     match?: string;
     /**
@@ -4863,7 +4861,7 @@ export interface BrowserMonitorScriptEventsEventClickWaitValidation {
      */
     target?: outputs.BrowserMonitorScriptEventsEventClickWaitValidationTarget;
     /**
-     * The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element).
+     * The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element), `textMatch` (check page for the specific text).
      */
     type: string;
 }
@@ -5000,8 +4998,7 @@ export interface BrowserMonitorScriptEventsEventJavascriptWaitValidation {
      */
     failIfFound?: boolean;
     /**
-     * The content to look for on the page.
-     * Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `contentMatch`, optional for `elementMatch`.
+     * The content to look for on the page. Regular expressions are allowed. In that case set `regex` as `true`. Required for `contentMatch` and `textMatch`, optional for `elementMatch`.
      */
     match?: string;
     /**
@@ -5013,7 +5010,7 @@ export interface BrowserMonitorScriptEventsEventJavascriptWaitValidation {
      */
     target?: outputs.BrowserMonitorScriptEventsEventJavascriptWaitValidationTarget;
     /**
-     * The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element).
+     * The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element), `textMatch` (check page for the specific text).
      */
     type: string;
 }
@@ -5136,8 +5133,7 @@ export interface BrowserMonitorScriptEventsEventKeystrokesValidateValidation {
      */
     failIfFound?: boolean;
     /**
-     * The content to look for on the page.
-     * Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `contentMatch`, optional for `elementMatch`.
+     * The content to look for on the page. Regular expressions are allowed. In that case set `regex` as `true`. Required for `contentMatch` and `textMatch`, optional for `elementMatch`.
      */
     match?: string;
     /**
@@ -5149,7 +5145,7 @@ export interface BrowserMonitorScriptEventsEventKeystrokesValidateValidation {
      */
     target?: outputs.BrowserMonitorScriptEventsEventKeystrokesValidateValidationTarget;
     /**
-     * The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element).
+     * The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element), `textMatch` (check page for the specific text).
      */
     type: string;
 }
@@ -5209,8 +5205,7 @@ export interface BrowserMonitorScriptEventsEventKeystrokesWaitValidation {
      */
     failIfFound?: boolean;
     /**
-     * The content to look for on the page.
-     * Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `contentMatch`, optional for `elementMatch`.
+     * The content to look for on the page. Regular expressions are allowed. In that case set `regex` as `true`. Required for `contentMatch` and `textMatch`, optional for `elementMatch`.
      */
     match?: string;
     /**
@@ -5222,7 +5217,7 @@ export interface BrowserMonitorScriptEventsEventKeystrokesWaitValidation {
      */
     target?: outputs.BrowserMonitorScriptEventsEventKeystrokesWaitValidationTarget;
     /**
-     * The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element).
+     * The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element), `textMatch` (check page for the specific text).
      */
     type: string;
 }
@@ -5340,8 +5335,7 @@ export interface BrowserMonitorScriptEventsEventNavigateValidateValidation {
      */
     failIfFound?: boolean;
     /**
-     * The content to look for on the page.
-     * Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `contentMatch`, optional for `elementMatch`.
+     * The content to look for on the page. Regular expressions are allowed. In that case set `regex` as `true`. Required for `contentMatch` and `textMatch`, optional for `elementMatch`.
      */
     match?: string;
     /**
@@ -5353,7 +5347,7 @@ export interface BrowserMonitorScriptEventsEventNavigateValidateValidation {
      */
     target?: outputs.BrowserMonitorScriptEventsEventNavigateValidateValidationTarget;
     /**
-     * The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element).
+     * The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element), `textMatch` (check page for the specific text).
      */
     type: string;
 }
@@ -5413,8 +5407,7 @@ export interface BrowserMonitorScriptEventsEventNavigateWaitValidation {
      */
     failIfFound?: boolean;
     /**
-     * The content to look for on the page.
-     * Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `contentMatch`, optional for `elementMatch`.
+     * The content to look for on the page. Regular expressions are allowed. In that case set `regex` as `true`. Required for `contentMatch` and `textMatch`, optional for `elementMatch`.
      */
     match?: string;
     /**
@@ -5426,7 +5419,7 @@ export interface BrowserMonitorScriptEventsEventNavigateWaitValidation {
      */
     target?: outputs.BrowserMonitorScriptEventsEventNavigateWaitValidationTarget;
     /**
-     * The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element).
+     * The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element), `textMatch` (check page for the specific text).
      */
     type: string;
 }
@@ -5539,8 +5532,7 @@ export interface BrowserMonitorScriptEventsEventSelectValidateValidation {
      */
     failIfFound?: boolean;
     /**
-     * The content to look for on the page.
-     * Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `contentMatch`, optional for `elementMatch`.
+     * The content to look for on the page. Regular expressions are allowed. In that case set `regex` as `true`. Required for `contentMatch` and `textMatch`, optional for `elementMatch`.
      */
     match?: string;
     /**
@@ -5552,7 +5544,7 @@ export interface BrowserMonitorScriptEventsEventSelectValidateValidation {
      */
     target?: outputs.BrowserMonitorScriptEventsEventSelectValidateValidationTarget;
     /**
-     * The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element).
+     * The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element), `textMatch` (check page for the specific text).
      */
     type: string;
 }
@@ -5612,8 +5604,7 @@ export interface BrowserMonitorScriptEventsEventSelectWaitValidation {
      */
     failIfFound?: boolean;
     /**
-     * The content to look for on the page.
-     * Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `contentMatch`, optional for `elementMatch`.
+     * The content to look for on the page. Regular expressions are allowed. In that case set `regex` as `true`. Required for `contentMatch` and `textMatch`, optional for `elementMatch`.
      */
     match?: string;
     /**
@@ -5625,7 +5616,7 @@ export interface BrowserMonitorScriptEventsEventSelectWaitValidation {
      */
     target?: outputs.BrowserMonitorScriptEventsEventSelectWaitValidationTarget;
     /**
-     * The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element).
+     * The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element), `textMatch` (check page for the specific text).
      */
     type: string;
 }
@@ -5720,8 +5711,7 @@ export interface BrowserMonitorScriptEventsEventTapValidateValidation {
      */
     failIfFound?: boolean;
     /**
-     * The content to look for on the page.
-     * Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `contentMatch`, optional for `elementMatch`.
+     * The content to look for on the page. Regular expressions are allowed. In that case set `regex` as `true`. Required for `contentMatch` and `textMatch`, optional for `elementMatch`.
      */
     match?: string;
     /**
@@ -5733,7 +5723,7 @@ export interface BrowserMonitorScriptEventsEventTapValidateValidation {
      */
     target?: outputs.BrowserMonitorScriptEventsEventTapValidateValidationTarget;
     /**
-     * The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element).
+     * The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element), `textMatch` (check page for the specific text).
      */
     type: string;
 }
@@ -5793,8 +5783,7 @@ export interface BrowserMonitorScriptEventsEventTapWaitValidation {
      */
     failIfFound?: boolean;
     /**
-     * The content to look for on the page.
-     * Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `contentMatch`, optional for `elementMatch`.
+     * The content to look for on the page. Regular expressions are allowed. In that case set `regex` as `true`. Required for `contentMatch` and `textMatch`, optional for `elementMatch`.
      */
     match?: string;
     /**
@@ -5806,7 +5795,7 @@ export interface BrowserMonitorScriptEventsEventTapWaitValidation {
      */
     target?: outputs.BrowserMonitorScriptEventsEventTapWaitValidationTarget;
     /**
-     * The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element).
+     * The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element), `textMatch` (check page for the specific text).
      */
     type: string;
 }
@@ -9313,13 +9302,52 @@ export interface DavisCopilotBlocklistEntries {
 
 export interface DavisCopilotBlocklistEntriesBlocklistEntry {
     /**
-     * no documentation available
+     * No documentation available
      */
     name: string;
     /**
      * Possible values: `BUCKET`, `TABLE`
      */
     type: string;
+}
+
+export interface DavisCopilotPiiBlockingTypes {
+    /**
+     * Canadian social insurance number
+     */
+    canadianSocialInsuranceNumber: boolean;
+    /**
+     * Credit card number
+     */
+    creditCardNumber: boolean;
+    /**
+     * Email address
+     */
+    emailAddress: boolean;
+    /**
+     * IBAN bank account
+     */
+    ibanBankAccount: boolean;
+    /**
+     * IP address
+     */
+    ipAddress: boolean;
+    /**
+     * Phone number
+     */
+    phoneNumber: boolean;
+    /**
+     * URL query parameters
+     */
+    urlQueryParameters: boolean;
+    /**
+     * US bank number
+     */
+    usBankNumber: boolean;
+    /**
+     * US social security number
+     */
+    usSocialSecurityNumber: boolean;
 }
 
 export interface DduPoolEvents {
@@ -10783,9 +10811,21 @@ export interface GetApplicationDetectionRulesValue {
 
 export interface GetDocumentsValue {
     /**
+     * A short description of the document.
+     */
+    description: string;
+    /**
      * The unique identifier of the document.
      */
     id: string;
+    /**
+     * Specifies whether recipients of a direct share can share the document further.
+     */
+    isReshareable: boolean;
+    /**
+     * Labels attached to the document.
+     */
+    labels: string[];
     /**
      * The name of the document.
      */
@@ -16190,6 +16230,24 @@ export interface MaintenanceWindowScopeMatchTag {
      * The value of the tag. Not applicable to custom tags
      */
     value?: string;
+}
+
+export interface MaintenanceWindowsObjectScopes {
+    /**
+     * Synthetic monitors
+     */
+    syntheticMonitors: outputs.MaintenanceWindowsObjectScopesSyntheticMonitors;
+}
+
+export interface MaintenanceWindowsObjectScopesSyntheticMonitors {
+    /**
+     * DQL filter selecting which synthetic monitors to pause. Required when synthetic monitors are disabled.
+     */
+    disableSyntheticMonitorFilter?: string;
+    /**
+     * When enabled, synthetic monitors matching the filter are paused during the maintenance window.
+     */
+    disableSyntheticMonitors: boolean;
 }
 
 export interface MaintenanceWindowsSchedule {
@@ -34424,6 +34482,13 @@ export interface OpenpipelineV2BizeventsDataforwardingGcpConnection {
     connectionId: string;
 }
 
+export interface OpenpipelineV2BizeventsDataforwardingOtlpConnection {
+    /**
+     * OTLP connection
+     */
+    connectionId: string;
+}
+
 export interface OpenpipelineV2BizeventsDataforwardingProcessing {
     /**
      * Processors of stage
@@ -50106,6 +50171,13 @@ export interface OpenpipelineV2DavisEventsDataforwardingGcpConnection {
     bucketName: string;
     /**
      * GCP connection
+     */
+    connectionId: string;
+}
+
+export interface OpenpipelineV2DavisEventsDataforwardingOtlpConnection {
+    /**
+     * OTLP connection
      */
     connectionId: string;
 }
@@ -65796,6 +65868,13 @@ export interface OpenpipelineV2DavisProblemsDataforwardingGcpConnection {
     connectionId: string;
 }
 
+export interface OpenpipelineV2DavisProblemsDataforwardingOtlpConnection {
+    /**
+     * OTLP connection
+     */
+    connectionId: string;
+}
+
 export interface OpenpipelineV2DavisProblemsDataforwardingProcessing {
     /**
      * Processors of stage
@@ -81478,6 +81557,13 @@ export interface OpenpipelineV2EventsDataforwardingGcpConnection {
     bucketName: string;
     /**
      * GCP connection
+     */
+    connectionId: string;
+}
+
+export interface OpenpipelineV2EventsDataforwardingOtlpConnection {
+    /**
+     * OTLP connection
      */
     connectionId: string;
 }
@@ -97168,6 +97254,13 @@ export interface OpenpipelineV2EventsSdlcDataforwardingGcpConnection {
     connectionId: string;
 }
 
+export interface OpenpipelineV2EventsSdlcDataforwardingOtlpConnection {
+    /**
+     * OTLP connection
+     */
+    connectionId: string;
+}
+
 export interface OpenpipelineV2EventsSdlcDataforwardingProcessing {
     /**
      * Processors of stage
@@ -112850,6 +112943,13 @@ export interface OpenpipelineV2EventsSecurityDataforwardingGcpConnection {
     bucketName: string;
     /**
      * GCP connection
+     */
+    connectionId: string;
+}
+
+export interface OpenpipelineV2EventsSecurityDataforwardingOtlpConnection {
+    /**
+     * OTLP connection
      */
     connectionId: string;
 }
@@ -128540,6 +128640,13 @@ export interface OpenpipelineV2LogsDataforwardingGcpConnection {
     connectionId: string;
 }
 
+export interface OpenpipelineV2LogsDataforwardingOtlpConnection {
+    /**
+     * OTLP connection
+     */
+    connectionId: string;
+}
+
 export interface OpenpipelineV2LogsDataforwardingProcessing {
     /**
      * Processors of stage
@@ -144222,6 +144329,13 @@ export interface OpenpipelineV2MetricsDataforwardingGcpConnection {
     bucketName: string;
     /**
      * GCP connection
+     */
+    connectionId: string;
+}
+
+export interface OpenpipelineV2MetricsDataforwardingOtlpConnection {
+    /**
+     * OTLP connection
      */
     connectionId: string;
 }
@@ -159912,6 +160026,13 @@ export interface OpenpipelineV2SecurityEventsDataforwardingGcpConnection {
     connectionId: string;
 }
 
+export interface OpenpipelineV2SecurityEventsDataforwardingOtlpConnection {
+    /**
+     * OTLP connection
+     */
+    connectionId: string;
+}
+
 export interface OpenpipelineV2SecurityEventsDataforwardingProcessing {
     /**
      * Processors of stage
@@ -175594,6 +175715,13 @@ export interface OpenpipelineV2SpansDataforwardingGcpConnection {
     bucketName: string;
     /**
      * GCP connection
+     */
+    connectionId: string;
+}
+
+export interface OpenpipelineV2SpansDataforwardingOtlpConnection {
+    /**
+     * OTLP connection
      */
     connectionId: string;
 }
@@ -191284,6 +191412,13 @@ export interface OpenpipelineV2SystemEventsDataforwardingGcpConnection {
     connectionId: string;
 }
 
+export interface OpenpipelineV2SystemEventsDataforwardingOtlpConnection {
+    /**
+     * OTLP connection
+     */
+    connectionId: string;
+}
+
 export interface OpenpipelineV2SystemEventsDataforwardingProcessing {
     /**
      * Processors of stage
@@ -206970,6 +207105,13 @@ export interface OpenpipelineV2UserEventsDataforwardingGcpConnection {
     connectionId: string;
 }
 
+export interface OpenpipelineV2UserEventsDataforwardingOtlpConnection {
+    /**
+     * OTLP connection
+     */
+    connectionId: string;
+}
+
 export interface OpenpipelineV2UserEventsDataforwardingProcessing {
     /**
      * Processors of stage
@@ -222652,6 +222794,13 @@ export interface OpenpipelineV2UsersessionsDataforwardingGcpConnection {
     bucketName: string;
     /**
      * GCP connection
+     */
+    connectionId: string;
+}
+
+export interface OpenpipelineV2UsersessionsDataforwardingOtlpConnection {
+    /**
+     * OTLP connection
      */
     connectionId: string;
 }
@@ -238405,7 +238554,7 @@ export interface OsServicesDetectionConditionsLinuxLinuxDetectionConditionHostMe
     /**
      * When enabled, the condition requires a resource attribute to exist and match the constraints; when disabled, the key is optional but must still match the constrains if it is present.
      */
-    keyMustExist: boolean;
+    keyMustExist?: boolean;
     /**
      * This string has to match a required format.
      *
@@ -238489,7 +238638,7 @@ export interface OsServicesDetectionConditionsWindowsDetectionConditionsWindowHo
     /**
      * When enabled, the condition requires a resource attribute to exist and match the constraints; when disabled, the key is optional but must still match the constrains if it is present.
      */
-    keyMustExist: boolean;
+    keyMustExist?: boolean;
     /**
      * This string has to match a required format.
      *
@@ -246619,7 +246768,7 @@ export interface UpdateWindowsDailyRecurrenceUpdateTime {
      */
     startTime: string;
     /**
-     * Time zone. Possible values: `GMT+00:00`, `GMT+01:00`, `GMT+02:00`, `GMT+07:00`, `GMT+09:00`, `GMT-03:00`, `GMT-04:00`, `GMT-05:00`, `GMT-06:00`, `GMT-08:00`, `GMT-10:00`, `GMT-11:00`, `GMT-12:00`
+     * Time zone. Possible values: `GMT+00:00`, `GMT+01:00`, `GMT+02:00`, `GMT+03:00`, `GMT+04:00`, `GMT+05:00`, `GMT+06:00`, `GMT+07:00`, `GMT+08:00`, `GMT+09:00`, `GMT+10:00`, `GMT+11:00`, `GMT+12:00`, `GMT-01:00`, `GMT-02:00`, `GMT-03:00`, `GMT-04:00`, `GMT-05:00`, `GMT-06:00`, `GMT-07:00`, `GMT-08:00`, `GMT-09:00`, `GMT-10:00`, `GMT-11:00`, `GMT-12:00`
      */
     timeZone: string;
 }
@@ -246668,7 +246817,7 @@ export interface UpdateWindowsMonthlyRecurrenceUpdateTime {
      */
     startTime: string;
     /**
-     * Time zone. Possible values: `GMT+00:00`, `GMT+01:00`, `GMT+02:00`, `GMT+07:00`, `GMT+09:00`, `GMT-03:00`, `GMT-04:00`, `GMT-05:00`, `GMT-06:00`, `GMT-08:00`, `GMT-10:00`, `GMT-11:00`, `GMT-12:00`
+     * Time zone. Possible values: `GMT+00:00`, `GMT+01:00`, `GMT+02:00`, `GMT+03:00`, `GMT+04:00`, `GMT+05:00`, `GMT+06:00`, `GMT+07:00`, `GMT+08:00`, `GMT+09:00`, `GMT+10:00`, `GMT+11:00`, `GMT+12:00`, `GMT-01:00`, `GMT-02:00`, `GMT-03:00`, `GMT-04:00`, `GMT-05:00`, `GMT-06:00`, `GMT-07:00`, `GMT-08:00`, `GMT-09:00`, `GMT-10:00`, `GMT-11:00`, `GMT-12:00`
      */
     timeZone: string;
 }
@@ -246766,7 +246915,7 @@ export interface UpdateWindowsWeeklyRecurrenceUpdateTime {
      */
     startTime: string;
     /**
-     * Time zone. Possible values: `GMT+00:00`, `GMT+01:00`, `GMT+02:00`, `GMT+07:00`, `GMT+09:00`, `GMT-03:00`, `GMT-04:00`, `GMT-05:00`, `GMT-06:00`, `GMT-08:00`, `GMT-10:00`, `GMT-11:00`, `GMT-12:00`
+     * Time zone. Possible values: `GMT+00:00`, `GMT+01:00`, `GMT+02:00`, `GMT+03:00`, `GMT+04:00`, `GMT+05:00`, `GMT+06:00`, `GMT+07:00`, `GMT+08:00`, `GMT+09:00`, `GMT+10:00`, `GMT+11:00`, `GMT+12:00`, `GMT-01:00`, `GMT-02:00`, `GMT-03:00`, `GMT-04:00`, `GMT-05:00`, `GMT-06:00`, `GMT-07:00`, `GMT-08:00`, `GMT-09:00`, `GMT-10:00`, `GMT-11:00`, `GMT-12:00`
      */
     timeZone: string;
 }

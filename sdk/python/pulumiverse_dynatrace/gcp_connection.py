@@ -214,7 +214,7 @@ class GcpConnection(pulumi.CustomResource):
             type="serviceAccountImpersonation",
             service_account_impersonation={
                 "service_account_id": impersonable_service_account.email,
-                "consumers": ["SVC:com.dynatrace.da"],
+                "consumers": ["SVC:com.dynatrace.openpipeline"],
             },
             opts = pulumi.ResourceOptions(depends_on=[wif_binding]))
         ```
@@ -305,7 +305,7 @@ class GcpConnection(pulumi.CustomResource):
             type="serviceAccountImpersonation",
             service_account_impersonation={
                 "service_account_id": impersonable_service_account.email,
-                "consumers": ["SVC:com.dynatrace.da"],
+                "consumers": ["SVC:com.dynatrace.openpipeline"],
             },
             opts = pulumi.ResourceOptions(depends_on=[wif_binding]))
         ```

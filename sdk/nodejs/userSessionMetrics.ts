@@ -20,6 +20,35 @@ import * as utilities from "./utilities";
  * - `terraform-provider-dynatrace -export dynatrace.UserSessionMetrics` downloads all existing user session custom metrics configuration
  *
  * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ *
+ * ## Resource Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ *
+ * const metric = new dynatrace.UserSessionMetrics("metric", {
+ *     enabled: false,
+ *     metricKey: "uscm.#name#",
+ *     filters: {
+ *         filters: [
+ *             {
+ *                 fieldName: "useraction.application",
+ *                 operator: "EQUALS",
+ *                 value: "www.terraform.io/",
+ *             },
+ *             {
+ *                 fieldName: "useraction.name",
+ *                 operator: "EQUALS",
+ *                 value: "Loading of page /",
+ *             },
+ *         ],
+ *     },
+ *     value: {
+ *         type: "COUNTER",
+ *     },
+ * });
+ * ```
  */
 export class UserSessionMetrics extends pulumi.CustomResource {
     /**

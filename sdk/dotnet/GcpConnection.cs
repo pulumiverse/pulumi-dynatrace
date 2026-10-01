@@ -98,7 +98,7 @@ namespace Pulumiverse.Dynatrace
     ///             ServiceAccountId = impersonableServiceAccount.Email,
     ///             Consumers = new[]
     ///             {
-    ///                 "SVC:com.dynatrace.da",
+    ///                 "SVC:com.dynatrace.openpipeline",
     ///             },
     ///         },
     ///     }, new CustomResourceOptions

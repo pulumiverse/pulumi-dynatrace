@@ -323,6 +323,7 @@
         "networkMonitorOutage.ts",
         "networkTraffic.ts",
         "networkZone.ts",
+        "networkZoneV2.ts",
         "networkZones.ts",
         "notification.ts",
         "oneagentDefaultMode.ts",

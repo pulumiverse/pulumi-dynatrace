@@ -68,7 +68,7 @@ import * as utilities from "./utilities";
  *         clientSecret: exampleApplicationPassword.value,
  *         applicationId: example.clientId,
  *         directoryId: azureTenantId,
- *         consumers: ["DA"],
+ *         consumers: ["SVC:com.dynatrace.da"],
  *     },
  * });
  * ```

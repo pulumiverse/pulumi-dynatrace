@@ -114,6 +114,7 @@ namespace Pulumiverse.Dynatrace
                 PluginDownloadURL = "github://api.github.com/pulumiverse",
                 AdditionalSecretOutputs =
                 {
+                    "password",
                     "token",
                 },
             };
@@ -175,11 +176,21 @@ namespace Pulumiverse.Dynatrace
         [Input("issuetrackersystem", required: true)]
         public Input<string> Issuetrackersystem { get; set; } = null!;
 
+        [Input("password")]
+        private Input<string>? _password;
+
         /// <summary>
         /// Password
         /// </summary>
-        [Input("password")]
-        public Input<string>? Password { get; set; }
+        public Input<string>? Password
+        {
+            get => _password;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _password = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         [Input("token")]
         private Input<string>? _token;
@@ -253,11 +264,21 @@ namespace Pulumiverse.Dynatrace
         [Input("issuetrackersystem")]
         public Input<string>? Issuetrackersystem { get; set; }
 
+        [Input("password")]
+        private Input<string>? _password;
+
         /// <summary>
         /// Password
         /// </summary>
-        [Input("password")]
-        public Input<string>? Password { get; set; }
+        public Input<string>? Password
+        {
+            get => _password;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _password = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         [Input("token")]
         private Input<string>? _token;

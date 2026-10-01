@@ -26,7 +26,7 @@ class AttackAlertingArgs:
         The set of arguments for constructing a AttackAlerting resource.
 
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] enabled_attack_mitigations: Attack State
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] enabled_attack_mitigations: Attack State. Possible values: `BLOCKED_WITH_EXCEPTION`, `NONE_ALLOWLISTED`, `NONE_BLOCKING_DISABLED`
         :param pulumi.Input[_builtins.str] name: Name
         """
         pulumi.set(__self__, "enabled", enabled)
@@ -51,7 +51,7 @@ class AttackAlertingArgs:
     @pulumi.getter(name="enabledAttackMitigations")
     def enabled_attack_mitigations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        Attack State
+        Attack State. Possible values: `BLOCKED_WITH_EXCEPTION`, `NONE_ALLOWLISTED`, `NONE_BLOCKING_DISABLED`
         """
         return pulumi.get(self, "enabled_attack_mitigations")
 
@@ -82,7 +82,7 @@ class _AttackAlertingState:
         Input properties used for looking up and filtering AttackAlerting resources.
 
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] enabled_attack_mitigations: Attack State
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] enabled_attack_mitigations: Attack State. Possible values: `BLOCKED_WITH_EXCEPTION`, `NONE_ALLOWLISTED`, `NONE_BLOCKING_DISABLED`
         :param pulumi.Input[_builtins.str] name: Name
         """
         if enabled is not None:
@@ -108,7 +108,7 @@ class _AttackAlertingState:
     @pulumi.getter(name="enabledAttackMitigations")
     def enabled_attack_mitigations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        Attack State
+        Attack State. Possible values: `BLOCKED_WITH_EXCEPTION`, `NONE_ALLOWLISTED`, `NONE_BLOCKING_DISABLED`
         """
         return pulumi.get(self, "enabled_attack_mitigations")
 
@@ -160,7 +160,7 @@ class AttackAlerting(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] enabled_attack_mitigations: Attack State
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] enabled_attack_mitigations: Attack State. Possible values: `BLOCKED_WITH_EXCEPTION`, `NONE_ALLOWLISTED`, `NONE_BLOCKING_DISABLED`
         :param pulumi.Input[_builtins.str] name: Name
         """
         ...
@@ -240,7 +240,7 @@ class AttackAlerting(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] enabled_attack_mitigations: Attack State
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] enabled_attack_mitigations: Attack State. Possible values: `BLOCKED_WITH_EXCEPTION`, `NONE_ALLOWLISTED`, `NONE_BLOCKING_DISABLED`
         :param pulumi.Input[_builtins.str] name: Name
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -264,7 +264,7 @@ class AttackAlerting(pulumi.CustomResource):
     @pulumi.getter(name="enabledAttackMitigations")
     def enabled_attack_mitigations(self) -> pulumi.Output[Optional[Sequence[_builtins.str]]]:
         """
-        Attack State
+        Attack State. Possible values: `BLOCKED_WITH_EXCEPTION`, `NONE_ALLOWLISTED`, `NONE_BLOCKING_DISABLED`
         """
         return pulumi.get(self, "enabled_attack_mitigations")
 

@@ -32,11 +32,11 @@ type ContainerRule struct {
 	Enabled pulumi.BoolOutput `pulumi:"enabled"`
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter pulumi.StringOutput `pulumi:"insertAfter"`
-	// Possible Values: `MONITORING_OFF`, `MONITORING_ON`
+	// Mode. Possible values: `MONITORING_OFF`, `MONITORING_ON`
 	Mode pulumi.StringOutput `pulumi:"mode"`
-	// Possible Values: `CONTAINS`, `ENDS`, `EQUALS`, `EXISTS`, `NOT_CONTAINS`, `NOT_ENDS`, `NOT_EQUALS`, `NOT_EXISTS`, `NOT_STARTS`, `STARTS`
+	// Condition operator. Possible values: `CONTAINS`, `ENDS`, `EQUALS`, `EXISTS`, `NOT_CONTAINS`, `NOT_ENDS`, `NOT_EQUALS`, `NOT_EXISTS`, `NOT_STARTS`, `STARTS`
 	Operator pulumi.StringOutput `pulumi:"operator"`
-	// Possible Values: `CONTAINER_NAME`, `IMAGE_NAME`, `KUBERNETES_BASEPODNAME`, `KUBERNETES_CONTAINERNAME`, `KUBERNETES_FULLPODNAME`, `KUBERNETES_NAMESPACE`, `KUBERNETES_PODUID`
+	// Container property. Possible values: `CONTAINER_NAME`, `IMAGE_NAME`, `KUBERNETES_BASEPODNAME`, `KUBERNETES_CONTAINERNAME`, `KUBERNETES_FULLPODNAME`, `KUBERNETES_NAMESPACE`, `KUBERNETES_PODUID`
 	Property pulumi.StringOutput `pulumi:"property"`
 	// Condition value
 	Value pulumi.StringPtrOutput `pulumi:"value"`
@@ -88,11 +88,11 @@ type containerRuleState struct {
 	Enabled *bool `pulumi:"enabled"`
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter *string `pulumi:"insertAfter"`
-	// Possible Values: `MONITORING_OFF`, `MONITORING_ON`
+	// Mode. Possible values: `MONITORING_OFF`, `MONITORING_ON`
 	Mode *string `pulumi:"mode"`
-	// Possible Values: `CONTAINS`, `ENDS`, `EQUALS`, `EXISTS`, `NOT_CONTAINS`, `NOT_ENDS`, `NOT_EQUALS`, `NOT_EXISTS`, `NOT_STARTS`, `STARTS`
+	// Condition operator. Possible values: `CONTAINS`, `ENDS`, `EQUALS`, `EXISTS`, `NOT_CONTAINS`, `NOT_ENDS`, `NOT_EQUALS`, `NOT_EXISTS`, `NOT_STARTS`, `STARTS`
 	Operator *string `pulumi:"operator"`
-	// Possible Values: `CONTAINER_NAME`, `IMAGE_NAME`, `KUBERNETES_BASEPODNAME`, `KUBERNETES_CONTAINERNAME`, `KUBERNETES_FULLPODNAME`, `KUBERNETES_NAMESPACE`, `KUBERNETES_PODUID`
+	// Container property. Possible values: `CONTAINER_NAME`, `IMAGE_NAME`, `KUBERNETES_BASEPODNAME`, `KUBERNETES_CONTAINERNAME`, `KUBERNETES_FULLPODNAME`, `KUBERNETES_NAMESPACE`, `KUBERNETES_PODUID`
 	Property *string `pulumi:"property"`
 	// Condition value
 	Value *string `pulumi:"value"`
@@ -103,11 +103,11 @@ type ContainerRuleState struct {
 	Enabled pulumi.BoolPtrInput
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter pulumi.StringPtrInput
-	// Possible Values: `MONITORING_OFF`, `MONITORING_ON`
+	// Mode. Possible values: `MONITORING_OFF`, `MONITORING_ON`
 	Mode pulumi.StringPtrInput
-	// Possible Values: `CONTAINS`, `ENDS`, `EQUALS`, `EXISTS`, `NOT_CONTAINS`, `NOT_ENDS`, `NOT_EQUALS`, `NOT_EXISTS`, `NOT_STARTS`, `STARTS`
+	// Condition operator. Possible values: `CONTAINS`, `ENDS`, `EQUALS`, `EXISTS`, `NOT_CONTAINS`, `NOT_ENDS`, `NOT_EQUALS`, `NOT_EXISTS`, `NOT_STARTS`, `STARTS`
 	Operator pulumi.StringPtrInput
-	// Possible Values: `CONTAINER_NAME`, `IMAGE_NAME`, `KUBERNETES_BASEPODNAME`, `KUBERNETES_CONTAINERNAME`, `KUBERNETES_FULLPODNAME`, `KUBERNETES_NAMESPACE`, `KUBERNETES_PODUID`
+	// Container property. Possible values: `CONTAINER_NAME`, `IMAGE_NAME`, `KUBERNETES_BASEPODNAME`, `KUBERNETES_CONTAINERNAME`, `KUBERNETES_FULLPODNAME`, `KUBERNETES_NAMESPACE`, `KUBERNETES_PODUID`
 	Property pulumi.StringPtrInput
 	// Condition value
 	Value pulumi.StringPtrInput
@@ -122,11 +122,11 @@ type containerRuleArgs struct {
 	Enabled bool `pulumi:"enabled"`
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter *string `pulumi:"insertAfter"`
-	// Possible Values: `MONITORING_OFF`, `MONITORING_ON`
+	// Mode. Possible values: `MONITORING_OFF`, `MONITORING_ON`
 	Mode string `pulumi:"mode"`
-	// Possible Values: `CONTAINS`, `ENDS`, `EQUALS`, `EXISTS`, `NOT_CONTAINS`, `NOT_ENDS`, `NOT_EQUALS`, `NOT_EXISTS`, `NOT_STARTS`, `STARTS`
+	// Condition operator. Possible values: `CONTAINS`, `ENDS`, `EQUALS`, `EXISTS`, `NOT_CONTAINS`, `NOT_ENDS`, `NOT_EQUALS`, `NOT_EXISTS`, `NOT_STARTS`, `STARTS`
 	Operator string `pulumi:"operator"`
-	// Possible Values: `CONTAINER_NAME`, `IMAGE_NAME`, `KUBERNETES_BASEPODNAME`, `KUBERNETES_CONTAINERNAME`, `KUBERNETES_FULLPODNAME`, `KUBERNETES_NAMESPACE`, `KUBERNETES_PODUID`
+	// Container property. Possible values: `CONTAINER_NAME`, `IMAGE_NAME`, `KUBERNETES_BASEPODNAME`, `KUBERNETES_CONTAINERNAME`, `KUBERNETES_FULLPODNAME`, `KUBERNETES_NAMESPACE`, `KUBERNETES_PODUID`
 	Property string `pulumi:"property"`
 	// Condition value
 	Value *string `pulumi:"value"`
@@ -138,11 +138,11 @@ type ContainerRuleArgs struct {
 	Enabled pulumi.BoolInput
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter pulumi.StringPtrInput
-	// Possible Values: `MONITORING_OFF`, `MONITORING_ON`
+	// Mode. Possible values: `MONITORING_OFF`, `MONITORING_ON`
 	Mode pulumi.StringInput
-	// Possible Values: `CONTAINS`, `ENDS`, `EQUALS`, `EXISTS`, `NOT_CONTAINS`, `NOT_ENDS`, `NOT_EQUALS`, `NOT_EXISTS`, `NOT_STARTS`, `STARTS`
+	// Condition operator. Possible values: `CONTAINS`, `ENDS`, `EQUALS`, `EXISTS`, `NOT_CONTAINS`, `NOT_ENDS`, `NOT_EQUALS`, `NOT_EXISTS`, `NOT_STARTS`, `STARTS`
 	Operator pulumi.StringInput
-	// Possible Values: `CONTAINER_NAME`, `IMAGE_NAME`, `KUBERNETES_BASEPODNAME`, `KUBERNETES_CONTAINERNAME`, `KUBERNETES_FULLPODNAME`, `KUBERNETES_NAMESPACE`, `KUBERNETES_PODUID`
+	// Container property. Possible values: `CONTAINER_NAME`, `IMAGE_NAME`, `KUBERNETES_BASEPODNAME`, `KUBERNETES_CONTAINERNAME`, `KUBERNETES_FULLPODNAME`, `KUBERNETES_NAMESPACE`, `KUBERNETES_PODUID`
 	Property pulumi.StringInput
 	// Condition value
 	Value pulumi.StringPtrInput
@@ -245,17 +245,17 @@ func (o ContainerRuleOutput) InsertAfter() pulumi.StringOutput {
 	return o.ApplyT(func(v *ContainerRule) pulumi.StringOutput { return v.InsertAfter }).(pulumi.StringOutput)
 }
 
-// Possible Values: `MONITORING_OFF`, `MONITORING_ON`
+// Mode. Possible values: `MONITORING_OFF`, `MONITORING_ON`
 func (o ContainerRuleOutput) Mode() pulumi.StringOutput {
 	return o.ApplyT(func(v *ContainerRule) pulumi.StringOutput { return v.Mode }).(pulumi.StringOutput)
 }
 
-// Possible Values: `CONTAINS`, `ENDS`, `EQUALS`, `EXISTS`, `NOT_CONTAINS`, `NOT_ENDS`, `NOT_EQUALS`, `NOT_EXISTS`, `NOT_STARTS`, `STARTS`
+// Condition operator. Possible values: `CONTAINS`, `ENDS`, `EQUALS`, `EXISTS`, `NOT_CONTAINS`, `NOT_ENDS`, `NOT_EQUALS`, `NOT_EXISTS`, `NOT_STARTS`, `STARTS`
 func (o ContainerRuleOutput) Operator() pulumi.StringOutput {
 	return o.ApplyT(func(v *ContainerRule) pulumi.StringOutput { return v.Operator }).(pulumi.StringOutput)
 }
 
-// Possible Values: `CONTAINER_NAME`, `IMAGE_NAME`, `KUBERNETES_BASEPODNAME`, `KUBERNETES_CONTAINERNAME`, `KUBERNETES_FULLPODNAME`, `KUBERNETES_NAMESPACE`, `KUBERNETES_PODUID`
+// Container property. Possible values: `CONTAINER_NAME`, `IMAGE_NAME`, `KUBERNETES_BASEPODNAME`, `KUBERNETES_CONTAINERNAME`, `KUBERNETES_FULLPODNAME`, `KUBERNETES_NAMESPACE`, `KUBERNETES_PODUID`
 func (o ContainerRuleOutput) Property() pulumi.StringOutput {
 	return o.ApplyT(func(v *ContainerRule) pulumi.StringOutput { return v.Property }).(pulumi.StringOutput)
 }

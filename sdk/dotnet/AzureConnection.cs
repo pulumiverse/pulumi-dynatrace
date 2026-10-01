@@ -88,7 +88,7 @@ namespace Pulumiverse.Dynatrace
     ///             DirectoryId = azureTenantId,
     ///             Consumers = new[]
     ///             {
-    ///                 "DA",
+    ///                 "SVC:com.dynatrace.da",
     ///             },
     ///         },
     ///     });

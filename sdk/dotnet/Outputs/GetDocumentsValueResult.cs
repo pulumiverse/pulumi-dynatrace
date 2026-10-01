@@ -15,9 +15,21 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class GetDocumentsValueResult
     {
         /// <summary>
+        /// A short description of the document.
+        /// </summary>
+        public readonly string Description;
+        /// <summary>
         /// The unique identifier of the document.
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// Specifies whether recipients of a direct share can share the document further.
+        /// </summary>
+        public readonly bool IsReshareable;
+        /// <summary>
+        /// Labels attached to the document.
+        /// </summary>
+        public readonly ImmutableArray<string> Labels;
         /// <summary>
         /// The name of the document.
         /// </summary>
@@ -33,7 +45,13 @@ namespace Pulumiverse.Dynatrace.Outputs
 
         [OutputConstructor]
         private GetDocumentsValueResult(
+            string description,
+
             string id,
+
+            bool isReshareable,
+
+            ImmutableArray<string> labels,
 
             string name,
 
@@ -41,7 +59,10 @@ namespace Pulumiverse.Dynatrace.Outputs
 
             string type)
         {
+            Description = description;
             Id = id;
+            IsReshareable = isReshareable;
+            Labels = labels;
             Name = name;
             Owner = owner;
             Type = type;

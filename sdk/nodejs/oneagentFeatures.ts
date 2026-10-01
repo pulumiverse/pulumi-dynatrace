@@ -63,10 +63,6 @@ export class OneagentFeatures extends pulumi.CustomResource {
     }
 
     /**
-     * Used internally by the terraform provider. Do not populate
-     */
-    declare public /*out*/ readonly _restore_: pulumi.Output<string>;
-    /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
     declare public readonly enabled: pulumi.Output<boolean>;
@@ -100,7 +96,6 @@ export class OneagentFeatures extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as OneagentFeaturesState | undefined;
-            resourceInputs["_restore_"] = state?._restore_;
             resourceInputs["enabled"] = state?.enabled;
             resourceInputs["forcible"] = state?.forcible;
             resourceInputs["instrumentation"] = state?.instrumentation;
@@ -119,7 +114,6 @@ export class OneagentFeatures extends pulumi.CustomResource {
             resourceInputs["instrumentation"] = args?.instrumentation;
             resourceInputs["key"] = args?.key;
             resourceInputs["scope"] = args?.scope;
-            resourceInputs["_restore_"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(OneagentFeatures.__pulumiType, name, resourceInputs, opts);
@@ -130,10 +124,6 @@ export class OneagentFeatures extends pulumi.CustomResource {
  * Input properties used for looking up and filtering OneagentFeatures resources.
  */
 export interface OneagentFeaturesState {
-    /**
-     * Used internally by the terraform provider. Do not populate
-     */
-    _restore_?: pulumi.Input<string | undefined>;
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */

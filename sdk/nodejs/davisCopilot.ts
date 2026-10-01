@@ -71,6 +71,14 @@ export class DavisCopilot extends pulumi.CustomResource {
      * You can enrich Dynatrace generative and agentic AI with your environment data. This lets you generate more accurate queries that identify and reference relevant entities, events, spans, logs, and metrics from your environment. Once enabled, Dynatrace Intelligence periodically scans your Grail data to create its own semantic index. Please note, it can take up to 24 hours to reflect changes. Learn more about [environment-aware queries](https://dt-url.net/4g42iu7).
      */
     declare public readonly enableTenantAwareDataMining: pulumi.Output<boolean | undefined>;
+    /**
+     * Enable PII blocking
+     */
+    declare public readonly piiBlockingEnabled: pulumi.Output<boolean | undefined>;
+    /**
+     * PII blocking types
+     */
+    declare public readonly piiBlockingTypes: pulumi.Output<outputs.DavisCopilotPiiBlockingTypes | undefined>;
 
     /**
      * Create a DavisCopilot resource with the given unique name, arguments, and options.
@@ -90,6 +98,8 @@ export class DavisCopilot extends pulumi.CustomResource {
             resourceInputs["enableCopilot"] = state?.enableCopilot;
             resourceInputs["enableDocumentSuggestion"] = state?.enableDocumentSuggestion;
             resourceInputs["enableTenantAwareDataMining"] = state?.enableTenantAwareDataMining;
+            resourceInputs["piiBlockingEnabled"] = state?.piiBlockingEnabled;
+            resourceInputs["piiBlockingTypes"] = state?.piiBlockingTypes;
         } else {
             const args = argsOrState as DavisCopilotArgs | undefined;
             if (args?.enableCopilot === undefined && !opts.urn) {
@@ -100,6 +110,8 @@ export class DavisCopilot extends pulumi.CustomResource {
             resourceInputs["enableCopilot"] = args?.enableCopilot;
             resourceInputs["enableDocumentSuggestion"] = args?.enableDocumentSuggestion;
             resourceInputs["enableTenantAwareDataMining"] = args?.enableTenantAwareDataMining;
+            resourceInputs["piiBlockingEnabled"] = args?.piiBlockingEnabled;
+            resourceInputs["piiBlockingTypes"] = args?.piiBlockingTypes;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(DavisCopilot.__pulumiType, name, resourceInputs, opts);
@@ -130,6 +142,14 @@ export interface DavisCopilotState {
      * You can enrich Dynatrace generative and agentic AI with your environment data. This lets you generate more accurate queries that identify and reference relevant entities, events, spans, logs, and metrics from your environment. Once enabled, Dynatrace Intelligence periodically scans your Grail data to create its own semantic index. Please note, it can take up to 24 hours to reflect changes. Learn more about [environment-aware queries](https://dt-url.net/4g42iu7).
      */
     enableTenantAwareDataMining?: pulumi.Input<boolean | undefined>;
+    /**
+     * Enable PII blocking
+     */
+    piiBlockingEnabled?: pulumi.Input<boolean | undefined>;
+    /**
+     * PII blocking types
+     */
+    piiBlockingTypes?: pulumi.Input<inputs.DavisCopilotPiiBlockingTypes | undefined>;
 }
 
 /**
@@ -156,4 +176,12 @@ export interface DavisCopilotArgs {
      * You can enrich Dynatrace generative and agentic AI with your environment data. This lets you generate more accurate queries that identify and reference relevant entities, events, spans, logs, and metrics from your environment. Once enabled, Dynatrace Intelligence periodically scans your Grail data to create its own semantic index. Please note, it can take up to 24 hours to reflect changes. Learn more about [environment-aware queries](https://dt-url.net/4g42iu7).
      */
     enableTenantAwareDataMining?: pulumi.Input<boolean | undefined>;
+    /**
+     * Enable PII blocking
+     */
+    piiBlockingEnabled?: pulumi.Input<boolean | undefined>;
+    /**
+     * PII blocking types
+     */
+    piiBlockingTypes?: pulumi.Input<inputs.DavisCopilotPiiBlockingTypes | undefined>;
 }

@@ -93,7 +93,7 @@ import (
 //					ApplicationId: example.ClientId,
 //					DirectoryId:   pulumi.String(azureTenantId),
 //					Consumers: pulumi.StringArray{
-//						pulumi.String("DA"),
+//						pulumi.String("SVC:com.dynatrace.da"),
 //					},
 //				},
 //			})

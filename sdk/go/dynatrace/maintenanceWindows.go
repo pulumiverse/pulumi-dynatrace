@@ -46,6 +46,12 @@ import (
 //				Filter:      pulumi.String("matchesValue(result.state, \"FAIL\")"),
 //				AutoDelete:  pulumi.Bool(true),
 //				Enabled:     pulumi.Bool(true),
+//				ObjectScopes: &dynatrace.MaintenanceWindowsObjectScopesArgs{
+//					SyntheticMonitors: &dynatrace.MaintenanceWindowsObjectScopesSyntheticMonitorsArgs{
+//						DisableSyntheticMonitorFilter: pulumi.String("status == \"OPEN\" AND severity == \"HIGH\""),
+//						DisableSyntheticMonitors:      pulumi.Bool(true),
+//					},
+//				},
 //				Schedule: &dynatrace.MaintenanceWindowsScheduleArgs{
 //					Duration: pulumi.Int(60),
 //					Timezone: pulumi.String("UTC"),
@@ -100,6 +106,8 @@ type MaintenanceWindows struct {
 	Filter pulumi.StringOutput `pulumi:"filter"`
 	// Name of the maintenance window
 	Name pulumi.StringOutput `pulumi:"name"`
+	// Object scopes
+	ObjectScopes MaintenanceWindowsObjectScopesPtrOutput `pulumi:"objectScopes"`
 	// Schedule definition
 	Schedule MaintenanceWindowsScheduleOutput `pulumi:"schedule"`
 }
@@ -156,6 +164,8 @@ type maintenanceWindowsState struct {
 	Filter *string `pulumi:"filter"`
 	// Name of the maintenance window
 	Name *string `pulumi:"name"`
+	// Object scopes
+	ObjectScopes *MaintenanceWindowsObjectScopes `pulumi:"objectScopes"`
 	// Schedule definition
 	Schedule *MaintenanceWindowsSchedule `pulumi:"schedule"`
 }
@@ -171,6 +181,8 @@ type MaintenanceWindowsState struct {
 	Filter pulumi.StringPtrInput
 	// Name of the maintenance window
 	Name pulumi.StringPtrInput
+	// Object scopes
+	ObjectScopes MaintenanceWindowsObjectScopesPtrInput
 	// Schedule definition
 	Schedule MaintenanceWindowsSchedulePtrInput
 }
@@ -190,6 +202,8 @@ type maintenanceWindowsArgs struct {
 	Filter string `pulumi:"filter"`
 	// Name of the maintenance window
 	Name *string `pulumi:"name"`
+	// Object scopes
+	ObjectScopes *MaintenanceWindowsObjectScopes `pulumi:"objectScopes"`
 	// Schedule definition
 	Schedule MaintenanceWindowsSchedule `pulumi:"schedule"`
 }
@@ -206,6 +220,8 @@ type MaintenanceWindowsArgs struct {
 	Filter pulumi.StringInput
 	// Name of the maintenance window
 	Name pulumi.StringPtrInput
+	// Object scopes
+	ObjectScopes MaintenanceWindowsObjectScopesPtrInput
 	// Schedule definition
 	Schedule MaintenanceWindowsScheduleInput
 }
@@ -320,6 +336,11 @@ func (o MaintenanceWindowsOutput) Filter() pulumi.StringOutput {
 // Name of the maintenance window
 func (o MaintenanceWindowsOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *MaintenanceWindows) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
+}
+
+// Object scopes
+func (o MaintenanceWindowsOutput) ObjectScopes() MaintenanceWindowsObjectScopesPtrOutput {
+	return o.ApplyT(func(v *MaintenanceWindows) MaintenanceWindowsObjectScopesPtrOutput { return v.ObjectScopes }).(MaintenanceWindowsObjectScopesPtrOutput)
 }
 
 // Schedule definition

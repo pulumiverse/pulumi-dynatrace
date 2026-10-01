@@ -106,7 +106,6 @@ class OneagentFeaturesArgs:
 @pulumi.input_type
 class _OneagentFeaturesState:
     def __init__(__self__, *,
-                 _restore_: pulumi.Input[Optional[_builtins.str]] = None,
                  enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  forcible: pulumi.Input[Optional[_builtins.bool]] = None,
                  instrumentation: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -115,15 +114,12 @@ class _OneagentFeaturesState:
         """
         Input properties used for looking up and filtering OneagentFeatures resources.
 
-        :param pulumi.Input[_builtins.str] _restore_: Used internally by the terraform provider. Do not populate
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.bool] forcible: Activate this feature also in OneAgents only fulfilling the minimum Opt-In version
         :param pulumi.Input[_builtins.bool] instrumentation: Instrumentation enabled (change needs a process restart)
         :param pulumi.Input[_builtins.str] key: Feature
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (PROCESS*GROUP*INSTANCE, PROCESS_GROUP). Omit this property if you want to cover the whole environment.
         """
-        if _restore_ is not None:
-            pulumi.set(__self__, "_restore_", _restore_)
         if enabled is not None:
             pulumi.set(__self__, "enabled", enabled)
         if forcible is not None:
@@ -134,18 +130,6 @@ class _OneagentFeaturesState:
             pulumi.set(__self__, "key", key)
         if scope is not None:
             pulumi.set(__self__, "scope", scope)
-
-    @_builtins.property
-    @pulumi.getter
-    def _restore_(self) -> pulumi.Input[Optional[_builtins.str]]:
-        """
-        Used internally by the terraform provider. Do not populate
-        """
-        return pulumi.get(self, "_restore_")
-
-    @_restore_.setter
-    def _restore_(self, value: pulumi.Input[Optional[_builtins.str]]):
-        pulumi.set(self, "_restore_", value)
 
     @_builtins.property
     @pulumi.getter
@@ -332,7 +316,6 @@ class OneagentFeatures(pulumi.CustomResource):
                 raise TypeError("Missing required property 'key'")
             __props__.__dict__["key"] = key
             __props__.__dict__["scope"] = scope
-            __props__.__dict__["_restore_"] = None
         super(OneagentFeatures, __self__).__init__(
             'dynatrace:index/oneagentFeatures:OneagentFeatures',
             resource_name,
@@ -343,7 +326,6 @@ class OneagentFeatures(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            _restore_: pulumi.Input[Optional[_builtins.str]] = None,
             enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             forcible: pulumi.Input[Optional[_builtins.bool]] = None,
             instrumentation: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -356,7 +338,6 @@ class OneagentFeatures(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.str] _restore_: Used internally by the terraform provider. Do not populate
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.bool] forcible: Activate this feature also in OneAgents only fulfilling the minimum Opt-In version
         :param pulumi.Input[_builtins.bool] instrumentation: Instrumentation enabled (change needs a process restart)
@@ -367,21 +348,12 @@ class OneagentFeatures(pulumi.CustomResource):
 
         __props__ = _OneagentFeaturesState.__new__(_OneagentFeaturesState)
 
-        __props__.__dict__["_restore_"] = _restore_
         __props__.__dict__["enabled"] = enabled
         __props__.__dict__["forcible"] = forcible
         __props__.__dict__["instrumentation"] = instrumentation
         __props__.__dict__["key"] = key
         __props__.__dict__["scope"] = scope
         return OneagentFeatures(resource_name, opts=opts, __props__=__props__)
-
-    @_builtins.property
-    @pulumi.getter
-    def _restore_(self) -> pulumi.Output[_builtins.str]:
-        """
-        Used internally by the terraform provider. Do not populate
-        """
-        return pulumi.get(self, "_restore_")
 
     @_builtins.property
     @pulumi.getter

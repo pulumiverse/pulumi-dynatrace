@@ -25,6 +25,13 @@ import * as utilities from "./utilities";
  *     type: "dashboard",
  *     name: "Example Dashboard",
  *     customId: "#name#",
+ *     description: "Initial description",
+ *     labels: [
+ *         "monitoring",
+ *         "cloud",
+ *         "draft",
+ *     ],
+ *     isReshareable: true,
  *     content: JSON.stringify({
  *         version: 13,
  *         variables: [],
@@ -195,6 +202,18 @@ export class Document extends pulumi.CustomResource {
      */
     declare public readonly customId: pulumi.Output<string>;
     /**
+     * A short description of the document
+     */
+    declare public readonly description: pulumi.Output<string | undefined>;
+    /**
+     * Specifies whether recipients of a direct share can share the document further
+     */
+    declare public readonly isReshareable: pulumi.Output<boolean | undefined>;
+    /**
+     * Labels attached to the document
+     */
+    declare public readonly labels: pulumi.Output<string[] | undefined>;
+    /**
      * The name/name of the document
      */
     declare public readonly name: pulumi.Output<string>;
@@ -230,6 +249,9 @@ export class Document extends pulumi.CustomResource {
             const state = argsOrState as DocumentState | undefined;
             resourceInputs["content"] = state?.content;
             resourceInputs["customId"] = state?.customId;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["isReshareable"] = state?.isReshareable;
+            resourceInputs["labels"] = state?.labels;
             resourceInputs["name"] = state?.name;
             resourceInputs["owner"] = state?.owner;
             resourceInputs["private"] = state?.private;
@@ -245,6 +267,9 @@ export class Document extends pulumi.CustomResource {
             }
             resourceInputs["content"] = args?.content;
             resourceInputs["customId"] = args?.customId;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["isReshareable"] = args?.isReshareable;
+            resourceInputs["labels"] = args?.labels;
             resourceInputs["name"] = args?.name;
             resourceInputs["private"] = args?.private;
             resourceInputs["type"] = args?.type;
@@ -268,6 +293,18 @@ export interface DocumentState {
      * If provided, this will be the id of the document. If not provided, a system-generated id is used.
      */
     customId?: pulumi.Input<string | undefined>;
+    /**
+     * A short description of the document
+     */
+    description?: pulumi.Input<string | undefined>;
+    /**
+     * Specifies whether recipients of a direct share can share the document further
+     */
+    isReshareable?: pulumi.Input<boolean | undefined>;
+    /**
+     * Labels attached to the document
+     */
+    labels?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The name/name of the document
      */
@@ -302,6 +339,18 @@ export interface DocumentArgs {
      * If provided, this will be the id of the document. If not provided, a system-generated id is used.
      */
     customId?: pulumi.Input<string | undefined>;
+    /**
+     * A short description of the document
+     */
+    description?: pulumi.Input<string | undefined>;
+    /**
+     * Specifies whether recipients of a direct share can share the document further
+     */
+    isReshareable?: pulumi.Input<boolean | undefined>;
+    /**
+     * Labels attached to the document
+     */
+    labels?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The name/name of the document
      */

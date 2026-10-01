@@ -20,8 +20,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<bool>? FailIfFound { get; set; }
 
         /// <summary>
-        /// The content to look for on the page.
-        /// Regular expressions are allowed. In that case set `isRegex` as `True`. Required for `ContentMatch`, optional for `ElementMatch`.
+        /// The content to look for on the page. Regular expressions are allowed. In that case set `Regex` as `True`. Required for `ContentMatch` and `TextMatch`, optional for `ElementMatch`.
         /// </summary>
         [Input("match")]
         public Input<string>? Match { get; set; }
@@ -39,7 +38,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<Inputs.BrowserMonitorScriptEventsEventTapValidateValidationTargetArgs>? Target { get; set; }
 
         /// <summary>
-        /// The goal of the validation. `ContentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `ElementMatch` (check page for the specific element).
+        /// The goal of the validation. `ContentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `ElementMatch` (check page for the specific element), `TextMatch` (check page for the specific text).
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;

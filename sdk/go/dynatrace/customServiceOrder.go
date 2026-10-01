@@ -12,6 +12,7 @@ import (
 )
 
 // > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+// or the OAuth scopes `settings:objects:read` and `settings:objects:write`
 //
 // ## Dynatrace Documentation
 //

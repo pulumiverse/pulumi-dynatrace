@@ -37,6 +37,14 @@ namespace Pulumiverse.Dynatrace
     ///         Type = "dashboard",
     ///         Name = "Example Dashboard",
     ///         CustomId = "#name#",
+    ///         Description = "Initial description",
+    ///         Labels = new[]
+    ///         {
+    ///             "monitoring",
+    ///             "cloud",
+    ///             "draft",
+    ///         },
+    ///         IsReshareable = true,
     ///         Content = JsonSerializer.Serialize(new Dictionary&lt;string, object?&gt;
     ///         {
     ///             ["version"] = 13,
@@ -261,6 +269,24 @@ namespace Pulumiverse.Dynatrace
         public Output<string> CustomId { get; private set; } = null!;
 
         /// <summary>
+        /// A short description of the document
+        /// </summary>
+        [Output("description")]
+        public Output<string?> Description { get; private set; } = null!;
+
+        /// <summary>
+        /// Specifies whether recipients of a direct share can share the document further
+        /// </summary>
+        [Output("isReshareable")]
+        public Output<bool?> IsReshareable { get; private set; } = null!;
+
+        /// <summary>
+        /// Labels attached to the document
+        /// </summary>
+        [Output("labels")]
+        public Output<ImmutableArray<string>> Labels { get; private set; } = null!;
+
+        /// <summary>
         /// The name/name of the document
         /// </summary>
         [Output("name")]
@@ -350,6 +376,30 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? CustomId { get; set; }
 
         /// <summary>
+        /// A short description of the document
+        /// </summary>
+        [Input("description")]
+        public Input<string>? Description { get; set; }
+
+        /// <summary>
+        /// Specifies whether recipients of a direct share can share the document further
+        /// </summary>
+        [Input("isReshareable")]
+        public Input<bool>? IsReshareable { get; set; }
+
+        [Input("labels")]
+        private InputList<string>? _labels;
+
+        /// <summary>
+        /// Labels attached to the document
+        /// </summary>
+        public InputList<string> Labels
+        {
+            get => _labels ?? (_labels = new InputList<string>());
+            set => _labels = value;
+        }
+
+        /// <summary>
         /// The name/name of the document
         /// </summary>
         [Input("name")]
@@ -386,6 +436,30 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         [Input("customId")]
         public Input<string>? CustomId { get; set; }
+
+        /// <summary>
+        /// A short description of the document
+        /// </summary>
+        [Input("description")]
+        public Input<string>? Description { get; set; }
+
+        /// <summary>
+        /// Specifies whether recipients of a direct share can share the document further
+        /// </summary>
+        [Input("isReshareable")]
+        public Input<bool>? IsReshareable { get; set; }
+
+        [Input("labels")]
+        private InputList<string>? _labels;
+
+        /// <summary>
+        /// Labels attached to the document
+        /// </summary>
+        public InputList<string> Labels
+        {
+            get => _labels ?? (_labels = new InputList<string>());
+            set => _labels = value;
+        }
 
         /// <summary>
         /// The name/name of the document

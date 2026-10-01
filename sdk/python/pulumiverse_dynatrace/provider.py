@@ -434,8 +434,8 @@ class Provider(pulumi.ProviderResource):
             __props__.__dict__["iam_client_secret"] = None if iam_client_secret is None else pulumi.Output.secret(iam_client_secret)
             __props__.__dict__["iam_endpoint_url"] = None if iam_endpoint_url is None else pulumi.Output.secret(iam_endpoint_url)
             __props__.__dict__["iam_token_url"] = None if iam_token_url is None else pulumi.Output.secret(iam_token_url)
-            __props__.__dict__["platform_token"] = platform_token
-        secret_opts = pulumi.ResourceOptions(additional_secret_outputs=["accountId", "automationClientId", "automationClientSecret", "clientId", "clientSecret", "dtApiToken", "dtClusterApiToken", "dtClusterUrl", "iamAccountId", "iamClientId", "iamClientSecret", "iamEndpointUrl", "iamTokenUrl"])
+            __props__.__dict__["platform_token"] = None if platform_token is None else pulumi.Output.secret(platform_token)
+        secret_opts = pulumi.ResourceOptions(additional_secret_outputs=["accountId", "automationClientId", "automationClientSecret", "clientId", "clientSecret", "dtApiToken", "dtClusterApiToken", "dtClusterUrl", "iamAccountId", "iamClientId", "iamClientSecret", "iamEndpointUrl", "iamTokenUrl", "platformToken"])
         opts = pulumi.ResourceOptions.merge(opts, secret_opts)
         super(Provider, __self__).__init__(
             'dynatrace',

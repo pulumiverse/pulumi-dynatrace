@@ -465,7 +465,7 @@ class IssueTracking(pulumi.CustomResource):
             if issuetrackersystem is None and not opts.urn:
                 raise TypeError("Missing required property 'issuetrackersystem'")
             __props__.__dict__["issuetrackersystem"] = issuetrackersystem
-            __props__.__dict__["password"] = password
+            __props__.__dict__["password"] = None if password is None else pulumi.Output.secret(password)
             __props__.__dict__["token"] = None if token is None else pulumi.Output.secret(token)
             if url is None and not opts.urn:
                 raise TypeError("Missing required property 'url'")
@@ -473,7 +473,7 @@ class IssueTracking(pulumi.CustomResource):
             if username is None and not opts.urn:
                 raise TypeError("Missing required property 'username'")
             __props__.__dict__["username"] = username
-        secret_opts = pulumi.ResourceOptions(additional_secret_outputs=["token"])
+        secret_opts = pulumi.ResourceOptions(additional_secret_outputs=["password", "token"])
         opts = pulumi.ResourceOptions.merge(opts, secret_opts)
         super(IssueTracking, __self__).__init__(
             'dynatrace:index/issueTracking:IssueTracking',

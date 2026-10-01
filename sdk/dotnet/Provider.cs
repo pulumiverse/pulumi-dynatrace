@@ -155,6 +155,7 @@ namespace Pulumiverse.Dynatrace
                     "iamClientSecret",
                     "iamEndpointUrl",
                     "iamTokenUrl",
+                    "platformToken",
                 },
             };
             var merged = CustomResourceOptions.Merge(defaultOptions, options);
@@ -398,11 +399,21 @@ namespace Pulumiverse.Dynatrace
             }
         }
 
+        [Input("platformToken")]
+        private Input<string>? _platformToken;
+
         /// <summary>
         /// The Dynatrace platform token used for platform APIs. When specified, it is used in preference to `ClientId`, `ClientSecret`, `AutomationClientId`, `AutomationClientSecret`, `AutomationTokenUrl`, and `AutomationEnvUrl` for platform requests. Platform tokens can't be used for IAM (Account Management) or classic resources.
         /// </summary>
-        [Input("platformToken")]
-        public Input<string>? PlatformToken { get; set; }
+        public Input<string>? PlatformToken
+        {
+            get => _platformToken;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _platformToken = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         public ProviderArgs()
         {

@@ -11,6 +11,8 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > This data source requires the API token scope **Read API tokens** (`apiTokens.read`)
+//
 // The API tokens data source allows all access tokens to be retrieved, note the token value is not included in the response.
 //
 // ## Example Usage

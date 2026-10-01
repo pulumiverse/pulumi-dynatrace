@@ -67,7 +67,7 @@ import (
 //					},
 //				},
 //				Name:      pulumi.String("#name#"),
-//				Frequency: pulumi.Int(1),
+//				Frequency: pulumi.Int(5),
 //				Locations: pulumi.StringArray{
 //					pulumi.String(location.Id),
 //				},

@@ -235,6 +235,7 @@ namespace Pulumiverse.Dynatrace
     ///                                     new Dynatrace.Inputs.BrowserMonitorScriptEventsEventClickValidateValidationArgs
     ///                                     {
     ///                                         Type = "text_match",
+    ///                                         Match = "test",
     ///                                     },
     ///                                 },
     ///                             },

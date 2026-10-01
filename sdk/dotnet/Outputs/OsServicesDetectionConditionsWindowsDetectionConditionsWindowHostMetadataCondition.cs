@@ -17,7 +17,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// <summary>
         /// When enabled, the condition requires a resource attribute to exist and match the constraints; when disabled, the key is optional but must still match the constrains if it is present.
         /// </summary>
-        public readonly bool KeyMustExist;
+        public readonly bool? KeyMustExist;
         /// <summary>
         /// This string has to match a required format.
         /// 
@@ -42,7 +42,7 @@ namespace Pulumiverse.Dynatrace.Outputs
 
         [OutputConstructor]
         private OsServicesDetectionConditionsWindowsDetectionConditionsWindowHostMetadataCondition(
-            bool keyMustExist,
+            bool? keyMustExist,
 
             string metadataCondition,
 

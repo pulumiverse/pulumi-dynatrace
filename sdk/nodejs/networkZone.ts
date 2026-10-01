@@ -5,6 +5,8 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 /**
+ * > The resource API endpoint has been deprecated, please use dynatrace.NetworkZoneV2 instead.
+ *
  * > This resource requires the API token scopes **Read network zones** (`networkZones.read`) and **Write network zones** (`networkZones.write`)
  *
  * ## Dynatrace Documentation

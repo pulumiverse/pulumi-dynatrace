@@ -143,7 +143,7 @@ class HttpMonitorScript(pulumi.CustomResource):
                 }],
             }],
             name="#name#",
-            frequency=1,
+            frequency=5,
             locations=[location.id],
             no_script=True)
         script = dynatrace.HttpMonitorScript("script",
@@ -218,7 +218,7 @@ class HttpMonitorScript(pulumi.CustomResource):
                 }],
             }],
             name="#name#",
-            frequency=1,
+            frequency=5,
             locations=[location.id],
             no_script=True)
         script = dynatrace.HttpMonitorScript("script",

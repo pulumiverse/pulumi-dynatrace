@@ -121,10 +121,10 @@ export class Provider extends pulumi.ProviderResource {
             resourceInputs["iamClientSecret"] = args?.iamClientSecret ? pulumi.secret(args.iamClientSecret) : undefined;
             resourceInputs["iamEndpointUrl"] = args?.iamEndpointUrl ? pulumi.secret(args.iamEndpointUrl) : undefined;
             resourceInputs["iamTokenUrl"] = args?.iamTokenUrl ? pulumi.secret(args.iamTokenUrl) : undefined;
-            resourceInputs["platformToken"] = args?.platformToken;
+            resourceInputs["platformToken"] = args?.platformToken ? pulumi.secret(args.platformToken) : undefined;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
-        const secretOpts = { additionalSecretOutputs: ["accountId", "automationClientId", "automationClientSecret", "clientId", "clientSecret", "dtApiToken", "dtClusterApiToken", "dtClusterUrl", "iamAccountId", "iamClientId", "iamClientSecret", "iamEndpointUrl", "iamTokenUrl"] };
+        const secretOpts = { additionalSecretOutputs: ["accountId", "automationClientId", "automationClientSecret", "clientId", "clientSecret", "dtApiToken", "dtClusterApiToken", "dtClusterUrl", "iamAccountId", "iamClientId", "iamClientSecret", "iamEndpointUrl", "iamTokenUrl", "platformToken"] };
         opts = pulumi.mergeOptions(opts, secretOpts);
         super(Provider.__pulumiType, name, resourceInputs, opts);
     }

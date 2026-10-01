@@ -236,7 +236,7 @@ class AzureConnection(pulumi.CustomResource):
                 "client_secret": example_application_password.value,
                 "application_id": example.client_id,
                 "directory_id": azure_tenant_id,
-                "consumers": ["DA"],
+                "consumers": ["SVC:com.dynatrace.da"],
             })
         ```
 
@@ -352,7 +352,7 @@ class AzureConnection(pulumi.CustomResource):
                 "client_secret": example_application_password.value,
                 "application_id": example.client_id,
                 "directory_id": azure_tenant_id,
-                "consumers": ["DA"],
+                "consumers": ["SVC:com.dynatrace.da"],
             })
         ```
 

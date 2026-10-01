@@ -25,6 +25,33 @@ import (
 // - `terraform-provider-dynatrace -export dynatraceWebBeaconOrigins` downloads all existing beacon origin allowlist configuration
 //
 // The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+//
+// ## Resource Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := dynatrace.NewWebAppBeaconOrigins(ctx, "origin", &dynatrace.WebAppBeaconOriginsArgs{
+//				Matcher: pulumi.String("CONTAINS"),
+//				Pattern: pulumi.String("pattern-#name#"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type WebAppBeaconOrigins struct {
 	pulumi.CustomResourceState
 

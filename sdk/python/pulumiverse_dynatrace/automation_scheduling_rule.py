@@ -32,6 +32,7 @@ class AutomationSchedulingRuleArgs:
         The set of arguments for constructing a AutomationSchedulingRule resource.
 
         :param pulumi.Input[_builtins.str] title: The title / name of the scheduling rule
+        :param pulumi.Input[_builtins.str] business_calendar: The ID of the business calendar associated with the scheduling rule
         :param pulumi.Input[_builtins.str] description: An optional description for the scheduling rule
         """
         pulumi.set(__self__, "title", title)
@@ -63,6 +64,9 @@ class AutomationSchedulingRuleArgs:
     @_builtins.property
     @pulumi.getter(name="businessCalendar")
     def business_calendar(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The ID of the business calendar associated with the scheduling rule
+        """
         return pulumi.get(self, "business_calendar")
 
     @business_calendar.setter
@@ -131,6 +135,7 @@ class _AutomationSchedulingRuleState:
         """
         Input properties used for looking up and filtering AutomationSchedulingRule resources.
 
+        :param pulumi.Input[_builtins.str] business_calendar: The ID of the business calendar associated with the scheduling rule
         :param pulumi.Input[_builtins.str] description: An optional description for the scheduling rule
         :param pulumi.Input[_builtins.str] title: The title / name of the scheduling rule
         """
@@ -152,6 +157,9 @@ class _AutomationSchedulingRuleState:
     @_builtins.property
     @pulumi.getter(name="businessCalendar")
     def business_calendar(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The ID of the business calendar associated with the scheduling rule
+        """
         return pulumi.get(self, "business_calendar")
 
     @business_calendar.setter
@@ -249,6 +257,7 @@ class AutomationSchedulingRule(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[_builtins.str] business_calendar: The ID of the business calendar associated with the scheduling rule
         :param pulumi.Input[_builtins.str] description: An optional description for the scheduling rule
         :param pulumi.Input[_builtins.str] title: The title / name of the scheduling rule
         """
@@ -336,6 +345,7 @@ class AutomationSchedulingRule(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[_builtins.str] business_calendar: The ID of the business calendar associated with the scheduling rule
         :param pulumi.Input[_builtins.str] description: An optional description for the scheduling rule
         :param pulumi.Input[_builtins.str] title: The title / name of the scheduling rule
         """
@@ -355,6 +365,9 @@ class AutomationSchedulingRule(pulumi.CustomResource):
     @_builtins.property
     @pulumi.getter(name="businessCalendar")
     def business_calendar(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        The ID of the business calendar associated with the scheduling rule
+        """
         return pulumi.get(self, "business_calendar")
 
     @_builtins.property

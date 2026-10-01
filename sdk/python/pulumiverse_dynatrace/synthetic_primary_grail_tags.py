@@ -142,7 +142,7 @@ class SyntheticPrimaryGrailTags(pulumi.CustomResource):
                 }],
             }],
             name="#name#",
-            frequency=1,
+            frequency=5,
             locations=[location.id],
             no_script=True)
         example = dynatrace.SyntheticPrimaryGrailTags("example",
@@ -207,7 +207,7 @@ class SyntheticPrimaryGrailTags(pulumi.CustomResource):
                 }],
             }],
             name="#name#",
-            frequency=1,
+            frequency=5,
             locations=[location.id],
             no_script=True)
         example = dynatrace.SyntheticPrimaryGrailTags("example",

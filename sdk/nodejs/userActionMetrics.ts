@@ -20,6 +20,29 @@ import * as utilities from "./utilities";
  * - `terraform-provider-dynatrace -export dynatrace.UserActionMetrics` downloads all existing user action custom metrics configuration
  *
  * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ *
+ * ## Resource Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ *
+ * const metric = new dynatrace.UserActionMetrics("metric", {
+ *     enabled: true,
+ *     dimensions: ["application"],
+ *     metricKey: "uacm.#name#",
+ *     filters: {
+ *         filters: [{
+ *             fieldName: "type",
+ *             operator: "EQUALS",
+ *             value: "Xhr",
+ *         }],
+ *     },
+ *     value: {
+ *         type: "COUNTER",
+ *     },
+ * });
+ * ```
  */
 export class UserActionMetrics extends pulumi.CustomResource {
     /**

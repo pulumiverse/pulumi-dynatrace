@@ -26,7 +26,8 @@ class MaintenanceWindowsArgs:
                  filter: pulumi.Input[_builtins.str],
                  schedule: pulumi.Input['MaintenanceWindowsScheduleArgs'],
                  description: pulumi.Input[Optional[_builtins.str]] = None,
-                 name: pulumi.Input[Optional[_builtins.str]] = None):
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 object_scopes: pulumi.Input[Optional['MaintenanceWindowsObjectScopesArgs']] = None):
         """
         The set of arguments for constructing a MaintenanceWindows resource.
 
@@ -36,6 +37,7 @@ class MaintenanceWindowsArgs:
         :param pulumi.Input['MaintenanceWindowsScheduleArgs'] schedule: Schedule definition
         :param pulumi.Input[_builtins.str] description: Description
         :param pulumi.Input[_builtins.str] name: Name of the maintenance window
+        :param pulumi.Input['MaintenanceWindowsObjectScopesArgs'] object_scopes: Object scopes
         """
         pulumi.set(__self__, "auto_delete", auto_delete)
         pulumi.set(__self__, "enabled", enabled)
@@ -45,6 +47,8 @@ class MaintenanceWindowsArgs:
             pulumi.set(__self__, "description", description)
         if name is not None:
             pulumi.set(__self__, "name", name)
+        if object_scopes is not None:
+            pulumi.set(__self__, "object_scopes", object_scopes)
 
     @_builtins.property
     @pulumi.getter(name="autoDelete")
@@ -118,6 +122,18 @@ class MaintenanceWindowsArgs:
     def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
+    @_builtins.property
+    @pulumi.getter(name="objectScopes")
+    def object_scopes(self) -> pulumi.Input[Optional['MaintenanceWindowsObjectScopesArgs']]:
+        """
+        Object scopes
+        """
+        return pulumi.get(self, "object_scopes")
+
+    @object_scopes.setter
+    def object_scopes(self, value: pulumi.Input[Optional['MaintenanceWindowsObjectScopesArgs']]):
+        pulumi.set(self, "object_scopes", value)
+
 
 @pulumi.input_type
 class _MaintenanceWindowsState:
@@ -127,6 +143,7 @@ class _MaintenanceWindowsState:
                  enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  filter: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
+                 object_scopes: pulumi.Input[Optional['MaintenanceWindowsObjectScopesArgs']] = None,
                  schedule: pulumi.Input[Optional['MaintenanceWindowsScheduleArgs']] = None):
         """
         Input properties used for looking up and filtering MaintenanceWindows resources.
@@ -136,6 +153,7 @@ class _MaintenanceWindowsState:
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] filter: DQL Filter
         :param pulumi.Input[_builtins.str] name: Name of the maintenance window
+        :param pulumi.Input['MaintenanceWindowsObjectScopesArgs'] object_scopes: Object scopes
         :param pulumi.Input['MaintenanceWindowsScheduleArgs'] schedule: Schedule definition
         """
         if auto_delete is not None:
@@ -148,6 +166,8 @@ class _MaintenanceWindowsState:
             pulumi.set(__self__, "filter", filter)
         if name is not None:
             pulumi.set(__self__, "name", name)
+        if object_scopes is not None:
+            pulumi.set(__self__, "object_scopes", object_scopes)
         if schedule is not None:
             pulumi.set(__self__, "schedule", schedule)
 
@@ -212,6 +232,18 @@ class _MaintenanceWindowsState:
         pulumi.set(self, "name", value)
 
     @_builtins.property
+    @pulumi.getter(name="objectScopes")
+    def object_scopes(self) -> pulumi.Input[Optional['MaintenanceWindowsObjectScopesArgs']]:
+        """
+        Object scopes
+        """
+        return pulumi.get(self, "object_scopes")
+
+    @object_scopes.setter
+    def object_scopes(self, value: pulumi.Input[Optional['MaintenanceWindowsObjectScopesArgs']]):
+        pulumi.set(self, "object_scopes", value)
+
+    @_builtins.property
     @pulumi.getter
     def schedule(self) -> pulumi.Input[Optional['MaintenanceWindowsScheduleArgs']]:
         """
@@ -235,6 +267,7 @@ class MaintenanceWindows(pulumi.CustomResource):
                  enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  filter: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
+                 object_scopes: pulumi.Input[Optional[Union['MaintenanceWindowsObjectScopesArgs', 'MaintenanceWindowsObjectScopesArgsDict', 'outputs.MaintenanceWindowsObjectScopes']]] = None,
                  schedule: pulumi.Input[Optional[Union['MaintenanceWindowsScheduleArgs', 'MaintenanceWindowsScheduleArgsDict', 'outputs.MaintenanceWindowsSchedule']]] = None,
                  __props__=None):
         """
@@ -264,6 +297,12 @@ class MaintenanceWindows(pulumi.CustomResource):
             filter="matchesValue(result.state, \\"FAIL\\")",
             auto_delete=True,
             enabled=True,
+            object_scopes={
+                "synthetic_monitors": {
+                    "disable_synthetic_monitor_filter": "status == \\"OPEN\\" AND severity == \\"HIGH\\"",
+                    "disable_synthetic_monitors": True,
+                },
+            },
             schedule={
                 "duration": 60,
                 "timezone": "UTC",
@@ -302,6 +341,7 @@ class MaintenanceWindows(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] filter: DQL Filter
         :param pulumi.Input[_builtins.str] name: Name of the maintenance window
+        :param pulumi.Input[Union['MaintenanceWindowsObjectScopesArgs', 'MaintenanceWindowsObjectScopesArgsDict', 'outputs.MaintenanceWindowsObjectScopes']] object_scopes: Object scopes
         :param pulumi.Input[Union['MaintenanceWindowsScheduleArgs', 'MaintenanceWindowsScheduleArgsDict', 'outputs.MaintenanceWindowsSchedule']] schedule: Schedule definition
         """
         ...
@@ -337,6 +377,12 @@ class MaintenanceWindows(pulumi.CustomResource):
             filter="matchesValue(result.state, \\"FAIL\\")",
             auto_delete=True,
             enabled=True,
+            object_scopes={
+                "synthetic_monitors": {
+                    "disable_synthetic_monitor_filter": "status == \\"OPEN\\" AND severity == \\"HIGH\\"",
+                    "disable_synthetic_monitors": True,
+                },
+            },
             schedule={
                 "duration": 60,
                 "timezone": "UTC",
@@ -388,6 +434,7 @@ class MaintenanceWindows(pulumi.CustomResource):
                  enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  filter: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
+                 object_scopes: pulumi.Input[Optional[Union['MaintenanceWindowsObjectScopesArgs', 'MaintenanceWindowsObjectScopesArgsDict', 'outputs.MaintenanceWindowsObjectScopes']]] = None,
                  schedule: pulumi.Input[Optional[Union['MaintenanceWindowsScheduleArgs', 'MaintenanceWindowsScheduleArgsDict', 'outputs.MaintenanceWindowsSchedule']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -409,6 +456,7 @@ class MaintenanceWindows(pulumi.CustomResource):
                 raise TypeError("Missing required property 'filter'")
             __props__.__dict__["filter"] = filter
             __props__.__dict__["name"] = name
+            __props__.__dict__["object_scopes"] = object_scopes
             if schedule is None and not opts.urn:
                 raise TypeError("Missing required property 'schedule'")
             __props__.__dict__["schedule"] = schedule
@@ -427,6 +475,7 @@ class MaintenanceWindows(pulumi.CustomResource):
             enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             filter: pulumi.Input[Optional[_builtins.str]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
+            object_scopes: pulumi.Input[Optional[Union['MaintenanceWindowsObjectScopesArgs', 'MaintenanceWindowsObjectScopesArgsDict', 'outputs.MaintenanceWindowsObjectScopes']]] = None,
             schedule: pulumi.Input[Optional[Union['MaintenanceWindowsScheduleArgs', 'MaintenanceWindowsScheduleArgsDict', 'outputs.MaintenanceWindowsSchedule']]] = None) -> 'MaintenanceWindows':
         """
         Get an existing MaintenanceWindows resource's state with the given name, id, and optional extra
@@ -440,6 +489,7 @@ class MaintenanceWindows(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] filter: DQL Filter
         :param pulumi.Input[_builtins.str] name: Name of the maintenance window
+        :param pulumi.Input[Union['MaintenanceWindowsObjectScopesArgs', 'MaintenanceWindowsObjectScopesArgsDict', 'outputs.MaintenanceWindowsObjectScopes']] object_scopes: Object scopes
         :param pulumi.Input[Union['MaintenanceWindowsScheduleArgs', 'MaintenanceWindowsScheduleArgsDict', 'outputs.MaintenanceWindowsSchedule']] schedule: Schedule definition
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -451,6 +501,7 @@ class MaintenanceWindows(pulumi.CustomResource):
         __props__.__dict__["enabled"] = enabled
         __props__.__dict__["filter"] = filter
         __props__.__dict__["name"] = name
+        __props__.__dict__["object_scopes"] = object_scopes
         __props__.__dict__["schedule"] = schedule
         return MaintenanceWindows(resource_name, opts=opts, __props__=__props__)
 
@@ -493,6 +544,14 @@ class MaintenanceWindows(pulumi.CustomResource):
         Name of the maintenance window
         """
         return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter(name="objectScopes")
+    def object_scopes(self) -> pulumi.Output[Optional['outputs.MaintenanceWindowsObjectScopes']]:
+        """
+        Object scopes
+        """
+        return pulumi.get(self, "object_scopes")
 
     @_builtins.property
     @pulumi.getter

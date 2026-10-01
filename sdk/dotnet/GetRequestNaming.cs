@@ -13,6 +13,9 @@ namespace Pulumiverse.Dynatrace
     public static class GetRequestNaming
     {
         /// <summary>
+        /// &gt; This data source requires the API token scope **Read configuration** (`ReadConfig`)
+        /// or the OAuth scope `settings:objects:read`
+        /// 
         /// The `dynatrace.RequestNaming` data source allows the request naming rule ID to be retrieved by its name.
         /// 
         /// - `Name` (String) - The name to be assigned to matching requests.
@@ -45,6 +48,9 @@ namespace Pulumiverse.Dynatrace
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetRequestNamingResult>("dynatrace:index/getRequestNaming:getRequestNaming", args ?? new GetRequestNamingArgs(), options.WithDefaults());
 
         /// <summary>
+        /// &gt; This data source requires the API token scope **Read configuration** (`ReadConfig`)
+        /// or the OAuth scope `settings:objects:read`
+        /// 
         /// The `dynatrace.RequestNaming` data source allows the request naming rule ID to be retrieved by its name.
         /// 
         /// - `Name` (String) - The name to be assigned to matching requests.
@@ -77,6 +83,9 @@ namespace Pulumiverse.Dynatrace
             => global::Pulumi.Deployment.Instance.Invoke<GetRequestNamingResult>("dynatrace:index/getRequestNaming:getRequestNaming", args ?? new GetRequestNamingInvokeArgs(), options.WithDefaults());
 
         /// <summary>
+        /// &gt; This data source requires the API token scope **Read configuration** (`ReadConfig`)
+        /// or the OAuth scope `settings:objects:read`
+        /// 
         /// The `dynatrace.RequestNaming` data source allows the request naming rule ID to be retrieved by its name.
         /// 
         /// - `Name` (String) - The name to be assigned to matching requests.

@@ -32,7 +32,7 @@ type AttackAlerting struct {
 
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolOutput `pulumi:"enabled"`
-	// Attack State
+	// Attack State. Possible values: `BLOCKED_WITH_EXCEPTION`, `NONE_ALLOWLISTED`, `NONE_BLOCKING_DISABLED`
 	EnabledAttackMitigations pulumi.StringArrayOutput `pulumi:"enabledAttackMitigations"`
 	// Name
 	Name pulumi.StringOutput `pulumi:"name"`
@@ -73,7 +73,7 @@ func GetAttackAlerting(ctx *pulumi.Context,
 type attackAlertingState struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled *bool `pulumi:"enabled"`
-	// Attack State
+	// Attack State. Possible values: `BLOCKED_WITH_EXCEPTION`, `NONE_ALLOWLISTED`, `NONE_BLOCKING_DISABLED`
 	EnabledAttackMitigations []string `pulumi:"enabledAttackMitigations"`
 	// Name
 	Name *string `pulumi:"name"`
@@ -82,7 +82,7 @@ type attackAlertingState struct {
 type AttackAlertingState struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolPtrInput
-	// Attack State
+	// Attack State. Possible values: `BLOCKED_WITH_EXCEPTION`, `NONE_ALLOWLISTED`, `NONE_BLOCKING_DISABLED`
 	EnabledAttackMitigations pulumi.StringArrayInput
 	// Name
 	Name pulumi.StringPtrInput
@@ -95,7 +95,7 @@ func (AttackAlertingState) ElementType() reflect.Type {
 type attackAlertingArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`
-	// Attack State
+	// Attack State. Possible values: `BLOCKED_WITH_EXCEPTION`, `NONE_ALLOWLISTED`, `NONE_BLOCKING_DISABLED`
 	EnabledAttackMitigations []string `pulumi:"enabledAttackMitigations"`
 	// Name
 	Name *string `pulumi:"name"`
@@ -105,7 +105,7 @@ type attackAlertingArgs struct {
 type AttackAlertingArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolInput
-	// Attack State
+	// Attack State. Possible values: `BLOCKED_WITH_EXCEPTION`, `NONE_ALLOWLISTED`, `NONE_BLOCKING_DISABLED`
 	EnabledAttackMitigations pulumi.StringArrayInput
 	// Name
 	Name pulumi.StringPtrInput
@@ -203,7 +203,7 @@ func (o AttackAlertingOutput) Enabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *AttackAlerting) pulumi.BoolOutput { return v.Enabled }).(pulumi.BoolOutput)
 }
 
-// Attack State
+// Attack State. Possible values: `BLOCKED_WITH_EXCEPTION`, `NONE_ALLOWLISTED`, `NONE_BLOCKING_DISABLED`
 func (o AttackAlertingOutput) EnabledAttackMitigations() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *AttackAlerting) pulumi.StringArrayOutput { return v.EnabledAttackMitigations }).(pulumi.StringArrayOutput)
 }

@@ -13,6 +13,8 @@ namespace Pulumiverse.Dynatrace
     public static class GetApiToken
     {
         /// <summary>
+        /// &gt; This data source requires the API token scope **Read API tokens** (`apiTokens.read`)
+        /// 
         /// The API token data source allows a single access token to be retrieved by its name, note the token value is not included in the response.
         /// 
         /// If multiple tokens match the given name, the first result will be retrieved. To retrieve multiple tokens of the same name, please utilize the `dynatrace.getApiTokens` data source.
@@ -43,6 +45,8 @@ namespace Pulumiverse.Dynatrace
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetApiTokenResult>("dynatrace:index/getApiToken:getApiToken", args ?? new GetApiTokenArgs(), options.WithDefaults());
 
         /// <summary>
+        /// &gt; This data source requires the API token scope **Read API tokens** (`apiTokens.read`)
+        /// 
         /// The API token data source allows a single access token to be retrieved by its name, note the token value is not included in the response.
         /// 
         /// If multiple tokens match the given name, the first result will be retrieved. To retrieve multiple tokens of the same name, please utilize the `dynatrace.getApiTokens` data source.
@@ -73,6 +77,8 @@ namespace Pulumiverse.Dynatrace
             => global::Pulumi.Deployment.Instance.Invoke<GetApiTokenResult>("dynatrace:index/getApiToken:getApiToken", args ?? new GetApiTokenInvokeArgs(), options.WithDefaults());
 
         /// <summary>
+        /// &gt; This data source requires the API token scope **Read API tokens** (`apiTokens.read`)
+        /// 
         /// The API token data source allows a single access token to be retrieved by its name, note the token value is not included in the response.
         /// 
         /// If multiple tokens match the given name, the first result will be retrieved. To retrieve multiple tokens of the same name, please utilize the `dynatrace.getApiTokens` data source.

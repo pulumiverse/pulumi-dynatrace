@@ -220,6 +220,28 @@ class UserActionMetrics(pulumi.CustomResource):
 
         The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        metric = dynatrace.UserActionMetrics("metric",
+            enabled=True,
+            dimensions=["application"],
+            metric_key="uacm.#name#",
+            filters={
+                "filters": [{
+                    "field_name": "type",
+                    "operator": "EQUALS",
+                    "value": "Xhr",
+                }],
+            },
+            value={
+                "type": "COUNTER",
+            })
+        ```
+
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -249,6 +271,28 @@ class UserActionMetrics(pulumi.CustomResource):
         - `terraform-provider-dynatrace -export UserActionMetrics` downloads all existing user action custom metrics configuration
 
         The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        metric = dynatrace.UserActionMetrics("metric",
+            enabled=True,
+            dimensions=["application"],
+            metric_key="uacm.#name#",
+            filters={
+                "filters": [{
+                    "field_name": "type",
+                    "operator": "EQUALS",
+                    "value": "Xhr",
+                }],
+            },
+            value={
+                "type": "COUNTER",
+            })
+        ```
 
 
         :param str resource_name: The name of the resource.

@@ -5882,7 +5882,7 @@ func (o DavisCopilotBlocklistEntriesPtrOutput) BlocklistEntries() DavisCopilotBl
 }
 
 type DavisCopilotBlocklistEntriesBlocklistEntry struct {
-	// no documentation available
+	// No documentation available
 	Name string `pulumi:"name"`
 	// Possible values: `BUCKET`, `TABLE`
 	Type string `pulumi:"type"`
@@ -5900,7 +5900,7 @@ type DavisCopilotBlocklistEntriesBlocklistEntryInput interface {
 }
 
 type DavisCopilotBlocklistEntriesBlocklistEntryArgs struct {
-	// no documentation available
+	// No documentation available
 	Name pulumi.StringInput `pulumi:"name"`
 	// Possible values: `BUCKET`, `TABLE`
 	Type pulumi.StringInput `pulumi:"type"`
@@ -5957,7 +5957,7 @@ func (o DavisCopilotBlocklistEntriesBlocklistEntryOutput) ToDavisCopilotBlocklis
 	return o
 }
 
-// no documentation available
+// No documentation available
 func (o DavisCopilotBlocklistEntriesBlocklistEntryOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v DavisCopilotBlocklistEntriesBlocklistEntry) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -5985,6 +5985,295 @@ func (o DavisCopilotBlocklistEntriesBlocklistEntryArrayOutput) Index(i pulumi.In
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DavisCopilotBlocklistEntriesBlocklistEntry {
 		return vs[0].([]DavisCopilotBlocklistEntriesBlocklistEntry)[vs[1].(int)]
 	}).(DavisCopilotBlocklistEntriesBlocklistEntryOutput)
+}
+
+type DavisCopilotPiiBlockingTypes struct {
+	// Canadian social insurance number
+	CanadianSocialInsuranceNumber bool `pulumi:"canadianSocialInsuranceNumber"`
+	// Credit card number
+	CreditCardNumber bool `pulumi:"creditCardNumber"`
+	// Email address
+	EmailAddress bool `pulumi:"emailAddress"`
+	// IBAN bank account
+	IbanBankAccount bool `pulumi:"ibanBankAccount"`
+	// IP address
+	IpAddress bool `pulumi:"ipAddress"`
+	// Phone number
+	PhoneNumber bool `pulumi:"phoneNumber"`
+	// URL query parameters
+	UrlQueryParameters bool `pulumi:"urlQueryParameters"`
+	// US bank number
+	UsBankNumber bool `pulumi:"usBankNumber"`
+	// US social security number
+	UsSocialSecurityNumber bool `pulumi:"usSocialSecurityNumber"`
+}
+
+// DavisCopilotPiiBlockingTypesInput is an input type that accepts DavisCopilotPiiBlockingTypesArgs and DavisCopilotPiiBlockingTypesOutput values.
+// You can construct a concrete instance of `DavisCopilotPiiBlockingTypesInput` via:
+//
+//	DavisCopilotPiiBlockingTypesArgs{...}
+type DavisCopilotPiiBlockingTypesInput interface {
+	pulumi.Input
+
+	ToDavisCopilotPiiBlockingTypesOutput() DavisCopilotPiiBlockingTypesOutput
+	ToDavisCopilotPiiBlockingTypesOutputWithContext(context.Context) DavisCopilotPiiBlockingTypesOutput
+}
+
+type DavisCopilotPiiBlockingTypesArgs struct {
+	// Canadian social insurance number
+	CanadianSocialInsuranceNumber pulumi.BoolInput `pulumi:"canadianSocialInsuranceNumber"`
+	// Credit card number
+	CreditCardNumber pulumi.BoolInput `pulumi:"creditCardNumber"`
+	// Email address
+	EmailAddress pulumi.BoolInput `pulumi:"emailAddress"`
+	// IBAN bank account
+	IbanBankAccount pulumi.BoolInput `pulumi:"ibanBankAccount"`
+	// IP address
+	IpAddress pulumi.BoolInput `pulumi:"ipAddress"`
+	// Phone number
+	PhoneNumber pulumi.BoolInput `pulumi:"phoneNumber"`
+	// URL query parameters
+	UrlQueryParameters pulumi.BoolInput `pulumi:"urlQueryParameters"`
+	// US bank number
+	UsBankNumber pulumi.BoolInput `pulumi:"usBankNumber"`
+	// US social security number
+	UsSocialSecurityNumber pulumi.BoolInput `pulumi:"usSocialSecurityNumber"`
+}
+
+func (DavisCopilotPiiBlockingTypesArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DavisCopilotPiiBlockingTypes)(nil)).Elem()
+}
+
+func (i DavisCopilotPiiBlockingTypesArgs) ToDavisCopilotPiiBlockingTypesOutput() DavisCopilotPiiBlockingTypesOutput {
+	return i.ToDavisCopilotPiiBlockingTypesOutputWithContext(context.Background())
+}
+
+func (i DavisCopilotPiiBlockingTypesArgs) ToDavisCopilotPiiBlockingTypesOutputWithContext(ctx context.Context) DavisCopilotPiiBlockingTypesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DavisCopilotPiiBlockingTypesOutput)
+}
+
+func (i DavisCopilotPiiBlockingTypesArgs) ToDavisCopilotPiiBlockingTypesPtrOutput() DavisCopilotPiiBlockingTypesPtrOutput {
+	return i.ToDavisCopilotPiiBlockingTypesPtrOutputWithContext(context.Background())
+}
+
+func (i DavisCopilotPiiBlockingTypesArgs) ToDavisCopilotPiiBlockingTypesPtrOutputWithContext(ctx context.Context) DavisCopilotPiiBlockingTypesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DavisCopilotPiiBlockingTypesOutput).ToDavisCopilotPiiBlockingTypesPtrOutputWithContext(ctx)
+}
+
+// DavisCopilotPiiBlockingTypesPtrInput is an input type that accepts DavisCopilotPiiBlockingTypesArgs, DavisCopilotPiiBlockingTypesPtr and DavisCopilotPiiBlockingTypesPtrOutput values.
+// You can construct a concrete instance of `DavisCopilotPiiBlockingTypesPtrInput` via:
+//
+//	        DavisCopilotPiiBlockingTypesArgs{...}
+//
+//	or:
+//
+//	        nil
+type DavisCopilotPiiBlockingTypesPtrInput interface {
+	pulumi.Input
+
+	ToDavisCopilotPiiBlockingTypesPtrOutput() DavisCopilotPiiBlockingTypesPtrOutput
+	ToDavisCopilotPiiBlockingTypesPtrOutputWithContext(context.Context) DavisCopilotPiiBlockingTypesPtrOutput
+}
+
+type davisCopilotPiiBlockingTypesPtrType DavisCopilotPiiBlockingTypesArgs
+
+func DavisCopilotPiiBlockingTypesPtr(v *DavisCopilotPiiBlockingTypesArgs) DavisCopilotPiiBlockingTypesPtrInput {
+	return (*davisCopilotPiiBlockingTypesPtrType)(v)
+}
+
+func (*davisCopilotPiiBlockingTypesPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DavisCopilotPiiBlockingTypes)(nil)).Elem()
+}
+
+func (i *davisCopilotPiiBlockingTypesPtrType) ToDavisCopilotPiiBlockingTypesPtrOutput() DavisCopilotPiiBlockingTypesPtrOutput {
+	return i.ToDavisCopilotPiiBlockingTypesPtrOutputWithContext(context.Background())
+}
+
+func (i *davisCopilotPiiBlockingTypesPtrType) ToDavisCopilotPiiBlockingTypesPtrOutputWithContext(ctx context.Context) DavisCopilotPiiBlockingTypesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DavisCopilotPiiBlockingTypesPtrOutput)
+}
+
+type DavisCopilotPiiBlockingTypesOutput struct{ *pulumi.OutputState }
+
+func (DavisCopilotPiiBlockingTypesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DavisCopilotPiiBlockingTypes)(nil)).Elem()
+}
+
+func (o DavisCopilotPiiBlockingTypesOutput) ToDavisCopilotPiiBlockingTypesOutput() DavisCopilotPiiBlockingTypesOutput {
+	return o
+}
+
+func (o DavisCopilotPiiBlockingTypesOutput) ToDavisCopilotPiiBlockingTypesOutputWithContext(ctx context.Context) DavisCopilotPiiBlockingTypesOutput {
+	return o
+}
+
+func (o DavisCopilotPiiBlockingTypesOutput) ToDavisCopilotPiiBlockingTypesPtrOutput() DavisCopilotPiiBlockingTypesPtrOutput {
+	return o.ToDavisCopilotPiiBlockingTypesPtrOutputWithContext(context.Background())
+}
+
+func (o DavisCopilotPiiBlockingTypesOutput) ToDavisCopilotPiiBlockingTypesPtrOutputWithContext(ctx context.Context) DavisCopilotPiiBlockingTypesPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DavisCopilotPiiBlockingTypes) *DavisCopilotPiiBlockingTypes {
+		return &v
+	}).(DavisCopilotPiiBlockingTypesPtrOutput)
+}
+
+// Canadian social insurance number
+func (o DavisCopilotPiiBlockingTypesOutput) CanadianSocialInsuranceNumber() pulumi.BoolOutput {
+	return o.ApplyT(func(v DavisCopilotPiiBlockingTypes) bool { return v.CanadianSocialInsuranceNumber }).(pulumi.BoolOutput)
+}
+
+// Credit card number
+func (o DavisCopilotPiiBlockingTypesOutput) CreditCardNumber() pulumi.BoolOutput {
+	return o.ApplyT(func(v DavisCopilotPiiBlockingTypes) bool { return v.CreditCardNumber }).(pulumi.BoolOutput)
+}
+
+// Email address
+func (o DavisCopilotPiiBlockingTypesOutput) EmailAddress() pulumi.BoolOutput {
+	return o.ApplyT(func(v DavisCopilotPiiBlockingTypes) bool { return v.EmailAddress }).(pulumi.BoolOutput)
+}
+
+// IBAN bank account
+func (o DavisCopilotPiiBlockingTypesOutput) IbanBankAccount() pulumi.BoolOutput {
+	return o.ApplyT(func(v DavisCopilotPiiBlockingTypes) bool { return v.IbanBankAccount }).(pulumi.BoolOutput)
+}
+
+// IP address
+func (o DavisCopilotPiiBlockingTypesOutput) IpAddress() pulumi.BoolOutput {
+	return o.ApplyT(func(v DavisCopilotPiiBlockingTypes) bool { return v.IpAddress }).(pulumi.BoolOutput)
+}
+
+// Phone number
+func (o DavisCopilotPiiBlockingTypesOutput) PhoneNumber() pulumi.BoolOutput {
+	return o.ApplyT(func(v DavisCopilotPiiBlockingTypes) bool { return v.PhoneNumber }).(pulumi.BoolOutput)
+}
+
+// URL query parameters
+func (o DavisCopilotPiiBlockingTypesOutput) UrlQueryParameters() pulumi.BoolOutput {
+	return o.ApplyT(func(v DavisCopilotPiiBlockingTypes) bool { return v.UrlQueryParameters }).(pulumi.BoolOutput)
+}
+
+// US bank number
+func (o DavisCopilotPiiBlockingTypesOutput) UsBankNumber() pulumi.BoolOutput {
+	return o.ApplyT(func(v DavisCopilotPiiBlockingTypes) bool { return v.UsBankNumber }).(pulumi.BoolOutput)
+}
+
+// US social security number
+func (o DavisCopilotPiiBlockingTypesOutput) UsSocialSecurityNumber() pulumi.BoolOutput {
+	return o.ApplyT(func(v DavisCopilotPiiBlockingTypes) bool { return v.UsSocialSecurityNumber }).(pulumi.BoolOutput)
+}
+
+type DavisCopilotPiiBlockingTypesPtrOutput struct{ *pulumi.OutputState }
+
+func (DavisCopilotPiiBlockingTypesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DavisCopilotPiiBlockingTypes)(nil)).Elem()
+}
+
+func (o DavisCopilotPiiBlockingTypesPtrOutput) ToDavisCopilotPiiBlockingTypesPtrOutput() DavisCopilotPiiBlockingTypesPtrOutput {
+	return o
+}
+
+func (o DavisCopilotPiiBlockingTypesPtrOutput) ToDavisCopilotPiiBlockingTypesPtrOutputWithContext(ctx context.Context) DavisCopilotPiiBlockingTypesPtrOutput {
+	return o
+}
+
+func (o DavisCopilotPiiBlockingTypesPtrOutput) Elem() DavisCopilotPiiBlockingTypesOutput {
+	return o.ApplyT(func(v *DavisCopilotPiiBlockingTypes) DavisCopilotPiiBlockingTypes {
+		if v != nil {
+			return *v
+		}
+		var ret DavisCopilotPiiBlockingTypes
+		return ret
+	}).(DavisCopilotPiiBlockingTypesOutput)
+}
+
+// Canadian social insurance number
+func (o DavisCopilotPiiBlockingTypesPtrOutput) CanadianSocialInsuranceNumber() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DavisCopilotPiiBlockingTypes) *bool {
+		if v == nil {
+			return nil
+		}
+		return &v.CanadianSocialInsuranceNumber
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Credit card number
+func (o DavisCopilotPiiBlockingTypesPtrOutput) CreditCardNumber() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DavisCopilotPiiBlockingTypes) *bool {
+		if v == nil {
+			return nil
+		}
+		return &v.CreditCardNumber
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Email address
+func (o DavisCopilotPiiBlockingTypesPtrOutput) EmailAddress() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DavisCopilotPiiBlockingTypes) *bool {
+		if v == nil {
+			return nil
+		}
+		return &v.EmailAddress
+	}).(pulumi.BoolPtrOutput)
+}
+
+// IBAN bank account
+func (o DavisCopilotPiiBlockingTypesPtrOutput) IbanBankAccount() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DavisCopilotPiiBlockingTypes) *bool {
+		if v == nil {
+			return nil
+		}
+		return &v.IbanBankAccount
+	}).(pulumi.BoolPtrOutput)
+}
+
+// IP address
+func (o DavisCopilotPiiBlockingTypesPtrOutput) IpAddress() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DavisCopilotPiiBlockingTypes) *bool {
+		if v == nil {
+			return nil
+		}
+		return &v.IpAddress
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Phone number
+func (o DavisCopilotPiiBlockingTypesPtrOutput) PhoneNumber() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DavisCopilotPiiBlockingTypes) *bool {
+		if v == nil {
+			return nil
+		}
+		return &v.PhoneNumber
+	}).(pulumi.BoolPtrOutput)
+}
+
+// URL query parameters
+func (o DavisCopilotPiiBlockingTypesPtrOutput) UrlQueryParameters() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DavisCopilotPiiBlockingTypes) *bool {
+		if v == nil {
+			return nil
+		}
+		return &v.UrlQueryParameters
+	}).(pulumi.BoolPtrOutput)
+}
+
+// US bank number
+func (o DavisCopilotPiiBlockingTypesPtrOutput) UsBankNumber() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DavisCopilotPiiBlockingTypes) *bool {
+		if v == nil {
+			return nil
+		}
+		return &v.UsBankNumber
+	}).(pulumi.BoolPtrOutput)
+}
+
+// US social security number
+func (o DavisCopilotPiiBlockingTypesPtrOutput) UsSocialSecurityNumber() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DavisCopilotPiiBlockingTypes) *bool {
+		if v == nil {
+			return nil
+		}
+		return &v.UsSocialSecurityNumber
+	}).(pulumi.BoolPtrOutput)
 }
 
 type DduPoolEvents struct {
@@ -68217,6 +68506,303 @@ func (o MaintenanceWindowScopeMatchTagArrayOutput) Index(i pulumi.IntInput) Main
 	}).(MaintenanceWindowScopeMatchTagOutput)
 }
 
+type MaintenanceWindowsObjectScopes struct {
+	// Synthetic monitors
+	SyntheticMonitors MaintenanceWindowsObjectScopesSyntheticMonitors `pulumi:"syntheticMonitors"`
+}
+
+// MaintenanceWindowsObjectScopesInput is an input type that accepts MaintenanceWindowsObjectScopesArgs and MaintenanceWindowsObjectScopesOutput values.
+// You can construct a concrete instance of `MaintenanceWindowsObjectScopesInput` via:
+//
+//	MaintenanceWindowsObjectScopesArgs{...}
+type MaintenanceWindowsObjectScopesInput interface {
+	pulumi.Input
+
+	ToMaintenanceWindowsObjectScopesOutput() MaintenanceWindowsObjectScopesOutput
+	ToMaintenanceWindowsObjectScopesOutputWithContext(context.Context) MaintenanceWindowsObjectScopesOutput
+}
+
+type MaintenanceWindowsObjectScopesArgs struct {
+	// Synthetic monitors
+	SyntheticMonitors MaintenanceWindowsObjectScopesSyntheticMonitorsInput `pulumi:"syntheticMonitors"`
+}
+
+func (MaintenanceWindowsObjectScopesArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MaintenanceWindowsObjectScopes)(nil)).Elem()
+}
+
+func (i MaintenanceWindowsObjectScopesArgs) ToMaintenanceWindowsObjectScopesOutput() MaintenanceWindowsObjectScopesOutput {
+	return i.ToMaintenanceWindowsObjectScopesOutputWithContext(context.Background())
+}
+
+func (i MaintenanceWindowsObjectScopesArgs) ToMaintenanceWindowsObjectScopesOutputWithContext(ctx context.Context) MaintenanceWindowsObjectScopesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MaintenanceWindowsObjectScopesOutput)
+}
+
+func (i MaintenanceWindowsObjectScopesArgs) ToMaintenanceWindowsObjectScopesPtrOutput() MaintenanceWindowsObjectScopesPtrOutput {
+	return i.ToMaintenanceWindowsObjectScopesPtrOutputWithContext(context.Background())
+}
+
+func (i MaintenanceWindowsObjectScopesArgs) ToMaintenanceWindowsObjectScopesPtrOutputWithContext(ctx context.Context) MaintenanceWindowsObjectScopesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MaintenanceWindowsObjectScopesOutput).ToMaintenanceWindowsObjectScopesPtrOutputWithContext(ctx)
+}
+
+// MaintenanceWindowsObjectScopesPtrInput is an input type that accepts MaintenanceWindowsObjectScopesArgs, MaintenanceWindowsObjectScopesPtr and MaintenanceWindowsObjectScopesPtrOutput values.
+// You can construct a concrete instance of `MaintenanceWindowsObjectScopesPtrInput` via:
+//
+//	        MaintenanceWindowsObjectScopesArgs{...}
+//
+//	or:
+//
+//	        nil
+type MaintenanceWindowsObjectScopesPtrInput interface {
+	pulumi.Input
+
+	ToMaintenanceWindowsObjectScopesPtrOutput() MaintenanceWindowsObjectScopesPtrOutput
+	ToMaintenanceWindowsObjectScopesPtrOutputWithContext(context.Context) MaintenanceWindowsObjectScopesPtrOutput
+}
+
+type maintenanceWindowsObjectScopesPtrType MaintenanceWindowsObjectScopesArgs
+
+func MaintenanceWindowsObjectScopesPtr(v *MaintenanceWindowsObjectScopesArgs) MaintenanceWindowsObjectScopesPtrInput {
+	return (*maintenanceWindowsObjectScopesPtrType)(v)
+}
+
+func (*maintenanceWindowsObjectScopesPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**MaintenanceWindowsObjectScopes)(nil)).Elem()
+}
+
+func (i *maintenanceWindowsObjectScopesPtrType) ToMaintenanceWindowsObjectScopesPtrOutput() MaintenanceWindowsObjectScopesPtrOutput {
+	return i.ToMaintenanceWindowsObjectScopesPtrOutputWithContext(context.Background())
+}
+
+func (i *maintenanceWindowsObjectScopesPtrType) ToMaintenanceWindowsObjectScopesPtrOutputWithContext(ctx context.Context) MaintenanceWindowsObjectScopesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MaintenanceWindowsObjectScopesPtrOutput)
+}
+
+type MaintenanceWindowsObjectScopesOutput struct{ *pulumi.OutputState }
+
+func (MaintenanceWindowsObjectScopesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MaintenanceWindowsObjectScopes)(nil)).Elem()
+}
+
+func (o MaintenanceWindowsObjectScopesOutput) ToMaintenanceWindowsObjectScopesOutput() MaintenanceWindowsObjectScopesOutput {
+	return o
+}
+
+func (o MaintenanceWindowsObjectScopesOutput) ToMaintenanceWindowsObjectScopesOutputWithContext(ctx context.Context) MaintenanceWindowsObjectScopesOutput {
+	return o
+}
+
+func (o MaintenanceWindowsObjectScopesOutput) ToMaintenanceWindowsObjectScopesPtrOutput() MaintenanceWindowsObjectScopesPtrOutput {
+	return o.ToMaintenanceWindowsObjectScopesPtrOutputWithContext(context.Background())
+}
+
+func (o MaintenanceWindowsObjectScopesOutput) ToMaintenanceWindowsObjectScopesPtrOutputWithContext(ctx context.Context) MaintenanceWindowsObjectScopesPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MaintenanceWindowsObjectScopes) *MaintenanceWindowsObjectScopes {
+		return &v
+	}).(MaintenanceWindowsObjectScopesPtrOutput)
+}
+
+// Synthetic monitors
+func (o MaintenanceWindowsObjectScopesOutput) SyntheticMonitors() MaintenanceWindowsObjectScopesSyntheticMonitorsOutput {
+	return o.ApplyT(func(v MaintenanceWindowsObjectScopes) MaintenanceWindowsObjectScopesSyntheticMonitors {
+		return v.SyntheticMonitors
+	}).(MaintenanceWindowsObjectScopesSyntheticMonitorsOutput)
+}
+
+type MaintenanceWindowsObjectScopesPtrOutput struct{ *pulumi.OutputState }
+
+func (MaintenanceWindowsObjectScopesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MaintenanceWindowsObjectScopes)(nil)).Elem()
+}
+
+func (o MaintenanceWindowsObjectScopesPtrOutput) ToMaintenanceWindowsObjectScopesPtrOutput() MaintenanceWindowsObjectScopesPtrOutput {
+	return o
+}
+
+func (o MaintenanceWindowsObjectScopesPtrOutput) ToMaintenanceWindowsObjectScopesPtrOutputWithContext(ctx context.Context) MaintenanceWindowsObjectScopesPtrOutput {
+	return o
+}
+
+func (o MaintenanceWindowsObjectScopesPtrOutput) Elem() MaintenanceWindowsObjectScopesOutput {
+	return o.ApplyT(func(v *MaintenanceWindowsObjectScopes) MaintenanceWindowsObjectScopes {
+		if v != nil {
+			return *v
+		}
+		var ret MaintenanceWindowsObjectScopes
+		return ret
+	}).(MaintenanceWindowsObjectScopesOutput)
+}
+
+// Synthetic monitors
+func (o MaintenanceWindowsObjectScopesPtrOutput) SyntheticMonitors() MaintenanceWindowsObjectScopesSyntheticMonitorsPtrOutput {
+	return o.ApplyT(func(v *MaintenanceWindowsObjectScopes) *MaintenanceWindowsObjectScopesSyntheticMonitors {
+		if v == nil {
+			return nil
+		}
+		return &v.SyntheticMonitors
+	}).(MaintenanceWindowsObjectScopesSyntheticMonitorsPtrOutput)
+}
+
+type MaintenanceWindowsObjectScopesSyntheticMonitors struct {
+	// DQL filter selecting which synthetic monitors to pause. Required when synthetic monitors are disabled.
+	DisableSyntheticMonitorFilter *string `pulumi:"disableSyntheticMonitorFilter"`
+	// When enabled, synthetic monitors matching the filter are paused during the maintenance window.
+	DisableSyntheticMonitors bool `pulumi:"disableSyntheticMonitors"`
+}
+
+// MaintenanceWindowsObjectScopesSyntheticMonitorsInput is an input type that accepts MaintenanceWindowsObjectScopesSyntheticMonitorsArgs and MaintenanceWindowsObjectScopesSyntheticMonitorsOutput values.
+// You can construct a concrete instance of `MaintenanceWindowsObjectScopesSyntheticMonitorsInput` via:
+//
+//	MaintenanceWindowsObjectScopesSyntheticMonitorsArgs{...}
+type MaintenanceWindowsObjectScopesSyntheticMonitorsInput interface {
+	pulumi.Input
+
+	ToMaintenanceWindowsObjectScopesSyntheticMonitorsOutput() MaintenanceWindowsObjectScopesSyntheticMonitorsOutput
+	ToMaintenanceWindowsObjectScopesSyntheticMonitorsOutputWithContext(context.Context) MaintenanceWindowsObjectScopesSyntheticMonitorsOutput
+}
+
+type MaintenanceWindowsObjectScopesSyntheticMonitorsArgs struct {
+	// DQL filter selecting which synthetic monitors to pause. Required when synthetic monitors are disabled.
+	DisableSyntheticMonitorFilter pulumi.StringPtrInput `pulumi:"disableSyntheticMonitorFilter"`
+	// When enabled, synthetic monitors matching the filter are paused during the maintenance window.
+	DisableSyntheticMonitors pulumi.BoolInput `pulumi:"disableSyntheticMonitors"`
+}
+
+func (MaintenanceWindowsObjectScopesSyntheticMonitorsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MaintenanceWindowsObjectScopesSyntheticMonitors)(nil)).Elem()
+}
+
+func (i MaintenanceWindowsObjectScopesSyntheticMonitorsArgs) ToMaintenanceWindowsObjectScopesSyntheticMonitorsOutput() MaintenanceWindowsObjectScopesSyntheticMonitorsOutput {
+	return i.ToMaintenanceWindowsObjectScopesSyntheticMonitorsOutputWithContext(context.Background())
+}
+
+func (i MaintenanceWindowsObjectScopesSyntheticMonitorsArgs) ToMaintenanceWindowsObjectScopesSyntheticMonitorsOutputWithContext(ctx context.Context) MaintenanceWindowsObjectScopesSyntheticMonitorsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MaintenanceWindowsObjectScopesSyntheticMonitorsOutput)
+}
+
+func (i MaintenanceWindowsObjectScopesSyntheticMonitorsArgs) ToMaintenanceWindowsObjectScopesSyntheticMonitorsPtrOutput() MaintenanceWindowsObjectScopesSyntheticMonitorsPtrOutput {
+	return i.ToMaintenanceWindowsObjectScopesSyntheticMonitorsPtrOutputWithContext(context.Background())
+}
+
+func (i MaintenanceWindowsObjectScopesSyntheticMonitorsArgs) ToMaintenanceWindowsObjectScopesSyntheticMonitorsPtrOutputWithContext(ctx context.Context) MaintenanceWindowsObjectScopesSyntheticMonitorsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MaintenanceWindowsObjectScopesSyntheticMonitorsOutput).ToMaintenanceWindowsObjectScopesSyntheticMonitorsPtrOutputWithContext(ctx)
+}
+
+// MaintenanceWindowsObjectScopesSyntheticMonitorsPtrInput is an input type that accepts MaintenanceWindowsObjectScopesSyntheticMonitorsArgs, MaintenanceWindowsObjectScopesSyntheticMonitorsPtr and MaintenanceWindowsObjectScopesSyntheticMonitorsPtrOutput values.
+// You can construct a concrete instance of `MaintenanceWindowsObjectScopesSyntheticMonitorsPtrInput` via:
+//
+//	        MaintenanceWindowsObjectScopesSyntheticMonitorsArgs{...}
+//
+//	or:
+//
+//	        nil
+type MaintenanceWindowsObjectScopesSyntheticMonitorsPtrInput interface {
+	pulumi.Input
+
+	ToMaintenanceWindowsObjectScopesSyntheticMonitorsPtrOutput() MaintenanceWindowsObjectScopesSyntheticMonitorsPtrOutput
+	ToMaintenanceWindowsObjectScopesSyntheticMonitorsPtrOutputWithContext(context.Context) MaintenanceWindowsObjectScopesSyntheticMonitorsPtrOutput
+}
+
+type maintenanceWindowsObjectScopesSyntheticMonitorsPtrType MaintenanceWindowsObjectScopesSyntheticMonitorsArgs
+
+func MaintenanceWindowsObjectScopesSyntheticMonitorsPtr(v *MaintenanceWindowsObjectScopesSyntheticMonitorsArgs) MaintenanceWindowsObjectScopesSyntheticMonitorsPtrInput {
+	return (*maintenanceWindowsObjectScopesSyntheticMonitorsPtrType)(v)
+}
+
+func (*maintenanceWindowsObjectScopesSyntheticMonitorsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**MaintenanceWindowsObjectScopesSyntheticMonitors)(nil)).Elem()
+}
+
+func (i *maintenanceWindowsObjectScopesSyntheticMonitorsPtrType) ToMaintenanceWindowsObjectScopesSyntheticMonitorsPtrOutput() MaintenanceWindowsObjectScopesSyntheticMonitorsPtrOutput {
+	return i.ToMaintenanceWindowsObjectScopesSyntheticMonitorsPtrOutputWithContext(context.Background())
+}
+
+func (i *maintenanceWindowsObjectScopesSyntheticMonitorsPtrType) ToMaintenanceWindowsObjectScopesSyntheticMonitorsPtrOutputWithContext(ctx context.Context) MaintenanceWindowsObjectScopesSyntheticMonitorsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MaintenanceWindowsObjectScopesSyntheticMonitorsPtrOutput)
+}
+
+type MaintenanceWindowsObjectScopesSyntheticMonitorsOutput struct{ *pulumi.OutputState }
+
+func (MaintenanceWindowsObjectScopesSyntheticMonitorsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MaintenanceWindowsObjectScopesSyntheticMonitors)(nil)).Elem()
+}
+
+func (o MaintenanceWindowsObjectScopesSyntheticMonitorsOutput) ToMaintenanceWindowsObjectScopesSyntheticMonitorsOutput() MaintenanceWindowsObjectScopesSyntheticMonitorsOutput {
+	return o
+}
+
+func (o MaintenanceWindowsObjectScopesSyntheticMonitorsOutput) ToMaintenanceWindowsObjectScopesSyntheticMonitorsOutputWithContext(ctx context.Context) MaintenanceWindowsObjectScopesSyntheticMonitorsOutput {
+	return o
+}
+
+func (o MaintenanceWindowsObjectScopesSyntheticMonitorsOutput) ToMaintenanceWindowsObjectScopesSyntheticMonitorsPtrOutput() MaintenanceWindowsObjectScopesSyntheticMonitorsPtrOutput {
+	return o.ToMaintenanceWindowsObjectScopesSyntheticMonitorsPtrOutputWithContext(context.Background())
+}
+
+func (o MaintenanceWindowsObjectScopesSyntheticMonitorsOutput) ToMaintenanceWindowsObjectScopesSyntheticMonitorsPtrOutputWithContext(ctx context.Context) MaintenanceWindowsObjectScopesSyntheticMonitorsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MaintenanceWindowsObjectScopesSyntheticMonitors) *MaintenanceWindowsObjectScopesSyntheticMonitors {
+		return &v
+	}).(MaintenanceWindowsObjectScopesSyntheticMonitorsPtrOutput)
+}
+
+// DQL filter selecting which synthetic monitors to pause. Required when synthetic monitors are disabled.
+func (o MaintenanceWindowsObjectScopesSyntheticMonitorsOutput) DisableSyntheticMonitorFilter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MaintenanceWindowsObjectScopesSyntheticMonitors) *string {
+		return v.DisableSyntheticMonitorFilter
+	}).(pulumi.StringPtrOutput)
+}
+
+// When enabled, synthetic monitors matching the filter are paused during the maintenance window.
+func (o MaintenanceWindowsObjectScopesSyntheticMonitorsOutput) DisableSyntheticMonitors() pulumi.BoolOutput {
+	return o.ApplyT(func(v MaintenanceWindowsObjectScopesSyntheticMonitors) bool { return v.DisableSyntheticMonitors }).(pulumi.BoolOutput)
+}
+
+type MaintenanceWindowsObjectScopesSyntheticMonitorsPtrOutput struct{ *pulumi.OutputState }
+
+func (MaintenanceWindowsObjectScopesSyntheticMonitorsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MaintenanceWindowsObjectScopesSyntheticMonitors)(nil)).Elem()
+}
+
+func (o MaintenanceWindowsObjectScopesSyntheticMonitorsPtrOutput) ToMaintenanceWindowsObjectScopesSyntheticMonitorsPtrOutput() MaintenanceWindowsObjectScopesSyntheticMonitorsPtrOutput {
+	return o
+}
+
+func (o MaintenanceWindowsObjectScopesSyntheticMonitorsPtrOutput) ToMaintenanceWindowsObjectScopesSyntheticMonitorsPtrOutputWithContext(ctx context.Context) MaintenanceWindowsObjectScopesSyntheticMonitorsPtrOutput {
+	return o
+}
+
+func (o MaintenanceWindowsObjectScopesSyntheticMonitorsPtrOutput) Elem() MaintenanceWindowsObjectScopesSyntheticMonitorsOutput {
+	return o.ApplyT(func(v *MaintenanceWindowsObjectScopesSyntheticMonitors) MaintenanceWindowsObjectScopesSyntheticMonitors {
+		if v != nil {
+			return *v
+		}
+		var ret MaintenanceWindowsObjectScopesSyntheticMonitors
+		return ret
+	}).(MaintenanceWindowsObjectScopesSyntheticMonitorsOutput)
+}
+
+// DQL filter selecting which synthetic monitors to pause. Required when synthetic monitors are disabled.
+func (o MaintenanceWindowsObjectScopesSyntheticMonitorsPtrOutput) DisableSyntheticMonitorFilter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MaintenanceWindowsObjectScopesSyntheticMonitors) *string {
+		if v == nil {
+			return nil
+		}
+		return v.DisableSyntheticMonitorFilter
+	}).(pulumi.StringPtrOutput)
+}
+
+// When enabled, synthetic monitors matching the filter are paused during the maintenance window.
+func (o MaintenanceWindowsObjectScopesSyntheticMonitorsPtrOutput) DisableSyntheticMonitors() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *MaintenanceWindowsObjectScopesSyntheticMonitors) *bool {
+		if v == nil {
+			return nil
+		}
+		return &v.DisableSyntheticMonitors
+	}).(pulumi.BoolPtrOutput)
+}
+
 type MaintenanceWindowsSchedule struct {
 	// Duration of the maintenance window in minutes.
 	Duration int `pulumi:"duration"`
@@ -76283,393 +76869,6 @@ func (o ManagementZoneRuleConditionKeyArrayOutput) Index(i pulumi.IntInput) Mana
 	}).(ManagementZoneRuleConditionKeyOutput)
 }
 
-type ManagementZoneRuleConditionMobilePlatform struct {
-	// Reverses the operator. For example it turns the **begins with** into **does not begin with**
-	Negate *bool `pulumi:"negate"`
-	// Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
-	Operator string `pulumi:"operator"`
-	// Any attributes that aren't yet supported by this provider
-	Unknowns *string `pulumi:"unknowns"`
-	// The value to compare to. Possible values are ANDROID, IOS, LINUX, MAC_OS, OTHER, TVOS and WINDOWS.
-	Value *string `pulumi:"value"`
-}
-
-// ManagementZoneRuleConditionMobilePlatformInput is an input type that accepts ManagementZoneRuleConditionMobilePlatformArgs and ManagementZoneRuleConditionMobilePlatformOutput values.
-// You can construct a concrete instance of `ManagementZoneRuleConditionMobilePlatformInput` via:
-//
-//	ManagementZoneRuleConditionMobilePlatformArgs{...}
-type ManagementZoneRuleConditionMobilePlatformInput interface {
-	pulumi.Input
-
-	ToManagementZoneRuleConditionMobilePlatformOutput() ManagementZoneRuleConditionMobilePlatformOutput
-	ToManagementZoneRuleConditionMobilePlatformOutputWithContext(context.Context) ManagementZoneRuleConditionMobilePlatformOutput
-}
-
-type ManagementZoneRuleConditionMobilePlatformArgs struct {
-	// Reverses the operator. For example it turns the **begins with** into **does not begin with**
-	Negate pulumi.BoolPtrInput `pulumi:"negate"`
-	// Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
-	Operator pulumi.StringInput `pulumi:"operator"`
-	// Any attributes that aren't yet supported by this provider
-	Unknowns pulumi.StringPtrInput `pulumi:"unknowns"`
-	// The value to compare to. Possible values are ANDROID, IOS, LINUX, MAC_OS, OTHER, TVOS and WINDOWS.
-	Value pulumi.StringPtrInput `pulumi:"value"`
-}
-
-func (ManagementZoneRuleConditionMobilePlatformArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*ManagementZoneRuleConditionMobilePlatform)(nil)).Elem()
-}
-
-func (i ManagementZoneRuleConditionMobilePlatformArgs) ToManagementZoneRuleConditionMobilePlatformOutput() ManagementZoneRuleConditionMobilePlatformOutput {
-	return i.ToManagementZoneRuleConditionMobilePlatformOutputWithContext(context.Background())
-}
-
-func (i ManagementZoneRuleConditionMobilePlatformArgs) ToManagementZoneRuleConditionMobilePlatformOutputWithContext(ctx context.Context) ManagementZoneRuleConditionMobilePlatformOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ManagementZoneRuleConditionMobilePlatformOutput)
-}
-
-// ManagementZoneRuleConditionMobilePlatformArrayInput is an input type that accepts ManagementZoneRuleConditionMobilePlatformArray and ManagementZoneRuleConditionMobilePlatformArrayOutput values.
-// You can construct a concrete instance of `ManagementZoneRuleConditionMobilePlatformArrayInput` via:
-//
-//	ManagementZoneRuleConditionMobilePlatformArray{ ManagementZoneRuleConditionMobilePlatformArgs{...} }
-type ManagementZoneRuleConditionMobilePlatformArrayInput interface {
-	pulumi.Input
-
-	ToManagementZoneRuleConditionMobilePlatformArrayOutput() ManagementZoneRuleConditionMobilePlatformArrayOutput
-	ToManagementZoneRuleConditionMobilePlatformArrayOutputWithContext(context.Context) ManagementZoneRuleConditionMobilePlatformArrayOutput
-}
-
-type ManagementZoneRuleConditionMobilePlatformArray []ManagementZoneRuleConditionMobilePlatformInput
-
-func (ManagementZoneRuleConditionMobilePlatformArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ManagementZoneRuleConditionMobilePlatform)(nil)).Elem()
-}
-
-func (i ManagementZoneRuleConditionMobilePlatformArray) ToManagementZoneRuleConditionMobilePlatformArrayOutput() ManagementZoneRuleConditionMobilePlatformArrayOutput {
-	return i.ToManagementZoneRuleConditionMobilePlatformArrayOutputWithContext(context.Background())
-}
-
-func (i ManagementZoneRuleConditionMobilePlatformArray) ToManagementZoneRuleConditionMobilePlatformArrayOutputWithContext(ctx context.Context) ManagementZoneRuleConditionMobilePlatformArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ManagementZoneRuleConditionMobilePlatformArrayOutput)
-}
-
-type ManagementZoneRuleConditionMobilePlatformOutput struct{ *pulumi.OutputState }
-
-func (ManagementZoneRuleConditionMobilePlatformOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*ManagementZoneRuleConditionMobilePlatform)(nil)).Elem()
-}
-
-func (o ManagementZoneRuleConditionMobilePlatformOutput) ToManagementZoneRuleConditionMobilePlatformOutput() ManagementZoneRuleConditionMobilePlatformOutput {
-	return o
-}
-
-func (o ManagementZoneRuleConditionMobilePlatformOutput) ToManagementZoneRuleConditionMobilePlatformOutputWithContext(ctx context.Context) ManagementZoneRuleConditionMobilePlatformOutput {
-	return o
-}
-
-// Reverses the operator. For example it turns the **begins with** into **does not begin with**
-func (o ManagementZoneRuleConditionMobilePlatformOutput) Negate() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v ManagementZoneRuleConditionMobilePlatform) *bool { return v.Negate }).(pulumi.BoolPtrOutput)
-}
-
-// Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
-func (o ManagementZoneRuleConditionMobilePlatformOutput) Operator() pulumi.StringOutput {
-	return o.ApplyT(func(v ManagementZoneRuleConditionMobilePlatform) string { return v.Operator }).(pulumi.StringOutput)
-}
-
-// Any attributes that aren't yet supported by this provider
-func (o ManagementZoneRuleConditionMobilePlatformOutput) Unknowns() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ManagementZoneRuleConditionMobilePlatform) *string { return v.Unknowns }).(pulumi.StringPtrOutput)
-}
-
-// The value to compare to. Possible values are ANDROID, IOS, LINUX, MAC_OS, OTHER, TVOS and WINDOWS.
-func (o ManagementZoneRuleConditionMobilePlatformOutput) Value() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ManagementZoneRuleConditionMobilePlatform) *string { return v.Value }).(pulumi.StringPtrOutput)
-}
-
-type ManagementZoneRuleConditionMobilePlatformArrayOutput struct{ *pulumi.OutputState }
-
-func (ManagementZoneRuleConditionMobilePlatformArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ManagementZoneRuleConditionMobilePlatform)(nil)).Elem()
-}
-
-func (o ManagementZoneRuleConditionMobilePlatformArrayOutput) ToManagementZoneRuleConditionMobilePlatformArrayOutput() ManagementZoneRuleConditionMobilePlatformArrayOutput {
-	return o
-}
-
-func (o ManagementZoneRuleConditionMobilePlatformArrayOutput) ToManagementZoneRuleConditionMobilePlatformArrayOutputWithContext(ctx context.Context) ManagementZoneRuleConditionMobilePlatformArrayOutput {
-	return o
-}
-
-func (o ManagementZoneRuleConditionMobilePlatformArrayOutput) Index(i pulumi.IntInput) ManagementZoneRuleConditionMobilePlatformOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ManagementZoneRuleConditionMobilePlatform {
-		return vs[0].([]ManagementZoneRuleConditionMobilePlatform)[vs[1].(int)]
-	}).(ManagementZoneRuleConditionMobilePlatformOutput)
-}
-
-type ManagementZoneRuleConditionMobilePlatformComparison struct {
-	// Reverses the operator. For example it turns the **begins with** into **does not begin with**
-	Negate *bool `pulumi:"negate"`
-	// Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
-	Operator string `pulumi:"operator"`
-	// if specified, needs to be MOBILE_PLATFORM
-	//
-	// Deprecated: The value of the attribute type is implicit, therefore shouldn't get specified
-	Type *string `pulumi:"type"`
-	// Any attributes that aren't yet supported by this provider
-	Unknowns *string `pulumi:"unknowns"`
-	// The value to compare to. Possible values are ANDROID, IOS, LINUX, MAC_OS, OTHER, TVOS and WINDOWS.
-	Value *string `pulumi:"value"`
-}
-
-// ManagementZoneRuleConditionMobilePlatformComparisonInput is an input type that accepts ManagementZoneRuleConditionMobilePlatformComparisonArgs and ManagementZoneRuleConditionMobilePlatformComparisonOutput values.
-// You can construct a concrete instance of `ManagementZoneRuleConditionMobilePlatformComparisonInput` via:
-//
-//	ManagementZoneRuleConditionMobilePlatformComparisonArgs{...}
-type ManagementZoneRuleConditionMobilePlatformComparisonInput interface {
-	pulumi.Input
-
-	ToManagementZoneRuleConditionMobilePlatformComparisonOutput() ManagementZoneRuleConditionMobilePlatformComparisonOutput
-	ToManagementZoneRuleConditionMobilePlatformComparisonOutputWithContext(context.Context) ManagementZoneRuleConditionMobilePlatformComparisonOutput
-}
-
-type ManagementZoneRuleConditionMobilePlatformComparisonArgs struct {
-	// Reverses the operator. For example it turns the **begins with** into **does not begin with**
-	Negate pulumi.BoolPtrInput `pulumi:"negate"`
-	// Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
-	Operator pulumi.StringInput `pulumi:"operator"`
-	// if specified, needs to be MOBILE_PLATFORM
-	//
-	// Deprecated: The value of the attribute type is implicit, therefore shouldn't get specified
-	Type pulumi.StringPtrInput `pulumi:"type"`
-	// Any attributes that aren't yet supported by this provider
-	Unknowns pulumi.StringPtrInput `pulumi:"unknowns"`
-	// The value to compare to. Possible values are ANDROID, IOS, LINUX, MAC_OS, OTHER, TVOS and WINDOWS.
-	Value pulumi.StringPtrInput `pulumi:"value"`
-}
-
-func (ManagementZoneRuleConditionMobilePlatformComparisonArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*ManagementZoneRuleConditionMobilePlatformComparison)(nil)).Elem()
-}
-
-func (i ManagementZoneRuleConditionMobilePlatformComparisonArgs) ToManagementZoneRuleConditionMobilePlatformComparisonOutput() ManagementZoneRuleConditionMobilePlatformComparisonOutput {
-	return i.ToManagementZoneRuleConditionMobilePlatformComparisonOutputWithContext(context.Background())
-}
-
-func (i ManagementZoneRuleConditionMobilePlatformComparisonArgs) ToManagementZoneRuleConditionMobilePlatformComparisonOutputWithContext(ctx context.Context) ManagementZoneRuleConditionMobilePlatformComparisonOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ManagementZoneRuleConditionMobilePlatformComparisonOutput)
-}
-
-// ManagementZoneRuleConditionMobilePlatformComparisonArrayInput is an input type that accepts ManagementZoneRuleConditionMobilePlatformComparisonArray and ManagementZoneRuleConditionMobilePlatformComparisonArrayOutput values.
-// You can construct a concrete instance of `ManagementZoneRuleConditionMobilePlatformComparisonArrayInput` via:
-//
-//	ManagementZoneRuleConditionMobilePlatformComparisonArray{ ManagementZoneRuleConditionMobilePlatformComparisonArgs{...} }
-type ManagementZoneRuleConditionMobilePlatformComparisonArrayInput interface {
-	pulumi.Input
-
-	ToManagementZoneRuleConditionMobilePlatformComparisonArrayOutput() ManagementZoneRuleConditionMobilePlatformComparisonArrayOutput
-	ToManagementZoneRuleConditionMobilePlatformComparisonArrayOutputWithContext(context.Context) ManagementZoneRuleConditionMobilePlatformComparisonArrayOutput
-}
-
-type ManagementZoneRuleConditionMobilePlatformComparisonArray []ManagementZoneRuleConditionMobilePlatformComparisonInput
-
-func (ManagementZoneRuleConditionMobilePlatformComparisonArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ManagementZoneRuleConditionMobilePlatformComparison)(nil)).Elem()
-}
-
-func (i ManagementZoneRuleConditionMobilePlatformComparisonArray) ToManagementZoneRuleConditionMobilePlatformComparisonArrayOutput() ManagementZoneRuleConditionMobilePlatformComparisonArrayOutput {
-	return i.ToManagementZoneRuleConditionMobilePlatformComparisonArrayOutputWithContext(context.Background())
-}
-
-func (i ManagementZoneRuleConditionMobilePlatformComparisonArray) ToManagementZoneRuleConditionMobilePlatformComparisonArrayOutputWithContext(ctx context.Context) ManagementZoneRuleConditionMobilePlatformComparisonArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ManagementZoneRuleConditionMobilePlatformComparisonArrayOutput)
-}
-
-type ManagementZoneRuleConditionMobilePlatformComparisonOutput struct{ *pulumi.OutputState }
-
-func (ManagementZoneRuleConditionMobilePlatformComparisonOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*ManagementZoneRuleConditionMobilePlatformComparison)(nil)).Elem()
-}
-
-func (o ManagementZoneRuleConditionMobilePlatformComparisonOutput) ToManagementZoneRuleConditionMobilePlatformComparisonOutput() ManagementZoneRuleConditionMobilePlatformComparisonOutput {
-	return o
-}
-
-func (o ManagementZoneRuleConditionMobilePlatformComparisonOutput) ToManagementZoneRuleConditionMobilePlatformComparisonOutputWithContext(ctx context.Context) ManagementZoneRuleConditionMobilePlatformComparisonOutput {
-	return o
-}
-
-// Reverses the operator. For example it turns the **begins with** into **does not begin with**
-func (o ManagementZoneRuleConditionMobilePlatformComparisonOutput) Negate() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v ManagementZoneRuleConditionMobilePlatformComparison) *bool { return v.Negate }).(pulumi.BoolPtrOutput)
-}
-
-// Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
-func (o ManagementZoneRuleConditionMobilePlatformComparisonOutput) Operator() pulumi.StringOutput {
-	return o.ApplyT(func(v ManagementZoneRuleConditionMobilePlatformComparison) string { return v.Operator }).(pulumi.StringOutput)
-}
-
-// if specified, needs to be MOBILE_PLATFORM
-//
-// Deprecated: The value of the attribute type is implicit, therefore shouldn't get specified
-func (o ManagementZoneRuleConditionMobilePlatformComparisonOutput) Type() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ManagementZoneRuleConditionMobilePlatformComparison) *string { return v.Type }).(pulumi.StringPtrOutput)
-}
-
-// Any attributes that aren't yet supported by this provider
-func (o ManagementZoneRuleConditionMobilePlatformComparisonOutput) Unknowns() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ManagementZoneRuleConditionMobilePlatformComparison) *string { return v.Unknowns }).(pulumi.StringPtrOutput)
-}
-
-// The value to compare to. Possible values are ANDROID, IOS, LINUX, MAC_OS, OTHER, TVOS and WINDOWS.
-func (o ManagementZoneRuleConditionMobilePlatformComparisonOutput) Value() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ManagementZoneRuleConditionMobilePlatformComparison) *string { return v.Value }).(pulumi.StringPtrOutput)
-}
-
-type ManagementZoneRuleConditionMobilePlatformComparisonArrayOutput struct{ *pulumi.OutputState }
-
-func (ManagementZoneRuleConditionMobilePlatformComparisonArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ManagementZoneRuleConditionMobilePlatformComparison)(nil)).Elem()
-}
-
-func (o ManagementZoneRuleConditionMobilePlatformComparisonArrayOutput) ToManagementZoneRuleConditionMobilePlatformComparisonArrayOutput() ManagementZoneRuleConditionMobilePlatformComparisonArrayOutput {
-	return o
-}
-
-func (o ManagementZoneRuleConditionMobilePlatformComparisonArrayOutput) ToManagementZoneRuleConditionMobilePlatformComparisonArrayOutputWithContext(ctx context.Context) ManagementZoneRuleConditionMobilePlatformComparisonArrayOutput {
-	return o
-}
-
-func (o ManagementZoneRuleConditionMobilePlatformComparisonArrayOutput) Index(i pulumi.IntInput) ManagementZoneRuleConditionMobilePlatformComparisonOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ManagementZoneRuleConditionMobilePlatformComparison {
-		return vs[0].([]ManagementZoneRuleConditionMobilePlatformComparison)[vs[1].(int)]
-	}).(ManagementZoneRuleConditionMobilePlatformComparisonOutput)
-}
-
-type ManagementZoneRuleConditionOsArch struct {
-	// Reverses the operator. For example it turns the **begins with** into **does not begin with**
-	Negate *bool `pulumi:"negate"`
-	// Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
-	Operator string `pulumi:"operator"`
-	// Any attributes that aren't yet supported by this provider
-	Unknowns *string `pulumi:"unknowns"`
-	// The value to compare to. Possible values are ARM, IA64, PARISC, PPC, PPCLE, S390, SPARC, X86 and ZOS.
-	Value *string `pulumi:"value"`
-}
-
-// ManagementZoneRuleConditionOsArchInput is an input type that accepts ManagementZoneRuleConditionOsArchArgs and ManagementZoneRuleConditionOsArchOutput values.
-// You can construct a concrete instance of `ManagementZoneRuleConditionOsArchInput` via:
-//
-//	ManagementZoneRuleConditionOsArchArgs{...}
-type ManagementZoneRuleConditionOsArchInput interface {
-	pulumi.Input
-
-	ToManagementZoneRuleConditionOsArchOutput() ManagementZoneRuleConditionOsArchOutput
-	ToManagementZoneRuleConditionOsArchOutputWithContext(context.Context) ManagementZoneRuleConditionOsArchOutput
-}
-
-type ManagementZoneRuleConditionOsArchArgs struct {
-	// Reverses the operator. For example it turns the **begins with** into **does not begin with**
-	Negate pulumi.BoolPtrInput `pulumi:"negate"`
-	// Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
-	Operator pulumi.StringInput `pulumi:"operator"`
-	// Any attributes that aren't yet supported by this provider
-	Unknowns pulumi.StringPtrInput `pulumi:"unknowns"`
-	// The value to compare to. Possible values are ARM, IA64, PARISC, PPC, PPCLE, S390, SPARC, X86 and ZOS.
-	Value pulumi.StringPtrInput `pulumi:"value"`
-}
-
-func (ManagementZoneRuleConditionOsArchArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*ManagementZoneRuleConditionOsArch)(nil)).Elem()
-}
-
-func (i ManagementZoneRuleConditionOsArchArgs) ToManagementZoneRuleConditionOsArchOutput() ManagementZoneRuleConditionOsArchOutput {
-	return i.ToManagementZoneRuleConditionOsArchOutputWithContext(context.Background())
-}
-
-func (i ManagementZoneRuleConditionOsArchArgs) ToManagementZoneRuleConditionOsArchOutputWithContext(ctx context.Context) ManagementZoneRuleConditionOsArchOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ManagementZoneRuleConditionOsArchOutput)
-}
-
-// ManagementZoneRuleConditionOsArchArrayInput is an input type that accepts ManagementZoneRuleConditionOsArchArray and ManagementZoneRuleConditionOsArchArrayOutput values.
-// You can construct a concrete instance of `ManagementZoneRuleConditionOsArchArrayInput` via:
-//
-//	ManagementZoneRuleConditionOsArchArray{ ManagementZoneRuleConditionOsArchArgs{...} }
-type ManagementZoneRuleConditionOsArchArrayInput interface {
-	pulumi.Input
-
-	ToManagementZoneRuleConditionOsArchArrayOutput() ManagementZoneRuleConditionOsArchArrayOutput
-	ToManagementZoneRuleConditionOsArchArrayOutputWithContext(context.Context) ManagementZoneRuleConditionOsArchArrayOutput
-}
-
-type ManagementZoneRuleConditionOsArchArray []ManagementZoneRuleConditionOsArchInput
-
-func (ManagementZoneRuleConditionOsArchArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ManagementZoneRuleConditionOsArch)(nil)).Elem()
-}
-
-func (i ManagementZoneRuleConditionOsArchArray) ToManagementZoneRuleConditionOsArchArrayOutput() ManagementZoneRuleConditionOsArchArrayOutput {
-	return i.ToManagementZoneRuleConditionOsArchArrayOutputWithContext(context.Background())
-}
-
-func (i ManagementZoneRuleConditionOsArchArray) ToManagementZoneRuleConditionOsArchArrayOutputWithContext(ctx context.Context) ManagementZoneRuleConditionOsArchArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ManagementZoneRuleConditionOsArchArrayOutput)
-}
-
-type ManagementZoneRuleConditionOsArchOutput struct{ *pulumi.OutputState }
-
-func (ManagementZoneRuleConditionOsArchOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*ManagementZoneRuleConditionOsArch)(nil)).Elem()
-}
-
-func (o ManagementZoneRuleConditionOsArchOutput) ToManagementZoneRuleConditionOsArchOutput() ManagementZoneRuleConditionOsArchOutput {
-	return o
-}
-
-func (o ManagementZoneRuleConditionOsArchOutput) ToManagementZoneRuleConditionOsArchOutputWithContext(ctx context.Context) ManagementZoneRuleConditionOsArchOutput {
-	return o
-}
-
-// Reverses the operator. For example it turns the **begins with** into **does not begin with**
-func (o ManagementZoneRuleConditionOsArchOutput) Negate() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v ManagementZoneRuleConditionOsArch) *bool { return v.Negate }).(pulumi.BoolPtrOutput)
-}
-
-// Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
-func (o ManagementZoneRuleConditionOsArchOutput) Operator() pulumi.StringOutput {
-	return o.ApplyT(func(v ManagementZoneRuleConditionOsArch) string { return v.Operator }).(pulumi.StringOutput)
-}
-
-// Any attributes that aren't yet supported by this provider
-func (o ManagementZoneRuleConditionOsArchOutput) Unknowns() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ManagementZoneRuleConditionOsArch) *string { return v.Unknowns }).(pulumi.StringPtrOutput)
-}
-
-// The value to compare to. Possible values are ARM, IA64, PARISC, PPC, PPCLE, S390, SPARC, X86 and ZOS.
-func (o ManagementZoneRuleConditionOsArchOutput) Value() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ManagementZoneRuleConditionOsArch) *string { return v.Value }).(pulumi.StringPtrOutput)
-}
-
-type ManagementZoneRuleConditionOsArchArrayOutput struct{ *pulumi.OutputState }
-
-func (ManagementZoneRuleConditionOsArchArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ManagementZoneRuleConditionOsArch)(nil)).Elem()
-}
-
-func (o ManagementZoneRuleConditionOsArchArrayOutput) ToManagementZoneRuleConditionOsArchArrayOutput() ManagementZoneRuleConditionOsArchArrayOutput {
-	return o
-}
-
-func (o ManagementZoneRuleConditionOsArchArrayOutput) ToManagementZoneRuleConditionOsArchArrayOutputWithContext(ctx context.Context) ManagementZoneRuleConditionOsArchArrayOutput {
-	return o
-}
-
-func (o ManagementZoneRuleConditionOsArchArrayOutput) Index(i pulumi.IntInput) ManagementZoneRuleConditionOsArchOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ManagementZoneRuleConditionOsArch {
-		return vs[0].([]ManagementZoneRuleConditionOsArch)[vs[1].(int)]
-	}).(ManagementZoneRuleConditionOsArchOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DataPrivacyUserTrackingInput)(nil)).Elem(), DataPrivacyUserTrackingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DataPrivacyUserTrackingPtrInput)(nil)).Elem(), DataPrivacyUserTrackingArgs{})
@@ -76745,6 +76944,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DavisCopilotBlocklistEntriesPtrInput)(nil)).Elem(), DavisCopilotBlocklistEntriesArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DavisCopilotBlocklistEntriesBlocklistEntryInput)(nil)).Elem(), DavisCopilotBlocklistEntriesBlocklistEntryArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DavisCopilotBlocklistEntriesBlocklistEntryArrayInput)(nil)).Elem(), DavisCopilotBlocklistEntriesBlocklistEntryArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DavisCopilotPiiBlockingTypesInput)(nil)).Elem(), DavisCopilotPiiBlockingTypesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DavisCopilotPiiBlockingTypesPtrInput)(nil)).Elem(), DavisCopilotPiiBlockingTypesArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DduPoolEventsInput)(nil)).Elem(), DduPoolEventsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DduPoolEventsPtrInput)(nil)).Elem(), DduPoolEventsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DduPoolLogMonitoringInput)(nil)).Elem(), DduPoolLogMonitoringArgs{})
@@ -77547,6 +77748,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*MaintenanceWindowScopeMatchArrayInput)(nil)).Elem(), MaintenanceWindowScopeMatchArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MaintenanceWindowScopeMatchTagInput)(nil)).Elem(), MaintenanceWindowScopeMatchTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MaintenanceWindowScopeMatchTagArrayInput)(nil)).Elem(), MaintenanceWindowScopeMatchTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MaintenanceWindowsObjectScopesInput)(nil)).Elem(), MaintenanceWindowsObjectScopesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MaintenanceWindowsObjectScopesPtrInput)(nil)).Elem(), MaintenanceWindowsObjectScopesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MaintenanceWindowsObjectScopesSyntheticMonitorsInput)(nil)).Elem(), MaintenanceWindowsObjectScopesSyntheticMonitorsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MaintenanceWindowsObjectScopesSyntheticMonitorsPtrInput)(nil)).Elem(), MaintenanceWindowsObjectScopesSyntheticMonitorsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MaintenanceWindowsScheduleInput)(nil)).Elem(), MaintenanceWindowsScheduleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MaintenanceWindowsSchedulePtrInput)(nil)).Elem(), MaintenanceWindowsScheduleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MaintenanceWindowsScheduleTriggerInput)(nil)).Elem(), MaintenanceWindowsScheduleTriggerArgs{})
@@ -77653,12 +77858,6 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionIpaddressComparisonArrayInput)(nil)).Elem(), ManagementZoneRuleConditionIpaddressComparisonArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionKeyInput)(nil)).Elem(), ManagementZoneRuleConditionKeyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionKeyArrayInput)(nil)).Elem(), ManagementZoneRuleConditionKeyArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionMobilePlatformInput)(nil)).Elem(), ManagementZoneRuleConditionMobilePlatformArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionMobilePlatformArrayInput)(nil)).Elem(), ManagementZoneRuleConditionMobilePlatformArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionMobilePlatformComparisonInput)(nil)).Elem(), ManagementZoneRuleConditionMobilePlatformComparisonArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionMobilePlatformComparisonArrayInput)(nil)).Elem(), ManagementZoneRuleConditionMobilePlatformComparisonArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionOsArchInput)(nil)).Elem(), ManagementZoneRuleConditionOsArchArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionOsArchArrayInput)(nil)).Elem(), ManagementZoneRuleConditionOsArchArray{})
 	pulumi.RegisterOutputType(DataPrivacyUserTrackingOutput{})
 	pulumi.RegisterOutputType(DataPrivacyUserTrackingPtrOutput{})
 	pulumi.RegisterOutputType(DatabaseAnomaliesDbConnectFailuresOutput{})
@@ -77733,6 +77932,8 @@ func init() {
 	pulumi.RegisterOutputType(DavisCopilotBlocklistEntriesPtrOutput{})
 	pulumi.RegisterOutputType(DavisCopilotBlocklistEntriesBlocklistEntryOutput{})
 	pulumi.RegisterOutputType(DavisCopilotBlocklistEntriesBlocklistEntryArrayOutput{})
+	pulumi.RegisterOutputType(DavisCopilotPiiBlockingTypesOutput{})
+	pulumi.RegisterOutputType(DavisCopilotPiiBlockingTypesPtrOutput{})
 	pulumi.RegisterOutputType(DduPoolEventsOutput{})
 	pulumi.RegisterOutputType(DduPoolEventsPtrOutput{})
 	pulumi.RegisterOutputType(DduPoolLogMonitoringOutput{})
@@ -78535,6 +78736,10 @@ func init() {
 	pulumi.RegisterOutputType(MaintenanceWindowScopeMatchArrayOutput{})
 	pulumi.RegisterOutputType(MaintenanceWindowScopeMatchTagOutput{})
 	pulumi.RegisterOutputType(MaintenanceWindowScopeMatchTagArrayOutput{})
+	pulumi.RegisterOutputType(MaintenanceWindowsObjectScopesOutput{})
+	pulumi.RegisterOutputType(MaintenanceWindowsObjectScopesPtrOutput{})
+	pulumi.RegisterOutputType(MaintenanceWindowsObjectScopesSyntheticMonitorsOutput{})
+	pulumi.RegisterOutputType(MaintenanceWindowsObjectScopesSyntheticMonitorsPtrOutput{})
 	pulumi.RegisterOutputType(MaintenanceWindowsScheduleOutput{})
 	pulumi.RegisterOutputType(MaintenanceWindowsSchedulePtrOutput{})
 	pulumi.RegisterOutputType(MaintenanceWindowsScheduleTriggerOutput{})
@@ -78641,10 +78846,4 @@ func init() {
 	pulumi.RegisterOutputType(ManagementZoneRuleConditionIpaddressComparisonArrayOutput{})
 	pulumi.RegisterOutputType(ManagementZoneRuleConditionKeyOutput{})
 	pulumi.RegisterOutputType(ManagementZoneRuleConditionKeyArrayOutput{})
-	pulumi.RegisterOutputType(ManagementZoneRuleConditionMobilePlatformOutput{})
-	pulumi.RegisterOutputType(ManagementZoneRuleConditionMobilePlatformArrayOutput{})
-	pulumi.RegisterOutputType(ManagementZoneRuleConditionMobilePlatformComparisonOutput{})
-	pulumi.RegisterOutputType(ManagementZoneRuleConditionMobilePlatformComparisonArrayOutput{})
-	pulumi.RegisterOutputType(ManagementZoneRuleConditionOsArchOutput{})
-	pulumi.RegisterOutputType(ManagementZoneRuleConditionOsArchArrayOutput{})
 }

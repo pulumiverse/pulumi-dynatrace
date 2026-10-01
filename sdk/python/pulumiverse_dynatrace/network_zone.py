@@ -306,6 +306,8 @@ class NetworkZone(pulumi.CustomResource):
                  num_of_oneagents_using: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         """
+        > The resource API endpoint has been deprecated, please use NetworkZoneV2 instead.
+
         > This resource requires the API token scopes **Read network zones** (`networkZones.read`) and **Write network zones** (`networkZones.write`)
 
         ## Dynatrace Documentation
@@ -339,6 +341,8 @@ class NetworkZone(pulumi.CustomResource):
                  args: Optional[NetworkZoneArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        > The resource API endpoint has been deprecated, please use NetworkZoneV2 instead.
+
         > This resource requires the API token scopes **Read network zones** (`networkZones.read`) and **Write network zones** (`networkZones.write`)
 
         ## Dynatrace Documentation

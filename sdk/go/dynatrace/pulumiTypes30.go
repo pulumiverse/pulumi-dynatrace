@@ -13,6 +13,2189 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type OwnershipTeamsAdditionalInformation struct {
+	AdditionalInformations []OwnershipTeamsAdditionalInformationAdditionalInformation `pulumi:"additionalInformations"`
+}
+
+// OwnershipTeamsAdditionalInformationInput is an input type that accepts OwnershipTeamsAdditionalInformationArgs and OwnershipTeamsAdditionalInformationOutput values.
+// You can construct a concrete instance of `OwnershipTeamsAdditionalInformationInput` via:
+//
+//	OwnershipTeamsAdditionalInformationArgs{...}
+type OwnershipTeamsAdditionalInformationInput interface {
+	pulumi.Input
+
+	ToOwnershipTeamsAdditionalInformationOutput() OwnershipTeamsAdditionalInformationOutput
+	ToOwnershipTeamsAdditionalInformationOutputWithContext(context.Context) OwnershipTeamsAdditionalInformationOutput
+}
+
+type OwnershipTeamsAdditionalInformationArgs struct {
+	AdditionalInformations OwnershipTeamsAdditionalInformationAdditionalInformationArrayInput `pulumi:"additionalInformations"`
+}
+
+func (OwnershipTeamsAdditionalInformationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*OwnershipTeamsAdditionalInformation)(nil)).Elem()
+}
+
+func (i OwnershipTeamsAdditionalInformationArgs) ToOwnershipTeamsAdditionalInformationOutput() OwnershipTeamsAdditionalInformationOutput {
+	return i.ToOwnershipTeamsAdditionalInformationOutputWithContext(context.Background())
+}
+
+func (i OwnershipTeamsAdditionalInformationArgs) ToOwnershipTeamsAdditionalInformationOutputWithContext(ctx context.Context) OwnershipTeamsAdditionalInformationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OwnershipTeamsAdditionalInformationOutput)
+}
+
+func (i OwnershipTeamsAdditionalInformationArgs) ToOwnershipTeamsAdditionalInformationPtrOutput() OwnershipTeamsAdditionalInformationPtrOutput {
+	return i.ToOwnershipTeamsAdditionalInformationPtrOutputWithContext(context.Background())
+}
+
+func (i OwnershipTeamsAdditionalInformationArgs) ToOwnershipTeamsAdditionalInformationPtrOutputWithContext(ctx context.Context) OwnershipTeamsAdditionalInformationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OwnershipTeamsAdditionalInformationOutput).ToOwnershipTeamsAdditionalInformationPtrOutputWithContext(ctx)
+}
+
+// OwnershipTeamsAdditionalInformationPtrInput is an input type that accepts OwnershipTeamsAdditionalInformationArgs, OwnershipTeamsAdditionalInformationPtr and OwnershipTeamsAdditionalInformationPtrOutput values.
+// You can construct a concrete instance of `OwnershipTeamsAdditionalInformationPtrInput` via:
+//
+//	        OwnershipTeamsAdditionalInformationArgs{...}
+//
+//	or:
+//
+//	        nil
+type OwnershipTeamsAdditionalInformationPtrInput interface {
+	pulumi.Input
+
+	ToOwnershipTeamsAdditionalInformationPtrOutput() OwnershipTeamsAdditionalInformationPtrOutput
+	ToOwnershipTeamsAdditionalInformationPtrOutputWithContext(context.Context) OwnershipTeamsAdditionalInformationPtrOutput
+}
+
+type ownershipTeamsAdditionalInformationPtrType OwnershipTeamsAdditionalInformationArgs
+
+func OwnershipTeamsAdditionalInformationPtr(v *OwnershipTeamsAdditionalInformationArgs) OwnershipTeamsAdditionalInformationPtrInput {
+	return (*ownershipTeamsAdditionalInformationPtrType)(v)
+}
+
+func (*ownershipTeamsAdditionalInformationPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**OwnershipTeamsAdditionalInformation)(nil)).Elem()
+}
+
+func (i *ownershipTeamsAdditionalInformationPtrType) ToOwnershipTeamsAdditionalInformationPtrOutput() OwnershipTeamsAdditionalInformationPtrOutput {
+	return i.ToOwnershipTeamsAdditionalInformationPtrOutputWithContext(context.Background())
+}
+
+func (i *ownershipTeamsAdditionalInformationPtrType) ToOwnershipTeamsAdditionalInformationPtrOutputWithContext(ctx context.Context) OwnershipTeamsAdditionalInformationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OwnershipTeamsAdditionalInformationPtrOutput)
+}
+
+type OwnershipTeamsAdditionalInformationOutput struct{ *pulumi.OutputState }
+
+func (OwnershipTeamsAdditionalInformationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*OwnershipTeamsAdditionalInformation)(nil)).Elem()
+}
+
+func (o OwnershipTeamsAdditionalInformationOutput) ToOwnershipTeamsAdditionalInformationOutput() OwnershipTeamsAdditionalInformationOutput {
+	return o
+}
+
+func (o OwnershipTeamsAdditionalInformationOutput) ToOwnershipTeamsAdditionalInformationOutputWithContext(ctx context.Context) OwnershipTeamsAdditionalInformationOutput {
+	return o
+}
+
+func (o OwnershipTeamsAdditionalInformationOutput) ToOwnershipTeamsAdditionalInformationPtrOutput() OwnershipTeamsAdditionalInformationPtrOutput {
+	return o.ToOwnershipTeamsAdditionalInformationPtrOutputWithContext(context.Background())
+}
+
+func (o OwnershipTeamsAdditionalInformationOutput) ToOwnershipTeamsAdditionalInformationPtrOutputWithContext(ctx context.Context) OwnershipTeamsAdditionalInformationPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v OwnershipTeamsAdditionalInformation) *OwnershipTeamsAdditionalInformation {
+		return &v
+	}).(OwnershipTeamsAdditionalInformationPtrOutput)
+}
+
+func (o OwnershipTeamsAdditionalInformationOutput) AdditionalInformations() OwnershipTeamsAdditionalInformationAdditionalInformationArrayOutput {
+	return o.ApplyT(func(v OwnershipTeamsAdditionalInformation) []OwnershipTeamsAdditionalInformationAdditionalInformation {
+		return v.AdditionalInformations
+	}).(OwnershipTeamsAdditionalInformationAdditionalInformationArrayOutput)
+}
+
+type OwnershipTeamsAdditionalInformationPtrOutput struct{ *pulumi.OutputState }
+
+func (OwnershipTeamsAdditionalInformationPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**OwnershipTeamsAdditionalInformation)(nil)).Elem()
+}
+
+func (o OwnershipTeamsAdditionalInformationPtrOutput) ToOwnershipTeamsAdditionalInformationPtrOutput() OwnershipTeamsAdditionalInformationPtrOutput {
+	return o
+}
+
+func (o OwnershipTeamsAdditionalInformationPtrOutput) ToOwnershipTeamsAdditionalInformationPtrOutputWithContext(ctx context.Context) OwnershipTeamsAdditionalInformationPtrOutput {
+	return o
+}
+
+func (o OwnershipTeamsAdditionalInformationPtrOutput) Elem() OwnershipTeamsAdditionalInformationOutput {
+	return o.ApplyT(func(v *OwnershipTeamsAdditionalInformation) OwnershipTeamsAdditionalInformation {
+		if v != nil {
+			return *v
+		}
+		var ret OwnershipTeamsAdditionalInformation
+		return ret
+	}).(OwnershipTeamsAdditionalInformationOutput)
+}
+
+func (o OwnershipTeamsAdditionalInformationPtrOutput) AdditionalInformations() OwnershipTeamsAdditionalInformationAdditionalInformationArrayOutput {
+	return o.ApplyT(func(v *OwnershipTeamsAdditionalInformation) []OwnershipTeamsAdditionalInformationAdditionalInformation {
+		if v == nil {
+			return nil
+		}
+		return v.AdditionalInformations
+	}).(OwnershipTeamsAdditionalInformationAdditionalInformationArrayOutput)
+}
+
+type OwnershipTeamsAdditionalInformationAdditionalInformation struct {
+	// Name
+	Key string `pulumi:"key"`
+	// No documentation available
+	Url *string `pulumi:"url"`
+	// No documentation available
+	Value string `pulumi:"value"`
+}
+
+// OwnershipTeamsAdditionalInformationAdditionalInformationInput is an input type that accepts OwnershipTeamsAdditionalInformationAdditionalInformationArgs and OwnershipTeamsAdditionalInformationAdditionalInformationOutput values.
+// You can construct a concrete instance of `OwnershipTeamsAdditionalInformationAdditionalInformationInput` via:
+//
+//	OwnershipTeamsAdditionalInformationAdditionalInformationArgs{...}
+type OwnershipTeamsAdditionalInformationAdditionalInformationInput interface {
+	pulumi.Input
+
+	ToOwnershipTeamsAdditionalInformationAdditionalInformationOutput() OwnershipTeamsAdditionalInformationAdditionalInformationOutput
+	ToOwnershipTeamsAdditionalInformationAdditionalInformationOutputWithContext(context.Context) OwnershipTeamsAdditionalInformationAdditionalInformationOutput
+}
+
+type OwnershipTeamsAdditionalInformationAdditionalInformationArgs struct {
+	// Name
+	Key pulumi.StringInput `pulumi:"key"`
+	// No documentation available
+	Url pulumi.StringPtrInput `pulumi:"url"`
+	// No documentation available
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (OwnershipTeamsAdditionalInformationAdditionalInformationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*OwnershipTeamsAdditionalInformationAdditionalInformation)(nil)).Elem()
+}
+
+func (i OwnershipTeamsAdditionalInformationAdditionalInformationArgs) ToOwnershipTeamsAdditionalInformationAdditionalInformationOutput() OwnershipTeamsAdditionalInformationAdditionalInformationOutput {
+	return i.ToOwnershipTeamsAdditionalInformationAdditionalInformationOutputWithContext(context.Background())
+}
+
+func (i OwnershipTeamsAdditionalInformationAdditionalInformationArgs) ToOwnershipTeamsAdditionalInformationAdditionalInformationOutputWithContext(ctx context.Context) OwnershipTeamsAdditionalInformationAdditionalInformationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OwnershipTeamsAdditionalInformationAdditionalInformationOutput)
+}
+
+// OwnershipTeamsAdditionalInformationAdditionalInformationArrayInput is an input type that accepts OwnershipTeamsAdditionalInformationAdditionalInformationArray and OwnershipTeamsAdditionalInformationAdditionalInformationArrayOutput values.
+// You can construct a concrete instance of `OwnershipTeamsAdditionalInformationAdditionalInformationArrayInput` via:
+//
+//	OwnershipTeamsAdditionalInformationAdditionalInformationArray{ OwnershipTeamsAdditionalInformationAdditionalInformationArgs{...} }
+type OwnershipTeamsAdditionalInformationAdditionalInformationArrayInput interface {
+	pulumi.Input
+
+	ToOwnershipTeamsAdditionalInformationAdditionalInformationArrayOutput() OwnershipTeamsAdditionalInformationAdditionalInformationArrayOutput
+	ToOwnershipTeamsAdditionalInformationAdditionalInformationArrayOutputWithContext(context.Context) OwnershipTeamsAdditionalInformationAdditionalInformationArrayOutput
+}
+
+type OwnershipTeamsAdditionalInformationAdditionalInformationArray []OwnershipTeamsAdditionalInformationAdditionalInformationInput
+
+func (OwnershipTeamsAdditionalInformationAdditionalInformationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]OwnershipTeamsAdditionalInformationAdditionalInformation)(nil)).Elem()
+}
+
+func (i OwnershipTeamsAdditionalInformationAdditionalInformationArray) ToOwnershipTeamsAdditionalInformationAdditionalInformationArrayOutput() OwnershipTeamsAdditionalInformationAdditionalInformationArrayOutput {
+	return i.ToOwnershipTeamsAdditionalInformationAdditionalInformationArrayOutputWithContext(context.Background())
+}
+
+func (i OwnershipTeamsAdditionalInformationAdditionalInformationArray) ToOwnershipTeamsAdditionalInformationAdditionalInformationArrayOutputWithContext(ctx context.Context) OwnershipTeamsAdditionalInformationAdditionalInformationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OwnershipTeamsAdditionalInformationAdditionalInformationArrayOutput)
+}
+
+type OwnershipTeamsAdditionalInformationAdditionalInformationOutput struct{ *pulumi.OutputState }
+
+func (OwnershipTeamsAdditionalInformationAdditionalInformationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*OwnershipTeamsAdditionalInformationAdditionalInformation)(nil)).Elem()
+}
+
+func (o OwnershipTeamsAdditionalInformationAdditionalInformationOutput) ToOwnershipTeamsAdditionalInformationAdditionalInformationOutput() OwnershipTeamsAdditionalInformationAdditionalInformationOutput {
+	return o
+}
+
+func (o OwnershipTeamsAdditionalInformationAdditionalInformationOutput) ToOwnershipTeamsAdditionalInformationAdditionalInformationOutputWithContext(ctx context.Context) OwnershipTeamsAdditionalInformationAdditionalInformationOutput {
+	return o
+}
+
+// Name
+func (o OwnershipTeamsAdditionalInformationAdditionalInformationOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v OwnershipTeamsAdditionalInformationAdditionalInformation) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// No documentation available
+func (o OwnershipTeamsAdditionalInformationAdditionalInformationOutput) Url() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v OwnershipTeamsAdditionalInformationAdditionalInformation) *string { return v.Url }).(pulumi.StringPtrOutput)
+}
+
+// No documentation available
+func (o OwnershipTeamsAdditionalInformationAdditionalInformationOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v OwnershipTeamsAdditionalInformationAdditionalInformation) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type OwnershipTeamsAdditionalInformationAdditionalInformationArrayOutput struct{ *pulumi.OutputState }
+
+func (OwnershipTeamsAdditionalInformationAdditionalInformationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]OwnershipTeamsAdditionalInformationAdditionalInformation)(nil)).Elem()
+}
+
+func (o OwnershipTeamsAdditionalInformationAdditionalInformationArrayOutput) ToOwnershipTeamsAdditionalInformationAdditionalInformationArrayOutput() OwnershipTeamsAdditionalInformationAdditionalInformationArrayOutput {
+	return o
+}
+
+func (o OwnershipTeamsAdditionalInformationAdditionalInformationArrayOutput) ToOwnershipTeamsAdditionalInformationAdditionalInformationArrayOutputWithContext(ctx context.Context) OwnershipTeamsAdditionalInformationAdditionalInformationArrayOutput {
+	return o
+}
+
+func (o OwnershipTeamsAdditionalInformationAdditionalInformationArrayOutput) Index(i pulumi.IntInput) OwnershipTeamsAdditionalInformationAdditionalInformationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) OwnershipTeamsAdditionalInformationAdditionalInformation {
+		return vs[0].([]OwnershipTeamsAdditionalInformationAdditionalInformation)[vs[1].(int)]
+	}).(OwnershipTeamsAdditionalInformationAdditionalInformationOutput)
+}
+
+type OwnershipTeamsContactDetails struct {
+	ContactDetails []OwnershipTeamsContactDetailsContactDetail `pulumi:"contactDetails"`
+}
+
+// OwnershipTeamsContactDetailsInput is an input type that accepts OwnershipTeamsContactDetailsArgs and OwnershipTeamsContactDetailsOutput values.
+// You can construct a concrete instance of `OwnershipTeamsContactDetailsInput` via:
+//
+//	OwnershipTeamsContactDetailsArgs{...}
+type OwnershipTeamsContactDetailsInput interface {
+	pulumi.Input
+
+	ToOwnershipTeamsContactDetailsOutput() OwnershipTeamsContactDetailsOutput
+	ToOwnershipTeamsContactDetailsOutputWithContext(context.Context) OwnershipTeamsContactDetailsOutput
+}
+
+type OwnershipTeamsContactDetailsArgs struct {
+	ContactDetails OwnershipTeamsContactDetailsContactDetailArrayInput `pulumi:"contactDetails"`
+}
+
+func (OwnershipTeamsContactDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*OwnershipTeamsContactDetails)(nil)).Elem()
+}
+
+func (i OwnershipTeamsContactDetailsArgs) ToOwnershipTeamsContactDetailsOutput() OwnershipTeamsContactDetailsOutput {
+	return i.ToOwnershipTeamsContactDetailsOutputWithContext(context.Background())
+}
+
+func (i OwnershipTeamsContactDetailsArgs) ToOwnershipTeamsContactDetailsOutputWithContext(ctx context.Context) OwnershipTeamsContactDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OwnershipTeamsContactDetailsOutput)
+}
+
+func (i OwnershipTeamsContactDetailsArgs) ToOwnershipTeamsContactDetailsPtrOutput() OwnershipTeamsContactDetailsPtrOutput {
+	return i.ToOwnershipTeamsContactDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i OwnershipTeamsContactDetailsArgs) ToOwnershipTeamsContactDetailsPtrOutputWithContext(ctx context.Context) OwnershipTeamsContactDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OwnershipTeamsContactDetailsOutput).ToOwnershipTeamsContactDetailsPtrOutputWithContext(ctx)
+}
+
+// OwnershipTeamsContactDetailsPtrInput is an input type that accepts OwnershipTeamsContactDetailsArgs, OwnershipTeamsContactDetailsPtr and OwnershipTeamsContactDetailsPtrOutput values.
+// You can construct a concrete instance of `OwnershipTeamsContactDetailsPtrInput` via:
+//
+//	        OwnershipTeamsContactDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type OwnershipTeamsContactDetailsPtrInput interface {
+	pulumi.Input
+
+	ToOwnershipTeamsContactDetailsPtrOutput() OwnershipTeamsContactDetailsPtrOutput
+	ToOwnershipTeamsContactDetailsPtrOutputWithContext(context.Context) OwnershipTeamsContactDetailsPtrOutput
+}
+
+type ownershipTeamsContactDetailsPtrType OwnershipTeamsContactDetailsArgs
+
+func OwnershipTeamsContactDetailsPtr(v *OwnershipTeamsContactDetailsArgs) OwnershipTeamsContactDetailsPtrInput {
+	return (*ownershipTeamsContactDetailsPtrType)(v)
+}
+
+func (*ownershipTeamsContactDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**OwnershipTeamsContactDetails)(nil)).Elem()
+}
+
+func (i *ownershipTeamsContactDetailsPtrType) ToOwnershipTeamsContactDetailsPtrOutput() OwnershipTeamsContactDetailsPtrOutput {
+	return i.ToOwnershipTeamsContactDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *ownershipTeamsContactDetailsPtrType) ToOwnershipTeamsContactDetailsPtrOutputWithContext(ctx context.Context) OwnershipTeamsContactDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OwnershipTeamsContactDetailsPtrOutput)
+}
+
+type OwnershipTeamsContactDetailsOutput struct{ *pulumi.OutputState }
+
+func (OwnershipTeamsContactDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*OwnershipTeamsContactDetails)(nil)).Elem()
+}
+
+func (o OwnershipTeamsContactDetailsOutput) ToOwnershipTeamsContactDetailsOutput() OwnershipTeamsContactDetailsOutput {
+	return o
+}
+
+func (o OwnershipTeamsContactDetailsOutput) ToOwnershipTeamsContactDetailsOutputWithContext(ctx context.Context) OwnershipTeamsContactDetailsOutput {
+	return o
+}
+
+func (o OwnershipTeamsContactDetailsOutput) ToOwnershipTeamsContactDetailsPtrOutput() OwnershipTeamsContactDetailsPtrOutput {
+	return o.ToOwnershipTeamsContactDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o OwnershipTeamsContactDetailsOutput) ToOwnershipTeamsContactDetailsPtrOutputWithContext(ctx context.Context) OwnershipTeamsContactDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v OwnershipTeamsContactDetails) *OwnershipTeamsContactDetails {
+		return &v
+	}).(OwnershipTeamsContactDetailsPtrOutput)
+}
+
+func (o OwnershipTeamsContactDetailsOutput) ContactDetails() OwnershipTeamsContactDetailsContactDetailArrayOutput {
+	return o.ApplyT(func(v OwnershipTeamsContactDetails) []OwnershipTeamsContactDetailsContactDetail {
+		return v.ContactDetails
+	}).(OwnershipTeamsContactDetailsContactDetailArrayOutput)
+}
+
+type OwnershipTeamsContactDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (OwnershipTeamsContactDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**OwnershipTeamsContactDetails)(nil)).Elem()
+}
+
+func (o OwnershipTeamsContactDetailsPtrOutput) ToOwnershipTeamsContactDetailsPtrOutput() OwnershipTeamsContactDetailsPtrOutput {
+	return o
+}
+
+func (o OwnershipTeamsContactDetailsPtrOutput) ToOwnershipTeamsContactDetailsPtrOutputWithContext(ctx context.Context) OwnershipTeamsContactDetailsPtrOutput {
+	return o
+}
+
+func (o OwnershipTeamsContactDetailsPtrOutput) Elem() OwnershipTeamsContactDetailsOutput {
+	return o.ApplyT(func(v *OwnershipTeamsContactDetails) OwnershipTeamsContactDetails {
+		if v != nil {
+			return *v
+		}
+		var ret OwnershipTeamsContactDetails
+		return ret
+	}).(OwnershipTeamsContactDetailsOutput)
+}
+
+func (o OwnershipTeamsContactDetailsPtrOutput) ContactDetails() OwnershipTeamsContactDetailsContactDetailArrayOutput {
+	return o.ApplyT(func(v *OwnershipTeamsContactDetails) []OwnershipTeamsContactDetailsContactDetail {
+		if v == nil {
+			return nil
+		}
+		return v.ContactDetails
+	}).(OwnershipTeamsContactDetailsContactDetailArrayOutput)
+}
+
+type OwnershipTeamsContactDetailsContactDetail struct {
+	// No documentation available
+	Email *string `pulumi:"email"`
+	// Integration type. Possible values: `EMAIL`, `JIRA`, `MS_TEAMS`, `SLACK`
+	IntegrationType string `pulumi:"integrationType"`
+	// No documentation available
+	Jira *OwnershipTeamsContactDetailsContactDetailJira `pulumi:"jira"`
+	// Team
+	MsTeams *string `pulumi:"msTeams"`
+	// Channel
+	SlackChannel *string `pulumi:"slackChannel"`
+	// No documentation available
+	Url *string `pulumi:"url"`
+}
+
+// OwnershipTeamsContactDetailsContactDetailInput is an input type that accepts OwnershipTeamsContactDetailsContactDetailArgs and OwnershipTeamsContactDetailsContactDetailOutput values.
+// You can construct a concrete instance of `OwnershipTeamsContactDetailsContactDetailInput` via:
+//
+//	OwnershipTeamsContactDetailsContactDetailArgs{...}
+type OwnershipTeamsContactDetailsContactDetailInput interface {
+	pulumi.Input
+
+	ToOwnershipTeamsContactDetailsContactDetailOutput() OwnershipTeamsContactDetailsContactDetailOutput
+	ToOwnershipTeamsContactDetailsContactDetailOutputWithContext(context.Context) OwnershipTeamsContactDetailsContactDetailOutput
+}
+
+type OwnershipTeamsContactDetailsContactDetailArgs struct {
+	// No documentation available
+	Email pulumi.StringPtrInput `pulumi:"email"`
+	// Integration type. Possible values: `EMAIL`, `JIRA`, `MS_TEAMS`, `SLACK`
+	IntegrationType pulumi.StringInput `pulumi:"integrationType"`
+	// No documentation available
+	Jira OwnershipTeamsContactDetailsContactDetailJiraPtrInput `pulumi:"jira"`
+	// Team
+	MsTeams pulumi.StringPtrInput `pulumi:"msTeams"`
+	// Channel
+	SlackChannel pulumi.StringPtrInput `pulumi:"slackChannel"`
+	// No documentation available
+	Url pulumi.StringPtrInput `pulumi:"url"`
+}
+
+func (OwnershipTeamsContactDetailsContactDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*OwnershipTeamsContactDetailsContactDetail)(nil)).Elem()
+}
+
+func (i OwnershipTeamsContactDetailsContactDetailArgs) ToOwnershipTeamsContactDetailsContactDetailOutput() OwnershipTeamsContactDetailsContactDetailOutput {
+	return i.ToOwnershipTeamsContactDetailsContactDetailOutputWithContext(context.Background())
+}
+
+func (i OwnershipTeamsContactDetailsContactDetailArgs) ToOwnershipTeamsContactDetailsContactDetailOutputWithContext(ctx context.Context) OwnershipTeamsContactDetailsContactDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OwnershipTeamsContactDetailsContactDetailOutput)
+}
+
+// OwnershipTeamsContactDetailsContactDetailArrayInput is an input type that accepts OwnershipTeamsContactDetailsContactDetailArray and OwnershipTeamsContactDetailsContactDetailArrayOutput values.
+// You can construct a concrete instance of `OwnershipTeamsContactDetailsContactDetailArrayInput` via:
+//
+//	OwnershipTeamsContactDetailsContactDetailArray{ OwnershipTeamsContactDetailsContactDetailArgs{...} }
+type OwnershipTeamsContactDetailsContactDetailArrayInput interface {
+	pulumi.Input
+
+	ToOwnershipTeamsContactDetailsContactDetailArrayOutput() OwnershipTeamsContactDetailsContactDetailArrayOutput
+	ToOwnershipTeamsContactDetailsContactDetailArrayOutputWithContext(context.Context) OwnershipTeamsContactDetailsContactDetailArrayOutput
+}
+
+type OwnershipTeamsContactDetailsContactDetailArray []OwnershipTeamsContactDetailsContactDetailInput
+
+func (OwnershipTeamsContactDetailsContactDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]OwnershipTeamsContactDetailsContactDetail)(nil)).Elem()
+}
+
+func (i OwnershipTeamsContactDetailsContactDetailArray) ToOwnershipTeamsContactDetailsContactDetailArrayOutput() OwnershipTeamsContactDetailsContactDetailArrayOutput {
+	return i.ToOwnershipTeamsContactDetailsContactDetailArrayOutputWithContext(context.Background())
+}
+
+func (i OwnershipTeamsContactDetailsContactDetailArray) ToOwnershipTeamsContactDetailsContactDetailArrayOutputWithContext(ctx context.Context) OwnershipTeamsContactDetailsContactDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OwnershipTeamsContactDetailsContactDetailArrayOutput)
+}
+
+type OwnershipTeamsContactDetailsContactDetailOutput struct{ *pulumi.OutputState }
+
+func (OwnershipTeamsContactDetailsContactDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*OwnershipTeamsContactDetailsContactDetail)(nil)).Elem()
+}
+
+func (o OwnershipTeamsContactDetailsContactDetailOutput) ToOwnershipTeamsContactDetailsContactDetailOutput() OwnershipTeamsContactDetailsContactDetailOutput {
+	return o
+}
+
+func (o OwnershipTeamsContactDetailsContactDetailOutput) ToOwnershipTeamsContactDetailsContactDetailOutputWithContext(ctx context.Context) OwnershipTeamsContactDetailsContactDetailOutput {
+	return o
+}
+
+// No documentation available
+func (o OwnershipTeamsContactDetailsContactDetailOutput) Email() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v OwnershipTeamsContactDetailsContactDetail) *string { return v.Email }).(pulumi.StringPtrOutput)
+}
+
+// Integration type. Possible values: `EMAIL`, `JIRA`, `MS_TEAMS`, `SLACK`
+func (o OwnershipTeamsContactDetailsContactDetailOutput) IntegrationType() pulumi.StringOutput {
+	return o.ApplyT(func(v OwnershipTeamsContactDetailsContactDetail) string { return v.IntegrationType }).(pulumi.StringOutput)
+}
+
+// No documentation available
+func (o OwnershipTeamsContactDetailsContactDetailOutput) Jira() OwnershipTeamsContactDetailsContactDetailJiraPtrOutput {
+	return o.ApplyT(func(v OwnershipTeamsContactDetailsContactDetail) *OwnershipTeamsContactDetailsContactDetailJira {
+		return v.Jira
+	}).(OwnershipTeamsContactDetailsContactDetailJiraPtrOutput)
+}
+
+// Team
+func (o OwnershipTeamsContactDetailsContactDetailOutput) MsTeams() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v OwnershipTeamsContactDetailsContactDetail) *string { return v.MsTeams }).(pulumi.StringPtrOutput)
+}
+
+// Channel
+func (o OwnershipTeamsContactDetailsContactDetailOutput) SlackChannel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v OwnershipTeamsContactDetailsContactDetail) *string { return v.SlackChannel }).(pulumi.StringPtrOutput)
+}
+
+// No documentation available
+func (o OwnershipTeamsContactDetailsContactDetailOutput) Url() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v OwnershipTeamsContactDetailsContactDetail) *string { return v.Url }).(pulumi.StringPtrOutput)
+}
+
+type OwnershipTeamsContactDetailsContactDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (OwnershipTeamsContactDetailsContactDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]OwnershipTeamsContactDetailsContactDetail)(nil)).Elem()
+}
+
+func (o OwnershipTeamsContactDetailsContactDetailArrayOutput) ToOwnershipTeamsContactDetailsContactDetailArrayOutput() OwnershipTeamsContactDetailsContactDetailArrayOutput {
+	return o
+}
+
+func (o OwnershipTeamsContactDetailsContactDetailArrayOutput) ToOwnershipTeamsContactDetailsContactDetailArrayOutputWithContext(ctx context.Context) OwnershipTeamsContactDetailsContactDetailArrayOutput {
+	return o
+}
+
+func (o OwnershipTeamsContactDetailsContactDetailArrayOutput) Index(i pulumi.IntInput) OwnershipTeamsContactDetailsContactDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) OwnershipTeamsContactDetailsContactDetail {
+		return vs[0].([]OwnershipTeamsContactDetailsContactDetail)[vs[1].(int)]
+	}).(OwnershipTeamsContactDetailsContactDetailOutput)
+}
+
+type OwnershipTeamsContactDetailsContactDetailJira struct {
+	// Default Assignee
+	DefaultAssignee string `pulumi:"defaultAssignee"`
+	// No documentation available
+	Project string `pulumi:"project"`
+}
+
+// OwnershipTeamsContactDetailsContactDetailJiraInput is an input type that accepts OwnershipTeamsContactDetailsContactDetailJiraArgs and OwnershipTeamsContactDetailsContactDetailJiraOutput values.
+// You can construct a concrete instance of `OwnershipTeamsContactDetailsContactDetailJiraInput` via:
+//
+//	OwnershipTeamsContactDetailsContactDetailJiraArgs{...}
+type OwnershipTeamsContactDetailsContactDetailJiraInput interface {
+	pulumi.Input
+
+	ToOwnershipTeamsContactDetailsContactDetailJiraOutput() OwnershipTeamsContactDetailsContactDetailJiraOutput
+	ToOwnershipTeamsContactDetailsContactDetailJiraOutputWithContext(context.Context) OwnershipTeamsContactDetailsContactDetailJiraOutput
+}
+
+type OwnershipTeamsContactDetailsContactDetailJiraArgs struct {
+	// Default Assignee
+	DefaultAssignee pulumi.StringInput `pulumi:"defaultAssignee"`
+	// No documentation available
+	Project pulumi.StringInput `pulumi:"project"`
+}
+
+func (OwnershipTeamsContactDetailsContactDetailJiraArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*OwnershipTeamsContactDetailsContactDetailJira)(nil)).Elem()
+}
+
+func (i OwnershipTeamsContactDetailsContactDetailJiraArgs) ToOwnershipTeamsContactDetailsContactDetailJiraOutput() OwnershipTeamsContactDetailsContactDetailJiraOutput {
+	return i.ToOwnershipTeamsContactDetailsContactDetailJiraOutputWithContext(context.Background())
+}
+
+func (i OwnershipTeamsContactDetailsContactDetailJiraArgs) ToOwnershipTeamsContactDetailsContactDetailJiraOutputWithContext(ctx context.Context) OwnershipTeamsContactDetailsContactDetailJiraOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OwnershipTeamsContactDetailsContactDetailJiraOutput)
+}
+
+func (i OwnershipTeamsContactDetailsContactDetailJiraArgs) ToOwnershipTeamsContactDetailsContactDetailJiraPtrOutput() OwnershipTeamsContactDetailsContactDetailJiraPtrOutput {
+	return i.ToOwnershipTeamsContactDetailsContactDetailJiraPtrOutputWithContext(context.Background())
+}
+
+func (i OwnershipTeamsContactDetailsContactDetailJiraArgs) ToOwnershipTeamsContactDetailsContactDetailJiraPtrOutputWithContext(ctx context.Context) OwnershipTeamsContactDetailsContactDetailJiraPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OwnershipTeamsContactDetailsContactDetailJiraOutput).ToOwnershipTeamsContactDetailsContactDetailJiraPtrOutputWithContext(ctx)
+}
+
+// OwnershipTeamsContactDetailsContactDetailJiraPtrInput is an input type that accepts OwnershipTeamsContactDetailsContactDetailJiraArgs, OwnershipTeamsContactDetailsContactDetailJiraPtr and OwnershipTeamsContactDetailsContactDetailJiraPtrOutput values.
+// You can construct a concrete instance of `OwnershipTeamsContactDetailsContactDetailJiraPtrInput` via:
+//
+//	        OwnershipTeamsContactDetailsContactDetailJiraArgs{...}
+//
+//	or:
+//
+//	        nil
+type OwnershipTeamsContactDetailsContactDetailJiraPtrInput interface {
+	pulumi.Input
+
+	ToOwnershipTeamsContactDetailsContactDetailJiraPtrOutput() OwnershipTeamsContactDetailsContactDetailJiraPtrOutput
+	ToOwnershipTeamsContactDetailsContactDetailJiraPtrOutputWithContext(context.Context) OwnershipTeamsContactDetailsContactDetailJiraPtrOutput
+}
+
+type ownershipTeamsContactDetailsContactDetailJiraPtrType OwnershipTeamsContactDetailsContactDetailJiraArgs
+
+func OwnershipTeamsContactDetailsContactDetailJiraPtr(v *OwnershipTeamsContactDetailsContactDetailJiraArgs) OwnershipTeamsContactDetailsContactDetailJiraPtrInput {
+	return (*ownershipTeamsContactDetailsContactDetailJiraPtrType)(v)
+}
+
+func (*ownershipTeamsContactDetailsContactDetailJiraPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**OwnershipTeamsContactDetailsContactDetailJira)(nil)).Elem()
+}
+
+func (i *ownershipTeamsContactDetailsContactDetailJiraPtrType) ToOwnershipTeamsContactDetailsContactDetailJiraPtrOutput() OwnershipTeamsContactDetailsContactDetailJiraPtrOutput {
+	return i.ToOwnershipTeamsContactDetailsContactDetailJiraPtrOutputWithContext(context.Background())
+}
+
+func (i *ownershipTeamsContactDetailsContactDetailJiraPtrType) ToOwnershipTeamsContactDetailsContactDetailJiraPtrOutputWithContext(ctx context.Context) OwnershipTeamsContactDetailsContactDetailJiraPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OwnershipTeamsContactDetailsContactDetailJiraPtrOutput)
+}
+
+type OwnershipTeamsContactDetailsContactDetailJiraOutput struct{ *pulumi.OutputState }
+
+func (OwnershipTeamsContactDetailsContactDetailJiraOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*OwnershipTeamsContactDetailsContactDetailJira)(nil)).Elem()
+}
+
+func (o OwnershipTeamsContactDetailsContactDetailJiraOutput) ToOwnershipTeamsContactDetailsContactDetailJiraOutput() OwnershipTeamsContactDetailsContactDetailJiraOutput {
+	return o
+}
+
+func (o OwnershipTeamsContactDetailsContactDetailJiraOutput) ToOwnershipTeamsContactDetailsContactDetailJiraOutputWithContext(ctx context.Context) OwnershipTeamsContactDetailsContactDetailJiraOutput {
+	return o
+}
+
+func (o OwnershipTeamsContactDetailsContactDetailJiraOutput) ToOwnershipTeamsContactDetailsContactDetailJiraPtrOutput() OwnershipTeamsContactDetailsContactDetailJiraPtrOutput {
+	return o.ToOwnershipTeamsContactDetailsContactDetailJiraPtrOutputWithContext(context.Background())
+}
+
+func (o OwnershipTeamsContactDetailsContactDetailJiraOutput) ToOwnershipTeamsContactDetailsContactDetailJiraPtrOutputWithContext(ctx context.Context) OwnershipTeamsContactDetailsContactDetailJiraPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v OwnershipTeamsContactDetailsContactDetailJira) *OwnershipTeamsContactDetailsContactDetailJira {
+		return &v
+	}).(OwnershipTeamsContactDetailsContactDetailJiraPtrOutput)
+}
+
+// Default Assignee
+func (o OwnershipTeamsContactDetailsContactDetailJiraOutput) DefaultAssignee() pulumi.StringOutput {
+	return o.ApplyT(func(v OwnershipTeamsContactDetailsContactDetailJira) string { return v.DefaultAssignee }).(pulumi.StringOutput)
+}
+
+// No documentation available
+func (o OwnershipTeamsContactDetailsContactDetailJiraOutput) Project() pulumi.StringOutput {
+	return o.ApplyT(func(v OwnershipTeamsContactDetailsContactDetailJira) string { return v.Project }).(pulumi.StringOutput)
+}
+
+type OwnershipTeamsContactDetailsContactDetailJiraPtrOutput struct{ *pulumi.OutputState }
+
+func (OwnershipTeamsContactDetailsContactDetailJiraPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**OwnershipTeamsContactDetailsContactDetailJira)(nil)).Elem()
+}
+
+func (o OwnershipTeamsContactDetailsContactDetailJiraPtrOutput) ToOwnershipTeamsContactDetailsContactDetailJiraPtrOutput() OwnershipTeamsContactDetailsContactDetailJiraPtrOutput {
+	return o
+}
+
+func (o OwnershipTeamsContactDetailsContactDetailJiraPtrOutput) ToOwnershipTeamsContactDetailsContactDetailJiraPtrOutputWithContext(ctx context.Context) OwnershipTeamsContactDetailsContactDetailJiraPtrOutput {
+	return o
+}
+
+func (o OwnershipTeamsContactDetailsContactDetailJiraPtrOutput) Elem() OwnershipTeamsContactDetailsContactDetailJiraOutput {
+	return o.ApplyT(func(v *OwnershipTeamsContactDetailsContactDetailJira) OwnershipTeamsContactDetailsContactDetailJira {
+		if v != nil {
+			return *v
+		}
+		var ret OwnershipTeamsContactDetailsContactDetailJira
+		return ret
+	}).(OwnershipTeamsContactDetailsContactDetailJiraOutput)
+}
+
+// Default Assignee
+func (o OwnershipTeamsContactDetailsContactDetailJiraPtrOutput) DefaultAssignee() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OwnershipTeamsContactDetailsContactDetailJira) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.DefaultAssignee
+	}).(pulumi.StringPtrOutput)
+}
+
+// No documentation available
+func (o OwnershipTeamsContactDetailsContactDetailJiraPtrOutput) Project() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OwnershipTeamsContactDetailsContactDetailJira) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Project
+	}).(pulumi.StringPtrOutput)
+}
+
+type OwnershipTeamsLinks struct {
+	Links []OwnershipTeamsLinksLink `pulumi:"links"`
+}
+
+// OwnershipTeamsLinksInput is an input type that accepts OwnershipTeamsLinksArgs and OwnershipTeamsLinksOutput values.
+// You can construct a concrete instance of `OwnershipTeamsLinksInput` via:
+//
+//	OwnershipTeamsLinksArgs{...}
+type OwnershipTeamsLinksInput interface {
+	pulumi.Input
+
+	ToOwnershipTeamsLinksOutput() OwnershipTeamsLinksOutput
+	ToOwnershipTeamsLinksOutputWithContext(context.Context) OwnershipTeamsLinksOutput
+}
+
+type OwnershipTeamsLinksArgs struct {
+	Links OwnershipTeamsLinksLinkArrayInput `pulumi:"links"`
+}
+
+func (OwnershipTeamsLinksArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*OwnershipTeamsLinks)(nil)).Elem()
+}
+
+func (i OwnershipTeamsLinksArgs) ToOwnershipTeamsLinksOutput() OwnershipTeamsLinksOutput {
+	return i.ToOwnershipTeamsLinksOutputWithContext(context.Background())
+}
+
+func (i OwnershipTeamsLinksArgs) ToOwnershipTeamsLinksOutputWithContext(ctx context.Context) OwnershipTeamsLinksOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OwnershipTeamsLinksOutput)
+}
+
+func (i OwnershipTeamsLinksArgs) ToOwnershipTeamsLinksPtrOutput() OwnershipTeamsLinksPtrOutput {
+	return i.ToOwnershipTeamsLinksPtrOutputWithContext(context.Background())
+}
+
+func (i OwnershipTeamsLinksArgs) ToOwnershipTeamsLinksPtrOutputWithContext(ctx context.Context) OwnershipTeamsLinksPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OwnershipTeamsLinksOutput).ToOwnershipTeamsLinksPtrOutputWithContext(ctx)
+}
+
+// OwnershipTeamsLinksPtrInput is an input type that accepts OwnershipTeamsLinksArgs, OwnershipTeamsLinksPtr and OwnershipTeamsLinksPtrOutput values.
+// You can construct a concrete instance of `OwnershipTeamsLinksPtrInput` via:
+//
+//	        OwnershipTeamsLinksArgs{...}
+//
+//	or:
+//
+//	        nil
+type OwnershipTeamsLinksPtrInput interface {
+	pulumi.Input
+
+	ToOwnershipTeamsLinksPtrOutput() OwnershipTeamsLinksPtrOutput
+	ToOwnershipTeamsLinksPtrOutputWithContext(context.Context) OwnershipTeamsLinksPtrOutput
+}
+
+type ownershipTeamsLinksPtrType OwnershipTeamsLinksArgs
+
+func OwnershipTeamsLinksPtr(v *OwnershipTeamsLinksArgs) OwnershipTeamsLinksPtrInput {
+	return (*ownershipTeamsLinksPtrType)(v)
+}
+
+func (*ownershipTeamsLinksPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**OwnershipTeamsLinks)(nil)).Elem()
+}
+
+func (i *ownershipTeamsLinksPtrType) ToOwnershipTeamsLinksPtrOutput() OwnershipTeamsLinksPtrOutput {
+	return i.ToOwnershipTeamsLinksPtrOutputWithContext(context.Background())
+}
+
+func (i *ownershipTeamsLinksPtrType) ToOwnershipTeamsLinksPtrOutputWithContext(ctx context.Context) OwnershipTeamsLinksPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OwnershipTeamsLinksPtrOutput)
+}
+
+type OwnershipTeamsLinksOutput struct{ *pulumi.OutputState }
+
+func (OwnershipTeamsLinksOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*OwnershipTeamsLinks)(nil)).Elem()
+}
+
+func (o OwnershipTeamsLinksOutput) ToOwnershipTeamsLinksOutput() OwnershipTeamsLinksOutput {
+	return o
+}
+
+func (o OwnershipTeamsLinksOutput) ToOwnershipTeamsLinksOutputWithContext(ctx context.Context) OwnershipTeamsLinksOutput {
+	return o
+}
+
+func (o OwnershipTeamsLinksOutput) ToOwnershipTeamsLinksPtrOutput() OwnershipTeamsLinksPtrOutput {
+	return o.ToOwnershipTeamsLinksPtrOutputWithContext(context.Background())
+}
+
+func (o OwnershipTeamsLinksOutput) ToOwnershipTeamsLinksPtrOutputWithContext(ctx context.Context) OwnershipTeamsLinksPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v OwnershipTeamsLinks) *OwnershipTeamsLinks {
+		return &v
+	}).(OwnershipTeamsLinksPtrOutput)
+}
+
+func (o OwnershipTeamsLinksOutput) Links() OwnershipTeamsLinksLinkArrayOutput {
+	return o.ApplyT(func(v OwnershipTeamsLinks) []OwnershipTeamsLinksLink { return v.Links }).(OwnershipTeamsLinksLinkArrayOutput)
+}
+
+type OwnershipTeamsLinksPtrOutput struct{ *pulumi.OutputState }
+
+func (OwnershipTeamsLinksPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**OwnershipTeamsLinks)(nil)).Elem()
+}
+
+func (o OwnershipTeamsLinksPtrOutput) ToOwnershipTeamsLinksPtrOutput() OwnershipTeamsLinksPtrOutput {
+	return o
+}
+
+func (o OwnershipTeamsLinksPtrOutput) ToOwnershipTeamsLinksPtrOutputWithContext(ctx context.Context) OwnershipTeamsLinksPtrOutput {
+	return o
+}
+
+func (o OwnershipTeamsLinksPtrOutput) Elem() OwnershipTeamsLinksOutput {
+	return o.ApplyT(func(v *OwnershipTeamsLinks) OwnershipTeamsLinks {
+		if v != nil {
+			return *v
+		}
+		var ret OwnershipTeamsLinks
+		return ret
+	}).(OwnershipTeamsLinksOutput)
+}
+
+func (o OwnershipTeamsLinksPtrOutput) Links() OwnershipTeamsLinksLinkArrayOutput {
+	return o.ApplyT(func(v *OwnershipTeamsLinks) []OwnershipTeamsLinksLink {
+		if v == nil {
+			return nil
+		}
+		return v.Links
+	}).(OwnershipTeamsLinksLinkArrayOutput)
+}
+
+type OwnershipTeamsLinksLink struct {
+	// Type. Possible values: `DASHBOARD`, `DOCUMENTATION`, `HEALTH_APP`, `REPOSITORY`, `RUNBOOK`, `URL`, `WIKI`
+	LinkType string `pulumi:"linkType"`
+	// No documentation available
+	Url string `pulumi:"url"`
+}
+
+// OwnershipTeamsLinksLinkInput is an input type that accepts OwnershipTeamsLinksLinkArgs and OwnershipTeamsLinksLinkOutput values.
+// You can construct a concrete instance of `OwnershipTeamsLinksLinkInput` via:
+//
+//	OwnershipTeamsLinksLinkArgs{...}
+type OwnershipTeamsLinksLinkInput interface {
+	pulumi.Input
+
+	ToOwnershipTeamsLinksLinkOutput() OwnershipTeamsLinksLinkOutput
+	ToOwnershipTeamsLinksLinkOutputWithContext(context.Context) OwnershipTeamsLinksLinkOutput
+}
+
+type OwnershipTeamsLinksLinkArgs struct {
+	// Type. Possible values: `DASHBOARD`, `DOCUMENTATION`, `HEALTH_APP`, `REPOSITORY`, `RUNBOOK`, `URL`, `WIKI`
+	LinkType pulumi.StringInput `pulumi:"linkType"`
+	// No documentation available
+	Url pulumi.StringInput `pulumi:"url"`
+}
+
+func (OwnershipTeamsLinksLinkArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*OwnershipTeamsLinksLink)(nil)).Elem()
+}
+
+func (i OwnershipTeamsLinksLinkArgs) ToOwnershipTeamsLinksLinkOutput() OwnershipTeamsLinksLinkOutput {
+	return i.ToOwnershipTeamsLinksLinkOutputWithContext(context.Background())
+}
+
+func (i OwnershipTeamsLinksLinkArgs) ToOwnershipTeamsLinksLinkOutputWithContext(ctx context.Context) OwnershipTeamsLinksLinkOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OwnershipTeamsLinksLinkOutput)
+}
+
+// OwnershipTeamsLinksLinkArrayInput is an input type that accepts OwnershipTeamsLinksLinkArray and OwnershipTeamsLinksLinkArrayOutput values.
+// You can construct a concrete instance of `OwnershipTeamsLinksLinkArrayInput` via:
+//
+//	OwnershipTeamsLinksLinkArray{ OwnershipTeamsLinksLinkArgs{...} }
+type OwnershipTeamsLinksLinkArrayInput interface {
+	pulumi.Input
+
+	ToOwnershipTeamsLinksLinkArrayOutput() OwnershipTeamsLinksLinkArrayOutput
+	ToOwnershipTeamsLinksLinkArrayOutputWithContext(context.Context) OwnershipTeamsLinksLinkArrayOutput
+}
+
+type OwnershipTeamsLinksLinkArray []OwnershipTeamsLinksLinkInput
+
+func (OwnershipTeamsLinksLinkArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]OwnershipTeamsLinksLink)(nil)).Elem()
+}
+
+func (i OwnershipTeamsLinksLinkArray) ToOwnershipTeamsLinksLinkArrayOutput() OwnershipTeamsLinksLinkArrayOutput {
+	return i.ToOwnershipTeamsLinksLinkArrayOutputWithContext(context.Background())
+}
+
+func (i OwnershipTeamsLinksLinkArray) ToOwnershipTeamsLinksLinkArrayOutputWithContext(ctx context.Context) OwnershipTeamsLinksLinkArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OwnershipTeamsLinksLinkArrayOutput)
+}
+
+type OwnershipTeamsLinksLinkOutput struct{ *pulumi.OutputState }
+
+func (OwnershipTeamsLinksLinkOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*OwnershipTeamsLinksLink)(nil)).Elem()
+}
+
+func (o OwnershipTeamsLinksLinkOutput) ToOwnershipTeamsLinksLinkOutput() OwnershipTeamsLinksLinkOutput {
+	return o
+}
+
+func (o OwnershipTeamsLinksLinkOutput) ToOwnershipTeamsLinksLinkOutputWithContext(ctx context.Context) OwnershipTeamsLinksLinkOutput {
+	return o
+}
+
+// Type. Possible values: `DASHBOARD`, `DOCUMENTATION`, `HEALTH_APP`, `REPOSITORY`, `RUNBOOK`, `URL`, `WIKI`
+func (o OwnershipTeamsLinksLinkOutput) LinkType() pulumi.StringOutput {
+	return o.ApplyT(func(v OwnershipTeamsLinksLink) string { return v.LinkType }).(pulumi.StringOutput)
+}
+
+// No documentation available
+func (o OwnershipTeamsLinksLinkOutput) Url() pulumi.StringOutput {
+	return o.ApplyT(func(v OwnershipTeamsLinksLink) string { return v.Url }).(pulumi.StringOutput)
+}
+
+type OwnershipTeamsLinksLinkArrayOutput struct{ *pulumi.OutputState }
+
+func (OwnershipTeamsLinksLinkArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]OwnershipTeamsLinksLink)(nil)).Elem()
+}
+
+func (o OwnershipTeamsLinksLinkArrayOutput) ToOwnershipTeamsLinksLinkArrayOutput() OwnershipTeamsLinksLinkArrayOutput {
+	return o
+}
+
+func (o OwnershipTeamsLinksLinkArrayOutput) ToOwnershipTeamsLinksLinkArrayOutputWithContext(ctx context.Context) OwnershipTeamsLinksLinkArrayOutput {
+	return o
+}
+
+func (o OwnershipTeamsLinksLinkArrayOutput) Index(i pulumi.IntInput) OwnershipTeamsLinksLinkOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) OwnershipTeamsLinksLink {
+		return vs[0].([]OwnershipTeamsLinksLink)[vs[1].(int)]
+	}).(OwnershipTeamsLinksLinkOutput)
+}
+
+type OwnershipTeamsResponsibilities struct {
+	// Responsible for developing and maintaining high quality software. Development teams are responsible for making code changes to address performance regressions, errors, or security vulnerabilities.
+	Development bool `pulumi:"development"`
+	// Responsible for the administration, management, and support of the IT infrastructure including physical servers, virtualization, and cloud. Teams with infrastructure responsibility are responsible for addressing hardware issues, resource limits, and operating system vulnerabilities.
+	Infrastructure bool `pulumi:"infrastructure"`
+	// Responsible for ensuring that applications in development align with business needs and meet the usability requirements of users, stakeholders, customers, and external partners. Teams with line of business responsibility are responsible for understanding the customer experience and how it affects business goals.
+	LineOfBusiness bool `pulumi:"lineOfBusiness"`
+	// Responsible for deploying and managing software, with a focus on high availability and performance. Teams with operations responsibilities needs to understand the impact, priority, and team responsible for addressing problems detected by Dynatrace.
+	Operations bool `pulumi:"operations"`
+	// Responsible for the security posture of the organization. Teams with security responsibility must understand the impact, priority, and team responsible for addressing security vulnerabilities.
+	Security bool `pulumi:"security"`
+}
+
+// OwnershipTeamsResponsibilitiesInput is an input type that accepts OwnershipTeamsResponsibilitiesArgs and OwnershipTeamsResponsibilitiesOutput values.
+// You can construct a concrete instance of `OwnershipTeamsResponsibilitiesInput` via:
+//
+//	OwnershipTeamsResponsibilitiesArgs{...}
+type OwnershipTeamsResponsibilitiesInput interface {
+	pulumi.Input
+
+	ToOwnershipTeamsResponsibilitiesOutput() OwnershipTeamsResponsibilitiesOutput
+	ToOwnershipTeamsResponsibilitiesOutputWithContext(context.Context) OwnershipTeamsResponsibilitiesOutput
+}
+
+type OwnershipTeamsResponsibilitiesArgs struct {
+	// Responsible for developing and maintaining high quality software. Development teams are responsible for making code changes to address performance regressions, errors, or security vulnerabilities.
+	Development pulumi.BoolInput `pulumi:"development"`
+	// Responsible for the administration, management, and support of the IT infrastructure including physical servers, virtualization, and cloud. Teams with infrastructure responsibility are responsible for addressing hardware issues, resource limits, and operating system vulnerabilities.
+	Infrastructure pulumi.BoolInput `pulumi:"infrastructure"`
+	// Responsible for ensuring that applications in development align with business needs and meet the usability requirements of users, stakeholders, customers, and external partners. Teams with line of business responsibility are responsible for understanding the customer experience and how it affects business goals.
+	LineOfBusiness pulumi.BoolInput `pulumi:"lineOfBusiness"`
+	// Responsible for deploying and managing software, with a focus on high availability and performance. Teams with operations responsibilities needs to understand the impact, priority, and team responsible for addressing problems detected by Dynatrace.
+	Operations pulumi.BoolInput `pulumi:"operations"`
+	// Responsible for the security posture of the organization. Teams with security responsibility must understand the impact, priority, and team responsible for addressing security vulnerabilities.
+	Security pulumi.BoolInput `pulumi:"security"`
+}
+
+func (OwnershipTeamsResponsibilitiesArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*OwnershipTeamsResponsibilities)(nil)).Elem()
+}
+
+func (i OwnershipTeamsResponsibilitiesArgs) ToOwnershipTeamsResponsibilitiesOutput() OwnershipTeamsResponsibilitiesOutput {
+	return i.ToOwnershipTeamsResponsibilitiesOutputWithContext(context.Background())
+}
+
+func (i OwnershipTeamsResponsibilitiesArgs) ToOwnershipTeamsResponsibilitiesOutputWithContext(ctx context.Context) OwnershipTeamsResponsibilitiesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OwnershipTeamsResponsibilitiesOutput)
+}
+
+func (i OwnershipTeamsResponsibilitiesArgs) ToOwnershipTeamsResponsibilitiesPtrOutput() OwnershipTeamsResponsibilitiesPtrOutput {
+	return i.ToOwnershipTeamsResponsibilitiesPtrOutputWithContext(context.Background())
+}
+
+func (i OwnershipTeamsResponsibilitiesArgs) ToOwnershipTeamsResponsibilitiesPtrOutputWithContext(ctx context.Context) OwnershipTeamsResponsibilitiesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OwnershipTeamsResponsibilitiesOutput).ToOwnershipTeamsResponsibilitiesPtrOutputWithContext(ctx)
+}
+
+// OwnershipTeamsResponsibilitiesPtrInput is an input type that accepts OwnershipTeamsResponsibilitiesArgs, OwnershipTeamsResponsibilitiesPtr and OwnershipTeamsResponsibilitiesPtrOutput values.
+// You can construct a concrete instance of `OwnershipTeamsResponsibilitiesPtrInput` via:
+//
+//	        OwnershipTeamsResponsibilitiesArgs{...}
+//
+//	or:
+//
+//	        nil
+type OwnershipTeamsResponsibilitiesPtrInput interface {
+	pulumi.Input
+
+	ToOwnershipTeamsResponsibilitiesPtrOutput() OwnershipTeamsResponsibilitiesPtrOutput
+	ToOwnershipTeamsResponsibilitiesPtrOutputWithContext(context.Context) OwnershipTeamsResponsibilitiesPtrOutput
+}
+
+type ownershipTeamsResponsibilitiesPtrType OwnershipTeamsResponsibilitiesArgs
+
+func OwnershipTeamsResponsibilitiesPtr(v *OwnershipTeamsResponsibilitiesArgs) OwnershipTeamsResponsibilitiesPtrInput {
+	return (*ownershipTeamsResponsibilitiesPtrType)(v)
+}
+
+func (*ownershipTeamsResponsibilitiesPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**OwnershipTeamsResponsibilities)(nil)).Elem()
+}
+
+func (i *ownershipTeamsResponsibilitiesPtrType) ToOwnershipTeamsResponsibilitiesPtrOutput() OwnershipTeamsResponsibilitiesPtrOutput {
+	return i.ToOwnershipTeamsResponsibilitiesPtrOutputWithContext(context.Background())
+}
+
+func (i *ownershipTeamsResponsibilitiesPtrType) ToOwnershipTeamsResponsibilitiesPtrOutputWithContext(ctx context.Context) OwnershipTeamsResponsibilitiesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OwnershipTeamsResponsibilitiesPtrOutput)
+}
+
+type OwnershipTeamsResponsibilitiesOutput struct{ *pulumi.OutputState }
+
+func (OwnershipTeamsResponsibilitiesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*OwnershipTeamsResponsibilities)(nil)).Elem()
+}
+
+func (o OwnershipTeamsResponsibilitiesOutput) ToOwnershipTeamsResponsibilitiesOutput() OwnershipTeamsResponsibilitiesOutput {
+	return o
+}
+
+func (o OwnershipTeamsResponsibilitiesOutput) ToOwnershipTeamsResponsibilitiesOutputWithContext(ctx context.Context) OwnershipTeamsResponsibilitiesOutput {
+	return o
+}
+
+func (o OwnershipTeamsResponsibilitiesOutput) ToOwnershipTeamsResponsibilitiesPtrOutput() OwnershipTeamsResponsibilitiesPtrOutput {
+	return o.ToOwnershipTeamsResponsibilitiesPtrOutputWithContext(context.Background())
+}
+
+func (o OwnershipTeamsResponsibilitiesOutput) ToOwnershipTeamsResponsibilitiesPtrOutputWithContext(ctx context.Context) OwnershipTeamsResponsibilitiesPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v OwnershipTeamsResponsibilities) *OwnershipTeamsResponsibilities {
+		return &v
+	}).(OwnershipTeamsResponsibilitiesPtrOutput)
+}
+
+// Responsible for developing and maintaining high quality software. Development teams are responsible for making code changes to address performance regressions, errors, or security vulnerabilities.
+func (o OwnershipTeamsResponsibilitiesOutput) Development() pulumi.BoolOutput {
+	return o.ApplyT(func(v OwnershipTeamsResponsibilities) bool { return v.Development }).(pulumi.BoolOutput)
+}
+
+// Responsible for the administration, management, and support of the IT infrastructure including physical servers, virtualization, and cloud. Teams with infrastructure responsibility are responsible for addressing hardware issues, resource limits, and operating system vulnerabilities.
+func (o OwnershipTeamsResponsibilitiesOutput) Infrastructure() pulumi.BoolOutput {
+	return o.ApplyT(func(v OwnershipTeamsResponsibilities) bool { return v.Infrastructure }).(pulumi.BoolOutput)
+}
+
+// Responsible for ensuring that applications in development align with business needs and meet the usability requirements of users, stakeholders, customers, and external partners. Teams with line of business responsibility are responsible for understanding the customer experience and how it affects business goals.
+func (o OwnershipTeamsResponsibilitiesOutput) LineOfBusiness() pulumi.BoolOutput {
+	return o.ApplyT(func(v OwnershipTeamsResponsibilities) bool { return v.LineOfBusiness }).(pulumi.BoolOutput)
+}
+
+// Responsible for deploying and managing software, with a focus on high availability and performance. Teams with operations responsibilities needs to understand the impact, priority, and team responsible for addressing problems detected by Dynatrace.
+func (o OwnershipTeamsResponsibilitiesOutput) Operations() pulumi.BoolOutput {
+	return o.ApplyT(func(v OwnershipTeamsResponsibilities) bool { return v.Operations }).(pulumi.BoolOutput)
+}
+
+// Responsible for the security posture of the organization. Teams with security responsibility must understand the impact, priority, and team responsible for addressing security vulnerabilities.
+func (o OwnershipTeamsResponsibilitiesOutput) Security() pulumi.BoolOutput {
+	return o.ApplyT(func(v OwnershipTeamsResponsibilities) bool { return v.Security }).(pulumi.BoolOutput)
+}
+
+type OwnershipTeamsResponsibilitiesPtrOutput struct{ *pulumi.OutputState }
+
+func (OwnershipTeamsResponsibilitiesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**OwnershipTeamsResponsibilities)(nil)).Elem()
+}
+
+func (o OwnershipTeamsResponsibilitiesPtrOutput) ToOwnershipTeamsResponsibilitiesPtrOutput() OwnershipTeamsResponsibilitiesPtrOutput {
+	return o
+}
+
+func (o OwnershipTeamsResponsibilitiesPtrOutput) ToOwnershipTeamsResponsibilitiesPtrOutputWithContext(ctx context.Context) OwnershipTeamsResponsibilitiesPtrOutput {
+	return o
+}
+
+func (o OwnershipTeamsResponsibilitiesPtrOutput) Elem() OwnershipTeamsResponsibilitiesOutput {
+	return o.ApplyT(func(v *OwnershipTeamsResponsibilities) OwnershipTeamsResponsibilities {
+		if v != nil {
+			return *v
+		}
+		var ret OwnershipTeamsResponsibilities
+		return ret
+	}).(OwnershipTeamsResponsibilitiesOutput)
+}
+
+// Responsible for developing and maintaining high quality software. Development teams are responsible for making code changes to address performance regressions, errors, or security vulnerabilities.
+func (o OwnershipTeamsResponsibilitiesPtrOutput) Development() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *OwnershipTeamsResponsibilities) *bool {
+		if v == nil {
+			return nil
+		}
+		return &v.Development
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Responsible for the administration, management, and support of the IT infrastructure including physical servers, virtualization, and cloud. Teams with infrastructure responsibility are responsible for addressing hardware issues, resource limits, and operating system vulnerabilities.
+func (o OwnershipTeamsResponsibilitiesPtrOutput) Infrastructure() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *OwnershipTeamsResponsibilities) *bool {
+		if v == nil {
+			return nil
+		}
+		return &v.Infrastructure
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Responsible for ensuring that applications in development align with business needs and meet the usability requirements of users, stakeholders, customers, and external partners. Teams with line of business responsibility are responsible for understanding the customer experience and how it affects business goals.
+func (o OwnershipTeamsResponsibilitiesPtrOutput) LineOfBusiness() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *OwnershipTeamsResponsibilities) *bool {
+		if v == nil {
+			return nil
+		}
+		return &v.LineOfBusiness
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Responsible for deploying and managing software, with a focus on high availability and performance. Teams with operations responsibilities needs to understand the impact, priority, and team responsible for addressing problems detected by Dynatrace.
+func (o OwnershipTeamsResponsibilitiesPtrOutput) Operations() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *OwnershipTeamsResponsibilities) *bool {
+		if v == nil {
+			return nil
+		}
+		return &v.Operations
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Responsible for the security posture of the organization. Teams with security responsibility must understand the impact, priority, and team responsible for addressing security vulnerabilities.
+func (o OwnershipTeamsResponsibilitiesPtrOutput) Security() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *OwnershipTeamsResponsibilities) *bool {
+		if v == nil {
+			return nil
+		}
+		return &v.Security
+	}).(pulumi.BoolPtrOutput)
+}
+
+type OwnershipTeamsSupplementaryIdentifiers struct {
+	SupplementaryIdentifiers []OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifier `pulumi:"supplementaryIdentifiers"`
+}
+
+// OwnershipTeamsSupplementaryIdentifiersInput is an input type that accepts OwnershipTeamsSupplementaryIdentifiersArgs and OwnershipTeamsSupplementaryIdentifiersOutput values.
+// You can construct a concrete instance of `OwnershipTeamsSupplementaryIdentifiersInput` via:
+//
+//	OwnershipTeamsSupplementaryIdentifiersArgs{...}
+type OwnershipTeamsSupplementaryIdentifiersInput interface {
+	pulumi.Input
+
+	ToOwnershipTeamsSupplementaryIdentifiersOutput() OwnershipTeamsSupplementaryIdentifiersOutput
+	ToOwnershipTeamsSupplementaryIdentifiersOutputWithContext(context.Context) OwnershipTeamsSupplementaryIdentifiersOutput
+}
+
+type OwnershipTeamsSupplementaryIdentifiersArgs struct {
+	SupplementaryIdentifiers OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifierArrayInput `pulumi:"supplementaryIdentifiers"`
+}
+
+func (OwnershipTeamsSupplementaryIdentifiersArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*OwnershipTeamsSupplementaryIdentifiers)(nil)).Elem()
+}
+
+func (i OwnershipTeamsSupplementaryIdentifiersArgs) ToOwnershipTeamsSupplementaryIdentifiersOutput() OwnershipTeamsSupplementaryIdentifiersOutput {
+	return i.ToOwnershipTeamsSupplementaryIdentifiersOutputWithContext(context.Background())
+}
+
+func (i OwnershipTeamsSupplementaryIdentifiersArgs) ToOwnershipTeamsSupplementaryIdentifiersOutputWithContext(ctx context.Context) OwnershipTeamsSupplementaryIdentifiersOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OwnershipTeamsSupplementaryIdentifiersOutput)
+}
+
+func (i OwnershipTeamsSupplementaryIdentifiersArgs) ToOwnershipTeamsSupplementaryIdentifiersPtrOutput() OwnershipTeamsSupplementaryIdentifiersPtrOutput {
+	return i.ToOwnershipTeamsSupplementaryIdentifiersPtrOutputWithContext(context.Background())
+}
+
+func (i OwnershipTeamsSupplementaryIdentifiersArgs) ToOwnershipTeamsSupplementaryIdentifiersPtrOutputWithContext(ctx context.Context) OwnershipTeamsSupplementaryIdentifiersPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OwnershipTeamsSupplementaryIdentifiersOutput).ToOwnershipTeamsSupplementaryIdentifiersPtrOutputWithContext(ctx)
+}
+
+// OwnershipTeamsSupplementaryIdentifiersPtrInput is an input type that accepts OwnershipTeamsSupplementaryIdentifiersArgs, OwnershipTeamsSupplementaryIdentifiersPtr and OwnershipTeamsSupplementaryIdentifiersPtrOutput values.
+// You can construct a concrete instance of `OwnershipTeamsSupplementaryIdentifiersPtrInput` via:
+//
+//	        OwnershipTeamsSupplementaryIdentifiersArgs{...}
+//
+//	or:
+//
+//	        nil
+type OwnershipTeamsSupplementaryIdentifiersPtrInput interface {
+	pulumi.Input
+
+	ToOwnershipTeamsSupplementaryIdentifiersPtrOutput() OwnershipTeamsSupplementaryIdentifiersPtrOutput
+	ToOwnershipTeamsSupplementaryIdentifiersPtrOutputWithContext(context.Context) OwnershipTeamsSupplementaryIdentifiersPtrOutput
+}
+
+type ownershipTeamsSupplementaryIdentifiersPtrType OwnershipTeamsSupplementaryIdentifiersArgs
+
+func OwnershipTeamsSupplementaryIdentifiersPtr(v *OwnershipTeamsSupplementaryIdentifiersArgs) OwnershipTeamsSupplementaryIdentifiersPtrInput {
+	return (*ownershipTeamsSupplementaryIdentifiersPtrType)(v)
+}
+
+func (*ownershipTeamsSupplementaryIdentifiersPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**OwnershipTeamsSupplementaryIdentifiers)(nil)).Elem()
+}
+
+func (i *ownershipTeamsSupplementaryIdentifiersPtrType) ToOwnershipTeamsSupplementaryIdentifiersPtrOutput() OwnershipTeamsSupplementaryIdentifiersPtrOutput {
+	return i.ToOwnershipTeamsSupplementaryIdentifiersPtrOutputWithContext(context.Background())
+}
+
+func (i *ownershipTeamsSupplementaryIdentifiersPtrType) ToOwnershipTeamsSupplementaryIdentifiersPtrOutputWithContext(ctx context.Context) OwnershipTeamsSupplementaryIdentifiersPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OwnershipTeamsSupplementaryIdentifiersPtrOutput)
+}
+
+type OwnershipTeamsSupplementaryIdentifiersOutput struct{ *pulumi.OutputState }
+
+func (OwnershipTeamsSupplementaryIdentifiersOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*OwnershipTeamsSupplementaryIdentifiers)(nil)).Elem()
+}
+
+func (o OwnershipTeamsSupplementaryIdentifiersOutput) ToOwnershipTeamsSupplementaryIdentifiersOutput() OwnershipTeamsSupplementaryIdentifiersOutput {
+	return o
+}
+
+func (o OwnershipTeamsSupplementaryIdentifiersOutput) ToOwnershipTeamsSupplementaryIdentifiersOutputWithContext(ctx context.Context) OwnershipTeamsSupplementaryIdentifiersOutput {
+	return o
+}
+
+func (o OwnershipTeamsSupplementaryIdentifiersOutput) ToOwnershipTeamsSupplementaryIdentifiersPtrOutput() OwnershipTeamsSupplementaryIdentifiersPtrOutput {
+	return o.ToOwnershipTeamsSupplementaryIdentifiersPtrOutputWithContext(context.Background())
+}
+
+func (o OwnershipTeamsSupplementaryIdentifiersOutput) ToOwnershipTeamsSupplementaryIdentifiersPtrOutputWithContext(ctx context.Context) OwnershipTeamsSupplementaryIdentifiersPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v OwnershipTeamsSupplementaryIdentifiers) *OwnershipTeamsSupplementaryIdentifiers {
+		return &v
+	}).(OwnershipTeamsSupplementaryIdentifiersPtrOutput)
+}
+
+func (o OwnershipTeamsSupplementaryIdentifiersOutput) SupplementaryIdentifiers() OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifierArrayOutput {
+	return o.ApplyT(func(v OwnershipTeamsSupplementaryIdentifiers) []OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifier {
+		return v.SupplementaryIdentifiers
+	}).(OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifierArrayOutput)
+}
+
+type OwnershipTeamsSupplementaryIdentifiersPtrOutput struct{ *pulumi.OutputState }
+
+func (OwnershipTeamsSupplementaryIdentifiersPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**OwnershipTeamsSupplementaryIdentifiers)(nil)).Elem()
+}
+
+func (o OwnershipTeamsSupplementaryIdentifiersPtrOutput) ToOwnershipTeamsSupplementaryIdentifiersPtrOutput() OwnershipTeamsSupplementaryIdentifiersPtrOutput {
+	return o
+}
+
+func (o OwnershipTeamsSupplementaryIdentifiersPtrOutput) ToOwnershipTeamsSupplementaryIdentifiersPtrOutputWithContext(ctx context.Context) OwnershipTeamsSupplementaryIdentifiersPtrOutput {
+	return o
+}
+
+func (o OwnershipTeamsSupplementaryIdentifiersPtrOutput) Elem() OwnershipTeamsSupplementaryIdentifiersOutput {
+	return o.ApplyT(func(v *OwnershipTeamsSupplementaryIdentifiers) OwnershipTeamsSupplementaryIdentifiers {
+		if v != nil {
+			return *v
+		}
+		var ret OwnershipTeamsSupplementaryIdentifiers
+		return ret
+	}).(OwnershipTeamsSupplementaryIdentifiersOutput)
+}
+
+func (o OwnershipTeamsSupplementaryIdentifiersPtrOutput) SupplementaryIdentifiers() OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifierArrayOutput {
+	return o.ApplyT(func(v *OwnershipTeamsSupplementaryIdentifiers) []OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifier {
+		if v == nil {
+			return nil
+		}
+		return v.SupplementaryIdentifiers
+	}).(OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifierArrayOutput)
+}
+
+type OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifier struct {
+	// Supplementary Identifier
+	SupplementaryIdentifier string `pulumi:"supplementaryIdentifier"`
+}
+
+// OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifierInput is an input type that accepts OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifierArgs and OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifierOutput values.
+// You can construct a concrete instance of `OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifierInput` via:
+//
+//	OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifierArgs{...}
+type OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifierInput interface {
+	pulumi.Input
+
+	ToOwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifierOutput() OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifierOutput
+	ToOwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifierOutputWithContext(context.Context) OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifierOutput
+}
+
+type OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifierArgs struct {
+	// Supplementary Identifier
+	SupplementaryIdentifier pulumi.StringInput `pulumi:"supplementaryIdentifier"`
+}
+
+func (OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifierArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifier)(nil)).Elem()
+}
+
+func (i OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifierArgs) ToOwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifierOutput() OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifierOutput {
+	return i.ToOwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifierOutputWithContext(context.Background())
+}
+
+func (i OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifierArgs) ToOwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifierOutputWithContext(ctx context.Context) OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifierOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifierOutput)
+}
+
+// OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifierArrayInput is an input type that accepts OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifierArray and OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifierArrayOutput values.
+// You can construct a concrete instance of `OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifierArrayInput` via:
+//
+//	OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifierArray{ OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifierArgs{...} }
+type OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifierArrayInput interface {
+	pulumi.Input
+
+	ToOwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifierArrayOutput() OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifierArrayOutput
+	ToOwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifierArrayOutputWithContext(context.Context) OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifierArrayOutput
+}
+
+type OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifierArray []OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifierInput
+
+func (OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifierArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifier)(nil)).Elem()
+}
+
+func (i OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifierArray) ToOwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifierArrayOutput() OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifierArrayOutput {
+	return i.ToOwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifierArrayOutputWithContext(context.Background())
+}
+
+func (i OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifierArray) ToOwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifierArrayOutputWithContext(ctx context.Context) OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifierArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifierArrayOutput)
+}
+
+type OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifierOutput struct{ *pulumi.OutputState }
+
+func (OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifierOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifier)(nil)).Elem()
+}
+
+func (o OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifierOutput) ToOwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifierOutput() OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifierOutput {
+	return o
+}
+
+func (o OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifierOutput) ToOwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifierOutputWithContext(ctx context.Context) OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifierOutput {
+	return o
+}
+
+// Supplementary Identifier
+func (o OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifierOutput) SupplementaryIdentifier() pulumi.StringOutput {
+	return o.ApplyT(func(v OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifier) string {
+		return v.SupplementaryIdentifier
+	}).(pulumi.StringOutput)
+}
+
+type OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifierArrayOutput struct{ *pulumi.OutputState }
+
+func (OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifierArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifier)(nil)).Elem()
+}
+
+func (o OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifierArrayOutput) ToOwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifierArrayOutput() OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifierArrayOutput {
+	return o
+}
+
+func (o OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifierArrayOutput) ToOwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifierArrayOutputWithContext(ctx context.Context) OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifierArrayOutput {
+	return o
+}
+
+func (o OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifierArrayOutput) Index(i pulumi.IntInput) OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifierOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifier {
+		return vs[0].([]OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifier)[vs[1].(int)]
+	}).(OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifierOutput)
+}
+
+type PgAnomaliesAvailability struct {
+	// How to monitor the availability of the process group:  * `PROCESS_IMPACT`: Alert if any process of the group becomes unavailable.  * `MINIMUM_THRESHOLD`: Alert if the number of active processes in the group falls below the specified threshold.  * `OFF`: Availability monitoring is disabled.
+	Method string `pulumi:"method"`
+	// Alert if the number of active processes in the group is lower than this value.
+	MinimumThreshold *int `pulumi:"minimumThreshold"`
+}
+
+// PgAnomaliesAvailabilityInput is an input type that accepts PgAnomaliesAvailabilityArgs and PgAnomaliesAvailabilityOutput values.
+// You can construct a concrete instance of `PgAnomaliesAvailabilityInput` via:
+//
+//	PgAnomaliesAvailabilityArgs{...}
+type PgAnomaliesAvailabilityInput interface {
+	pulumi.Input
+
+	ToPgAnomaliesAvailabilityOutput() PgAnomaliesAvailabilityOutput
+	ToPgAnomaliesAvailabilityOutputWithContext(context.Context) PgAnomaliesAvailabilityOutput
+}
+
+type PgAnomaliesAvailabilityArgs struct {
+	// How to monitor the availability of the process group:  * `PROCESS_IMPACT`: Alert if any process of the group becomes unavailable.  * `MINIMUM_THRESHOLD`: Alert if the number of active processes in the group falls below the specified threshold.  * `OFF`: Availability monitoring is disabled.
+	Method pulumi.StringInput `pulumi:"method"`
+	// Alert if the number of active processes in the group is lower than this value.
+	MinimumThreshold pulumi.IntPtrInput `pulumi:"minimumThreshold"`
+}
+
+func (PgAnomaliesAvailabilityArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PgAnomaliesAvailability)(nil)).Elem()
+}
+
+func (i PgAnomaliesAvailabilityArgs) ToPgAnomaliesAvailabilityOutput() PgAnomaliesAvailabilityOutput {
+	return i.ToPgAnomaliesAvailabilityOutputWithContext(context.Background())
+}
+
+func (i PgAnomaliesAvailabilityArgs) ToPgAnomaliesAvailabilityOutputWithContext(ctx context.Context) PgAnomaliesAvailabilityOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PgAnomaliesAvailabilityOutput)
+}
+
+func (i PgAnomaliesAvailabilityArgs) ToPgAnomaliesAvailabilityPtrOutput() PgAnomaliesAvailabilityPtrOutput {
+	return i.ToPgAnomaliesAvailabilityPtrOutputWithContext(context.Background())
+}
+
+func (i PgAnomaliesAvailabilityArgs) ToPgAnomaliesAvailabilityPtrOutputWithContext(ctx context.Context) PgAnomaliesAvailabilityPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PgAnomaliesAvailabilityOutput).ToPgAnomaliesAvailabilityPtrOutputWithContext(ctx)
+}
+
+// PgAnomaliesAvailabilityPtrInput is an input type that accepts PgAnomaliesAvailabilityArgs, PgAnomaliesAvailabilityPtr and PgAnomaliesAvailabilityPtrOutput values.
+// You can construct a concrete instance of `PgAnomaliesAvailabilityPtrInput` via:
+//
+//	        PgAnomaliesAvailabilityArgs{...}
+//
+//	or:
+//
+//	        nil
+type PgAnomaliesAvailabilityPtrInput interface {
+	pulumi.Input
+
+	ToPgAnomaliesAvailabilityPtrOutput() PgAnomaliesAvailabilityPtrOutput
+	ToPgAnomaliesAvailabilityPtrOutputWithContext(context.Context) PgAnomaliesAvailabilityPtrOutput
+}
+
+type pgAnomaliesAvailabilityPtrType PgAnomaliesAvailabilityArgs
+
+func PgAnomaliesAvailabilityPtr(v *PgAnomaliesAvailabilityArgs) PgAnomaliesAvailabilityPtrInput {
+	return (*pgAnomaliesAvailabilityPtrType)(v)
+}
+
+func (*pgAnomaliesAvailabilityPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**PgAnomaliesAvailability)(nil)).Elem()
+}
+
+func (i *pgAnomaliesAvailabilityPtrType) ToPgAnomaliesAvailabilityPtrOutput() PgAnomaliesAvailabilityPtrOutput {
+	return i.ToPgAnomaliesAvailabilityPtrOutputWithContext(context.Background())
+}
+
+func (i *pgAnomaliesAvailabilityPtrType) ToPgAnomaliesAvailabilityPtrOutputWithContext(ctx context.Context) PgAnomaliesAvailabilityPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PgAnomaliesAvailabilityPtrOutput)
+}
+
+type PgAnomaliesAvailabilityOutput struct{ *pulumi.OutputState }
+
+func (PgAnomaliesAvailabilityOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PgAnomaliesAvailability)(nil)).Elem()
+}
+
+func (o PgAnomaliesAvailabilityOutput) ToPgAnomaliesAvailabilityOutput() PgAnomaliesAvailabilityOutput {
+	return o
+}
+
+func (o PgAnomaliesAvailabilityOutput) ToPgAnomaliesAvailabilityOutputWithContext(ctx context.Context) PgAnomaliesAvailabilityOutput {
+	return o
+}
+
+func (o PgAnomaliesAvailabilityOutput) ToPgAnomaliesAvailabilityPtrOutput() PgAnomaliesAvailabilityPtrOutput {
+	return o.ToPgAnomaliesAvailabilityPtrOutputWithContext(context.Background())
+}
+
+func (o PgAnomaliesAvailabilityOutput) ToPgAnomaliesAvailabilityPtrOutputWithContext(ctx context.Context) PgAnomaliesAvailabilityPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v PgAnomaliesAvailability) *PgAnomaliesAvailability {
+		return &v
+	}).(PgAnomaliesAvailabilityPtrOutput)
+}
+
+// How to monitor the availability of the process group:  * `PROCESS_IMPACT`: Alert if any process of the group becomes unavailable.  * `MINIMUM_THRESHOLD`: Alert if the number of active processes in the group falls below the specified threshold.  * `OFF`: Availability monitoring is disabled.
+func (o PgAnomaliesAvailabilityOutput) Method() pulumi.StringOutput {
+	return o.ApplyT(func(v PgAnomaliesAvailability) string { return v.Method }).(pulumi.StringOutput)
+}
+
+// Alert if the number of active processes in the group is lower than this value.
+func (o PgAnomaliesAvailabilityOutput) MinimumThreshold() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v PgAnomaliesAvailability) *int { return v.MinimumThreshold }).(pulumi.IntPtrOutput)
+}
+
+type PgAnomaliesAvailabilityPtrOutput struct{ *pulumi.OutputState }
+
+func (PgAnomaliesAvailabilityPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**PgAnomaliesAvailability)(nil)).Elem()
+}
+
+func (o PgAnomaliesAvailabilityPtrOutput) ToPgAnomaliesAvailabilityPtrOutput() PgAnomaliesAvailabilityPtrOutput {
+	return o
+}
+
+func (o PgAnomaliesAvailabilityPtrOutput) ToPgAnomaliesAvailabilityPtrOutputWithContext(ctx context.Context) PgAnomaliesAvailabilityPtrOutput {
+	return o
+}
+
+func (o PgAnomaliesAvailabilityPtrOutput) Elem() PgAnomaliesAvailabilityOutput {
+	return o.ApplyT(func(v *PgAnomaliesAvailability) PgAnomaliesAvailability {
+		if v != nil {
+			return *v
+		}
+		var ret PgAnomaliesAvailability
+		return ret
+	}).(PgAnomaliesAvailabilityOutput)
+}
+
+// How to monitor the availability of the process group:  * `PROCESS_IMPACT`: Alert if any process of the group becomes unavailable.  * `MINIMUM_THRESHOLD`: Alert if the number of active processes in the group falls below the specified threshold.  * `OFF`: Availability monitoring is disabled.
+func (o PgAnomaliesAvailabilityPtrOutput) Method() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PgAnomaliesAvailability) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Method
+	}).(pulumi.StringPtrOutput)
+}
+
+// Alert if the number of active processes in the group is lower than this value.
+func (o PgAnomaliesAvailabilityPtrOutput) MinimumThreshold() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *PgAnomaliesAvailability) *int {
+		if v == nil {
+			return nil
+		}
+		return v.MinimumThreshold
+	}).(pulumi.IntPtrOutput)
+}
+
+type PlatformSloCriteria struct {
+	CriteriaDetails []PlatformSloCriteriaCriteriaDetail `pulumi:"criteriaDetails"`
+}
+
+// PlatformSloCriteriaInput is an input type that accepts PlatformSloCriteriaArgs and PlatformSloCriteriaOutput values.
+// You can construct a concrete instance of `PlatformSloCriteriaInput` via:
+//
+//	PlatformSloCriteriaArgs{...}
+type PlatformSloCriteriaInput interface {
+	pulumi.Input
+
+	ToPlatformSloCriteriaOutput() PlatformSloCriteriaOutput
+	ToPlatformSloCriteriaOutputWithContext(context.Context) PlatformSloCriteriaOutput
+}
+
+type PlatformSloCriteriaArgs struct {
+	CriteriaDetails PlatformSloCriteriaCriteriaDetailArrayInput `pulumi:"criteriaDetails"`
+}
+
+func (PlatformSloCriteriaArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PlatformSloCriteria)(nil)).Elem()
+}
+
+func (i PlatformSloCriteriaArgs) ToPlatformSloCriteriaOutput() PlatformSloCriteriaOutput {
+	return i.ToPlatformSloCriteriaOutputWithContext(context.Background())
+}
+
+func (i PlatformSloCriteriaArgs) ToPlatformSloCriteriaOutputWithContext(ctx context.Context) PlatformSloCriteriaOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PlatformSloCriteriaOutput)
+}
+
+func (i PlatformSloCriteriaArgs) ToPlatformSloCriteriaPtrOutput() PlatformSloCriteriaPtrOutput {
+	return i.ToPlatformSloCriteriaPtrOutputWithContext(context.Background())
+}
+
+func (i PlatformSloCriteriaArgs) ToPlatformSloCriteriaPtrOutputWithContext(ctx context.Context) PlatformSloCriteriaPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PlatformSloCriteriaOutput).ToPlatformSloCriteriaPtrOutputWithContext(ctx)
+}
+
+// PlatformSloCriteriaPtrInput is an input type that accepts PlatformSloCriteriaArgs, PlatformSloCriteriaPtr and PlatformSloCriteriaPtrOutput values.
+// You can construct a concrete instance of `PlatformSloCriteriaPtrInput` via:
+//
+//	        PlatformSloCriteriaArgs{...}
+//
+//	or:
+//
+//	        nil
+type PlatformSloCriteriaPtrInput interface {
+	pulumi.Input
+
+	ToPlatformSloCriteriaPtrOutput() PlatformSloCriteriaPtrOutput
+	ToPlatformSloCriteriaPtrOutputWithContext(context.Context) PlatformSloCriteriaPtrOutput
+}
+
+type platformSloCriteriaPtrType PlatformSloCriteriaArgs
+
+func PlatformSloCriteriaPtr(v *PlatformSloCriteriaArgs) PlatformSloCriteriaPtrInput {
+	return (*platformSloCriteriaPtrType)(v)
+}
+
+func (*platformSloCriteriaPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**PlatformSloCriteria)(nil)).Elem()
+}
+
+func (i *platformSloCriteriaPtrType) ToPlatformSloCriteriaPtrOutput() PlatformSloCriteriaPtrOutput {
+	return i.ToPlatformSloCriteriaPtrOutputWithContext(context.Background())
+}
+
+func (i *platformSloCriteriaPtrType) ToPlatformSloCriteriaPtrOutputWithContext(ctx context.Context) PlatformSloCriteriaPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PlatformSloCriteriaPtrOutput)
+}
+
+type PlatformSloCriteriaOutput struct{ *pulumi.OutputState }
+
+func (PlatformSloCriteriaOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PlatformSloCriteria)(nil)).Elem()
+}
+
+func (o PlatformSloCriteriaOutput) ToPlatformSloCriteriaOutput() PlatformSloCriteriaOutput {
+	return o
+}
+
+func (o PlatformSloCriteriaOutput) ToPlatformSloCriteriaOutputWithContext(ctx context.Context) PlatformSloCriteriaOutput {
+	return o
+}
+
+func (o PlatformSloCriteriaOutput) ToPlatformSloCriteriaPtrOutput() PlatformSloCriteriaPtrOutput {
+	return o.ToPlatformSloCriteriaPtrOutputWithContext(context.Background())
+}
+
+func (o PlatformSloCriteriaOutput) ToPlatformSloCriteriaPtrOutputWithContext(ctx context.Context) PlatformSloCriteriaPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v PlatformSloCriteria) *PlatformSloCriteria {
+		return &v
+	}).(PlatformSloCriteriaPtrOutput)
+}
+
+func (o PlatformSloCriteriaOutput) CriteriaDetails() PlatformSloCriteriaCriteriaDetailArrayOutput {
+	return o.ApplyT(func(v PlatformSloCriteria) []PlatformSloCriteriaCriteriaDetail { return v.CriteriaDetails }).(PlatformSloCriteriaCriteriaDetailArrayOutput)
+}
+
+type PlatformSloCriteriaPtrOutput struct{ *pulumi.OutputState }
+
+func (PlatformSloCriteriaPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**PlatformSloCriteria)(nil)).Elem()
+}
+
+func (o PlatformSloCriteriaPtrOutput) ToPlatformSloCriteriaPtrOutput() PlatformSloCriteriaPtrOutput {
+	return o
+}
+
+func (o PlatformSloCriteriaPtrOutput) ToPlatformSloCriteriaPtrOutputWithContext(ctx context.Context) PlatformSloCriteriaPtrOutput {
+	return o
+}
+
+func (o PlatformSloCriteriaPtrOutput) Elem() PlatformSloCriteriaOutput {
+	return o.ApplyT(func(v *PlatformSloCriteria) PlatformSloCriteria {
+		if v != nil {
+			return *v
+		}
+		var ret PlatformSloCriteria
+		return ret
+	}).(PlatformSloCriteriaOutput)
+}
+
+func (o PlatformSloCriteriaPtrOutput) CriteriaDetails() PlatformSloCriteriaCriteriaDetailArrayOutput {
+	return o.ApplyT(func(v *PlatformSloCriteria) []PlatformSloCriteriaCriteriaDetail {
+		if v == nil {
+			return nil
+		}
+		return v.CriteriaDetails
+	}).(PlatformSloCriteriaCriteriaDetailArrayOutput)
+}
+
+type PlatformSloCriteriaCriteriaDetail struct {
+	// Criteria target, example: `99.8`
+	Target float64 `pulumi:"target"`
+	// Timeframe from, example: `now-7d`
+	TimeframeFrom string `pulumi:"timeframeFrom"`
+	// Timeframe to, example: `now`
+	TimeframeTo *string `pulumi:"timeframeTo"`
+	// Criteria warning, example: `99.9`
+	Warning *float64 `pulumi:"warning"`
+}
+
+// PlatformSloCriteriaCriteriaDetailInput is an input type that accepts PlatformSloCriteriaCriteriaDetailArgs and PlatformSloCriteriaCriteriaDetailOutput values.
+// You can construct a concrete instance of `PlatformSloCriteriaCriteriaDetailInput` via:
+//
+//	PlatformSloCriteriaCriteriaDetailArgs{...}
+type PlatformSloCriteriaCriteriaDetailInput interface {
+	pulumi.Input
+
+	ToPlatformSloCriteriaCriteriaDetailOutput() PlatformSloCriteriaCriteriaDetailOutput
+	ToPlatformSloCriteriaCriteriaDetailOutputWithContext(context.Context) PlatformSloCriteriaCriteriaDetailOutput
+}
+
+type PlatformSloCriteriaCriteriaDetailArgs struct {
+	// Criteria target, example: `99.8`
+	Target pulumi.Float64Input `pulumi:"target"`
+	// Timeframe from, example: `now-7d`
+	TimeframeFrom pulumi.StringInput `pulumi:"timeframeFrom"`
+	// Timeframe to, example: `now`
+	TimeframeTo pulumi.StringPtrInput `pulumi:"timeframeTo"`
+	// Criteria warning, example: `99.9`
+	Warning pulumi.Float64PtrInput `pulumi:"warning"`
+}
+
+func (PlatformSloCriteriaCriteriaDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PlatformSloCriteriaCriteriaDetail)(nil)).Elem()
+}
+
+func (i PlatformSloCriteriaCriteriaDetailArgs) ToPlatformSloCriteriaCriteriaDetailOutput() PlatformSloCriteriaCriteriaDetailOutput {
+	return i.ToPlatformSloCriteriaCriteriaDetailOutputWithContext(context.Background())
+}
+
+func (i PlatformSloCriteriaCriteriaDetailArgs) ToPlatformSloCriteriaCriteriaDetailOutputWithContext(ctx context.Context) PlatformSloCriteriaCriteriaDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PlatformSloCriteriaCriteriaDetailOutput)
+}
+
+// PlatformSloCriteriaCriteriaDetailArrayInput is an input type that accepts PlatformSloCriteriaCriteriaDetailArray and PlatformSloCriteriaCriteriaDetailArrayOutput values.
+// You can construct a concrete instance of `PlatformSloCriteriaCriteriaDetailArrayInput` via:
+//
+//	PlatformSloCriteriaCriteriaDetailArray{ PlatformSloCriteriaCriteriaDetailArgs{...} }
+type PlatformSloCriteriaCriteriaDetailArrayInput interface {
+	pulumi.Input
+
+	ToPlatformSloCriteriaCriteriaDetailArrayOutput() PlatformSloCriteriaCriteriaDetailArrayOutput
+	ToPlatformSloCriteriaCriteriaDetailArrayOutputWithContext(context.Context) PlatformSloCriteriaCriteriaDetailArrayOutput
+}
+
+type PlatformSloCriteriaCriteriaDetailArray []PlatformSloCriteriaCriteriaDetailInput
+
+func (PlatformSloCriteriaCriteriaDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PlatformSloCriteriaCriteriaDetail)(nil)).Elem()
+}
+
+func (i PlatformSloCriteriaCriteriaDetailArray) ToPlatformSloCriteriaCriteriaDetailArrayOutput() PlatformSloCriteriaCriteriaDetailArrayOutput {
+	return i.ToPlatformSloCriteriaCriteriaDetailArrayOutputWithContext(context.Background())
+}
+
+func (i PlatformSloCriteriaCriteriaDetailArray) ToPlatformSloCriteriaCriteriaDetailArrayOutputWithContext(ctx context.Context) PlatformSloCriteriaCriteriaDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PlatformSloCriteriaCriteriaDetailArrayOutput)
+}
+
+type PlatformSloCriteriaCriteriaDetailOutput struct{ *pulumi.OutputState }
+
+func (PlatformSloCriteriaCriteriaDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PlatformSloCriteriaCriteriaDetail)(nil)).Elem()
+}
+
+func (o PlatformSloCriteriaCriteriaDetailOutput) ToPlatformSloCriteriaCriteriaDetailOutput() PlatformSloCriteriaCriteriaDetailOutput {
+	return o
+}
+
+func (o PlatformSloCriteriaCriteriaDetailOutput) ToPlatformSloCriteriaCriteriaDetailOutputWithContext(ctx context.Context) PlatformSloCriteriaCriteriaDetailOutput {
+	return o
+}
+
+// Criteria target, example: `99.8`
+func (o PlatformSloCriteriaCriteriaDetailOutput) Target() pulumi.Float64Output {
+	return o.ApplyT(func(v PlatformSloCriteriaCriteriaDetail) float64 { return v.Target }).(pulumi.Float64Output)
+}
+
+// Timeframe from, example: `now-7d`
+func (o PlatformSloCriteriaCriteriaDetailOutput) TimeframeFrom() pulumi.StringOutput {
+	return o.ApplyT(func(v PlatformSloCriteriaCriteriaDetail) string { return v.TimeframeFrom }).(pulumi.StringOutput)
+}
+
+// Timeframe to, example: `now`
+func (o PlatformSloCriteriaCriteriaDetailOutput) TimeframeTo() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PlatformSloCriteriaCriteriaDetail) *string { return v.TimeframeTo }).(pulumi.StringPtrOutput)
+}
+
+// Criteria warning, example: `99.9`
+func (o PlatformSloCriteriaCriteriaDetailOutput) Warning() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v PlatformSloCriteriaCriteriaDetail) *float64 { return v.Warning }).(pulumi.Float64PtrOutput)
+}
+
+type PlatformSloCriteriaCriteriaDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (PlatformSloCriteriaCriteriaDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PlatformSloCriteriaCriteriaDetail)(nil)).Elem()
+}
+
+func (o PlatformSloCriteriaCriteriaDetailArrayOutput) ToPlatformSloCriteriaCriteriaDetailArrayOutput() PlatformSloCriteriaCriteriaDetailArrayOutput {
+	return o
+}
+
+func (o PlatformSloCriteriaCriteriaDetailArrayOutput) ToPlatformSloCriteriaCriteriaDetailArrayOutputWithContext(ctx context.Context) PlatformSloCriteriaCriteriaDetailArrayOutput {
+	return o
+}
+
+func (o PlatformSloCriteriaCriteriaDetailArrayOutput) Index(i pulumi.IntInput) PlatformSloCriteriaCriteriaDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PlatformSloCriteriaCriteriaDetail {
+		return vs[0].([]PlatformSloCriteriaCriteriaDetail)[vs[1].(int)]
+	}).(PlatformSloCriteriaCriteriaDetailOutput)
+}
+
+type PlatformSloCustomSli struct {
+	// A filter segment is identified by an ID. Each segment includes a list of variable definitions.
+	FilterSegments *PlatformSloCustomSliFilterSegments `pulumi:"filterSegments"`
+	// Indicator of the custom SLI. Example: `timeseries sli=avg(dt.host.cpu.idle)`
+	Indicator string `pulumi:"indicator"`
+}
+
+// PlatformSloCustomSliInput is an input type that accepts PlatformSloCustomSliArgs and PlatformSloCustomSliOutput values.
+// You can construct a concrete instance of `PlatformSloCustomSliInput` via:
+//
+//	PlatformSloCustomSliArgs{...}
+type PlatformSloCustomSliInput interface {
+	pulumi.Input
+
+	ToPlatformSloCustomSliOutput() PlatformSloCustomSliOutput
+	ToPlatformSloCustomSliOutputWithContext(context.Context) PlatformSloCustomSliOutput
+}
+
+type PlatformSloCustomSliArgs struct {
+	// A filter segment is identified by an ID. Each segment includes a list of variable definitions.
+	FilterSegments PlatformSloCustomSliFilterSegmentsPtrInput `pulumi:"filterSegments"`
+	// Indicator of the custom SLI. Example: `timeseries sli=avg(dt.host.cpu.idle)`
+	Indicator pulumi.StringInput `pulumi:"indicator"`
+}
+
+func (PlatformSloCustomSliArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PlatformSloCustomSli)(nil)).Elem()
+}
+
+func (i PlatformSloCustomSliArgs) ToPlatformSloCustomSliOutput() PlatformSloCustomSliOutput {
+	return i.ToPlatformSloCustomSliOutputWithContext(context.Background())
+}
+
+func (i PlatformSloCustomSliArgs) ToPlatformSloCustomSliOutputWithContext(ctx context.Context) PlatformSloCustomSliOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PlatformSloCustomSliOutput)
+}
+
+func (i PlatformSloCustomSliArgs) ToPlatformSloCustomSliPtrOutput() PlatformSloCustomSliPtrOutput {
+	return i.ToPlatformSloCustomSliPtrOutputWithContext(context.Background())
+}
+
+func (i PlatformSloCustomSliArgs) ToPlatformSloCustomSliPtrOutputWithContext(ctx context.Context) PlatformSloCustomSliPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PlatformSloCustomSliOutput).ToPlatformSloCustomSliPtrOutputWithContext(ctx)
+}
+
+// PlatformSloCustomSliPtrInput is an input type that accepts PlatformSloCustomSliArgs, PlatformSloCustomSliPtr and PlatformSloCustomSliPtrOutput values.
+// You can construct a concrete instance of `PlatformSloCustomSliPtrInput` via:
+//
+//	        PlatformSloCustomSliArgs{...}
+//
+//	or:
+//
+//	        nil
+type PlatformSloCustomSliPtrInput interface {
+	pulumi.Input
+
+	ToPlatformSloCustomSliPtrOutput() PlatformSloCustomSliPtrOutput
+	ToPlatformSloCustomSliPtrOutputWithContext(context.Context) PlatformSloCustomSliPtrOutput
+}
+
+type platformSloCustomSliPtrType PlatformSloCustomSliArgs
+
+func PlatformSloCustomSliPtr(v *PlatformSloCustomSliArgs) PlatformSloCustomSliPtrInput {
+	return (*platformSloCustomSliPtrType)(v)
+}
+
+func (*platformSloCustomSliPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**PlatformSloCustomSli)(nil)).Elem()
+}
+
+func (i *platformSloCustomSliPtrType) ToPlatformSloCustomSliPtrOutput() PlatformSloCustomSliPtrOutput {
+	return i.ToPlatformSloCustomSliPtrOutputWithContext(context.Background())
+}
+
+func (i *platformSloCustomSliPtrType) ToPlatformSloCustomSliPtrOutputWithContext(ctx context.Context) PlatformSloCustomSliPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PlatformSloCustomSliPtrOutput)
+}
+
+type PlatformSloCustomSliOutput struct{ *pulumi.OutputState }
+
+func (PlatformSloCustomSliOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PlatformSloCustomSli)(nil)).Elem()
+}
+
+func (o PlatformSloCustomSliOutput) ToPlatformSloCustomSliOutput() PlatformSloCustomSliOutput {
+	return o
+}
+
+func (o PlatformSloCustomSliOutput) ToPlatformSloCustomSliOutputWithContext(ctx context.Context) PlatformSloCustomSliOutput {
+	return o
+}
+
+func (o PlatformSloCustomSliOutput) ToPlatformSloCustomSliPtrOutput() PlatformSloCustomSliPtrOutput {
+	return o.ToPlatformSloCustomSliPtrOutputWithContext(context.Background())
+}
+
+func (o PlatformSloCustomSliOutput) ToPlatformSloCustomSliPtrOutputWithContext(ctx context.Context) PlatformSloCustomSliPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v PlatformSloCustomSli) *PlatformSloCustomSli {
+		return &v
+	}).(PlatformSloCustomSliPtrOutput)
+}
+
+// A filter segment is identified by an ID. Each segment includes a list of variable definitions.
+func (o PlatformSloCustomSliOutput) FilterSegments() PlatformSloCustomSliFilterSegmentsPtrOutput {
+	return o.ApplyT(func(v PlatformSloCustomSli) *PlatformSloCustomSliFilterSegments { return v.FilterSegments }).(PlatformSloCustomSliFilterSegmentsPtrOutput)
+}
+
+// Indicator of the custom SLI. Example: `timeseries sli=avg(dt.host.cpu.idle)`
+func (o PlatformSloCustomSliOutput) Indicator() pulumi.StringOutput {
+	return o.ApplyT(func(v PlatformSloCustomSli) string { return v.Indicator }).(pulumi.StringOutput)
+}
+
+type PlatformSloCustomSliPtrOutput struct{ *pulumi.OutputState }
+
+func (PlatformSloCustomSliPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**PlatformSloCustomSli)(nil)).Elem()
+}
+
+func (o PlatformSloCustomSliPtrOutput) ToPlatformSloCustomSliPtrOutput() PlatformSloCustomSliPtrOutput {
+	return o
+}
+
+func (o PlatformSloCustomSliPtrOutput) ToPlatformSloCustomSliPtrOutputWithContext(ctx context.Context) PlatformSloCustomSliPtrOutput {
+	return o
+}
+
+func (o PlatformSloCustomSliPtrOutput) Elem() PlatformSloCustomSliOutput {
+	return o.ApplyT(func(v *PlatformSloCustomSli) PlatformSloCustomSli {
+		if v != nil {
+			return *v
+		}
+		var ret PlatformSloCustomSli
+		return ret
+	}).(PlatformSloCustomSliOutput)
+}
+
+// A filter segment is identified by an ID. Each segment includes a list of variable definitions.
+func (o PlatformSloCustomSliPtrOutput) FilterSegments() PlatformSloCustomSliFilterSegmentsPtrOutput {
+	return o.ApplyT(func(v *PlatformSloCustomSli) *PlatformSloCustomSliFilterSegments {
+		if v == nil {
+			return nil
+		}
+		return v.FilterSegments
+	}).(PlatformSloCustomSliFilterSegmentsPtrOutput)
+}
+
+// Indicator of the custom SLI. Example: `timeseries sli=avg(dt.host.cpu.idle)`
+func (o PlatformSloCustomSliPtrOutput) Indicator() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PlatformSloCustomSli) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Indicator
+	}).(pulumi.StringPtrOutput)
+}
+
+type PlatformSloCustomSliFilterSegments struct {
+	FilterSegments []PlatformSloCustomSliFilterSegmentsFilterSegment `pulumi:"filterSegments"`
+}
+
+// PlatformSloCustomSliFilterSegmentsInput is an input type that accepts PlatformSloCustomSliFilterSegmentsArgs and PlatformSloCustomSliFilterSegmentsOutput values.
+// You can construct a concrete instance of `PlatformSloCustomSliFilterSegmentsInput` via:
+//
+//	PlatformSloCustomSliFilterSegmentsArgs{...}
+type PlatformSloCustomSliFilterSegmentsInput interface {
+	pulumi.Input
+
+	ToPlatformSloCustomSliFilterSegmentsOutput() PlatformSloCustomSliFilterSegmentsOutput
+	ToPlatformSloCustomSliFilterSegmentsOutputWithContext(context.Context) PlatformSloCustomSliFilterSegmentsOutput
+}
+
+type PlatformSloCustomSliFilterSegmentsArgs struct {
+	FilterSegments PlatformSloCustomSliFilterSegmentsFilterSegmentArrayInput `pulumi:"filterSegments"`
+}
+
+func (PlatformSloCustomSliFilterSegmentsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PlatformSloCustomSliFilterSegments)(nil)).Elem()
+}
+
+func (i PlatformSloCustomSliFilterSegmentsArgs) ToPlatformSloCustomSliFilterSegmentsOutput() PlatformSloCustomSliFilterSegmentsOutput {
+	return i.ToPlatformSloCustomSliFilterSegmentsOutputWithContext(context.Background())
+}
+
+func (i PlatformSloCustomSliFilterSegmentsArgs) ToPlatformSloCustomSliFilterSegmentsOutputWithContext(ctx context.Context) PlatformSloCustomSliFilterSegmentsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PlatformSloCustomSliFilterSegmentsOutput)
+}
+
+func (i PlatformSloCustomSliFilterSegmentsArgs) ToPlatformSloCustomSliFilterSegmentsPtrOutput() PlatformSloCustomSliFilterSegmentsPtrOutput {
+	return i.ToPlatformSloCustomSliFilterSegmentsPtrOutputWithContext(context.Background())
+}
+
+func (i PlatformSloCustomSliFilterSegmentsArgs) ToPlatformSloCustomSliFilterSegmentsPtrOutputWithContext(ctx context.Context) PlatformSloCustomSliFilterSegmentsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PlatformSloCustomSliFilterSegmentsOutput).ToPlatformSloCustomSliFilterSegmentsPtrOutputWithContext(ctx)
+}
+
+// PlatformSloCustomSliFilterSegmentsPtrInput is an input type that accepts PlatformSloCustomSliFilterSegmentsArgs, PlatformSloCustomSliFilterSegmentsPtr and PlatformSloCustomSliFilterSegmentsPtrOutput values.
+// You can construct a concrete instance of `PlatformSloCustomSliFilterSegmentsPtrInput` via:
+//
+//	        PlatformSloCustomSliFilterSegmentsArgs{...}
+//
+//	or:
+//
+//	        nil
+type PlatformSloCustomSliFilterSegmentsPtrInput interface {
+	pulumi.Input
+
+	ToPlatformSloCustomSliFilterSegmentsPtrOutput() PlatformSloCustomSliFilterSegmentsPtrOutput
+	ToPlatformSloCustomSliFilterSegmentsPtrOutputWithContext(context.Context) PlatformSloCustomSliFilterSegmentsPtrOutput
+}
+
+type platformSloCustomSliFilterSegmentsPtrType PlatformSloCustomSliFilterSegmentsArgs
+
+func PlatformSloCustomSliFilterSegmentsPtr(v *PlatformSloCustomSliFilterSegmentsArgs) PlatformSloCustomSliFilterSegmentsPtrInput {
+	return (*platformSloCustomSliFilterSegmentsPtrType)(v)
+}
+
+func (*platformSloCustomSliFilterSegmentsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**PlatformSloCustomSliFilterSegments)(nil)).Elem()
+}
+
+func (i *platformSloCustomSliFilterSegmentsPtrType) ToPlatformSloCustomSliFilterSegmentsPtrOutput() PlatformSloCustomSliFilterSegmentsPtrOutput {
+	return i.ToPlatformSloCustomSliFilterSegmentsPtrOutputWithContext(context.Background())
+}
+
+func (i *platformSloCustomSliFilterSegmentsPtrType) ToPlatformSloCustomSliFilterSegmentsPtrOutputWithContext(ctx context.Context) PlatformSloCustomSliFilterSegmentsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PlatformSloCustomSliFilterSegmentsPtrOutput)
+}
+
+type PlatformSloCustomSliFilterSegmentsOutput struct{ *pulumi.OutputState }
+
+func (PlatformSloCustomSliFilterSegmentsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PlatformSloCustomSliFilterSegments)(nil)).Elem()
+}
+
+func (o PlatformSloCustomSliFilterSegmentsOutput) ToPlatformSloCustomSliFilterSegmentsOutput() PlatformSloCustomSliFilterSegmentsOutput {
+	return o
+}
+
+func (o PlatformSloCustomSliFilterSegmentsOutput) ToPlatformSloCustomSliFilterSegmentsOutputWithContext(ctx context.Context) PlatformSloCustomSliFilterSegmentsOutput {
+	return o
+}
+
+func (o PlatformSloCustomSliFilterSegmentsOutput) ToPlatformSloCustomSliFilterSegmentsPtrOutput() PlatformSloCustomSliFilterSegmentsPtrOutput {
+	return o.ToPlatformSloCustomSliFilterSegmentsPtrOutputWithContext(context.Background())
+}
+
+func (o PlatformSloCustomSliFilterSegmentsOutput) ToPlatformSloCustomSliFilterSegmentsPtrOutputWithContext(ctx context.Context) PlatformSloCustomSliFilterSegmentsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v PlatformSloCustomSliFilterSegments) *PlatformSloCustomSliFilterSegments {
+		return &v
+	}).(PlatformSloCustomSliFilterSegmentsPtrOutput)
+}
+
+func (o PlatformSloCustomSliFilterSegmentsOutput) FilterSegments() PlatformSloCustomSliFilterSegmentsFilterSegmentArrayOutput {
+	return o.ApplyT(func(v PlatformSloCustomSliFilterSegments) []PlatformSloCustomSliFilterSegmentsFilterSegment {
+		return v.FilterSegments
+	}).(PlatformSloCustomSliFilterSegmentsFilterSegmentArrayOutput)
+}
+
+type PlatformSloCustomSliFilterSegmentsPtrOutput struct{ *pulumi.OutputState }
+
+func (PlatformSloCustomSliFilterSegmentsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**PlatformSloCustomSliFilterSegments)(nil)).Elem()
+}
+
+func (o PlatformSloCustomSliFilterSegmentsPtrOutput) ToPlatformSloCustomSliFilterSegmentsPtrOutput() PlatformSloCustomSliFilterSegmentsPtrOutput {
+	return o
+}
+
+func (o PlatformSloCustomSliFilterSegmentsPtrOutput) ToPlatformSloCustomSliFilterSegmentsPtrOutputWithContext(ctx context.Context) PlatformSloCustomSliFilterSegmentsPtrOutput {
+	return o
+}
+
+func (o PlatformSloCustomSliFilterSegmentsPtrOutput) Elem() PlatformSloCustomSliFilterSegmentsOutput {
+	return o.ApplyT(func(v *PlatformSloCustomSliFilterSegments) PlatformSloCustomSliFilterSegments {
+		if v != nil {
+			return *v
+		}
+		var ret PlatformSloCustomSliFilterSegments
+		return ret
+	}).(PlatformSloCustomSliFilterSegmentsOutput)
+}
+
+func (o PlatformSloCustomSliFilterSegmentsPtrOutput) FilterSegments() PlatformSloCustomSliFilterSegmentsFilterSegmentArrayOutput {
+	return o.ApplyT(func(v *PlatformSloCustomSliFilterSegments) []PlatformSloCustomSliFilterSegmentsFilterSegment {
+		if v == nil {
+			return nil
+		}
+		return v.FilterSegments
+	}).(PlatformSloCustomSliFilterSegmentsFilterSegmentArrayOutput)
+}
+
+type PlatformSloCustomSliFilterSegmentsFilterSegment struct {
+	// The ID of the filter segment
+	Id string `pulumi:"id"`
+	// Defines a variable with a name and a list of values
+	Variables *PlatformSloCustomSliFilterSegmentsFilterSegmentVariables `pulumi:"variables"`
+}
+
+// PlatformSloCustomSliFilterSegmentsFilterSegmentInput is an input type that accepts PlatformSloCustomSliFilterSegmentsFilterSegmentArgs and PlatformSloCustomSliFilterSegmentsFilterSegmentOutput values.
+// You can construct a concrete instance of `PlatformSloCustomSliFilterSegmentsFilterSegmentInput` via:
+//
+//	PlatformSloCustomSliFilterSegmentsFilterSegmentArgs{...}
+type PlatformSloCustomSliFilterSegmentsFilterSegmentInput interface {
+	pulumi.Input
+
+	ToPlatformSloCustomSliFilterSegmentsFilterSegmentOutput() PlatformSloCustomSliFilterSegmentsFilterSegmentOutput
+	ToPlatformSloCustomSliFilterSegmentsFilterSegmentOutputWithContext(context.Context) PlatformSloCustomSliFilterSegmentsFilterSegmentOutput
+}
+
+type PlatformSloCustomSliFilterSegmentsFilterSegmentArgs struct {
+	// The ID of the filter segment
+	Id pulumi.StringInput `pulumi:"id"`
+	// Defines a variable with a name and a list of values
+	Variables PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrInput `pulumi:"variables"`
+}
+
+func (PlatformSloCustomSliFilterSegmentsFilterSegmentArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PlatformSloCustomSliFilterSegmentsFilterSegment)(nil)).Elem()
+}
+
+func (i PlatformSloCustomSliFilterSegmentsFilterSegmentArgs) ToPlatformSloCustomSliFilterSegmentsFilterSegmentOutput() PlatformSloCustomSliFilterSegmentsFilterSegmentOutput {
+	return i.ToPlatformSloCustomSliFilterSegmentsFilterSegmentOutputWithContext(context.Background())
+}
+
+func (i PlatformSloCustomSliFilterSegmentsFilterSegmentArgs) ToPlatformSloCustomSliFilterSegmentsFilterSegmentOutputWithContext(ctx context.Context) PlatformSloCustomSliFilterSegmentsFilterSegmentOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PlatformSloCustomSliFilterSegmentsFilterSegmentOutput)
+}
+
+// PlatformSloCustomSliFilterSegmentsFilterSegmentArrayInput is an input type that accepts PlatformSloCustomSliFilterSegmentsFilterSegmentArray and PlatformSloCustomSliFilterSegmentsFilterSegmentArrayOutput values.
+// You can construct a concrete instance of `PlatformSloCustomSliFilterSegmentsFilterSegmentArrayInput` via:
+//
+//	PlatformSloCustomSliFilterSegmentsFilterSegmentArray{ PlatformSloCustomSliFilterSegmentsFilterSegmentArgs{...} }
+type PlatformSloCustomSliFilterSegmentsFilterSegmentArrayInput interface {
+	pulumi.Input
+
+	ToPlatformSloCustomSliFilterSegmentsFilterSegmentArrayOutput() PlatformSloCustomSliFilterSegmentsFilterSegmentArrayOutput
+	ToPlatformSloCustomSliFilterSegmentsFilterSegmentArrayOutputWithContext(context.Context) PlatformSloCustomSliFilterSegmentsFilterSegmentArrayOutput
+}
+
+type PlatformSloCustomSliFilterSegmentsFilterSegmentArray []PlatformSloCustomSliFilterSegmentsFilterSegmentInput
+
+func (PlatformSloCustomSliFilterSegmentsFilterSegmentArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PlatformSloCustomSliFilterSegmentsFilterSegment)(nil)).Elem()
+}
+
+func (i PlatformSloCustomSliFilterSegmentsFilterSegmentArray) ToPlatformSloCustomSliFilterSegmentsFilterSegmentArrayOutput() PlatformSloCustomSliFilterSegmentsFilterSegmentArrayOutput {
+	return i.ToPlatformSloCustomSliFilterSegmentsFilterSegmentArrayOutputWithContext(context.Background())
+}
+
+func (i PlatformSloCustomSliFilterSegmentsFilterSegmentArray) ToPlatformSloCustomSliFilterSegmentsFilterSegmentArrayOutputWithContext(ctx context.Context) PlatformSloCustomSliFilterSegmentsFilterSegmentArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PlatformSloCustomSliFilterSegmentsFilterSegmentArrayOutput)
+}
+
+type PlatformSloCustomSliFilterSegmentsFilterSegmentOutput struct{ *pulumi.OutputState }
+
+func (PlatformSloCustomSliFilterSegmentsFilterSegmentOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PlatformSloCustomSliFilterSegmentsFilterSegment)(nil)).Elem()
+}
+
+func (o PlatformSloCustomSliFilterSegmentsFilterSegmentOutput) ToPlatformSloCustomSliFilterSegmentsFilterSegmentOutput() PlatformSloCustomSliFilterSegmentsFilterSegmentOutput {
+	return o
+}
+
+func (o PlatformSloCustomSliFilterSegmentsFilterSegmentOutput) ToPlatformSloCustomSliFilterSegmentsFilterSegmentOutputWithContext(ctx context.Context) PlatformSloCustomSliFilterSegmentsFilterSegmentOutput {
+	return o
+}
+
+// The ID of the filter segment
+func (o PlatformSloCustomSliFilterSegmentsFilterSegmentOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v PlatformSloCustomSliFilterSegmentsFilterSegment) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Defines a variable with a name and a list of values
+func (o PlatformSloCustomSliFilterSegmentsFilterSegmentOutput) Variables() PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrOutput {
+	return o.ApplyT(func(v PlatformSloCustomSliFilterSegmentsFilterSegment) *PlatformSloCustomSliFilterSegmentsFilterSegmentVariables {
+		return v.Variables
+	}).(PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrOutput)
+}
+
+type PlatformSloCustomSliFilterSegmentsFilterSegmentArrayOutput struct{ *pulumi.OutputState }
+
+func (PlatformSloCustomSliFilterSegmentsFilterSegmentArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PlatformSloCustomSliFilterSegmentsFilterSegment)(nil)).Elem()
+}
+
+func (o PlatformSloCustomSliFilterSegmentsFilterSegmentArrayOutput) ToPlatformSloCustomSliFilterSegmentsFilterSegmentArrayOutput() PlatformSloCustomSliFilterSegmentsFilterSegmentArrayOutput {
+	return o
+}
+
+func (o PlatformSloCustomSliFilterSegmentsFilterSegmentArrayOutput) ToPlatformSloCustomSliFilterSegmentsFilterSegmentArrayOutputWithContext(ctx context.Context) PlatformSloCustomSliFilterSegmentsFilterSegmentArrayOutput {
+	return o
+}
+
+func (o PlatformSloCustomSliFilterSegmentsFilterSegmentArrayOutput) Index(i pulumi.IntInput) PlatformSloCustomSliFilterSegmentsFilterSegmentOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PlatformSloCustomSliFilterSegmentsFilterSegment {
+		return vs[0].([]PlatformSloCustomSliFilterSegmentsFilterSegment)[vs[1].(int)]
+	}).(PlatformSloCustomSliFilterSegmentsFilterSegmentOutput)
+}
+
 type PlatformSloCustomSliFilterSegmentsFilterSegmentVariables struct {
 	FilterSegmentVariables []PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariable `pulumi:"filterSegmentVariables"`
 }
@@ -61331,7 +63514,7 @@ type UpdateWindowsDailyRecurrenceUpdateTime struct {
 	Duration int `pulumi:"duration"`
 	// Start time (24-hour clock)
 	StartTime string `pulumi:"startTime"`
-	// Time zone. Possible values: `GMT+00:00`, `GMT+01:00`, `GMT+02:00`, `GMT+07:00`, `GMT+09:00`, `GMT-03:00`, `GMT-04:00`, `GMT-05:00`, `GMT-06:00`, `GMT-08:00`, `GMT-10:00`, `GMT-11:00`, `GMT-12:00`
+	// Time zone. Possible values: `GMT+00:00`, `GMT+01:00`, `GMT+02:00`, `GMT+03:00`, `GMT+04:00`, `GMT+05:00`, `GMT+06:00`, `GMT+07:00`, `GMT+08:00`, `GMT+09:00`, `GMT+10:00`, `GMT+11:00`, `GMT+12:00`, `GMT-01:00`, `GMT-02:00`, `GMT-03:00`, `GMT-04:00`, `GMT-05:00`, `GMT-06:00`, `GMT-07:00`, `GMT-08:00`, `GMT-09:00`, `GMT-10:00`, `GMT-11:00`, `GMT-12:00`
 	TimeZone string `pulumi:"timeZone"`
 }
 
@@ -61351,7 +63534,7 @@ type UpdateWindowsDailyRecurrenceUpdateTimeArgs struct {
 	Duration pulumi.IntInput `pulumi:"duration"`
 	// Start time (24-hour clock)
 	StartTime pulumi.StringInput `pulumi:"startTime"`
-	// Time zone. Possible values: `GMT+00:00`, `GMT+01:00`, `GMT+02:00`, `GMT+07:00`, `GMT+09:00`, `GMT-03:00`, `GMT-04:00`, `GMT-05:00`, `GMT-06:00`, `GMT-08:00`, `GMT-10:00`, `GMT-11:00`, `GMT-12:00`
+	// Time zone. Possible values: `GMT+00:00`, `GMT+01:00`, `GMT+02:00`, `GMT+03:00`, `GMT+04:00`, `GMT+05:00`, `GMT+06:00`, `GMT+07:00`, `GMT+08:00`, `GMT+09:00`, `GMT+10:00`, `GMT+11:00`, `GMT+12:00`, `GMT-01:00`, `GMT-02:00`, `GMT-03:00`, `GMT-04:00`, `GMT-05:00`, `GMT-06:00`, `GMT-07:00`, `GMT-08:00`, `GMT-09:00`, `GMT-10:00`, `GMT-11:00`, `GMT-12:00`
 	TimeZone pulumi.StringInput `pulumi:"timeZone"`
 }
 
@@ -61442,7 +63625,7 @@ func (o UpdateWindowsDailyRecurrenceUpdateTimeOutput) StartTime() pulumi.StringO
 	return o.ApplyT(func(v UpdateWindowsDailyRecurrenceUpdateTime) string { return v.StartTime }).(pulumi.StringOutput)
 }
 
-// Time zone. Possible values: `GMT+00:00`, `GMT+01:00`, `GMT+02:00`, `GMT+07:00`, `GMT+09:00`, `GMT-03:00`, `GMT-04:00`, `GMT-05:00`, `GMT-06:00`, `GMT-08:00`, `GMT-10:00`, `GMT-11:00`, `GMT-12:00`
+// Time zone. Possible values: `GMT+00:00`, `GMT+01:00`, `GMT+02:00`, `GMT+03:00`, `GMT+04:00`, `GMT+05:00`, `GMT+06:00`, `GMT+07:00`, `GMT+08:00`, `GMT+09:00`, `GMT+10:00`, `GMT+11:00`, `GMT+12:00`, `GMT-01:00`, `GMT-02:00`, `GMT-03:00`, `GMT-04:00`, `GMT-05:00`, `GMT-06:00`, `GMT-07:00`, `GMT-08:00`, `GMT-09:00`, `GMT-10:00`, `GMT-11:00`, `GMT-12:00`
 func (o UpdateWindowsDailyRecurrenceUpdateTimeOutput) TimeZone() pulumi.StringOutput {
 	return o.ApplyT(func(v UpdateWindowsDailyRecurrenceUpdateTime) string { return v.TimeZone }).(pulumi.StringOutput)
 }
@@ -61491,7 +63674,7 @@ func (o UpdateWindowsDailyRecurrenceUpdateTimePtrOutput) StartTime() pulumi.Stri
 	}).(pulumi.StringPtrOutput)
 }
 
-// Time zone. Possible values: `GMT+00:00`, `GMT+01:00`, `GMT+02:00`, `GMT+07:00`, `GMT+09:00`, `GMT-03:00`, `GMT-04:00`, `GMT-05:00`, `GMT-06:00`, `GMT-08:00`, `GMT-10:00`, `GMT-11:00`, `GMT-12:00`
+// Time zone. Possible values: `GMT+00:00`, `GMT+01:00`, `GMT+02:00`, `GMT+03:00`, `GMT+04:00`, `GMT+05:00`, `GMT+06:00`, `GMT+07:00`, `GMT+08:00`, `GMT+09:00`, `GMT+10:00`, `GMT+11:00`, `GMT+12:00`, `GMT-01:00`, `GMT-02:00`, `GMT-03:00`, `GMT-04:00`, `GMT-05:00`, `GMT-06:00`, `GMT-07:00`, `GMT-08:00`, `GMT-09:00`, `GMT-10:00`, `GMT-11:00`, `GMT-12:00`
 func (o UpdateWindowsDailyRecurrenceUpdateTimePtrOutput) TimeZone() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *UpdateWindowsDailyRecurrenceUpdateTime) *string {
 		if v == nil {
@@ -61874,7 +64057,7 @@ type UpdateWindowsMonthlyRecurrenceUpdateTime struct {
 	Duration int `pulumi:"duration"`
 	// Start time (24-hour clock)
 	StartTime string `pulumi:"startTime"`
-	// Time zone. Possible values: `GMT+00:00`, `GMT+01:00`, `GMT+02:00`, `GMT+07:00`, `GMT+09:00`, `GMT-03:00`, `GMT-04:00`, `GMT-05:00`, `GMT-06:00`, `GMT-08:00`, `GMT-10:00`, `GMT-11:00`, `GMT-12:00`
+	// Time zone. Possible values: `GMT+00:00`, `GMT+01:00`, `GMT+02:00`, `GMT+03:00`, `GMT+04:00`, `GMT+05:00`, `GMT+06:00`, `GMT+07:00`, `GMT+08:00`, `GMT+09:00`, `GMT+10:00`, `GMT+11:00`, `GMT+12:00`, `GMT-01:00`, `GMT-02:00`, `GMT-03:00`, `GMT-04:00`, `GMT-05:00`, `GMT-06:00`, `GMT-07:00`, `GMT-08:00`, `GMT-09:00`, `GMT-10:00`, `GMT-11:00`, `GMT-12:00`
 	TimeZone string `pulumi:"timeZone"`
 }
 
@@ -61894,7 +64077,7 @@ type UpdateWindowsMonthlyRecurrenceUpdateTimeArgs struct {
 	Duration pulumi.IntInput `pulumi:"duration"`
 	// Start time (24-hour clock)
 	StartTime pulumi.StringInput `pulumi:"startTime"`
-	// Time zone. Possible values: `GMT+00:00`, `GMT+01:00`, `GMT+02:00`, `GMT+07:00`, `GMT+09:00`, `GMT-03:00`, `GMT-04:00`, `GMT-05:00`, `GMT-06:00`, `GMT-08:00`, `GMT-10:00`, `GMT-11:00`, `GMT-12:00`
+	// Time zone. Possible values: `GMT+00:00`, `GMT+01:00`, `GMT+02:00`, `GMT+03:00`, `GMT+04:00`, `GMT+05:00`, `GMT+06:00`, `GMT+07:00`, `GMT+08:00`, `GMT+09:00`, `GMT+10:00`, `GMT+11:00`, `GMT+12:00`, `GMT-01:00`, `GMT-02:00`, `GMT-03:00`, `GMT-04:00`, `GMT-05:00`, `GMT-06:00`, `GMT-07:00`, `GMT-08:00`, `GMT-09:00`, `GMT-10:00`, `GMT-11:00`, `GMT-12:00`
 	TimeZone pulumi.StringInput `pulumi:"timeZone"`
 }
 
@@ -61985,7 +64168,7 @@ func (o UpdateWindowsMonthlyRecurrenceUpdateTimeOutput) StartTime() pulumi.Strin
 	return o.ApplyT(func(v UpdateWindowsMonthlyRecurrenceUpdateTime) string { return v.StartTime }).(pulumi.StringOutput)
 }
 
-// Time zone. Possible values: `GMT+00:00`, `GMT+01:00`, `GMT+02:00`, `GMT+07:00`, `GMT+09:00`, `GMT-03:00`, `GMT-04:00`, `GMT-05:00`, `GMT-06:00`, `GMT-08:00`, `GMT-10:00`, `GMT-11:00`, `GMT-12:00`
+// Time zone. Possible values: `GMT+00:00`, `GMT+01:00`, `GMT+02:00`, `GMT+03:00`, `GMT+04:00`, `GMT+05:00`, `GMT+06:00`, `GMT+07:00`, `GMT+08:00`, `GMT+09:00`, `GMT+10:00`, `GMT+11:00`, `GMT+12:00`, `GMT-01:00`, `GMT-02:00`, `GMT-03:00`, `GMT-04:00`, `GMT-05:00`, `GMT-06:00`, `GMT-07:00`, `GMT-08:00`, `GMT-09:00`, `GMT-10:00`, `GMT-11:00`, `GMT-12:00`
 func (o UpdateWindowsMonthlyRecurrenceUpdateTimeOutput) TimeZone() pulumi.StringOutput {
 	return o.ApplyT(func(v UpdateWindowsMonthlyRecurrenceUpdateTime) string { return v.TimeZone }).(pulumi.StringOutput)
 }
@@ -62034,7 +64217,7 @@ func (o UpdateWindowsMonthlyRecurrenceUpdateTimePtrOutput) StartTime() pulumi.St
 	}).(pulumi.StringPtrOutput)
 }
 
-// Time zone. Possible values: `GMT+00:00`, `GMT+01:00`, `GMT+02:00`, `GMT+07:00`, `GMT+09:00`, `GMT-03:00`, `GMT-04:00`, `GMT-05:00`, `GMT-06:00`, `GMT-08:00`, `GMT-10:00`, `GMT-11:00`, `GMT-12:00`
+// Time zone. Possible values: `GMT+00:00`, `GMT+01:00`, `GMT+02:00`, `GMT+03:00`, `GMT+04:00`, `GMT+05:00`, `GMT+06:00`, `GMT+07:00`, `GMT+08:00`, `GMT+09:00`, `GMT+10:00`, `GMT+11:00`, `GMT+12:00`, `GMT-01:00`, `GMT-02:00`, `GMT-03:00`, `GMT-04:00`, `GMT-05:00`, `GMT-06:00`, `GMT-07:00`, `GMT-08:00`, `GMT-09:00`, `GMT-10:00`, `GMT-11:00`, `GMT-12:00`
 func (o UpdateWindowsMonthlyRecurrenceUpdateTimePtrOutput) TimeZone() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *UpdateWindowsMonthlyRecurrenceUpdateTime) *string {
 		if v == nil {
@@ -62965,7 +65148,7 @@ type UpdateWindowsWeeklyRecurrenceUpdateTime struct {
 	Duration int `pulumi:"duration"`
 	// Start time (24-hour clock)
 	StartTime string `pulumi:"startTime"`
-	// Time zone. Possible values: `GMT+00:00`, `GMT+01:00`, `GMT+02:00`, `GMT+07:00`, `GMT+09:00`, `GMT-03:00`, `GMT-04:00`, `GMT-05:00`, `GMT-06:00`, `GMT-08:00`, `GMT-10:00`, `GMT-11:00`, `GMT-12:00`
+	// Time zone. Possible values: `GMT+00:00`, `GMT+01:00`, `GMT+02:00`, `GMT+03:00`, `GMT+04:00`, `GMT+05:00`, `GMT+06:00`, `GMT+07:00`, `GMT+08:00`, `GMT+09:00`, `GMT+10:00`, `GMT+11:00`, `GMT+12:00`, `GMT-01:00`, `GMT-02:00`, `GMT-03:00`, `GMT-04:00`, `GMT-05:00`, `GMT-06:00`, `GMT-07:00`, `GMT-08:00`, `GMT-09:00`, `GMT-10:00`, `GMT-11:00`, `GMT-12:00`
 	TimeZone string `pulumi:"timeZone"`
 }
 
@@ -62985,7 +65168,7 @@ type UpdateWindowsWeeklyRecurrenceUpdateTimeArgs struct {
 	Duration pulumi.IntInput `pulumi:"duration"`
 	// Start time (24-hour clock)
 	StartTime pulumi.StringInput `pulumi:"startTime"`
-	// Time zone. Possible values: `GMT+00:00`, `GMT+01:00`, `GMT+02:00`, `GMT+07:00`, `GMT+09:00`, `GMT-03:00`, `GMT-04:00`, `GMT-05:00`, `GMT-06:00`, `GMT-08:00`, `GMT-10:00`, `GMT-11:00`, `GMT-12:00`
+	// Time zone. Possible values: `GMT+00:00`, `GMT+01:00`, `GMT+02:00`, `GMT+03:00`, `GMT+04:00`, `GMT+05:00`, `GMT+06:00`, `GMT+07:00`, `GMT+08:00`, `GMT+09:00`, `GMT+10:00`, `GMT+11:00`, `GMT+12:00`, `GMT-01:00`, `GMT-02:00`, `GMT-03:00`, `GMT-04:00`, `GMT-05:00`, `GMT-06:00`, `GMT-07:00`, `GMT-08:00`, `GMT-09:00`, `GMT-10:00`, `GMT-11:00`, `GMT-12:00`
 	TimeZone pulumi.StringInput `pulumi:"timeZone"`
 }
 
@@ -63076,7 +65259,7 @@ func (o UpdateWindowsWeeklyRecurrenceUpdateTimeOutput) StartTime() pulumi.String
 	return o.ApplyT(func(v UpdateWindowsWeeklyRecurrenceUpdateTime) string { return v.StartTime }).(pulumi.StringOutput)
 }
 
-// Time zone. Possible values: `GMT+00:00`, `GMT+01:00`, `GMT+02:00`, `GMT+07:00`, `GMT+09:00`, `GMT-03:00`, `GMT-04:00`, `GMT-05:00`, `GMT-06:00`, `GMT-08:00`, `GMT-10:00`, `GMT-11:00`, `GMT-12:00`
+// Time zone. Possible values: `GMT+00:00`, `GMT+01:00`, `GMT+02:00`, `GMT+03:00`, `GMT+04:00`, `GMT+05:00`, `GMT+06:00`, `GMT+07:00`, `GMT+08:00`, `GMT+09:00`, `GMT+10:00`, `GMT+11:00`, `GMT+12:00`, `GMT-01:00`, `GMT-02:00`, `GMT-03:00`, `GMT-04:00`, `GMT-05:00`, `GMT-06:00`, `GMT-07:00`, `GMT-08:00`, `GMT-09:00`, `GMT-10:00`, `GMT-11:00`, `GMT-12:00`
 func (o UpdateWindowsWeeklyRecurrenceUpdateTimeOutput) TimeZone() pulumi.StringOutput {
 	return o.ApplyT(func(v UpdateWindowsWeeklyRecurrenceUpdateTime) string { return v.TimeZone }).(pulumi.StringOutput)
 }
@@ -63125,7 +65308,7 @@ func (o UpdateWindowsWeeklyRecurrenceUpdateTimePtrOutput) StartTime() pulumi.Str
 	}).(pulumi.StringPtrOutput)
 }
 
-// Time zone. Possible values: `GMT+00:00`, `GMT+01:00`, `GMT+02:00`, `GMT+07:00`, `GMT+09:00`, `GMT-03:00`, `GMT-04:00`, `GMT-05:00`, `GMT-06:00`, `GMT-08:00`, `GMT-10:00`, `GMT-11:00`, `GMT-12:00`
+// Time zone. Possible values: `GMT+00:00`, `GMT+01:00`, `GMT+02:00`, `GMT+03:00`, `GMT+04:00`, `GMT+05:00`, `GMT+06:00`, `GMT+07:00`, `GMT+08:00`, `GMT+09:00`, `GMT+10:00`, `GMT+11:00`, `GMT+12:00`, `GMT-01:00`, `GMT-02:00`, `GMT-03:00`, `GMT-04:00`, `GMT-05:00`, `GMT-06:00`, `GMT-07:00`, `GMT-08:00`, `GMT-09:00`, `GMT-10:00`, `GMT-11:00`, `GMT-12:00`
 func (o UpdateWindowsWeeklyRecurrenceUpdateTimePtrOutput) TimeZone() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *UpdateWindowsWeeklyRecurrenceUpdateTime) *string {
 		if v == nil {
@@ -75742,3261 +77925,39 @@ func (o WebAppRequestErrorsErrorRulesErrorRuleCaptureSettingsOutput) ImpactApdex
 	return o.ApplyT(func(v WebAppRequestErrorsErrorRulesErrorRuleCaptureSettings) *bool { return v.ImpactApdex }).(pulumi.BoolPtrOutput)
 }
 
-type WebAppRequestErrorsErrorRulesErrorRuleFilterSettings struct {
-	// Filter by URL. Possible values: `BEGINS_WITH`, `CONTAINS`, `ENDS_WITH`, `EQUALS`
-	Filter *string `pulumi:"filter"`
-	// No documentation available
-	Url *string `pulumi:"url"`
-}
-
-// WebAppRequestErrorsErrorRulesErrorRuleFilterSettingsInput is an input type that accepts WebAppRequestErrorsErrorRulesErrorRuleFilterSettingsArgs and WebAppRequestErrorsErrorRulesErrorRuleFilterSettingsOutput values.
-// You can construct a concrete instance of `WebAppRequestErrorsErrorRulesErrorRuleFilterSettingsInput` via:
-//
-//	WebAppRequestErrorsErrorRulesErrorRuleFilterSettingsArgs{...}
-type WebAppRequestErrorsErrorRulesErrorRuleFilterSettingsInput interface {
-	pulumi.Input
-
-	ToWebAppRequestErrorsErrorRulesErrorRuleFilterSettingsOutput() WebAppRequestErrorsErrorRulesErrorRuleFilterSettingsOutput
-	ToWebAppRequestErrorsErrorRulesErrorRuleFilterSettingsOutputWithContext(context.Context) WebAppRequestErrorsErrorRulesErrorRuleFilterSettingsOutput
-}
-
-type WebAppRequestErrorsErrorRulesErrorRuleFilterSettingsArgs struct {
-	// Filter by URL. Possible values: `BEGINS_WITH`, `CONTAINS`, `ENDS_WITH`, `EQUALS`
-	Filter pulumi.StringPtrInput `pulumi:"filter"`
-	// No documentation available
-	Url pulumi.StringPtrInput `pulumi:"url"`
-}
-
-func (WebAppRequestErrorsErrorRulesErrorRuleFilterSettingsArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*WebAppRequestErrorsErrorRulesErrorRuleFilterSettings)(nil)).Elem()
-}
-
-func (i WebAppRequestErrorsErrorRulesErrorRuleFilterSettingsArgs) ToWebAppRequestErrorsErrorRulesErrorRuleFilterSettingsOutput() WebAppRequestErrorsErrorRulesErrorRuleFilterSettingsOutput {
-	return i.ToWebAppRequestErrorsErrorRulesErrorRuleFilterSettingsOutputWithContext(context.Background())
-}
-
-func (i WebAppRequestErrorsErrorRulesErrorRuleFilterSettingsArgs) ToWebAppRequestErrorsErrorRulesErrorRuleFilterSettingsOutputWithContext(ctx context.Context) WebAppRequestErrorsErrorRulesErrorRuleFilterSettingsOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(WebAppRequestErrorsErrorRulesErrorRuleFilterSettingsOutput)
-}
-
-type WebAppRequestErrorsErrorRulesErrorRuleFilterSettingsOutput struct{ *pulumi.OutputState }
-
-func (WebAppRequestErrorsErrorRulesErrorRuleFilterSettingsOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*WebAppRequestErrorsErrorRulesErrorRuleFilterSettings)(nil)).Elem()
-}
-
-func (o WebAppRequestErrorsErrorRulesErrorRuleFilterSettingsOutput) ToWebAppRequestErrorsErrorRulesErrorRuleFilterSettingsOutput() WebAppRequestErrorsErrorRulesErrorRuleFilterSettingsOutput {
-	return o
-}
-
-func (o WebAppRequestErrorsErrorRulesErrorRuleFilterSettingsOutput) ToWebAppRequestErrorsErrorRulesErrorRuleFilterSettingsOutputWithContext(ctx context.Context) WebAppRequestErrorsErrorRulesErrorRuleFilterSettingsOutput {
-	return o
-}
-
-// Filter by URL. Possible values: `BEGINS_WITH`, `CONTAINS`, `ENDS_WITH`, `EQUALS`
-func (o WebAppRequestErrorsErrorRulesErrorRuleFilterSettingsOutput) Filter() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v WebAppRequestErrorsErrorRulesErrorRuleFilterSettings) *string { return v.Filter }).(pulumi.StringPtrOutput)
-}
-
-// No documentation available
-func (o WebAppRequestErrorsErrorRulesErrorRuleFilterSettingsOutput) Url() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v WebAppRequestErrorsErrorRulesErrorRuleFilterSettings) *string { return v.Url }).(pulumi.StringPtrOutput)
-}
-
-type WebApplicationConversionGoals struct {
-	// A conversion goal of the application
-	Goals []WebApplicationConversionGoalsGoal `pulumi:"goals"`
-}
-
-// WebApplicationConversionGoalsInput is an input type that accepts WebApplicationConversionGoalsArgs and WebApplicationConversionGoalsOutput values.
-// You can construct a concrete instance of `WebApplicationConversionGoalsInput` via:
-//
-//	WebApplicationConversionGoalsArgs{...}
-type WebApplicationConversionGoalsInput interface {
-	pulumi.Input
-
-	ToWebApplicationConversionGoalsOutput() WebApplicationConversionGoalsOutput
-	ToWebApplicationConversionGoalsOutputWithContext(context.Context) WebApplicationConversionGoalsOutput
-}
-
-type WebApplicationConversionGoalsArgs struct {
-	// A conversion goal of the application
-	Goals WebApplicationConversionGoalsGoalArrayInput `pulumi:"goals"`
-}
-
-func (WebApplicationConversionGoalsArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*WebApplicationConversionGoals)(nil)).Elem()
-}
-
-func (i WebApplicationConversionGoalsArgs) ToWebApplicationConversionGoalsOutput() WebApplicationConversionGoalsOutput {
-	return i.ToWebApplicationConversionGoalsOutputWithContext(context.Background())
-}
-
-func (i WebApplicationConversionGoalsArgs) ToWebApplicationConversionGoalsOutputWithContext(ctx context.Context) WebApplicationConversionGoalsOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationConversionGoalsOutput)
-}
-
-func (i WebApplicationConversionGoalsArgs) ToWebApplicationConversionGoalsPtrOutput() WebApplicationConversionGoalsPtrOutput {
-	return i.ToWebApplicationConversionGoalsPtrOutputWithContext(context.Background())
-}
-
-func (i WebApplicationConversionGoalsArgs) ToWebApplicationConversionGoalsPtrOutputWithContext(ctx context.Context) WebApplicationConversionGoalsPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationConversionGoalsOutput).ToWebApplicationConversionGoalsPtrOutputWithContext(ctx)
-}
-
-// WebApplicationConversionGoalsPtrInput is an input type that accepts WebApplicationConversionGoalsArgs, WebApplicationConversionGoalsPtr and WebApplicationConversionGoalsPtrOutput values.
-// You can construct a concrete instance of `WebApplicationConversionGoalsPtrInput` via:
-//
-//	        WebApplicationConversionGoalsArgs{...}
-//
-//	or:
-//
-//	        nil
-type WebApplicationConversionGoalsPtrInput interface {
-	pulumi.Input
-
-	ToWebApplicationConversionGoalsPtrOutput() WebApplicationConversionGoalsPtrOutput
-	ToWebApplicationConversionGoalsPtrOutputWithContext(context.Context) WebApplicationConversionGoalsPtrOutput
-}
-
-type webApplicationConversionGoalsPtrType WebApplicationConversionGoalsArgs
-
-func WebApplicationConversionGoalsPtr(v *WebApplicationConversionGoalsArgs) WebApplicationConversionGoalsPtrInput {
-	return (*webApplicationConversionGoalsPtrType)(v)
-}
-
-func (*webApplicationConversionGoalsPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**WebApplicationConversionGoals)(nil)).Elem()
-}
-
-func (i *webApplicationConversionGoalsPtrType) ToWebApplicationConversionGoalsPtrOutput() WebApplicationConversionGoalsPtrOutput {
-	return i.ToWebApplicationConversionGoalsPtrOutputWithContext(context.Background())
-}
-
-func (i *webApplicationConversionGoalsPtrType) ToWebApplicationConversionGoalsPtrOutputWithContext(ctx context.Context) WebApplicationConversionGoalsPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationConversionGoalsPtrOutput)
-}
-
-type WebApplicationConversionGoalsOutput struct{ *pulumi.OutputState }
-
-func (WebApplicationConversionGoalsOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*WebApplicationConversionGoals)(nil)).Elem()
-}
-
-func (o WebApplicationConversionGoalsOutput) ToWebApplicationConversionGoalsOutput() WebApplicationConversionGoalsOutput {
-	return o
-}
-
-func (o WebApplicationConversionGoalsOutput) ToWebApplicationConversionGoalsOutputWithContext(ctx context.Context) WebApplicationConversionGoalsOutput {
-	return o
-}
-
-func (o WebApplicationConversionGoalsOutput) ToWebApplicationConversionGoalsPtrOutput() WebApplicationConversionGoalsPtrOutput {
-	return o.ToWebApplicationConversionGoalsPtrOutputWithContext(context.Background())
-}
-
-func (o WebApplicationConversionGoalsOutput) ToWebApplicationConversionGoalsPtrOutputWithContext(ctx context.Context) WebApplicationConversionGoalsPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebApplicationConversionGoals) *WebApplicationConversionGoals {
-		return &v
-	}).(WebApplicationConversionGoalsPtrOutput)
-}
-
-// A conversion goal of the application
-func (o WebApplicationConversionGoalsOutput) Goals() WebApplicationConversionGoalsGoalArrayOutput {
-	return o.ApplyT(func(v WebApplicationConversionGoals) []WebApplicationConversionGoalsGoal { return v.Goals }).(WebApplicationConversionGoalsGoalArrayOutput)
-}
-
-type WebApplicationConversionGoalsPtrOutput struct{ *pulumi.OutputState }
-
-func (WebApplicationConversionGoalsPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**WebApplicationConversionGoals)(nil)).Elem()
-}
-
-func (o WebApplicationConversionGoalsPtrOutput) ToWebApplicationConversionGoalsPtrOutput() WebApplicationConversionGoalsPtrOutput {
-	return o
-}
-
-func (o WebApplicationConversionGoalsPtrOutput) ToWebApplicationConversionGoalsPtrOutputWithContext(ctx context.Context) WebApplicationConversionGoalsPtrOutput {
-	return o
-}
-
-func (o WebApplicationConversionGoalsPtrOutput) Elem() WebApplicationConversionGoalsOutput {
-	return o.ApplyT(func(v *WebApplicationConversionGoals) WebApplicationConversionGoals {
-		if v != nil {
-			return *v
-		}
-		var ret WebApplicationConversionGoals
-		return ret
-	}).(WebApplicationConversionGoalsOutput)
-}
-
-// A conversion goal of the application
-func (o WebApplicationConversionGoalsPtrOutput) Goals() WebApplicationConversionGoalsGoalArrayOutput {
-	return o.ApplyT(func(v *WebApplicationConversionGoals) []WebApplicationConversionGoalsGoal {
-		if v == nil {
-			return nil
-		}
-		return v.Goals
-	}).(WebApplicationConversionGoalsGoalArrayOutput)
-}
-
-type WebApplicationConversionGoalsGoal struct {
-	// Configuration of a destination-based conversion goal
-	Destination *WebApplicationConversionGoalsGoalDestination `pulumi:"destination"`
-	// The ID of conversion goal.
-	Id *string `pulumi:"id"`
-	// The name of the conversion goal. Valid length within 1 and 50 characters.
-	Name string `pulumi:"name"`
-	// The type of the web application. Possible values are `AUTO_INJECTED`, `BROWSER_EXTENSION_INJECTED` and `MANUALLY_INJECTED`
-	Type *string `pulumi:"type"`
-	// Configuration of a destination-based conversion goal
-	UserAction *WebApplicationConversionGoalsGoalUserAction `pulumi:"userAction"`
-	// Configuration of a destination-based conversion goal
-	VisitDuration *WebApplicationConversionGoalsGoalVisitDuration `pulumi:"visitDuration"`
-	// Configuration of a destination-based conversion goal
-	VisitNumAction *WebApplicationConversionGoalsGoalVisitNumAction `pulumi:"visitNumAction"`
-}
-
-// WebApplicationConversionGoalsGoalInput is an input type that accepts WebApplicationConversionGoalsGoalArgs and WebApplicationConversionGoalsGoalOutput values.
-// You can construct a concrete instance of `WebApplicationConversionGoalsGoalInput` via:
-//
-//	WebApplicationConversionGoalsGoalArgs{...}
-type WebApplicationConversionGoalsGoalInput interface {
-	pulumi.Input
-
-	ToWebApplicationConversionGoalsGoalOutput() WebApplicationConversionGoalsGoalOutput
-	ToWebApplicationConversionGoalsGoalOutputWithContext(context.Context) WebApplicationConversionGoalsGoalOutput
-}
-
-type WebApplicationConversionGoalsGoalArgs struct {
-	// Configuration of a destination-based conversion goal
-	Destination WebApplicationConversionGoalsGoalDestinationPtrInput `pulumi:"destination"`
-	// The ID of conversion goal.
-	Id pulumi.StringPtrInput `pulumi:"id"`
-	// The name of the conversion goal. Valid length within 1 and 50 characters.
-	Name pulumi.StringInput `pulumi:"name"`
-	// The type of the web application. Possible values are `AUTO_INJECTED`, `BROWSER_EXTENSION_INJECTED` and `MANUALLY_INJECTED`
-	Type pulumi.StringPtrInput `pulumi:"type"`
-	// Configuration of a destination-based conversion goal
-	UserAction WebApplicationConversionGoalsGoalUserActionPtrInput `pulumi:"userAction"`
-	// Configuration of a destination-based conversion goal
-	VisitDuration WebApplicationConversionGoalsGoalVisitDurationPtrInput `pulumi:"visitDuration"`
-	// Configuration of a destination-based conversion goal
-	VisitNumAction WebApplicationConversionGoalsGoalVisitNumActionPtrInput `pulumi:"visitNumAction"`
-}
-
-func (WebApplicationConversionGoalsGoalArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*WebApplicationConversionGoalsGoal)(nil)).Elem()
-}
-
-func (i WebApplicationConversionGoalsGoalArgs) ToWebApplicationConversionGoalsGoalOutput() WebApplicationConversionGoalsGoalOutput {
-	return i.ToWebApplicationConversionGoalsGoalOutputWithContext(context.Background())
-}
-
-func (i WebApplicationConversionGoalsGoalArgs) ToWebApplicationConversionGoalsGoalOutputWithContext(ctx context.Context) WebApplicationConversionGoalsGoalOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationConversionGoalsGoalOutput)
-}
-
-// WebApplicationConversionGoalsGoalArrayInput is an input type that accepts WebApplicationConversionGoalsGoalArray and WebApplicationConversionGoalsGoalArrayOutput values.
-// You can construct a concrete instance of `WebApplicationConversionGoalsGoalArrayInput` via:
-//
-//	WebApplicationConversionGoalsGoalArray{ WebApplicationConversionGoalsGoalArgs{...} }
-type WebApplicationConversionGoalsGoalArrayInput interface {
-	pulumi.Input
-
-	ToWebApplicationConversionGoalsGoalArrayOutput() WebApplicationConversionGoalsGoalArrayOutput
-	ToWebApplicationConversionGoalsGoalArrayOutputWithContext(context.Context) WebApplicationConversionGoalsGoalArrayOutput
-}
-
-type WebApplicationConversionGoalsGoalArray []WebApplicationConversionGoalsGoalInput
-
-func (WebApplicationConversionGoalsGoalArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]WebApplicationConversionGoalsGoal)(nil)).Elem()
-}
-
-func (i WebApplicationConversionGoalsGoalArray) ToWebApplicationConversionGoalsGoalArrayOutput() WebApplicationConversionGoalsGoalArrayOutput {
-	return i.ToWebApplicationConversionGoalsGoalArrayOutputWithContext(context.Background())
-}
-
-func (i WebApplicationConversionGoalsGoalArray) ToWebApplicationConversionGoalsGoalArrayOutputWithContext(ctx context.Context) WebApplicationConversionGoalsGoalArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationConversionGoalsGoalArrayOutput)
-}
-
-type WebApplicationConversionGoalsGoalOutput struct{ *pulumi.OutputState }
-
-func (WebApplicationConversionGoalsGoalOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*WebApplicationConversionGoalsGoal)(nil)).Elem()
-}
-
-func (o WebApplicationConversionGoalsGoalOutput) ToWebApplicationConversionGoalsGoalOutput() WebApplicationConversionGoalsGoalOutput {
-	return o
-}
-
-func (o WebApplicationConversionGoalsGoalOutput) ToWebApplicationConversionGoalsGoalOutputWithContext(ctx context.Context) WebApplicationConversionGoalsGoalOutput {
-	return o
-}
-
-// Configuration of a destination-based conversion goal
-func (o WebApplicationConversionGoalsGoalOutput) Destination() WebApplicationConversionGoalsGoalDestinationPtrOutput {
-	return o.ApplyT(func(v WebApplicationConversionGoalsGoal) *WebApplicationConversionGoalsGoalDestination {
-		return v.Destination
-	}).(WebApplicationConversionGoalsGoalDestinationPtrOutput)
-}
-
-// The ID of conversion goal.
-func (o WebApplicationConversionGoalsGoalOutput) Id() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v WebApplicationConversionGoalsGoal) *string { return v.Id }).(pulumi.StringPtrOutput)
-}
-
-// The name of the conversion goal. Valid length within 1 and 50 characters.
-func (o WebApplicationConversionGoalsGoalOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v WebApplicationConversionGoalsGoal) string { return v.Name }).(pulumi.StringOutput)
-}
-
-// The type of the web application. Possible values are `AUTO_INJECTED`, `BROWSER_EXTENSION_INJECTED` and `MANUALLY_INJECTED`
-func (o WebApplicationConversionGoalsGoalOutput) Type() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v WebApplicationConversionGoalsGoal) *string { return v.Type }).(pulumi.StringPtrOutput)
-}
-
-// Configuration of a destination-based conversion goal
-func (o WebApplicationConversionGoalsGoalOutput) UserAction() WebApplicationConversionGoalsGoalUserActionPtrOutput {
-	return o.ApplyT(func(v WebApplicationConversionGoalsGoal) *WebApplicationConversionGoalsGoalUserAction {
-		return v.UserAction
-	}).(WebApplicationConversionGoalsGoalUserActionPtrOutput)
-}
-
-// Configuration of a destination-based conversion goal
-func (o WebApplicationConversionGoalsGoalOutput) VisitDuration() WebApplicationConversionGoalsGoalVisitDurationPtrOutput {
-	return o.ApplyT(func(v WebApplicationConversionGoalsGoal) *WebApplicationConversionGoalsGoalVisitDuration {
-		return v.VisitDuration
-	}).(WebApplicationConversionGoalsGoalVisitDurationPtrOutput)
-}
-
-// Configuration of a destination-based conversion goal
-func (o WebApplicationConversionGoalsGoalOutput) VisitNumAction() WebApplicationConversionGoalsGoalVisitNumActionPtrOutput {
-	return o.ApplyT(func(v WebApplicationConversionGoalsGoal) *WebApplicationConversionGoalsGoalVisitNumAction {
-		return v.VisitNumAction
-	}).(WebApplicationConversionGoalsGoalVisitNumActionPtrOutput)
-}
-
-type WebApplicationConversionGoalsGoalArrayOutput struct{ *pulumi.OutputState }
-
-func (WebApplicationConversionGoalsGoalArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]WebApplicationConversionGoalsGoal)(nil)).Elem()
-}
-
-func (o WebApplicationConversionGoalsGoalArrayOutput) ToWebApplicationConversionGoalsGoalArrayOutput() WebApplicationConversionGoalsGoalArrayOutput {
-	return o
-}
-
-func (o WebApplicationConversionGoalsGoalArrayOutput) ToWebApplicationConversionGoalsGoalArrayOutputWithContext(ctx context.Context) WebApplicationConversionGoalsGoalArrayOutput {
-	return o
-}
-
-func (o WebApplicationConversionGoalsGoalArrayOutput) Index(i pulumi.IntInput) WebApplicationConversionGoalsGoalOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) WebApplicationConversionGoalsGoal {
-		return vs[0].([]WebApplicationConversionGoalsGoal)[vs[1].(int)]
-	}).(WebApplicationConversionGoalsGoalOutput)
-}
-
-type WebApplicationConversionGoalsGoalDestination struct {
-	// The match is case-sensitive (`true`) or (`false`)
-	CaseSensitive *bool `pulumi:"caseSensitive"`
-	// The operator of the match. Possible values are `Begins`, `Contains` and `Ends`.
-	MatchType *string `pulumi:"matchType"`
-	// The path to be reached to hit the conversion goal
-	UrlOrPath string `pulumi:"urlOrPath"`
-}
-
-// WebApplicationConversionGoalsGoalDestinationInput is an input type that accepts WebApplicationConversionGoalsGoalDestinationArgs and WebApplicationConversionGoalsGoalDestinationOutput values.
-// You can construct a concrete instance of `WebApplicationConversionGoalsGoalDestinationInput` via:
-//
-//	WebApplicationConversionGoalsGoalDestinationArgs{...}
-type WebApplicationConversionGoalsGoalDestinationInput interface {
-	pulumi.Input
-
-	ToWebApplicationConversionGoalsGoalDestinationOutput() WebApplicationConversionGoalsGoalDestinationOutput
-	ToWebApplicationConversionGoalsGoalDestinationOutputWithContext(context.Context) WebApplicationConversionGoalsGoalDestinationOutput
-}
-
-type WebApplicationConversionGoalsGoalDestinationArgs struct {
-	// The match is case-sensitive (`true`) or (`false`)
-	CaseSensitive pulumi.BoolPtrInput `pulumi:"caseSensitive"`
-	// The operator of the match. Possible values are `Begins`, `Contains` and `Ends`.
-	MatchType pulumi.StringPtrInput `pulumi:"matchType"`
-	// The path to be reached to hit the conversion goal
-	UrlOrPath pulumi.StringInput `pulumi:"urlOrPath"`
-}
-
-func (WebApplicationConversionGoalsGoalDestinationArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*WebApplicationConversionGoalsGoalDestination)(nil)).Elem()
-}
-
-func (i WebApplicationConversionGoalsGoalDestinationArgs) ToWebApplicationConversionGoalsGoalDestinationOutput() WebApplicationConversionGoalsGoalDestinationOutput {
-	return i.ToWebApplicationConversionGoalsGoalDestinationOutputWithContext(context.Background())
-}
-
-func (i WebApplicationConversionGoalsGoalDestinationArgs) ToWebApplicationConversionGoalsGoalDestinationOutputWithContext(ctx context.Context) WebApplicationConversionGoalsGoalDestinationOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationConversionGoalsGoalDestinationOutput)
-}
-
-func (i WebApplicationConversionGoalsGoalDestinationArgs) ToWebApplicationConversionGoalsGoalDestinationPtrOutput() WebApplicationConversionGoalsGoalDestinationPtrOutput {
-	return i.ToWebApplicationConversionGoalsGoalDestinationPtrOutputWithContext(context.Background())
-}
-
-func (i WebApplicationConversionGoalsGoalDestinationArgs) ToWebApplicationConversionGoalsGoalDestinationPtrOutputWithContext(ctx context.Context) WebApplicationConversionGoalsGoalDestinationPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationConversionGoalsGoalDestinationOutput).ToWebApplicationConversionGoalsGoalDestinationPtrOutputWithContext(ctx)
-}
-
-// WebApplicationConversionGoalsGoalDestinationPtrInput is an input type that accepts WebApplicationConversionGoalsGoalDestinationArgs, WebApplicationConversionGoalsGoalDestinationPtr and WebApplicationConversionGoalsGoalDestinationPtrOutput values.
-// You can construct a concrete instance of `WebApplicationConversionGoalsGoalDestinationPtrInput` via:
-//
-//	        WebApplicationConversionGoalsGoalDestinationArgs{...}
-//
-//	or:
-//
-//	        nil
-type WebApplicationConversionGoalsGoalDestinationPtrInput interface {
-	pulumi.Input
-
-	ToWebApplicationConversionGoalsGoalDestinationPtrOutput() WebApplicationConversionGoalsGoalDestinationPtrOutput
-	ToWebApplicationConversionGoalsGoalDestinationPtrOutputWithContext(context.Context) WebApplicationConversionGoalsGoalDestinationPtrOutput
-}
-
-type webApplicationConversionGoalsGoalDestinationPtrType WebApplicationConversionGoalsGoalDestinationArgs
-
-func WebApplicationConversionGoalsGoalDestinationPtr(v *WebApplicationConversionGoalsGoalDestinationArgs) WebApplicationConversionGoalsGoalDestinationPtrInput {
-	return (*webApplicationConversionGoalsGoalDestinationPtrType)(v)
-}
-
-func (*webApplicationConversionGoalsGoalDestinationPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**WebApplicationConversionGoalsGoalDestination)(nil)).Elem()
-}
-
-func (i *webApplicationConversionGoalsGoalDestinationPtrType) ToWebApplicationConversionGoalsGoalDestinationPtrOutput() WebApplicationConversionGoalsGoalDestinationPtrOutput {
-	return i.ToWebApplicationConversionGoalsGoalDestinationPtrOutputWithContext(context.Background())
-}
-
-func (i *webApplicationConversionGoalsGoalDestinationPtrType) ToWebApplicationConversionGoalsGoalDestinationPtrOutputWithContext(ctx context.Context) WebApplicationConversionGoalsGoalDestinationPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationConversionGoalsGoalDestinationPtrOutput)
-}
-
-type WebApplicationConversionGoalsGoalDestinationOutput struct{ *pulumi.OutputState }
-
-func (WebApplicationConversionGoalsGoalDestinationOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*WebApplicationConversionGoalsGoalDestination)(nil)).Elem()
-}
-
-func (o WebApplicationConversionGoalsGoalDestinationOutput) ToWebApplicationConversionGoalsGoalDestinationOutput() WebApplicationConversionGoalsGoalDestinationOutput {
-	return o
-}
-
-func (o WebApplicationConversionGoalsGoalDestinationOutput) ToWebApplicationConversionGoalsGoalDestinationOutputWithContext(ctx context.Context) WebApplicationConversionGoalsGoalDestinationOutput {
-	return o
-}
-
-func (o WebApplicationConversionGoalsGoalDestinationOutput) ToWebApplicationConversionGoalsGoalDestinationPtrOutput() WebApplicationConversionGoalsGoalDestinationPtrOutput {
-	return o.ToWebApplicationConversionGoalsGoalDestinationPtrOutputWithContext(context.Background())
-}
-
-func (o WebApplicationConversionGoalsGoalDestinationOutput) ToWebApplicationConversionGoalsGoalDestinationPtrOutputWithContext(ctx context.Context) WebApplicationConversionGoalsGoalDestinationPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebApplicationConversionGoalsGoalDestination) *WebApplicationConversionGoalsGoalDestination {
-		return &v
-	}).(WebApplicationConversionGoalsGoalDestinationPtrOutput)
-}
-
-// The match is case-sensitive (`true`) or (`false`)
-func (o WebApplicationConversionGoalsGoalDestinationOutput) CaseSensitive() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v WebApplicationConversionGoalsGoalDestination) *bool { return v.CaseSensitive }).(pulumi.BoolPtrOutput)
-}
-
-// The operator of the match. Possible values are `Begins`, `Contains` and `Ends`.
-func (o WebApplicationConversionGoalsGoalDestinationOutput) MatchType() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v WebApplicationConversionGoalsGoalDestination) *string { return v.MatchType }).(pulumi.StringPtrOutput)
-}
-
-// The path to be reached to hit the conversion goal
-func (o WebApplicationConversionGoalsGoalDestinationOutput) UrlOrPath() pulumi.StringOutput {
-	return o.ApplyT(func(v WebApplicationConversionGoalsGoalDestination) string { return v.UrlOrPath }).(pulumi.StringOutput)
-}
-
-type WebApplicationConversionGoalsGoalDestinationPtrOutput struct{ *pulumi.OutputState }
-
-func (WebApplicationConversionGoalsGoalDestinationPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**WebApplicationConversionGoalsGoalDestination)(nil)).Elem()
-}
-
-func (o WebApplicationConversionGoalsGoalDestinationPtrOutput) ToWebApplicationConversionGoalsGoalDestinationPtrOutput() WebApplicationConversionGoalsGoalDestinationPtrOutput {
-	return o
-}
-
-func (o WebApplicationConversionGoalsGoalDestinationPtrOutput) ToWebApplicationConversionGoalsGoalDestinationPtrOutputWithContext(ctx context.Context) WebApplicationConversionGoalsGoalDestinationPtrOutput {
-	return o
-}
-
-func (o WebApplicationConversionGoalsGoalDestinationPtrOutput) Elem() WebApplicationConversionGoalsGoalDestinationOutput {
-	return o.ApplyT(func(v *WebApplicationConversionGoalsGoalDestination) WebApplicationConversionGoalsGoalDestination {
-		if v != nil {
-			return *v
-		}
-		var ret WebApplicationConversionGoalsGoalDestination
-		return ret
-	}).(WebApplicationConversionGoalsGoalDestinationOutput)
-}
-
-// The match is case-sensitive (`true`) or (`false`)
-func (o WebApplicationConversionGoalsGoalDestinationPtrOutput) CaseSensitive() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v *WebApplicationConversionGoalsGoalDestination) *bool {
-		if v == nil {
-			return nil
-		}
-		return v.CaseSensitive
-	}).(pulumi.BoolPtrOutput)
-}
-
-// The operator of the match. Possible values are `Begins`, `Contains` and `Ends`.
-func (o WebApplicationConversionGoalsGoalDestinationPtrOutput) MatchType() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *WebApplicationConversionGoalsGoalDestination) *string {
-		if v == nil {
-			return nil
-		}
-		return v.MatchType
-	}).(pulumi.StringPtrOutput)
-}
-
-// The path to be reached to hit the conversion goal
-func (o WebApplicationConversionGoalsGoalDestinationPtrOutput) UrlOrPath() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *WebApplicationConversionGoalsGoalDestination) *string {
-		if v == nil {
-			return nil
-		}
-		return &v.UrlOrPath
-	}).(pulumi.StringPtrOutput)
-}
-
-type WebApplicationConversionGoalsGoalUserAction struct {
-	// Type of the action to which the rule applies. Possible values are `Custom`, `Load` and `Xhr`.
-	ActionType *string `pulumi:"actionType"`
-	// The match is case-sensitive (`true`) or (`false`)
-	CaseSensitive *bool `pulumi:"caseSensitive"`
-	// The type of the entity to which the rule applies. Possible values are `ActionName`, `CssSelector`, `JavaScriptVariable`, `MetaTag`, `PagePath`, `PageTitle`, `PageUrl`, `UrlAnchor` and `XhrUrl`.
-	MatchEntity *string `pulumi:"matchEntity"`
-	// The operator of the match. Possible values are `Begins`, `Contains` and `Ends`.
-	MatchType *string `pulumi:"matchType"`
-	// The value to be matched to hit the conversion goal
-	Value *string `pulumi:"value"`
-}
-
-// WebApplicationConversionGoalsGoalUserActionInput is an input type that accepts WebApplicationConversionGoalsGoalUserActionArgs and WebApplicationConversionGoalsGoalUserActionOutput values.
-// You can construct a concrete instance of `WebApplicationConversionGoalsGoalUserActionInput` via:
-//
-//	WebApplicationConversionGoalsGoalUserActionArgs{...}
-type WebApplicationConversionGoalsGoalUserActionInput interface {
-	pulumi.Input
-
-	ToWebApplicationConversionGoalsGoalUserActionOutput() WebApplicationConversionGoalsGoalUserActionOutput
-	ToWebApplicationConversionGoalsGoalUserActionOutputWithContext(context.Context) WebApplicationConversionGoalsGoalUserActionOutput
-}
-
-type WebApplicationConversionGoalsGoalUserActionArgs struct {
-	// Type of the action to which the rule applies. Possible values are `Custom`, `Load` and `Xhr`.
-	ActionType pulumi.StringPtrInput `pulumi:"actionType"`
-	// The match is case-sensitive (`true`) or (`false`)
-	CaseSensitive pulumi.BoolPtrInput `pulumi:"caseSensitive"`
-	// The type of the entity to which the rule applies. Possible values are `ActionName`, `CssSelector`, `JavaScriptVariable`, `MetaTag`, `PagePath`, `PageTitle`, `PageUrl`, `UrlAnchor` and `XhrUrl`.
-	MatchEntity pulumi.StringPtrInput `pulumi:"matchEntity"`
-	// The operator of the match. Possible values are `Begins`, `Contains` and `Ends`.
-	MatchType pulumi.StringPtrInput `pulumi:"matchType"`
-	// The value to be matched to hit the conversion goal
-	Value pulumi.StringPtrInput `pulumi:"value"`
-}
-
-func (WebApplicationConversionGoalsGoalUserActionArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*WebApplicationConversionGoalsGoalUserAction)(nil)).Elem()
-}
-
-func (i WebApplicationConversionGoalsGoalUserActionArgs) ToWebApplicationConversionGoalsGoalUserActionOutput() WebApplicationConversionGoalsGoalUserActionOutput {
-	return i.ToWebApplicationConversionGoalsGoalUserActionOutputWithContext(context.Background())
-}
-
-func (i WebApplicationConversionGoalsGoalUserActionArgs) ToWebApplicationConversionGoalsGoalUserActionOutputWithContext(ctx context.Context) WebApplicationConversionGoalsGoalUserActionOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationConversionGoalsGoalUserActionOutput)
-}
-
-func (i WebApplicationConversionGoalsGoalUserActionArgs) ToWebApplicationConversionGoalsGoalUserActionPtrOutput() WebApplicationConversionGoalsGoalUserActionPtrOutput {
-	return i.ToWebApplicationConversionGoalsGoalUserActionPtrOutputWithContext(context.Background())
-}
-
-func (i WebApplicationConversionGoalsGoalUserActionArgs) ToWebApplicationConversionGoalsGoalUserActionPtrOutputWithContext(ctx context.Context) WebApplicationConversionGoalsGoalUserActionPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationConversionGoalsGoalUserActionOutput).ToWebApplicationConversionGoalsGoalUserActionPtrOutputWithContext(ctx)
-}
-
-// WebApplicationConversionGoalsGoalUserActionPtrInput is an input type that accepts WebApplicationConversionGoalsGoalUserActionArgs, WebApplicationConversionGoalsGoalUserActionPtr and WebApplicationConversionGoalsGoalUserActionPtrOutput values.
-// You can construct a concrete instance of `WebApplicationConversionGoalsGoalUserActionPtrInput` via:
-//
-//	        WebApplicationConversionGoalsGoalUserActionArgs{...}
-//
-//	or:
-//
-//	        nil
-type WebApplicationConversionGoalsGoalUserActionPtrInput interface {
-	pulumi.Input
-
-	ToWebApplicationConversionGoalsGoalUserActionPtrOutput() WebApplicationConversionGoalsGoalUserActionPtrOutput
-	ToWebApplicationConversionGoalsGoalUserActionPtrOutputWithContext(context.Context) WebApplicationConversionGoalsGoalUserActionPtrOutput
-}
-
-type webApplicationConversionGoalsGoalUserActionPtrType WebApplicationConversionGoalsGoalUserActionArgs
-
-func WebApplicationConversionGoalsGoalUserActionPtr(v *WebApplicationConversionGoalsGoalUserActionArgs) WebApplicationConversionGoalsGoalUserActionPtrInput {
-	return (*webApplicationConversionGoalsGoalUserActionPtrType)(v)
-}
-
-func (*webApplicationConversionGoalsGoalUserActionPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**WebApplicationConversionGoalsGoalUserAction)(nil)).Elem()
-}
-
-func (i *webApplicationConversionGoalsGoalUserActionPtrType) ToWebApplicationConversionGoalsGoalUserActionPtrOutput() WebApplicationConversionGoalsGoalUserActionPtrOutput {
-	return i.ToWebApplicationConversionGoalsGoalUserActionPtrOutputWithContext(context.Background())
-}
-
-func (i *webApplicationConversionGoalsGoalUserActionPtrType) ToWebApplicationConversionGoalsGoalUserActionPtrOutputWithContext(ctx context.Context) WebApplicationConversionGoalsGoalUserActionPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationConversionGoalsGoalUserActionPtrOutput)
-}
-
-type WebApplicationConversionGoalsGoalUserActionOutput struct{ *pulumi.OutputState }
-
-func (WebApplicationConversionGoalsGoalUserActionOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*WebApplicationConversionGoalsGoalUserAction)(nil)).Elem()
-}
-
-func (o WebApplicationConversionGoalsGoalUserActionOutput) ToWebApplicationConversionGoalsGoalUserActionOutput() WebApplicationConversionGoalsGoalUserActionOutput {
-	return o
-}
-
-func (o WebApplicationConversionGoalsGoalUserActionOutput) ToWebApplicationConversionGoalsGoalUserActionOutputWithContext(ctx context.Context) WebApplicationConversionGoalsGoalUserActionOutput {
-	return o
-}
-
-func (o WebApplicationConversionGoalsGoalUserActionOutput) ToWebApplicationConversionGoalsGoalUserActionPtrOutput() WebApplicationConversionGoalsGoalUserActionPtrOutput {
-	return o.ToWebApplicationConversionGoalsGoalUserActionPtrOutputWithContext(context.Background())
-}
-
-func (o WebApplicationConversionGoalsGoalUserActionOutput) ToWebApplicationConversionGoalsGoalUserActionPtrOutputWithContext(ctx context.Context) WebApplicationConversionGoalsGoalUserActionPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebApplicationConversionGoalsGoalUserAction) *WebApplicationConversionGoalsGoalUserAction {
-		return &v
-	}).(WebApplicationConversionGoalsGoalUserActionPtrOutput)
-}
-
-// Type of the action to which the rule applies. Possible values are `Custom`, `Load` and `Xhr`.
-func (o WebApplicationConversionGoalsGoalUserActionOutput) ActionType() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v WebApplicationConversionGoalsGoalUserAction) *string { return v.ActionType }).(pulumi.StringPtrOutput)
-}
-
-// The match is case-sensitive (`true`) or (`false`)
-func (o WebApplicationConversionGoalsGoalUserActionOutput) CaseSensitive() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v WebApplicationConversionGoalsGoalUserAction) *bool { return v.CaseSensitive }).(pulumi.BoolPtrOutput)
-}
-
-// The type of the entity to which the rule applies. Possible values are `ActionName`, `CssSelector`, `JavaScriptVariable`, `MetaTag`, `PagePath`, `PageTitle`, `PageUrl`, `UrlAnchor` and `XhrUrl`.
-func (o WebApplicationConversionGoalsGoalUserActionOutput) MatchEntity() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v WebApplicationConversionGoalsGoalUserAction) *string { return v.MatchEntity }).(pulumi.StringPtrOutput)
-}
-
-// The operator of the match. Possible values are `Begins`, `Contains` and `Ends`.
-func (o WebApplicationConversionGoalsGoalUserActionOutput) MatchType() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v WebApplicationConversionGoalsGoalUserAction) *string { return v.MatchType }).(pulumi.StringPtrOutput)
-}
-
-// The value to be matched to hit the conversion goal
-func (o WebApplicationConversionGoalsGoalUserActionOutput) Value() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v WebApplicationConversionGoalsGoalUserAction) *string { return v.Value }).(pulumi.StringPtrOutput)
-}
-
-type WebApplicationConversionGoalsGoalUserActionPtrOutput struct{ *pulumi.OutputState }
-
-func (WebApplicationConversionGoalsGoalUserActionPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**WebApplicationConversionGoalsGoalUserAction)(nil)).Elem()
-}
-
-func (o WebApplicationConversionGoalsGoalUserActionPtrOutput) ToWebApplicationConversionGoalsGoalUserActionPtrOutput() WebApplicationConversionGoalsGoalUserActionPtrOutput {
-	return o
-}
-
-func (o WebApplicationConversionGoalsGoalUserActionPtrOutput) ToWebApplicationConversionGoalsGoalUserActionPtrOutputWithContext(ctx context.Context) WebApplicationConversionGoalsGoalUserActionPtrOutput {
-	return o
-}
-
-func (o WebApplicationConversionGoalsGoalUserActionPtrOutput) Elem() WebApplicationConversionGoalsGoalUserActionOutput {
-	return o.ApplyT(func(v *WebApplicationConversionGoalsGoalUserAction) WebApplicationConversionGoalsGoalUserAction {
-		if v != nil {
-			return *v
-		}
-		var ret WebApplicationConversionGoalsGoalUserAction
-		return ret
-	}).(WebApplicationConversionGoalsGoalUserActionOutput)
-}
-
-// Type of the action to which the rule applies. Possible values are `Custom`, `Load` and `Xhr`.
-func (o WebApplicationConversionGoalsGoalUserActionPtrOutput) ActionType() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *WebApplicationConversionGoalsGoalUserAction) *string {
-		if v == nil {
-			return nil
-		}
-		return v.ActionType
-	}).(pulumi.StringPtrOutput)
-}
-
-// The match is case-sensitive (`true`) or (`false`)
-func (o WebApplicationConversionGoalsGoalUserActionPtrOutput) CaseSensitive() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v *WebApplicationConversionGoalsGoalUserAction) *bool {
-		if v == nil {
-			return nil
-		}
-		return v.CaseSensitive
-	}).(pulumi.BoolPtrOutput)
-}
-
-// The type of the entity to which the rule applies. Possible values are `ActionName`, `CssSelector`, `JavaScriptVariable`, `MetaTag`, `PagePath`, `PageTitle`, `PageUrl`, `UrlAnchor` and `XhrUrl`.
-func (o WebApplicationConversionGoalsGoalUserActionPtrOutput) MatchEntity() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *WebApplicationConversionGoalsGoalUserAction) *string {
-		if v == nil {
-			return nil
-		}
-		return v.MatchEntity
-	}).(pulumi.StringPtrOutput)
-}
-
-// The operator of the match. Possible values are `Begins`, `Contains` and `Ends`.
-func (o WebApplicationConversionGoalsGoalUserActionPtrOutput) MatchType() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *WebApplicationConversionGoalsGoalUserAction) *string {
-		if v == nil {
-			return nil
-		}
-		return v.MatchType
-	}).(pulumi.StringPtrOutput)
-}
-
-// The value to be matched to hit the conversion goal
-func (o WebApplicationConversionGoalsGoalUserActionPtrOutput) Value() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *WebApplicationConversionGoalsGoalUserAction) *string {
-		if v == nil {
-			return nil
-		}
-		return v.Value
-	}).(pulumi.StringPtrOutput)
-}
-
-type WebApplicationConversionGoalsGoalVisitDuration struct {
-	// The duration of session to hit the conversion goal, in milliseconds
-	Duration int `pulumi:"duration"`
-}
-
-// WebApplicationConversionGoalsGoalVisitDurationInput is an input type that accepts WebApplicationConversionGoalsGoalVisitDurationArgs and WebApplicationConversionGoalsGoalVisitDurationOutput values.
-// You can construct a concrete instance of `WebApplicationConversionGoalsGoalVisitDurationInput` via:
-//
-//	WebApplicationConversionGoalsGoalVisitDurationArgs{...}
-type WebApplicationConversionGoalsGoalVisitDurationInput interface {
-	pulumi.Input
-
-	ToWebApplicationConversionGoalsGoalVisitDurationOutput() WebApplicationConversionGoalsGoalVisitDurationOutput
-	ToWebApplicationConversionGoalsGoalVisitDurationOutputWithContext(context.Context) WebApplicationConversionGoalsGoalVisitDurationOutput
-}
-
-type WebApplicationConversionGoalsGoalVisitDurationArgs struct {
-	// The duration of session to hit the conversion goal, in milliseconds
-	Duration pulumi.IntInput `pulumi:"duration"`
-}
-
-func (WebApplicationConversionGoalsGoalVisitDurationArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*WebApplicationConversionGoalsGoalVisitDuration)(nil)).Elem()
-}
-
-func (i WebApplicationConversionGoalsGoalVisitDurationArgs) ToWebApplicationConversionGoalsGoalVisitDurationOutput() WebApplicationConversionGoalsGoalVisitDurationOutput {
-	return i.ToWebApplicationConversionGoalsGoalVisitDurationOutputWithContext(context.Background())
-}
-
-func (i WebApplicationConversionGoalsGoalVisitDurationArgs) ToWebApplicationConversionGoalsGoalVisitDurationOutputWithContext(ctx context.Context) WebApplicationConversionGoalsGoalVisitDurationOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationConversionGoalsGoalVisitDurationOutput)
-}
-
-func (i WebApplicationConversionGoalsGoalVisitDurationArgs) ToWebApplicationConversionGoalsGoalVisitDurationPtrOutput() WebApplicationConversionGoalsGoalVisitDurationPtrOutput {
-	return i.ToWebApplicationConversionGoalsGoalVisitDurationPtrOutputWithContext(context.Background())
-}
-
-func (i WebApplicationConversionGoalsGoalVisitDurationArgs) ToWebApplicationConversionGoalsGoalVisitDurationPtrOutputWithContext(ctx context.Context) WebApplicationConversionGoalsGoalVisitDurationPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationConversionGoalsGoalVisitDurationOutput).ToWebApplicationConversionGoalsGoalVisitDurationPtrOutputWithContext(ctx)
-}
-
-// WebApplicationConversionGoalsGoalVisitDurationPtrInput is an input type that accepts WebApplicationConversionGoalsGoalVisitDurationArgs, WebApplicationConversionGoalsGoalVisitDurationPtr and WebApplicationConversionGoalsGoalVisitDurationPtrOutput values.
-// You can construct a concrete instance of `WebApplicationConversionGoalsGoalVisitDurationPtrInput` via:
-//
-//	        WebApplicationConversionGoalsGoalVisitDurationArgs{...}
-//
-//	or:
-//
-//	        nil
-type WebApplicationConversionGoalsGoalVisitDurationPtrInput interface {
-	pulumi.Input
-
-	ToWebApplicationConversionGoalsGoalVisitDurationPtrOutput() WebApplicationConversionGoalsGoalVisitDurationPtrOutput
-	ToWebApplicationConversionGoalsGoalVisitDurationPtrOutputWithContext(context.Context) WebApplicationConversionGoalsGoalVisitDurationPtrOutput
-}
-
-type webApplicationConversionGoalsGoalVisitDurationPtrType WebApplicationConversionGoalsGoalVisitDurationArgs
-
-func WebApplicationConversionGoalsGoalVisitDurationPtr(v *WebApplicationConversionGoalsGoalVisitDurationArgs) WebApplicationConversionGoalsGoalVisitDurationPtrInput {
-	return (*webApplicationConversionGoalsGoalVisitDurationPtrType)(v)
-}
-
-func (*webApplicationConversionGoalsGoalVisitDurationPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**WebApplicationConversionGoalsGoalVisitDuration)(nil)).Elem()
-}
-
-func (i *webApplicationConversionGoalsGoalVisitDurationPtrType) ToWebApplicationConversionGoalsGoalVisitDurationPtrOutput() WebApplicationConversionGoalsGoalVisitDurationPtrOutput {
-	return i.ToWebApplicationConversionGoalsGoalVisitDurationPtrOutputWithContext(context.Background())
-}
-
-func (i *webApplicationConversionGoalsGoalVisitDurationPtrType) ToWebApplicationConversionGoalsGoalVisitDurationPtrOutputWithContext(ctx context.Context) WebApplicationConversionGoalsGoalVisitDurationPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationConversionGoalsGoalVisitDurationPtrOutput)
-}
-
-type WebApplicationConversionGoalsGoalVisitDurationOutput struct{ *pulumi.OutputState }
-
-func (WebApplicationConversionGoalsGoalVisitDurationOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*WebApplicationConversionGoalsGoalVisitDuration)(nil)).Elem()
-}
-
-func (o WebApplicationConversionGoalsGoalVisitDurationOutput) ToWebApplicationConversionGoalsGoalVisitDurationOutput() WebApplicationConversionGoalsGoalVisitDurationOutput {
-	return o
-}
-
-func (o WebApplicationConversionGoalsGoalVisitDurationOutput) ToWebApplicationConversionGoalsGoalVisitDurationOutputWithContext(ctx context.Context) WebApplicationConversionGoalsGoalVisitDurationOutput {
-	return o
-}
-
-func (o WebApplicationConversionGoalsGoalVisitDurationOutput) ToWebApplicationConversionGoalsGoalVisitDurationPtrOutput() WebApplicationConversionGoalsGoalVisitDurationPtrOutput {
-	return o.ToWebApplicationConversionGoalsGoalVisitDurationPtrOutputWithContext(context.Background())
-}
-
-func (o WebApplicationConversionGoalsGoalVisitDurationOutput) ToWebApplicationConversionGoalsGoalVisitDurationPtrOutputWithContext(ctx context.Context) WebApplicationConversionGoalsGoalVisitDurationPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebApplicationConversionGoalsGoalVisitDuration) *WebApplicationConversionGoalsGoalVisitDuration {
-		return &v
-	}).(WebApplicationConversionGoalsGoalVisitDurationPtrOutput)
-}
-
-// The duration of session to hit the conversion goal, in milliseconds
-func (o WebApplicationConversionGoalsGoalVisitDurationOutput) Duration() pulumi.IntOutput {
-	return o.ApplyT(func(v WebApplicationConversionGoalsGoalVisitDuration) int { return v.Duration }).(pulumi.IntOutput)
-}
-
-type WebApplicationConversionGoalsGoalVisitDurationPtrOutput struct{ *pulumi.OutputState }
-
-func (WebApplicationConversionGoalsGoalVisitDurationPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**WebApplicationConversionGoalsGoalVisitDuration)(nil)).Elem()
-}
-
-func (o WebApplicationConversionGoalsGoalVisitDurationPtrOutput) ToWebApplicationConversionGoalsGoalVisitDurationPtrOutput() WebApplicationConversionGoalsGoalVisitDurationPtrOutput {
-	return o
-}
-
-func (o WebApplicationConversionGoalsGoalVisitDurationPtrOutput) ToWebApplicationConversionGoalsGoalVisitDurationPtrOutputWithContext(ctx context.Context) WebApplicationConversionGoalsGoalVisitDurationPtrOutput {
-	return o
-}
-
-func (o WebApplicationConversionGoalsGoalVisitDurationPtrOutput) Elem() WebApplicationConversionGoalsGoalVisitDurationOutput {
-	return o.ApplyT(func(v *WebApplicationConversionGoalsGoalVisitDuration) WebApplicationConversionGoalsGoalVisitDuration {
-		if v != nil {
-			return *v
-		}
-		var ret WebApplicationConversionGoalsGoalVisitDuration
-		return ret
-	}).(WebApplicationConversionGoalsGoalVisitDurationOutput)
-}
-
-// The duration of session to hit the conversion goal, in milliseconds
-func (o WebApplicationConversionGoalsGoalVisitDurationPtrOutput) Duration() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v *WebApplicationConversionGoalsGoalVisitDuration) *int {
-		if v == nil {
-			return nil
-		}
-		return &v.Duration
-	}).(pulumi.IntPtrOutput)
-}
-
-type WebApplicationConversionGoalsGoalVisitNumAction struct {
-	// The number of user actions to hit the conversion goal
-	NumUserActions *int `pulumi:"numUserActions"`
-}
-
-// WebApplicationConversionGoalsGoalVisitNumActionInput is an input type that accepts WebApplicationConversionGoalsGoalVisitNumActionArgs and WebApplicationConversionGoalsGoalVisitNumActionOutput values.
-// You can construct a concrete instance of `WebApplicationConversionGoalsGoalVisitNumActionInput` via:
-//
-//	WebApplicationConversionGoalsGoalVisitNumActionArgs{...}
-type WebApplicationConversionGoalsGoalVisitNumActionInput interface {
-	pulumi.Input
-
-	ToWebApplicationConversionGoalsGoalVisitNumActionOutput() WebApplicationConversionGoalsGoalVisitNumActionOutput
-	ToWebApplicationConversionGoalsGoalVisitNumActionOutputWithContext(context.Context) WebApplicationConversionGoalsGoalVisitNumActionOutput
-}
-
-type WebApplicationConversionGoalsGoalVisitNumActionArgs struct {
-	// The number of user actions to hit the conversion goal
-	NumUserActions pulumi.IntPtrInput `pulumi:"numUserActions"`
-}
-
-func (WebApplicationConversionGoalsGoalVisitNumActionArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*WebApplicationConversionGoalsGoalVisitNumAction)(nil)).Elem()
-}
-
-func (i WebApplicationConversionGoalsGoalVisitNumActionArgs) ToWebApplicationConversionGoalsGoalVisitNumActionOutput() WebApplicationConversionGoalsGoalVisitNumActionOutput {
-	return i.ToWebApplicationConversionGoalsGoalVisitNumActionOutputWithContext(context.Background())
-}
-
-func (i WebApplicationConversionGoalsGoalVisitNumActionArgs) ToWebApplicationConversionGoalsGoalVisitNumActionOutputWithContext(ctx context.Context) WebApplicationConversionGoalsGoalVisitNumActionOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationConversionGoalsGoalVisitNumActionOutput)
-}
-
-func (i WebApplicationConversionGoalsGoalVisitNumActionArgs) ToWebApplicationConversionGoalsGoalVisitNumActionPtrOutput() WebApplicationConversionGoalsGoalVisitNumActionPtrOutput {
-	return i.ToWebApplicationConversionGoalsGoalVisitNumActionPtrOutputWithContext(context.Background())
-}
-
-func (i WebApplicationConversionGoalsGoalVisitNumActionArgs) ToWebApplicationConversionGoalsGoalVisitNumActionPtrOutputWithContext(ctx context.Context) WebApplicationConversionGoalsGoalVisitNumActionPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationConversionGoalsGoalVisitNumActionOutput).ToWebApplicationConversionGoalsGoalVisitNumActionPtrOutputWithContext(ctx)
-}
-
-// WebApplicationConversionGoalsGoalVisitNumActionPtrInput is an input type that accepts WebApplicationConversionGoalsGoalVisitNumActionArgs, WebApplicationConversionGoalsGoalVisitNumActionPtr and WebApplicationConversionGoalsGoalVisitNumActionPtrOutput values.
-// You can construct a concrete instance of `WebApplicationConversionGoalsGoalVisitNumActionPtrInput` via:
-//
-//	        WebApplicationConversionGoalsGoalVisitNumActionArgs{...}
-//
-//	or:
-//
-//	        nil
-type WebApplicationConversionGoalsGoalVisitNumActionPtrInput interface {
-	pulumi.Input
-
-	ToWebApplicationConversionGoalsGoalVisitNumActionPtrOutput() WebApplicationConversionGoalsGoalVisitNumActionPtrOutput
-	ToWebApplicationConversionGoalsGoalVisitNumActionPtrOutputWithContext(context.Context) WebApplicationConversionGoalsGoalVisitNumActionPtrOutput
-}
-
-type webApplicationConversionGoalsGoalVisitNumActionPtrType WebApplicationConversionGoalsGoalVisitNumActionArgs
-
-func WebApplicationConversionGoalsGoalVisitNumActionPtr(v *WebApplicationConversionGoalsGoalVisitNumActionArgs) WebApplicationConversionGoalsGoalVisitNumActionPtrInput {
-	return (*webApplicationConversionGoalsGoalVisitNumActionPtrType)(v)
-}
-
-func (*webApplicationConversionGoalsGoalVisitNumActionPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**WebApplicationConversionGoalsGoalVisitNumAction)(nil)).Elem()
-}
-
-func (i *webApplicationConversionGoalsGoalVisitNumActionPtrType) ToWebApplicationConversionGoalsGoalVisitNumActionPtrOutput() WebApplicationConversionGoalsGoalVisitNumActionPtrOutput {
-	return i.ToWebApplicationConversionGoalsGoalVisitNumActionPtrOutputWithContext(context.Background())
-}
-
-func (i *webApplicationConversionGoalsGoalVisitNumActionPtrType) ToWebApplicationConversionGoalsGoalVisitNumActionPtrOutputWithContext(ctx context.Context) WebApplicationConversionGoalsGoalVisitNumActionPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationConversionGoalsGoalVisitNumActionPtrOutput)
-}
-
-type WebApplicationConversionGoalsGoalVisitNumActionOutput struct{ *pulumi.OutputState }
-
-func (WebApplicationConversionGoalsGoalVisitNumActionOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*WebApplicationConversionGoalsGoalVisitNumAction)(nil)).Elem()
-}
-
-func (o WebApplicationConversionGoalsGoalVisitNumActionOutput) ToWebApplicationConversionGoalsGoalVisitNumActionOutput() WebApplicationConversionGoalsGoalVisitNumActionOutput {
-	return o
-}
-
-func (o WebApplicationConversionGoalsGoalVisitNumActionOutput) ToWebApplicationConversionGoalsGoalVisitNumActionOutputWithContext(ctx context.Context) WebApplicationConversionGoalsGoalVisitNumActionOutput {
-	return o
-}
-
-func (o WebApplicationConversionGoalsGoalVisitNumActionOutput) ToWebApplicationConversionGoalsGoalVisitNumActionPtrOutput() WebApplicationConversionGoalsGoalVisitNumActionPtrOutput {
-	return o.ToWebApplicationConversionGoalsGoalVisitNumActionPtrOutputWithContext(context.Background())
-}
-
-func (o WebApplicationConversionGoalsGoalVisitNumActionOutput) ToWebApplicationConversionGoalsGoalVisitNumActionPtrOutputWithContext(ctx context.Context) WebApplicationConversionGoalsGoalVisitNumActionPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebApplicationConversionGoalsGoalVisitNumAction) *WebApplicationConversionGoalsGoalVisitNumAction {
-		return &v
-	}).(WebApplicationConversionGoalsGoalVisitNumActionPtrOutput)
-}
-
-// The number of user actions to hit the conversion goal
-func (o WebApplicationConversionGoalsGoalVisitNumActionOutput) NumUserActions() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v WebApplicationConversionGoalsGoalVisitNumAction) *int { return v.NumUserActions }).(pulumi.IntPtrOutput)
-}
-
-type WebApplicationConversionGoalsGoalVisitNumActionPtrOutput struct{ *pulumi.OutputState }
-
-func (WebApplicationConversionGoalsGoalVisitNumActionPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**WebApplicationConversionGoalsGoalVisitNumAction)(nil)).Elem()
-}
-
-func (o WebApplicationConversionGoalsGoalVisitNumActionPtrOutput) ToWebApplicationConversionGoalsGoalVisitNumActionPtrOutput() WebApplicationConversionGoalsGoalVisitNumActionPtrOutput {
-	return o
-}
-
-func (o WebApplicationConversionGoalsGoalVisitNumActionPtrOutput) ToWebApplicationConversionGoalsGoalVisitNumActionPtrOutputWithContext(ctx context.Context) WebApplicationConversionGoalsGoalVisitNumActionPtrOutput {
-	return o
-}
-
-func (o WebApplicationConversionGoalsGoalVisitNumActionPtrOutput) Elem() WebApplicationConversionGoalsGoalVisitNumActionOutput {
-	return o.ApplyT(func(v *WebApplicationConversionGoalsGoalVisitNumAction) WebApplicationConversionGoalsGoalVisitNumAction {
-		if v != nil {
-			return *v
-		}
-		var ret WebApplicationConversionGoalsGoalVisitNumAction
-		return ret
-	}).(WebApplicationConversionGoalsGoalVisitNumActionOutput)
-}
-
-// The number of user actions to hit the conversion goal
-func (o WebApplicationConversionGoalsGoalVisitNumActionPtrOutput) NumUserActions() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v *WebApplicationConversionGoalsGoalVisitNumAction) *int {
-		if v == nil {
-			return nil
-		}
-		return v.NumUserActions
-	}).(pulumi.IntPtrOutput)
-}
-
-type WebApplicationCustomActionApdexSettings struct {
-	// Fallback threshold of an XHR action, defining a tolerable user experience, when the configured KPM is not available. Values between 0 and 240000 are allowed.
-	FrustratingFallbackThreshold int `pulumi:"frustratingFallbackThreshold"`
-	// Maximal value of apdex, which is considered as tolerable user experience. Values between 0 and 240000 are allowed.
-	FrustratingThreshold int `pulumi:"frustratingThreshold"`
-	// no documentation available
-	//
-	// Deprecated: The attribute `threshold` no longer exists in the API schema, please use `toleratedThreshold`, `frustratingThreshold`, `toleratedFallbackThreshold`, and `frustratingFallbackThreshold` instead
-	Threshold *int `pulumi:"threshold"`
-	// Fallback threshold of an XHR action, defining a satisfied user experience, when the configured KPM is not available. Values between 0 and 60000 are allowed.
-	ToleratedFallbackThreshold int `pulumi:"toleratedFallbackThreshold"`
-	// Maximal value of apdex, which is considered as satisfied user experience. Values between 0 and 60000 are allowed.
-	ToleratedThreshold int `pulumi:"toleratedThreshold"`
-}
-
-// WebApplicationCustomActionApdexSettingsInput is an input type that accepts WebApplicationCustomActionApdexSettingsArgs and WebApplicationCustomActionApdexSettingsOutput values.
-// You can construct a concrete instance of `WebApplicationCustomActionApdexSettingsInput` via:
-//
-//	WebApplicationCustomActionApdexSettingsArgs{...}
-type WebApplicationCustomActionApdexSettingsInput interface {
-	pulumi.Input
-
-	ToWebApplicationCustomActionApdexSettingsOutput() WebApplicationCustomActionApdexSettingsOutput
-	ToWebApplicationCustomActionApdexSettingsOutputWithContext(context.Context) WebApplicationCustomActionApdexSettingsOutput
-}
-
-type WebApplicationCustomActionApdexSettingsArgs struct {
-	// Fallback threshold of an XHR action, defining a tolerable user experience, when the configured KPM is not available. Values between 0 and 240000 are allowed.
-	FrustratingFallbackThreshold pulumi.IntInput `pulumi:"frustratingFallbackThreshold"`
-	// Maximal value of apdex, which is considered as tolerable user experience. Values between 0 and 240000 are allowed.
-	FrustratingThreshold pulumi.IntInput `pulumi:"frustratingThreshold"`
-	// no documentation available
-	//
-	// Deprecated: The attribute `threshold` no longer exists in the API schema, please use `toleratedThreshold`, `frustratingThreshold`, `toleratedFallbackThreshold`, and `frustratingFallbackThreshold` instead
-	Threshold pulumi.IntPtrInput `pulumi:"threshold"`
-	// Fallback threshold of an XHR action, defining a satisfied user experience, when the configured KPM is not available. Values between 0 and 60000 are allowed.
-	ToleratedFallbackThreshold pulumi.IntInput `pulumi:"toleratedFallbackThreshold"`
-	// Maximal value of apdex, which is considered as satisfied user experience. Values between 0 and 60000 are allowed.
-	ToleratedThreshold pulumi.IntInput `pulumi:"toleratedThreshold"`
-}
-
-func (WebApplicationCustomActionApdexSettingsArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*WebApplicationCustomActionApdexSettings)(nil)).Elem()
-}
-
-func (i WebApplicationCustomActionApdexSettingsArgs) ToWebApplicationCustomActionApdexSettingsOutput() WebApplicationCustomActionApdexSettingsOutput {
-	return i.ToWebApplicationCustomActionApdexSettingsOutputWithContext(context.Background())
-}
-
-func (i WebApplicationCustomActionApdexSettingsArgs) ToWebApplicationCustomActionApdexSettingsOutputWithContext(ctx context.Context) WebApplicationCustomActionApdexSettingsOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationCustomActionApdexSettingsOutput)
-}
-
-func (i WebApplicationCustomActionApdexSettingsArgs) ToWebApplicationCustomActionApdexSettingsPtrOutput() WebApplicationCustomActionApdexSettingsPtrOutput {
-	return i.ToWebApplicationCustomActionApdexSettingsPtrOutputWithContext(context.Background())
-}
-
-func (i WebApplicationCustomActionApdexSettingsArgs) ToWebApplicationCustomActionApdexSettingsPtrOutputWithContext(ctx context.Context) WebApplicationCustomActionApdexSettingsPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationCustomActionApdexSettingsOutput).ToWebApplicationCustomActionApdexSettingsPtrOutputWithContext(ctx)
-}
-
-// WebApplicationCustomActionApdexSettingsPtrInput is an input type that accepts WebApplicationCustomActionApdexSettingsArgs, WebApplicationCustomActionApdexSettingsPtr and WebApplicationCustomActionApdexSettingsPtrOutput values.
-// You can construct a concrete instance of `WebApplicationCustomActionApdexSettingsPtrInput` via:
-//
-//	        WebApplicationCustomActionApdexSettingsArgs{...}
-//
-//	or:
-//
-//	        nil
-type WebApplicationCustomActionApdexSettingsPtrInput interface {
-	pulumi.Input
-
-	ToWebApplicationCustomActionApdexSettingsPtrOutput() WebApplicationCustomActionApdexSettingsPtrOutput
-	ToWebApplicationCustomActionApdexSettingsPtrOutputWithContext(context.Context) WebApplicationCustomActionApdexSettingsPtrOutput
-}
-
-type webApplicationCustomActionApdexSettingsPtrType WebApplicationCustomActionApdexSettingsArgs
-
-func WebApplicationCustomActionApdexSettingsPtr(v *WebApplicationCustomActionApdexSettingsArgs) WebApplicationCustomActionApdexSettingsPtrInput {
-	return (*webApplicationCustomActionApdexSettingsPtrType)(v)
-}
-
-func (*webApplicationCustomActionApdexSettingsPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**WebApplicationCustomActionApdexSettings)(nil)).Elem()
-}
-
-func (i *webApplicationCustomActionApdexSettingsPtrType) ToWebApplicationCustomActionApdexSettingsPtrOutput() WebApplicationCustomActionApdexSettingsPtrOutput {
-	return i.ToWebApplicationCustomActionApdexSettingsPtrOutputWithContext(context.Background())
-}
-
-func (i *webApplicationCustomActionApdexSettingsPtrType) ToWebApplicationCustomActionApdexSettingsPtrOutputWithContext(ctx context.Context) WebApplicationCustomActionApdexSettingsPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationCustomActionApdexSettingsPtrOutput)
-}
-
-type WebApplicationCustomActionApdexSettingsOutput struct{ *pulumi.OutputState }
-
-func (WebApplicationCustomActionApdexSettingsOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*WebApplicationCustomActionApdexSettings)(nil)).Elem()
-}
-
-func (o WebApplicationCustomActionApdexSettingsOutput) ToWebApplicationCustomActionApdexSettingsOutput() WebApplicationCustomActionApdexSettingsOutput {
-	return o
-}
-
-func (o WebApplicationCustomActionApdexSettingsOutput) ToWebApplicationCustomActionApdexSettingsOutputWithContext(ctx context.Context) WebApplicationCustomActionApdexSettingsOutput {
-	return o
-}
-
-func (o WebApplicationCustomActionApdexSettingsOutput) ToWebApplicationCustomActionApdexSettingsPtrOutput() WebApplicationCustomActionApdexSettingsPtrOutput {
-	return o.ToWebApplicationCustomActionApdexSettingsPtrOutputWithContext(context.Background())
-}
-
-func (o WebApplicationCustomActionApdexSettingsOutput) ToWebApplicationCustomActionApdexSettingsPtrOutputWithContext(ctx context.Context) WebApplicationCustomActionApdexSettingsPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebApplicationCustomActionApdexSettings) *WebApplicationCustomActionApdexSettings {
-		return &v
-	}).(WebApplicationCustomActionApdexSettingsPtrOutput)
-}
-
-// Fallback threshold of an XHR action, defining a tolerable user experience, when the configured KPM is not available. Values between 0 and 240000 are allowed.
-func (o WebApplicationCustomActionApdexSettingsOutput) FrustratingFallbackThreshold() pulumi.IntOutput {
-	return o.ApplyT(func(v WebApplicationCustomActionApdexSettings) int { return v.FrustratingFallbackThreshold }).(pulumi.IntOutput)
-}
-
-// Maximal value of apdex, which is considered as tolerable user experience. Values between 0 and 240000 are allowed.
-func (o WebApplicationCustomActionApdexSettingsOutput) FrustratingThreshold() pulumi.IntOutput {
-	return o.ApplyT(func(v WebApplicationCustomActionApdexSettings) int { return v.FrustratingThreshold }).(pulumi.IntOutput)
-}
-
-// no documentation available
-//
-// Deprecated: The attribute `threshold` no longer exists in the API schema, please use `toleratedThreshold`, `frustratingThreshold`, `toleratedFallbackThreshold`, and `frustratingFallbackThreshold` instead
-func (o WebApplicationCustomActionApdexSettingsOutput) Threshold() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v WebApplicationCustomActionApdexSettings) *int { return v.Threshold }).(pulumi.IntPtrOutput)
-}
-
-// Fallback threshold of an XHR action, defining a satisfied user experience, when the configured KPM is not available. Values between 0 and 60000 are allowed.
-func (o WebApplicationCustomActionApdexSettingsOutput) ToleratedFallbackThreshold() pulumi.IntOutput {
-	return o.ApplyT(func(v WebApplicationCustomActionApdexSettings) int { return v.ToleratedFallbackThreshold }).(pulumi.IntOutput)
-}
-
-// Maximal value of apdex, which is considered as satisfied user experience. Values between 0 and 60000 are allowed.
-func (o WebApplicationCustomActionApdexSettingsOutput) ToleratedThreshold() pulumi.IntOutput {
-	return o.ApplyT(func(v WebApplicationCustomActionApdexSettings) int { return v.ToleratedThreshold }).(pulumi.IntOutput)
-}
-
-type WebApplicationCustomActionApdexSettingsPtrOutput struct{ *pulumi.OutputState }
-
-func (WebApplicationCustomActionApdexSettingsPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**WebApplicationCustomActionApdexSettings)(nil)).Elem()
-}
-
-func (o WebApplicationCustomActionApdexSettingsPtrOutput) ToWebApplicationCustomActionApdexSettingsPtrOutput() WebApplicationCustomActionApdexSettingsPtrOutput {
-	return o
-}
-
-func (o WebApplicationCustomActionApdexSettingsPtrOutput) ToWebApplicationCustomActionApdexSettingsPtrOutputWithContext(ctx context.Context) WebApplicationCustomActionApdexSettingsPtrOutput {
-	return o
-}
-
-func (o WebApplicationCustomActionApdexSettingsPtrOutput) Elem() WebApplicationCustomActionApdexSettingsOutput {
-	return o.ApplyT(func(v *WebApplicationCustomActionApdexSettings) WebApplicationCustomActionApdexSettings {
-		if v != nil {
-			return *v
-		}
-		var ret WebApplicationCustomActionApdexSettings
-		return ret
-	}).(WebApplicationCustomActionApdexSettingsOutput)
-}
-
-// Fallback threshold of an XHR action, defining a tolerable user experience, when the configured KPM is not available. Values between 0 and 240000 are allowed.
-func (o WebApplicationCustomActionApdexSettingsPtrOutput) FrustratingFallbackThreshold() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v *WebApplicationCustomActionApdexSettings) *int {
-		if v == nil {
-			return nil
-		}
-		return &v.FrustratingFallbackThreshold
-	}).(pulumi.IntPtrOutput)
-}
-
-// Maximal value of apdex, which is considered as tolerable user experience. Values between 0 and 240000 are allowed.
-func (o WebApplicationCustomActionApdexSettingsPtrOutput) FrustratingThreshold() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v *WebApplicationCustomActionApdexSettings) *int {
-		if v == nil {
-			return nil
-		}
-		return &v.FrustratingThreshold
-	}).(pulumi.IntPtrOutput)
-}
-
-// no documentation available
-//
-// Deprecated: The attribute `threshold` no longer exists in the API schema, please use `toleratedThreshold`, `frustratingThreshold`, `toleratedFallbackThreshold`, and `frustratingFallbackThreshold` instead
-func (o WebApplicationCustomActionApdexSettingsPtrOutput) Threshold() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v *WebApplicationCustomActionApdexSettings) *int {
-		if v == nil {
-			return nil
-		}
-		return v.Threshold
-	}).(pulumi.IntPtrOutput)
-}
-
-// Fallback threshold of an XHR action, defining a satisfied user experience, when the configured KPM is not available. Values between 0 and 60000 are allowed.
-func (o WebApplicationCustomActionApdexSettingsPtrOutput) ToleratedFallbackThreshold() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v *WebApplicationCustomActionApdexSettings) *int {
-		if v == nil {
-			return nil
-		}
-		return &v.ToleratedFallbackThreshold
-	}).(pulumi.IntPtrOutput)
-}
-
-// Maximal value of apdex, which is considered as satisfied user experience. Values between 0 and 60000 are allowed.
-func (o WebApplicationCustomActionApdexSettingsPtrOutput) ToleratedThreshold() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v *WebApplicationCustomActionApdexSettings) *int {
-		if v == nil {
-			return nil
-		}
-		return &v.ToleratedThreshold
-	}).(pulumi.IntPtrOutput)
-}
-
-type WebApplicationKeyUserAction struct {
-	// Configuration of the key user action
-	Actions []WebApplicationKeyUserActionAction `pulumi:"actions"`
-}
-
-// WebApplicationKeyUserActionInput is an input type that accepts WebApplicationKeyUserActionArgs and WebApplicationKeyUserActionOutput values.
-// You can construct a concrete instance of `WebApplicationKeyUserActionInput` via:
-//
-//	WebApplicationKeyUserActionArgs{...}
-type WebApplicationKeyUserActionInput interface {
-	pulumi.Input
-
-	ToWebApplicationKeyUserActionOutput() WebApplicationKeyUserActionOutput
-	ToWebApplicationKeyUserActionOutputWithContext(context.Context) WebApplicationKeyUserActionOutput
-}
-
-type WebApplicationKeyUserActionArgs struct {
-	// Configuration of the key user action
-	Actions WebApplicationKeyUserActionActionArrayInput `pulumi:"actions"`
-}
-
-func (WebApplicationKeyUserActionArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*WebApplicationKeyUserAction)(nil)).Elem()
-}
-
-func (i WebApplicationKeyUserActionArgs) ToWebApplicationKeyUserActionOutput() WebApplicationKeyUserActionOutput {
-	return i.ToWebApplicationKeyUserActionOutputWithContext(context.Background())
-}
-
-func (i WebApplicationKeyUserActionArgs) ToWebApplicationKeyUserActionOutputWithContext(ctx context.Context) WebApplicationKeyUserActionOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationKeyUserActionOutput)
-}
-
-// WebApplicationKeyUserActionArrayInput is an input type that accepts WebApplicationKeyUserActionArray and WebApplicationKeyUserActionArrayOutput values.
-// You can construct a concrete instance of `WebApplicationKeyUserActionArrayInput` via:
-//
-//	WebApplicationKeyUserActionArray{ WebApplicationKeyUserActionArgs{...} }
-type WebApplicationKeyUserActionArrayInput interface {
-	pulumi.Input
-
-	ToWebApplicationKeyUserActionArrayOutput() WebApplicationKeyUserActionArrayOutput
-	ToWebApplicationKeyUserActionArrayOutputWithContext(context.Context) WebApplicationKeyUserActionArrayOutput
-}
-
-type WebApplicationKeyUserActionArray []WebApplicationKeyUserActionInput
-
-func (WebApplicationKeyUserActionArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]WebApplicationKeyUserAction)(nil)).Elem()
-}
-
-func (i WebApplicationKeyUserActionArray) ToWebApplicationKeyUserActionArrayOutput() WebApplicationKeyUserActionArrayOutput {
-	return i.ToWebApplicationKeyUserActionArrayOutputWithContext(context.Background())
-}
-
-func (i WebApplicationKeyUserActionArray) ToWebApplicationKeyUserActionArrayOutputWithContext(ctx context.Context) WebApplicationKeyUserActionArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationKeyUserActionArrayOutput)
-}
-
-type WebApplicationKeyUserActionOutput struct{ *pulumi.OutputState }
-
-func (WebApplicationKeyUserActionOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*WebApplicationKeyUserAction)(nil)).Elem()
-}
-
-func (o WebApplicationKeyUserActionOutput) ToWebApplicationKeyUserActionOutput() WebApplicationKeyUserActionOutput {
-	return o
-}
-
-func (o WebApplicationKeyUserActionOutput) ToWebApplicationKeyUserActionOutputWithContext(ctx context.Context) WebApplicationKeyUserActionOutput {
-	return o
-}
-
-// Configuration of the key user action
-func (o WebApplicationKeyUserActionOutput) Actions() WebApplicationKeyUserActionActionArrayOutput {
-	return o.ApplyT(func(v WebApplicationKeyUserAction) []WebApplicationKeyUserActionAction { return v.Actions }).(WebApplicationKeyUserActionActionArrayOutput)
-}
-
-type WebApplicationKeyUserActionArrayOutput struct{ *pulumi.OutputState }
-
-func (WebApplicationKeyUserActionArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]WebApplicationKeyUserAction)(nil)).Elem()
-}
-
-func (o WebApplicationKeyUserActionArrayOutput) ToWebApplicationKeyUserActionArrayOutput() WebApplicationKeyUserActionArrayOutput {
-	return o
-}
-
-func (o WebApplicationKeyUserActionArrayOutput) ToWebApplicationKeyUserActionArrayOutputWithContext(ctx context.Context) WebApplicationKeyUserActionArrayOutput {
-	return o
-}
-
-func (o WebApplicationKeyUserActionArrayOutput) Index(i pulumi.IntInput) WebApplicationKeyUserActionOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) WebApplicationKeyUserAction {
-		return vs[0].([]WebApplicationKeyUserAction)[vs[1].(int)]
-	}).(WebApplicationKeyUserActionOutput)
-}
-
-type WebApplicationKeyUserActionAction struct {
-	// The domain where the action is performed.
-	Domain *string `pulumi:"domain"`
-	// The name of the action
-	Name string `pulumi:"name"`
-	// The type of the action. Possible values are `Custom`, `Load` and `Xhr`.
-	Type string `pulumi:"type"`
-}
-
-// WebApplicationKeyUserActionActionInput is an input type that accepts WebApplicationKeyUserActionActionArgs and WebApplicationKeyUserActionActionOutput values.
-// You can construct a concrete instance of `WebApplicationKeyUserActionActionInput` via:
-//
-//	WebApplicationKeyUserActionActionArgs{...}
-type WebApplicationKeyUserActionActionInput interface {
-	pulumi.Input
-
-	ToWebApplicationKeyUserActionActionOutput() WebApplicationKeyUserActionActionOutput
-	ToWebApplicationKeyUserActionActionOutputWithContext(context.Context) WebApplicationKeyUserActionActionOutput
-}
-
-type WebApplicationKeyUserActionActionArgs struct {
-	// The domain where the action is performed.
-	Domain pulumi.StringPtrInput `pulumi:"domain"`
-	// The name of the action
-	Name pulumi.StringInput `pulumi:"name"`
-	// The type of the action. Possible values are `Custom`, `Load` and `Xhr`.
-	Type pulumi.StringInput `pulumi:"type"`
-}
-
-func (WebApplicationKeyUserActionActionArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*WebApplicationKeyUserActionAction)(nil)).Elem()
-}
-
-func (i WebApplicationKeyUserActionActionArgs) ToWebApplicationKeyUserActionActionOutput() WebApplicationKeyUserActionActionOutput {
-	return i.ToWebApplicationKeyUserActionActionOutputWithContext(context.Background())
-}
-
-func (i WebApplicationKeyUserActionActionArgs) ToWebApplicationKeyUserActionActionOutputWithContext(ctx context.Context) WebApplicationKeyUserActionActionOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationKeyUserActionActionOutput)
-}
-
-// WebApplicationKeyUserActionActionArrayInput is an input type that accepts WebApplicationKeyUserActionActionArray and WebApplicationKeyUserActionActionArrayOutput values.
-// You can construct a concrete instance of `WebApplicationKeyUserActionActionArrayInput` via:
-//
-//	WebApplicationKeyUserActionActionArray{ WebApplicationKeyUserActionActionArgs{...} }
-type WebApplicationKeyUserActionActionArrayInput interface {
-	pulumi.Input
-
-	ToWebApplicationKeyUserActionActionArrayOutput() WebApplicationKeyUserActionActionArrayOutput
-	ToWebApplicationKeyUserActionActionArrayOutputWithContext(context.Context) WebApplicationKeyUserActionActionArrayOutput
-}
-
-type WebApplicationKeyUserActionActionArray []WebApplicationKeyUserActionActionInput
-
-func (WebApplicationKeyUserActionActionArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]WebApplicationKeyUserActionAction)(nil)).Elem()
-}
-
-func (i WebApplicationKeyUserActionActionArray) ToWebApplicationKeyUserActionActionArrayOutput() WebApplicationKeyUserActionActionArrayOutput {
-	return i.ToWebApplicationKeyUserActionActionArrayOutputWithContext(context.Background())
-}
-
-func (i WebApplicationKeyUserActionActionArray) ToWebApplicationKeyUserActionActionArrayOutputWithContext(ctx context.Context) WebApplicationKeyUserActionActionArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationKeyUserActionActionArrayOutput)
-}
-
-type WebApplicationKeyUserActionActionOutput struct{ *pulumi.OutputState }
-
-func (WebApplicationKeyUserActionActionOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*WebApplicationKeyUserActionAction)(nil)).Elem()
-}
-
-func (o WebApplicationKeyUserActionActionOutput) ToWebApplicationKeyUserActionActionOutput() WebApplicationKeyUserActionActionOutput {
-	return o
-}
-
-func (o WebApplicationKeyUserActionActionOutput) ToWebApplicationKeyUserActionActionOutputWithContext(ctx context.Context) WebApplicationKeyUserActionActionOutput {
-	return o
-}
-
-// The domain where the action is performed.
-func (o WebApplicationKeyUserActionActionOutput) Domain() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v WebApplicationKeyUserActionAction) *string { return v.Domain }).(pulumi.StringPtrOutput)
-}
-
-// The name of the action
-func (o WebApplicationKeyUserActionActionOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v WebApplicationKeyUserActionAction) string { return v.Name }).(pulumi.StringOutput)
-}
-
-// The type of the action. Possible values are `Custom`, `Load` and `Xhr`.
-func (o WebApplicationKeyUserActionActionOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v WebApplicationKeyUserActionAction) string { return v.Type }).(pulumi.StringOutput)
-}
-
-type WebApplicationKeyUserActionActionArrayOutput struct{ *pulumi.OutputState }
-
-func (WebApplicationKeyUserActionActionArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]WebApplicationKeyUserActionAction)(nil)).Elem()
-}
-
-func (o WebApplicationKeyUserActionActionArrayOutput) ToWebApplicationKeyUserActionActionArrayOutput() WebApplicationKeyUserActionActionArrayOutput {
-	return o
-}
-
-func (o WebApplicationKeyUserActionActionArrayOutput) ToWebApplicationKeyUserActionActionArrayOutputWithContext(ctx context.Context) WebApplicationKeyUserActionActionArrayOutput {
-	return o
-}
-
-func (o WebApplicationKeyUserActionActionArrayOutput) Index(i pulumi.IntInput) WebApplicationKeyUserActionActionOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) WebApplicationKeyUserActionAction {
-		return vs[0].([]WebApplicationKeyUserActionAction)[vs[1].(int)]
-	}).(WebApplicationKeyUserActionActionOutput)
-}
-
-type WebApplicationLoadActionApdexSettings struct {
-	// Fallback threshold of an XHR action, defining a tolerable user experience, when the configured KPM is not available. Values between 0 and 240000 are allowed.
-	FrustratingFallbackThreshold int `pulumi:"frustratingFallbackThreshold"`
-	// Maximal value of apdex, which is considered as tolerable user experience. Values between 0 and 240000 are allowed.
-	FrustratingThreshold int `pulumi:"frustratingThreshold"`
-	// no documentation available
-	//
-	// Deprecated: The attribute `threshold` no longer exists in the API schema, please use `toleratedThreshold`, `frustratingThreshold`, `toleratedFallbackThreshold`, and `frustratingFallbackThreshold` instead
-	Threshold *int `pulumi:"threshold"`
-	// Fallback threshold of an XHR action, defining a satisfied user experience, when the configured KPM is not available. Values between 0 and 60000 are allowed.
-	ToleratedFallbackThreshold int `pulumi:"toleratedFallbackThreshold"`
-	// Maximal value of apdex, which is considered as satisfied user experience. Values between 0 and 60000 are allowed.
-	ToleratedThreshold int `pulumi:"toleratedThreshold"`
-}
-
-// WebApplicationLoadActionApdexSettingsInput is an input type that accepts WebApplicationLoadActionApdexSettingsArgs and WebApplicationLoadActionApdexSettingsOutput values.
-// You can construct a concrete instance of `WebApplicationLoadActionApdexSettingsInput` via:
-//
-//	WebApplicationLoadActionApdexSettingsArgs{...}
-type WebApplicationLoadActionApdexSettingsInput interface {
-	pulumi.Input
-
-	ToWebApplicationLoadActionApdexSettingsOutput() WebApplicationLoadActionApdexSettingsOutput
-	ToWebApplicationLoadActionApdexSettingsOutputWithContext(context.Context) WebApplicationLoadActionApdexSettingsOutput
-}
-
-type WebApplicationLoadActionApdexSettingsArgs struct {
-	// Fallback threshold of an XHR action, defining a tolerable user experience, when the configured KPM is not available. Values between 0 and 240000 are allowed.
-	FrustratingFallbackThreshold pulumi.IntInput `pulumi:"frustratingFallbackThreshold"`
-	// Maximal value of apdex, which is considered as tolerable user experience. Values between 0 and 240000 are allowed.
-	FrustratingThreshold pulumi.IntInput `pulumi:"frustratingThreshold"`
-	// no documentation available
-	//
-	// Deprecated: The attribute `threshold` no longer exists in the API schema, please use `toleratedThreshold`, `frustratingThreshold`, `toleratedFallbackThreshold`, and `frustratingFallbackThreshold` instead
-	Threshold pulumi.IntPtrInput `pulumi:"threshold"`
-	// Fallback threshold of an XHR action, defining a satisfied user experience, when the configured KPM is not available. Values between 0 and 60000 are allowed.
-	ToleratedFallbackThreshold pulumi.IntInput `pulumi:"toleratedFallbackThreshold"`
-	// Maximal value of apdex, which is considered as satisfied user experience. Values between 0 and 60000 are allowed.
-	ToleratedThreshold pulumi.IntInput `pulumi:"toleratedThreshold"`
-}
-
-func (WebApplicationLoadActionApdexSettingsArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*WebApplicationLoadActionApdexSettings)(nil)).Elem()
-}
-
-func (i WebApplicationLoadActionApdexSettingsArgs) ToWebApplicationLoadActionApdexSettingsOutput() WebApplicationLoadActionApdexSettingsOutput {
-	return i.ToWebApplicationLoadActionApdexSettingsOutputWithContext(context.Background())
-}
-
-func (i WebApplicationLoadActionApdexSettingsArgs) ToWebApplicationLoadActionApdexSettingsOutputWithContext(ctx context.Context) WebApplicationLoadActionApdexSettingsOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationLoadActionApdexSettingsOutput)
-}
-
-func (i WebApplicationLoadActionApdexSettingsArgs) ToWebApplicationLoadActionApdexSettingsPtrOutput() WebApplicationLoadActionApdexSettingsPtrOutput {
-	return i.ToWebApplicationLoadActionApdexSettingsPtrOutputWithContext(context.Background())
-}
-
-func (i WebApplicationLoadActionApdexSettingsArgs) ToWebApplicationLoadActionApdexSettingsPtrOutputWithContext(ctx context.Context) WebApplicationLoadActionApdexSettingsPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationLoadActionApdexSettingsOutput).ToWebApplicationLoadActionApdexSettingsPtrOutputWithContext(ctx)
-}
-
-// WebApplicationLoadActionApdexSettingsPtrInput is an input type that accepts WebApplicationLoadActionApdexSettingsArgs, WebApplicationLoadActionApdexSettingsPtr and WebApplicationLoadActionApdexSettingsPtrOutput values.
-// You can construct a concrete instance of `WebApplicationLoadActionApdexSettingsPtrInput` via:
-//
-//	        WebApplicationLoadActionApdexSettingsArgs{...}
-//
-//	or:
-//
-//	        nil
-type WebApplicationLoadActionApdexSettingsPtrInput interface {
-	pulumi.Input
-
-	ToWebApplicationLoadActionApdexSettingsPtrOutput() WebApplicationLoadActionApdexSettingsPtrOutput
-	ToWebApplicationLoadActionApdexSettingsPtrOutputWithContext(context.Context) WebApplicationLoadActionApdexSettingsPtrOutput
-}
-
-type webApplicationLoadActionApdexSettingsPtrType WebApplicationLoadActionApdexSettingsArgs
-
-func WebApplicationLoadActionApdexSettingsPtr(v *WebApplicationLoadActionApdexSettingsArgs) WebApplicationLoadActionApdexSettingsPtrInput {
-	return (*webApplicationLoadActionApdexSettingsPtrType)(v)
-}
-
-func (*webApplicationLoadActionApdexSettingsPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**WebApplicationLoadActionApdexSettings)(nil)).Elem()
-}
-
-func (i *webApplicationLoadActionApdexSettingsPtrType) ToWebApplicationLoadActionApdexSettingsPtrOutput() WebApplicationLoadActionApdexSettingsPtrOutput {
-	return i.ToWebApplicationLoadActionApdexSettingsPtrOutputWithContext(context.Background())
-}
-
-func (i *webApplicationLoadActionApdexSettingsPtrType) ToWebApplicationLoadActionApdexSettingsPtrOutputWithContext(ctx context.Context) WebApplicationLoadActionApdexSettingsPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationLoadActionApdexSettingsPtrOutput)
-}
-
-type WebApplicationLoadActionApdexSettingsOutput struct{ *pulumi.OutputState }
-
-func (WebApplicationLoadActionApdexSettingsOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*WebApplicationLoadActionApdexSettings)(nil)).Elem()
-}
-
-func (o WebApplicationLoadActionApdexSettingsOutput) ToWebApplicationLoadActionApdexSettingsOutput() WebApplicationLoadActionApdexSettingsOutput {
-	return o
-}
-
-func (o WebApplicationLoadActionApdexSettingsOutput) ToWebApplicationLoadActionApdexSettingsOutputWithContext(ctx context.Context) WebApplicationLoadActionApdexSettingsOutput {
-	return o
-}
-
-func (o WebApplicationLoadActionApdexSettingsOutput) ToWebApplicationLoadActionApdexSettingsPtrOutput() WebApplicationLoadActionApdexSettingsPtrOutput {
-	return o.ToWebApplicationLoadActionApdexSettingsPtrOutputWithContext(context.Background())
-}
-
-func (o WebApplicationLoadActionApdexSettingsOutput) ToWebApplicationLoadActionApdexSettingsPtrOutputWithContext(ctx context.Context) WebApplicationLoadActionApdexSettingsPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebApplicationLoadActionApdexSettings) *WebApplicationLoadActionApdexSettings {
-		return &v
-	}).(WebApplicationLoadActionApdexSettingsPtrOutput)
-}
-
-// Fallback threshold of an XHR action, defining a tolerable user experience, when the configured KPM is not available. Values between 0 and 240000 are allowed.
-func (o WebApplicationLoadActionApdexSettingsOutput) FrustratingFallbackThreshold() pulumi.IntOutput {
-	return o.ApplyT(func(v WebApplicationLoadActionApdexSettings) int { return v.FrustratingFallbackThreshold }).(pulumi.IntOutput)
-}
-
-// Maximal value of apdex, which is considered as tolerable user experience. Values between 0 and 240000 are allowed.
-func (o WebApplicationLoadActionApdexSettingsOutput) FrustratingThreshold() pulumi.IntOutput {
-	return o.ApplyT(func(v WebApplicationLoadActionApdexSettings) int { return v.FrustratingThreshold }).(pulumi.IntOutput)
-}
-
-// no documentation available
-//
-// Deprecated: The attribute `threshold` no longer exists in the API schema, please use `toleratedThreshold`, `frustratingThreshold`, `toleratedFallbackThreshold`, and `frustratingFallbackThreshold` instead
-func (o WebApplicationLoadActionApdexSettingsOutput) Threshold() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v WebApplicationLoadActionApdexSettings) *int { return v.Threshold }).(pulumi.IntPtrOutput)
-}
-
-// Fallback threshold of an XHR action, defining a satisfied user experience, when the configured KPM is not available. Values between 0 and 60000 are allowed.
-func (o WebApplicationLoadActionApdexSettingsOutput) ToleratedFallbackThreshold() pulumi.IntOutput {
-	return o.ApplyT(func(v WebApplicationLoadActionApdexSettings) int { return v.ToleratedFallbackThreshold }).(pulumi.IntOutput)
-}
-
-// Maximal value of apdex, which is considered as satisfied user experience. Values between 0 and 60000 are allowed.
-func (o WebApplicationLoadActionApdexSettingsOutput) ToleratedThreshold() pulumi.IntOutput {
-	return o.ApplyT(func(v WebApplicationLoadActionApdexSettings) int { return v.ToleratedThreshold }).(pulumi.IntOutput)
-}
-
-type WebApplicationLoadActionApdexSettingsPtrOutput struct{ *pulumi.OutputState }
-
-func (WebApplicationLoadActionApdexSettingsPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**WebApplicationLoadActionApdexSettings)(nil)).Elem()
-}
-
-func (o WebApplicationLoadActionApdexSettingsPtrOutput) ToWebApplicationLoadActionApdexSettingsPtrOutput() WebApplicationLoadActionApdexSettingsPtrOutput {
-	return o
-}
-
-func (o WebApplicationLoadActionApdexSettingsPtrOutput) ToWebApplicationLoadActionApdexSettingsPtrOutputWithContext(ctx context.Context) WebApplicationLoadActionApdexSettingsPtrOutput {
-	return o
-}
-
-func (o WebApplicationLoadActionApdexSettingsPtrOutput) Elem() WebApplicationLoadActionApdexSettingsOutput {
-	return o.ApplyT(func(v *WebApplicationLoadActionApdexSettings) WebApplicationLoadActionApdexSettings {
-		if v != nil {
-			return *v
-		}
-		var ret WebApplicationLoadActionApdexSettings
-		return ret
-	}).(WebApplicationLoadActionApdexSettingsOutput)
-}
-
-// Fallback threshold of an XHR action, defining a tolerable user experience, when the configured KPM is not available. Values between 0 and 240000 are allowed.
-func (o WebApplicationLoadActionApdexSettingsPtrOutput) FrustratingFallbackThreshold() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v *WebApplicationLoadActionApdexSettings) *int {
-		if v == nil {
-			return nil
-		}
-		return &v.FrustratingFallbackThreshold
-	}).(pulumi.IntPtrOutput)
-}
-
-// Maximal value of apdex, which is considered as tolerable user experience. Values between 0 and 240000 are allowed.
-func (o WebApplicationLoadActionApdexSettingsPtrOutput) FrustratingThreshold() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v *WebApplicationLoadActionApdexSettings) *int {
-		if v == nil {
-			return nil
-		}
-		return &v.FrustratingThreshold
-	}).(pulumi.IntPtrOutput)
-}
-
-// no documentation available
-//
-// Deprecated: The attribute `threshold` no longer exists in the API schema, please use `toleratedThreshold`, `frustratingThreshold`, `toleratedFallbackThreshold`, and `frustratingFallbackThreshold` instead
-func (o WebApplicationLoadActionApdexSettingsPtrOutput) Threshold() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v *WebApplicationLoadActionApdexSettings) *int {
-		if v == nil {
-			return nil
-		}
-		return v.Threshold
-	}).(pulumi.IntPtrOutput)
-}
-
-// Fallback threshold of an XHR action, defining a satisfied user experience, when the configured KPM is not available. Values between 0 and 60000 are allowed.
-func (o WebApplicationLoadActionApdexSettingsPtrOutput) ToleratedFallbackThreshold() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v *WebApplicationLoadActionApdexSettings) *int {
-		if v == nil {
-			return nil
-		}
-		return &v.ToleratedFallbackThreshold
-	}).(pulumi.IntPtrOutput)
-}
-
-// Maximal value of apdex, which is considered as satisfied user experience. Values between 0 and 60000 are allowed.
-func (o WebApplicationLoadActionApdexSettingsPtrOutput) ToleratedThreshold() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v *WebApplicationLoadActionApdexSettings) *int {
-		if v == nil {
-			return nil
-		}
-		return &v.ToleratedThreshold
-	}).(pulumi.IntPtrOutput)
-}
-
-type WebApplicationMetaDataCaptureSettings struct {
-	// Java script agent meta data capture settings
-	Captures []WebApplicationMetaDataCaptureSettingsCapture `pulumi:"captures"`
-}
-
-// WebApplicationMetaDataCaptureSettingsInput is an input type that accepts WebApplicationMetaDataCaptureSettingsArgs and WebApplicationMetaDataCaptureSettingsOutput values.
-// You can construct a concrete instance of `WebApplicationMetaDataCaptureSettingsInput` via:
-//
-//	WebApplicationMetaDataCaptureSettingsArgs{...}
-type WebApplicationMetaDataCaptureSettingsInput interface {
-	pulumi.Input
-
-	ToWebApplicationMetaDataCaptureSettingsOutput() WebApplicationMetaDataCaptureSettingsOutput
-	ToWebApplicationMetaDataCaptureSettingsOutputWithContext(context.Context) WebApplicationMetaDataCaptureSettingsOutput
-}
-
-type WebApplicationMetaDataCaptureSettingsArgs struct {
-	// Java script agent meta data capture settings
-	Captures WebApplicationMetaDataCaptureSettingsCaptureArrayInput `pulumi:"captures"`
-}
-
-func (WebApplicationMetaDataCaptureSettingsArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*WebApplicationMetaDataCaptureSettings)(nil)).Elem()
-}
-
-func (i WebApplicationMetaDataCaptureSettingsArgs) ToWebApplicationMetaDataCaptureSettingsOutput() WebApplicationMetaDataCaptureSettingsOutput {
-	return i.ToWebApplicationMetaDataCaptureSettingsOutputWithContext(context.Background())
-}
-
-func (i WebApplicationMetaDataCaptureSettingsArgs) ToWebApplicationMetaDataCaptureSettingsOutputWithContext(ctx context.Context) WebApplicationMetaDataCaptureSettingsOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMetaDataCaptureSettingsOutput)
-}
-
-func (i WebApplicationMetaDataCaptureSettingsArgs) ToWebApplicationMetaDataCaptureSettingsPtrOutput() WebApplicationMetaDataCaptureSettingsPtrOutput {
-	return i.ToWebApplicationMetaDataCaptureSettingsPtrOutputWithContext(context.Background())
-}
-
-func (i WebApplicationMetaDataCaptureSettingsArgs) ToWebApplicationMetaDataCaptureSettingsPtrOutputWithContext(ctx context.Context) WebApplicationMetaDataCaptureSettingsPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMetaDataCaptureSettingsOutput).ToWebApplicationMetaDataCaptureSettingsPtrOutputWithContext(ctx)
-}
-
-// WebApplicationMetaDataCaptureSettingsPtrInput is an input type that accepts WebApplicationMetaDataCaptureSettingsArgs, WebApplicationMetaDataCaptureSettingsPtr and WebApplicationMetaDataCaptureSettingsPtrOutput values.
-// You can construct a concrete instance of `WebApplicationMetaDataCaptureSettingsPtrInput` via:
-//
-//	        WebApplicationMetaDataCaptureSettingsArgs{...}
-//
-//	or:
-//
-//	        nil
-type WebApplicationMetaDataCaptureSettingsPtrInput interface {
-	pulumi.Input
-
-	ToWebApplicationMetaDataCaptureSettingsPtrOutput() WebApplicationMetaDataCaptureSettingsPtrOutput
-	ToWebApplicationMetaDataCaptureSettingsPtrOutputWithContext(context.Context) WebApplicationMetaDataCaptureSettingsPtrOutput
-}
-
-type webApplicationMetaDataCaptureSettingsPtrType WebApplicationMetaDataCaptureSettingsArgs
-
-func WebApplicationMetaDataCaptureSettingsPtr(v *WebApplicationMetaDataCaptureSettingsArgs) WebApplicationMetaDataCaptureSettingsPtrInput {
-	return (*webApplicationMetaDataCaptureSettingsPtrType)(v)
-}
-
-func (*webApplicationMetaDataCaptureSettingsPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**WebApplicationMetaDataCaptureSettings)(nil)).Elem()
-}
-
-func (i *webApplicationMetaDataCaptureSettingsPtrType) ToWebApplicationMetaDataCaptureSettingsPtrOutput() WebApplicationMetaDataCaptureSettingsPtrOutput {
-	return i.ToWebApplicationMetaDataCaptureSettingsPtrOutputWithContext(context.Background())
-}
-
-func (i *webApplicationMetaDataCaptureSettingsPtrType) ToWebApplicationMetaDataCaptureSettingsPtrOutputWithContext(ctx context.Context) WebApplicationMetaDataCaptureSettingsPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMetaDataCaptureSettingsPtrOutput)
-}
-
-type WebApplicationMetaDataCaptureSettingsOutput struct{ *pulumi.OutputState }
-
-func (WebApplicationMetaDataCaptureSettingsOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*WebApplicationMetaDataCaptureSettings)(nil)).Elem()
-}
-
-func (o WebApplicationMetaDataCaptureSettingsOutput) ToWebApplicationMetaDataCaptureSettingsOutput() WebApplicationMetaDataCaptureSettingsOutput {
-	return o
-}
-
-func (o WebApplicationMetaDataCaptureSettingsOutput) ToWebApplicationMetaDataCaptureSettingsOutputWithContext(ctx context.Context) WebApplicationMetaDataCaptureSettingsOutput {
-	return o
-}
-
-func (o WebApplicationMetaDataCaptureSettingsOutput) ToWebApplicationMetaDataCaptureSettingsPtrOutput() WebApplicationMetaDataCaptureSettingsPtrOutput {
-	return o.ToWebApplicationMetaDataCaptureSettingsPtrOutputWithContext(context.Background())
-}
-
-func (o WebApplicationMetaDataCaptureSettingsOutput) ToWebApplicationMetaDataCaptureSettingsPtrOutputWithContext(ctx context.Context) WebApplicationMetaDataCaptureSettingsPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebApplicationMetaDataCaptureSettings) *WebApplicationMetaDataCaptureSettings {
-		return &v
-	}).(WebApplicationMetaDataCaptureSettingsPtrOutput)
-}
-
-// Java script agent meta data capture settings
-func (o WebApplicationMetaDataCaptureSettingsOutput) Captures() WebApplicationMetaDataCaptureSettingsCaptureArrayOutput {
-	return o.ApplyT(func(v WebApplicationMetaDataCaptureSettings) []WebApplicationMetaDataCaptureSettingsCapture {
-		return v.Captures
-	}).(WebApplicationMetaDataCaptureSettingsCaptureArrayOutput)
-}
-
-type WebApplicationMetaDataCaptureSettingsPtrOutput struct{ *pulumi.OutputState }
-
-func (WebApplicationMetaDataCaptureSettingsPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**WebApplicationMetaDataCaptureSettings)(nil)).Elem()
-}
-
-func (o WebApplicationMetaDataCaptureSettingsPtrOutput) ToWebApplicationMetaDataCaptureSettingsPtrOutput() WebApplicationMetaDataCaptureSettingsPtrOutput {
-	return o
-}
-
-func (o WebApplicationMetaDataCaptureSettingsPtrOutput) ToWebApplicationMetaDataCaptureSettingsPtrOutputWithContext(ctx context.Context) WebApplicationMetaDataCaptureSettingsPtrOutput {
-	return o
-}
-
-func (o WebApplicationMetaDataCaptureSettingsPtrOutput) Elem() WebApplicationMetaDataCaptureSettingsOutput {
-	return o.ApplyT(func(v *WebApplicationMetaDataCaptureSettings) WebApplicationMetaDataCaptureSettings {
-		if v != nil {
-			return *v
-		}
-		var ret WebApplicationMetaDataCaptureSettings
-		return ret
-	}).(WebApplicationMetaDataCaptureSettingsOutput)
-}
-
-// Java script agent meta data capture settings
-func (o WebApplicationMetaDataCaptureSettingsPtrOutput) Captures() WebApplicationMetaDataCaptureSettingsCaptureArrayOutput {
-	return o.ApplyT(func(v *WebApplicationMetaDataCaptureSettings) []WebApplicationMetaDataCaptureSettingsCapture {
-		if v == nil {
-			return nil
-		}
-		return v.Captures
-	}).(WebApplicationMetaDataCaptureSettingsCaptureArrayOutput)
-}
-
-type WebApplicationMetaDataCaptureSettingsCapture struct {
-	// The name of the meta data to capture
-	CapturingName string `pulumi:"capturingName"`
-	// Name for displaying the captured values in Dynatrace
-	Name string `pulumi:"name"`
-	// `true` if this metadata should be captured regardless of the privacy settings, `false` otherwise
-	PublicMetadata *bool `pulumi:"publicMetadata"`
-	// The type of the meta data to capture. Possible values are `COOKIE`, `CSS_SELECTOR`, `JAVA_SCRIPT_FUNCTION`, `JAVA_SCRIPT_VARIABLE`, `META_TAG` and `QUERY_STRING`.
-	Type string `pulumi:"type"`
-	// The unique ID of the meta data to capture
-	UniqueId *int `pulumi:"uniqueId"`
-	// `true` if the last captured value should be used for this metadata. By default the first value will be used.
-	UseLastValue *bool `pulumi:"useLastValue"`
-}
-
-// WebApplicationMetaDataCaptureSettingsCaptureInput is an input type that accepts WebApplicationMetaDataCaptureSettingsCaptureArgs and WebApplicationMetaDataCaptureSettingsCaptureOutput values.
-// You can construct a concrete instance of `WebApplicationMetaDataCaptureSettingsCaptureInput` via:
-//
-//	WebApplicationMetaDataCaptureSettingsCaptureArgs{...}
-type WebApplicationMetaDataCaptureSettingsCaptureInput interface {
-	pulumi.Input
-
-	ToWebApplicationMetaDataCaptureSettingsCaptureOutput() WebApplicationMetaDataCaptureSettingsCaptureOutput
-	ToWebApplicationMetaDataCaptureSettingsCaptureOutputWithContext(context.Context) WebApplicationMetaDataCaptureSettingsCaptureOutput
-}
-
-type WebApplicationMetaDataCaptureSettingsCaptureArgs struct {
-	// The name of the meta data to capture
-	CapturingName pulumi.StringInput `pulumi:"capturingName"`
-	// Name for displaying the captured values in Dynatrace
-	Name pulumi.StringInput `pulumi:"name"`
-	// `true` if this metadata should be captured regardless of the privacy settings, `false` otherwise
-	PublicMetadata pulumi.BoolPtrInput `pulumi:"publicMetadata"`
-	// The type of the meta data to capture. Possible values are `COOKIE`, `CSS_SELECTOR`, `JAVA_SCRIPT_FUNCTION`, `JAVA_SCRIPT_VARIABLE`, `META_TAG` and `QUERY_STRING`.
-	Type pulumi.StringInput `pulumi:"type"`
-	// The unique ID of the meta data to capture
-	UniqueId pulumi.IntPtrInput `pulumi:"uniqueId"`
-	// `true` if the last captured value should be used for this metadata. By default the first value will be used.
-	UseLastValue pulumi.BoolPtrInput `pulumi:"useLastValue"`
-}
-
-func (WebApplicationMetaDataCaptureSettingsCaptureArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*WebApplicationMetaDataCaptureSettingsCapture)(nil)).Elem()
-}
-
-func (i WebApplicationMetaDataCaptureSettingsCaptureArgs) ToWebApplicationMetaDataCaptureSettingsCaptureOutput() WebApplicationMetaDataCaptureSettingsCaptureOutput {
-	return i.ToWebApplicationMetaDataCaptureSettingsCaptureOutputWithContext(context.Background())
-}
-
-func (i WebApplicationMetaDataCaptureSettingsCaptureArgs) ToWebApplicationMetaDataCaptureSettingsCaptureOutputWithContext(ctx context.Context) WebApplicationMetaDataCaptureSettingsCaptureOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMetaDataCaptureSettingsCaptureOutput)
-}
-
-// WebApplicationMetaDataCaptureSettingsCaptureArrayInput is an input type that accepts WebApplicationMetaDataCaptureSettingsCaptureArray and WebApplicationMetaDataCaptureSettingsCaptureArrayOutput values.
-// You can construct a concrete instance of `WebApplicationMetaDataCaptureSettingsCaptureArrayInput` via:
-//
-//	WebApplicationMetaDataCaptureSettingsCaptureArray{ WebApplicationMetaDataCaptureSettingsCaptureArgs{...} }
-type WebApplicationMetaDataCaptureSettingsCaptureArrayInput interface {
-	pulumi.Input
-
-	ToWebApplicationMetaDataCaptureSettingsCaptureArrayOutput() WebApplicationMetaDataCaptureSettingsCaptureArrayOutput
-	ToWebApplicationMetaDataCaptureSettingsCaptureArrayOutputWithContext(context.Context) WebApplicationMetaDataCaptureSettingsCaptureArrayOutput
-}
-
-type WebApplicationMetaDataCaptureSettingsCaptureArray []WebApplicationMetaDataCaptureSettingsCaptureInput
-
-func (WebApplicationMetaDataCaptureSettingsCaptureArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]WebApplicationMetaDataCaptureSettingsCapture)(nil)).Elem()
-}
-
-func (i WebApplicationMetaDataCaptureSettingsCaptureArray) ToWebApplicationMetaDataCaptureSettingsCaptureArrayOutput() WebApplicationMetaDataCaptureSettingsCaptureArrayOutput {
-	return i.ToWebApplicationMetaDataCaptureSettingsCaptureArrayOutputWithContext(context.Background())
-}
-
-func (i WebApplicationMetaDataCaptureSettingsCaptureArray) ToWebApplicationMetaDataCaptureSettingsCaptureArrayOutputWithContext(ctx context.Context) WebApplicationMetaDataCaptureSettingsCaptureArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMetaDataCaptureSettingsCaptureArrayOutput)
-}
-
-type WebApplicationMetaDataCaptureSettingsCaptureOutput struct{ *pulumi.OutputState }
-
-func (WebApplicationMetaDataCaptureSettingsCaptureOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*WebApplicationMetaDataCaptureSettingsCapture)(nil)).Elem()
-}
-
-func (o WebApplicationMetaDataCaptureSettingsCaptureOutput) ToWebApplicationMetaDataCaptureSettingsCaptureOutput() WebApplicationMetaDataCaptureSettingsCaptureOutput {
-	return o
-}
-
-func (o WebApplicationMetaDataCaptureSettingsCaptureOutput) ToWebApplicationMetaDataCaptureSettingsCaptureOutputWithContext(ctx context.Context) WebApplicationMetaDataCaptureSettingsCaptureOutput {
-	return o
-}
-
-// The name of the meta data to capture
-func (o WebApplicationMetaDataCaptureSettingsCaptureOutput) CapturingName() pulumi.StringOutput {
-	return o.ApplyT(func(v WebApplicationMetaDataCaptureSettingsCapture) string { return v.CapturingName }).(pulumi.StringOutput)
-}
-
-// Name for displaying the captured values in Dynatrace
-func (o WebApplicationMetaDataCaptureSettingsCaptureOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v WebApplicationMetaDataCaptureSettingsCapture) string { return v.Name }).(pulumi.StringOutput)
-}
-
-// `true` if this metadata should be captured regardless of the privacy settings, `false` otherwise
-func (o WebApplicationMetaDataCaptureSettingsCaptureOutput) PublicMetadata() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v WebApplicationMetaDataCaptureSettingsCapture) *bool { return v.PublicMetadata }).(pulumi.BoolPtrOutput)
-}
-
-// The type of the meta data to capture. Possible values are `COOKIE`, `CSS_SELECTOR`, `JAVA_SCRIPT_FUNCTION`, `JAVA_SCRIPT_VARIABLE`, `META_TAG` and `QUERY_STRING`.
-func (o WebApplicationMetaDataCaptureSettingsCaptureOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v WebApplicationMetaDataCaptureSettingsCapture) string { return v.Type }).(pulumi.StringOutput)
-}
-
-// The unique ID of the meta data to capture
-func (o WebApplicationMetaDataCaptureSettingsCaptureOutput) UniqueId() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v WebApplicationMetaDataCaptureSettingsCapture) *int { return v.UniqueId }).(pulumi.IntPtrOutput)
-}
-
-// `true` if the last captured value should be used for this metadata. By default the first value will be used.
-func (o WebApplicationMetaDataCaptureSettingsCaptureOutput) UseLastValue() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v WebApplicationMetaDataCaptureSettingsCapture) *bool { return v.UseLastValue }).(pulumi.BoolPtrOutput)
-}
-
-type WebApplicationMetaDataCaptureSettingsCaptureArrayOutput struct{ *pulumi.OutputState }
-
-func (WebApplicationMetaDataCaptureSettingsCaptureArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]WebApplicationMetaDataCaptureSettingsCapture)(nil)).Elem()
-}
-
-func (o WebApplicationMetaDataCaptureSettingsCaptureArrayOutput) ToWebApplicationMetaDataCaptureSettingsCaptureArrayOutput() WebApplicationMetaDataCaptureSettingsCaptureArrayOutput {
-	return o
-}
-
-func (o WebApplicationMetaDataCaptureSettingsCaptureArrayOutput) ToWebApplicationMetaDataCaptureSettingsCaptureArrayOutputWithContext(ctx context.Context) WebApplicationMetaDataCaptureSettingsCaptureArrayOutput {
-	return o
-}
-
-func (o WebApplicationMetaDataCaptureSettingsCaptureArrayOutput) Index(i pulumi.IntInput) WebApplicationMetaDataCaptureSettingsCaptureOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) WebApplicationMetaDataCaptureSettingsCapture {
-		return vs[0].([]WebApplicationMetaDataCaptureSettingsCapture)[vs[1].(int)]
-	}).(WebApplicationMetaDataCaptureSettingsCaptureOutput)
-}
-
-type WebApplicationMonitoringSettings struct {
-	// Add the cross origin = anonymous attribute to capture JavaScript error messages and W3C resource timings
-	AddCrossOriginAnonymousAttribute *bool `pulumi:"addCrossOriginAnonymousAttribute"`
-	// Advanced JavaScript tag settings
-	AdvancedJavascriptTagSettings WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings `pulumi:"advancedJavascriptTagSettings"`
-	// The name of the angular package
-	AngularPackageName *string `pulumi:"angularPackageName"`
-	// Settings for restricting certain browser type, version, platform and, comparator. It also restricts the mode
-	BrowserRestrictionSettings *WebApplicationMonitoringSettingsBrowserRestrictionSettings `pulumi:"browserRestrictionSettings"`
-	// Optimize the value of cache control headers for use with Dynatrace real user monitoring enabled/disabled
-	CacheControlHeaderOptimizations *bool `pulumi:"cacheControlHeaderOptimizations"`
-	// Settings for content capture
-	ContentCapture WebApplicationMonitoringSettingsContentCapture `pulumi:"contentCapture"`
-	// Domain for cookie placement. Maximum 150 characters.
-	CookiePlacementDomain *string `pulumi:"cookiePlacementDomain"`
-	// To enable RUM for XHR calls to AWS Lambda, define a regular expression matching these calls, Dynatrace can then automatically add a custom header (`x-dtc`) to each such request to the respective endpoints in AWS.
-	CorrelationHeaderInclusionRegex *string `pulumi:"correlationHeaderInclusionRegex"`
-	// The location to send monitoring data from the JavaScript tag.
-	//
-	//  Specify either a relative or an absolute URL. If you use an absolute URL, data will be sent using CORS.
-	//
-	//  **Required** for auto-injected applications, optional for agentless applications. Maximum 512 characters.
-	CustomConfigurationProperties *string `pulumi:"customConfigurationProperties"`
-	// You can exclude some actions from becoming XHR actions.
-	//
-	// Put a regular expression, matching all the required URLs, here.
-	//
-	// If noting specified the feature is disabled
-	ExcludeXhrRegex *string `pulumi:"excludeXhrRegex"`
-	// `fetch()` request capture enabled/disabled
-	FetchRequests *bool `pulumi:"fetchRequests"`
-	// Manage IP address exclusion settings with `WebAppIpAddressExclusion` resource
-	IgnoreIpAddressRestrictionSettings *bool `pulumi:"ignoreIpAddressRestrictionSettings"`
-	// Possible valures are `CODE_SNIPPET`, `CODE_SNIPPET_ASYNC`, `INLINE_CODE`, `JAVASCRIPT_TAG`, `JAVASCRIPT_TAG_COMPLETE`, `JAVASCRIPT_TAG_SRI`
-	InjectionMode string `pulumi:"injectionMode"`
-	// Instrumented web or app server.
-	InstrumentedWebServer *bool `pulumi:"instrumentedWebServer"`
-	// Settings for restricting certain ip addresses and for introducing subnet mask. It also restricts the mode
-	IpAddressRestrictionSettings *WebApplicationMonitoringSettingsIpAddressRestrictionSettings `pulumi:"ipAddressRestrictionSettings"`
-	// Support of various JavaScript frameworks
-	JavascriptFrameworkSupport *WebApplicationMonitoringSettingsJavascriptFrameworkSupport `pulumi:"javascriptFrameworkSupport"`
-	// Java script injection rules
-	JavascriptInjectionRules *WebApplicationMonitoringSettingsJavascriptInjectionRules `pulumi:"javascriptInjectionRules"`
-	// Get the JavaScript library file from the CDN. Not supported by agentless applications and assumed to be false for auto-injected applications if omitted.
-	LibraryFileFromCdn *bool `pulumi:"libraryFileFromCdn"`
-	// The location of your application’s custom JavaScript library file.
-	//
-	//  If nothing specified the root directory of your web server is used.
-	//
-	//  **Required** for auto-injected applications, not supported by agentless applications. Maximum 512 characters.
-	LibraryFileLocation *string `pulumi:"libraryFileLocation"`
-	// The location to send monitoring data from the JavaScript tag.
-	//
-	//  Specify either a relative or an absolute URL. If you use an absolute URL, data will be sent using CORS.
-	//
-	//  **Required** for auto-injected applications, optional for agentless applications. Maximum 512 characters.
-	MonitoringDataPath *string `pulumi:"monitoringDataPath"`
-	// Same site cookie attribute
-	SameSiteCookieAttribute *string `pulumi:"sameSiteCookieAttribute"`
-	// Time duration for the cache settings
-	ScriptTagCacheDurationInHours *int `pulumi:"scriptTagCacheDurationInHours"`
-	// Secure attribute usage for Dynatrace cookies enabled/disabled
-	SecureCookieAttribute *bool `pulumi:"secureCookieAttribute"`
-	// Path to identify the server’s request ID. Maximum 150 characters.
-	ServerRequestPathId *string `pulumi:"serverRequestPathId"`
-	// Send beacon data via CORS.
-	UseCors *bool `pulumi:"useCors"`
-	// `XmlHttpRequest` support enabled/disabled
-	XmlHttpRequest *bool `pulumi:"xmlHttpRequest"`
-}
-
-// WebApplicationMonitoringSettingsInput is an input type that accepts WebApplicationMonitoringSettingsArgs and WebApplicationMonitoringSettingsOutput values.
-// You can construct a concrete instance of `WebApplicationMonitoringSettingsInput` via:
-//
-//	WebApplicationMonitoringSettingsArgs{...}
-type WebApplicationMonitoringSettingsInput interface {
-	pulumi.Input
-
-	ToWebApplicationMonitoringSettingsOutput() WebApplicationMonitoringSettingsOutput
-	ToWebApplicationMonitoringSettingsOutputWithContext(context.Context) WebApplicationMonitoringSettingsOutput
-}
-
-type WebApplicationMonitoringSettingsArgs struct {
-	// Add the cross origin = anonymous attribute to capture JavaScript error messages and W3C resource timings
-	AddCrossOriginAnonymousAttribute pulumi.BoolPtrInput `pulumi:"addCrossOriginAnonymousAttribute"`
-	// Advanced JavaScript tag settings
-	AdvancedJavascriptTagSettings WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsInput `pulumi:"advancedJavascriptTagSettings"`
-	// The name of the angular package
-	AngularPackageName pulumi.StringPtrInput `pulumi:"angularPackageName"`
-	// Settings for restricting certain browser type, version, platform and, comparator. It also restricts the mode
-	BrowserRestrictionSettings WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrInput `pulumi:"browserRestrictionSettings"`
-	// Optimize the value of cache control headers for use with Dynatrace real user monitoring enabled/disabled
-	CacheControlHeaderOptimizations pulumi.BoolPtrInput `pulumi:"cacheControlHeaderOptimizations"`
-	// Settings for content capture
-	ContentCapture WebApplicationMonitoringSettingsContentCaptureInput `pulumi:"contentCapture"`
-	// Domain for cookie placement. Maximum 150 characters.
-	CookiePlacementDomain pulumi.StringPtrInput `pulumi:"cookiePlacementDomain"`
-	// To enable RUM for XHR calls to AWS Lambda, define a regular expression matching these calls, Dynatrace can then automatically add a custom header (`x-dtc`) to each such request to the respective endpoints in AWS.
-	CorrelationHeaderInclusionRegex pulumi.StringPtrInput `pulumi:"correlationHeaderInclusionRegex"`
-	// The location to send monitoring data from the JavaScript tag.
-	//
-	//  Specify either a relative or an absolute URL. If you use an absolute URL, data will be sent using CORS.
-	//
-	//  **Required** for auto-injected applications, optional for agentless applications. Maximum 512 characters.
-	CustomConfigurationProperties pulumi.StringPtrInput `pulumi:"customConfigurationProperties"`
-	// You can exclude some actions from becoming XHR actions.
-	//
-	// Put a regular expression, matching all the required URLs, here.
-	//
-	// If noting specified the feature is disabled
-	ExcludeXhrRegex pulumi.StringPtrInput `pulumi:"excludeXhrRegex"`
-	// `fetch()` request capture enabled/disabled
-	FetchRequests pulumi.BoolPtrInput `pulumi:"fetchRequests"`
-	// Manage IP address exclusion settings with `WebAppIpAddressExclusion` resource
-	IgnoreIpAddressRestrictionSettings pulumi.BoolPtrInput `pulumi:"ignoreIpAddressRestrictionSettings"`
-	// Possible valures are `CODE_SNIPPET`, `CODE_SNIPPET_ASYNC`, `INLINE_CODE`, `JAVASCRIPT_TAG`, `JAVASCRIPT_TAG_COMPLETE`, `JAVASCRIPT_TAG_SRI`
-	InjectionMode pulumi.StringInput `pulumi:"injectionMode"`
-	// Instrumented web or app server.
-	InstrumentedWebServer pulumi.BoolPtrInput `pulumi:"instrumentedWebServer"`
-	// Settings for restricting certain ip addresses and for introducing subnet mask. It also restricts the mode
-	IpAddressRestrictionSettings WebApplicationMonitoringSettingsIpAddressRestrictionSettingsPtrInput `pulumi:"ipAddressRestrictionSettings"`
-	// Support of various JavaScript frameworks
-	JavascriptFrameworkSupport WebApplicationMonitoringSettingsJavascriptFrameworkSupportPtrInput `pulumi:"javascriptFrameworkSupport"`
-	// Java script injection rules
-	JavascriptInjectionRules WebApplicationMonitoringSettingsJavascriptInjectionRulesPtrInput `pulumi:"javascriptInjectionRules"`
-	// Get the JavaScript library file from the CDN. Not supported by agentless applications and assumed to be false for auto-injected applications if omitted.
-	LibraryFileFromCdn pulumi.BoolPtrInput `pulumi:"libraryFileFromCdn"`
-	// The location of your application’s custom JavaScript library file.
-	//
-	//  If nothing specified the root directory of your web server is used.
-	//
-	//  **Required** for auto-injected applications, not supported by agentless applications. Maximum 512 characters.
-	LibraryFileLocation pulumi.StringPtrInput `pulumi:"libraryFileLocation"`
-	// The location to send monitoring data from the JavaScript tag.
-	//
-	//  Specify either a relative or an absolute URL. If you use an absolute URL, data will be sent using CORS.
-	//
-	//  **Required** for auto-injected applications, optional for agentless applications. Maximum 512 characters.
-	MonitoringDataPath pulumi.StringPtrInput `pulumi:"monitoringDataPath"`
-	// Same site cookie attribute
-	SameSiteCookieAttribute pulumi.StringPtrInput `pulumi:"sameSiteCookieAttribute"`
-	// Time duration for the cache settings
-	ScriptTagCacheDurationInHours pulumi.IntPtrInput `pulumi:"scriptTagCacheDurationInHours"`
-	// Secure attribute usage for Dynatrace cookies enabled/disabled
-	SecureCookieAttribute pulumi.BoolPtrInput `pulumi:"secureCookieAttribute"`
-	// Path to identify the server’s request ID. Maximum 150 characters.
-	ServerRequestPathId pulumi.StringPtrInput `pulumi:"serverRequestPathId"`
-	// Send beacon data via CORS.
-	UseCors pulumi.BoolPtrInput `pulumi:"useCors"`
-	// `XmlHttpRequest` support enabled/disabled
-	XmlHttpRequest pulumi.BoolPtrInput `pulumi:"xmlHttpRequest"`
-}
-
-func (WebApplicationMonitoringSettingsArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*WebApplicationMonitoringSettings)(nil)).Elem()
-}
-
-func (i WebApplicationMonitoringSettingsArgs) ToWebApplicationMonitoringSettingsOutput() WebApplicationMonitoringSettingsOutput {
-	return i.ToWebApplicationMonitoringSettingsOutputWithContext(context.Background())
-}
-
-func (i WebApplicationMonitoringSettingsArgs) ToWebApplicationMonitoringSettingsOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsOutput)
-}
-
-func (i WebApplicationMonitoringSettingsArgs) ToWebApplicationMonitoringSettingsPtrOutput() WebApplicationMonitoringSettingsPtrOutput {
-	return i.ToWebApplicationMonitoringSettingsPtrOutputWithContext(context.Background())
-}
-
-func (i WebApplicationMonitoringSettingsArgs) ToWebApplicationMonitoringSettingsPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsOutput).ToWebApplicationMonitoringSettingsPtrOutputWithContext(ctx)
-}
-
-// WebApplicationMonitoringSettingsPtrInput is an input type that accepts WebApplicationMonitoringSettingsArgs, WebApplicationMonitoringSettingsPtr and WebApplicationMonitoringSettingsPtrOutput values.
-// You can construct a concrete instance of `WebApplicationMonitoringSettingsPtrInput` via:
-//
-//	        WebApplicationMonitoringSettingsArgs{...}
-//
-//	or:
-//
-//	        nil
-type WebApplicationMonitoringSettingsPtrInput interface {
-	pulumi.Input
-
-	ToWebApplicationMonitoringSettingsPtrOutput() WebApplicationMonitoringSettingsPtrOutput
-	ToWebApplicationMonitoringSettingsPtrOutputWithContext(context.Context) WebApplicationMonitoringSettingsPtrOutput
-}
-
-type webApplicationMonitoringSettingsPtrType WebApplicationMonitoringSettingsArgs
-
-func WebApplicationMonitoringSettingsPtr(v *WebApplicationMonitoringSettingsArgs) WebApplicationMonitoringSettingsPtrInput {
-	return (*webApplicationMonitoringSettingsPtrType)(v)
-}
-
-func (*webApplicationMonitoringSettingsPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**WebApplicationMonitoringSettings)(nil)).Elem()
-}
-
-func (i *webApplicationMonitoringSettingsPtrType) ToWebApplicationMonitoringSettingsPtrOutput() WebApplicationMonitoringSettingsPtrOutput {
-	return i.ToWebApplicationMonitoringSettingsPtrOutputWithContext(context.Background())
-}
-
-func (i *webApplicationMonitoringSettingsPtrType) ToWebApplicationMonitoringSettingsPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsPtrOutput)
-}
-
-type WebApplicationMonitoringSettingsOutput struct{ *pulumi.OutputState }
-
-func (WebApplicationMonitoringSettingsOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*WebApplicationMonitoringSettings)(nil)).Elem()
-}
-
-func (o WebApplicationMonitoringSettingsOutput) ToWebApplicationMonitoringSettingsOutput() WebApplicationMonitoringSettingsOutput {
-	return o
-}
-
-func (o WebApplicationMonitoringSettingsOutput) ToWebApplicationMonitoringSettingsOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsOutput {
-	return o
-}
-
-func (o WebApplicationMonitoringSettingsOutput) ToWebApplicationMonitoringSettingsPtrOutput() WebApplicationMonitoringSettingsPtrOutput {
-	return o.ToWebApplicationMonitoringSettingsPtrOutputWithContext(context.Background())
-}
-
-func (o WebApplicationMonitoringSettingsOutput) ToWebApplicationMonitoringSettingsPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebApplicationMonitoringSettings) *WebApplicationMonitoringSettings {
-		return &v
-	}).(WebApplicationMonitoringSettingsPtrOutput)
-}
-
-// Add the cross origin = anonymous attribute to capture JavaScript error messages and W3C resource timings
-func (o WebApplicationMonitoringSettingsOutput) AddCrossOriginAnonymousAttribute() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v WebApplicationMonitoringSettings) *bool { return v.AddCrossOriginAnonymousAttribute }).(pulumi.BoolPtrOutput)
-}
-
-// Advanced JavaScript tag settings
-func (o WebApplicationMonitoringSettingsOutput) AdvancedJavascriptTagSettings() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsOutput {
-	return o.ApplyT(func(v WebApplicationMonitoringSettings) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings {
-		return v.AdvancedJavascriptTagSettings
-	}).(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsOutput)
-}
-
-// The name of the angular package
-func (o WebApplicationMonitoringSettingsOutput) AngularPackageName() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v WebApplicationMonitoringSettings) *string { return v.AngularPackageName }).(pulumi.StringPtrOutput)
-}
-
-// Settings for restricting certain browser type, version, platform and, comparator. It also restricts the mode
-func (o WebApplicationMonitoringSettingsOutput) BrowserRestrictionSettings() WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutput {
-	return o.ApplyT(func(v WebApplicationMonitoringSettings) *WebApplicationMonitoringSettingsBrowserRestrictionSettings {
-		return v.BrowserRestrictionSettings
-	}).(WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutput)
-}
-
-// Optimize the value of cache control headers for use with Dynatrace real user monitoring enabled/disabled
-func (o WebApplicationMonitoringSettingsOutput) CacheControlHeaderOptimizations() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v WebApplicationMonitoringSettings) *bool { return v.CacheControlHeaderOptimizations }).(pulumi.BoolPtrOutput)
-}
-
-// Settings for content capture
-func (o WebApplicationMonitoringSettingsOutput) ContentCapture() WebApplicationMonitoringSettingsContentCaptureOutput {
-	return o.ApplyT(func(v WebApplicationMonitoringSettings) WebApplicationMonitoringSettingsContentCapture {
-		return v.ContentCapture
-	}).(WebApplicationMonitoringSettingsContentCaptureOutput)
-}
-
-// Domain for cookie placement. Maximum 150 characters.
-func (o WebApplicationMonitoringSettingsOutput) CookiePlacementDomain() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v WebApplicationMonitoringSettings) *string { return v.CookiePlacementDomain }).(pulumi.StringPtrOutput)
-}
-
-// To enable RUM for XHR calls to AWS Lambda, define a regular expression matching these calls, Dynatrace can then automatically add a custom header (`x-dtc`) to each such request to the respective endpoints in AWS.
-func (o WebApplicationMonitoringSettingsOutput) CorrelationHeaderInclusionRegex() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v WebApplicationMonitoringSettings) *string { return v.CorrelationHeaderInclusionRegex }).(pulumi.StringPtrOutput)
-}
-
-// The location to send monitoring data from the JavaScript tag.
-//
-//	Specify either a relative or an absolute URL. If you use an absolute URL, data will be sent using CORS.
-//
-//	**Required** for auto-injected applications, optional for agentless applications. Maximum 512 characters.
-func (o WebApplicationMonitoringSettingsOutput) CustomConfigurationProperties() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v WebApplicationMonitoringSettings) *string { return v.CustomConfigurationProperties }).(pulumi.StringPtrOutput)
-}
-
-// You can exclude some actions from becoming XHR actions.
-//
-// Put a regular expression, matching all the required URLs, here.
-//
-// If noting specified the feature is disabled
-func (o WebApplicationMonitoringSettingsOutput) ExcludeXhrRegex() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v WebApplicationMonitoringSettings) *string { return v.ExcludeXhrRegex }).(pulumi.StringPtrOutput)
-}
-
-// `fetch()` request capture enabled/disabled
-func (o WebApplicationMonitoringSettingsOutput) FetchRequests() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v WebApplicationMonitoringSettings) *bool { return v.FetchRequests }).(pulumi.BoolPtrOutput)
-}
-
-// Manage IP address exclusion settings with `WebAppIpAddressExclusion` resource
-func (o WebApplicationMonitoringSettingsOutput) IgnoreIpAddressRestrictionSettings() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v WebApplicationMonitoringSettings) *bool { return v.IgnoreIpAddressRestrictionSettings }).(pulumi.BoolPtrOutput)
-}
-
-// Possible valures are `CODE_SNIPPET`, `CODE_SNIPPET_ASYNC`, `INLINE_CODE`, `JAVASCRIPT_TAG`, `JAVASCRIPT_TAG_COMPLETE`, `JAVASCRIPT_TAG_SRI`
-func (o WebApplicationMonitoringSettingsOutput) InjectionMode() pulumi.StringOutput {
-	return o.ApplyT(func(v WebApplicationMonitoringSettings) string { return v.InjectionMode }).(pulumi.StringOutput)
-}
-
-// Instrumented web or app server.
-func (o WebApplicationMonitoringSettingsOutput) InstrumentedWebServer() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v WebApplicationMonitoringSettings) *bool { return v.InstrumentedWebServer }).(pulumi.BoolPtrOutput)
-}
-
-// Settings for restricting certain ip addresses and for introducing subnet mask. It also restricts the mode
-func (o WebApplicationMonitoringSettingsOutput) IpAddressRestrictionSettings() WebApplicationMonitoringSettingsIpAddressRestrictionSettingsPtrOutput {
-	return o.ApplyT(func(v WebApplicationMonitoringSettings) *WebApplicationMonitoringSettingsIpAddressRestrictionSettings {
-		return v.IpAddressRestrictionSettings
-	}).(WebApplicationMonitoringSettingsIpAddressRestrictionSettingsPtrOutput)
-}
-
-// Support of various JavaScript frameworks
-func (o WebApplicationMonitoringSettingsOutput) JavascriptFrameworkSupport() WebApplicationMonitoringSettingsJavascriptFrameworkSupportPtrOutput {
-	return o.ApplyT(func(v WebApplicationMonitoringSettings) *WebApplicationMonitoringSettingsJavascriptFrameworkSupport {
-		return v.JavascriptFrameworkSupport
-	}).(WebApplicationMonitoringSettingsJavascriptFrameworkSupportPtrOutput)
-}
-
-// Java script injection rules
-func (o WebApplicationMonitoringSettingsOutput) JavascriptInjectionRules() WebApplicationMonitoringSettingsJavascriptInjectionRulesPtrOutput {
-	return o.ApplyT(func(v WebApplicationMonitoringSettings) *WebApplicationMonitoringSettingsJavascriptInjectionRules {
-		return v.JavascriptInjectionRules
-	}).(WebApplicationMonitoringSettingsJavascriptInjectionRulesPtrOutput)
-}
-
-// Get the JavaScript library file from the CDN. Not supported by agentless applications and assumed to be false for auto-injected applications if omitted.
-func (o WebApplicationMonitoringSettingsOutput) LibraryFileFromCdn() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v WebApplicationMonitoringSettings) *bool { return v.LibraryFileFromCdn }).(pulumi.BoolPtrOutput)
-}
-
-// The location of your application’s custom JavaScript library file.
-//
-//	If nothing specified the root directory of your web server is used.
-//
-//	**Required** for auto-injected applications, not supported by agentless applications. Maximum 512 characters.
-func (o WebApplicationMonitoringSettingsOutput) LibraryFileLocation() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v WebApplicationMonitoringSettings) *string { return v.LibraryFileLocation }).(pulumi.StringPtrOutput)
-}
-
-// The location to send monitoring data from the JavaScript tag.
-//
-//	Specify either a relative or an absolute URL. If you use an absolute URL, data will be sent using CORS.
-//
-//	**Required** for auto-injected applications, optional for agentless applications. Maximum 512 characters.
-func (o WebApplicationMonitoringSettingsOutput) MonitoringDataPath() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v WebApplicationMonitoringSettings) *string { return v.MonitoringDataPath }).(pulumi.StringPtrOutput)
-}
-
-// Same site cookie attribute
-func (o WebApplicationMonitoringSettingsOutput) SameSiteCookieAttribute() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v WebApplicationMonitoringSettings) *string { return v.SameSiteCookieAttribute }).(pulumi.StringPtrOutput)
-}
-
-// Time duration for the cache settings
-func (o WebApplicationMonitoringSettingsOutput) ScriptTagCacheDurationInHours() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v WebApplicationMonitoringSettings) *int { return v.ScriptTagCacheDurationInHours }).(pulumi.IntPtrOutput)
-}
-
-// Secure attribute usage for Dynatrace cookies enabled/disabled
-func (o WebApplicationMonitoringSettingsOutput) SecureCookieAttribute() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v WebApplicationMonitoringSettings) *bool { return v.SecureCookieAttribute }).(pulumi.BoolPtrOutput)
-}
-
-// Path to identify the server’s request ID. Maximum 150 characters.
-func (o WebApplicationMonitoringSettingsOutput) ServerRequestPathId() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v WebApplicationMonitoringSettings) *string { return v.ServerRequestPathId }).(pulumi.StringPtrOutput)
-}
-
-// Send beacon data via CORS.
-func (o WebApplicationMonitoringSettingsOutput) UseCors() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v WebApplicationMonitoringSettings) *bool { return v.UseCors }).(pulumi.BoolPtrOutput)
-}
-
-// `XmlHttpRequest` support enabled/disabled
-func (o WebApplicationMonitoringSettingsOutput) XmlHttpRequest() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v WebApplicationMonitoringSettings) *bool { return v.XmlHttpRequest }).(pulumi.BoolPtrOutput)
-}
-
-type WebApplicationMonitoringSettingsPtrOutput struct{ *pulumi.OutputState }
-
-func (WebApplicationMonitoringSettingsPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**WebApplicationMonitoringSettings)(nil)).Elem()
-}
-
-func (o WebApplicationMonitoringSettingsPtrOutput) ToWebApplicationMonitoringSettingsPtrOutput() WebApplicationMonitoringSettingsPtrOutput {
-	return o
-}
-
-func (o WebApplicationMonitoringSettingsPtrOutput) ToWebApplicationMonitoringSettingsPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsPtrOutput {
-	return o
-}
-
-func (o WebApplicationMonitoringSettingsPtrOutput) Elem() WebApplicationMonitoringSettingsOutput {
-	return o.ApplyT(func(v *WebApplicationMonitoringSettings) WebApplicationMonitoringSettings {
-		if v != nil {
-			return *v
-		}
-		var ret WebApplicationMonitoringSettings
-		return ret
-	}).(WebApplicationMonitoringSettingsOutput)
-}
-
-// Add the cross origin = anonymous attribute to capture JavaScript error messages and W3C resource timings
-func (o WebApplicationMonitoringSettingsPtrOutput) AddCrossOriginAnonymousAttribute() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v *WebApplicationMonitoringSettings) *bool {
-		if v == nil {
-			return nil
-		}
-		return v.AddCrossOriginAnonymousAttribute
-	}).(pulumi.BoolPtrOutput)
-}
-
-// Advanced JavaScript tag settings
-func (o WebApplicationMonitoringSettingsPtrOutput) AdvancedJavascriptTagSettings() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutput {
-	return o.ApplyT(func(v *WebApplicationMonitoringSettings) *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings {
-		if v == nil {
-			return nil
-		}
-		return &v.AdvancedJavascriptTagSettings
-	}).(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutput)
-}
-
-// The name of the angular package
-func (o WebApplicationMonitoringSettingsPtrOutput) AngularPackageName() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *WebApplicationMonitoringSettings) *string {
-		if v == nil {
-			return nil
-		}
-		return v.AngularPackageName
-	}).(pulumi.StringPtrOutput)
-}
-
-// Settings for restricting certain browser type, version, platform and, comparator. It also restricts the mode
-func (o WebApplicationMonitoringSettingsPtrOutput) BrowserRestrictionSettings() WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutput {
-	return o.ApplyT(func(v *WebApplicationMonitoringSettings) *WebApplicationMonitoringSettingsBrowserRestrictionSettings {
-		if v == nil {
-			return nil
-		}
-		return v.BrowserRestrictionSettings
-	}).(WebApplicationMonitoringSettingsBrowserRestrictionSettingsPtrOutput)
-}
-
-// Optimize the value of cache control headers for use with Dynatrace real user monitoring enabled/disabled
-func (o WebApplicationMonitoringSettingsPtrOutput) CacheControlHeaderOptimizations() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v *WebApplicationMonitoringSettings) *bool {
-		if v == nil {
-			return nil
-		}
-		return v.CacheControlHeaderOptimizations
-	}).(pulumi.BoolPtrOutput)
-}
-
-// Settings for content capture
-func (o WebApplicationMonitoringSettingsPtrOutput) ContentCapture() WebApplicationMonitoringSettingsContentCapturePtrOutput {
-	return o.ApplyT(func(v *WebApplicationMonitoringSettings) *WebApplicationMonitoringSettingsContentCapture {
-		if v == nil {
-			return nil
-		}
-		return &v.ContentCapture
-	}).(WebApplicationMonitoringSettingsContentCapturePtrOutput)
-}
-
-// Domain for cookie placement. Maximum 150 characters.
-func (o WebApplicationMonitoringSettingsPtrOutput) CookiePlacementDomain() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *WebApplicationMonitoringSettings) *string {
-		if v == nil {
-			return nil
-		}
-		return v.CookiePlacementDomain
-	}).(pulumi.StringPtrOutput)
-}
-
-// To enable RUM for XHR calls to AWS Lambda, define a regular expression matching these calls, Dynatrace can then automatically add a custom header (`x-dtc`) to each such request to the respective endpoints in AWS.
-func (o WebApplicationMonitoringSettingsPtrOutput) CorrelationHeaderInclusionRegex() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *WebApplicationMonitoringSettings) *string {
-		if v == nil {
-			return nil
-		}
-		return v.CorrelationHeaderInclusionRegex
-	}).(pulumi.StringPtrOutput)
-}
-
-// The location to send monitoring data from the JavaScript tag.
-//
-//	Specify either a relative or an absolute URL. If you use an absolute URL, data will be sent using CORS.
-//
-//	**Required** for auto-injected applications, optional for agentless applications. Maximum 512 characters.
-func (o WebApplicationMonitoringSettingsPtrOutput) CustomConfigurationProperties() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *WebApplicationMonitoringSettings) *string {
-		if v == nil {
-			return nil
-		}
-		return v.CustomConfigurationProperties
-	}).(pulumi.StringPtrOutput)
-}
-
-// You can exclude some actions from becoming XHR actions.
-//
-// Put a regular expression, matching all the required URLs, here.
-//
-// If noting specified the feature is disabled
-func (o WebApplicationMonitoringSettingsPtrOutput) ExcludeXhrRegex() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *WebApplicationMonitoringSettings) *string {
-		if v == nil {
-			return nil
-		}
-		return v.ExcludeXhrRegex
-	}).(pulumi.StringPtrOutput)
-}
-
-// `fetch()` request capture enabled/disabled
-func (o WebApplicationMonitoringSettingsPtrOutput) FetchRequests() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v *WebApplicationMonitoringSettings) *bool {
-		if v == nil {
-			return nil
-		}
-		return v.FetchRequests
-	}).(pulumi.BoolPtrOutput)
-}
-
-// Manage IP address exclusion settings with `WebAppIpAddressExclusion` resource
-func (o WebApplicationMonitoringSettingsPtrOutput) IgnoreIpAddressRestrictionSettings() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v *WebApplicationMonitoringSettings) *bool {
-		if v == nil {
-			return nil
-		}
-		return v.IgnoreIpAddressRestrictionSettings
-	}).(pulumi.BoolPtrOutput)
-}
-
-// Possible valures are `CODE_SNIPPET`, `CODE_SNIPPET_ASYNC`, `INLINE_CODE`, `JAVASCRIPT_TAG`, `JAVASCRIPT_TAG_COMPLETE`, `JAVASCRIPT_TAG_SRI`
-func (o WebApplicationMonitoringSettingsPtrOutput) InjectionMode() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *WebApplicationMonitoringSettings) *string {
-		if v == nil {
-			return nil
-		}
-		return &v.InjectionMode
-	}).(pulumi.StringPtrOutput)
-}
-
-// Instrumented web or app server.
-func (o WebApplicationMonitoringSettingsPtrOutput) InstrumentedWebServer() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v *WebApplicationMonitoringSettings) *bool {
-		if v == nil {
-			return nil
-		}
-		return v.InstrumentedWebServer
-	}).(pulumi.BoolPtrOutput)
-}
-
-// Settings for restricting certain ip addresses and for introducing subnet mask. It also restricts the mode
-func (o WebApplicationMonitoringSettingsPtrOutput) IpAddressRestrictionSettings() WebApplicationMonitoringSettingsIpAddressRestrictionSettingsPtrOutput {
-	return o.ApplyT(func(v *WebApplicationMonitoringSettings) *WebApplicationMonitoringSettingsIpAddressRestrictionSettings {
-		if v == nil {
-			return nil
-		}
-		return v.IpAddressRestrictionSettings
-	}).(WebApplicationMonitoringSettingsIpAddressRestrictionSettingsPtrOutput)
-}
-
-// Support of various JavaScript frameworks
-func (o WebApplicationMonitoringSettingsPtrOutput) JavascriptFrameworkSupport() WebApplicationMonitoringSettingsJavascriptFrameworkSupportPtrOutput {
-	return o.ApplyT(func(v *WebApplicationMonitoringSettings) *WebApplicationMonitoringSettingsJavascriptFrameworkSupport {
-		if v == nil {
-			return nil
-		}
-		return v.JavascriptFrameworkSupport
-	}).(WebApplicationMonitoringSettingsJavascriptFrameworkSupportPtrOutput)
-}
-
-// Java script injection rules
-func (o WebApplicationMonitoringSettingsPtrOutput) JavascriptInjectionRules() WebApplicationMonitoringSettingsJavascriptInjectionRulesPtrOutput {
-	return o.ApplyT(func(v *WebApplicationMonitoringSettings) *WebApplicationMonitoringSettingsJavascriptInjectionRules {
-		if v == nil {
-			return nil
-		}
-		return v.JavascriptInjectionRules
-	}).(WebApplicationMonitoringSettingsJavascriptInjectionRulesPtrOutput)
-}
-
-// Get the JavaScript library file from the CDN. Not supported by agentless applications and assumed to be false for auto-injected applications if omitted.
-func (o WebApplicationMonitoringSettingsPtrOutput) LibraryFileFromCdn() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v *WebApplicationMonitoringSettings) *bool {
-		if v == nil {
-			return nil
-		}
-		return v.LibraryFileFromCdn
-	}).(pulumi.BoolPtrOutput)
-}
-
-// The location of your application’s custom JavaScript library file.
-//
-//	If nothing specified the root directory of your web server is used.
-//
-//	**Required** for auto-injected applications, not supported by agentless applications. Maximum 512 characters.
-func (o WebApplicationMonitoringSettingsPtrOutput) LibraryFileLocation() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *WebApplicationMonitoringSettings) *string {
-		if v == nil {
-			return nil
-		}
-		return v.LibraryFileLocation
-	}).(pulumi.StringPtrOutput)
-}
-
-// The location to send monitoring data from the JavaScript tag.
-//
-//	Specify either a relative or an absolute URL. If you use an absolute URL, data will be sent using CORS.
-//
-//	**Required** for auto-injected applications, optional for agentless applications. Maximum 512 characters.
-func (o WebApplicationMonitoringSettingsPtrOutput) MonitoringDataPath() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *WebApplicationMonitoringSettings) *string {
-		if v == nil {
-			return nil
-		}
-		return v.MonitoringDataPath
-	}).(pulumi.StringPtrOutput)
-}
-
-// Same site cookie attribute
-func (o WebApplicationMonitoringSettingsPtrOutput) SameSiteCookieAttribute() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *WebApplicationMonitoringSettings) *string {
-		if v == nil {
-			return nil
-		}
-		return v.SameSiteCookieAttribute
-	}).(pulumi.StringPtrOutput)
-}
-
-// Time duration for the cache settings
-func (o WebApplicationMonitoringSettingsPtrOutput) ScriptTagCacheDurationInHours() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v *WebApplicationMonitoringSettings) *int {
-		if v == nil {
-			return nil
-		}
-		return v.ScriptTagCacheDurationInHours
-	}).(pulumi.IntPtrOutput)
-}
-
-// Secure attribute usage for Dynatrace cookies enabled/disabled
-func (o WebApplicationMonitoringSettingsPtrOutput) SecureCookieAttribute() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v *WebApplicationMonitoringSettings) *bool {
-		if v == nil {
-			return nil
-		}
-		return v.SecureCookieAttribute
-	}).(pulumi.BoolPtrOutput)
-}
-
-// Path to identify the server’s request ID. Maximum 150 characters.
-func (o WebApplicationMonitoringSettingsPtrOutput) ServerRequestPathId() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *WebApplicationMonitoringSettings) *string {
-		if v == nil {
-			return nil
-		}
-		return v.ServerRequestPathId
-	}).(pulumi.StringPtrOutput)
-}
-
-// Send beacon data via CORS.
-func (o WebApplicationMonitoringSettingsPtrOutput) UseCors() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v *WebApplicationMonitoringSettings) *bool {
-		if v == nil {
-			return nil
-		}
-		return v.UseCors
-	}).(pulumi.BoolPtrOutput)
-}
-
-// `XmlHttpRequest` support enabled/disabled
-func (o WebApplicationMonitoringSettingsPtrOutput) XmlHttpRequest() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v *WebApplicationMonitoringSettings) *bool {
-		if v == nil {
-			return nil
-		}
-		return v.XmlHttpRequest
-	}).(pulumi.BoolPtrOutput)
-}
-
-type WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings struct {
-	// Additional event handlers and wrappers
-	AdditionalEventHandlers WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlers `pulumi:"additionalEventHandlers"`
-	// In addition to the event handlers, events called using `addEventListener` or `attachEvent` can be captured. Be careful with this option! Event wrappers can conflict with the JavaScript code on a web page
-	EventWrapperSettings *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettings `pulumi:"eventWrapperSettings"`
-	// Global event capture settings
-	GlobalEventCaptureSettings *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings `pulumi:"globalEventCaptureSettings"`
-	// Instrumentation of unsupported Ajax frameworks enabled/disabled
-	InstrumentUnsupportedAjaxFrameworks *bool `pulumi:"instrumentUnsupportedAjaxFrameworks"`
-	// Maximum character length for action names. Valid values range from 5 to 10000.
-	MaxActionNameLength int `pulumi:"maxActionNameLength"`
-	// Maximum number of errors to be captured per page. Valid values range from 0 to 50.
-	MaxErrorsToCapture int `pulumi:"maxErrorsToCapture"`
-	// Proxy wrapper enabled/disabled
-	ProxyWrapperEnabled *bool `pulumi:"proxyWrapperEnabled"`
-	// Additional special characters that are to be escaped using non-alphanumeric characters in HTML escape format. Maximum length 30 character. Allowed characters are `^`, `\`, `<` and `>`.
-	SpecialCharactersToEscape *string `pulumi:"specialCharactersToEscape"`
-	// Send the beacon signal as a synchronous XMLHttpRequest using Firefox enabled/disabled
-	SyncBeaconFirefox *bool `pulumi:"syncBeaconFirefox"`
-	// Send the beacon signal as a synchronous XMLHttpRequest using Internet Explorer enabled/disabled
-	SyncBeaconInternetExplorer *bool `pulumi:"syncBeaconInternetExplorer"`
-	// User action name attribute
-	UserActionNameAttribute *string `pulumi:"userActionNameAttribute"`
-}
-
-// WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsInput is an input type that accepts WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsArgs and WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsOutput values.
-// You can construct a concrete instance of `WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsInput` via:
-//
-//	WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsArgs{...}
-type WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsInput interface {
-	pulumi.Input
-
-	ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsOutput() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsOutput
-	ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsOutputWithContext(context.Context) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsOutput
-}
-
-type WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsArgs struct {
-	// Additional event handlers and wrappers
-	AdditionalEventHandlers WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersInput `pulumi:"additionalEventHandlers"`
-	// In addition to the event handlers, events called using `addEventListener` or `attachEvent` can be captured. Be careful with this option! Event wrappers can conflict with the JavaScript code on a web page
-	EventWrapperSettings WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrInput `pulumi:"eventWrapperSettings"`
-	// Global event capture settings
-	GlobalEventCaptureSettings WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrInput `pulumi:"globalEventCaptureSettings"`
-	// Instrumentation of unsupported Ajax frameworks enabled/disabled
-	InstrumentUnsupportedAjaxFrameworks pulumi.BoolPtrInput `pulumi:"instrumentUnsupportedAjaxFrameworks"`
-	// Maximum character length for action names. Valid values range from 5 to 10000.
-	MaxActionNameLength pulumi.IntInput `pulumi:"maxActionNameLength"`
-	// Maximum number of errors to be captured per page. Valid values range from 0 to 50.
-	MaxErrorsToCapture pulumi.IntInput `pulumi:"maxErrorsToCapture"`
-	// Proxy wrapper enabled/disabled
-	ProxyWrapperEnabled pulumi.BoolPtrInput `pulumi:"proxyWrapperEnabled"`
-	// Additional special characters that are to be escaped using non-alphanumeric characters in HTML escape format. Maximum length 30 character. Allowed characters are `^`, `\`, `<` and `>`.
-	SpecialCharactersToEscape pulumi.StringPtrInput `pulumi:"specialCharactersToEscape"`
-	// Send the beacon signal as a synchronous XMLHttpRequest using Firefox enabled/disabled
-	SyncBeaconFirefox pulumi.BoolPtrInput `pulumi:"syncBeaconFirefox"`
-	// Send the beacon signal as a synchronous XMLHttpRequest using Internet Explorer enabled/disabled
-	SyncBeaconInternetExplorer pulumi.BoolPtrInput `pulumi:"syncBeaconInternetExplorer"`
-	// User action name attribute
-	UserActionNameAttribute pulumi.StringPtrInput `pulumi:"userActionNameAttribute"`
-}
-
-func (WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings)(nil)).Elem()
-}
-
-func (i WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsArgs) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsOutput() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsOutput {
-	return i.ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsOutputWithContext(context.Background())
-}
-
-func (i WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsArgs) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsOutput)
-}
-
-func (i WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsArgs) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutput() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutput {
-	return i.ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutputWithContext(context.Background())
-}
-
-func (i WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsArgs) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsOutput).ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutputWithContext(ctx)
-}
-
-// WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrInput is an input type that accepts WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsArgs, WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtr and WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutput values.
-// You can construct a concrete instance of `WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrInput` via:
-//
-//	        WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsArgs{...}
-//
-//	or:
-//
-//	        nil
-type WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrInput interface {
-	pulumi.Input
-
-	ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutput() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutput
-	ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutputWithContext(context.Context) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutput
-}
-
-type webApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrType WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsArgs
-
-func WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtr(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsArgs) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrInput {
-	return (*webApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrType)(v)
-}
-
-func (*webApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings)(nil)).Elem()
-}
-
-func (i *webApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrType) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutput() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutput {
-	return i.ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutputWithContext(context.Background())
-}
-
-func (i *webApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrType) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutput)
-}
-
-type WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsOutput struct{ *pulumi.OutputState }
-
-func (WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings)(nil)).Elem()
-}
-
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsOutput) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsOutput() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsOutput {
-	return o
-}
-
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsOutput) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsOutput {
-	return o
-}
-
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsOutput) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutput() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutput {
-	return o.ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutputWithContext(context.Background())
-}
-
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsOutput) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings) *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings {
-		return &v
-	}).(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutput)
-}
-
-// Additional event handlers and wrappers
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsOutput) AdditionalEventHandlers() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersOutput {
-	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlers {
-		return v.AdditionalEventHandlers
-	}).(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersOutput)
-}
-
-// In addition to the event handlers, events called using `addEventListener` or `attachEvent` can be captured. Be careful with this option! Event wrappers can conflict with the JavaScript code on a web page
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsOutput) EventWrapperSettings() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput {
-	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings) *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettings {
-		return v.EventWrapperSettings
-	}).(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput)
-}
-
-// Global event capture settings
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsOutput) GlobalEventCaptureSettings() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput {
-	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings) *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings {
-		return v.GlobalEventCaptureSettings
-	}).(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput)
-}
-
-// Instrumentation of unsupported Ajax frameworks enabled/disabled
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsOutput) InstrumentUnsupportedAjaxFrameworks() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings) *bool {
-		return v.InstrumentUnsupportedAjaxFrameworks
-	}).(pulumi.BoolPtrOutput)
-}
-
-// Maximum character length for action names. Valid values range from 5 to 10000.
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsOutput) MaxActionNameLength() pulumi.IntOutput {
-	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings) int {
-		return v.MaxActionNameLength
-	}).(pulumi.IntOutput)
-}
-
-// Maximum number of errors to be captured per page. Valid values range from 0 to 50.
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsOutput) MaxErrorsToCapture() pulumi.IntOutput {
-	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings) int { return v.MaxErrorsToCapture }).(pulumi.IntOutput)
-}
-
-// Proxy wrapper enabled/disabled
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsOutput) ProxyWrapperEnabled() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings) *bool {
-		return v.ProxyWrapperEnabled
-	}).(pulumi.BoolPtrOutput)
-}
-
-// Additional special characters that are to be escaped using non-alphanumeric characters in HTML escape format. Maximum length 30 character. Allowed characters are `^`, `\`, `<` and `>`.
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsOutput) SpecialCharactersToEscape() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings) *string {
-		return v.SpecialCharactersToEscape
-	}).(pulumi.StringPtrOutput)
-}
-
-// Send the beacon signal as a synchronous XMLHttpRequest using Firefox enabled/disabled
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsOutput) SyncBeaconFirefox() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings) *bool {
-		return v.SyncBeaconFirefox
-	}).(pulumi.BoolPtrOutput)
-}
-
-// Send the beacon signal as a synchronous XMLHttpRequest using Internet Explorer enabled/disabled
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsOutput) SyncBeaconInternetExplorer() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings) *bool {
-		return v.SyncBeaconInternetExplorer
-	}).(pulumi.BoolPtrOutput)
-}
-
-// User action name attribute
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsOutput) UserActionNameAttribute() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings) *string {
-		return v.UserActionNameAttribute
-	}).(pulumi.StringPtrOutput)
-}
-
-type WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutput struct{ *pulumi.OutputState }
-
-func (WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings)(nil)).Elem()
-}
-
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutput) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutput() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutput {
-	return o
-}
-
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutput) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutput {
-	return o
-}
-
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutput) Elem() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsOutput {
-	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings {
-		if v != nil {
-			return *v
-		}
-		var ret WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings
-		return ret
-	}).(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsOutput)
-}
-
-// Additional event handlers and wrappers
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutput) AdditionalEventHandlers() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutput {
-	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings) *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlers {
-		if v == nil {
-			return nil
-		}
-		return &v.AdditionalEventHandlers
-	}).(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutput)
-}
-
-// In addition to the event handlers, events called using `addEventListener` or `attachEvent` can be captured. Be careful with this option! Event wrappers can conflict with the JavaScript code on a web page
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutput) EventWrapperSettings() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput {
-	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings) *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettings {
-		if v == nil {
-			return nil
-		}
-		return v.EventWrapperSettings
-	}).(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsPtrOutput)
-}
-
-// Global event capture settings
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutput) GlobalEventCaptureSettings() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput {
-	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings) *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings {
-		if v == nil {
-			return nil
-		}
-		return v.GlobalEventCaptureSettings
-	}).(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsPtrOutput)
-}
-
-// Instrumentation of unsupported Ajax frameworks enabled/disabled
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutput) InstrumentUnsupportedAjaxFrameworks() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings) *bool {
-		if v == nil {
-			return nil
-		}
-		return v.InstrumentUnsupportedAjaxFrameworks
-	}).(pulumi.BoolPtrOutput)
-}
-
-// Maximum character length for action names. Valid values range from 5 to 10000.
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutput) MaxActionNameLength() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings) *int {
-		if v == nil {
-			return nil
-		}
-		return &v.MaxActionNameLength
-	}).(pulumi.IntPtrOutput)
-}
-
-// Maximum number of errors to be captured per page. Valid values range from 0 to 50.
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutput) MaxErrorsToCapture() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings) *int {
-		if v == nil {
-			return nil
-		}
-		return &v.MaxErrorsToCapture
-	}).(pulumi.IntPtrOutput)
-}
-
-// Proxy wrapper enabled/disabled
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutput) ProxyWrapperEnabled() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings) *bool {
-		if v == nil {
-			return nil
-		}
-		return v.ProxyWrapperEnabled
-	}).(pulumi.BoolPtrOutput)
-}
-
-// Additional special characters that are to be escaped using non-alphanumeric characters in HTML escape format. Maximum length 30 character. Allowed characters are `^`, `\`, `<` and `>`.
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutput) SpecialCharactersToEscape() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings) *string {
-		if v == nil {
-			return nil
-		}
-		return v.SpecialCharactersToEscape
-	}).(pulumi.StringPtrOutput)
-}
-
-// Send the beacon signal as a synchronous XMLHttpRequest using Firefox enabled/disabled
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutput) SyncBeaconFirefox() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings) *bool {
-		if v == nil {
-			return nil
-		}
-		return v.SyncBeaconFirefox
-	}).(pulumi.BoolPtrOutput)
-}
-
-// Send the beacon signal as a synchronous XMLHttpRequest using Internet Explorer enabled/disabled
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutput) SyncBeaconInternetExplorer() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings) *bool {
-		if v == nil {
-			return nil
-		}
-		return v.SyncBeaconInternetExplorer
-	}).(pulumi.BoolPtrOutput)
-}
-
-// User action name attribute
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutput) UserActionNameAttribute() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings) *string {
-		if v == nil {
-			return nil
-		}
-		return v.UserActionNameAttribute
-	}).(pulumi.StringPtrOutput)
-}
-
-type WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlers struct {
-	// Blur event handler enabled/disabled
-	Blur *bool `pulumi:"blur"`
-	// Change event handler enabled/disabled
-	Change *bool `pulumi:"change"`
-	// Click event handler enabled/disabled
-	Click *bool `pulumi:"click"`
-	// Max. number of DOM nodes to instrument. Valid values range from 0 to 100000.
-	MaxDomNodes int `pulumi:"maxDomNodes"`
-	// Mouseup event handler enabled/disabled
-	Mouseup *bool `pulumi:"mouseup"`
-	// toString method enabled/disabled
-	ToStringMethod *bool `pulumi:"toStringMethod"`
-	// Use mouseup event for clicks enabled/disabled
-	UseMouseUpEventForClicks *bool `pulumi:"useMouseUpEventForClicks"`
-}
-
-// WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersInput is an input type that accepts WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersArgs and WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersOutput values.
-// You can construct a concrete instance of `WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersInput` via:
-//
-//	WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersArgs{...}
-type WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersInput interface {
-	pulumi.Input
-
-	ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersOutput() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersOutput
-	ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersOutputWithContext(context.Context) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersOutput
-}
-
-type WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersArgs struct {
-	// Blur event handler enabled/disabled
-	Blur pulumi.BoolPtrInput `pulumi:"blur"`
-	// Change event handler enabled/disabled
-	Change pulumi.BoolPtrInput `pulumi:"change"`
-	// Click event handler enabled/disabled
-	Click pulumi.BoolPtrInput `pulumi:"click"`
-	// Max. number of DOM nodes to instrument. Valid values range from 0 to 100000.
-	MaxDomNodes pulumi.IntInput `pulumi:"maxDomNodes"`
-	// Mouseup event handler enabled/disabled
-	Mouseup pulumi.BoolPtrInput `pulumi:"mouseup"`
-	// toString method enabled/disabled
-	ToStringMethod pulumi.BoolPtrInput `pulumi:"toStringMethod"`
-	// Use mouseup event for clicks enabled/disabled
-	UseMouseUpEventForClicks pulumi.BoolPtrInput `pulumi:"useMouseUpEventForClicks"`
-}
-
-func (WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlers)(nil)).Elem()
-}
-
-func (i WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersArgs) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersOutput() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersOutput {
-	return i.ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersOutputWithContext(context.Background())
-}
-
-func (i WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersArgs) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersOutput)
-}
-
-func (i WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersArgs) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutput() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutput {
-	return i.ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutputWithContext(context.Background())
-}
-
-func (i WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersArgs) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersOutput).ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutputWithContext(ctx)
-}
-
-// WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrInput is an input type that accepts WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersArgs, WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtr and WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutput values.
-// You can construct a concrete instance of `WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrInput` via:
-//
-//	        WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersArgs{...}
-//
-//	or:
-//
-//	        nil
-type WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrInput interface {
-	pulumi.Input
-
-	ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutput() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutput
-	ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutputWithContext(context.Context) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutput
-}
-
-type webApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrType WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersArgs
-
-func WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtr(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersArgs) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrInput {
-	return (*webApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrType)(v)
-}
-
-func (*webApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlers)(nil)).Elem()
-}
-
-func (i *webApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrType) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutput() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutput {
-	return i.ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutputWithContext(context.Background())
-}
-
-func (i *webApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrType) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutput)
-}
-
-type WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersOutput struct{ *pulumi.OutputState }
-
-func (WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlers)(nil)).Elem()
-}
-
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersOutput) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersOutput() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersOutput {
-	return o
-}
-
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersOutput) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersOutput {
-	return o
-}
-
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersOutput) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutput() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutput {
-	return o.ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutputWithContext(context.Background())
-}
-
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersOutput) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlers) *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlers {
-		return &v
-	}).(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutput)
-}
-
-// Blur event handler enabled/disabled
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersOutput) Blur() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlers) *bool {
-		return v.Blur
-	}).(pulumi.BoolPtrOutput)
-}
-
-// Change event handler enabled/disabled
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersOutput) Change() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlers) *bool {
-		return v.Change
-	}).(pulumi.BoolPtrOutput)
-}
-
-// Click event handler enabled/disabled
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersOutput) Click() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlers) *bool {
-		return v.Click
-	}).(pulumi.BoolPtrOutput)
-}
-
-// Max. number of DOM nodes to instrument. Valid values range from 0 to 100000.
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersOutput) MaxDomNodes() pulumi.IntOutput {
-	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlers) int {
-		return v.MaxDomNodes
-	}).(pulumi.IntOutput)
-}
-
-// Mouseup event handler enabled/disabled
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersOutput) Mouseup() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlers) *bool {
-		return v.Mouseup
-	}).(pulumi.BoolPtrOutput)
-}
-
-// toString method enabled/disabled
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersOutput) ToStringMethod() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlers) *bool {
-		return v.ToStringMethod
-	}).(pulumi.BoolPtrOutput)
-}
-
-// Use mouseup event for clicks enabled/disabled
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersOutput) UseMouseUpEventForClicks() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlers) *bool {
-		return v.UseMouseUpEventForClicks
-	}).(pulumi.BoolPtrOutput)
-}
-
-type WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutput struct{ *pulumi.OutputState }
-
-func (WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlers)(nil)).Elem()
-}
-
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutput) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutput() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutput {
-	return o
-}
-
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutput) ToWebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutputWithContext(ctx context.Context) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutput {
-	return o
-}
-
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutput) Elem() WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersOutput {
-	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlers) WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlers {
-		if v != nil {
-			return *v
-		}
-		var ret WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlers
-		return ret
-	}).(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersOutput)
-}
-
-// Blur event handler enabled/disabled
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutput) Blur() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlers) *bool {
-		if v == nil {
-			return nil
-		}
-		return v.Blur
-	}).(pulumi.BoolPtrOutput)
-}
-
-// Change event handler enabled/disabled
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutput) Change() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlers) *bool {
-		if v == nil {
-			return nil
-		}
-		return v.Change
-	}).(pulumi.BoolPtrOutput)
-}
-
-// Click event handler enabled/disabled
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutput) Click() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlers) *bool {
-		if v == nil {
-			return nil
-		}
-		return v.Click
-	}).(pulumi.BoolPtrOutput)
-}
-
-// Max. number of DOM nodes to instrument. Valid values range from 0 to 100000.
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutput) MaxDomNodes() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlers) *int {
-		if v == nil {
-			return nil
-		}
-		return &v.MaxDomNodes
-	}).(pulumi.IntPtrOutput)
-}
-
-// Mouseup event handler enabled/disabled
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutput) Mouseup() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlers) *bool {
-		if v == nil {
-			return nil
-		}
-		return v.Mouseup
-	}).(pulumi.BoolPtrOutput)
-}
-
-// toString method enabled/disabled
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutput) ToStringMethod() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlers) *bool {
-		if v == nil {
-			return nil
-		}
-		return v.ToStringMethod
-	}).(pulumi.BoolPtrOutput)
-}
-
-// Use mouseup event for clicks enabled/disabled
-func (o WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutput) UseMouseUpEventForClicks() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v *WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlers) *bool {
-		if v == nil {
-			return nil
-		}
-		return v.UseMouseUpEventForClicks
-	}).(pulumi.BoolPtrOutput)
-}
-
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*OwnershipTeamsAdditionalInformationInput)(nil)).Elem(), OwnershipTeamsAdditionalInformationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OwnershipTeamsAdditionalInformationPtrInput)(nil)).Elem(), OwnershipTeamsAdditionalInformationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OwnershipTeamsAdditionalInformationAdditionalInformationInput)(nil)).Elem(), OwnershipTeamsAdditionalInformationAdditionalInformationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OwnershipTeamsAdditionalInformationAdditionalInformationArrayInput)(nil)).Elem(), OwnershipTeamsAdditionalInformationAdditionalInformationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OwnershipTeamsContactDetailsInput)(nil)).Elem(), OwnershipTeamsContactDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OwnershipTeamsContactDetailsPtrInput)(nil)).Elem(), OwnershipTeamsContactDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OwnershipTeamsContactDetailsContactDetailInput)(nil)).Elem(), OwnershipTeamsContactDetailsContactDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OwnershipTeamsContactDetailsContactDetailArrayInput)(nil)).Elem(), OwnershipTeamsContactDetailsContactDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OwnershipTeamsContactDetailsContactDetailJiraInput)(nil)).Elem(), OwnershipTeamsContactDetailsContactDetailJiraArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OwnershipTeamsContactDetailsContactDetailJiraPtrInput)(nil)).Elem(), OwnershipTeamsContactDetailsContactDetailJiraArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OwnershipTeamsLinksInput)(nil)).Elem(), OwnershipTeamsLinksArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OwnershipTeamsLinksPtrInput)(nil)).Elem(), OwnershipTeamsLinksArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OwnershipTeamsLinksLinkInput)(nil)).Elem(), OwnershipTeamsLinksLinkArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OwnershipTeamsLinksLinkArrayInput)(nil)).Elem(), OwnershipTeamsLinksLinkArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OwnershipTeamsResponsibilitiesInput)(nil)).Elem(), OwnershipTeamsResponsibilitiesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OwnershipTeamsResponsibilitiesPtrInput)(nil)).Elem(), OwnershipTeamsResponsibilitiesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OwnershipTeamsSupplementaryIdentifiersInput)(nil)).Elem(), OwnershipTeamsSupplementaryIdentifiersArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OwnershipTeamsSupplementaryIdentifiersPtrInput)(nil)).Elem(), OwnershipTeamsSupplementaryIdentifiersArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifierInput)(nil)).Elem(), OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifierArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifierArrayInput)(nil)).Elem(), OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifierArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PgAnomaliesAvailabilityInput)(nil)).Elem(), PgAnomaliesAvailabilityArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PgAnomaliesAvailabilityPtrInput)(nil)).Elem(), PgAnomaliesAvailabilityArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PlatformSloCriteriaInput)(nil)).Elem(), PlatformSloCriteriaArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PlatformSloCriteriaPtrInput)(nil)).Elem(), PlatformSloCriteriaArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PlatformSloCriteriaCriteriaDetailInput)(nil)).Elem(), PlatformSloCriteriaCriteriaDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PlatformSloCriteriaCriteriaDetailArrayInput)(nil)).Elem(), PlatformSloCriteriaCriteriaDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PlatformSloCustomSliInput)(nil)).Elem(), PlatformSloCustomSliArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PlatformSloCustomSliPtrInput)(nil)).Elem(), PlatformSloCustomSliArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PlatformSloCustomSliFilterSegmentsInput)(nil)).Elem(), PlatformSloCustomSliFilterSegmentsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PlatformSloCustomSliFilterSegmentsPtrInput)(nil)).Elem(), PlatformSloCustomSliFilterSegmentsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PlatformSloCustomSliFilterSegmentsFilterSegmentInput)(nil)).Elem(), PlatformSloCustomSliFilterSegmentsFilterSegmentArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PlatformSloCustomSliFilterSegmentsFilterSegmentArrayInput)(nil)).Elem(), PlatformSloCustomSliFilterSegmentsFilterSegmentArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesInput)(nil)).Elem(), PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrInput)(nil)).Elem(), PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableInput)(nil)).Elem(), PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableArgs{})
@@ -79951,37 +78912,38 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*WebAppRequestErrorsErrorRulesErrorRuleInput)(nil)).Elem(), WebAppRequestErrorsErrorRulesErrorRuleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WebAppRequestErrorsErrorRulesErrorRuleArrayInput)(nil)).Elem(), WebAppRequestErrorsErrorRulesErrorRuleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WebAppRequestErrorsErrorRulesErrorRuleCaptureSettingsInput)(nil)).Elem(), WebAppRequestErrorsErrorRulesErrorRuleCaptureSettingsArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*WebAppRequestErrorsErrorRulesErrorRuleFilterSettingsInput)(nil)).Elem(), WebAppRequestErrorsErrorRulesErrorRuleFilterSettingsArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationConversionGoalsInput)(nil)).Elem(), WebApplicationConversionGoalsArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationConversionGoalsPtrInput)(nil)).Elem(), WebApplicationConversionGoalsArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationConversionGoalsGoalInput)(nil)).Elem(), WebApplicationConversionGoalsGoalArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationConversionGoalsGoalArrayInput)(nil)).Elem(), WebApplicationConversionGoalsGoalArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationConversionGoalsGoalDestinationInput)(nil)).Elem(), WebApplicationConversionGoalsGoalDestinationArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationConversionGoalsGoalDestinationPtrInput)(nil)).Elem(), WebApplicationConversionGoalsGoalDestinationArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationConversionGoalsGoalUserActionInput)(nil)).Elem(), WebApplicationConversionGoalsGoalUserActionArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationConversionGoalsGoalUserActionPtrInput)(nil)).Elem(), WebApplicationConversionGoalsGoalUserActionArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationConversionGoalsGoalVisitDurationInput)(nil)).Elem(), WebApplicationConversionGoalsGoalVisitDurationArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationConversionGoalsGoalVisitDurationPtrInput)(nil)).Elem(), WebApplicationConversionGoalsGoalVisitDurationArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationConversionGoalsGoalVisitNumActionInput)(nil)).Elem(), WebApplicationConversionGoalsGoalVisitNumActionArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationConversionGoalsGoalVisitNumActionPtrInput)(nil)).Elem(), WebApplicationConversionGoalsGoalVisitNumActionArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationCustomActionApdexSettingsInput)(nil)).Elem(), WebApplicationCustomActionApdexSettingsArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationCustomActionApdexSettingsPtrInput)(nil)).Elem(), WebApplicationCustomActionApdexSettingsArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationKeyUserActionInput)(nil)).Elem(), WebApplicationKeyUserActionArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationKeyUserActionArrayInput)(nil)).Elem(), WebApplicationKeyUserActionArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationKeyUserActionActionInput)(nil)).Elem(), WebApplicationKeyUserActionActionArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationKeyUserActionActionArrayInput)(nil)).Elem(), WebApplicationKeyUserActionActionArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationLoadActionApdexSettingsInput)(nil)).Elem(), WebApplicationLoadActionApdexSettingsArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationLoadActionApdexSettingsPtrInput)(nil)).Elem(), WebApplicationLoadActionApdexSettingsArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationMetaDataCaptureSettingsInput)(nil)).Elem(), WebApplicationMetaDataCaptureSettingsArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationMetaDataCaptureSettingsPtrInput)(nil)).Elem(), WebApplicationMetaDataCaptureSettingsArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationMetaDataCaptureSettingsCaptureInput)(nil)).Elem(), WebApplicationMetaDataCaptureSettingsCaptureArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationMetaDataCaptureSettingsCaptureArrayInput)(nil)).Elem(), WebApplicationMetaDataCaptureSettingsCaptureArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationMonitoringSettingsInput)(nil)).Elem(), WebApplicationMonitoringSettingsArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationMonitoringSettingsPtrInput)(nil)).Elem(), WebApplicationMonitoringSettingsArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsInput)(nil)).Elem(), WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrInput)(nil)).Elem(), WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersInput)(nil)).Elem(), WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrInput)(nil)).Elem(), WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersArgs{})
+	pulumi.RegisterOutputType(OwnershipTeamsAdditionalInformationOutput{})
+	pulumi.RegisterOutputType(OwnershipTeamsAdditionalInformationPtrOutput{})
+	pulumi.RegisterOutputType(OwnershipTeamsAdditionalInformationAdditionalInformationOutput{})
+	pulumi.RegisterOutputType(OwnershipTeamsAdditionalInformationAdditionalInformationArrayOutput{})
+	pulumi.RegisterOutputType(OwnershipTeamsContactDetailsOutput{})
+	pulumi.RegisterOutputType(OwnershipTeamsContactDetailsPtrOutput{})
+	pulumi.RegisterOutputType(OwnershipTeamsContactDetailsContactDetailOutput{})
+	pulumi.RegisterOutputType(OwnershipTeamsContactDetailsContactDetailArrayOutput{})
+	pulumi.RegisterOutputType(OwnershipTeamsContactDetailsContactDetailJiraOutput{})
+	pulumi.RegisterOutputType(OwnershipTeamsContactDetailsContactDetailJiraPtrOutput{})
+	pulumi.RegisterOutputType(OwnershipTeamsLinksOutput{})
+	pulumi.RegisterOutputType(OwnershipTeamsLinksPtrOutput{})
+	pulumi.RegisterOutputType(OwnershipTeamsLinksLinkOutput{})
+	pulumi.RegisterOutputType(OwnershipTeamsLinksLinkArrayOutput{})
+	pulumi.RegisterOutputType(OwnershipTeamsResponsibilitiesOutput{})
+	pulumi.RegisterOutputType(OwnershipTeamsResponsibilitiesPtrOutput{})
+	pulumi.RegisterOutputType(OwnershipTeamsSupplementaryIdentifiersOutput{})
+	pulumi.RegisterOutputType(OwnershipTeamsSupplementaryIdentifiersPtrOutput{})
+	pulumi.RegisterOutputType(OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifierOutput{})
+	pulumi.RegisterOutputType(OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifierArrayOutput{})
+	pulumi.RegisterOutputType(PgAnomaliesAvailabilityOutput{})
+	pulumi.RegisterOutputType(PgAnomaliesAvailabilityPtrOutput{})
+	pulumi.RegisterOutputType(PlatformSloCriteriaOutput{})
+	pulumi.RegisterOutputType(PlatformSloCriteriaPtrOutput{})
+	pulumi.RegisterOutputType(PlatformSloCriteriaCriteriaDetailOutput{})
+	pulumi.RegisterOutputType(PlatformSloCriteriaCriteriaDetailArrayOutput{})
+	pulumi.RegisterOutputType(PlatformSloCustomSliOutput{})
+	pulumi.RegisterOutputType(PlatformSloCustomSliPtrOutput{})
+	pulumi.RegisterOutputType(PlatformSloCustomSliFilterSegmentsOutput{})
+	pulumi.RegisterOutputType(PlatformSloCustomSliFilterSegmentsPtrOutput{})
+	pulumi.RegisterOutputType(PlatformSloCustomSliFilterSegmentsFilterSegmentOutput{})
+	pulumi.RegisterOutputType(PlatformSloCustomSliFilterSegmentsFilterSegmentArrayOutput{})
 	pulumi.RegisterOutputType(PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesOutput{})
 	pulumi.RegisterOutputType(PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesPtrOutput{})
 	pulumi.RegisterOutputType(PlatformSloCustomSliFilterSegmentsFilterSegmentVariablesFilterSegmentVariableOutput{})
@@ -80936,35 +79898,4 @@ func init() {
 	pulumi.RegisterOutputType(WebAppRequestErrorsErrorRulesErrorRuleOutput{})
 	pulumi.RegisterOutputType(WebAppRequestErrorsErrorRulesErrorRuleArrayOutput{})
 	pulumi.RegisterOutputType(WebAppRequestErrorsErrorRulesErrorRuleCaptureSettingsOutput{})
-	pulumi.RegisterOutputType(WebAppRequestErrorsErrorRulesErrorRuleFilterSettingsOutput{})
-	pulumi.RegisterOutputType(WebApplicationConversionGoalsOutput{})
-	pulumi.RegisterOutputType(WebApplicationConversionGoalsPtrOutput{})
-	pulumi.RegisterOutputType(WebApplicationConversionGoalsGoalOutput{})
-	pulumi.RegisterOutputType(WebApplicationConversionGoalsGoalArrayOutput{})
-	pulumi.RegisterOutputType(WebApplicationConversionGoalsGoalDestinationOutput{})
-	pulumi.RegisterOutputType(WebApplicationConversionGoalsGoalDestinationPtrOutput{})
-	pulumi.RegisterOutputType(WebApplicationConversionGoalsGoalUserActionOutput{})
-	pulumi.RegisterOutputType(WebApplicationConversionGoalsGoalUserActionPtrOutput{})
-	pulumi.RegisterOutputType(WebApplicationConversionGoalsGoalVisitDurationOutput{})
-	pulumi.RegisterOutputType(WebApplicationConversionGoalsGoalVisitDurationPtrOutput{})
-	pulumi.RegisterOutputType(WebApplicationConversionGoalsGoalVisitNumActionOutput{})
-	pulumi.RegisterOutputType(WebApplicationConversionGoalsGoalVisitNumActionPtrOutput{})
-	pulumi.RegisterOutputType(WebApplicationCustomActionApdexSettingsOutput{})
-	pulumi.RegisterOutputType(WebApplicationCustomActionApdexSettingsPtrOutput{})
-	pulumi.RegisterOutputType(WebApplicationKeyUserActionOutput{})
-	pulumi.RegisterOutputType(WebApplicationKeyUserActionArrayOutput{})
-	pulumi.RegisterOutputType(WebApplicationKeyUserActionActionOutput{})
-	pulumi.RegisterOutputType(WebApplicationKeyUserActionActionArrayOutput{})
-	pulumi.RegisterOutputType(WebApplicationLoadActionApdexSettingsOutput{})
-	pulumi.RegisterOutputType(WebApplicationLoadActionApdexSettingsPtrOutput{})
-	pulumi.RegisterOutputType(WebApplicationMetaDataCaptureSettingsOutput{})
-	pulumi.RegisterOutputType(WebApplicationMetaDataCaptureSettingsPtrOutput{})
-	pulumi.RegisterOutputType(WebApplicationMetaDataCaptureSettingsCaptureOutput{})
-	pulumi.RegisterOutputType(WebApplicationMetaDataCaptureSettingsCaptureArrayOutput{})
-	pulumi.RegisterOutputType(WebApplicationMonitoringSettingsOutput{})
-	pulumi.RegisterOutputType(WebApplicationMonitoringSettingsPtrOutput{})
-	pulumi.RegisterOutputType(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsOutput{})
-	pulumi.RegisterOutputType(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsPtrOutput{})
-	pulumi.RegisterOutputType(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersOutput{})
-	pulumi.RegisterOutputType(WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersPtrOutput{})
 }

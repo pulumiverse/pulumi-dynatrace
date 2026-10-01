@@ -496,6 +496,7 @@ class BrowserMonitor(pulumi.CustomResource):
                                 "validate": {
                                     "validations": [{
                                         "type": "text_match",
+                                        "match": "test",
                                     }],
                                 },
                                 "wait": {
@@ -686,6 +687,7 @@ class BrowserMonitor(pulumi.CustomResource):
                                 "validate": {
                                     "validations": [{
                                         "type": "text_match",
+                                        "match": "test",
                                     }],
                                 },
                                 "wait": {

@@ -22,6 +22,9 @@ class DocumentArgs:
                  content: pulumi.Input[_builtins.str],
                  type: pulumi.Input[_builtins.str],
                  custom_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_reshareable: pulumi.Input[Optional[_builtins.bool]] = None,
+                 labels: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  private: pulumi.Input[Optional[_builtins.bool]] = None):
         """
@@ -30,6 +33,9 @@ class DocumentArgs:
         :param pulumi.Input[_builtins.str] content: Document content as JSON
         :param pulumi.Input[_builtins.str] type: Type of the document. Possible Values are `dashboard`, `launchpad` and `notebook`
         :param pulumi.Input[_builtins.str] custom_id: If provided, this will be the id of the document. If not provided, a system-generated id is used.
+        :param pulumi.Input[_builtins.str] description: A short description of the document
+        :param pulumi.Input[_builtins.bool] is_reshareable: Specifies whether recipients of a direct share can share the document further
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] labels: Labels attached to the document
         :param pulumi.Input[_builtins.str] name: The name/name of the document
         :param pulumi.Input[_builtins.bool] private: Specifies whether the document is private or readable by everybody
         """
@@ -37,6 +43,12 @@ class DocumentArgs:
         pulumi.set(__self__, "type", type)
         if custom_id is not None:
             pulumi.set(__self__, "custom_id", custom_id)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if is_reshareable is not None:
+            pulumi.set(__self__, "is_reshareable", is_reshareable)
+        if labels is not None:
+            pulumi.set(__self__, "labels", labels)
         if name is not None:
             pulumi.set(__self__, "name", name)
         if private is not None:
@@ -80,6 +92,42 @@ class DocumentArgs:
 
     @_builtins.property
     @pulumi.getter
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        A short description of the document
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "description", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isReshareable")
+    def is_reshareable(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Specifies whether recipients of a direct share can share the document further
+        """
+        return pulumi.get(self, "is_reshareable")
+
+    @is_reshareable.setter
+    def is_reshareable(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_reshareable", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def labels(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        Labels attached to the document
+        """
+        return pulumi.get(self, "labels")
+
+    @labels.setter
+    def labels(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "labels", value)
+
+    @_builtins.property
+    @pulumi.getter
     def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name/name of the document
@@ -108,6 +156,9 @@ class _DocumentState:
     def __init__(__self__, *,
                  content: pulumi.Input[Optional[_builtins.str]] = None,
                  custom_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_reshareable: pulumi.Input[Optional[_builtins.bool]] = None,
+                 labels: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  owner: pulumi.Input[Optional[_builtins.str]] = None,
                  private: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -118,6 +169,9 @@ class _DocumentState:
 
         :param pulumi.Input[_builtins.str] content: Document content as JSON
         :param pulumi.Input[_builtins.str] custom_id: If provided, this will be the id of the document. If not provided, a system-generated id is used.
+        :param pulumi.Input[_builtins.str] description: A short description of the document
+        :param pulumi.Input[_builtins.bool] is_reshareable: Specifies whether recipients of a direct share can share the document further
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] labels: Labels attached to the document
         :param pulumi.Input[_builtins.str] name: The name/name of the document
         :param pulumi.Input[_builtins.str] owner: The ID of the owner of this document
         :param pulumi.Input[_builtins.bool] private: Specifies whether the document is private or readable by everybody
@@ -128,6 +182,12 @@ class _DocumentState:
             pulumi.set(__self__, "content", content)
         if custom_id is not None:
             pulumi.set(__self__, "custom_id", custom_id)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if is_reshareable is not None:
+            pulumi.set(__self__, "is_reshareable", is_reshareable)
+        if labels is not None:
+            pulumi.set(__self__, "labels", labels)
         if name is not None:
             pulumi.set(__self__, "name", name)
         if owner is not None:
@@ -162,6 +222,42 @@ class _DocumentState:
     @custom_id.setter
     def custom_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "custom_id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        A short description of the document
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "description", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isReshareable")
+    def is_reshareable(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Specifies whether recipients of a direct share can share the document further
+        """
+        return pulumi.get(self, "is_reshareable")
+
+    @is_reshareable.setter
+    def is_reshareable(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_reshareable", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def labels(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        Labels attached to the document
+        """
+        return pulumi.get(self, "labels")
+
+    @labels.setter
+    def labels(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "labels", value)
 
     @_builtins.property
     @pulumi.getter
@@ -232,6 +328,9 @@ class Document(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  content: pulumi.Input[Optional[_builtins.str]] = None,
                  custom_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_reshareable: pulumi.Input[Optional[_builtins.bool]] = None,
+                 labels: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  private: pulumi.Input[Optional[_builtins.bool]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
@@ -258,6 +357,13 @@ class Document(pulumi.CustomResource):
             type="dashboard",
             name="Example Dashboard",
             custom_id="#name#",
+            description="Initial description",
+            labels=[
+                "monitoring",
+                "cloud",
+                "draft",
+            ],
+            is_reshareable=True,
             content=json.dumps({
                 "version": 13,
                 "variables": [],
@@ -395,6 +501,9 @@ class Document(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] content: Document content as JSON
         :param pulumi.Input[_builtins.str] custom_id: If provided, this will be the id of the document. If not provided, a system-generated id is used.
+        :param pulumi.Input[_builtins.str] description: A short description of the document
+        :param pulumi.Input[_builtins.bool] is_reshareable: Specifies whether recipients of a direct share can share the document further
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] labels: Labels attached to the document
         :param pulumi.Input[_builtins.str] name: The name/name of the document
         :param pulumi.Input[_builtins.bool] private: Specifies whether the document is private or readable by everybody
         :param pulumi.Input[_builtins.str] type: Type of the document. Possible Values are `dashboard`, `launchpad` and `notebook`
@@ -427,6 +536,13 @@ class Document(pulumi.CustomResource):
             type="dashboard",
             name="Example Dashboard",
             custom_id="#name#",
+            description="Initial description",
+            labels=[
+                "monitoring",
+                "cloud",
+                "draft",
+            ],
+            is_reshareable=True,
             content=json.dumps({
                 "version": 13,
                 "variables": [],
@@ -577,6 +693,9 @@ class Document(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  content: pulumi.Input[Optional[_builtins.str]] = None,
                  custom_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_reshareable: pulumi.Input[Optional[_builtins.bool]] = None,
+                 labels: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  private: pulumi.Input[Optional[_builtins.bool]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
@@ -593,6 +712,9 @@ class Document(pulumi.CustomResource):
                 raise TypeError("Missing required property 'content'")
             __props__.__dict__["content"] = content
             __props__.__dict__["custom_id"] = custom_id
+            __props__.__dict__["description"] = description
+            __props__.__dict__["is_reshareable"] = is_reshareable
+            __props__.__dict__["labels"] = labels
             __props__.__dict__["name"] = name
             __props__.__dict__["private"] = private
             if type is None and not opts.urn:
@@ -612,6 +734,9 @@ class Document(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             content: pulumi.Input[Optional[_builtins.str]] = None,
             custom_id: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            is_reshareable: pulumi.Input[Optional[_builtins.bool]] = None,
+            labels: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             owner: pulumi.Input[Optional[_builtins.str]] = None,
             private: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -626,6 +751,9 @@ class Document(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] content: Document content as JSON
         :param pulumi.Input[_builtins.str] custom_id: If provided, this will be the id of the document. If not provided, a system-generated id is used.
+        :param pulumi.Input[_builtins.str] description: A short description of the document
+        :param pulumi.Input[_builtins.bool] is_reshareable: Specifies whether recipients of a direct share can share the document further
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] labels: Labels attached to the document
         :param pulumi.Input[_builtins.str] name: The name/name of the document
         :param pulumi.Input[_builtins.str] owner: The ID of the owner of this document
         :param pulumi.Input[_builtins.bool] private: Specifies whether the document is private or readable by everybody
@@ -638,6 +766,9 @@ class Document(pulumi.CustomResource):
 
         __props__.__dict__["content"] = content
         __props__.__dict__["custom_id"] = custom_id
+        __props__.__dict__["description"] = description
+        __props__.__dict__["is_reshareable"] = is_reshareable
+        __props__.__dict__["labels"] = labels
         __props__.__dict__["name"] = name
         __props__.__dict__["owner"] = owner
         __props__.__dict__["private"] = private
@@ -660,6 +791,30 @@ class Document(pulumi.CustomResource):
         If provided, this will be the id of the document. If not provided, a system-generated id is used.
         """
         return pulumi.get(self, "custom_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        A short description of the document
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="isReshareable")
+    def is_reshareable(self) -> pulumi.Output[Optional[_builtins.bool]]:
+        """
+        Specifies whether recipients of a direct share can share the document further
+        """
+        return pulumi.get(self, "is_reshareable")
+
+    @_builtins.property
+    @pulumi.getter
+    def labels(self) -> pulumi.Output[Optional[Sequence[_builtins.str]]]:
+        """
+        Labels attached to the document
+        """
+        return pulumi.get(self, "labels")
 
     @_builtins.property
     @pulumi.getter

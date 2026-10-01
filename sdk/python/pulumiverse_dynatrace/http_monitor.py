@@ -395,7 +395,7 @@ class HttpMonitor(pulumi.CustomResource):
                 }],
             }],
             name="#name#",
-            frequency=1,
+            frequency=5,
             locations=[location.id],
             script={
                 "requests": [
@@ -879,7 +879,7 @@ class HttpMonitor(pulumi.CustomResource):
                 }],
             }],
             name="#name#",
-            frequency=1,
+            frequency=5,
             locations=[location.id],
             script={
                 "requests": [

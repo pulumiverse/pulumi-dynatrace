@@ -40,6 +40,10 @@ type DavisCopilot struct {
 	EnableDocumentSuggestion pulumi.BoolPtrOutput `pulumi:"enableDocumentSuggestion"`
 	// You can enrich Dynatrace generative and agentic AI with your environment data. This lets you generate more accurate queries that identify and reference relevant entities, events, spans, logs, and metrics from your environment. Once enabled, Dynatrace Intelligence periodically scans your Grail data to create its own semantic index. Please note, it can take up to 24 hours to reflect changes. Learn more about [environment-aware queries](https://dt-url.net/4g42iu7).
 	EnableTenantAwareDataMining pulumi.BoolPtrOutput `pulumi:"enableTenantAwareDataMining"`
+	// Enable PII blocking
+	PiiBlockingEnabled pulumi.BoolPtrOutput `pulumi:"piiBlockingEnabled"`
+	// PII blocking types
+	PiiBlockingTypes DavisCopilotPiiBlockingTypesPtrOutput `pulumi:"piiBlockingTypes"`
 }
 
 // NewDavisCopilot registers a new resource with the given unique name, arguments, and options.
@@ -85,6 +89,10 @@ type davisCopilotState struct {
 	EnableDocumentSuggestion *bool `pulumi:"enableDocumentSuggestion"`
 	// You can enrich Dynatrace generative and agentic AI with your environment data. This lets you generate more accurate queries that identify and reference relevant entities, events, spans, logs, and metrics from your environment. Once enabled, Dynatrace Intelligence periodically scans your Grail data to create its own semantic index. Please note, it can take up to 24 hours to reflect changes. Learn more about [environment-aware queries](https://dt-url.net/4g42iu7).
 	EnableTenantAwareDataMining *bool `pulumi:"enableTenantAwareDataMining"`
+	// Enable PII blocking
+	PiiBlockingEnabled *bool `pulumi:"piiBlockingEnabled"`
+	// PII blocking types
+	PiiBlockingTypes *DavisCopilotPiiBlockingTypes `pulumi:"piiBlockingTypes"`
 }
 
 type DavisCopilotState struct {
@@ -98,6 +106,10 @@ type DavisCopilotState struct {
 	EnableDocumentSuggestion pulumi.BoolPtrInput
 	// You can enrich Dynatrace generative and agentic AI with your environment data. This lets you generate more accurate queries that identify and reference relevant entities, events, spans, logs, and metrics from your environment. Once enabled, Dynatrace Intelligence periodically scans your Grail data to create its own semantic index. Please note, it can take up to 24 hours to reflect changes. Learn more about [environment-aware queries](https://dt-url.net/4g42iu7).
 	EnableTenantAwareDataMining pulumi.BoolPtrInput
+	// Enable PII blocking
+	PiiBlockingEnabled pulumi.BoolPtrInput
+	// PII blocking types
+	PiiBlockingTypes DavisCopilotPiiBlockingTypesPtrInput
 }
 
 func (DavisCopilotState) ElementType() reflect.Type {
@@ -115,6 +127,10 @@ type davisCopilotArgs struct {
 	EnableDocumentSuggestion *bool `pulumi:"enableDocumentSuggestion"`
 	// You can enrich Dynatrace generative and agentic AI with your environment data. This lets you generate more accurate queries that identify and reference relevant entities, events, spans, logs, and metrics from your environment. Once enabled, Dynatrace Intelligence periodically scans your Grail data to create its own semantic index. Please note, it can take up to 24 hours to reflect changes. Learn more about [environment-aware queries](https://dt-url.net/4g42iu7).
 	EnableTenantAwareDataMining *bool `pulumi:"enableTenantAwareDataMining"`
+	// Enable PII blocking
+	PiiBlockingEnabled *bool `pulumi:"piiBlockingEnabled"`
+	// PII blocking types
+	PiiBlockingTypes *DavisCopilotPiiBlockingTypes `pulumi:"piiBlockingTypes"`
 }
 
 // The set of arguments for constructing a DavisCopilot resource.
@@ -129,6 +145,10 @@ type DavisCopilotArgs struct {
 	EnableDocumentSuggestion pulumi.BoolPtrInput
 	// You can enrich Dynatrace generative and agentic AI with your environment data. This lets you generate more accurate queries that identify and reference relevant entities, events, spans, logs, and metrics from your environment. Once enabled, Dynatrace Intelligence periodically scans your Grail data to create its own semantic index. Please note, it can take up to 24 hours to reflect changes. Learn more about [environment-aware queries](https://dt-url.net/4g42iu7).
 	EnableTenantAwareDataMining pulumi.BoolPtrInput
+	// Enable PII blocking
+	PiiBlockingEnabled pulumi.BoolPtrInput
+	// PII blocking types
+	PiiBlockingTypes DavisCopilotPiiBlockingTypesPtrInput
 }
 
 func (DavisCopilotArgs) ElementType() reflect.Type {
@@ -241,6 +261,16 @@ func (o DavisCopilotOutput) EnableDocumentSuggestion() pulumi.BoolPtrOutput {
 // You can enrich Dynatrace generative and agentic AI with your environment data. This lets you generate more accurate queries that identify and reference relevant entities, events, spans, logs, and metrics from your environment. Once enabled, Dynatrace Intelligence periodically scans your Grail data to create its own semantic index. Please note, it can take up to 24 hours to reflect changes. Learn more about [environment-aware queries](https://dt-url.net/4g42iu7).
 func (o DavisCopilotOutput) EnableTenantAwareDataMining() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *DavisCopilot) pulumi.BoolPtrOutput { return v.EnableTenantAwareDataMining }).(pulumi.BoolPtrOutput)
+}
+
+// Enable PII blocking
+func (o DavisCopilotOutput) PiiBlockingEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DavisCopilot) pulumi.BoolPtrOutput { return v.PiiBlockingEnabled }).(pulumi.BoolPtrOutput)
+}
+
+// PII blocking types
+func (o DavisCopilotOutput) PiiBlockingTypes() DavisCopilotPiiBlockingTypesPtrOutput {
+	return o.ApplyT(func(v *DavisCopilot) DavisCopilotPiiBlockingTypesPtrOutput { return v.PiiBlockingTypes }).(DavisCopilotPiiBlockingTypesPtrOutput)
 }
 
 type DavisCopilotArrayOutput struct{ *pulumi.OutputState }

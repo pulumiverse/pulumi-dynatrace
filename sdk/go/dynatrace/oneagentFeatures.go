@@ -58,8 +58,6 @@ import (
 type OneagentFeatures struct {
 	pulumi.CustomResourceState
 
-	// Used internally by the terraform provider. Do not populate
-	_restore_ pulumi.StringOutput `pulumi:"_restore_"`
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolOutput `pulumi:"enabled"`
 	// Activate this feature also in OneAgents only fulfilling the minimum Opt-In version
@@ -108,8 +106,6 @@ func GetOneagentFeatures(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering OneagentFeatures resources.
 type oneagentFeaturesState struct {
-	// Used internally by the terraform provider. Do not populate
-	_restore_ *string `pulumi:"_restore_"`
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled *bool `pulumi:"enabled"`
 	// Activate this feature also in OneAgents only fulfilling the minimum Opt-In version
@@ -123,8 +119,6 @@ type oneagentFeaturesState struct {
 }
 
 type OneagentFeaturesState struct {
-	// Used internally by the terraform provider. Do not populate
-	_restore_ pulumi.StringPtrInput
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolPtrInput
 	// Activate this feature also in OneAgents only fulfilling the minimum Opt-In version
@@ -253,11 +247,6 @@ func (o OneagentFeaturesOutput) ToOneagentFeaturesOutput() OneagentFeaturesOutpu
 
 func (o OneagentFeaturesOutput) ToOneagentFeaturesOutputWithContext(ctx context.Context) OneagentFeaturesOutput {
 	return o
-}
-
-// Used internally by the terraform provider. Do not populate
-func (o OneagentFeaturesOutput) _restore_() pulumi.StringOutput {
-	return o.ApplyT(func(v *OneagentFeatures) pulumi.StringOutput { return v._restore_ }).(pulumi.StringOutput)
 }
 
 // This setting is enabled (`true`) or disabled (`false`)

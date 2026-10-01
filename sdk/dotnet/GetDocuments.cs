@@ -122,7 +122,7 @@ namespace Pulumiverse.Dynatrace
     public sealed class GetDocumentsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The type of documents to query for. Leave empty if you want to query for all kinds of documents. Possible values are `Dashboard` or `Notebook`
+        /// The type of documents to query for. Leave empty if you want to query for all kinds of documents. Possible values are `Dashboard`, `Notebook` or `Launchpad`
         /// </summary>
         [Input("type")]
         public string? Type { get; set; }
@@ -136,7 +136,7 @@ namespace Pulumiverse.Dynatrace
     public sealed class GetDocumentsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The type of documents to query for. Leave empty if you want to query for all kinds of documents. Possible values are `Dashboard` or `Notebook`
+        /// The type of documents to query for. Leave empty if you want to query for all kinds of documents. Possible values are `Dashboard`, `Notebook` or `Launchpad`
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }
@@ -156,7 +156,7 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// The type of documents to query for. Leave empty if you want to query for all kinds of documents. Possible values are `Dashboard` or `Notebook`
+        /// The type of documents to query for. Leave empty if you want to query for all kinds of documents. Possible values are `Dashboard`, `Notebook` or `Launchpad`
         /// </summary>
         public readonly string? Type;
         public readonly ImmutableArray<Outputs.GetDocumentsValueResult> Values;

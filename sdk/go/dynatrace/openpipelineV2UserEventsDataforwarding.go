@@ -116,10 +116,10 @@ type OpenpipelineV2UserEventsDataforwarding struct {
 	// Built-in pipelines
 	BuiltinPipelines pulumi.StringArrayOutput `pulumi:"builtinPipelines"`
 	// Segmentation and prefix of the data
-	BulkPattern pulumi.StringOutput `pulumi:"bulkPattern"`
+	BulkPattern pulumi.StringPtrOutput `pulumi:"bulkPattern"`
 	// Bulk size for transmission
 	BulkSize pulumi.IntPtrOutput `pulumi:"bulkSize"`
-	// Cloud Vendor Type. Possible values: `aws`, `azure`, `gcp`
+	// Cloud Vendor Type. Possible values: `aws`, `azure`, `gcp`, `otlp`
 	CloudVendorType pulumi.StringOutput `pulumi:"cloudVendorType"`
 	// Pipeline Type. Possible values: `processed`, `raw`
 	DataForwardingType pulumi.StringOutput `pulumi:"dataForwardingType"`
@@ -133,6 +133,8 @@ type OpenpipelineV2UserEventsDataforwarding struct {
 	IngestSources pulumi.StringArrayOutput `pulumi:"ingestSources"`
 	// Query which determines whether the record should be routed to the target pipeline of this rule.
 	Matcher pulumi.StringOutput `pulumi:"matcher"`
+	// [IN_DEVELOPMENT]
+	OtlpConnection OpenpipelineV2UserEventsDataforwardingOtlpConnectionPtrOutput `pulumi:"otlpConnection"`
 	// Pipelines
 	Pipelines pulumi.StringArrayOutput `pulumi:"pipelines"`
 	// Processing
@@ -146,9 +148,6 @@ func NewOpenpipelineV2UserEventsDataforwarding(ctx *pulumi.Context,
 		return nil, errors.New("missing one or more required arguments")
 	}
 
-	if args.BulkPattern == nil {
-		return nil, errors.New("invalid value for required argument 'BulkPattern'")
-	}
 	if args.CloudVendorType == nil {
 		return nil, errors.New("invalid value for required argument 'CloudVendorType'")
 	}
@@ -199,7 +198,7 @@ type openpipelineV2UserEventsDataforwardingState struct {
 	BulkPattern *string `pulumi:"bulkPattern"`
 	// Bulk size for transmission
 	BulkSize *int `pulumi:"bulkSize"`
-	// Cloud Vendor Type. Possible values: `aws`, `azure`, `gcp`
+	// Cloud Vendor Type. Possible values: `aws`, `azure`, `gcp`, `otlp`
 	CloudVendorType *string `pulumi:"cloudVendorType"`
 	// Pipeline Type. Possible values: `processed`, `raw`
 	DataForwardingType *string `pulumi:"dataForwardingType"`
@@ -213,6 +212,8 @@ type openpipelineV2UserEventsDataforwardingState struct {
 	IngestSources []string `pulumi:"ingestSources"`
 	// Query which determines whether the record should be routed to the target pipeline of this rule.
 	Matcher *string `pulumi:"matcher"`
+	// [IN_DEVELOPMENT]
+	OtlpConnection *OpenpipelineV2UserEventsDataforwardingOtlpConnection `pulumi:"otlpConnection"`
 	// Pipelines
 	Pipelines []string `pulumi:"pipelines"`
 	// Processing
@@ -232,7 +233,7 @@ type OpenpipelineV2UserEventsDataforwardingState struct {
 	BulkPattern pulumi.StringPtrInput
 	// Bulk size for transmission
 	BulkSize pulumi.IntPtrInput
-	// Cloud Vendor Type. Possible values: `aws`, `azure`, `gcp`
+	// Cloud Vendor Type. Possible values: `aws`, `azure`, `gcp`, `otlp`
 	CloudVendorType pulumi.StringPtrInput
 	// Pipeline Type. Possible values: `processed`, `raw`
 	DataForwardingType pulumi.StringPtrInput
@@ -246,6 +247,8 @@ type OpenpipelineV2UserEventsDataforwardingState struct {
 	IngestSources pulumi.StringArrayInput
 	// Query which determines whether the record should be routed to the target pipeline of this rule.
 	Matcher pulumi.StringPtrInput
+	// [IN_DEVELOPMENT]
+	OtlpConnection OpenpipelineV2UserEventsDataforwardingOtlpConnectionPtrInput
 	// Pipelines
 	Pipelines pulumi.StringArrayInput
 	// Processing
@@ -266,10 +269,10 @@ type openpipelineV2UserEventsDataforwardingArgs struct {
 	// Built-in pipelines
 	BuiltinPipelines []string `pulumi:"builtinPipelines"`
 	// Segmentation and prefix of the data
-	BulkPattern string `pulumi:"bulkPattern"`
+	BulkPattern *string `pulumi:"bulkPattern"`
 	// Bulk size for transmission
 	BulkSize *int `pulumi:"bulkSize"`
-	// Cloud Vendor Type. Possible values: `aws`, `azure`, `gcp`
+	// Cloud Vendor Type. Possible values: `aws`, `azure`, `gcp`, `otlp`
 	CloudVendorType string `pulumi:"cloudVendorType"`
 	// Pipeline Type. Possible values: `processed`, `raw`
 	DataForwardingType string `pulumi:"dataForwardingType"`
@@ -283,6 +286,8 @@ type openpipelineV2UserEventsDataforwardingArgs struct {
 	IngestSources []string `pulumi:"ingestSources"`
 	// Query which determines whether the record should be routed to the target pipeline of this rule.
 	Matcher string `pulumi:"matcher"`
+	// [IN_DEVELOPMENT]
+	OtlpConnection *OpenpipelineV2UserEventsDataforwardingOtlpConnection `pulumi:"otlpConnection"`
 	// Pipelines
 	Pipelines []string `pulumi:"pipelines"`
 	// Processing
@@ -300,10 +305,10 @@ type OpenpipelineV2UserEventsDataforwardingArgs struct {
 	// Built-in pipelines
 	BuiltinPipelines pulumi.StringArrayInput
 	// Segmentation and prefix of the data
-	BulkPattern pulumi.StringInput
+	BulkPattern pulumi.StringPtrInput
 	// Bulk size for transmission
 	BulkSize pulumi.IntPtrInput
-	// Cloud Vendor Type. Possible values: `aws`, `azure`, `gcp`
+	// Cloud Vendor Type. Possible values: `aws`, `azure`, `gcp`, `otlp`
 	CloudVendorType pulumi.StringInput
 	// Pipeline Type. Possible values: `processed`, `raw`
 	DataForwardingType pulumi.StringInput
@@ -317,6 +322,8 @@ type OpenpipelineV2UserEventsDataforwardingArgs struct {
 	IngestSources pulumi.StringArrayInput
 	// Query which determines whether the record should be routed to the target pipeline of this rule.
 	Matcher pulumi.StringInput
+	// [IN_DEVELOPMENT]
+	OtlpConnection OpenpipelineV2UserEventsDataforwardingOtlpConnectionPtrInput
 	// Pipelines
 	Pipelines pulumi.StringArrayInput
 	// Processing
@@ -437,8 +444,8 @@ func (o OpenpipelineV2UserEventsDataforwardingOutput) BuiltinPipelines() pulumi.
 }
 
 // Segmentation and prefix of the data
-func (o OpenpipelineV2UserEventsDataforwardingOutput) BulkPattern() pulumi.StringOutput {
-	return o.ApplyT(func(v *OpenpipelineV2UserEventsDataforwarding) pulumi.StringOutput { return v.BulkPattern }).(pulumi.StringOutput)
+func (o OpenpipelineV2UserEventsDataforwardingOutput) BulkPattern() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OpenpipelineV2UserEventsDataforwarding) pulumi.StringPtrOutput { return v.BulkPattern }).(pulumi.StringPtrOutput)
 }
 
 // Bulk size for transmission
@@ -446,7 +453,7 @@ func (o OpenpipelineV2UserEventsDataforwardingOutput) BulkSize() pulumi.IntPtrOu
 	return o.ApplyT(func(v *OpenpipelineV2UserEventsDataforwarding) pulumi.IntPtrOutput { return v.BulkSize }).(pulumi.IntPtrOutput)
 }
 
-// Cloud Vendor Type. Possible values: `aws`, `azure`, `gcp`
+// Cloud Vendor Type. Possible values: `aws`, `azure`, `gcp`, `otlp`
 func (o OpenpipelineV2UserEventsDataforwardingOutput) CloudVendorType() pulumi.StringOutput {
 	return o.ApplyT(func(v *OpenpipelineV2UserEventsDataforwarding) pulumi.StringOutput { return v.CloudVendorType }).(pulumi.StringOutput)
 }
@@ -481,6 +488,13 @@ func (o OpenpipelineV2UserEventsDataforwardingOutput) IngestSources() pulumi.Str
 // Query which determines whether the record should be routed to the target pipeline of this rule.
 func (o OpenpipelineV2UserEventsDataforwardingOutput) Matcher() pulumi.StringOutput {
 	return o.ApplyT(func(v *OpenpipelineV2UserEventsDataforwarding) pulumi.StringOutput { return v.Matcher }).(pulumi.StringOutput)
+}
+
+// [IN_DEVELOPMENT]
+func (o OpenpipelineV2UserEventsDataforwardingOutput) OtlpConnection() OpenpipelineV2UserEventsDataforwardingOtlpConnectionPtrOutput {
+	return o.ApplyT(func(v *OpenpipelineV2UserEventsDataforwarding) OpenpipelineV2UserEventsDataforwardingOtlpConnectionPtrOutput {
+		return v.OtlpConnection
+	}).(OpenpipelineV2UserEventsDataforwardingOtlpConnectionPtrOutput)
 }
 
 // Pipelines

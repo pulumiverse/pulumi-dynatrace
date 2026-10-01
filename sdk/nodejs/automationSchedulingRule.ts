@@ -47,6 +47,9 @@ export class AutomationSchedulingRule extends pulumi.CustomResource {
         return obj['__pulumiType'] === AutomationSchedulingRule.__pulumiType;
     }
 
+    /**
+     * The ID of the business calendar associated with the scheduling rule
+     */
     declare public readonly businessCalendar: pulumi.Output<string | undefined>;
     /**
      * An optional description for the scheduling rule
@@ -103,6 +106,9 @@ export class AutomationSchedulingRule extends pulumi.CustomResource {
  * Input properties used for looking up and filtering AutomationSchedulingRule resources.
  */
 export interface AutomationSchedulingRuleState {
+    /**
+     * The ID of the business calendar associated with the scheduling rule
+     */
     businessCalendar?: pulumi.Input<string | undefined>;
     /**
      * An optional description for the scheduling rule
@@ -122,6 +128,9 @@ export interface AutomationSchedulingRuleState {
  * The set of arguments for constructing a AutomationSchedulingRule resource.
  */
 export interface AutomationSchedulingRuleArgs {
+    /**
+     * The ID of the business calendar associated with the scheduling rule
+     */
     businessCalendar?: pulumi.Input<string | undefined>;
     /**
      * An optional description for the scheduling rule

@@ -106,8 +106,8 @@ namespace Pulumiverse.Dynatrace.Inputs
         /// <summary>
         /// Possible values are `WORKING` (Work days), `HOLIDAYS` (Holidays) and `OFF` (Weekends + Holidays)
         /// </summary>
-        [Input("workdays", required: true)]
-        public Input<string> Workdays { get; set; } = null!;
+        [Input("workdays")]
+        public Input<string>? Workdays { get; set; }
 
         public AutomationSchedulingRuleRecurrenceArgs()
         {

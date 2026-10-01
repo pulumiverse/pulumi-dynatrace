@@ -25,11 +25,21 @@ namespace Pulumiverse.Dynatrace.Inputs
         [Input("alertingProfile", required: true)]
         public Input<string> AlertingProfile { get; set; } = null!;
 
+        [Input("apiKey")]
+        private Input<string>? _apiKey;
+
         /// <summary>
         /// The API key to access OpsGenie
         /// </summary>
-        [Input("apiKey")]
-        public Input<string>? ApiKey { get; set; }
+        public Input<string>? ApiKey
+        {
+            get => _apiKey;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _apiKey = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// The region domain of the OpsGenie

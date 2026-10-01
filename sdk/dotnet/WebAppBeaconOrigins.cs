@@ -24,6 +24,25 @@ namespace Pulumiverse.Dynatrace
     /// - `terraform-provider-dynatrace -export DynatraceWebBeaconOrigins` downloads all existing beacon origin allowlist configuration
     /// 
     /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// 
+    /// ## Resource Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var origin = new Dynatrace.WebAppBeaconOrigins("origin", new()
+    ///     {
+    ///         Matcher = "CONTAINS",
+    ///         Pattern = "pattern-#name#",
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [DynatraceResourceType("dynatrace:index/webAppBeaconOrigins:WebAppBeaconOrigins")]
     public partial class WebAppBeaconOrigins : global::Pulumi.CustomResource

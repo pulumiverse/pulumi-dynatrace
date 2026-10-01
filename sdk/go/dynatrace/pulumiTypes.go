@@ -11726,7 +11726,7 @@ type AutomationSchedulingRuleRecurrence struct {
 	// Restricts the recurrence to specific weeks within a year. `1`, `2`, `3`, ... refers to the first, second, third week of the year. You can also specify negative values to refer to values relative to the last week. `-1` refers to the last week, `-2` refers to the second to the last week, ...
 	Weeks []int `pulumi:"weeks"`
 	// Possible values are `WORKING` (Work days), `HOLIDAYS` (Holidays) and `OFF` (Weekends + Holidays)
-	Workdays string `pulumi:"workdays"`
+	Workdays *string `pulumi:"workdays"`
 }
 
 // AutomationSchedulingRuleRecurrenceInput is an input type that accepts AutomationSchedulingRuleRecurrenceArgs and AutomationSchedulingRuleRecurrenceOutput values.
@@ -11760,7 +11760,7 @@ type AutomationSchedulingRuleRecurrenceArgs struct {
 	// Restricts the recurrence to specific weeks within a year. `1`, `2`, `3`, ... refers to the first, second, third week of the year. You can also specify negative values to refer to values relative to the last week. `-1` refers to the last week, `-2` refers to the second to the last week, ...
 	Weeks pulumi.IntArrayInput `pulumi:"weeks"`
 	// Possible values are `WORKING` (Work days), `HOLIDAYS` (Holidays) and `OFF` (Weekends + Holidays)
-	Workdays pulumi.StringInput `pulumi:"workdays"`
+	Workdays pulumi.StringPtrInput `pulumi:"workdays"`
 }
 
 func (AutomationSchedulingRuleRecurrenceArgs) ElementType() reflect.Type {
@@ -11886,8 +11886,8 @@ func (o AutomationSchedulingRuleRecurrenceOutput) Weeks() pulumi.IntArrayOutput 
 }
 
 // Possible values are `WORKING` (Work days), `HOLIDAYS` (Holidays) and `OFF` (Weekends + Holidays)
-func (o AutomationSchedulingRuleRecurrenceOutput) Workdays() pulumi.StringOutput {
-	return o.ApplyT(func(v AutomationSchedulingRuleRecurrence) string { return v.Workdays }).(pulumi.StringOutput)
+func (o AutomationSchedulingRuleRecurrenceOutput) Workdays() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AutomationSchedulingRuleRecurrence) *string { return v.Workdays }).(pulumi.StringPtrOutput)
 }
 
 type AutomationSchedulingRuleRecurrencePtrOutput struct{ *pulumi.OutputState }
@@ -12010,7 +12010,7 @@ func (o AutomationSchedulingRuleRecurrencePtrOutput) Workdays() pulumi.StringPtr
 		if v == nil {
 			return nil
 		}
-		return &v.Workdays
+		return v.Workdays
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -31813,7 +31813,7 @@ func (o AwsAnomaliesRdsRestartsSequenceDetectionCustomThresholdsPtrOutput) Resta
 }
 
 type AwsConnectionRoleBasedAuth struct {
-	// Dynatrace integrations that can use this connection. Possible values: `DA`, `NONE`, `SVC:com.dynatrace.bo`, `SVC:com.dynatrace.da`, `SVC:com.dynatrace.grail`, `SVC:com.dynatrace.openpipeline`
+	// Dynatrace integrations that can use this connection. Possible values: `SVC:com.dynatrace.bo`, `SVC:com.dynatrace.da`, `SVC:com.dynatrace.grail`, `SVC:com.dynatrace.openpipeline`
 	Consumers *string `pulumi:"consumers"`
 }
 
@@ -31829,7 +31829,7 @@ type AwsConnectionRoleBasedAuthInput interface {
 }
 
 type AwsConnectionRoleBasedAuthArgs struct {
-	// Dynatrace integrations that can use this connection. Possible values: `DA`, `NONE`, `SVC:com.dynatrace.bo`, `SVC:com.dynatrace.da`, `SVC:com.dynatrace.grail`, `SVC:com.dynatrace.openpipeline`
+	// Dynatrace integrations that can use this connection. Possible values: `SVC:com.dynatrace.bo`, `SVC:com.dynatrace.da`, `SVC:com.dynatrace.grail`, `SVC:com.dynatrace.openpipeline`
 	Consumers pulumi.StringPtrInput `pulumi:"consumers"`
 }
 
@@ -31910,7 +31910,7 @@ func (o AwsConnectionRoleBasedAuthOutput) ToAwsConnectionRoleBasedAuthPtrOutputW
 	}).(AwsConnectionRoleBasedAuthPtrOutput)
 }
 
-// Dynatrace integrations that can use this connection. Possible values: `DA`, `NONE`, `SVC:com.dynatrace.bo`, `SVC:com.dynatrace.da`, `SVC:com.dynatrace.grail`, `SVC:com.dynatrace.openpipeline`
+// Dynatrace integrations that can use this connection. Possible values: `SVC:com.dynatrace.bo`, `SVC:com.dynatrace.da`, `SVC:com.dynatrace.grail`, `SVC:com.dynatrace.openpipeline`
 func (o AwsConnectionRoleBasedAuthOutput) Consumers() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AwsConnectionRoleBasedAuth) *string { return v.Consumers }).(pulumi.StringPtrOutput)
 }
@@ -31939,7 +31939,7 @@ func (o AwsConnectionRoleBasedAuthPtrOutput) Elem() AwsConnectionRoleBasedAuthOu
 	}).(AwsConnectionRoleBasedAuthOutput)
 }
 
-// Dynatrace integrations that can use this connection. Possible values: `DA`, `NONE`, `SVC:com.dynatrace.bo`, `SVC:com.dynatrace.da`, `SVC:com.dynatrace.grail`, `SVC:com.dynatrace.openpipeline`
+// Dynatrace integrations that can use this connection. Possible values: `SVC:com.dynatrace.bo`, `SVC:com.dynatrace.da`, `SVC:com.dynatrace.grail`, `SVC:com.dynatrace.openpipeline`
 func (o AwsConnectionRoleBasedAuthPtrOutput) Consumers() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *AwsConnectionRoleBasedAuth) *string {
 		if v == nil {
@@ -32794,7 +32794,7 @@ type AzureConnectionClientSecret struct {
 	ApplicationId string `pulumi:"applicationId"`
 	// Client secret of your app registered in Microsoft Azure App registrations
 	ClientSecret string `pulumi:"clientSecret"`
-	// Dynatrace integrations that can use this connection. Possible values: `DA`, `NONE`, `SVC:com.dynatrace.da`
+	// Dynatrace integrations that can use this connection. Possible values: `SVC:com.dynatrace.da`
 	Consumers []string `pulumi:"consumers"`
 	// Directory (tenant) ID of Microsoft Entra ID
 	DirectoryId string `pulumi:"directoryId"`
@@ -32816,7 +32816,7 @@ type AzureConnectionClientSecretArgs struct {
 	ApplicationId pulumi.StringInput `pulumi:"applicationId"`
 	// Client secret of your app registered in Microsoft Azure App registrations
 	ClientSecret pulumi.StringInput `pulumi:"clientSecret"`
-	// Dynatrace integrations that can use this connection. Possible values: `DA`, `NONE`, `SVC:com.dynatrace.da`
+	// Dynatrace integrations that can use this connection. Possible values: `SVC:com.dynatrace.da`
 	Consumers pulumi.StringArrayInput `pulumi:"consumers"`
 	// Directory (tenant) ID of Microsoft Entra ID
 	DirectoryId pulumi.StringInput `pulumi:"directoryId"`
@@ -32909,7 +32909,7 @@ func (o AzureConnectionClientSecretOutput) ClientSecret() pulumi.StringOutput {
 	return o.ApplyT(func(v AzureConnectionClientSecret) string { return v.ClientSecret }).(pulumi.StringOutput)
 }
 
-// Dynatrace integrations that can use this connection. Possible values: `DA`, `NONE`, `SVC:com.dynatrace.da`
+// Dynatrace integrations that can use this connection. Possible values: `SVC:com.dynatrace.da`
 func (o AzureConnectionClientSecretOutput) Consumers() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v AzureConnectionClientSecret) []string { return v.Consumers }).(pulumi.StringArrayOutput)
 }
@@ -32963,7 +32963,7 @@ func (o AzureConnectionClientSecretPtrOutput) ClientSecret() pulumi.StringPtrOut
 	}).(pulumi.StringPtrOutput)
 }
 
-// Dynatrace integrations that can use this connection. Possible values: `DA`, `NONE`, `SVC:com.dynatrace.da`
+// Dynatrace integrations that can use this connection. Possible values: `SVC:com.dynatrace.da`
 func (o AzureConnectionClientSecretPtrOutput) Consumers() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *AzureConnectionClientSecret) []string {
 		if v == nil {
@@ -32984,7 +32984,7 @@ func (o AzureConnectionClientSecretPtrOutput) DirectoryId() pulumi.StringPtrOutp
 }
 
 type AzureConnectionFederatedIdentityCredential struct {
-	// Consumers that can use the connection. Possible values: `APP:dynatrace.microsoft.azure.connector`, `DA`, `NONE`, `SVC:com.dynatrace.bo`, `SVC:com.dynatrace.da`, `SVC:com.dynatrace.grail`, `SVC:com.dynatrace.openpipeline`
+	// Consumers that can use the connection. Possible values: `APP:dynatrace.microsoft.azure.connector`, `SVC:com.dynatrace.bo`, `SVC:com.dynatrace.da`, `SVC:com.dynatrace.grail`, `SVC:com.dynatrace.openpipeline`
 	Consumers []string `pulumi:"consumers"`
 }
 
@@ -33000,7 +33000,7 @@ type AzureConnectionFederatedIdentityCredentialInput interface {
 }
 
 type AzureConnectionFederatedIdentityCredentialArgs struct {
-	// Consumers that can use the connection. Possible values: `APP:dynatrace.microsoft.azure.connector`, `DA`, `NONE`, `SVC:com.dynatrace.bo`, `SVC:com.dynatrace.da`, `SVC:com.dynatrace.grail`, `SVC:com.dynatrace.openpipeline`
+	// Consumers that can use the connection. Possible values: `APP:dynatrace.microsoft.azure.connector`, `SVC:com.dynatrace.bo`, `SVC:com.dynatrace.da`, `SVC:com.dynatrace.grail`, `SVC:com.dynatrace.openpipeline`
 	Consumers pulumi.StringArrayInput `pulumi:"consumers"`
 }
 
@@ -33081,7 +33081,7 @@ func (o AzureConnectionFederatedIdentityCredentialOutput) ToAzureConnectionFeder
 	}).(AzureConnectionFederatedIdentityCredentialPtrOutput)
 }
 
-// Consumers that can use the connection. Possible values: `APP:dynatrace.microsoft.azure.connector`, `DA`, `NONE`, `SVC:com.dynatrace.bo`, `SVC:com.dynatrace.da`, `SVC:com.dynatrace.grail`, `SVC:com.dynatrace.openpipeline`
+// Consumers that can use the connection. Possible values: `APP:dynatrace.microsoft.azure.connector`, `SVC:com.dynatrace.bo`, `SVC:com.dynatrace.da`, `SVC:com.dynatrace.grail`, `SVC:com.dynatrace.openpipeline`
 func (o AzureConnectionFederatedIdentityCredentialOutput) Consumers() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v AzureConnectionFederatedIdentityCredential) []string { return v.Consumers }).(pulumi.StringArrayOutput)
 }
@@ -33110,7 +33110,7 @@ func (o AzureConnectionFederatedIdentityCredentialPtrOutput) Elem() AzureConnect
 	}).(AzureConnectionFederatedIdentityCredentialOutput)
 }
 
-// Consumers that can use the connection. Possible values: `APP:dynatrace.microsoft.azure.connector`, `DA`, `NONE`, `SVC:com.dynatrace.bo`, `SVC:com.dynatrace.da`, `SVC:com.dynatrace.grail`, `SVC:com.dynatrace.openpipeline`
+// Consumers that can use the connection. Possible values: `APP:dynatrace.microsoft.azure.connector`, `SVC:com.dynatrace.bo`, `SVC:com.dynatrace.da`, `SVC:com.dynatrace.grail`, `SVC:com.dynatrace.openpipeline`
 func (o AzureConnectionFederatedIdentityCredentialPtrOutput) Consumers() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *AzureConnectionFederatedIdentityCredential) []string {
 		if v == nil {
@@ -38515,14 +38515,13 @@ func (o BrowserMonitorScriptEventsEventClickValidatePtrOutput) Validations() Bro
 type BrowserMonitorScriptEventsEventClickValidateValidation struct {
 	// The condition of the validation. `false` means the validation succeeds if the specified content/element is found. `true` means the validation fails if the specified content/element is found
 	FailIfFound *bool `pulumi:"failIfFound"`
-	// The content to look for on the page.
-	// Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `contentMatch`, optional for `elementMatch`.
+	// The content to look for on the page. Regular expressions are allowed. In that case set `regex` as `true`. Required for `contentMatch` and `textMatch`, optional for `elementMatch`.
 	Match *string `pulumi:"match"`
 	// Defines whether `match` is plain text (`false`) or a regular expression (`true`)
 	Regex *bool `pulumi:"regex"`
 	// The elemnt to look for on the page
 	Target *BrowserMonitorScriptEventsEventClickValidateValidationTarget `pulumi:"target"`
-	// The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element).
+	// The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element), `textMatch` (check page for the specific text).
 	Type string `pulumi:"type"`
 }
 
@@ -38540,14 +38539,13 @@ type BrowserMonitorScriptEventsEventClickValidateValidationInput interface {
 type BrowserMonitorScriptEventsEventClickValidateValidationArgs struct {
 	// The condition of the validation. `false` means the validation succeeds if the specified content/element is found. `true` means the validation fails if the specified content/element is found
 	FailIfFound pulumi.BoolPtrInput `pulumi:"failIfFound"`
-	// The content to look for on the page.
-	// Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `contentMatch`, optional for `elementMatch`.
+	// The content to look for on the page. Regular expressions are allowed. In that case set `regex` as `true`. Required for `contentMatch` and `textMatch`, optional for `elementMatch`.
 	Match pulumi.StringPtrInput `pulumi:"match"`
 	// Defines whether `match` is plain text (`false`) or a regular expression (`true`)
 	Regex pulumi.BoolPtrInput `pulumi:"regex"`
 	// The elemnt to look for on the page
 	Target BrowserMonitorScriptEventsEventClickValidateValidationTargetPtrInput `pulumi:"target"`
-	// The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element).
+	// The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element), `textMatch` (check page for the specific text).
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -38607,8 +38605,7 @@ func (o BrowserMonitorScriptEventsEventClickValidateValidationOutput) FailIfFoun
 	return o.ApplyT(func(v BrowserMonitorScriptEventsEventClickValidateValidation) *bool { return v.FailIfFound }).(pulumi.BoolPtrOutput)
 }
 
-// The content to look for on the page.
-// Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `contentMatch`, optional for `elementMatch`.
+// The content to look for on the page. Regular expressions are allowed. In that case set `regex` as `true`. Required for `contentMatch` and `textMatch`, optional for `elementMatch`.
 func (o BrowserMonitorScriptEventsEventClickValidateValidationOutput) Match() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BrowserMonitorScriptEventsEventClickValidateValidation) *string { return v.Match }).(pulumi.StringPtrOutput)
 }
@@ -38625,7 +38622,7 @@ func (o BrowserMonitorScriptEventsEventClickValidateValidationOutput) Target() B
 	}).(BrowserMonitorScriptEventsEventClickValidateValidationTargetPtrOutput)
 }
 
-// The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element).
+// The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element), `textMatch` (check page for the specific text).
 func (o BrowserMonitorScriptEventsEventClickValidateValidationOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v BrowserMonitorScriptEventsEventClickValidateValidation) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -39220,14 +39217,13 @@ func (o BrowserMonitorScriptEventsEventClickWaitPtrOutput) WaitFor() pulumi.Stri
 type BrowserMonitorScriptEventsEventClickWaitValidation struct {
 	// The condition of the validation. `false` means the validation succeeds if the specified content/element is found. `true` means the validation fails if the specified content/element is found
 	FailIfFound *bool `pulumi:"failIfFound"`
-	// The content to look for on the page.
-	// Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `contentMatch`, optional for `elementMatch`.
+	// The content to look for on the page. Regular expressions are allowed. In that case set `regex` as `true`. Required for `contentMatch` and `textMatch`, optional for `elementMatch`.
 	Match *string `pulumi:"match"`
 	// Defines whether `match` is plain text (`false`) or a regular expression (`true`)
 	Regex *bool `pulumi:"regex"`
 	// The elemnt to look for on the page
 	Target *BrowserMonitorScriptEventsEventClickWaitValidationTarget `pulumi:"target"`
-	// The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element).
+	// The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element), `textMatch` (check page for the specific text).
 	Type string `pulumi:"type"`
 }
 
@@ -39245,14 +39241,13 @@ type BrowserMonitorScriptEventsEventClickWaitValidationInput interface {
 type BrowserMonitorScriptEventsEventClickWaitValidationArgs struct {
 	// The condition of the validation. `false` means the validation succeeds if the specified content/element is found. `true` means the validation fails if the specified content/element is found
 	FailIfFound pulumi.BoolPtrInput `pulumi:"failIfFound"`
-	// The content to look for on the page.
-	// Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `contentMatch`, optional for `elementMatch`.
+	// The content to look for on the page. Regular expressions are allowed. In that case set `regex` as `true`. Required for `contentMatch` and `textMatch`, optional for `elementMatch`.
 	Match pulumi.StringPtrInput `pulumi:"match"`
 	// Defines whether `match` is plain text (`false`) or a regular expression (`true`)
 	Regex pulumi.BoolPtrInput `pulumi:"regex"`
 	// The elemnt to look for on the page
 	Target BrowserMonitorScriptEventsEventClickWaitValidationTargetPtrInput `pulumi:"target"`
-	// The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element).
+	// The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element), `textMatch` (check page for the specific text).
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -39338,8 +39333,7 @@ func (o BrowserMonitorScriptEventsEventClickWaitValidationOutput) FailIfFound() 
 	return o.ApplyT(func(v BrowserMonitorScriptEventsEventClickWaitValidation) *bool { return v.FailIfFound }).(pulumi.BoolPtrOutput)
 }
 
-// The content to look for on the page.
-// Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `contentMatch`, optional for `elementMatch`.
+// The content to look for on the page. Regular expressions are allowed. In that case set `regex` as `true`. Required for `contentMatch` and `textMatch`, optional for `elementMatch`.
 func (o BrowserMonitorScriptEventsEventClickWaitValidationOutput) Match() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BrowserMonitorScriptEventsEventClickWaitValidation) *string { return v.Match }).(pulumi.StringPtrOutput)
 }
@@ -39356,7 +39350,7 @@ func (o BrowserMonitorScriptEventsEventClickWaitValidationOutput) Target() Brows
 	}).(BrowserMonitorScriptEventsEventClickWaitValidationTargetPtrOutput)
 }
 
-// The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element).
+// The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element), `textMatch` (check page for the specific text).
 func (o BrowserMonitorScriptEventsEventClickWaitValidationOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v BrowserMonitorScriptEventsEventClickWaitValidation) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -39395,8 +39389,7 @@ func (o BrowserMonitorScriptEventsEventClickWaitValidationPtrOutput) FailIfFound
 	}).(pulumi.BoolPtrOutput)
 }
 
-// The content to look for on the page.
-// Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `contentMatch`, optional for `elementMatch`.
+// The content to look for on the page. Regular expressions are allowed. In that case set `regex` as `true`. Required for `contentMatch` and `textMatch`, optional for `elementMatch`.
 func (o BrowserMonitorScriptEventsEventClickWaitValidationPtrOutput) Match() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *BrowserMonitorScriptEventsEventClickWaitValidation) *string {
 		if v == nil {
@@ -39426,7 +39419,7 @@ func (o BrowserMonitorScriptEventsEventClickWaitValidationPtrOutput) Target() Br
 	}).(BrowserMonitorScriptEventsEventClickWaitValidationTargetPtrOutput)
 }
 
-// The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element).
+// The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element), `textMatch` (check page for the specific text).
 func (o BrowserMonitorScriptEventsEventClickWaitValidationPtrOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *BrowserMonitorScriptEventsEventClickWaitValidation) *string {
 		if v == nil {
@@ -40946,14 +40939,13 @@ func (o BrowserMonitorScriptEventsEventJavascriptWaitPtrOutput) WaitFor() pulumi
 type BrowserMonitorScriptEventsEventJavascriptWaitValidation struct {
 	// The condition of the validation. `false` means the validation succeeds if the specified content/element is found. `true` means the validation fails if the specified content/element is found
 	FailIfFound *bool `pulumi:"failIfFound"`
-	// The content to look for on the page.
-	// Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `contentMatch`, optional for `elementMatch`.
+	// The content to look for on the page. Regular expressions are allowed. In that case set `regex` as `true`. Required for `contentMatch` and `textMatch`, optional for `elementMatch`.
 	Match *string `pulumi:"match"`
 	// Defines whether `match` is plain text (`false`) or a regular expression (`true`)
 	Regex *bool `pulumi:"regex"`
 	// The elemnt to look for on the page
 	Target *BrowserMonitorScriptEventsEventJavascriptWaitValidationTarget `pulumi:"target"`
-	// The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element).
+	// The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element), `textMatch` (check page for the specific text).
 	Type string `pulumi:"type"`
 }
 
@@ -40971,14 +40963,13 @@ type BrowserMonitorScriptEventsEventJavascriptWaitValidationInput interface {
 type BrowserMonitorScriptEventsEventJavascriptWaitValidationArgs struct {
 	// The condition of the validation. `false` means the validation succeeds if the specified content/element is found. `true` means the validation fails if the specified content/element is found
 	FailIfFound pulumi.BoolPtrInput `pulumi:"failIfFound"`
-	// The content to look for on the page.
-	// Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `contentMatch`, optional for `elementMatch`.
+	// The content to look for on the page. Regular expressions are allowed. In that case set `regex` as `true`. Required for `contentMatch` and `textMatch`, optional for `elementMatch`.
 	Match pulumi.StringPtrInput `pulumi:"match"`
 	// Defines whether `match` is plain text (`false`) or a regular expression (`true`)
 	Regex pulumi.BoolPtrInput `pulumi:"regex"`
 	// The elemnt to look for on the page
 	Target BrowserMonitorScriptEventsEventJavascriptWaitValidationTargetPtrInput `pulumi:"target"`
-	// The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element).
+	// The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element), `textMatch` (check page for the specific text).
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -41064,8 +41055,7 @@ func (o BrowserMonitorScriptEventsEventJavascriptWaitValidationOutput) FailIfFou
 	return o.ApplyT(func(v BrowserMonitorScriptEventsEventJavascriptWaitValidation) *bool { return v.FailIfFound }).(pulumi.BoolPtrOutput)
 }
 
-// The content to look for on the page.
-// Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `contentMatch`, optional for `elementMatch`.
+// The content to look for on the page. Regular expressions are allowed. In that case set `regex` as `true`. Required for `contentMatch` and `textMatch`, optional for `elementMatch`.
 func (o BrowserMonitorScriptEventsEventJavascriptWaitValidationOutput) Match() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BrowserMonitorScriptEventsEventJavascriptWaitValidation) *string { return v.Match }).(pulumi.StringPtrOutput)
 }
@@ -41082,7 +41072,7 @@ func (o BrowserMonitorScriptEventsEventJavascriptWaitValidationOutput) Target() 
 	}).(BrowserMonitorScriptEventsEventJavascriptWaitValidationTargetPtrOutput)
 }
 
-// The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element).
+// The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element), `textMatch` (check page for the specific text).
 func (o BrowserMonitorScriptEventsEventJavascriptWaitValidationOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v BrowserMonitorScriptEventsEventJavascriptWaitValidation) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -41121,8 +41111,7 @@ func (o BrowserMonitorScriptEventsEventJavascriptWaitValidationPtrOutput) FailIf
 	}).(pulumi.BoolPtrOutput)
 }
 
-// The content to look for on the page.
-// Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `contentMatch`, optional for `elementMatch`.
+// The content to look for on the page. Regular expressions are allowed. In that case set `regex` as `true`. Required for `contentMatch` and `textMatch`, optional for `elementMatch`.
 func (o BrowserMonitorScriptEventsEventJavascriptWaitValidationPtrOutput) Match() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *BrowserMonitorScriptEventsEventJavascriptWaitValidation) *string {
 		if v == nil {
@@ -41152,7 +41141,7 @@ func (o BrowserMonitorScriptEventsEventJavascriptWaitValidationPtrOutput) Target
 	}).(BrowserMonitorScriptEventsEventJavascriptWaitValidationTargetPtrOutput)
 }
 
-// The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element).
+// The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element), `textMatch` (check page for the specific text).
 func (o BrowserMonitorScriptEventsEventJavascriptWaitValidationPtrOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *BrowserMonitorScriptEventsEventJavascriptWaitValidation) *string {
 		if v == nil {
@@ -42472,14 +42461,13 @@ func (o BrowserMonitorScriptEventsEventKeystrokesValidatePtrOutput) Validations(
 type BrowserMonitorScriptEventsEventKeystrokesValidateValidation struct {
 	// The condition of the validation. `false` means the validation succeeds if the specified content/element is found. `true` means the validation fails if the specified content/element is found
 	FailIfFound *bool `pulumi:"failIfFound"`
-	// The content to look for on the page.
-	// Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `contentMatch`, optional for `elementMatch`.
+	// The content to look for on the page. Regular expressions are allowed. In that case set `regex` as `true`. Required for `contentMatch` and `textMatch`, optional for `elementMatch`.
 	Match *string `pulumi:"match"`
 	// Defines whether `match` is plain text (`false`) or a regular expression (`true`)
 	Regex *bool `pulumi:"regex"`
 	// The elemnt to look for on the page
 	Target *BrowserMonitorScriptEventsEventKeystrokesValidateValidationTarget `pulumi:"target"`
-	// The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element).
+	// The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element), `textMatch` (check page for the specific text).
 	Type string `pulumi:"type"`
 }
 
@@ -42497,14 +42485,13 @@ type BrowserMonitorScriptEventsEventKeystrokesValidateValidationInput interface 
 type BrowserMonitorScriptEventsEventKeystrokesValidateValidationArgs struct {
 	// The condition of the validation. `false` means the validation succeeds if the specified content/element is found. `true` means the validation fails if the specified content/element is found
 	FailIfFound pulumi.BoolPtrInput `pulumi:"failIfFound"`
-	// The content to look for on the page.
-	// Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `contentMatch`, optional for `elementMatch`.
+	// The content to look for on the page. Regular expressions are allowed. In that case set `regex` as `true`. Required for `contentMatch` and `textMatch`, optional for `elementMatch`.
 	Match pulumi.StringPtrInput `pulumi:"match"`
 	// Defines whether `match` is plain text (`false`) or a regular expression (`true`)
 	Regex pulumi.BoolPtrInput `pulumi:"regex"`
 	// The elemnt to look for on the page
 	Target BrowserMonitorScriptEventsEventKeystrokesValidateValidationTargetPtrInput `pulumi:"target"`
-	// The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element).
+	// The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element), `textMatch` (check page for the specific text).
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -42564,8 +42551,7 @@ func (o BrowserMonitorScriptEventsEventKeystrokesValidateValidationOutput) FailI
 	return o.ApplyT(func(v BrowserMonitorScriptEventsEventKeystrokesValidateValidation) *bool { return v.FailIfFound }).(pulumi.BoolPtrOutput)
 }
 
-// The content to look for on the page.
-// Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `contentMatch`, optional for `elementMatch`.
+// The content to look for on the page. Regular expressions are allowed. In that case set `regex` as `true`. Required for `contentMatch` and `textMatch`, optional for `elementMatch`.
 func (o BrowserMonitorScriptEventsEventKeystrokesValidateValidationOutput) Match() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BrowserMonitorScriptEventsEventKeystrokesValidateValidation) *string { return v.Match }).(pulumi.StringPtrOutput)
 }
@@ -42582,7 +42568,7 @@ func (o BrowserMonitorScriptEventsEventKeystrokesValidateValidationOutput) Targe
 	}).(BrowserMonitorScriptEventsEventKeystrokesValidateValidationTargetPtrOutput)
 }
 
-// The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element).
+// The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element), `textMatch` (check page for the specific text).
 func (o BrowserMonitorScriptEventsEventKeystrokesValidateValidationOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v BrowserMonitorScriptEventsEventKeystrokesValidateValidation) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -43177,14 +43163,13 @@ func (o BrowserMonitorScriptEventsEventKeystrokesWaitPtrOutput) WaitFor() pulumi
 type BrowserMonitorScriptEventsEventKeystrokesWaitValidation struct {
 	// The condition of the validation. `false` means the validation succeeds if the specified content/element is found. `true` means the validation fails if the specified content/element is found
 	FailIfFound *bool `pulumi:"failIfFound"`
-	// The content to look for on the page.
-	// Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `contentMatch`, optional for `elementMatch`.
+	// The content to look for on the page. Regular expressions are allowed. In that case set `regex` as `true`. Required for `contentMatch` and `textMatch`, optional for `elementMatch`.
 	Match *string `pulumi:"match"`
 	// Defines whether `match` is plain text (`false`) or a regular expression (`true`)
 	Regex *bool `pulumi:"regex"`
 	// The elemnt to look for on the page
 	Target *BrowserMonitorScriptEventsEventKeystrokesWaitValidationTarget `pulumi:"target"`
-	// The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element).
+	// The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element), `textMatch` (check page for the specific text).
 	Type string `pulumi:"type"`
 }
 
@@ -43202,14 +43187,13 @@ type BrowserMonitorScriptEventsEventKeystrokesWaitValidationInput interface {
 type BrowserMonitorScriptEventsEventKeystrokesWaitValidationArgs struct {
 	// The condition of the validation. `false` means the validation succeeds if the specified content/element is found. `true` means the validation fails if the specified content/element is found
 	FailIfFound pulumi.BoolPtrInput `pulumi:"failIfFound"`
-	// The content to look for on the page.
-	// Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `contentMatch`, optional for `elementMatch`.
+	// The content to look for on the page. Regular expressions are allowed. In that case set `regex` as `true`. Required for `contentMatch` and `textMatch`, optional for `elementMatch`.
 	Match pulumi.StringPtrInput `pulumi:"match"`
 	// Defines whether `match` is plain text (`false`) or a regular expression (`true`)
 	Regex pulumi.BoolPtrInput `pulumi:"regex"`
 	// The elemnt to look for on the page
 	Target BrowserMonitorScriptEventsEventKeystrokesWaitValidationTargetPtrInput `pulumi:"target"`
-	// The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element).
+	// The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element), `textMatch` (check page for the specific text).
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -43295,8 +43279,7 @@ func (o BrowserMonitorScriptEventsEventKeystrokesWaitValidationOutput) FailIfFou
 	return o.ApplyT(func(v BrowserMonitorScriptEventsEventKeystrokesWaitValidation) *bool { return v.FailIfFound }).(pulumi.BoolPtrOutput)
 }
 
-// The content to look for on the page.
-// Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `contentMatch`, optional for `elementMatch`.
+// The content to look for on the page. Regular expressions are allowed. In that case set `regex` as `true`. Required for `contentMatch` and `textMatch`, optional for `elementMatch`.
 func (o BrowserMonitorScriptEventsEventKeystrokesWaitValidationOutput) Match() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BrowserMonitorScriptEventsEventKeystrokesWaitValidation) *string { return v.Match }).(pulumi.StringPtrOutput)
 }
@@ -43313,7 +43296,7 @@ func (o BrowserMonitorScriptEventsEventKeystrokesWaitValidationOutput) Target() 
 	}).(BrowserMonitorScriptEventsEventKeystrokesWaitValidationTargetPtrOutput)
 }
 
-// The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element).
+// The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element), `textMatch` (check page for the specific text).
 func (o BrowserMonitorScriptEventsEventKeystrokesWaitValidationOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v BrowserMonitorScriptEventsEventKeystrokesWaitValidation) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -43352,8 +43335,7 @@ func (o BrowserMonitorScriptEventsEventKeystrokesWaitValidationPtrOutput) FailIf
 	}).(pulumi.BoolPtrOutput)
 }
 
-// The content to look for on the page.
-// Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `contentMatch`, optional for `elementMatch`.
+// The content to look for on the page. Regular expressions are allowed. In that case set `regex` as `true`. Required for `contentMatch` and `textMatch`, optional for `elementMatch`.
 func (o BrowserMonitorScriptEventsEventKeystrokesWaitValidationPtrOutput) Match() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *BrowserMonitorScriptEventsEventKeystrokesWaitValidation) *string {
 		if v == nil {
@@ -43383,7 +43365,7 @@ func (o BrowserMonitorScriptEventsEventKeystrokesWaitValidationPtrOutput) Target
 	}).(BrowserMonitorScriptEventsEventKeystrokesWaitValidationTargetPtrOutput)
 }
 
-// The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element).
+// The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element), `textMatch` (check page for the specific text).
 func (o BrowserMonitorScriptEventsEventKeystrokesWaitValidationPtrOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *BrowserMonitorScriptEventsEventKeystrokesWaitValidation) *string {
 		if v == nil {
@@ -44680,14 +44662,13 @@ func (o BrowserMonitorScriptEventsEventNavigateValidatePtrOutput) Validations() 
 type BrowserMonitorScriptEventsEventNavigateValidateValidation struct {
 	// The condition of the validation. `false` means the validation succeeds if the specified content/element is found. `true` means the validation fails if the specified content/element is found
 	FailIfFound *bool `pulumi:"failIfFound"`
-	// The content to look for on the page.
-	// Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `contentMatch`, optional for `elementMatch`.
+	// The content to look for on the page. Regular expressions are allowed. In that case set `regex` as `true`. Required for `contentMatch` and `textMatch`, optional for `elementMatch`.
 	Match *string `pulumi:"match"`
 	// Defines whether `match` is plain text (`false`) or a regular expression (`true`)
 	Regex *bool `pulumi:"regex"`
 	// The elemnt to look for on the page
 	Target *BrowserMonitorScriptEventsEventNavigateValidateValidationTarget `pulumi:"target"`
-	// The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element).
+	// The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element), `textMatch` (check page for the specific text).
 	Type string `pulumi:"type"`
 }
 
@@ -44705,14 +44686,13 @@ type BrowserMonitorScriptEventsEventNavigateValidateValidationInput interface {
 type BrowserMonitorScriptEventsEventNavigateValidateValidationArgs struct {
 	// The condition of the validation. `false` means the validation succeeds if the specified content/element is found. `true` means the validation fails if the specified content/element is found
 	FailIfFound pulumi.BoolPtrInput `pulumi:"failIfFound"`
-	// The content to look for on the page.
-	// Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `contentMatch`, optional for `elementMatch`.
+	// The content to look for on the page. Regular expressions are allowed. In that case set `regex` as `true`. Required for `contentMatch` and `textMatch`, optional for `elementMatch`.
 	Match pulumi.StringPtrInput `pulumi:"match"`
 	// Defines whether `match` is plain text (`false`) or a regular expression (`true`)
 	Regex pulumi.BoolPtrInput `pulumi:"regex"`
 	// The elemnt to look for on the page
 	Target BrowserMonitorScriptEventsEventNavigateValidateValidationTargetPtrInput `pulumi:"target"`
-	// The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element).
+	// The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element), `textMatch` (check page for the specific text).
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -44772,8 +44752,7 @@ func (o BrowserMonitorScriptEventsEventNavigateValidateValidationOutput) FailIfF
 	return o.ApplyT(func(v BrowserMonitorScriptEventsEventNavigateValidateValidation) *bool { return v.FailIfFound }).(pulumi.BoolPtrOutput)
 }
 
-// The content to look for on the page.
-// Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `contentMatch`, optional for `elementMatch`.
+// The content to look for on the page. Regular expressions are allowed. In that case set `regex` as `true`. Required for `contentMatch` and `textMatch`, optional for `elementMatch`.
 func (o BrowserMonitorScriptEventsEventNavigateValidateValidationOutput) Match() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BrowserMonitorScriptEventsEventNavigateValidateValidation) *string { return v.Match }).(pulumi.StringPtrOutput)
 }
@@ -44790,7 +44769,7 @@ func (o BrowserMonitorScriptEventsEventNavigateValidateValidationOutput) Target(
 	}).(BrowserMonitorScriptEventsEventNavigateValidateValidationTargetPtrOutput)
 }
 
-// The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element).
+// The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element), `textMatch` (check page for the specific text).
 func (o BrowserMonitorScriptEventsEventNavigateValidateValidationOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v BrowserMonitorScriptEventsEventNavigateValidateValidation) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -45385,14 +45364,13 @@ func (o BrowserMonitorScriptEventsEventNavigateWaitPtrOutput) WaitFor() pulumi.S
 type BrowserMonitorScriptEventsEventNavigateWaitValidation struct {
 	// The condition of the validation. `false` means the validation succeeds if the specified content/element is found. `true` means the validation fails if the specified content/element is found
 	FailIfFound *bool `pulumi:"failIfFound"`
-	// The content to look for on the page.
-	// Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `contentMatch`, optional for `elementMatch`.
+	// The content to look for on the page. Regular expressions are allowed. In that case set `regex` as `true`. Required for `contentMatch` and `textMatch`, optional for `elementMatch`.
 	Match *string `pulumi:"match"`
 	// Defines whether `match` is plain text (`false`) or a regular expression (`true`)
 	Regex *bool `pulumi:"regex"`
 	// The elemnt to look for on the page
 	Target *BrowserMonitorScriptEventsEventNavigateWaitValidationTarget `pulumi:"target"`
-	// The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element).
+	// The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element), `textMatch` (check page for the specific text).
 	Type string `pulumi:"type"`
 }
 
@@ -45410,14 +45388,13 @@ type BrowserMonitorScriptEventsEventNavigateWaitValidationInput interface {
 type BrowserMonitorScriptEventsEventNavigateWaitValidationArgs struct {
 	// The condition of the validation. `false` means the validation succeeds if the specified content/element is found. `true` means the validation fails if the specified content/element is found
 	FailIfFound pulumi.BoolPtrInput `pulumi:"failIfFound"`
-	// The content to look for on the page.
-	// Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `contentMatch`, optional for `elementMatch`.
+	// The content to look for on the page. Regular expressions are allowed. In that case set `regex` as `true`. Required for `contentMatch` and `textMatch`, optional for `elementMatch`.
 	Match pulumi.StringPtrInput `pulumi:"match"`
 	// Defines whether `match` is plain text (`false`) or a regular expression (`true`)
 	Regex pulumi.BoolPtrInput `pulumi:"regex"`
 	// The elemnt to look for on the page
 	Target BrowserMonitorScriptEventsEventNavigateWaitValidationTargetPtrInput `pulumi:"target"`
-	// The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element).
+	// The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element), `textMatch` (check page for the specific text).
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -45503,8 +45480,7 @@ func (o BrowserMonitorScriptEventsEventNavigateWaitValidationOutput) FailIfFound
 	return o.ApplyT(func(v BrowserMonitorScriptEventsEventNavigateWaitValidation) *bool { return v.FailIfFound }).(pulumi.BoolPtrOutput)
 }
 
-// The content to look for on the page.
-// Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `contentMatch`, optional for `elementMatch`.
+// The content to look for on the page. Regular expressions are allowed. In that case set `regex` as `true`. Required for `contentMatch` and `textMatch`, optional for `elementMatch`.
 func (o BrowserMonitorScriptEventsEventNavigateWaitValidationOutput) Match() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BrowserMonitorScriptEventsEventNavigateWaitValidation) *string { return v.Match }).(pulumi.StringPtrOutput)
 }
@@ -45521,7 +45497,7 @@ func (o BrowserMonitorScriptEventsEventNavigateWaitValidationOutput) Target() Br
 	}).(BrowserMonitorScriptEventsEventNavigateWaitValidationTargetPtrOutput)
 }
 
-// The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element).
+// The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element), `textMatch` (check page for the specific text).
 func (o BrowserMonitorScriptEventsEventNavigateWaitValidationOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v BrowserMonitorScriptEventsEventNavigateWaitValidation) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -45560,8 +45536,7 @@ func (o BrowserMonitorScriptEventsEventNavigateWaitValidationPtrOutput) FailIfFo
 	}).(pulumi.BoolPtrOutput)
 }
 
-// The content to look for on the page.
-// Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `contentMatch`, optional for `elementMatch`.
+// The content to look for on the page. Regular expressions are allowed. In that case set `regex` as `true`. Required for `contentMatch` and `textMatch`, optional for `elementMatch`.
 func (o BrowserMonitorScriptEventsEventNavigateWaitValidationPtrOutput) Match() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *BrowserMonitorScriptEventsEventNavigateWaitValidation) *string {
 		if v == nil {
@@ -45591,7 +45566,7 @@ func (o BrowserMonitorScriptEventsEventNavigateWaitValidationPtrOutput) Target()
 	}).(BrowserMonitorScriptEventsEventNavigateWaitValidationTargetPtrOutput)
 }
 
-// The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element).
+// The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element), `textMatch` (check page for the specific text).
 func (o BrowserMonitorScriptEventsEventNavigateWaitValidationPtrOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *BrowserMonitorScriptEventsEventNavigateWaitValidation) *string {
 		if v == nil {
@@ -46920,14 +46895,13 @@ func (o BrowserMonitorScriptEventsEventSelectValidatePtrOutput) Validations() Br
 type BrowserMonitorScriptEventsEventSelectValidateValidation struct {
 	// The condition of the validation. `false` means the validation succeeds if the specified content/element is found. `true` means the validation fails if the specified content/element is found
 	FailIfFound *bool `pulumi:"failIfFound"`
-	// The content to look for on the page.
-	// Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `contentMatch`, optional for `elementMatch`.
+	// The content to look for on the page. Regular expressions are allowed. In that case set `regex` as `true`. Required for `contentMatch` and `textMatch`, optional for `elementMatch`.
 	Match *string `pulumi:"match"`
 	// Defines whether `match` is plain text (`false`) or a regular expression (`true`)
 	Regex *bool `pulumi:"regex"`
 	// The elemnt to look for on the page
 	Target *BrowserMonitorScriptEventsEventSelectValidateValidationTarget `pulumi:"target"`
-	// The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element).
+	// The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element), `textMatch` (check page for the specific text).
 	Type string `pulumi:"type"`
 }
 
@@ -46945,14 +46919,13 @@ type BrowserMonitorScriptEventsEventSelectValidateValidationInput interface {
 type BrowserMonitorScriptEventsEventSelectValidateValidationArgs struct {
 	// The condition of the validation. `false` means the validation succeeds if the specified content/element is found. `true` means the validation fails if the specified content/element is found
 	FailIfFound pulumi.BoolPtrInput `pulumi:"failIfFound"`
-	// The content to look for on the page.
-	// Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `contentMatch`, optional for `elementMatch`.
+	// The content to look for on the page. Regular expressions are allowed. In that case set `regex` as `true`. Required for `contentMatch` and `textMatch`, optional for `elementMatch`.
 	Match pulumi.StringPtrInput `pulumi:"match"`
 	// Defines whether `match` is plain text (`false`) or a regular expression (`true`)
 	Regex pulumi.BoolPtrInput `pulumi:"regex"`
 	// The elemnt to look for on the page
 	Target BrowserMonitorScriptEventsEventSelectValidateValidationTargetPtrInput `pulumi:"target"`
-	// The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element).
+	// The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element), `textMatch` (check page for the specific text).
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -47012,8 +46985,7 @@ func (o BrowserMonitorScriptEventsEventSelectValidateValidationOutput) FailIfFou
 	return o.ApplyT(func(v BrowserMonitorScriptEventsEventSelectValidateValidation) *bool { return v.FailIfFound }).(pulumi.BoolPtrOutput)
 }
 
-// The content to look for on the page.
-// Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `contentMatch`, optional for `elementMatch`.
+// The content to look for on the page. Regular expressions are allowed. In that case set `regex` as `true`. Required for `contentMatch` and `textMatch`, optional for `elementMatch`.
 func (o BrowserMonitorScriptEventsEventSelectValidateValidationOutput) Match() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BrowserMonitorScriptEventsEventSelectValidateValidation) *string { return v.Match }).(pulumi.StringPtrOutput)
 }
@@ -47030,7 +47002,7 @@ func (o BrowserMonitorScriptEventsEventSelectValidateValidationOutput) Target() 
 	}).(BrowserMonitorScriptEventsEventSelectValidateValidationTargetPtrOutput)
 }
 
-// The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element).
+// The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element), `textMatch` (check page for the specific text).
 func (o BrowserMonitorScriptEventsEventSelectValidateValidationOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v BrowserMonitorScriptEventsEventSelectValidateValidation) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -47625,14 +47597,13 @@ func (o BrowserMonitorScriptEventsEventSelectWaitPtrOutput) WaitFor() pulumi.Str
 type BrowserMonitorScriptEventsEventSelectWaitValidation struct {
 	// The condition of the validation. `false` means the validation succeeds if the specified content/element is found. `true` means the validation fails if the specified content/element is found
 	FailIfFound *bool `pulumi:"failIfFound"`
-	// The content to look for on the page.
-	// Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `contentMatch`, optional for `elementMatch`.
+	// The content to look for on the page. Regular expressions are allowed. In that case set `regex` as `true`. Required for `contentMatch` and `textMatch`, optional for `elementMatch`.
 	Match *string `pulumi:"match"`
 	// Defines whether `match` is plain text (`false`) or a regular expression (`true`)
 	Regex *bool `pulumi:"regex"`
 	// The elemnt to look for on the page
 	Target *BrowserMonitorScriptEventsEventSelectWaitValidationTarget `pulumi:"target"`
-	// The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element).
+	// The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element), `textMatch` (check page for the specific text).
 	Type string `pulumi:"type"`
 }
 
@@ -47650,14 +47621,13 @@ type BrowserMonitorScriptEventsEventSelectWaitValidationInput interface {
 type BrowserMonitorScriptEventsEventSelectWaitValidationArgs struct {
 	// The condition of the validation. `false` means the validation succeeds if the specified content/element is found. `true` means the validation fails if the specified content/element is found
 	FailIfFound pulumi.BoolPtrInput `pulumi:"failIfFound"`
-	// The content to look for on the page.
-	// Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `contentMatch`, optional for `elementMatch`.
+	// The content to look for on the page. Regular expressions are allowed. In that case set `regex` as `true`. Required for `contentMatch` and `textMatch`, optional for `elementMatch`.
 	Match pulumi.StringPtrInput `pulumi:"match"`
 	// Defines whether `match` is plain text (`false`) or a regular expression (`true`)
 	Regex pulumi.BoolPtrInput `pulumi:"regex"`
 	// The elemnt to look for on the page
 	Target BrowserMonitorScriptEventsEventSelectWaitValidationTargetPtrInput `pulumi:"target"`
-	// The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element).
+	// The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element), `textMatch` (check page for the specific text).
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -47743,8 +47713,7 @@ func (o BrowserMonitorScriptEventsEventSelectWaitValidationOutput) FailIfFound()
 	return o.ApplyT(func(v BrowserMonitorScriptEventsEventSelectWaitValidation) *bool { return v.FailIfFound }).(pulumi.BoolPtrOutput)
 }
 
-// The content to look for on the page.
-// Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `contentMatch`, optional for `elementMatch`.
+// The content to look for on the page. Regular expressions are allowed. In that case set `regex` as `true`. Required for `contentMatch` and `textMatch`, optional for `elementMatch`.
 func (o BrowserMonitorScriptEventsEventSelectWaitValidationOutput) Match() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BrowserMonitorScriptEventsEventSelectWaitValidation) *string { return v.Match }).(pulumi.StringPtrOutput)
 }
@@ -47761,7 +47730,7 @@ func (o BrowserMonitorScriptEventsEventSelectWaitValidationOutput) Target() Brow
 	}).(BrowserMonitorScriptEventsEventSelectWaitValidationTargetPtrOutput)
 }
 
-// The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element).
+// The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element), `textMatch` (check page for the specific text).
 func (o BrowserMonitorScriptEventsEventSelectWaitValidationOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v BrowserMonitorScriptEventsEventSelectWaitValidation) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -47800,8 +47769,7 @@ func (o BrowserMonitorScriptEventsEventSelectWaitValidationPtrOutput) FailIfFoun
 	}).(pulumi.BoolPtrOutput)
 }
 
-// The content to look for on the page.
-// Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `contentMatch`, optional for `elementMatch`.
+// The content to look for on the page. Regular expressions are allowed. In that case set `regex` as `true`. Required for `contentMatch` and `textMatch`, optional for `elementMatch`.
 func (o BrowserMonitorScriptEventsEventSelectWaitValidationPtrOutput) Match() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *BrowserMonitorScriptEventsEventSelectWaitValidation) *string {
 		if v == nil {
@@ -47831,7 +47799,7 @@ func (o BrowserMonitorScriptEventsEventSelectWaitValidationPtrOutput) Target() B
 	}).(BrowserMonitorScriptEventsEventSelectWaitValidationTargetPtrOutput)
 }
 
-// The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element).
+// The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element), `textMatch` (check page for the specific text).
 func (o BrowserMonitorScriptEventsEventSelectWaitValidationPtrOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *BrowserMonitorScriptEventsEventSelectWaitValidation) *string {
 		if v == nil {
@@ -48905,14 +48873,13 @@ func (o BrowserMonitorScriptEventsEventTapValidatePtrOutput) Validations() Brows
 type BrowserMonitorScriptEventsEventTapValidateValidation struct {
 	// The condition of the validation. `false` means the validation succeeds if the specified content/element is found. `true` means the validation fails if the specified content/element is found
 	FailIfFound *bool `pulumi:"failIfFound"`
-	// The content to look for on the page.
-	// Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `contentMatch`, optional for `elementMatch`.
+	// The content to look for on the page. Regular expressions are allowed. In that case set `regex` as `true`. Required for `contentMatch` and `textMatch`, optional for `elementMatch`.
 	Match *string `pulumi:"match"`
 	// Defines whether `match` is plain text (`false`) or a regular expression (`true`)
 	Regex *bool `pulumi:"regex"`
 	// The elemnt to look for on the page
 	Target *BrowserMonitorScriptEventsEventTapValidateValidationTarget `pulumi:"target"`
-	// The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element).
+	// The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element), `textMatch` (check page for the specific text).
 	Type string `pulumi:"type"`
 }
 
@@ -48930,14 +48897,13 @@ type BrowserMonitorScriptEventsEventTapValidateValidationInput interface {
 type BrowserMonitorScriptEventsEventTapValidateValidationArgs struct {
 	// The condition of the validation. `false` means the validation succeeds if the specified content/element is found. `true` means the validation fails if the specified content/element is found
 	FailIfFound pulumi.BoolPtrInput `pulumi:"failIfFound"`
-	// The content to look for on the page.
-	// Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `contentMatch`, optional for `elementMatch`.
+	// The content to look for on the page. Regular expressions are allowed. In that case set `regex` as `true`. Required for `contentMatch` and `textMatch`, optional for `elementMatch`.
 	Match pulumi.StringPtrInput `pulumi:"match"`
 	// Defines whether `match` is plain text (`false`) or a regular expression (`true`)
 	Regex pulumi.BoolPtrInput `pulumi:"regex"`
 	// The elemnt to look for on the page
 	Target BrowserMonitorScriptEventsEventTapValidateValidationTargetPtrInput `pulumi:"target"`
-	// The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element).
+	// The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element), `textMatch` (check page for the specific text).
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -48997,8 +48963,7 @@ func (o BrowserMonitorScriptEventsEventTapValidateValidationOutput) FailIfFound(
 	return o.ApplyT(func(v BrowserMonitorScriptEventsEventTapValidateValidation) *bool { return v.FailIfFound }).(pulumi.BoolPtrOutput)
 }
 
-// The content to look for on the page.
-// Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `contentMatch`, optional for `elementMatch`.
+// The content to look for on the page. Regular expressions are allowed. In that case set `regex` as `true`. Required for `contentMatch` and `textMatch`, optional for `elementMatch`.
 func (o BrowserMonitorScriptEventsEventTapValidateValidationOutput) Match() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BrowserMonitorScriptEventsEventTapValidateValidation) *string { return v.Match }).(pulumi.StringPtrOutput)
 }
@@ -49015,7 +48980,7 @@ func (o BrowserMonitorScriptEventsEventTapValidateValidationOutput) Target() Bro
 	}).(BrowserMonitorScriptEventsEventTapValidateValidationTargetPtrOutput)
 }
 
-// The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element).
+// The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element), `textMatch` (check page for the specific text).
 func (o BrowserMonitorScriptEventsEventTapValidateValidationOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v BrowserMonitorScriptEventsEventTapValidateValidation) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -49608,14 +49573,13 @@ func (o BrowserMonitorScriptEventsEventTapWaitPtrOutput) WaitFor() pulumi.String
 type BrowserMonitorScriptEventsEventTapWaitValidation struct {
 	// The condition of the validation. `false` means the validation succeeds if the specified content/element is found. `true` means the validation fails if the specified content/element is found
 	FailIfFound *bool `pulumi:"failIfFound"`
-	// The content to look for on the page.
-	// Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `contentMatch`, optional for `elementMatch`.
+	// The content to look for on the page. Regular expressions are allowed. In that case set `regex` as `true`. Required for `contentMatch` and `textMatch`, optional for `elementMatch`.
 	Match *string `pulumi:"match"`
 	// Defines whether `match` is plain text (`false`) or a regular expression (`true`)
 	Regex *bool `pulumi:"regex"`
 	// The elemnt to look for on the page
 	Target *BrowserMonitorScriptEventsEventTapWaitValidationTarget `pulumi:"target"`
-	// The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element).
+	// The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element), `textMatch` (check page for the specific text).
 	Type string `pulumi:"type"`
 }
 
@@ -49633,14 +49597,13 @@ type BrowserMonitorScriptEventsEventTapWaitValidationInput interface {
 type BrowserMonitorScriptEventsEventTapWaitValidationArgs struct {
 	// The condition of the validation. `false` means the validation succeeds if the specified content/element is found. `true` means the validation fails if the specified content/element is found
 	FailIfFound pulumi.BoolPtrInput `pulumi:"failIfFound"`
-	// The content to look for on the page.
-	// Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `contentMatch`, optional for `elementMatch`.
+	// The content to look for on the page. Regular expressions are allowed. In that case set `regex` as `true`. Required for `contentMatch` and `textMatch`, optional for `elementMatch`.
 	Match pulumi.StringPtrInput `pulumi:"match"`
 	// Defines whether `match` is plain text (`false`) or a regular expression (`true`)
 	Regex pulumi.BoolPtrInput `pulumi:"regex"`
 	// The elemnt to look for on the page
 	Target BrowserMonitorScriptEventsEventTapWaitValidationTargetPtrInput `pulumi:"target"`
-	// The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element).
+	// The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element), `textMatch` (check page for the specific text).
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -49726,8 +49689,7 @@ func (o BrowserMonitorScriptEventsEventTapWaitValidationOutput) FailIfFound() pu
 	return o.ApplyT(func(v BrowserMonitorScriptEventsEventTapWaitValidation) *bool { return v.FailIfFound }).(pulumi.BoolPtrOutput)
 }
 
-// The content to look for on the page.
-// Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `contentMatch`, optional for `elementMatch`.
+// The content to look for on the page. Regular expressions are allowed. In that case set `regex` as `true`. Required for `contentMatch` and `textMatch`, optional for `elementMatch`.
 func (o BrowserMonitorScriptEventsEventTapWaitValidationOutput) Match() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BrowserMonitorScriptEventsEventTapWaitValidation) *string { return v.Match }).(pulumi.StringPtrOutput)
 }
@@ -49744,7 +49706,7 @@ func (o BrowserMonitorScriptEventsEventTapWaitValidationOutput) Target() Browser
 	}).(BrowserMonitorScriptEventsEventTapWaitValidationTargetPtrOutput)
 }
 
-// The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element).
+// The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element), `textMatch` (check page for the specific text).
 func (o BrowserMonitorScriptEventsEventTapWaitValidationOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v BrowserMonitorScriptEventsEventTapWaitValidation) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -49783,8 +49745,7 @@ func (o BrowserMonitorScriptEventsEventTapWaitValidationPtrOutput) FailIfFound()
 	}).(pulumi.BoolPtrOutput)
 }
 
-// The content to look for on the page.
-// Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `contentMatch`, optional for `elementMatch`.
+// The content to look for on the page. Regular expressions are allowed. In that case set `regex` as `true`. Required for `contentMatch` and `textMatch`, optional for `elementMatch`.
 func (o BrowserMonitorScriptEventsEventTapWaitValidationPtrOutput) Match() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *BrowserMonitorScriptEventsEventTapWaitValidation) *string {
 		if v == nil {
@@ -49814,7 +49775,7 @@ func (o BrowserMonitorScriptEventsEventTapWaitValidationPtrOutput) Target() Brow
 	}).(BrowserMonitorScriptEventsEventTapWaitValidationTargetPtrOutput)
 }
 
-// The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element).
+// The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element), `textMatch` (check page for the specific text).
 func (o BrowserMonitorScriptEventsEventTapWaitValidationPtrOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *BrowserMonitorScriptEventsEventTapWaitValidation) *string {
 		if v == nil {

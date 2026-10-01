@@ -13,6 +13,8 @@ namespace Pulumiverse.Dynatrace
     public static class GetApiTokens
     {
         /// <summary>
+        /// &gt; This data source requires the API token scope **Read API tokens** (`apiTokens.read`)
+        /// 
         /// The API tokens data source allows all access tokens to be retrieved, note the token value is not included in the response.
         /// 
         /// ## Example Usage
@@ -38,6 +40,8 @@ namespace Pulumiverse.Dynatrace
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetApiTokensResult>("dynatrace:index/getApiTokens:getApiTokens", InvokeArgs.Empty, options.WithDefaults());
 
         /// <summary>
+        /// &gt; This data source requires the API token scope **Read API tokens** (`apiTokens.read`)
+        /// 
         /// The API tokens data source allows all access tokens to be retrieved, note the token value is not included in the response.
         /// 
         /// ## Example Usage
@@ -63,6 +67,8 @@ namespace Pulumiverse.Dynatrace
             => global::Pulumi.Deployment.Instance.Invoke<GetApiTokensResult>("dynatrace:index/getApiTokens:getApiTokens", InvokeArgs.Empty, options.WithDefaults());
 
         /// <summary>
+        /// &gt; This data source requires the API token scope **Read API tokens** (`apiTokens.read`)
+        /// 
         /// The API tokens data source allows all access tokens to be retrieved, note the token value is not included in the response.
         /// 
         /// ## Example Usage

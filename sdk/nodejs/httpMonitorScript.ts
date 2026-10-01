@@ -43,7 +43,7 @@ import * as utilities from "./utilities";
  *         }],
  *     }],
  *     name: "#name#",
- *     frequency: 1,
+ *     frequency: 5,
  *     locations: [location.then(location => location.id)],
  *     noScript: true,
  * });

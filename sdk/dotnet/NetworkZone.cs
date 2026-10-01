@@ -11,6 +11,8 @@ using Pulumi;
 namespace Pulumiverse.Dynatrace
 {
     /// <summary>
+    /// &gt; The resource API endpoint has been deprecated, please use dynatrace.NetworkZoneV2 instead.
+    /// 
     /// &gt; This resource requires the API token scopes **Read network zones** (`networkZones.read`) and **Write network zones** (`networkZones.write`)
     /// 
     /// ## Dynatrace Documentation

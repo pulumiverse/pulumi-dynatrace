@@ -194,7 +194,8 @@ import (
 //									Validate: &dynatrace.BrowserMonitorScriptEventsEventClickValidateArgs{
 //										Validations: dynatrace.BrowserMonitorScriptEventsEventClickValidateValidationArray{
 //											&dynatrace.BrowserMonitorScriptEventsEventClickValidateValidationArgs{
-//												Type: pulumi.String("text_match"),
+//												Type:  pulumi.String("text_match"),
+//												Match: pulumi.String("test"),
 //											},
 //										},
 //									},

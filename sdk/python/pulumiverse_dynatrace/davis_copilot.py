@@ -25,7 +25,9 @@ class DavisCopilotArgs:
                  blocklist_entries: pulumi.Input[Optional['DavisCopilotBlocklistEntriesArgs']] = None,
                  enable_agentic_ai: pulumi.Input[Optional[_builtins.bool]] = None,
                  enable_document_suggestion: pulumi.Input[Optional[_builtins.bool]] = None,
-                 enable_tenant_aware_data_mining: pulumi.Input[Optional[_builtins.bool]] = None):
+                 enable_tenant_aware_data_mining: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pii_blocking_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pii_blocking_types: pulumi.Input[Optional['DavisCopilotPiiBlockingTypesArgs']] = None):
         """
         The set of arguments for constructing a DavisCopilot resource.
 
@@ -34,6 +36,8 @@ class DavisCopilotArgs:
         :param pulumi.Input[_builtins.bool] enable_agentic_ai: Please note that once agentic AI is enabled, the Dynatrace Assist interface is allowed to call tools and run Grail queries. You still need to [assign permissions](https://dt-url.net/agentic-ai) to the relevant user groups.
         :param pulumi.Input[_builtins.bool] enable_document_suggestion: By enabling document suggestions, Dynatrace Intelligence can find similarities between Problems and existing Notebooks and Dashboards in order to suggest relevant troubleshooting guides. Learn more about [document suggestions](https://dt-url.net/xy02gpo).
         :param pulumi.Input[_builtins.bool] enable_tenant_aware_data_mining: You can enrich Dynatrace generative and agentic AI with your environment data. This lets you generate more accurate queries that identify and reference relevant entities, events, spans, logs, and metrics from your environment. Once enabled, Dynatrace Intelligence periodically scans your Grail data to create its own semantic index. Please note, it can take up to 24 hours to reflect changes. Learn more about [environment-aware queries](https://dt-url.net/4g42iu7).
+        :param pulumi.Input[_builtins.bool] pii_blocking_enabled: Enable PII blocking
+        :param pulumi.Input['DavisCopilotPiiBlockingTypesArgs'] pii_blocking_types: PII blocking types
         """
         pulumi.set(__self__, "enable_copilot", enable_copilot)
         if blocklist_entries is not None:
@@ -44,6 +48,10 @@ class DavisCopilotArgs:
             pulumi.set(__self__, "enable_document_suggestion", enable_document_suggestion)
         if enable_tenant_aware_data_mining is not None:
             pulumi.set(__self__, "enable_tenant_aware_data_mining", enable_tenant_aware_data_mining)
+        if pii_blocking_enabled is not None:
+            pulumi.set(__self__, "pii_blocking_enabled", pii_blocking_enabled)
+        if pii_blocking_types is not None:
+            pulumi.set(__self__, "pii_blocking_types", pii_blocking_types)
 
     @_builtins.property
     @pulumi.getter(name="enableCopilot")
@@ -105,6 +113,30 @@ class DavisCopilotArgs:
     def enable_tenant_aware_data_mining(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enable_tenant_aware_data_mining", value)
 
+    @_builtins.property
+    @pulumi.getter(name="piiBlockingEnabled")
+    def pii_blocking_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Enable PII blocking
+        """
+        return pulumi.get(self, "pii_blocking_enabled")
+
+    @pii_blocking_enabled.setter
+    def pii_blocking_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "pii_blocking_enabled", value)
+
+    @_builtins.property
+    @pulumi.getter(name="piiBlockingTypes")
+    def pii_blocking_types(self) -> pulumi.Input[Optional['DavisCopilotPiiBlockingTypesArgs']]:
+        """
+        PII blocking types
+        """
+        return pulumi.get(self, "pii_blocking_types")
+
+    @pii_blocking_types.setter
+    def pii_blocking_types(self, value: pulumi.Input[Optional['DavisCopilotPiiBlockingTypesArgs']]):
+        pulumi.set(self, "pii_blocking_types", value)
+
 
 @pulumi.input_type
 class _DavisCopilotState:
@@ -113,7 +145,9 @@ class _DavisCopilotState:
                  enable_agentic_ai: pulumi.Input[Optional[_builtins.bool]] = None,
                  enable_copilot: pulumi.Input[Optional[_builtins.bool]] = None,
                  enable_document_suggestion: pulumi.Input[Optional[_builtins.bool]] = None,
-                 enable_tenant_aware_data_mining: pulumi.Input[Optional[_builtins.bool]] = None):
+                 enable_tenant_aware_data_mining: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pii_blocking_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pii_blocking_types: pulumi.Input[Optional['DavisCopilotPiiBlockingTypesArgs']] = None):
         """
         Input properties used for looking up and filtering DavisCopilot resources.
 
@@ -122,6 +156,8 @@ class _DavisCopilotState:
         :param pulumi.Input[_builtins.bool] enable_copilot: Please note that once generative AI is enabled, you still need to [assign permissions](https://dt-url.net/rh22idn) to the relevant user groups.
         :param pulumi.Input[_builtins.bool] enable_document_suggestion: By enabling document suggestions, Dynatrace Intelligence can find similarities between Problems and existing Notebooks and Dashboards in order to suggest relevant troubleshooting guides. Learn more about [document suggestions](https://dt-url.net/xy02gpo).
         :param pulumi.Input[_builtins.bool] enable_tenant_aware_data_mining: You can enrich Dynatrace generative and agentic AI with your environment data. This lets you generate more accurate queries that identify and reference relevant entities, events, spans, logs, and metrics from your environment. Once enabled, Dynatrace Intelligence periodically scans your Grail data to create its own semantic index. Please note, it can take up to 24 hours to reflect changes. Learn more about [environment-aware queries](https://dt-url.net/4g42iu7).
+        :param pulumi.Input[_builtins.bool] pii_blocking_enabled: Enable PII blocking
+        :param pulumi.Input['DavisCopilotPiiBlockingTypesArgs'] pii_blocking_types: PII blocking types
         """
         if blocklist_entries is not None:
             pulumi.set(__self__, "blocklist_entries", blocklist_entries)
@@ -133,6 +169,10 @@ class _DavisCopilotState:
             pulumi.set(__self__, "enable_document_suggestion", enable_document_suggestion)
         if enable_tenant_aware_data_mining is not None:
             pulumi.set(__self__, "enable_tenant_aware_data_mining", enable_tenant_aware_data_mining)
+        if pii_blocking_enabled is not None:
+            pulumi.set(__self__, "pii_blocking_enabled", pii_blocking_enabled)
+        if pii_blocking_types is not None:
+            pulumi.set(__self__, "pii_blocking_types", pii_blocking_types)
 
     @_builtins.property
     @pulumi.getter(name="blocklistEntries")
@@ -194,6 +234,30 @@ class _DavisCopilotState:
     def enable_tenant_aware_data_mining(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enable_tenant_aware_data_mining", value)
 
+    @_builtins.property
+    @pulumi.getter(name="piiBlockingEnabled")
+    def pii_blocking_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Enable PII blocking
+        """
+        return pulumi.get(self, "pii_blocking_enabled")
+
+    @pii_blocking_enabled.setter
+    def pii_blocking_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "pii_blocking_enabled", value)
+
+    @_builtins.property
+    @pulumi.getter(name="piiBlockingTypes")
+    def pii_blocking_types(self) -> pulumi.Input[Optional['DavisCopilotPiiBlockingTypesArgs']]:
+        """
+        PII blocking types
+        """
+        return pulumi.get(self, "pii_blocking_types")
+
+    @pii_blocking_types.setter
+    def pii_blocking_types(self, value: pulumi.Input[Optional['DavisCopilotPiiBlockingTypesArgs']]):
+        pulumi.set(self, "pii_blocking_types", value)
+
 
 @pulumi.type_token("dynatrace:index/davisCopilot:DavisCopilot")
 class DavisCopilot(pulumi.CustomResource):
@@ -206,6 +270,8 @@ class DavisCopilot(pulumi.CustomResource):
                  enable_copilot: pulumi.Input[Optional[_builtins.bool]] = None,
                  enable_document_suggestion: pulumi.Input[Optional[_builtins.bool]] = None,
                  enable_tenant_aware_data_mining: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pii_blocking_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pii_blocking_types: pulumi.Input[Optional[Union['DavisCopilotPiiBlockingTypesArgs', 'DavisCopilotPiiBlockingTypesArgsDict', 'outputs.DavisCopilotPiiBlockingTypes']]] = None,
                  __props__=None):
         """
         > **This is in Preview** Davis CoPilot is currently in Preview and only accessible to selected customers. If you would like to share feedback or ideas, please join our dedicated Community user group, or reach out to your Customer Success Manager.
@@ -232,6 +298,8 @@ class DavisCopilot(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] enable_copilot: Please note that once generative AI is enabled, you still need to [assign permissions](https://dt-url.net/rh22idn) to the relevant user groups.
         :param pulumi.Input[_builtins.bool] enable_document_suggestion: By enabling document suggestions, Dynatrace Intelligence can find similarities between Problems and existing Notebooks and Dashboards in order to suggest relevant troubleshooting guides. Learn more about [document suggestions](https://dt-url.net/xy02gpo).
         :param pulumi.Input[_builtins.bool] enable_tenant_aware_data_mining: You can enrich Dynatrace generative and agentic AI with your environment data. This lets you generate more accurate queries that identify and reference relevant entities, events, spans, logs, and metrics from your environment. Once enabled, Dynatrace Intelligence periodically scans your Grail data to create its own semantic index. Please note, it can take up to 24 hours to reflect changes. Learn more about [environment-aware queries](https://dt-url.net/4g42iu7).
+        :param pulumi.Input[_builtins.bool] pii_blocking_enabled: Enable PII blocking
+        :param pulumi.Input[Union['DavisCopilotPiiBlockingTypesArgs', 'DavisCopilotPiiBlockingTypesArgsDict', 'outputs.DavisCopilotPiiBlockingTypes']] pii_blocking_types: PII blocking types
         """
         ...
     @overload
@@ -277,6 +345,8 @@ class DavisCopilot(pulumi.CustomResource):
                  enable_copilot: pulumi.Input[Optional[_builtins.bool]] = None,
                  enable_document_suggestion: pulumi.Input[Optional[_builtins.bool]] = None,
                  enable_tenant_aware_data_mining: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pii_blocking_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pii_blocking_types: pulumi.Input[Optional[Union['DavisCopilotPiiBlockingTypesArgs', 'DavisCopilotPiiBlockingTypesArgsDict', 'outputs.DavisCopilotPiiBlockingTypes']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -293,6 +363,8 @@ class DavisCopilot(pulumi.CustomResource):
             __props__.__dict__["enable_copilot"] = enable_copilot
             __props__.__dict__["enable_document_suggestion"] = enable_document_suggestion
             __props__.__dict__["enable_tenant_aware_data_mining"] = enable_tenant_aware_data_mining
+            __props__.__dict__["pii_blocking_enabled"] = pii_blocking_enabled
+            __props__.__dict__["pii_blocking_types"] = pii_blocking_types
         super(DavisCopilot, __self__).__init__(
             'dynatrace:index/davisCopilot:DavisCopilot',
             resource_name,
@@ -307,7 +379,9 @@ class DavisCopilot(pulumi.CustomResource):
             enable_agentic_ai: pulumi.Input[Optional[_builtins.bool]] = None,
             enable_copilot: pulumi.Input[Optional[_builtins.bool]] = None,
             enable_document_suggestion: pulumi.Input[Optional[_builtins.bool]] = None,
-            enable_tenant_aware_data_mining: pulumi.Input[Optional[_builtins.bool]] = None) -> 'DavisCopilot':
+            enable_tenant_aware_data_mining: pulumi.Input[Optional[_builtins.bool]] = None,
+            pii_blocking_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            pii_blocking_types: pulumi.Input[Optional[Union['DavisCopilotPiiBlockingTypesArgs', 'DavisCopilotPiiBlockingTypesArgsDict', 'outputs.DavisCopilotPiiBlockingTypes']]] = None) -> 'DavisCopilot':
         """
         Get an existing DavisCopilot resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -320,6 +394,8 @@ class DavisCopilot(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] enable_copilot: Please note that once generative AI is enabled, you still need to [assign permissions](https://dt-url.net/rh22idn) to the relevant user groups.
         :param pulumi.Input[_builtins.bool] enable_document_suggestion: By enabling document suggestions, Dynatrace Intelligence can find similarities between Problems and existing Notebooks and Dashboards in order to suggest relevant troubleshooting guides. Learn more about [document suggestions](https://dt-url.net/xy02gpo).
         :param pulumi.Input[_builtins.bool] enable_tenant_aware_data_mining: You can enrich Dynatrace generative and agentic AI with your environment data. This lets you generate more accurate queries that identify and reference relevant entities, events, spans, logs, and metrics from your environment. Once enabled, Dynatrace Intelligence periodically scans your Grail data to create its own semantic index. Please note, it can take up to 24 hours to reflect changes. Learn more about [environment-aware queries](https://dt-url.net/4g42iu7).
+        :param pulumi.Input[_builtins.bool] pii_blocking_enabled: Enable PII blocking
+        :param pulumi.Input[Union['DavisCopilotPiiBlockingTypesArgs', 'DavisCopilotPiiBlockingTypesArgsDict', 'outputs.DavisCopilotPiiBlockingTypes']] pii_blocking_types: PII blocking types
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -330,6 +406,8 @@ class DavisCopilot(pulumi.CustomResource):
         __props__.__dict__["enable_copilot"] = enable_copilot
         __props__.__dict__["enable_document_suggestion"] = enable_document_suggestion
         __props__.__dict__["enable_tenant_aware_data_mining"] = enable_tenant_aware_data_mining
+        __props__.__dict__["pii_blocking_enabled"] = pii_blocking_enabled
+        __props__.__dict__["pii_blocking_types"] = pii_blocking_types
         return DavisCopilot(resource_name, opts=opts, __props__=__props__)
 
     @_builtins.property
@@ -371,4 +449,20 @@ class DavisCopilot(pulumi.CustomResource):
         You can enrich Dynatrace generative and agentic AI with your environment data. This lets you generate more accurate queries that identify and reference relevant entities, events, spans, logs, and metrics from your environment. Once enabled, Dynatrace Intelligence periodically scans your Grail data to create its own semantic index. Please note, it can take up to 24 hours to reflect changes. Learn more about [environment-aware queries](https://dt-url.net/4g42iu7).
         """
         return pulumi.get(self, "enable_tenant_aware_data_mining")
+
+    @_builtins.property
+    @pulumi.getter(name="piiBlockingEnabled")
+    def pii_blocking_enabled(self) -> pulumi.Output[Optional[_builtins.bool]]:
+        """
+        Enable PII blocking
+        """
+        return pulumi.get(self, "pii_blocking_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="piiBlockingTypes")
+    def pii_blocking_types(self) -> pulumi.Output[Optional['outputs.DavisCopilotPiiBlockingTypes']]:
+        """
+        PII blocking types
+        """
+        return pulumi.get(self, "pii_blocking_types")
 

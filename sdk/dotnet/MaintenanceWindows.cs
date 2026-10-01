@@ -42,6 +42,14 @@ namespace Pulumiverse.Dynatrace
     ///         Filter = "matchesValue(result.state, \"FAIL\")",
     ///         AutoDelete = true,
     ///         Enabled = true,
+    ///         ObjectScopes = new Dynatrace.Inputs.MaintenanceWindowsObjectScopesArgs
+    ///         {
+    ///             SyntheticMonitors = new Dynatrace.Inputs.MaintenanceWindowsObjectScopesSyntheticMonitorsArgs
+    ///             {
+    ///                 DisableSyntheticMonitorFilter = "status == \"OPEN\" AND severity == \"HIGH\"",
+    ///                 DisableSyntheticMonitors = true,
+    ///             },
+    ///         },
     ///         Schedule = new Dynatrace.Inputs.MaintenanceWindowsScheduleArgs
     ///         {
     ///             Duration = 60,
@@ -116,6 +124,12 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
+
+        /// <summary>
+        /// Object scopes
+        /// </summary>
+        [Output("objectScopes")]
+        public Output<Outputs.MaintenanceWindowsObjectScopes?> ObjectScopes { get; private set; } = null!;
 
         /// <summary>
         /// Schedule definition
@@ -201,6 +215,12 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? Name { get; set; }
 
         /// <summary>
+        /// Object scopes
+        /// </summary>
+        [Input("objectScopes")]
+        public Input<Inputs.MaintenanceWindowsObjectScopesArgs>? ObjectScopes { get; set; }
+
+        /// <summary>
         /// Schedule definition
         /// </summary>
         [Input("schedule", required: true)]
@@ -243,6 +263,12 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
+
+        /// <summary>
+        /// Object scopes
+        /// </summary>
+        [Input("objectScopes")]
+        public Input<Inputs.MaintenanceWindowsObjectScopesGetArgs>? ObjectScopes { get; set; }
 
         /// <summary>
         /// Schedule definition

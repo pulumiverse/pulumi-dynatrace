@@ -185,6 +185,19 @@ class RemoteEnvironments(pulumi.CustomResource):
 
         The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        env = dynatrace.RemoteEnvironments("env",
+            name="#name#",
+            network_scope="EXTERNAL",
+            token="################",
+            uri="https://example-#name#.live.dynatrace.com")
+        ```
+
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -213,6 +226,19 @@ class RemoteEnvironments(pulumi.CustomResource):
         - `terraform-provider-dynatrace -export RemoteEnvironments` downloads all existing remote Dynatrace environment configuration
 
         The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        env = dynatrace.RemoteEnvironments("env",
+            name="#name#",
+            network_scope="EXTERNAL",
+            token="################",
+            uri="https://example-#name#.live.dynatrace.com")
+        ```
 
 
         :param str resource_name: The name of the resource.

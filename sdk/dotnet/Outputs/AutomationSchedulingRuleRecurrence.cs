@@ -53,7 +53,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// <summary>
         /// Possible values are `WORKING` (Work days), `HOLIDAYS` (Holidays) and `OFF` (Weekends + Holidays)
         /// </summary>
-        public readonly string Workdays;
+        public readonly string? Workdays;
 
         [OutputConstructor]
         private AutomationSchedulingRuleRecurrence(
@@ -75,7 +75,7 @@ namespace Pulumiverse.Dynatrace.Outputs
 
             ImmutableArray<int> weeks,
 
-            string workdays)
+            string? workdays)
         {
             Datestart = datestart;
             DaysInMonths = daysInMonths;
