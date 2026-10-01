@@ -120,6 +120,9 @@ func NewProvider(ctx *pulumi.Context,
 	if args.IamTokenUrl != nil {
 		args.IamTokenUrl = pulumi.ToSecret(args.IamTokenUrl).(pulumi.StringPtrInput)
 	}
+	if args.PlatformToken != nil {
+		args.PlatformToken = pulumi.ToSecret(args.PlatformToken).(pulumi.StringPtrInput)
+	}
 	secrets := pulumi.AdditionalSecretOutputs([]string{
 		"accountId",
 		"automationClientId",
@@ -134,6 +137,7 @@ func NewProvider(ctx *pulumi.Context,
 		"iamClientSecret",
 		"iamEndpointUrl",
 		"iamTokenUrl",
+		"platformToken",
 	})
 	opts = append(opts, secrets)
 	opts = internal.PkgResourceDefaultOpts(opts)

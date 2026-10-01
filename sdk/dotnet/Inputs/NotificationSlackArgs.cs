@@ -49,11 +49,21 @@ namespace Pulumiverse.Dynatrace.Inputs
         [Input("unknowns")]
         public Input<string>? Unknowns { get; set; }
 
+        [Input("url")]
+        private Input<string>? _url;
+
         /// <summary>
         /// The URL of the Slack WebHook.  This is confidential information, therefore GET requests return this field with the `Null` value, and it is optional for PUT requests
         /// </summary>
-        [Input("url")]
-        public Input<string>? Url { get; set; }
+        public Input<string>? Url
+        {
+            get => _url;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _url = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         public NotificationSlackArgs()
         {

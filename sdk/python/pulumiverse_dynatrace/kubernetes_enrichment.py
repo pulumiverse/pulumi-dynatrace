@@ -22,17 +22,22 @@ __all__ = ['KubernetesEnrichmentArgs', 'KubernetesEnrichment']
 class KubernetesEnrichmentArgs:
     def __init__(__self__, *,
                  rules: pulumi.Input[Optional['KubernetesEnrichmentRulesArgs']] = None,
-                 scope: pulumi.Input[Optional[_builtins.str]] = None):
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 use_ingest_enrichment_config_schema: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         The set of arguments for constructing a KubernetesEnrichment resource.
 
         :param pulumi.Input['KubernetesEnrichmentRulesArgs'] rules: Kubernetes Telemetry Enrichment empowers you to effectively tag your telemetry data using Kubernetes namespace labels and annotations. Additionally, it enables you to tag it for cost allocation and permission purposes.
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
+        :param pulumi.Input[_builtins.bool] use_ingest_enrichment_config_schema: Opt-in to experience the new unified enrichment settings view ahead of future rollout.
+                Enabling this toggle may trigger migration of rules to the new enrichment settings. Learn more in our [documentation](https://dt-url.net/qm02uk2).
         """
         if rules is not None:
             pulumi.set(__self__, "rules", rules)
         if scope is not None:
             pulumi.set(__self__, "scope", scope)
+        if use_ingest_enrichment_config_schema is not None:
+            pulumi.set(__self__, "use_ingest_enrichment_config_schema", use_ingest_enrichment_config_schema)
 
     @_builtins.property
     @pulumi.getter
@@ -57,23 +62,41 @@ class KubernetesEnrichmentArgs:
     @scope.setter
     def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
+
+    @_builtins.property
+    @pulumi.getter(name="useIngestEnrichmentConfigSchema")
+    def use_ingest_enrichment_config_schema(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Opt-in to experience the new unified enrichment settings view ahead of future rollout.
+         Enabling this toggle may trigger migration of rules to the new enrichment settings. Learn more in our [documentation](https://dt-url.net/qm02uk2).
+        """
+        return pulumi.get(self, "use_ingest_enrichment_config_schema")
+
+    @use_ingest_enrichment_config_schema.setter
+    def use_ingest_enrichment_config_schema(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "use_ingest_enrichment_config_schema", value)
 
 
 @pulumi.input_type
 class _KubernetesEnrichmentState:
     def __init__(__self__, *,
                  rules: pulumi.Input[Optional['KubernetesEnrichmentRulesArgs']] = None,
-                 scope: pulumi.Input[Optional[_builtins.str]] = None):
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 use_ingest_enrichment_config_schema: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering KubernetesEnrichment resources.
 
         :param pulumi.Input['KubernetesEnrichmentRulesArgs'] rules: Kubernetes Telemetry Enrichment empowers you to effectively tag your telemetry data using Kubernetes namespace labels and annotations. Additionally, it enables you to tag it for cost allocation and permission purposes.
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
+        :param pulumi.Input[_builtins.bool] use_ingest_enrichment_config_schema: Opt-in to experience the new unified enrichment settings view ahead of future rollout.
+                Enabling this toggle may trigger migration of rules to the new enrichment settings. Learn more in our [documentation](https://dt-url.net/qm02uk2).
         """
         if rules is not None:
             pulumi.set(__self__, "rules", rules)
         if scope is not None:
             pulumi.set(__self__, "scope", scope)
+        if use_ingest_enrichment_config_schema is not None:
+            pulumi.set(__self__, "use_ingest_enrichment_config_schema", use_ingest_enrichment_config_schema)
 
     @_builtins.property
     @pulumi.getter
@@ -98,6 +121,19 @@ class _KubernetesEnrichmentState:
     @scope.setter
     def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
+
+    @_builtins.property
+    @pulumi.getter(name="useIngestEnrichmentConfigSchema")
+    def use_ingest_enrichment_config_schema(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Opt-in to experience the new unified enrichment settings view ahead of future rollout.
+         Enabling this toggle may trigger migration of rules to the new enrichment settings. Learn more in our [documentation](https://dt-url.net/qm02uk2).
+        """
+        return pulumi.get(self, "use_ingest_enrichment_config_schema")
+
+    @use_ingest_enrichment_config_schema.setter
+    def use_ingest_enrichment_config_schema(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "use_ingest_enrichment_config_schema", value)
 
 
 @pulumi.type_token("dynatrace:index/kubernetesEnrichment:KubernetesEnrichment")
@@ -108,6 +144,7 @@ class KubernetesEnrichment(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  rules: pulumi.Input[Optional[Union['KubernetesEnrichmentRulesArgs', 'KubernetesEnrichmentRulesArgsDict', 'outputs.KubernetesEnrichmentRules']]] = None,
                  scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 use_ingest_enrichment_config_schema: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -124,11 +161,60 @@ class KubernetesEnrichment(pulumi.CustomResource):
 
         The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        example = dynatrace.KubernetesEnrichment("example",
+            scope="environment",
+            use_ingest_enrichment_config_schema=True,
+            rules={
+                "rules": [
+                    {
+                        "type": "LABEL",
+                        "source": "#name#",
+                        "target": "dt.cost.product",
+                    },
+                    {
+                        "type": "LABEL",
+                        "source": "#name#",
+                        "primary_grail_tag": True,
+                    },
+                    {
+                        "type": "LABEL",
+                        "source": "#name#",
+                        "target": "dt.cost.product",
+                        "primary_grail_tag": False,
+                    },
+                    {
+                        "type": "ANNOTATION",
+                        "source": "#name#",
+                        "target": "dt.security_context",
+                    },
+                    {
+                        "type": "ANNOTATION",
+                        "source": "#name#",
+                        "primary_grail_tag": True,
+                    },
+                    {
+                        "type": "ANNOTATION",
+                        "source": "#name#",
+                        "target": "dt.security_context",
+                        "primary_grail_tag": False,
+                    },
+                ],
+            })
+        ```
+
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['KubernetesEnrichmentRulesArgs', 'KubernetesEnrichmentRulesArgsDict', 'outputs.KubernetesEnrichmentRules']] rules: Kubernetes Telemetry Enrichment empowers you to effectively tag your telemetry data using Kubernetes namespace labels and annotations. Additionally, it enables you to tag it for cost allocation and permission purposes.
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
+        :param pulumi.Input[_builtins.bool] use_ingest_enrichment_config_schema: Opt-in to experience the new unified enrichment settings view ahead of future rollout.
+                Enabling this toggle may trigger migration of rules to the new enrichment settings. Learn more in our [documentation](https://dt-url.net/qm02uk2).
         """
         ...
     @overload
@@ -151,6 +237,53 @@ class KubernetesEnrichment(pulumi.CustomResource):
 
         The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        example = dynatrace.KubernetesEnrichment("example",
+            scope="environment",
+            use_ingest_enrichment_config_schema=True,
+            rules={
+                "rules": [
+                    {
+                        "type": "LABEL",
+                        "source": "#name#",
+                        "target": "dt.cost.product",
+                    },
+                    {
+                        "type": "LABEL",
+                        "source": "#name#",
+                        "primary_grail_tag": True,
+                    },
+                    {
+                        "type": "LABEL",
+                        "source": "#name#",
+                        "target": "dt.cost.product",
+                        "primary_grail_tag": False,
+                    },
+                    {
+                        "type": "ANNOTATION",
+                        "source": "#name#",
+                        "target": "dt.security_context",
+                    },
+                    {
+                        "type": "ANNOTATION",
+                        "source": "#name#",
+                        "primary_grail_tag": True,
+                    },
+                    {
+                        "type": "ANNOTATION",
+                        "source": "#name#",
+                        "target": "dt.security_context",
+                        "primary_grail_tag": False,
+                    },
+                ],
+            })
+        ```
+
 
         :param str resource_name: The name of the resource.
         :param KubernetesEnrichmentArgs args: The arguments to use to populate this resource's properties.
@@ -169,6 +302,7 @@ class KubernetesEnrichment(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  rules: pulumi.Input[Optional[Union['KubernetesEnrichmentRulesArgs', 'KubernetesEnrichmentRulesArgsDict', 'outputs.KubernetesEnrichmentRules']]] = None,
                  scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 use_ingest_enrichment_config_schema: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -180,6 +314,7 @@ class KubernetesEnrichment(pulumi.CustomResource):
 
             __props__.__dict__["rules"] = rules
             __props__.__dict__["scope"] = scope
+            __props__.__dict__["use_ingest_enrichment_config_schema"] = use_ingest_enrichment_config_schema
         super(KubernetesEnrichment, __self__).__init__(
             'dynatrace:index/kubernetesEnrichment:KubernetesEnrichment',
             resource_name,
@@ -191,7 +326,8 @@ class KubernetesEnrichment(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             rules: pulumi.Input[Optional[Union['KubernetesEnrichmentRulesArgs', 'KubernetesEnrichmentRulesArgsDict', 'outputs.KubernetesEnrichmentRules']]] = None,
-            scope: pulumi.Input[Optional[_builtins.str]] = None) -> 'KubernetesEnrichment':
+            scope: pulumi.Input[Optional[_builtins.str]] = None,
+            use_ingest_enrichment_config_schema: pulumi.Input[Optional[_builtins.bool]] = None) -> 'KubernetesEnrichment':
         """
         Get an existing KubernetesEnrichment resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -201,6 +337,8 @@ class KubernetesEnrichment(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['KubernetesEnrichmentRulesArgs', 'KubernetesEnrichmentRulesArgsDict', 'outputs.KubernetesEnrichmentRules']] rules: Kubernetes Telemetry Enrichment empowers you to effectively tag your telemetry data using Kubernetes namespace labels and annotations. Additionally, it enables you to tag it for cost allocation and permission purposes.
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
+        :param pulumi.Input[_builtins.bool] use_ingest_enrichment_config_schema: Opt-in to experience the new unified enrichment settings view ahead of future rollout.
+                Enabling this toggle may trigger migration of rules to the new enrichment settings. Learn more in our [documentation](https://dt-url.net/qm02uk2).
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -208,6 +346,7 @@ class KubernetesEnrichment(pulumi.CustomResource):
 
         __props__.__dict__["rules"] = rules
         __props__.__dict__["scope"] = scope
+        __props__.__dict__["use_ingest_enrichment_config_schema"] = use_ingest_enrichment_config_schema
         return KubernetesEnrichment(resource_name, opts=opts, __props__=__props__)
 
     @_builtins.property
@@ -225,4 +364,13 @@ class KubernetesEnrichment(pulumi.CustomResource):
         The scope of this setting (KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
+
+    @_builtins.property
+    @pulumi.getter(name="useIngestEnrichmentConfigSchema")
+    def use_ingest_enrichment_config_schema(self) -> pulumi.Output[Optional[_builtins.bool]]:
+        """
+        Opt-in to experience the new unified enrichment settings view ahead of future rollout.
+         Enabling this toggle may trigger migration of rules to the new enrichment settings. Learn more in our [documentation](https://dt-url.net/qm02uk2).
+        """
+        return pulumi.get(self, "use_ingest_enrichment_config_schema")
 

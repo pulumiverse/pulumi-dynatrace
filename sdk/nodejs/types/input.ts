@@ -1159,7 +1159,7 @@ export interface AutomationSchedulingRuleRecurrence {
     /**
      * Possible values are `WORKING` (Work days), `HOLIDAYS` (Holidays) and `OFF` (Weekends + Holidays)
      */
-    workdays: pulumi.Input<string>;
+    workdays?: pulumi.Input<string | undefined>;
 }
 
 export interface AutomationSchedulingRuleRelativeOffset {
@@ -4081,7 +4081,7 @@ export interface AwsAnomaliesRdsRestartsSequenceDetectionCustomThresholds {
 
 export interface AwsConnectionRoleBasedAuth {
     /**
-     * Dynatrace integrations that can use this connection. Possible values: `DA`, `NONE`, `SVC:com.dynatrace.bo`, `SVC:com.dynatrace.da`, `SVC:com.dynatrace.grail`, `SVC:com.dynatrace.openpipeline`
+     * Dynatrace integrations that can use this connection. Possible values: `SVC:com.dynatrace.bo`, `SVC:com.dynatrace.da`, `SVC:com.dynatrace.grail`, `SVC:com.dynatrace.openpipeline`
      */
     consumers?: pulumi.Input<string | undefined>;
 }
@@ -4194,7 +4194,7 @@ export interface AzureConnectionClientSecret {
      */
     clientSecret: pulumi.Input<string>;
     /**
-     * Dynatrace integrations that can use this connection. Possible values: `DA`, `NONE`, `SVC:com.dynatrace.da`
+     * Dynatrace integrations that can use this connection. Possible values: `SVC:com.dynatrace.da`
      */
     consumers?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
@@ -4205,7 +4205,7 @@ export interface AzureConnectionClientSecret {
 
 export interface AzureConnectionFederatedIdentityCredential {
     /**
-     * Consumers that can use the connection. Possible values: `APP:dynatrace.microsoft.azure.connector`, `DA`, `NONE`, `SVC:com.dynatrace.bo`, `SVC:com.dynatrace.da`, `SVC:com.dynatrace.grail`, `SVC:com.dynatrace.openpipeline`
+     * Consumers that can use the connection. Possible values: `APP:dynatrace.microsoft.azure.connector`, `SVC:com.dynatrace.bo`, `SVC:com.dynatrace.da`, `SVC:com.dynatrace.grail`, `SVC:com.dynatrace.openpipeline`
      */
     consumers?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
@@ -4777,8 +4777,7 @@ export interface BrowserMonitorScriptEventsEventClickValidateValidation {
      */
     failIfFound?: pulumi.Input<boolean | undefined>;
     /**
-     * The content to look for on the page.
-     * Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `contentMatch`, optional for `elementMatch`.
+     * The content to look for on the page. Regular expressions are allowed. In that case set `regex` as `true`. Required for `contentMatch` and `textMatch`, optional for `elementMatch`.
      */
     match?: pulumi.Input<string | undefined>;
     /**
@@ -4790,7 +4789,7 @@ export interface BrowserMonitorScriptEventsEventClickValidateValidation {
      */
     target?: pulumi.Input<inputs.BrowserMonitorScriptEventsEventClickValidateValidationTarget | undefined>;
     /**
-     * The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element).
+     * The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element), `textMatch` (check page for the specific text).
      */
     type: pulumi.Input<string>;
 }
@@ -4850,8 +4849,7 @@ export interface BrowserMonitorScriptEventsEventClickWaitValidation {
      */
     failIfFound?: pulumi.Input<boolean | undefined>;
     /**
-     * The content to look for on the page.
-     * Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `contentMatch`, optional for `elementMatch`.
+     * The content to look for on the page. Regular expressions are allowed. In that case set `regex` as `true`. Required for `contentMatch` and `textMatch`, optional for `elementMatch`.
      */
     match?: pulumi.Input<string | undefined>;
     /**
@@ -4863,7 +4861,7 @@ export interface BrowserMonitorScriptEventsEventClickWaitValidation {
      */
     target?: pulumi.Input<inputs.BrowserMonitorScriptEventsEventClickWaitValidationTarget | undefined>;
     /**
-     * The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element).
+     * The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element), `textMatch` (check page for the specific text).
      */
     type: pulumi.Input<string>;
 }
@@ -5000,8 +4998,7 @@ export interface BrowserMonitorScriptEventsEventJavascriptWaitValidation {
      */
     failIfFound?: pulumi.Input<boolean | undefined>;
     /**
-     * The content to look for on the page.
-     * Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `contentMatch`, optional for `elementMatch`.
+     * The content to look for on the page. Regular expressions are allowed. In that case set `regex` as `true`. Required for `contentMatch` and `textMatch`, optional for `elementMatch`.
      */
     match?: pulumi.Input<string | undefined>;
     /**
@@ -5013,7 +5010,7 @@ export interface BrowserMonitorScriptEventsEventJavascriptWaitValidation {
      */
     target?: pulumi.Input<inputs.BrowserMonitorScriptEventsEventJavascriptWaitValidationTarget | undefined>;
     /**
-     * The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element).
+     * The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element), `textMatch` (check page for the specific text).
      */
     type: pulumi.Input<string>;
 }
@@ -5136,8 +5133,7 @@ export interface BrowserMonitorScriptEventsEventKeystrokesValidateValidation {
      */
     failIfFound?: pulumi.Input<boolean | undefined>;
     /**
-     * The content to look for on the page.
-     * Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `contentMatch`, optional for `elementMatch`.
+     * The content to look for on the page. Regular expressions are allowed. In that case set `regex` as `true`. Required for `contentMatch` and `textMatch`, optional for `elementMatch`.
      */
     match?: pulumi.Input<string | undefined>;
     /**
@@ -5149,7 +5145,7 @@ export interface BrowserMonitorScriptEventsEventKeystrokesValidateValidation {
      */
     target?: pulumi.Input<inputs.BrowserMonitorScriptEventsEventKeystrokesValidateValidationTarget | undefined>;
     /**
-     * The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element).
+     * The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element), `textMatch` (check page for the specific text).
      */
     type: pulumi.Input<string>;
 }
@@ -5209,8 +5205,7 @@ export interface BrowserMonitorScriptEventsEventKeystrokesWaitValidation {
      */
     failIfFound?: pulumi.Input<boolean | undefined>;
     /**
-     * The content to look for on the page.
-     * Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `contentMatch`, optional for `elementMatch`.
+     * The content to look for on the page. Regular expressions are allowed. In that case set `regex` as `true`. Required for `contentMatch` and `textMatch`, optional for `elementMatch`.
      */
     match?: pulumi.Input<string | undefined>;
     /**
@@ -5222,7 +5217,7 @@ export interface BrowserMonitorScriptEventsEventKeystrokesWaitValidation {
      */
     target?: pulumi.Input<inputs.BrowserMonitorScriptEventsEventKeystrokesWaitValidationTarget | undefined>;
     /**
-     * The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element).
+     * The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element), `textMatch` (check page for the specific text).
      */
     type: pulumi.Input<string>;
 }
@@ -5340,8 +5335,7 @@ export interface BrowserMonitorScriptEventsEventNavigateValidateValidation {
      */
     failIfFound?: pulumi.Input<boolean | undefined>;
     /**
-     * The content to look for on the page.
-     * Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `contentMatch`, optional for `elementMatch`.
+     * The content to look for on the page. Regular expressions are allowed. In that case set `regex` as `true`. Required for `contentMatch` and `textMatch`, optional for `elementMatch`.
      */
     match?: pulumi.Input<string | undefined>;
     /**
@@ -5353,7 +5347,7 @@ export interface BrowserMonitorScriptEventsEventNavigateValidateValidation {
      */
     target?: pulumi.Input<inputs.BrowserMonitorScriptEventsEventNavigateValidateValidationTarget | undefined>;
     /**
-     * The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element).
+     * The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element), `textMatch` (check page for the specific text).
      */
     type: pulumi.Input<string>;
 }
@@ -5413,8 +5407,7 @@ export interface BrowserMonitorScriptEventsEventNavigateWaitValidation {
      */
     failIfFound?: pulumi.Input<boolean | undefined>;
     /**
-     * The content to look for on the page.
-     * Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `contentMatch`, optional for `elementMatch`.
+     * The content to look for on the page. Regular expressions are allowed. In that case set `regex` as `true`. Required for `contentMatch` and `textMatch`, optional for `elementMatch`.
      */
     match?: pulumi.Input<string | undefined>;
     /**
@@ -5426,7 +5419,7 @@ export interface BrowserMonitorScriptEventsEventNavigateWaitValidation {
      */
     target?: pulumi.Input<inputs.BrowserMonitorScriptEventsEventNavigateWaitValidationTarget | undefined>;
     /**
-     * The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element).
+     * The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element), `textMatch` (check page for the specific text).
      */
     type: pulumi.Input<string>;
 }
@@ -5539,8 +5532,7 @@ export interface BrowserMonitorScriptEventsEventSelectValidateValidation {
      */
     failIfFound?: pulumi.Input<boolean | undefined>;
     /**
-     * The content to look for on the page.
-     * Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `contentMatch`, optional for `elementMatch`.
+     * The content to look for on the page. Regular expressions are allowed. In that case set `regex` as `true`. Required for `contentMatch` and `textMatch`, optional for `elementMatch`.
      */
     match?: pulumi.Input<string | undefined>;
     /**
@@ -5552,7 +5544,7 @@ export interface BrowserMonitorScriptEventsEventSelectValidateValidation {
      */
     target?: pulumi.Input<inputs.BrowserMonitorScriptEventsEventSelectValidateValidationTarget | undefined>;
     /**
-     * The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element).
+     * The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element), `textMatch` (check page for the specific text).
      */
     type: pulumi.Input<string>;
 }
@@ -5612,8 +5604,7 @@ export interface BrowserMonitorScriptEventsEventSelectWaitValidation {
      */
     failIfFound?: pulumi.Input<boolean | undefined>;
     /**
-     * The content to look for on the page.
-     * Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `contentMatch`, optional for `elementMatch`.
+     * The content to look for on the page. Regular expressions are allowed. In that case set `regex` as `true`. Required for `contentMatch` and `textMatch`, optional for `elementMatch`.
      */
     match?: pulumi.Input<string | undefined>;
     /**
@@ -5625,7 +5616,7 @@ export interface BrowserMonitorScriptEventsEventSelectWaitValidation {
      */
     target?: pulumi.Input<inputs.BrowserMonitorScriptEventsEventSelectWaitValidationTarget | undefined>;
     /**
-     * The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element).
+     * The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element), `textMatch` (check page for the specific text).
      */
     type: pulumi.Input<string>;
 }
@@ -5720,8 +5711,7 @@ export interface BrowserMonitorScriptEventsEventTapValidateValidation {
      */
     failIfFound?: pulumi.Input<boolean | undefined>;
     /**
-     * The content to look for on the page.
-     * Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `contentMatch`, optional for `elementMatch`.
+     * The content to look for on the page. Regular expressions are allowed. In that case set `regex` as `true`. Required for `contentMatch` and `textMatch`, optional for `elementMatch`.
      */
     match?: pulumi.Input<string | undefined>;
     /**
@@ -5733,7 +5723,7 @@ export interface BrowserMonitorScriptEventsEventTapValidateValidation {
      */
     target?: pulumi.Input<inputs.BrowserMonitorScriptEventsEventTapValidateValidationTarget | undefined>;
     /**
-     * The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element).
+     * The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element), `textMatch` (check page for the specific text).
      */
     type: pulumi.Input<string>;
 }
@@ -5793,8 +5783,7 @@ export interface BrowserMonitorScriptEventsEventTapWaitValidation {
      */
     failIfFound?: pulumi.Input<boolean | undefined>;
     /**
-     * The content to look for on the page.
-     * Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `contentMatch`, optional for `elementMatch`.
+     * The content to look for on the page. Regular expressions are allowed. In that case set `regex` as `true`. Required for `contentMatch` and `textMatch`, optional for `elementMatch`.
      */
     match?: pulumi.Input<string | undefined>;
     /**
@@ -5806,7 +5795,7 @@ export interface BrowserMonitorScriptEventsEventTapWaitValidation {
      */
     target?: pulumi.Input<inputs.BrowserMonitorScriptEventsEventTapWaitValidationTarget | undefined>;
     /**
-     * The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element).
+     * The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element), `textMatch` (check page for the specific text).
      */
     type: pulumi.Input<string>;
 }
@@ -9313,13 +9302,52 @@ export interface DavisCopilotBlocklistEntries {
 
 export interface DavisCopilotBlocklistEntriesBlocklistEntry {
     /**
-     * no documentation available
+     * No documentation available
      */
     name: pulumi.Input<string>;
     /**
      * Possible values: `BUCKET`, `TABLE`
      */
     type: pulumi.Input<string>;
+}
+
+export interface DavisCopilotPiiBlockingTypes {
+    /**
+     * Canadian social insurance number
+     */
+    canadianSocialInsuranceNumber: pulumi.Input<boolean>;
+    /**
+     * Credit card number
+     */
+    creditCardNumber: pulumi.Input<boolean>;
+    /**
+     * Email address
+     */
+    emailAddress: pulumi.Input<boolean>;
+    /**
+     * IBAN bank account
+     */
+    ibanBankAccount: pulumi.Input<boolean>;
+    /**
+     * IP address
+     */
+    ipAddress: pulumi.Input<boolean>;
+    /**
+     * Phone number
+     */
+    phoneNumber: pulumi.Input<boolean>;
+    /**
+     * URL query parameters
+     */
+    urlQueryParameters: pulumi.Input<boolean>;
+    /**
+     * US bank number
+     */
+    usBankNumber: pulumi.Input<boolean>;
+    /**
+     * US social security number
+     */
+    usSocialSecurityNumber: pulumi.Input<boolean>;
 }
 
 export interface DduPoolEvents {
@@ -15744,6 +15772,24 @@ export interface MaintenanceWindowScopeMatchTag {
      * The value of the tag. Not applicable to custom tags
      */
     value?: pulumi.Input<string | undefined>;
+}
+
+export interface MaintenanceWindowsObjectScopes {
+    /**
+     * Synthetic monitors
+     */
+    syntheticMonitors: pulumi.Input<inputs.MaintenanceWindowsObjectScopesSyntheticMonitors>;
+}
+
+export interface MaintenanceWindowsObjectScopesSyntheticMonitors {
+    /**
+     * DQL filter selecting which synthetic monitors to pause. Required when synthetic monitors are disabled.
+     */
+    disableSyntheticMonitorFilter?: pulumi.Input<string | undefined>;
+    /**
+     * When enabled, synthetic monitors matching the filter are paused during the maintenance window.
+     */
+    disableSyntheticMonitors: pulumi.Input<boolean>;
 }
 
 export interface MaintenanceWindowsSchedule {
@@ -33978,6 +34024,13 @@ export interface OpenpipelineV2BizeventsDataforwardingGcpConnection {
     connectionId: pulumi.Input<string>;
 }
 
+export interface OpenpipelineV2BizeventsDataforwardingOtlpConnection {
+    /**
+     * OTLP connection
+     */
+    connectionId: pulumi.Input<string>;
+}
+
 export interface OpenpipelineV2BizeventsDataforwardingProcessing {
     /**
      * Processors of stage
@@ -49660,6 +49713,13 @@ export interface OpenpipelineV2DavisEventsDataforwardingGcpConnection {
     bucketName: pulumi.Input<string>;
     /**
      * GCP connection
+     */
+    connectionId: pulumi.Input<string>;
+}
+
+export interface OpenpipelineV2DavisEventsDataforwardingOtlpConnection {
+    /**
+     * OTLP connection
      */
     connectionId: pulumi.Input<string>;
 }
@@ -65350,6 +65410,13 @@ export interface OpenpipelineV2DavisProblemsDataforwardingGcpConnection {
     connectionId: pulumi.Input<string>;
 }
 
+export interface OpenpipelineV2DavisProblemsDataforwardingOtlpConnection {
+    /**
+     * OTLP connection
+     */
+    connectionId: pulumi.Input<string>;
+}
+
 export interface OpenpipelineV2DavisProblemsDataforwardingProcessing {
     /**
      * Processors of stage
@@ -81032,6 +81099,13 @@ export interface OpenpipelineV2EventsDataforwardingGcpConnection {
     bucketName: pulumi.Input<string>;
     /**
      * GCP connection
+     */
+    connectionId: pulumi.Input<string>;
+}
+
+export interface OpenpipelineV2EventsDataforwardingOtlpConnection {
+    /**
+     * OTLP connection
      */
     connectionId: pulumi.Input<string>;
 }
@@ -96722,6 +96796,13 @@ export interface OpenpipelineV2EventsSdlcDataforwardingGcpConnection {
     connectionId: pulumi.Input<string>;
 }
 
+export interface OpenpipelineV2EventsSdlcDataforwardingOtlpConnection {
+    /**
+     * OTLP connection
+     */
+    connectionId: pulumi.Input<string>;
+}
+
 export interface OpenpipelineV2EventsSdlcDataforwardingProcessing {
     /**
      * Processors of stage
@@ -112404,6 +112485,13 @@ export interface OpenpipelineV2EventsSecurityDataforwardingGcpConnection {
     bucketName: pulumi.Input<string>;
     /**
      * GCP connection
+     */
+    connectionId: pulumi.Input<string>;
+}
+
+export interface OpenpipelineV2EventsSecurityDataforwardingOtlpConnection {
+    /**
+     * OTLP connection
      */
     connectionId: pulumi.Input<string>;
 }
@@ -128094,6 +128182,13 @@ export interface OpenpipelineV2LogsDataforwardingGcpConnection {
     connectionId: pulumi.Input<string>;
 }
 
+export interface OpenpipelineV2LogsDataforwardingOtlpConnection {
+    /**
+     * OTLP connection
+     */
+    connectionId: pulumi.Input<string>;
+}
+
 export interface OpenpipelineV2LogsDataforwardingProcessing {
     /**
      * Processors of stage
@@ -143776,6 +143871,13 @@ export interface OpenpipelineV2MetricsDataforwardingGcpConnection {
     bucketName: pulumi.Input<string>;
     /**
      * GCP connection
+     */
+    connectionId: pulumi.Input<string>;
+}
+
+export interface OpenpipelineV2MetricsDataforwardingOtlpConnection {
+    /**
+     * OTLP connection
      */
     connectionId: pulumi.Input<string>;
 }
@@ -159466,6 +159568,13 @@ export interface OpenpipelineV2SecurityEventsDataforwardingGcpConnection {
     connectionId: pulumi.Input<string>;
 }
 
+export interface OpenpipelineV2SecurityEventsDataforwardingOtlpConnection {
+    /**
+     * OTLP connection
+     */
+    connectionId: pulumi.Input<string>;
+}
+
 export interface OpenpipelineV2SecurityEventsDataforwardingProcessing {
     /**
      * Processors of stage
@@ -175148,6 +175257,13 @@ export interface OpenpipelineV2SpansDataforwardingGcpConnection {
     bucketName: pulumi.Input<string>;
     /**
      * GCP connection
+     */
+    connectionId: pulumi.Input<string>;
+}
+
+export interface OpenpipelineV2SpansDataforwardingOtlpConnection {
+    /**
+     * OTLP connection
      */
     connectionId: pulumi.Input<string>;
 }
@@ -190838,6 +190954,13 @@ export interface OpenpipelineV2SystemEventsDataforwardingGcpConnection {
     connectionId: pulumi.Input<string>;
 }
 
+export interface OpenpipelineV2SystemEventsDataforwardingOtlpConnection {
+    /**
+     * OTLP connection
+     */
+    connectionId: pulumi.Input<string>;
+}
+
 export interface OpenpipelineV2SystemEventsDataforwardingProcessing {
     /**
      * Processors of stage
@@ -206524,6 +206647,13 @@ export interface OpenpipelineV2UserEventsDataforwardingGcpConnection {
     connectionId: pulumi.Input<string>;
 }
 
+export interface OpenpipelineV2UserEventsDataforwardingOtlpConnection {
+    /**
+     * OTLP connection
+     */
+    connectionId: pulumi.Input<string>;
+}
+
 export interface OpenpipelineV2UserEventsDataforwardingProcessing {
     /**
      * Processors of stage
@@ -222206,6 +222336,13 @@ export interface OpenpipelineV2UsersessionsDataforwardingGcpConnection {
     bucketName: pulumi.Input<string>;
     /**
      * GCP connection
+     */
+    connectionId: pulumi.Input<string>;
+}
+
+export interface OpenpipelineV2UsersessionsDataforwardingOtlpConnection {
+    /**
+     * OTLP connection
      */
     connectionId: pulumi.Input<string>;
 }
@@ -237959,7 +238096,7 @@ export interface OsServicesDetectionConditionsLinuxLinuxDetectionConditionHostMe
     /**
      * When enabled, the condition requires a resource attribute to exist and match the constraints; when disabled, the key is optional but must still match the constrains if it is present.
      */
-    keyMustExist: pulumi.Input<boolean>;
+    keyMustExist?: pulumi.Input<boolean | undefined>;
     /**
      * This string has to match a required format.
      *
@@ -238043,7 +238180,7 @@ export interface OsServicesDetectionConditionsWindowsDetectionConditionsWindowHo
     /**
      * When enabled, the condition requires a resource attribute to exist and match the constraints; when disabled, the key is optional but must still match the constrains if it is present.
      */
-    keyMustExist: pulumi.Input<boolean>;
+    keyMustExist?: pulumi.Input<boolean | undefined>;
     /**
      * This string has to match a required format.
      *
@@ -246173,7 +246310,7 @@ export interface UpdateWindowsDailyRecurrenceUpdateTime {
      */
     startTime: pulumi.Input<string>;
     /**
-     * Time zone. Possible values: `GMT+00:00`, `GMT+01:00`, `GMT+02:00`, `GMT+07:00`, `GMT+09:00`, `GMT-03:00`, `GMT-04:00`, `GMT-05:00`, `GMT-06:00`, `GMT-08:00`, `GMT-10:00`, `GMT-11:00`, `GMT-12:00`
+     * Time zone. Possible values: `GMT+00:00`, `GMT+01:00`, `GMT+02:00`, `GMT+03:00`, `GMT+04:00`, `GMT+05:00`, `GMT+06:00`, `GMT+07:00`, `GMT+08:00`, `GMT+09:00`, `GMT+10:00`, `GMT+11:00`, `GMT+12:00`, `GMT-01:00`, `GMT-02:00`, `GMT-03:00`, `GMT-04:00`, `GMT-05:00`, `GMT-06:00`, `GMT-07:00`, `GMT-08:00`, `GMT-09:00`, `GMT-10:00`, `GMT-11:00`, `GMT-12:00`
      */
     timeZone: pulumi.Input<string>;
 }
@@ -246222,7 +246359,7 @@ export interface UpdateWindowsMonthlyRecurrenceUpdateTime {
      */
     startTime: pulumi.Input<string>;
     /**
-     * Time zone. Possible values: `GMT+00:00`, `GMT+01:00`, `GMT+02:00`, `GMT+07:00`, `GMT+09:00`, `GMT-03:00`, `GMT-04:00`, `GMT-05:00`, `GMT-06:00`, `GMT-08:00`, `GMT-10:00`, `GMT-11:00`, `GMT-12:00`
+     * Time zone. Possible values: `GMT+00:00`, `GMT+01:00`, `GMT+02:00`, `GMT+03:00`, `GMT+04:00`, `GMT+05:00`, `GMT+06:00`, `GMT+07:00`, `GMT+08:00`, `GMT+09:00`, `GMT+10:00`, `GMT+11:00`, `GMT+12:00`, `GMT-01:00`, `GMT-02:00`, `GMT-03:00`, `GMT-04:00`, `GMT-05:00`, `GMT-06:00`, `GMT-07:00`, `GMT-08:00`, `GMT-09:00`, `GMT-10:00`, `GMT-11:00`, `GMT-12:00`
      */
     timeZone: pulumi.Input<string>;
 }
@@ -246320,7 +246457,7 @@ export interface UpdateWindowsWeeklyRecurrenceUpdateTime {
      */
     startTime: pulumi.Input<string>;
     /**
-     * Time zone. Possible values: `GMT+00:00`, `GMT+01:00`, `GMT+02:00`, `GMT+07:00`, `GMT+09:00`, `GMT-03:00`, `GMT-04:00`, `GMT-05:00`, `GMT-06:00`, `GMT-08:00`, `GMT-10:00`, `GMT-11:00`, `GMT-12:00`
+     * Time zone. Possible values: `GMT+00:00`, `GMT+01:00`, `GMT+02:00`, `GMT+03:00`, `GMT+04:00`, `GMT+05:00`, `GMT+06:00`, `GMT+07:00`, `GMT+08:00`, `GMT+09:00`, `GMT+10:00`, `GMT+11:00`, `GMT+12:00`, `GMT-01:00`, `GMT-02:00`, `GMT-03:00`, `GMT-04:00`, `GMT-05:00`, `GMT-06:00`, `GMT-07:00`, `GMT-08:00`, `GMT-09:00`, `GMT-10:00`, `GMT-11:00`, `GMT-12:00`
      */
     timeZone: pulumi.Input<string>;
 }

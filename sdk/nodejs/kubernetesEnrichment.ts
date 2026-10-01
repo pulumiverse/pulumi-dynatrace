@@ -20,6 +20,54 @@ import * as utilities from "./utilities";
  * - `terraform-provider-dynatrace -export dynatrace.KubernetesEnrichment` downloads all existing generic metadata enrichment rules for Kubernetes
  *
  * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ *
+ * ## Resource Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ *
+ * const example = new dynatrace.KubernetesEnrichment("example", {
+ *     scope: "environment",
+ *     useIngestEnrichmentConfigSchema: true,
+ *     rules: {
+ *         rules: [
+ *             {
+ *                 type: "LABEL",
+ *                 source: "#name#",
+ *                 target: "dt.cost.product",
+ *             },
+ *             {
+ *                 type: "LABEL",
+ *                 source: "#name#",
+ *                 primaryGrailTag: true,
+ *             },
+ *             {
+ *                 type: "LABEL",
+ *                 source: "#name#",
+ *                 target: "dt.cost.product",
+ *                 primaryGrailTag: false,
+ *             },
+ *             {
+ *                 type: "ANNOTATION",
+ *                 source: "#name#",
+ *                 target: "dt.security_context",
+ *             },
+ *             {
+ *                 type: "ANNOTATION",
+ *                 source: "#name#",
+ *                 primaryGrailTag: true,
+ *             },
+ *             {
+ *                 type: "ANNOTATION",
+ *                 source: "#name#",
+ *                 target: "dt.security_context",
+ *                 primaryGrailTag: false,
+ *             },
+ *         ],
+ *     },
+ * });
+ * ```
  */
 export class KubernetesEnrichment extends pulumi.CustomResource {
     /**
@@ -57,6 +105,11 @@ export class KubernetesEnrichment extends pulumi.CustomResource {
      * The scope of this setting (KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
      */
     declare public readonly scope: pulumi.Output<string | undefined>;
+    /**
+     * Opt-in to experience the new unified enrichment settings view ahead of future rollout.
+     *  Enabling this toggle may trigger migration of rules to the new enrichment settings. Learn more in our [documentation](https://dt-url.net/qm02uk2).
+     */
+    declare public readonly useIngestEnrichmentConfigSchema: pulumi.Output<boolean | undefined>;
 
     /**
      * Create a KubernetesEnrichment resource with the given unique name, arguments, and options.
@@ -73,10 +126,12 @@ export class KubernetesEnrichment extends pulumi.CustomResource {
             const state = argsOrState as KubernetesEnrichmentState | undefined;
             resourceInputs["rules"] = state?.rules;
             resourceInputs["scope"] = state?.scope;
+            resourceInputs["useIngestEnrichmentConfigSchema"] = state?.useIngestEnrichmentConfigSchema;
         } else {
             const args = argsOrState as KubernetesEnrichmentArgs | undefined;
             resourceInputs["rules"] = args?.rules;
             resourceInputs["scope"] = args?.scope;
+            resourceInputs["useIngestEnrichmentConfigSchema"] = args?.useIngestEnrichmentConfigSchema;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(KubernetesEnrichment.__pulumiType, name, resourceInputs, opts);
@@ -95,6 +150,11 @@ export interface KubernetesEnrichmentState {
      * The scope of this setting (KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
      */
     scope?: pulumi.Input<string | undefined>;
+    /**
+     * Opt-in to experience the new unified enrichment settings view ahead of future rollout.
+     *  Enabling this toggle may trigger migration of rules to the new enrichment settings. Learn more in our [documentation](https://dt-url.net/qm02uk2).
+     */
+    useIngestEnrichmentConfigSchema?: pulumi.Input<boolean | undefined>;
 }
 
 /**
@@ -109,4 +169,9 @@ export interface KubernetesEnrichmentArgs {
      * The scope of this setting (KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
      */
     scope?: pulumi.Input<string | undefined>;
+    /**
+     * Opt-in to experience the new unified enrichment settings view ahead of future rollout.
+     *  Enabling this toggle may trigger migration of rules to the new enrichment settings. Learn more in our [documentation](https://dt-url.net/qm02uk2).
+     */
+    useIngestEnrichmentConfigSchema?: pulumi.Input<boolean | undefined>;
 }

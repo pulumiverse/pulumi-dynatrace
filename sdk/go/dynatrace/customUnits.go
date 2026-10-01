@@ -23,6 +23,35 @@ import (
 // - `terraform-provider-dynatrace -export CustomUnits` downloads all existing custom unit configuration
 //
 // The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+//
+// ## Resource Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := dynatrace.NewCustomUnits(ctx, "unit", &dynatrace.CustomUnitsArgs{
+//				Name:        pulumi.String("#name#"),
+//				Description: pulumi.String("Created by Terraform"),
+//				PluralName:  pulumi.String("TerraformUnits"),
+//				Symbol:      pulumi.String("symbol_#name#"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type CustomUnits struct {
 	pulumi.CustomResourceState
 

@@ -60,6 +60,18 @@ namespace Pulumiverse.Dynatrace
         [Output("enableTenantAwareDataMining")]
         public Output<bool?> EnableTenantAwareDataMining { get; private set; } = null!;
 
+        /// <summary>
+        /// Enable PII blocking
+        /// </summary>
+        [Output("piiBlockingEnabled")]
+        public Output<bool?> PiiBlockingEnabled { get; private set; } = null!;
+
+        /// <summary>
+        /// PII blocking types
+        /// </summary>
+        [Output("piiBlockingTypes")]
+        public Output<Outputs.DavisCopilotPiiBlockingTypes?> PiiBlockingTypes { get; private set; } = null!;
+
 
         /// <summary>
         /// Create a DavisCopilot resource with the given unique name, arguments, and options.
@@ -137,6 +149,18 @@ namespace Pulumiverse.Dynatrace
         [Input("enableTenantAwareDataMining")]
         public Input<bool>? EnableTenantAwareDataMining { get; set; }
 
+        /// <summary>
+        /// Enable PII blocking
+        /// </summary>
+        [Input("piiBlockingEnabled")]
+        public Input<bool>? PiiBlockingEnabled { get; set; }
+
+        /// <summary>
+        /// PII blocking types
+        /// </summary>
+        [Input("piiBlockingTypes")]
+        public Input<Inputs.DavisCopilotPiiBlockingTypesArgs>? PiiBlockingTypes { get; set; }
+
         public DavisCopilotArgs()
         {
         }
@@ -174,6 +198,18 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         [Input("enableTenantAwareDataMining")]
         public Input<bool>? EnableTenantAwareDataMining { get; set; }
+
+        /// <summary>
+        /// Enable PII blocking
+        /// </summary>
+        [Input("piiBlockingEnabled")]
+        public Input<bool>? PiiBlockingEnabled { get; set; }
+
+        /// <summary>
+        /// PII blocking types
+        /// </summary>
+        [Input("piiBlockingTypes")]
+        public Input<Inputs.DavisCopilotPiiBlockingTypesGetArgs>? PiiBlockingTypes { get; set; }
 
         public DavisCopilotState()
         {

@@ -152,6 +152,7 @@ import * as utilities from "./utilities";
  *                         validate: {
  *                             validations: [{
  *                                 type: "text_match",
+ *                                 match: "test",
  *                             }],
  *                         },
  *                         wait: {

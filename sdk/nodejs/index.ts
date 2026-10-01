@@ -1510,6 +1510,11 @@ export type NetworkZone = import("./networkZone").NetworkZone;
 export const NetworkZone: typeof import("./networkZone").NetworkZone = null as any;
 utilities.lazyLoad(exports, ["NetworkZone"], () => require("./networkZone"));
 
+export { NetworkZoneV2Args, NetworkZoneV2State } from "./networkZoneV2";
+export type NetworkZoneV2 = import("./networkZoneV2").NetworkZoneV2;
+export const NetworkZoneV2: typeof import("./networkZoneV2").NetworkZoneV2 = null as any;
+utilities.lazyLoad(exports, ["NetworkZoneV2"], () => require("./networkZoneV2"));
+
 export { NetworkZonesArgs, NetworkZonesState } from "./networkZones";
 export type NetworkZones = import("./networkZones").NetworkZones;
 export const NetworkZones: typeof import("./networkZones").NetworkZones = null as any;
@@ -3038,6 +3043,8 @@ const _module = {
                 return new NetworkTraffic(name, <any>undefined, { urn })
             case "dynatrace:index/networkZone:NetworkZone":
                 return new NetworkZone(name, <any>undefined, { urn })
+            case "dynatrace:index/networkZoneV2:NetworkZoneV2":
+                return new NetworkZoneV2(name, <any>undefined, { urn })
             case "dynatrace:index/networkZones:NetworkZones":
                 return new NetworkZones(name, <any>undefined, { urn })
             case "dynatrace:index/notification:Notification":
@@ -3696,6 +3703,7 @@ pulumi.runtime.registerResourceModule("dynatrace", "index/networkMonitor", _modu
 pulumi.runtime.registerResourceModule("dynatrace", "index/networkMonitorOutage", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/networkTraffic", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/networkZone", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/networkZoneV2", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/networkZones", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/notification", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/oneagentDefaultMode", _module)

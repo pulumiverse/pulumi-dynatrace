@@ -220,6 +220,34 @@ class UserSessionMetrics(pulumi.CustomResource):
 
         The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        metric = dynatrace.UserSessionMetrics("metric",
+            enabled=False,
+            metric_key="uscm.#name#",
+            filters={
+                "filters": [
+                    {
+                        "field_name": "useraction.application",
+                        "operator": "EQUALS",
+                        "value": "www.terraform.io/",
+                    },
+                    {
+                        "field_name": "useraction.name",
+                        "operator": "EQUALS",
+                        "value": "Loading of page /",
+                    },
+                ],
+            },
+            value={
+                "type": "COUNTER",
+            })
+        ```
+
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -249,6 +277,34 @@ class UserSessionMetrics(pulumi.CustomResource):
         - `terraform-provider-dynatrace -export UserSessionMetrics` downloads all existing user session custom metrics configuration
 
         The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        metric = dynatrace.UserSessionMetrics("metric",
+            enabled=False,
+            metric_key="uscm.#name#",
+            filters={
+                "filters": [
+                    {
+                        "field_name": "useraction.application",
+                        "operator": "EQUALS",
+                        "value": "www.terraform.io/",
+                    },
+                    {
+                        "field_name": "useraction.name",
+                        "operator": "EQUALS",
+                        "value": "Loading of page /",
+                    },
+                ],
+            },
+            value={
+                "type": "COUNTER",
+            })
+        ```
 
 
         :param str resource_name: The name of the resource.

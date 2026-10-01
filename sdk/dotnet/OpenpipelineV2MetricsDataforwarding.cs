@@ -230,7 +230,7 @@ namespace Pulumiverse.Dynatrace
         /// Segmentation and prefix of the data
         /// </summary>
         [Output("bulkPattern")]
-        public Output<string> BulkPattern { get; private set; } = null!;
+        public Output<string?> BulkPattern { get; private set; } = null!;
 
         /// <summary>
         /// Bulk size for transmission
@@ -239,7 +239,7 @@ namespace Pulumiverse.Dynatrace
         public Output<int?> BulkSize { get; private set; } = null!;
 
         /// <summary>
-        /// Cloud Vendor Type. Possible values: `Aws`, `Azure`, `Gcp`
+        /// Cloud Vendor Type. Possible values: `Aws`, `Azure`, `Gcp`, `Otlp`
         /// </summary>
         [Output("cloudVendorType")]
         public Output<string> CloudVendorType { get; private set; } = null!;
@@ -279,6 +279,12 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         [Output("matcher")]
         public Output<string> Matcher { get; private set; } = null!;
+
+        /// <summary>
+        /// [IN_DEVELOPMENT]
+        /// </summary>
+        [Output("otlpConnection")]
+        public Output<Outputs.OpenpipelineV2MetricsDataforwardingOtlpConnection?> OtlpConnection { get; private set; } = null!;
 
         /// <summary>
         /// Pipelines
@@ -378,8 +384,8 @@ namespace Pulumiverse.Dynatrace
         /// <summary>
         /// Segmentation and prefix of the data
         /// </summary>
-        [Input("bulkPattern", required: true)]
-        public Input<string> BulkPattern { get; set; } = null!;
+        [Input("bulkPattern")]
+        public Input<string>? BulkPattern { get; set; }
 
         /// <summary>
         /// Bulk size for transmission
@@ -388,7 +394,7 @@ namespace Pulumiverse.Dynatrace
         public Input<int>? BulkSize { get; set; }
 
         /// <summary>
-        /// Cloud Vendor Type. Possible values: `Aws`, `Azure`, `Gcp`
+        /// Cloud Vendor Type. Possible values: `Aws`, `Azure`, `Gcp`, `Otlp`
         /// </summary>
         [Input("cloudVendorType", required: true)]
         public Input<string> CloudVendorType { get; set; } = null!;
@@ -434,6 +440,12 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         [Input("matcher", required: true)]
         public Input<string> Matcher { get; set; } = null!;
+
+        /// <summary>
+        /// [IN_DEVELOPMENT]
+        /// </summary>
+        [Input("otlpConnection")]
+        public Input<Inputs.OpenpipelineV2MetricsDataforwardingOtlpConnectionArgs>? OtlpConnection { get; set; }
 
         [Input("pipelines")]
         private InputList<string>? _pipelines;
@@ -510,7 +522,7 @@ namespace Pulumiverse.Dynatrace
         public Input<int>? BulkSize { get; set; }
 
         /// <summary>
-        /// Cloud Vendor Type. Possible values: `Aws`, `Azure`, `Gcp`
+        /// Cloud Vendor Type. Possible values: `Aws`, `Azure`, `Gcp`, `Otlp`
         /// </summary>
         [Input("cloudVendorType")]
         public Input<string>? CloudVendorType { get; set; }
@@ -556,6 +568,12 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         [Input("matcher")]
         public Input<string>? Matcher { get; set; }
+
+        /// <summary>
+        /// [IN_DEVELOPMENT]
+        /// </summary>
+        [Input("otlpConnection")]
+        public Input<Inputs.OpenpipelineV2MetricsDataforwardingOtlpConnectionGetArgs>? OtlpConnection { get; set; }
 
         [Input("pipelines")]
         private InputList<string>? _pipelines;

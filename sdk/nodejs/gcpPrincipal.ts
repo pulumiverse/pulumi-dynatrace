@@ -52,7 +52,7 @@ import * as utilities from "./utilities";
  *     type: "serviceAccountImpersonation",
  *     serviceAccountImpersonation: {
  *         serviceAccountId: impersonableServiceAccount.email,
- *         consumers: ["SVC:com.dynatrace.da"],
+ *         consumers: ["SVC:com.dynatrace.openpipeline"],
  *     },
  * }, {
  *     dependsOn: [wifBinding],

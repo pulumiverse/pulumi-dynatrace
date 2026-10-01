@@ -307,6 +307,7 @@ from .network_monitor import *
 from .network_monitor_outage import *
 from .network_traffic import *
 from .network_zone import *
+from .network_zone_v2 import *
 from .network_zones import *
 from .notification import *
 from .oneagent_default_mode import *
@@ -2468,6 +2469,14 @@ _utilities.register(
   "fqn": "pulumiverse_dynatrace",
   "classes": {
    "dynatrace:index/networkZone:NetworkZone": "NetworkZone"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/networkZoneV2",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/networkZoneV2:NetworkZoneV2": "NetworkZoneV2"
   }
  },
  {

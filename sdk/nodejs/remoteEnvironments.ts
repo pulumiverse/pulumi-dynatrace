@@ -18,6 +18,20 @@ import * as utilities from "./utilities";
  * - `terraform-provider-dynatrace -export dynatrace.RemoteEnvironments` downloads all existing remote Dynatrace environment configuration
  *
  * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ *
+ * ## Resource Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ *
+ * const env = new dynatrace.RemoteEnvironments("env", {
+ *     name: "#name#",
+ *     networkScope: "EXTERNAL",
+ *     token: "################",
+ *     uri: "https://example-#name#.live.dynatrace.com",
+ * });
+ * ```
  */
 export class RemoteEnvironments extends pulumi.CustomResource {
     /**

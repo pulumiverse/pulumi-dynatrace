@@ -16,6 +16,20 @@ import * as utilities from "./utilities";
  * - `terraform-provider-dynatrace -export dynatrace.CustomUnits` downloads all existing custom unit configuration
  *
  * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ *
+ * ## Resource Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ *
+ * const unit = new dynatrace.CustomUnits("unit", {
+ *     name: "#name#",
+ *     description: "Created by Terraform",
+ *     pluralName: "TerraformUnits",
+ *     symbol: "symbol_#name#",
+ * });
+ * ```
  */
 export class CustomUnits extends pulumi.CustomResource {
     /**

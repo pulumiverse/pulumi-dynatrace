@@ -41,7 +41,7 @@ export function getDocuments(args?: GetDocumentsArgs, opts?: pulumi.InvokeOption
  */
 export interface GetDocumentsArgs {
     /**
-     * The type of documents to query for. Leave empty if you want to query for all kinds of documents. Possible values are `dashboard` or `notebook`
+     * The type of documents to query for. Leave empty if you want to query for all kinds of documents. Possible values are `dashboard`, `notebook` or `launchpad`
      */
     type?: string;
 }
@@ -55,7 +55,7 @@ export interface GetDocumentsResult {
      */
     readonly id: string;
     /**
-     * The type of documents to query for. Leave empty if you want to query for all kinds of documents. Possible values are `dashboard` or `notebook`
+     * The type of documents to query for. Leave empty if you want to query for all kinds of documents. Possible values are `dashboard`, `notebook` or `launchpad`
      */
     readonly type?: string;
     readonly values: outputs.GetDocumentsValue[];
@@ -95,7 +95,7 @@ export function getDocumentsOutput(args?: GetDocumentsOutputArgs, opts?: pulumi.
  */
 export interface GetDocumentsOutputArgs {
     /**
-     * The type of documents to query for. Leave empty if you want to query for all kinds of documents. Possible values are `dashboard` or `notebook`
+     * The type of documents to query for. Leave empty if you want to query for all kinds of documents. Possible values are `dashboard`, `notebook` or `launchpad`
      */
     type?: pulumi.Input<string | undefined>;
 }

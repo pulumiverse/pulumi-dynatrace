@@ -14,7 +14,7 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class DavisCopilotBlocklistEntriesBlocklistEntryGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;

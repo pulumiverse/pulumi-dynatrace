@@ -54,7 +54,7 @@ export class AttackAlerting extends pulumi.CustomResource {
      */
     declare public readonly enabled: pulumi.Output<boolean>;
     /**
-     * Attack State
+     * Attack State. Possible values: `BLOCKED_WITH_EXCEPTION`, `NONE_ALLOWLISTED`, `NONE_BLOCKING_DISABLED`
      */
     declare public readonly enabledAttackMitigations: pulumi.Output<string[] | undefined>;
     /**
@@ -101,7 +101,7 @@ export interface AttackAlertingState {
      */
     enabled?: pulumi.Input<boolean | undefined>;
     /**
-     * Attack State
+     * Attack State. Possible values: `BLOCKED_WITH_EXCEPTION`, `NONE_ALLOWLISTED`, `NONE_BLOCKING_DISABLED`
      */
     enabledAttackMitigations?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
@@ -119,7 +119,7 @@ export interface AttackAlertingArgs {
      */
     enabled: pulumi.Input<boolean>;
     /**
-     * Attack State
+     * Attack State. Possible values: `BLOCKED_WITH_EXCEPTION`, `NONE_ALLOWLISTED`, `NONE_BLOCKING_DISABLED`
      */
     enabledAttackMitigations?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**

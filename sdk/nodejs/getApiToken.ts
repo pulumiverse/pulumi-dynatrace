@@ -5,6 +5,8 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 /**
+ * > This data source requires the API token scope **Read API tokens** (`apiTokens.read`)
+ *
  * The API token data source allows a single access token to be retrieved by its name, note the token value is not included in the response.
  *
  * If multiple tokens match the given name, the first result will be retrieved. To retrieve multiple tokens of the same name, please utilize the `dynatrace.getApiTokens` data source.
@@ -74,6 +76,8 @@ export interface GetApiTokenResult {
     readonly scopes: string[];
 }
 /**
+ * > This data source requires the API token scope **Read API tokens** (`apiTokens.read`)
+ *
  * The API token data source allows a single access token to be retrieved by its name, note the token value is not included in the response.
  *
  * If multiple tokens match the given name, the first result will be retrieved. To retrieve multiple tokens of the same name, please utilize the `dynatrace.getApiTokens` data source.

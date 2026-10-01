@@ -25,6 +25,48 @@ import (
 // - `terraform-provider-dynatrace -export UserActionMetrics` downloads all existing user action custom metrics configuration
 //
 // The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+//
+// ## Resource Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := dynatrace.NewUserActionMetrics(ctx, "metric", &dynatrace.UserActionMetricsArgs{
+//				Enabled: pulumi.Bool(true),
+//				Dimensions: pulumi.StringArray{
+//					pulumi.String("application"),
+//				},
+//				MetricKey: pulumi.String("uacm.#name#"),
+//				Filters: &dynatrace.UserActionMetricsFiltersArgs{
+//					Filters: dynatrace.UserActionMetricsFiltersFilterArray{
+//						&dynatrace.UserActionMetricsFiltersFilterArgs{
+//							FieldName: pulumi.String("type"),
+//							Operator:  pulumi.String("EQUALS"),
+//							Value:     pulumi.String("Xhr"),
+//						},
+//					},
+//				},
+//				Value: &dynatrace.UserActionMetricsValueArgs{
+//					Type: pulumi.String("COUNTER"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type UserActionMetrics struct {
 	pulumi.CustomResourceState
 

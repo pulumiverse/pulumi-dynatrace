@@ -26,6 +26,7 @@ import (
 type AutomationSchedulingRule struct {
 	pulumi.CustomResourceState
 
+	// The ID of the business calendar associated with the scheduling rule
 	BusinessCalendar pulumi.StringPtrOutput `pulumi:"businessCalendar"`
 	// An optional description for the scheduling rule
 	Description    pulumi.StringPtrOutput                          `pulumi:"description"`
@@ -70,6 +71,7 @@ func GetAutomationSchedulingRule(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering AutomationSchedulingRule resources.
 type automationSchedulingRuleState struct {
+	// The ID of the business calendar associated with the scheduling rule
 	BusinessCalendar *string `pulumi:"businessCalendar"`
 	// An optional description for the scheduling rule
 	Description    *string                                 `pulumi:"description"`
@@ -82,6 +84,7 @@ type automationSchedulingRuleState struct {
 }
 
 type AutomationSchedulingRuleState struct {
+	// The ID of the business calendar associated with the scheduling rule
 	BusinessCalendar pulumi.StringPtrInput
 	// An optional description for the scheduling rule
 	Description    pulumi.StringPtrInput
@@ -98,6 +101,7 @@ func (AutomationSchedulingRuleState) ElementType() reflect.Type {
 }
 
 type automationSchedulingRuleArgs struct {
+	// The ID of the business calendar associated with the scheduling rule
 	BusinessCalendar *string `pulumi:"businessCalendar"`
 	// An optional description for the scheduling rule
 	Description    *string                                 `pulumi:"description"`
@@ -111,6 +115,7 @@ type automationSchedulingRuleArgs struct {
 
 // The set of arguments for constructing a AutomationSchedulingRule resource.
 type AutomationSchedulingRuleArgs struct {
+	// The ID of the business calendar associated with the scheduling rule
 	BusinessCalendar pulumi.StringPtrInput
 	// An optional description for the scheduling rule
 	Description    pulumi.StringPtrInput
@@ -209,6 +214,7 @@ func (o AutomationSchedulingRuleOutput) ToAutomationSchedulingRuleOutputWithCont
 	return o
 }
 
+// The ID of the business calendar associated with the scheduling rule
 func (o AutomationSchedulingRuleOutput) BusinessCalendar() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *AutomationSchedulingRule) pulumi.StringPtrOutput { return v.BusinessCalendar }).(pulumi.StringPtrOutput)
 }

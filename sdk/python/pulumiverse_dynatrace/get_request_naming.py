@@ -61,6 +61,9 @@ class AwaitableGetRequestNamingResult(GetRequestNamingResult):
 def get_request_naming(name: Optional[_builtins.str] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRequestNamingResult:
     """
+    > This data source requires the API token scope **Read configuration** (`ReadConfig`)
+    or the OAuth scope `settings:objects:read`
+
     The `RequestNaming` data source allows the request naming rule ID to be retrieved by its name.
 
     - `name` (String) - The name to be assigned to matching requests.
@@ -88,6 +91,9 @@ def get_request_naming(name: Optional[_builtins.str] = None,
 def get_request_naming_output(name: pulumi.Input[Optional[_builtins.str]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRequestNamingResult]:
     """
+    > This data source requires the API token scope **Read configuration** (`ReadConfig`)
+    or the OAuth scope `settings:objects:read`
+
     The `RequestNaming` data source allows the request naming rule ID to be retrieved by its name.
 
     - `name` (String) - The name to be assigned to matching requests.

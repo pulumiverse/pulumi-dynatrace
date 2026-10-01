@@ -22,6 +22,27 @@ namespace Pulumiverse.Dynatrace
     /// - `terraform-provider-dynatrace -export dynatrace.CustomUnits` downloads all existing custom unit configuration
     /// 
     /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// 
+    /// ## Resource Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var unit = new Dynatrace.CustomUnits("unit", new()
+    ///     {
+    ///         Name = "#name#",
+    ///         Description = "Created by Terraform",
+    ///         PluralName = "TerraformUnits",
+    ///         Symbol = "symbol_#name#",
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [DynatraceResourceType("dynatrace:index/customUnits:CustomUnits")]
     public partial class CustomUnits : global::Pulumi.CustomResource

@@ -24,6 +24,45 @@ namespace Pulumiverse.Dynatrace
     /// - `terraform-provider-dynatrace -export dynatrace.UserActionMetrics` downloads all existing user action custom metrics configuration
     /// 
     /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// 
+    /// ## Resource Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var metric = new Dynatrace.UserActionMetrics("metric", new()
+    ///     {
+    ///         Enabled = true,
+    ///         Dimensions = new[]
+    ///         {
+    ///             "application",
+    ///         },
+    ///         MetricKey = "uacm.#name#",
+    ///         Filters = new Dynatrace.Inputs.UserActionMetricsFiltersArgs
+    ///         {
+    ///             Filters = new[]
+    ///             {
+    ///                 new Dynatrace.Inputs.UserActionMetricsFiltersFilterArgs
+    ///                 {
+    ///                     FieldName = "type",
+    ///                     Operator = "EQUALS",
+    ///                     Value = "Xhr",
+    ///                 },
+    ///             },
+    ///         },
+    ///         Value = new Dynatrace.Inputs.UserActionMetricsValueArgs
+    ///         {
+    ///             Type = "COUNTER",
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [DynatraceResourceType("dynatrace:index/userActionMetrics:UserActionMetrics")]
     public partial class UserActionMetrics : global::Pulumi.CustomResource

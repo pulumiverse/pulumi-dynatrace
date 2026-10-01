@@ -79,7 +79,7 @@ namespace Pulumiverse.Dynatrace
     ///             },
     ///         },
     ///         Name = "#name#",
-    ///         Frequency = 1,
+    ///         Frequency = 5,
     ///         Locations = new[]
     ///         {
     ///             location.Apply(getSyntheticLocationResult =&gt; getSyntheticLocationResult.Id),

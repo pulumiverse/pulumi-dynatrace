@@ -5,6 +5,9 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 /**
+ * > This data source requires the API token scope **Read configuration** (`ReadConfig`)
+ * or the OAuth scope `settings:objects:read`
+ *
  * The `dynatrace.RequestNaming` data source allows the request naming rule ID to be retrieved by its name.
  *
  * - `name` (String) - The name to be assigned to matching requests.
@@ -48,6 +51,9 @@ export interface GetRequestNamingResult {
     readonly name: string;
 }
 /**
+ * > This data source requires the API token scope **Read configuration** (`ReadConfig`)
+ * or the OAuth scope `settings:objects:read`
+ *
  * The `dynatrace.RequestNaming` data source allows the request naming rule ID to be retrieved by its name.
  *
  * - `name` (String) - The name to be assigned to matching requests.

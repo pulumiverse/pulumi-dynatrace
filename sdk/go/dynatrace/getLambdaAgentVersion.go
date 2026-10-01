@@ -11,6 +11,9 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > This data source requires the API token scope **Installer download** (`InstallerDownload`)
+// or the OAuth scope `fleet-management:oneagents:download` (`environment-api:deployment:download`)
+//
 // The AWS Lambda agent version data source retrieves the latest version names of OneAgent code modules for the Java, Node.js, and Python runtimes, also including names for layers that are combined with the log collector, as well as for the standalone log collector layer.
 //
 // ## Example Usage

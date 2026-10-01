@@ -507,6 +507,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &NetworkTraffic{}
 	case "dynatrace:index/networkZone:NetworkZone":
 		r = &NetworkZone{}
+	case "dynatrace:index/networkZoneV2:NetworkZoneV2":
+		r = &NetworkZoneV2{}
 	case "dynatrace:index/networkZones:NetworkZones":
 		r = &NetworkZones{}
 	case "dynatrace:index/notification:Notification":
@@ -2161,6 +2163,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"dynatrace",
 		"index/networkZone",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/networkZoneV2",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

@@ -24,6 +24,27 @@ namespace Pulumiverse.Dynatrace
     /// - `terraform-provider-dynatrace -export dynatrace.RemoteEnvironments` downloads all existing remote Dynatrace environment configuration
     /// 
     /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// 
+    /// ## Resource Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var env = new Dynatrace.RemoteEnvironments("env", new()
+    ///     {
+    ///         Name = "#name#",
+    ///         NetworkScope = "EXTERNAL",
+    ///         Token = "################",
+    ///         Uri = "https://example-#name#.live.dynatrace.com",
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [DynatraceResourceType("dynatrace:index/remoteEnvironments:RemoteEnvironments")]
     public partial class RemoteEnvironments : global::Pulumi.CustomResource

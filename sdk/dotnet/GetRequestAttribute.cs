@@ -13,6 +13,9 @@ namespace Pulumiverse.Dynatrace
     public static class GetRequestAttribute
     {
         /// <summary>
+        /// &gt; This data source requires the API token scope **Read configuration** (`ReadConfig`)
+        /// or the OAuth scope `settings:objects:read`
+        /// 
         /// The `dynatrace.RequestAttribute` data source allows the request attribute ID to be retrieved by its name.
         /// 
         /// - `Name` (String) - The name of the request attribute
@@ -43,6 +46,9 @@ namespace Pulumiverse.Dynatrace
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetRequestAttributeResult>("dynatrace:index/getRequestAttribute:getRequestAttribute", args ?? new GetRequestAttributeArgs(), options.WithDefaults());
 
         /// <summary>
+        /// &gt; This data source requires the API token scope **Read configuration** (`ReadConfig`)
+        /// or the OAuth scope `settings:objects:read`
+        /// 
         /// The `dynatrace.RequestAttribute` data source allows the request attribute ID to be retrieved by its name.
         /// 
         /// - `Name` (String) - The name of the request attribute
@@ -73,6 +79,9 @@ namespace Pulumiverse.Dynatrace
             => global::Pulumi.Deployment.Instance.Invoke<GetRequestAttributeResult>("dynatrace:index/getRequestAttribute:getRequestAttribute", args ?? new GetRequestAttributeInvokeArgs(), options.WithDefaults());
 
         /// <summary>
+        /// &gt; This data source requires the API token scope **Read configuration** (`ReadConfig`)
+        /// or the OAuth scope `settings:objects:read`
+        /// 
         /// The `dynatrace.RequestAttribute` data source allows the request attribute ID to be retrieved by its name.
         /// 
         /// - `Name` (String) - The name of the request attribute

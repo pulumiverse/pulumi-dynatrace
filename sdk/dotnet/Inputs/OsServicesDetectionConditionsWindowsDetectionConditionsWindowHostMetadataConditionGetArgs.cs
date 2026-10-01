@@ -16,8 +16,8 @@ namespace Pulumiverse.Dynatrace.Inputs
         /// <summary>
         /// When enabled, the condition requires a resource attribute to exist and match the constraints; when disabled, the key is optional but must still match the constrains if it is present.
         /// </summary>
-        [Input("keyMustExist", required: true)]
-        public Input<bool> KeyMustExist { get; set; } = null!;
+        [Input("keyMustExist")]
+        public Input<bool>? KeyMustExist { get; set; }
 
         /// <summary>
         /// This string has to match a required format.

@@ -177,10 +177,17 @@ import (
 //			}
 //			json0 := string(tmpJSON0)
 //			_, err = dynatrace.NewDocument(ctx, "this", &dynatrace.DocumentArgs{
-//				Type:     pulumi.String("dashboard"),
-//				Name:     pulumi.String("Example Dashboard"),
-//				CustomId: pulumi.String("#name#"),
-//				Content:  pulumi.String(json0),
+//				Type:        pulumi.String("dashboard"),
+//				Name:        pulumi.String("Example Dashboard"),
+//				CustomId:    pulumi.String("#name#"),
+//				Description: pulumi.String("Initial description"),
+//				Labels: pulumi.StringArray{
+//					pulumi.String("monitoring"),
+//					pulumi.String("cloud"),
+//					pulumi.String("draft"),
+//				},
+//				IsReshareable: pulumi.Bool(true),
+//				Content:       pulumi.String(json0),
 //			})
 //			if err != nil {
 //				return err
@@ -197,6 +204,12 @@ type Document struct {
 	Content pulumi.StringOutput `pulumi:"content"`
 	// If provided, this will be the id of the document. If not provided, a system-generated id is used.
 	CustomId pulumi.StringOutput `pulumi:"customId"`
+	// A short description of the document
+	Description pulumi.StringPtrOutput `pulumi:"description"`
+	// Specifies whether recipients of a direct share can share the document further
+	IsReshareable pulumi.BoolPtrOutput `pulumi:"isReshareable"`
+	// Labels attached to the document
+	Labels pulumi.StringArrayOutput `pulumi:"labels"`
 	// The name/name of the document
 	Name pulumi.StringOutput `pulumi:"name"`
 	// The ID of the owner of this document
@@ -249,6 +262,12 @@ type documentState struct {
 	Content *string `pulumi:"content"`
 	// If provided, this will be the id of the document. If not provided, a system-generated id is used.
 	CustomId *string `pulumi:"customId"`
+	// A short description of the document
+	Description *string `pulumi:"description"`
+	// Specifies whether recipients of a direct share can share the document further
+	IsReshareable *bool `pulumi:"isReshareable"`
+	// Labels attached to the document
+	Labels []string `pulumi:"labels"`
 	// The name/name of the document
 	Name *string `pulumi:"name"`
 	// The ID of the owner of this document
@@ -266,6 +285,12 @@ type DocumentState struct {
 	Content pulumi.StringPtrInput
 	// If provided, this will be the id of the document. If not provided, a system-generated id is used.
 	CustomId pulumi.StringPtrInput
+	// A short description of the document
+	Description pulumi.StringPtrInput
+	// Specifies whether recipients of a direct share can share the document further
+	IsReshareable pulumi.BoolPtrInput
+	// Labels attached to the document
+	Labels pulumi.StringArrayInput
 	// The name/name of the document
 	Name pulumi.StringPtrInput
 	// The ID of the owner of this document
@@ -287,6 +312,12 @@ type documentArgs struct {
 	Content string `pulumi:"content"`
 	// If provided, this will be the id of the document. If not provided, a system-generated id is used.
 	CustomId *string `pulumi:"customId"`
+	// A short description of the document
+	Description *string `pulumi:"description"`
+	// Specifies whether recipients of a direct share can share the document further
+	IsReshareable *bool `pulumi:"isReshareable"`
+	// Labels attached to the document
+	Labels []string `pulumi:"labels"`
 	// The name/name of the document
 	Name *string `pulumi:"name"`
 	// Specifies whether the document is private or readable by everybody
@@ -301,6 +332,12 @@ type DocumentArgs struct {
 	Content pulumi.StringInput
 	// If provided, this will be the id of the document. If not provided, a system-generated id is used.
 	CustomId pulumi.StringPtrInput
+	// A short description of the document
+	Description pulumi.StringPtrInput
+	// Specifies whether recipients of a direct share can share the document further
+	IsReshareable pulumi.BoolPtrInput
+	// Labels attached to the document
+	Labels pulumi.StringArrayInput
 	// The name/name of the document
 	Name pulumi.StringPtrInput
 	// Specifies whether the document is private or readable by everybody
@@ -404,6 +441,21 @@ func (o DocumentOutput) Content() pulumi.StringOutput {
 // If provided, this will be the id of the document. If not provided, a system-generated id is used.
 func (o DocumentOutput) CustomId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Document) pulumi.StringOutput { return v.CustomId }).(pulumi.StringOutput)
+}
+
+// A short description of the document
+func (o DocumentOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Document) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// Specifies whether recipients of a direct share can share the document further
+func (o DocumentOutput) IsReshareable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *Document) pulumi.BoolPtrOutput { return v.IsReshareable }).(pulumi.BoolPtrOutput)
+}
+
+// Labels attached to the document
+func (o DocumentOutput) Labels() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *Document) pulumi.StringArrayOutput { return v.Labels }).(pulumi.StringArrayOutput)
 }
 
 // The name/name of the document

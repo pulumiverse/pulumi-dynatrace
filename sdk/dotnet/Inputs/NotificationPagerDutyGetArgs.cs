@@ -37,11 +37,21 @@ namespace Pulumiverse.Dynatrace.Inputs
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
 
+        [Input("serviceApiKey")]
+        private Input<string>? _serviceApiKey;
+
         /// <summary>
         /// The API key to access PagerDuty
         /// </summary>
-        [Input("serviceApiKey")]
-        public Input<string>? ServiceApiKey { get; set; }
+        public Input<string>? ServiceApiKey
+        {
+            get => _serviceApiKey;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _serviceApiKey = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// The name of the service

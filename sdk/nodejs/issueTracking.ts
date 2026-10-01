@@ -140,13 +140,13 @@ export class IssueTracking extends pulumi.CustomResource {
             resourceInputs["issuequery"] = args?.issuequery;
             resourceInputs["issuetheme"] = args?.issuetheme;
             resourceInputs["issuetrackersystem"] = args?.issuetrackersystem;
-            resourceInputs["password"] = args?.password;
+            resourceInputs["password"] = args?.password ? pulumi.secret(args.password) : undefined;
             resourceInputs["token"] = args?.token ? pulumi.secret(args.token) : undefined;
             resourceInputs["url"] = args?.url;
             resourceInputs["username"] = args?.username;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
-        const secretOpts = { additionalSecretOutputs: ["token"] };
+        const secretOpts = { additionalSecretOutputs: ["password", "token"] };
         opts = pulumi.mergeOptions(opts, secretOpts);
         super(IssueTracking.__pulumiType, name, resourceInputs, opts);
     }

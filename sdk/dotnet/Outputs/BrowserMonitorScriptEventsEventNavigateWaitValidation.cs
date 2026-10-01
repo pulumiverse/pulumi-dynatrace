@@ -19,8 +19,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly bool? FailIfFound;
         /// <summary>
-        /// The content to look for on the page.
-        /// Regular expressions are allowed. In that case set `isRegex` as `True`. Required for `ContentMatch`, optional for `ElementMatch`.
+        /// The content to look for on the page. Regular expressions are allowed. In that case set `Regex` as `True`. Required for `ContentMatch` and `TextMatch`, optional for `ElementMatch`.
         /// </summary>
         public readonly string? Match;
         /// <summary>
@@ -32,7 +31,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly Outputs.BrowserMonitorScriptEventsEventNavigateWaitValidationTarget? Target;
         /// <summary>
-        /// The goal of the validation. `ContentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `ElementMatch` (check page for the specific element).
+        /// The goal of the validation. `ContentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `ElementMatch` (check page for the specific element), `TextMatch` (check page for the specific text).
         /// </summary>
         public readonly string Type;
 

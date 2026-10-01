@@ -25,6 +25,50 @@ import (
 // - `terraform-provider-dynatrace -export UserSessionMetrics` downloads all existing user session custom metrics configuration
 //
 // The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+//
+// ## Resource Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := dynatrace.NewUserSessionMetrics(ctx, "metric", &dynatrace.UserSessionMetricsArgs{
+//				Enabled:   pulumi.Bool(false),
+//				MetricKey: pulumi.String("uscm.#name#"),
+//				Filters: &dynatrace.UserSessionMetricsFiltersArgs{
+//					Filters: dynatrace.UserSessionMetricsFiltersFilterArray{
+//						&dynatrace.UserSessionMetricsFiltersFilterArgs{
+//							FieldName: pulumi.String("useraction.application"),
+//							Operator:  pulumi.String("EQUALS"),
+//							Value:     pulumi.String("www.terraform.io/"),
+//						},
+//						&dynatrace.UserSessionMetricsFiltersFilterArgs{
+//							FieldName: pulumi.String("useraction.name"),
+//							Operator:  pulumi.String("EQUALS"),
+//							Value:     pulumi.String("Loading of page /"),
+//						},
+//					},
+//				},
+//				Value: &dynatrace.UserSessionMetricsValueArgs{
+//					Type: pulumi.String("COUNTER"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type UserSessionMetrics struct {
 	pulumi.CustomResourceState
 

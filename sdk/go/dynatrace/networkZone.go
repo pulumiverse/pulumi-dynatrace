@@ -11,6 +11,8 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > The resource API endpoint has been deprecated, please use NetworkZoneV2 instead.
+//
 // > This resource requires the API token scopes **Read network zones** (`networkZones.read`) and **Write network zones** (`networkZones.write`)
 //
 // ## Dynatrace Documentation

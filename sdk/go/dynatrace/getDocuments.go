@@ -64,7 +64,7 @@ func GetDocuments(ctx *pulumi.Context, args *GetDocumentsArgs, opts ...pulumi.In
 
 // A collection of arguments for invoking getDocuments.
 type GetDocumentsArgs struct {
-	// The type of documents to query for. Leave empty if you want to query for all kinds of documents. Possible values are `dashboard` or `notebook`
+	// The type of documents to query for. Leave empty if you want to query for all kinds of documents. Possible values are `dashboard`, `notebook` or `launchpad`
 	Type *string `pulumi:"type"`
 }
 
@@ -72,7 +72,7 @@ type GetDocumentsArgs struct {
 type GetDocumentsResult struct {
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
-	// The type of documents to query for. Leave empty if you want to query for all kinds of documents. Possible values are `dashboard` or `notebook`
+	// The type of documents to query for. Leave empty if you want to query for all kinds of documents. Possible values are `dashboard`, `notebook` or `launchpad`
 	Type   *string             `pulumi:"type"`
 	Values []GetDocumentsValue `pulumi:"values"`
 }
@@ -84,7 +84,7 @@ func GetDocumentsOutput(ctx *pulumi.Context, args GetDocumentsOutputArgs, opts .
 
 // A collection of arguments for invoking getDocuments.
 type GetDocumentsOutputArgs struct {
-	// The type of documents to query for. Leave empty if you want to query for all kinds of documents. Possible values are `dashboard` or `notebook`
+	// The type of documents to query for. Leave empty if you want to query for all kinds of documents. Possible values are `dashboard`, `notebook` or `launchpad`
 	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
@@ -112,7 +112,7 @@ func (o GetDocumentsResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDocumentsResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// The type of documents to query for. Leave empty if you want to query for all kinds of documents. Possible values are `dashboard` or `notebook`
+// The type of documents to query for. Leave empty if you want to query for all kinds of documents. Possible values are `dashboard`, `notebook` or `launchpad`
 func (o GetDocumentsResultOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDocumentsResult) *string { return v.Type }).(pulumi.StringPtrOutput)
 }

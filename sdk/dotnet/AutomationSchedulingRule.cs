@@ -26,6 +26,9 @@ namespace Pulumiverse.Dynatrace
     [DynatraceResourceType("dynatrace:index/automationSchedulingRule:AutomationSchedulingRule")]
     public partial class AutomationSchedulingRule : global::Pulumi.CustomResource
     {
+        /// <summary>
+        /// The ID of the business calendar associated with the scheduling rule
+        /// </summary>
         [Output("businessCalendar")]
         public Output<string?> BusinessCalendar { get; private set; } = null!;
 
@@ -100,6 +103,9 @@ namespace Pulumiverse.Dynatrace
 
     public sealed class AutomationSchedulingRuleArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The ID of the business calendar associated with the scheduling rule
+        /// </summary>
         [Input("businessCalendar")]
         public Input<string>? BusinessCalendar { get; set; }
 
@@ -135,6 +141,9 @@ namespace Pulumiverse.Dynatrace
 
     public sealed class AutomationSchedulingRuleState : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The ID of the business calendar associated with the scheduling rule
+        /// </summary>
         [Input("businessCalendar")]
         public Input<string>? BusinessCalendar { get; set; }
 

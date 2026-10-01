@@ -339,6 +339,7 @@ class RequestAttribute(pulumi.CustomResource):
                  __props__=None):
         """
         > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Capture request data** (`CaptureRequestData`)
+        or the OAuth scopes `settings:objects:read` and `settings:objects:write`
 
         ## Dynatrace Documentation
 
@@ -373,6 +374,7 @@ class RequestAttribute(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Capture request data** (`CaptureRequestData`)
+        or the OAuth scopes `settings:objects:read` and `settings:objects:write`
 
         ## Dynatrace Documentation
 

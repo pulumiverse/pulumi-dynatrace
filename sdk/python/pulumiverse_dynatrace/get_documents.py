@@ -50,7 +50,7 @@ class GetDocumentsResult:
     @pulumi.getter
     def type(self) -> Optional[_builtins.str]:
         """
-        The type of documents to query for. Leave empty if you want to query for all kinds of documents. Possible values are `dashboard` or `notebook`
+        The type of documents to query for. Leave empty if you want to query for all kinds of documents. Possible values are `dashboard`, `notebook` or `launchpad`
         """
         return pulumi.get(self, "type")
 
@@ -92,7 +92,7 @@ def get_documents(type: Optional[_builtins.str] = None,
     ```
 
 
-    :param _builtins.str type: The type of documents to query for. Leave empty if you want to query for all kinds of documents. Possible values are `dashboard` or `notebook`
+    :param _builtins.str type: The type of documents to query for. Leave empty if you want to query for all kinds of documents. Possible values are `dashboard`, `notebook` or `launchpad`
     """
     __args__ = dict()
     __args__['type'] = type
@@ -124,7 +124,7 @@ def get_documents_output(type: pulumi.Input[Optional[Optional[_builtins.str]]] =
     ```
 
 
-    :param _builtins.str type: The type of documents to query for. Leave empty if you want to query for all kinds of documents. Possible values are `dashboard` or `notebook`
+    :param _builtins.str type: The type of documents to query for. Leave empty if you want to query for all kinds of documents. Possible values are `dashboard`, `notebook` or `launchpad`
     """
     __args__ = dict()
     __args__['type'] = type

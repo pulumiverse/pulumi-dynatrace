@@ -24,6 +24,69 @@ import (
 // - `terraform-provider-dynatrace -export KubernetesEnrichment` downloads all existing generic metadata enrichment rules for Kubernetes
 //
 // The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+//
+// ## Resource Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := dynatrace.NewKubernetesEnrichment(ctx, "example", &dynatrace.KubernetesEnrichmentArgs{
+//				Scope:                           pulumi.String("environment"),
+//				UseIngestEnrichmentConfigSchema: pulumi.Bool(true),
+//				Rules: &dynatrace.KubernetesEnrichmentRulesArgs{
+//					Rules: dynatrace.KubernetesEnrichmentRulesRuleArray{
+//						&dynatrace.KubernetesEnrichmentRulesRuleArgs{
+//							Type:   pulumi.String("LABEL"),
+//							Source: pulumi.String("#name#"),
+//							Target: pulumi.String("dt.cost.product"),
+//						},
+//						&dynatrace.KubernetesEnrichmentRulesRuleArgs{
+//							Type:            pulumi.String("LABEL"),
+//							Source:          pulumi.String("#name#"),
+//							PrimaryGrailTag: pulumi.Bool(true),
+//						},
+//						&dynatrace.KubernetesEnrichmentRulesRuleArgs{
+//							Type:            pulumi.String("LABEL"),
+//							Source:          pulumi.String("#name#"),
+//							Target:          pulumi.String("dt.cost.product"),
+//							PrimaryGrailTag: pulumi.Bool(false),
+//						},
+//						&dynatrace.KubernetesEnrichmentRulesRuleArgs{
+//							Type:   pulumi.String("ANNOTATION"),
+//							Source: pulumi.String("#name#"),
+//							Target: pulumi.String("dt.security_context"),
+//						},
+//						&dynatrace.KubernetesEnrichmentRulesRuleArgs{
+//							Type:            pulumi.String("ANNOTATION"),
+//							Source:          pulumi.String("#name#"),
+//							PrimaryGrailTag: pulumi.Bool(true),
+//						},
+//						&dynatrace.KubernetesEnrichmentRulesRuleArgs{
+//							Type:            pulumi.String("ANNOTATION"),
+//							Source:          pulumi.String("#name#"),
+//							Target:          pulumi.String("dt.security_context"),
+//							PrimaryGrailTag: pulumi.Bool(false),
+//						},
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type KubernetesEnrichment struct {
 	pulumi.CustomResourceState
 
@@ -31,6 +94,9 @@ type KubernetesEnrichment struct {
 	Rules KubernetesEnrichmentRulesPtrOutput `pulumi:"rules"`
 	// The scope of this setting (KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
 	Scope pulumi.StringPtrOutput `pulumi:"scope"`
+	// Opt-in to experience the new unified enrichment settings view ahead of future rollout.
+	//  Enabling this toggle may trigger migration of rules to the new enrichment settings. Learn more in our [documentation](https://dt-url.net/qm02uk2).
+	UseIngestEnrichmentConfigSchema pulumi.BoolPtrOutput `pulumi:"useIngestEnrichmentConfigSchema"`
 }
 
 // NewKubernetesEnrichment registers a new resource with the given unique name, arguments, and options.
@@ -67,6 +133,9 @@ type kubernetesEnrichmentState struct {
 	Rules *KubernetesEnrichmentRules `pulumi:"rules"`
 	// The scope of this setting (KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
 	Scope *string `pulumi:"scope"`
+	// Opt-in to experience the new unified enrichment settings view ahead of future rollout.
+	//  Enabling this toggle may trigger migration of rules to the new enrichment settings. Learn more in our [documentation](https://dt-url.net/qm02uk2).
+	UseIngestEnrichmentConfigSchema *bool `pulumi:"useIngestEnrichmentConfigSchema"`
 }
 
 type KubernetesEnrichmentState struct {
@@ -74,6 +143,9 @@ type KubernetesEnrichmentState struct {
 	Rules KubernetesEnrichmentRulesPtrInput
 	// The scope of this setting (KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
 	Scope pulumi.StringPtrInput
+	// Opt-in to experience the new unified enrichment settings view ahead of future rollout.
+	//  Enabling this toggle may trigger migration of rules to the new enrichment settings. Learn more in our [documentation](https://dt-url.net/qm02uk2).
+	UseIngestEnrichmentConfigSchema pulumi.BoolPtrInput
 }
 
 func (KubernetesEnrichmentState) ElementType() reflect.Type {
@@ -85,6 +157,9 @@ type kubernetesEnrichmentArgs struct {
 	Rules *KubernetesEnrichmentRules `pulumi:"rules"`
 	// The scope of this setting (KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
 	Scope *string `pulumi:"scope"`
+	// Opt-in to experience the new unified enrichment settings view ahead of future rollout.
+	//  Enabling this toggle may trigger migration of rules to the new enrichment settings. Learn more in our [documentation](https://dt-url.net/qm02uk2).
+	UseIngestEnrichmentConfigSchema *bool `pulumi:"useIngestEnrichmentConfigSchema"`
 }
 
 // The set of arguments for constructing a KubernetesEnrichment resource.
@@ -93,6 +168,9 @@ type KubernetesEnrichmentArgs struct {
 	Rules KubernetesEnrichmentRulesPtrInput
 	// The scope of this setting (KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
 	Scope pulumi.StringPtrInput
+	// Opt-in to experience the new unified enrichment settings view ahead of future rollout.
+	//  Enabling this toggle may trigger migration of rules to the new enrichment settings. Learn more in our [documentation](https://dt-url.net/qm02uk2).
+	UseIngestEnrichmentConfigSchema pulumi.BoolPtrInput
 }
 
 func (KubernetesEnrichmentArgs) ElementType() reflect.Type {
@@ -190,6 +268,13 @@ func (o KubernetesEnrichmentOutput) Rules() KubernetesEnrichmentRulesPtrOutput {
 // The scope of this setting (KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
 func (o KubernetesEnrichmentOutput) Scope() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *KubernetesEnrichment) pulumi.StringPtrOutput { return v.Scope }).(pulumi.StringPtrOutput)
+}
+
+// Opt-in to experience the new unified enrichment settings view ahead of future rollout.
+//
+//	Enabling this toggle may trigger migration of rules to the new enrichment settings. Learn more in our [documentation](https://dt-url.net/qm02uk2).
+func (o KubernetesEnrichmentOutput) UseIngestEnrichmentConfigSchema() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *KubernetesEnrichment) pulumi.BoolPtrOutput { return v.UseIngestEnrichmentConfigSchema }).(pulumi.BoolPtrOutput)
 }
 
 type KubernetesEnrichmentArrayOutput struct{ *pulumi.OutputState }

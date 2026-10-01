@@ -24,6 +24,47 @@ namespace Pulumiverse.Dynatrace
     /// - `terraform-provider-dynatrace -export dynatrace.UserSessionMetrics` downloads all existing user session custom metrics configuration
     /// 
     /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// 
+    /// ## Resource Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var metric = new Dynatrace.UserSessionMetrics("metric", new()
+    ///     {
+    ///         Enabled = false,
+    ///         MetricKey = "uscm.#name#",
+    ///         Filters = new Dynatrace.Inputs.UserSessionMetricsFiltersArgs
+    ///         {
+    ///             Filters = new[]
+    ///             {
+    ///                 new Dynatrace.Inputs.UserSessionMetricsFiltersFilterArgs
+    ///                 {
+    ///                     FieldName = "useraction.application",
+    ///                     Operator = "EQUALS",
+    ///                     Value = "www.terraform.io/",
+    ///                 },
+    ///                 new Dynatrace.Inputs.UserSessionMetricsFiltersFilterArgs
+    ///                 {
+    ///                     FieldName = "useraction.name",
+    ///                     Operator = "EQUALS",
+    ///                     Value = "Loading of page /",
+    ///                 },
+    ///             },
+    ///         },
+    ///         Value = new Dynatrace.Inputs.UserSessionMetricsValueArgs
+    ///         {
+    ///             Type = "COUNTER",
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [DynatraceResourceType("dynatrace:index/userSessionMetrics:UserSessionMetrics")]
     public partial class UserSessionMetrics : global::Pulumi.CustomResource
