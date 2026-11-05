@@ -264,6 +264,12 @@ func (OsServicesState) ElementType() reflect.Type {
 	return reflect.TypeOf((*osServicesState)(nil)).Elem()
 }
 
+// OsServicesExists checks whether an existing OsServices resource with the given ID exists.
+func OsServicesExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *OsServicesState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/osServices:OsServices", id, state, "", opts...)
+}
+
 type osServicesArgs struct {
 	// The number of **10-second measurement cycles** before alerting is triggered
 	AlertActivationDuration *int `pulumi:"alertActivationDuration"`

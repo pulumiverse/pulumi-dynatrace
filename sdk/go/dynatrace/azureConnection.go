@@ -250,6 +250,12 @@ func (AzureConnectionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*azureConnectionState)(nil)).Elem()
 }
 
+// AzureConnectionExists checks whether an existing AzureConnection resource with the given ID exists.
+func AzureConnectionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AzureConnectionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/azureConnection:AzureConnection", id, state, "", opts...)
+}
+
 type azureConnectionArgs struct {
 	// No documentation available
 	ClientSecret *AzureConnectionClientSecret `pulumi:"clientSecret"`

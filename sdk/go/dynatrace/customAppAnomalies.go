@@ -111,6 +111,12 @@ func (CustomAppAnomaliesState) ElementType() reflect.Type {
 	return reflect.TypeOf((*customAppAnomaliesState)(nil)).Elem()
 }
 
+// CustomAppAnomaliesExists checks whether an existing CustomAppAnomalies resource with the given ID exists.
+func CustomAppAnomaliesExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *CustomAppAnomaliesState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/customAppAnomalies:CustomAppAnomalies", id, state, "", opts...)
+}
+
 type customAppAnomaliesArgs struct {
 	// Error rate increase
 	ErrorRateIncrease CustomAppAnomaliesErrorRateIncrease `pulumi:"errorRateIncrease"`

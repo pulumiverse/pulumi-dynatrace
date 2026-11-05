@@ -492,6 +492,30 @@ class DiskAnomalies(pulumi.CustomResource):
         __props__.__dict__["violating_samples"] = violating_samples
         return DiskAnomalies(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            disk_name: pulumi.Input[Optional[Union['DiskAnomaliesDiskNameArgs', 'DiskAnomaliesDiskNameArgsDict', 'outputs.DiskAnomaliesDiskName']]] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            host_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            metric: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            samples: pulumi.Input[Optional[_builtins.int]] = None,
+            tags: pulumi.Input[Optional[Union['DiskAnomaliesTagsArgs', 'DiskAnomaliesTagsArgsDict', 'outputs.DiskAnomaliesTags']]] = None,
+            threshold: pulumi.Input[Optional[_builtins.float]] = None,
+            violating_samples: pulumi.Input[Optional[_builtins.int]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["diskName"] = disk_name
+        __props__["enabled"] = enabled
+        __props__["hostGroupId"] = host_group_id
+        __props__["metric"] = metric
+        __props__["name"] = name
+        __props__["samples"] = samples
+        __props__["tags"] = tags
+        __props__["threshold"] = threshold
+        __props__["violatingSamples"] = violating_samples
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/diskAnomalies:DiskAnomalies', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="diskName")
     def disk_name(self) -> pulumi.Output[Optional['outputs.DiskAnomaliesDiskName']]:

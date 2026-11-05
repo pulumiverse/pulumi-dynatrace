@@ -485,6 +485,30 @@ class DiskEdgeAnomalyDetectors(pulumi.CustomResource):
         __props__.__dict__["scope"] = scope
         return DiskEdgeAnomalyDetectors(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            alerts: pulumi.Input[Optional[Union['DiskEdgeAnomalyDetectorsAlertsArgs', 'DiskEdgeAnomalyDetectorsAlertsArgsDict', 'outputs.DiskEdgeAnomalyDetectorsAlerts']]] = None,
+            detection_conditions: pulumi.Input[Optional[Union['DiskEdgeAnomalyDetectorsDetectionConditionsArgs', 'DiskEdgeAnomalyDetectorsDetectionConditionsArgsDict', 'outputs.DiskEdgeAnomalyDetectorsDetectionConditions']]] = None,
+            disk_name_filters: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            event_properties: pulumi.Input[Optional[Union['DiskEdgeAnomalyDetectorsEventPropertiesArgs', 'DiskEdgeAnomalyDetectorsEventPropertiesArgsDict', 'outputs.DiskEdgeAnomalyDetectorsEventProperties']]] = None,
+            insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+            operating_systems: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            policy_name: pulumi.Input[Optional[_builtins.str]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["alerts"] = alerts
+        __props__["detectionConditions"] = detection_conditions
+        __props__["diskNameFilters"] = disk_name_filters
+        __props__["enabled"] = enabled
+        __props__["eventProperties"] = event_properties
+        __props__["insertAfter"] = insert_after
+        __props__["operatingSystems"] = operating_systems
+        __props__["policyName"] = policy_name
+        __props__["scope"] = scope
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/diskEdgeAnomalyDetectors:DiskEdgeAnomalyDetectors', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def alerts(self) -> pulumi.Output[Optional['outputs.DiskEdgeAnomalyDetectorsAlerts']]:

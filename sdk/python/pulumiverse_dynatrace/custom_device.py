@@ -611,6 +611,38 @@ class CustomDevice(pulumi.CustomResource):
         __props__.__dict__["ui_based"] = ui_based
         return CustomDevice(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            config_url: pulumi.Input[Optional[_builtins.str]] = None,
+            custom_device_id: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            dns_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            entity_id: pulumi.Input[Optional[_builtins.str]] = None,
+            favicon_url: pulumi.Input[Optional[_builtins.str]] = None,
+            group: pulumi.Input[Optional[_builtins.str]] = None,
+            ip_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            listen_ports: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+            properties: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            props: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None,
+            ui_based: pulumi.Input[Optional[_builtins.bool]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["configUrl"] = config_url
+        __props__["customDeviceId"] = custom_device_id
+        __props__["displayName"] = display_name
+        __props__["dnsNames"] = dns_names
+        __props__["entityId"] = entity_id
+        __props__["faviconUrl"] = favicon_url
+        __props__["group"] = group
+        __props__["ipAddresses"] = ip_addresses
+        __props__["listenPorts"] = listen_ports
+        __props__["properties"] = properties
+        __props__["props"] = props
+        __props__["type"] = type
+        __props__["uiBased"] = ui_based
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/customDevice:CustomDevice', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="configUrl")
     def config_url(self) -> pulumi.Output[Optional[_builtins.str]]:

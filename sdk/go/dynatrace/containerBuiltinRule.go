@@ -176,6 +176,12 @@ func (ContainerBuiltinRuleState) ElementType() reflect.Type {
 	return reflect.TypeOf((*containerBuiltinRuleState)(nil)).Elem()
 }
 
+// ContainerBuiltinRuleExists checks whether an existing ContainerBuiltinRule resource with the given ID exists.
+func ContainerBuiltinRuleExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ContainerBuiltinRuleState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/containerBuiltinRule:ContainerBuiltinRule", id, state, "", opts...)
+}
+
 type containerBuiltinRuleArgs struct {
 	// Disable monitoring of platform internal pause containers in Kubernetes and OpenShift.
 	IgnoreDockerPauseContainer bool `pulumi:"ignoreDockerPauseContainer"`

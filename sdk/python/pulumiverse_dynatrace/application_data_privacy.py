@@ -334,6 +334,22 @@ class ApplicationDataPrivacy(pulumi.CustomResource):
         __props__.__dict__["web_application_id"] = web_application_id
         return ApplicationDataPrivacy(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            data_capture_opt_in: pulumi.Input[Optional[_builtins.bool]] = None,
+            do_not_track_behaviour: pulumi.Input[Optional[_builtins.str]] = None,
+            persistent_cookie_for_user_tracking: pulumi.Input[Optional[_builtins.bool]] = None,
+            session_replay_data_privacy: pulumi.Input[Optional[Union['ApplicationDataPrivacySessionReplayDataPrivacyArgs', 'ApplicationDataPrivacySessionReplayDataPrivacyArgsDict', 'outputs.ApplicationDataPrivacySessionReplayDataPrivacy']]] = None,
+            web_application_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["dataCaptureOptIn"] = data_capture_opt_in
+        __props__["doNotTrackBehaviour"] = do_not_track_behaviour
+        __props__["persistentCookieForUserTracking"] = persistent_cookie_for_user_tracking
+        __props__["sessionReplayDataPrivacy"] = session_replay_data_privacy
+        __props__["webApplicationId"] = web_application_id
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/applicationDataPrivacy:ApplicationDataPrivacy', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="dataCaptureOptIn")
     def data_capture_opt_in(self) -> pulumi.Output[Optional[_builtins.bool]]:

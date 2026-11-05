@@ -338,6 +338,20 @@ class LogEvents(pulumi.CustomResource):
         __props__.__dict__["summary"] = summary
         return LogEvents(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            event_template: pulumi.Input[Optional[Union['LogEventsEventTemplateArgs', 'LogEventsEventTemplateArgsDict', 'outputs.LogEventsEventTemplate']]] = None,
+            query: pulumi.Input[Optional[_builtins.str]] = None,
+            summary: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["enabled"] = enabled
+        __props__["eventTemplate"] = event_template
+        __props__["query"] = query
+        __props__["summary"] = summary
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/logEvents:LogEvents', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def enabled(self) -> pulumi.Output[_builtins.bool]:

@@ -92,6 +92,12 @@ func (AttackAlertingState) ElementType() reflect.Type {
 	return reflect.TypeOf((*attackAlertingState)(nil)).Elem()
 }
 
+// AttackAlertingExists checks whether an existing AttackAlerting resource with the given ID exists.
+func AttackAlertingExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AttackAlertingState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/attackAlerting:AttackAlerting", id, state, "", opts...)
+}
+
 type attackAlertingArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`

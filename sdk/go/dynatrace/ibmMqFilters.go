@@ -104,6 +104,12 @@ func (IbmMqFiltersState) ElementType() reflect.Type {
 	return reflect.TypeOf((*ibmMqFiltersState)(nil)).Elem()
 }
 
+// IbmMqFiltersExists checks whether an existing IbmMqFilters resource with the given ID exists.
+func IbmMqFiltersExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *IbmMqFiltersState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/ibmMqFilters:IbmMqFilters", id, state, "", opts...)
+}
+
 type ibmMqFiltersArgs struct {
 	// CICS: Excluded MQ queues
 	CicsMqQueueIdExcludes []string `pulumi:"cicsMqQueueIdExcludes"`

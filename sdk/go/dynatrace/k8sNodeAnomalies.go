@@ -120,6 +120,12 @@ func (K8sNodeAnomaliesState) ElementType() reflect.Type {
 	return reflect.TypeOf((*k8sNodeAnomaliesState)(nil)).Elem()
 }
 
+// K8sNodeAnomaliesExists checks whether an existing K8sNodeAnomalies resource with the given ID exists.
+func K8sNodeAnomaliesExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *K8sNodeAnomaliesState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/k8sNodeAnomalies:K8sNodeAnomalies", id, state, "", opts...)
+}
+
 type k8sNodeAnomaliesArgs struct {
 	// no documentation available
 	CpuRequestsSaturation K8sNodeAnomaliesCpuRequestsSaturation `pulumi:"cpuRequestsSaturation"`

@@ -291,6 +291,20 @@ class WebAppKeyPerformanceXhr(pulumi.CustomResource):
         __props__.__dict__["thresholds"] = thresholds
         return WebAppKeyPerformanceXhr(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            fallback_thresholds: pulumi.Input[Optional[Union['WebAppKeyPerformanceXhrFallbackThresholdsArgs', 'WebAppKeyPerformanceXhrFallbackThresholdsArgsDict', 'outputs.WebAppKeyPerformanceXhrFallbackThresholds']]] = None,
+            kpm: pulumi.Input[Optional[_builtins.str]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None,
+            thresholds: pulumi.Input[Optional[Union['WebAppKeyPerformanceXhrThresholdsArgs', 'WebAppKeyPerformanceXhrThresholdsArgsDict', 'outputs.WebAppKeyPerformanceXhrThresholds']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["fallbackThresholds"] = fallback_thresholds
+        __props__["kpm"] = kpm
+        __props__["scope"] = scope
+        __props__["thresholds"] = thresholds
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/webAppKeyPerformanceXhr:WebAppKeyPerformanceXhr', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="fallbackThresholds")
     def fallback_thresholds(self) -> pulumi.Output[Optional['outputs.WebAppKeyPerformanceXhrFallbackThresholds']]:

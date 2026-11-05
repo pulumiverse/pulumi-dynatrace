@@ -119,6 +119,12 @@ func (KeyRequestsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*keyRequestsState)(nil)).Elem()
 }
 
+// KeyRequestsExists checks whether an existing KeyRequests resource with the given ID exists.
+func KeyRequestsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *KeyRequestsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/keyRequests:KeyRequests", id, state, "", opts...)
+}
+
 type keyRequestsArgs struct {
 	// The ids of the key requests
 	KeyRequestIds map[string]string `pulumi:"keyRequestIds"`

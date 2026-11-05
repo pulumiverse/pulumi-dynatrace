@@ -342,6 +342,12 @@ func (OpenpipelineV2DavisProblemsPipelinesState) ElementType() reflect.Type {
 	return reflect.TypeOf((*openpipelineV2DavisProblemsPipelinesState)(nil)).Elem()
 }
 
+// OpenpipelineV2DavisProblemsPipelinesExists checks whether an existing OpenpipelineV2DavisProblemsPipelines resource with the given ID exists.
+func OpenpipelineV2DavisProblemsPipelinesExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *OpenpipelineV2DavisProblemsPipelinesState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/openpipelineV2DavisProblemsPipelines:OpenpipelineV2DavisProblemsPipelines", id, state, "", opts...)
+}
+
 type openpipelineV2DavisProblemsPipelinesArgs struct {
 	// Cost allocation stage
 	CostAllocation *OpenpipelineV2DavisProblemsPipelinesCostAllocation `pulumi:"costAllocation"`

@@ -407,6 +407,26 @@ class UpdateWindows(pulumi.CustomResource):
         __props__.__dict__["weekly_recurrence"] = weekly_recurrence
         return UpdateWindows(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            daily_recurrence: pulumi.Input[Optional[Union['UpdateWindowsDailyRecurrenceArgs', 'UpdateWindowsDailyRecurrenceArgsDict', 'outputs.UpdateWindowsDailyRecurrence']]] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            monthly_recurrence: pulumi.Input[Optional[Union['UpdateWindowsMonthlyRecurrenceArgs', 'UpdateWindowsMonthlyRecurrenceArgsDict', 'outputs.UpdateWindowsMonthlyRecurrence']]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            once_recurrence: pulumi.Input[Optional[Union['UpdateWindowsOnceRecurrenceArgs', 'UpdateWindowsOnceRecurrenceArgsDict', 'outputs.UpdateWindowsOnceRecurrence']]] = None,
+            recurrence: pulumi.Input[Optional[_builtins.str]] = None,
+            weekly_recurrence: pulumi.Input[Optional[Union['UpdateWindowsWeeklyRecurrenceArgs', 'UpdateWindowsWeeklyRecurrenceArgsDict', 'outputs.UpdateWindowsWeeklyRecurrence']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["dailyRecurrence"] = daily_recurrence
+        __props__["enabled"] = enabled
+        __props__["monthlyRecurrence"] = monthly_recurrence
+        __props__["name"] = name
+        __props__["onceRecurrence"] = once_recurrence
+        __props__["recurrence"] = recurrence
+        __props__["weeklyRecurrence"] = weekly_recurrence
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/updateWindows:UpdateWindows', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="dailyRecurrence")
     def daily_recurrence(self) -> pulumi.Output[Optional['outputs.UpdateWindowsDailyRecurrence']]:

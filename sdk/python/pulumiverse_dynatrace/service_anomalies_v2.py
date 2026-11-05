@@ -331,6 +331,22 @@ class ServiceAnomaliesV2(pulumi.CustomResource):
         __props__.__dict__["scope"] = scope
         return ServiceAnomaliesV2(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            failure_rate: pulumi.Input[Optional[Union['ServiceAnomaliesV2FailureRateArgs', 'ServiceAnomaliesV2FailureRateArgsDict', 'outputs.ServiceAnomaliesV2FailureRate']]] = None,
+            load_drops: pulumi.Input[Optional[Union['ServiceAnomaliesV2LoadDropsArgs', 'ServiceAnomaliesV2LoadDropsArgsDict', 'outputs.ServiceAnomaliesV2LoadDrops']]] = None,
+            load_spikes: pulumi.Input[Optional[Union['ServiceAnomaliesV2LoadSpikesArgs', 'ServiceAnomaliesV2LoadSpikesArgsDict', 'outputs.ServiceAnomaliesV2LoadSpikes']]] = None,
+            response_time: pulumi.Input[Optional[Union['ServiceAnomaliesV2ResponseTimeArgs', 'ServiceAnomaliesV2ResponseTimeArgsDict', 'outputs.ServiceAnomaliesV2ResponseTime']]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["failureRate"] = failure_rate
+        __props__["loadDrops"] = load_drops
+        __props__["loadSpikes"] = load_spikes
+        __props__["responseTime"] = response_time
+        __props__["scope"] = scope
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/serviceAnomaliesV2:ServiceAnomaliesV2', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="failureRate")
     def failure_rate(self) -> pulumi.Output['outputs.ServiceAnomaliesV2FailureRate']:

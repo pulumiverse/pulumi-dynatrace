@@ -370,6 +370,24 @@ class ManagementZone(pulumi.CustomResource):
         __props__.__dict__["unknowns"] = unknowns
         return ManagementZone(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            dimensional_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagementZoneDimensionalRuleArgs', 'ManagementZoneDimensionalRuleArgsDict', 'outputs.ManagementZoneDimensionalRule']]]]] = None,
+            entity_selector_based_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagementZoneEntitySelectorBasedRuleArgs', 'ManagementZoneEntitySelectorBasedRuleArgsDict', 'outputs.ManagementZoneEntitySelectorBasedRule']]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagementZoneRuleArgs', 'ManagementZoneRuleArgsDict', 'outputs.ManagementZoneRule']]]]] = None,
+            unknowns: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["description"] = description
+        __props__["dimensionalRules"] = dimensional_rules
+        __props__["entitySelectorBasedRules"] = entity_selector_based_rules
+        __props__["name"] = name
+        __props__["rules"] = rules
+        __props__["unknowns"] = unknowns
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/managementZone:ManagementZone', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def description(self) -> pulumi.Output[Optional[_builtins.str]]:

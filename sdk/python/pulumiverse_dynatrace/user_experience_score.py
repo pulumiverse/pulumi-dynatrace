@@ -290,6 +290,20 @@ class UserExperienceScore(pulumi.CustomResource):
         __props__.__dict__["min_satisfied_user_actions_threshold"] = min_satisfied_user_actions_threshold
         return UserExperienceScore(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            consider_last_action: pulumi.Input[Optional[_builtins.bool]] = None,
+            consider_rage_click: pulumi.Input[Optional[_builtins.bool]] = None,
+            max_frustrated_user_actions_threshold: pulumi.Input[Optional[_builtins.int]] = None,
+            min_satisfied_user_actions_threshold: pulumi.Input[Optional[_builtins.int]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["considerLastAction"] = consider_last_action
+        __props__["considerRageClick"] = consider_rage_click
+        __props__["maxFrustratedUserActionsThreshold"] = max_frustrated_user_actions_threshold
+        __props__["minSatisfiedUserActionsThreshold"] = min_satisfied_user_actions_threshold
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/userExperienceScore:UserExperienceScore', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="considerLastAction")
     def consider_last_action(self) -> pulumi.Output[_builtins.bool]:

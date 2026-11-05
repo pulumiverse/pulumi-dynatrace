@@ -178,6 +178,12 @@ func (WebhookNotificationState) ElementType() reflect.Type {
 	return reflect.TypeOf((*webhookNotificationState)(nil)).Elem()
 }
 
+// WebhookNotificationExists checks whether an existing WebhookNotification resource with the given ID exists.
+func WebhookNotificationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *WebhookNotificationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/webhookNotification:WebhookNotification", id, state, "", opts...)
+}
+
 type webhookNotificationArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Active bool `pulumi:"active"`

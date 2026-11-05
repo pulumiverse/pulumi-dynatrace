@@ -140,6 +140,12 @@ func (EndpointDetectionRulesState) ElementType() reflect.Type {
 	return reflect.TypeOf((*endpointDetectionRulesState)(nil)).Elem()
 }
 
+// EndpointDetectionRulesExists checks whether an existing EndpointDetectionRules resource with the given ID exists.
+func EndpointDetectionRulesExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *EndpointDetectionRulesState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/endpointDetectionRules:EndpointDetectionRules", id, state, "", opts...)
+}
+
 type endpointDetectionRulesArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`

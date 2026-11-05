@@ -565,6 +565,34 @@ class LogTimestamp(pulumi.CustomResource):
         __props__.__dict__["timezone"] = timezone
         return LogTimestamp(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            config_item_title: pulumi.Input[Optional[_builtins.str]] = None,
+            date_search_limit: pulumi.Input[Optional[_builtins.int]] = None,
+            date_time_pattern: pulumi.Input[Optional[_builtins.str]] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            entry_boundary: pulumi.Input[Optional[Union['LogTimestampEntryBoundaryArgs', 'LogTimestampEntryBoundaryArgsDict', 'outputs.LogTimestampEntryBoundary']]] = None,
+            insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+            json_configuration: pulumi.Input[Optional[Union['LogTimestampJsonConfigurationArgs', 'LogTimestampJsonConfigurationArgsDict', 'outputs.LogTimestampJsonConfiguration']]] = None,
+            matchers: pulumi.Input[Optional[Union['LogTimestampMatchersArgs', 'LogTimestampMatchersArgsDict', 'outputs.LogTimestampMatchers']]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None,
+            skip_indented_lines: pulumi.Input[Optional[_builtins.bool]] = None,
+            timezone: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["configItemTitle"] = config_item_title
+        __props__["dateSearchLimit"] = date_search_limit
+        __props__["dateTimePattern"] = date_time_pattern
+        __props__["enabled"] = enabled
+        __props__["entryBoundary"] = entry_boundary
+        __props__["insertAfter"] = insert_after
+        __props__["jsonConfiguration"] = json_configuration
+        __props__["matchers"] = matchers
+        __props__["scope"] = scope
+        __props__["skipIndentedLines"] = skip_indented_lines
+        __props__["timezone"] = timezone
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/logTimestamp:LogTimestamp', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="configItemTitle")
     def config_item_title(self) -> pulumi.Output[_builtins.str]:

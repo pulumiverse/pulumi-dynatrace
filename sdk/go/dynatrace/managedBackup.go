@@ -168,6 +168,12 @@ func (ManagedBackupState) ElementType() reflect.Type {
 	return reflect.TypeOf((*managedBackupState)(nil)).Elem()
 }
 
+// ManagedBackupExists checks whether an existing ManagedBackup resource with the given ID exists.
+func ManagedBackupExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ManagedBackupState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/managedBackup:ManagedBackup", id, state, "", opts...)
+}
+
 type managedBackupArgs struct {
 	// Cassandra backup bandwidth limit in Mbps
 	BandwidthLimitMbits *int `pulumi:"bandwidthLimitMbits"`

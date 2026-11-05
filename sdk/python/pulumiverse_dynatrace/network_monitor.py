@@ -677,6 +677,32 @@ class NetworkMonitor(pulumi.CustomResource):
         __props__.__dict__["type"] = type
         return NetworkMonitor(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            frequency_min: pulumi.Input[Optional[_builtins.int]] = None,
+            locations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            outage_handling: pulumi.Input[Optional[Union['NetworkMonitorOutageHandlingArgs', 'NetworkMonitorOutageHandlingArgsDict', 'outputs.NetworkMonitorOutageHandling']]] = None,
+            performance_thresholds: pulumi.Input[Optional[Union['NetworkMonitorPerformanceThresholdsArgs', 'NetworkMonitorPerformanceThresholdsArgsDict', 'outputs.NetworkMonitorPerformanceThresholds']]] = None,
+            steps: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkMonitorStepArgs', 'NetworkMonitorStepArgsDict', 'outputs.NetworkMonitorStep']]]]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkMonitorTagArgs', 'NetworkMonitorTagArgsDict', 'outputs.NetworkMonitorTag']]]]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["description"] = description
+        __props__["enabled"] = enabled
+        __props__["frequencyMin"] = frequency_min
+        __props__["locations"] = locations
+        __props__["name"] = name
+        __props__["outageHandling"] = outage_handling
+        __props__["performanceThresholds"] = performance_thresholds
+        __props__["steps"] = steps
+        __props__["tags"] = tags
+        __props__["type"] = type
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/networkMonitor:NetworkMonitor', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def description(self) -> pulumi.Output[Optional[_builtins.str]]:

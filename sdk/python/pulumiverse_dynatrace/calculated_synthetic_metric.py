@@ -560,6 +560,28 @@ class CalculatedSyntheticMetric(pulumi.CustomResource):
         __props__.__dict__["name"] = name
         return CalculatedSyntheticMetric(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            dimensions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CalculatedSyntheticMetricDimensionArgs', 'CalculatedSyntheticMetricDimensionArgsDict', 'outputs.CalculatedSyntheticMetricDimension']]]]] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            filter: pulumi.Input[Optional[Union['CalculatedSyntheticMetricFilterArgs', 'CalculatedSyntheticMetricFilterArgsDict', 'outputs.CalculatedSyntheticMetricFilter']]] = None,
+            metric: pulumi.Input[Optional[_builtins.str]] = None,
+            metric_key: pulumi.Input[Optional[_builtins.str]] = None,
+            monitor_identifier: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["description"] = description
+        __props__["dimensions"] = dimensions
+        __props__["enabled"] = enabled
+        __props__["filter"] = filter
+        __props__["metric"] = metric
+        __props__["metricKey"] = metric_key
+        __props__["monitorIdentifier"] = monitor_identifier
+        __props__["name"] = name
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/calculatedSyntheticMetric:CalculatedSyntheticMetric', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def description(self) -> pulumi.Output[Optional[_builtins.str]]:

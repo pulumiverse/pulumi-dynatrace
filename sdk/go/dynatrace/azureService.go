@@ -230,6 +230,12 @@ func (AzureServiceState) ElementType() reflect.Type {
 	return reflect.TypeOf((*azureServiceState)(nil)).Elem()
 }
 
+// AzureServiceExists checks whether an existing AzureService resource with the given ID exists.
+func AzureServiceExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AzureServiceState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/azureService:AzureService", id, state, "", opts...)
+}
+
 type azureServiceArgs struct {
 	// the ID of the Azure credentials this supported service belongs to
 	CredentialsId string `pulumi:"credentialsId"`

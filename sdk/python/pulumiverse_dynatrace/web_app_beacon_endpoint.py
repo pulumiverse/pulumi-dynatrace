@@ -288,6 +288,20 @@ class WebAppBeaconEndpoint(pulumi.CustomResource):
         __props__.__dict__["use_cors"] = use_cors
         return WebAppBeaconEndpoint(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            application_id: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None,
+            url: pulumi.Input[Optional[_builtins.str]] = None,
+            use_cors: pulumi.Input[Optional[_builtins.bool]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["applicationId"] = application_id
+        __props__["type"] = type
+        __props__["url"] = url
+        __props__["useCors"] = use_cors
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/webAppBeaconEndpoint:WebAppBeaconEndpoint', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="applicationId")
     def application_id(self) -> pulumi.Output[_builtins.str]:

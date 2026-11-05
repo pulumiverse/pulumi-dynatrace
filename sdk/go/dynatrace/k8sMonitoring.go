@@ -141,6 +141,12 @@ func (K8sMonitoringState) ElementType() reflect.Type {
 	return reflect.TypeOf((*k8sMonitoringState)(nil)).Elem()
 }
 
+// K8sMonitoringExists checks whether an existing K8sMonitoring resource with the given ID exists.
+func K8sMonitoringExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *K8sMonitoringState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/k8sMonitoring:K8sMonitoring", id, state, "", opts...)
+}
+
 type k8sMonitoringArgs struct {
 	// Monitor Kubernetes namespaces, services, workloads, and pods
 	CloudApplicationPipelineEnabled bool `pulumi:"cloudApplicationPipelineEnabled"`

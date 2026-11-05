@@ -66,6 +66,12 @@ func (SecurityContextState) ElementType() reflect.Type {
 	return reflect.TypeOf((*securityContextState)(nil)).Elem()
 }
 
+// SecurityContextExists checks whether an existing SecurityContext resource with the given ID exists.
+func SecurityContextExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SecurityContextState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/securityContext:SecurityContext", id, state, "", opts...)
+}
+
 type securityContextArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`

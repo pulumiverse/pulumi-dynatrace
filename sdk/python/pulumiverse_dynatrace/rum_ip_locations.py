@@ -429,6 +429,26 @@ class RumIpLocations(pulumi.CustomResource):
         __props__.__dict__["region_code"] = region_code
         return RumIpLocations(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            city: pulumi.Input[Optional[_builtins.str]] = None,
+            country_code: pulumi.Input[Optional[_builtins.str]] = None,
+            ip: pulumi.Input[Optional[_builtins.str]] = None,
+            ip_to: pulumi.Input[Optional[_builtins.str]] = None,
+            latitude: pulumi.Input[Optional[_builtins.float]] = None,
+            longitude: pulumi.Input[Optional[_builtins.float]] = None,
+            region_code: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["city"] = city
+        __props__["countryCode"] = country_code
+        __props__["ip"] = ip
+        __props__["ipTo"] = ip_to
+        __props__["latitude"] = latitude
+        __props__["longitude"] = longitude
+        __props__["regionCode"] = region_code
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/rumIpLocations:RumIpLocations', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def city(self) -> pulumi.Output[Optional[_builtins.str]]:

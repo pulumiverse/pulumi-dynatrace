@@ -332,6 +332,20 @@ class MgmzPermission(pulumi.CustomResource):
         __props__.__dict__["permissions"] = permissions
         return MgmzPermission(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            environment: pulumi.Input[Optional[_builtins.str]] = None,
+            group: pulumi.Input[Optional[_builtins.str]] = None,
+            management_zone: pulumi.Input[Optional[_builtins.str]] = None,
+            permissions: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["environment"] = environment
+        __props__["group"] = group
+        __props__["managementZone"] = management_zone
+        __props__["permissions"] = permissions
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/mgmzPermission:MgmzPermission', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def environment(self) -> pulumi.Output[_builtins.str]:

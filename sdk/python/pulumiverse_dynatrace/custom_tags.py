@@ -354,6 +354,20 @@ class CustomTags(pulumi.CustomResource):
         __props__.__dict__["tags"] = tags
         return CustomTags(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            current_state: pulumi.Input[Optional[_builtins.str]] = None,
+            entity_selector: pulumi.Input[Optional[_builtins.str]] = None,
+            matched_entities: pulumi.Input[Optional[_builtins.int]] = None,
+            tags: pulumi.Input[Optional[Union['CustomTagsTagsArgs', 'CustomTagsTagsArgsDict', 'outputs.CustomTagsTags']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["currentState"] = current_state
+        __props__["entitySelector"] = entity_selector
+        __props__["matchedEntities"] = matched_entities
+        __props__["tags"] = tags
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/customTags:CustomTags', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="currentState")
     def current_state(self) -> pulumi.Output[_builtins.str]:

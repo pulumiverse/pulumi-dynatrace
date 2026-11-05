@@ -452,6 +452,28 @@ class AwsAnomalies(pulumi.CustomResource):
         __props__.__dict__["rds_restarts_sequence_detection"] = rds_restarts_sequence_detection
         return AwsAnomalies(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            ec2_candidate_high_cpu_detection: pulumi.Input[Optional[Union['AwsAnomaliesEc2CandidateHighCpuDetectionArgs', 'AwsAnomaliesEc2CandidateHighCpuDetectionArgsDict', 'outputs.AwsAnomaliesEc2CandidateHighCpuDetection']]] = None,
+            elb_high_connection_errors_detection: pulumi.Input[Optional[Union['AwsAnomaliesElbHighConnectionErrorsDetectionArgs', 'AwsAnomaliesElbHighConnectionErrorsDetectionArgsDict', 'outputs.AwsAnomaliesElbHighConnectionErrorsDetection']]] = None,
+            lambda_high_error_rate_detection: pulumi.Input[Optional[Union['AwsAnomaliesLambdaHighErrorRateDetectionArgs', 'AwsAnomaliesLambdaHighErrorRateDetectionArgsDict', 'outputs.AwsAnomaliesLambdaHighErrorRateDetection']]] = None,
+            rds_high_cpu_detection: pulumi.Input[Optional[Union['AwsAnomaliesRdsHighCpuDetectionArgs', 'AwsAnomaliesRdsHighCpuDetectionArgsDict', 'outputs.AwsAnomaliesRdsHighCpuDetection']]] = None,
+            rds_high_memory_detection: pulumi.Input[Optional[Union['AwsAnomaliesRdsHighMemoryDetectionArgs', 'AwsAnomaliesRdsHighMemoryDetectionArgsDict', 'outputs.AwsAnomaliesRdsHighMemoryDetection']]] = None,
+            rds_high_write_read_latency_detection: pulumi.Input[Optional[Union['AwsAnomaliesRdsHighWriteReadLatencyDetectionArgs', 'AwsAnomaliesRdsHighWriteReadLatencyDetectionArgsDict', 'outputs.AwsAnomaliesRdsHighWriteReadLatencyDetection']]] = None,
+            rds_low_storage_detection: pulumi.Input[Optional[Union['AwsAnomaliesRdsLowStorageDetectionArgs', 'AwsAnomaliesRdsLowStorageDetectionArgsDict', 'outputs.AwsAnomaliesRdsLowStorageDetection']]] = None,
+            rds_restarts_sequence_detection: pulumi.Input[Optional[Union['AwsAnomaliesRdsRestartsSequenceDetectionArgs', 'AwsAnomaliesRdsRestartsSequenceDetectionArgsDict', 'outputs.AwsAnomaliesRdsRestartsSequenceDetection']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["ec2CandidateHighCpuDetection"] = ec2_candidate_high_cpu_detection
+        __props__["elbHighConnectionErrorsDetection"] = elb_high_connection_errors_detection
+        __props__["lambdaHighErrorRateDetection"] = lambda_high_error_rate_detection
+        __props__["rdsHighCpuDetection"] = rds_high_cpu_detection
+        __props__["rdsHighMemoryDetection"] = rds_high_memory_detection
+        __props__["rdsHighWriteReadLatencyDetection"] = rds_high_write_read_latency_detection
+        __props__["rdsLowStorageDetection"] = rds_low_storage_detection
+        __props__["rdsRestartsSequenceDetection"] = rds_restarts_sequence_detection
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/awsAnomalies:AwsAnomalies', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="ec2CandidateHighCpuDetection")
     def ec2_candidate_high_cpu_detection(self) -> pulumi.Output['outputs.AwsAnomaliesEc2CandidateHighCpuDetection']:

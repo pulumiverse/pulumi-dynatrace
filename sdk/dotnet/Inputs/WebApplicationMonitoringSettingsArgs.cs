@@ -64,7 +64,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         /// <summary>
         /// The location to send monitoring data from the JavaScript tag.
         /// 
-        ///  Specify either a relative or an absolute URL. If you use an absolute URL, data will be sent using CORS. 
+        ///  Specify either a relative or an absolute URL. If you use an absolute URL, data will be sent using CORS.
         /// 
         ///  **Required** for auto-injected applications, optional for agentless applications. Maximum 512 characters.
         /// </summary>
@@ -130,9 +130,9 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<bool>? LibraryFileFromCdn { get; set; }
 
         /// <summary>
-        /// The location of your application’s custom JavaScript library file. 
+        /// The location of your application’s custom JavaScript library file.
         /// 
-        ///  If nothing specified the root directory of your web server is used. 
+        ///  If nothing specified the root directory of your web server is used.
         /// 
         ///  **Required** for auto-injected applications, not supported by agentless applications. Maximum 512 characters.
         /// </summary>
@@ -142,7 +142,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         /// <summary>
         /// The location to send monitoring data from the JavaScript tag.
         /// 
-        ///  Specify either a relative or an absolute URL. If you use an absolute URL, data will be sent using CORS. 
+        ///  Specify either a relative or an absolute URL. If you use an absolute URL, data will be sent using CORS.
         /// 
         ///  **Required** for auto-injected applications, optional for agentless applications. Maximum 512 characters.
         /// </summary>

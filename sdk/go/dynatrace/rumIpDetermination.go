@@ -110,6 +110,12 @@ func (RumIpDeterminationState) ElementType() reflect.Type {
 	return reflect.TypeOf((*rumIpDeterminationState)(nil)).Elem()
 }
 
+// RumIpDeterminationExists checks whether an existing RumIpDetermination resource with the given ID exists.
+func RumIpDeterminationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *RumIpDeterminationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/rumIpDetermination:RumIpDetermination", id, state, "", opts...)
+}
+
 type rumIpDeterminationArgs struct {
 	// Client IP header name
 	HeaderName string `pulumi:"headerName"`

@@ -485,6 +485,30 @@ class DevobsDataMasking(pulumi.CustomResource):
         __props__.__dict__["rule_var_name"] = rule_var_name
         return DevobsDataMasking(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            comparison_type: pulumi.Input[Optional[_builtins.str]] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+            replacement_pattern: pulumi.Input[Optional[_builtins.str]] = None,
+            replacement_type: pulumi.Input[Optional[_builtins.str]] = None,
+            rule_name: pulumi.Input[Optional[_builtins.str]] = None,
+            rule_regex: pulumi.Input[Optional[_builtins.str]] = None,
+            rule_type: pulumi.Input[Optional[_builtins.str]] = None,
+            rule_var_name: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["comparisonType"] = comparison_type
+        __props__["enabled"] = enabled
+        __props__["insertAfter"] = insert_after
+        __props__["replacementPattern"] = replacement_pattern
+        __props__["replacementType"] = replacement_type
+        __props__["ruleName"] = rule_name
+        __props__["ruleRegex"] = rule_regex
+        __props__["ruleType"] = rule_type
+        __props__["ruleVarName"] = rule_var_name
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/devobsDataMasking:DevobsDataMasking', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="comparisonType")
     def comparison_type(self) -> pulumi.Output[Optional[_builtins.str]]:

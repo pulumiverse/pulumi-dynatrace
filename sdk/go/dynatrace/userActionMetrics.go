@@ -150,6 +150,12 @@ func (UserActionMetricsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*userActionMetricsState)(nil)).Elem()
 }
 
+// UserActionMetricsExists checks whether an existing UserActionMetrics resource with the given ID exists.
+func UserActionMetricsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *UserActionMetricsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/userActionMetrics:UserActionMetrics", id, state, "", opts...)
+}
+
 type userActionMetricsArgs struct {
 	// Defines the fields that are used as dimensions. A dimension is a collection of reference information about a metric data point that is of interest to your business. Dimensions are parameters like "application", "type", "apdexCategory". For example, using "type" as a dimension allows you to split chart data based on the user action type.
 	Dimensions []string `pulumi:"dimensions"`

@@ -768,6 +768,44 @@ class LogOneagent(pulumi.CustomResource):
         __props__.__dict__["system_logs_detection_enabled"] = system_logs_detection_enabled
         return LogOneagent(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            binary_detection_mode: pulumi.Input[Optional[_builtins.str]] = None,
+            container_timezone_heuristic_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            containers_logs_detection_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            date_search_limit_bytes: pulumi.Input[Optional[_builtins.int]] = None,
+            default_timezone: pulumi.Input[Optional[_builtins.str]] = None,
+            event_log_query_timeout_sec: pulumi.Input[Optional[_builtins.int]] = None,
+            iisdetection_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            log_scanner_linux_nfs_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            max_lgis_per_entity_count: pulumi.Input[Optional[_builtins.int]] = None,
+            min_binary_detection_limit_bytes: pulumi.Input[Optional[_builtins.int]] = None,
+            monitor_own_logs_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            open_log_files_detection_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None,
+            severity_detection_limit_bytes: pulumi.Input[Optional[_builtins.int]] = None,
+            severity_detection_lines_limit: pulumi.Input[Optional[_builtins.int]] = None,
+            system_logs_detection_enabled: pulumi.Input[Optional[_builtins.bool]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["binaryDetectionMode"] = binary_detection_mode
+        __props__["containerTimezoneHeuristicEnabled"] = container_timezone_heuristic_enabled
+        __props__["containersLogsDetectionEnabled"] = containers_logs_detection_enabled
+        __props__["dateSearchLimitBytes"] = date_search_limit_bytes
+        __props__["defaultTimezone"] = default_timezone
+        __props__["eventLogQueryTimeoutSec"] = event_log_query_timeout_sec
+        __props__["iisdetectionEnabled"] = iisdetection_enabled
+        __props__["logScannerLinuxNfsEnabled"] = log_scanner_linux_nfs_enabled
+        __props__["maxLgisPerEntityCount"] = max_lgis_per_entity_count
+        __props__["minBinaryDetectionLimitBytes"] = min_binary_detection_limit_bytes
+        __props__["monitorOwnLogsEnabled"] = monitor_own_logs_enabled
+        __props__["openLogFilesDetectionEnabled"] = open_log_files_detection_enabled
+        __props__["scope"] = scope
+        __props__["severityDetectionLimitBytes"] = severity_detection_limit_bytes
+        __props__["severityDetectionLinesLimit"] = severity_detection_lines_limit
+        __props__["systemLogsDetectionEnabled"] = system_logs_detection_enabled
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/logOneagent:LogOneagent', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="binaryDetectionMode")
     def binary_detection_mode(self) -> pulumi.Output[Optional[_builtins.str]]:

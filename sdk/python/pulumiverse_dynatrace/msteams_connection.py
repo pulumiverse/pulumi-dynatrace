@@ -325,6 +325,20 @@ class MsteamsConnection(pulumi.CustomResource):
         __props__.__dict__["webhook"] = webhook
         return MsteamsConnection(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            channel_name: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            team_name: pulumi.Input[Optional[_builtins.str]] = None,
+            webhook: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["channelName"] = channel_name
+        __props__["name"] = name
+        __props__["teamName"] = team_name
+        __props__["webhook"] = webhook
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/msteamsConnection:MsteamsConnection', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="channelName")
     def channel_name(self) -> pulumi.Output[Optional[_builtins.str]]:

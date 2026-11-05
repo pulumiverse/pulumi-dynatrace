@@ -15,18 +15,18 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class AppsecNotificationAttackCandidateBasedWebhookPayload
     {
         /// <summary>
-        /// This is the content your notification message will include when users view it.  
-        /// In case a value of an attack is not set, the placeholder will be replaced by an empty string.. **Note:** Security notifications contain sensitive information. Excessive usage of placeholders in the custom payload might leak information to untrusted parties.  
-        ///   
-        /// Available placeholders:  
-        /// **{AttackDisplayId}**: The unique identifier assigned by Dynatrace, for example: "A-1234".  
-        /// **{Title}**: Location of the attack, for example: "com.dynatrace.Class.method():120"  
-        /// **{Type}**: The type of attack, for example: "SQL Injection".  
-        /// **{AttackUrl}**: URL of the attack in Dynatrace.  
-        /// **{ProcessGroupId}**: Details about the process group attacked.  
-        /// **{EntryPoint}**: The entry point of the attack into the process, for example: "/login". Can be empty.  
-        /// **{Status}**: The status of the attack, for example: "Exploited"  
-        /// **{Timestamp}**: When the attack happened.  
+        /// This is the content your notification message will include when users view it.\
+        /// In case a value of an attack is not set, the placeholder will be replaced by an empty string.. **Note:** Security notifications contain sensitive information. Excessive usage of placeholders in the custom payload might leak information to untrusted parties.
+        /// 
+        /// Available placeholders:\
+        /// **{AttackDisplayId}**: The unique identifier assigned by Dynatrace, for example: "A-1234".\
+        /// **{Title}**: Location of the attack, for example: "com.dynatrace.Class.method():120"\
+        /// **{Type}**: The type of attack, for example: "SQL Injection".\
+        /// **{AttackUrl}**: URL of the attack in Dynatrace.\
+        /// **{ProcessGroupId}**: Details about the process group attacked.\
+        /// **{EntryPoint}**: The entry point of the attack into the process, for example: "/login". Can be empty.\
+        /// **{Status}**: The status of the attack, for example: "Exploited"\
+        /// **{Timestamp}**: When the attack happened.\
         /// **{VulnerabilityName}**: Name of the associated code-level vulnerability, for example: "InMemoryDatabaseCaller.getAccountInfo():51". Can be empty.
         /// </summary>
         public readonly string Payload;

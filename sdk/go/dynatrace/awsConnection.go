@@ -194,6 +194,12 @@ func (AwsConnectionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*awsConnectionState)(nil)).Elem()
 }
 
+// AwsConnectionExists checks whether an existing AwsConnection resource with the given ID exists.
+func AwsConnectionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AwsConnectionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/awsConnection:AwsConnection", id, state, "", opts...)
+}
+
 type awsConnectionArgs struct {
 	// The name of the connection
 	Name *string `pulumi:"name"`

@@ -95,6 +95,12 @@ func (WebAppRequestErrorsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*webAppRequestErrorsState)(nil)).Elem()
 }
 
+// WebAppRequestErrorsExists checks whether an existing WebAppRequestErrors resource with the given ID exists.
+func WebAppRequestErrorsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *WebAppRequestErrorsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/webAppRequestErrors:WebAppRequestErrors", id, state, "", opts...)
+}
+
 type webAppRequestErrorsArgs struct {
 	// (Field has overlap with `ApplicationErrorRules`)
 	ErrorRules *WebAppRequestErrorsErrorRules `pulumi:"errorRules"`

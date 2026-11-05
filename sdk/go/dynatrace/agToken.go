@@ -148,6 +148,12 @@ func (AgTokenState) ElementType() reflect.Type {
 	return reflect.TypeOf((*agTokenState)(nil)).Elem()
 }
 
+// AgTokenExists checks whether an existing AgToken resource with the given ID exists.
+func AgTokenExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AgTokenState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/agToken:AgToken", id, state, "", opts...)
+}
+
 type agTokenArgs struct {
 	// The expiration date of the token.
 	//

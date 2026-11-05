@@ -19,7 +19,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly string? Aggregation;
         /// <summary>
-        /// The cleanup rule of the property. 
+        /// The cleanup rule of the property.
         /// 
         /// Defines how to extract the data you need from a string value. Specify the [regular expression](https://dt-url.net/k9e0iaq) for the data you need there
         /// </summary>
@@ -53,7 +53,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly string Origin;
         /// <summary>
-        /// The ID of the request attribute. 
+        /// The ID of the request attribute.
         /// 
         /// Only applicable when the **origin** is set to `SERVER_SIDE_REQUEST_ATTRIBUTE`
         /// </summary>

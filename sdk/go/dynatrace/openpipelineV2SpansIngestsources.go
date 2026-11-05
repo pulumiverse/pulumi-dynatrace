@@ -260,6 +260,12 @@ func (OpenpipelineV2SpansIngestsourcesState) ElementType() reflect.Type {
 	return reflect.TypeOf((*openpipelineV2SpansIngestsourcesState)(nil)).Elem()
 }
 
+// OpenpipelineV2SpansIngestsourcesExists checks whether an existing OpenpipelineV2SpansIngestsources resource with the given ID exists.
+func OpenpipelineV2SpansIngestsourcesExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *OpenpipelineV2SpansIngestsourcesState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/openpipelineV2SpansIngestsources:OpenpipelineV2SpansIngestsources", id, state, "", opts...)
+}
+
 type openpipelineV2SpansIngestsourcesArgs struct {
 	// Default Bucket
 	DefaultBucket *string `pulumi:"defaultBucket"`

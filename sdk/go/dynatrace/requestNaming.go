@@ -124,6 +124,12 @@ func (RequestNamingState) ElementType() reflect.Type {
 	return reflect.TypeOf((*requestNamingState)(nil)).Elem()
 }
 
+// RequestNamingExists checks whether an existing RequestNaming resource with the given ID exists.
+func RequestNamingExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *RequestNamingState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/requestNaming:RequestNaming", id, state, "", opts...)
+}
+
 type requestNamingArgs struct {
 	// The set of conditions for the request naming rule usage.
 	//

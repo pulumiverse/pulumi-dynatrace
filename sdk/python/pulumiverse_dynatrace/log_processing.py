@@ -377,6 +377,24 @@ class LogProcessing(pulumi.CustomResource):
         __props__.__dict__["rule_testing"] = rule_testing
         return LogProcessing(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+            processor_definition: pulumi.Input[Optional[Union['LogProcessingProcessorDefinitionArgs', 'LogProcessingProcessorDefinitionArgsDict', 'outputs.LogProcessingProcessorDefinition']]] = None,
+            query: pulumi.Input[Optional[_builtins.str]] = None,
+            rule_name: pulumi.Input[Optional[_builtins.str]] = None,
+            rule_testing: pulumi.Input[Optional[Union['LogProcessingRuleTestingArgs', 'LogProcessingRuleTestingArgsDict', 'outputs.LogProcessingRuleTesting']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["enabled"] = enabled
+        __props__["insertAfter"] = insert_after
+        __props__["processorDefinition"] = processor_definition
+        __props__["query"] = query
+        __props__["ruleName"] = rule_name
+        __props__["ruleTesting"] = rule_testing
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/logProcessing:LogProcessing', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def enabled(self) -> pulumi.Output[_builtins.bool]:

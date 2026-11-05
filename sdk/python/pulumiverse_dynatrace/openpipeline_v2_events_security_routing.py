@@ -209,6 +209,14 @@ class OpenpipelineV2EventsSecurityRouting(pulumi.CustomResource):
         __props__.__dict__["routing_entries"] = routing_entries
         return OpenpipelineV2EventsSecurityRouting(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            routing_entries: pulumi.Input[Optional[Union['OpenpipelineV2EventsSecurityRoutingRoutingEntriesArgs', 'OpenpipelineV2EventsSecurityRoutingRoutingEntriesArgsDict', 'outputs.OpenpipelineV2EventsSecurityRoutingRoutingEntries']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["routingEntries"] = routing_entries
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/openpipelineV2EventsSecurityRouting:OpenpipelineV2EventsSecurityRouting', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="routingEntries")
     def routing_entries(self) -> pulumi.Output[Optional['outputs.OpenpipelineV2EventsSecurityRoutingRoutingEntries']]:

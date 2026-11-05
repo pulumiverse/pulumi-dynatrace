@@ -161,6 +161,12 @@ func (IssueTrackingState) ElementType() reflect.Type {
 	return reflect.TypeOf((*issueTrackingState)(nil)).Elem()
 }
 
+// IssueTrackingExists checks whether an existing IssueTracking resource with the given ID exists.
+func IssueTrackingExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *IssueTrackingState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/issueTracking:IssueTracking", id, state, "", opts...)
+}
+
 type issueTrackingArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`

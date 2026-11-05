@@ -161,6 +161,12 @@ func (ManagedPreferencesState) ElementType() reflect.Type {
 	return reflect.TypeOf((*managedPreferencesState)(nil)).Elem()
 }
 
+// ManagedPreferencesExists checks whether an existing ManagedPreferences resource with the given ID exists.
+func ManagedPreferencesExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ManagedPreferencesState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/managedPreferences:ManagedPreferences", id, state, "", opts...)
+}
+
 type managedPreferencesArgs struct {
 	// Default: `false`
 	CertificateManagementEnabled *bool `pulumi:"certificateManagementEnabled"`

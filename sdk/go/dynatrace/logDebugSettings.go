@@ -78,6 +78,12 @@ func (LogDebugSettingsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*logDebugSettingsState)(nil)).Elem()
 }
 
+// LogDebugSettingsExists checks whether an existing LogDebugSettings resource with the given ID exists.
+func LogDebugSettingsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *LogDebugSettingsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/logDebugSettings:LogDebugSettings", id, state, "", opts...)
+}
+
 type logDebugSettingsArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`

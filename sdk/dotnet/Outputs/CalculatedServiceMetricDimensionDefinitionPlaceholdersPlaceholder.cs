@@ -25,12 +25,9 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// <summary>
         /// Depending on the `Kind` value:
         /// 
-        /// 
         /// * `REGEX_EXTRACTION`: The regular expression.
         /// 
-        /// 
         /// * `BETWEEN_DELIMITER`: The opening delimiter string to look for.
-        /// 
         /// 
         /// * All other values: The delimiter string to look for
         /// </summary>

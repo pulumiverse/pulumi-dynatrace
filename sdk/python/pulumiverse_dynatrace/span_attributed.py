@@ -253,6 +253,18 @@ class SpanAttributed(pulumi.CustomResource):
         __props__.__dict__["persistent"] = persistent
         return SpanAttributed(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            key: pulumi.Input[Optional[_builtins.str]] = None,
+            masking: pulumi.Input[Optional[_builtins.str]] = None,
+            persistent: pulumi.Input[Optional[_builtins.bool]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["key"] = key
+        __props__["masking"] = masking
+        __props__["persistent"] = persistent
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/spanAttributed:SpanAttributed', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def key(self) -> pulumi.Output[_builtins.str]:

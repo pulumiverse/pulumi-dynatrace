@@ -249,6 +249,18 @@ class GrailSecurityContext(pulumi.CustomResource):
         __props__.__dict__["insert_after"] = insert_after
         return GrailSecurityContext(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            destination_property: pulumi.Input[Optional[_builtins.str]] = None,
+            entity_type: pulumi.Input[Optional[_builtins.str]] = None,
+            insert_after: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["destinationProperty"] = destination_property
+        __props__["entityType"] = entity_type
+        __props__["insertAfter"] = insert_after
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/grailSecurityContext:GrailSecurityContext', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="destinationProperty")
     def destination_property(self) -> pulumi.Output[_builtins.str]:

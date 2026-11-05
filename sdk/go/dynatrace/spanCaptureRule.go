@@ -99,6 +99,12 @@ func (SpanCaptureRuleState) ElementType() reflect.Type {
 	return reflect.TypeOf((*spanCaptureRuleState)(nil)).Elem()
 }
 
+// SpanCaptureRuleExists checks whether an existing SpanCaptureRule resource with the given ID exists.
+func SpanCaptureRuleExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SpanCaptureRuleState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/spanCaptureRule:SpanCaptureRule", id, state, "", opts...)
+}
+
 type spanCaptureRuleArgs struct {
 	// Whether to create an entry point or not
 	Action string `pulumi:"action"`

@@ -93,6 +93,12 @@ func (HttpMonitorCookiesState) ElementType() reflect.Type {
 	return reflect.TypeOf((*httpMonitorCookiesState)(nil)).Elem()
 }
 
+// HttpMonitorCookiesExists checks whether an existing HttpMonitorCookies resource with the given ID exists.
+func HttpMonitorCookiesExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *HttpMonitorCookiesState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/httpMonitorCookies:HttpMonitorCookies", id, state, "", opts...)
+}
+
 type httpMonitorCookiesArgs struct {
 	// no documentation available
 	Cookies *HttpMonitorCookiesCookies `pulumi:"cookies"`

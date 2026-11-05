@@ -60,7 +60,7 @@ namespace Pulumiverse.Dynatrace
 
         /// <summary>
         /// ## Rule testing
-        ///  ### 1. Paste a log / JSON sample
+        /// ### 1. Paste a log / JSON sample
         /// </summary>
         [Output("ruleTesting")]
         public Output<Outputs.LogProcessingRuleTesting> RuleTesting { get; private set; } = null!;
@@ -144,7 +144,7 @@ namespace Pulumiverse.Dynatrace
 
         /// <summary>
         /// ## Rule testing
-        ///  ### 1. Paste a log / JSON sample
+        /// ### 1. Paste a log / JSON sample
         /// </summary>
         [Input("ruleTesting", required: true)]
         public Input<Inputs.LogProcessingRuleTestingArgs> RuleTesting { get; set; } = null!;
@@ -189,7 +189,7 @@ namespace Pulumiverse.Dynatrace
 
         /// <summary>
         /// ## Rule testing
-        ///  ### 1. Paste a log / JSON sample
+        /// ### 1. Paste a log / JSON sample
         /// </summary>
         [Input("ruleTesting")]
         public Input<Inputs.LogProcessingRuleTestingGetArgs>? RuleTesting { get; set; }

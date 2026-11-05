@@ -165,6 +165,17 @@ export class OpenpipelineV2SecurityEventsDataforwarding extends pulumi.CustomRes
         return new OpenpipelineV2SecurityEventsDataforwarding(name, <any>state, { ...opts, id: id });
     }
 
+    /**
+     * Check whether an existing OpenpipelineV2SecurityEventsDataforwarding resource with the given ID exists.
+     *
+     * @param id The _unique_ provider ID of the resource to check.
+     * @param state Any extra arguments used during the lookup.
+     * @param opts Optional settings to control the behavior of the CustomResource.
+     */
+    public static exists(id: pulumi.Input<string>, state?: OpenpipelineV2SecurityEventsDataforwardingState, opts?: pulumi.CustomResourceOptions): pulumi.Output<boolean> {
+        return pulumi.runtime.existsResource("dynatrace:index/openpipelineV2SecurityEventsDataforwarding:OpenpipelineV2SecurityEventsDataforwarding", id, <any>state || {}, { ...opts }, undefined);
+    }
+
     /** @internal */
     public static readonly __pulumiType = 'dynatrace:index/openpipelineV2SecurityEventsDataforwarding:OpenpipelineV2SecurityEventsDataforwarding';
 

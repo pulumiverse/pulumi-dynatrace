@@ -310,6 +310,20 @@ class ManagedPublicEndpoints(pulumi.CustomResource):
         __props__.__dict__["web_ui_address"] = web_ui_address
         return ManagedPublicEndpoints(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            additional_web_ui_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            beacon_forwarder_address: pulumi.Input[Optional[_builtins.str]] = None,
+            cdn_address: pulumi.Input[Optional[_builtins.str]] = None,
+            web_ui_address: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["additionalWebUiAddresses"] = additional_web_ui_addresses
+        __props__["beaconForwarderAddress"] = beacon_forwarder_address
+        __props__["cdnAddress"] = cdn_address
+        __props__["webUiAddress"] = web_ui_address
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/managedPublicEndpoints:ManagedPublicEndpoints', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="additionalWebUiAddresses")
     def additional_web_ui_addresses(self) -> pulumi.Output[Optional[Sequence[_builtins.str]]]:

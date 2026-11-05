@@ -102,6 +102,12 @@ func (OneagentUpdatesState) ElementType() reflect.Type {
 	return reflect.TypeOf((*oneagentUpdatesState)(nil)).Elem()
 }
 
+// OneagentUpdatesExists checks whether an existing OneagentUpdates resource with the given ID exists.
+func OneagentUpdatesExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *OneagentUpdatesState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/oneagentUpdates:OneagentUpdates", id, state, "", opts...)
+}
+
 type oneagentUpdatesArgs struct {
 	// Maintenance windows
 	MaintenanceWindows *OneagentUpdatesMaintenanceWindows `pulumi:"maintenanceWindows"`

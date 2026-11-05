@@ -315,6 +315,18 @@ class OpenpipelineUserSessions(pulumi.CustomResource):
         __props__.__dict__["routing"] = routing
         return OpenpipelineUserSessions(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            endpoints: pulumi.Input[Optional[Union['OpenpipelineUserSessionsEndpointsArgs', 'OpenpipelineUserSessionsEndpointsArgsDict', 'outputs.OpenpipelineUserSessionsEndpoints']]] = None,
+            pipelines: pulumi.Input[Optional[Union['OpenpipelineUserSessionsPipelinesArgs', 'OpenpipelineUserSessionsPipelinesArgsDict', 'outputs.OpenpipelineUserSessionsPipelines']]] = None,
+            routing: pulumi.Input[Optional[Union['OpenpipelineUserSessionsRoutingArgs', 'OpenpipelineUserSessionsRoutingArgsDict', 'outputs.OpenpipelineUserSessionsRouting']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["endpoints"] = endpoints
+        __props__["pipelines"] = pipelines
+        __props__["routing"] = routing
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/openpipelineUserSessions:OpenpipelineUserSessions', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def endpoints(self) -> pulumi.Output[Optional['outputs.OpenpipelineUserSessionsEndpoints']]:

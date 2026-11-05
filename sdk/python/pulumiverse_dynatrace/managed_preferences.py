@@ -672,6 +672,40 @@ class ManagedPreferences(pulumi.CustomResource):
         __props__.__dict__["telemetry_sharing"] = telemetry_sharing
         return ManagedPreferences(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            certificate_management_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            certificate_management_possible: pulumi.Input[Optional[_builtins.bool]] = None,
+            community_create_user: pulumi.Input[Optional[_builtins.bool]] = None,
+            community_external_search: pulumi.Input[Optional[_builtins.bool]] = None,
+            help_chat_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            read_only_remote_access_allowed: pulumi.Input[Optional[_builtins.bool]] = None,
+            remote_access_on_demand_only: pulumi.Input[Optional[_builtins.bool]] = None,
+            ruxit_monitors_ruxit: pulumi.Input[Optional[_builtins.bool]] = None,
+            support_allow_remote_access: pulumi.Input[Optional[_builtins.bool]] = None,
+            support_send_billing: pulumi.Input[Optional[_builtins.bool]] = None,
+            support_send_cluster_health: pulumi.Input[Optional[_builtins.bool]] = None,
+            support_send_events: pulumi.Input[Optional[_builtins.bool]] = None,
+            suppress_non_billing_relevant_data: pulumi.Input[Optional[_builtins.bool]] = None,
+            telemetry_sharing: pulumi.Input[Optional[_builtins.bool]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["certificateManagementEnabled"] = certificate_management_enabled
+        __props__["certificateManagementPossible"] = certificate_management_possible
+        __props__["communityCreateUser"] = community_create_user
+        __props__["communityExternalSearch"] = community_external_search
+        __props__["helpChatEnabled"] = help_chat_enabled
+        __props__["readOnlyRemoteAccessAllowed"] = read_only_remote_access_allowed
+        __props__["remoteAccessOnDemandOnly"] = remote_access_on_demand_only
+        __props__["ruxitMonitorsRuxit"] = ruxit_monitors_ruxit
+        __props__["supportAllowRemoteAccess"] = support_allow_remote_access
+        __props__["supportSendBilling"] = support_send_billing
+        __props__["supportSendClusterHealth"] = support_send_cluster_health
+        __props__["supportSendEvents"] = support_send_events
+        __props__["suppressNonBillingRelevantData"] = suppress_non_billing_relevant_data
+        __props__["telemetrySharing"] = telemetry_sharing
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/managedPreferences:ManagedPreferences', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="certificateManagementEnabled")
     def certificate_management_enabled(self) -> pulumi.Output[Optional[_builtins.bool]]:

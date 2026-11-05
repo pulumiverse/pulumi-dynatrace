@@ -87,6 +87,12 @@ func (WebAppCustomConfigPropertiesState) ElementType() reflect.Type {
 	return reflect.TypeOf((*webAppCustomConfigPropertiesState)(nil)).Elem()
 }
 
+// WebAppCustomConfigPropertiesExists checks whether an existing WebAppCustomConfigProperties resource with the given ID exists.
+func WebAppCustomConfigPropertiesExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *WebAppCustomConfigPropertiesState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/webAppCustomConfigProperties:WebAppCustomConfigProperties", id, state, "", opts...)
+}
+
 type webAppCustomConfigPropertiesArgs struct {
 	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
 	ApplicationId string `pulumi:"applicationId"`

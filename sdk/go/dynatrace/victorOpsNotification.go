@@ -139,6 +139,12 @@ func (VictorOpsNotificationState) ElementType() reflect.Type {
 	return reflect.TypeOf((*victorOpsNotificationState)(nil)).Elem()
 }
 
+// VictorOpsNotificationExists checks whether an existing VictorOpsNotification resource with the given ID exists.
+func VictorOpsNotificationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *VictorOpsNotificationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/victorOpsNotification:VictorOpsNotification", id, state, "", opts...)
+}
+
 type victorOpsNotificationArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Active bool `pulumi:"active"`

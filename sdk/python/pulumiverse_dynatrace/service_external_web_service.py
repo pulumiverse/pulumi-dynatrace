@@ -407,6 +407,26 @@ class ServiceExternalWebService(pulumi.CustomResource):
         __props__.__dict__["name"] = name
         return ServiceExternalWebService(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            conditions: pulumi.Input[Optional[Union['ServiceExternalWebServiceConditionsArgs', 'ServiceExternalWebServiceConditionsArgsDict', 'outputs.ServiceExternalWebServiceConditions']]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            id_contributors: pulumi.Input[Optional[Union['ServiceExternalWebServiceIdContributorsArgs', 'ServiceExternalWebServiceIdContributorsArgsDict', 'outputs.ServiceExternalWebServiceIdContributors']]] = None,
+            insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+            management_zones: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["conditions"] = conditions
+        __props__["description"] = description
+        __props__["enabled"] = enabled
+        __props__["idContributors"] = id_contributors
+        __props__["insertAfter"] = insert_after
+        __props__["managementZones"] = management_zones
+        __props__["name"] = name
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/serviceExternalWebService:ServiceExternalWebService', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def conditions(self) -> pulumi.Output[Optional['outputs.ServiceExternalWebServiceConditions']]:

@@ -117,6 +117,12 @@ func (RumProviderBreakdownState) ElementType() reflect.Type {
 	return reflect.TypeOf((*rumProviderBreakdownState)(nil)).Elem()
 }
 
+// RumProviderBreakdownExists checks whether an existing RumProviderBreakdown resource with the given ID exists.
+func RumProviderBreakdownExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *RumProviderBreakdownState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/rumProviderBreakdown:RumProviderBreakdown", id, state, "", opts...)
+}
+
 type rumProviderBreakdownArgs struct {
 	// Domain name pattern
 	DomainNamePatternList RumProviderBreakdownDomainNamePatternList `pulumi:"domainNamePatternList"`

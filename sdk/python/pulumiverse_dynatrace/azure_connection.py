@@ -463,6 +463,20 @@ class AzureConnection(pulumi.CustomResource):
         __props__.__dict__["type"] = type
         return AzureConnection(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            client_secret: pulumi.Input[Optional[Union['AzureConnectionClientSecretArgs', 'AzureConnectionClientSecretArgsDict', 'outputs.AzureConnectionClientSecret']]] = None,
+            federated_identity_credential: pulumi.Input[Optional[Union['AzureConnectionFederatedIdentityCredentialArgs', 'AzureConnectionFederatedIdentityCredentialArgsDict', 'outputs.AzureConnectionFederatedIdentityCredential']]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["clientSecret"] = client_secret
+        __props__["federatedIdentityCredential"] = federated_identity_credential
+        __props__["name"] = name
+        __props__["type"] = type
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/azureConnection:AzureConnection', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="clientSecret")
     def client_secret(self) -> pulumi.Output[Optional['outputs.AzureConnectionClientSecret']]:

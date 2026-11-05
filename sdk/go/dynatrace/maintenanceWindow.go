@@ -125,6 +125,12 @@ func (MaintenanceWindowState) ElementType() reflect.Type {
 	return reflect.TypeOf((*maintenanceWindowState)(nil)).Elem()
 }
 
+// MaintenanceWindowExists checks whether an existing MaintenanceWindow resource with the given ID exists.
+func MaintenanceWindowExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *MaintenanceWindowState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/maintenanceWindow:MaintenanceWindow", id, state, "", opts...)
+}
+
 type maintenanceWindowArgs struct {
 	// A short description of the maintenance purpose
 	Description *string `pulumi:"description"`

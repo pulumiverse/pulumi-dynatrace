@@ -93,6 +93,12 @@ func (ProcessVisibilityState) ElementType() reflect.Type {
 	return reflect.TypeOf((*processVisibilityState)(nil)).Elem()
 }
 
+// ProcessVisibilityExists checks whether an existing ProcessVisibility resource with the given ID exists.
+func ProcessVisibilityExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ProcessVisibilityState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/processVisibility:ProcessVisibility", id, state, "", opts...)
+}
+
 type processVisibilityArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`

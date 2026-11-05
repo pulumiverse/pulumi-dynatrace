@@ -488,6 +488,30 @@ class RequestAttribute(pulumi.CustomResource):
         __props__.__dict__["unknowns"] = unknowns
         return RequestAttribute(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            aggregation: pulumi.Input[Optional[_builtins.str]] = None,
+            confidential: pulumi.Input[Optional[_builtins.bool]] = None,
+            data_sources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RequestAttributeDataSourceArgs', 'RequestAttributeDataSourceArgsDict', 'outputs.RequestAttributeDataSource']]]]] = None,
+            data_type: pulumi.Input[Optional[_builtins.str]] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            normalization: pulumi.Input[Optional[_builtins.str]] = None,
+            skip_personal_data_masking: pulumi.Input[Optional[_builtins.bool]] = None,
+            unknowns: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["aggregation"] = aggregation
+        __props__["confidential"] = confidential
+        __props__["dataSources"] = data_sources
+        __props__["dataType"] = data_type
+        __props__["enabled"] = enabled
+        __props__["name"] = name
+        __props__["normalization"] = normalization
+        __props__["skipPersonalDataMasking"] = skip_personal_data_masking
+        __props__["unknowns"] = unknowns
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/requestAttribute:RequestAttribute', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def aggregation(self) -> pulumi.Output[_builtins.str]:

@@ -253,6 +253,18 @@ class ApplicationAnomalies(pulumi.CustomResource):
         __props__.__dict__["traffic"] = traffic
         return ApplicationAnomalies(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            failure_rate: pulumi.Input[Optional[Union['ApplicationAnomaliesFailureRateArgs', 'ApplicationAnomaliesFailureRateArgsDict', 'outputs.ApplicationAnomaliesFailureRate']]] = None,
+            response_time: pulumi.Input[Optional[Union['ApplicationAnomaliesResponseTimeArgs', 'ApplicationAnomaliesResponseTimeArgsDict', 'outputs.ApplicationAnomaliesResponseTime']]] = None,
+            traffic: pulumi.Input[Optional[Union['ApplicationAnomaliesTrafficArgs', 'ApplicationAnomaliesTrafficArgsDict', 'outputs.ApplicationAnomaliesTraffic']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["failureRate"] = failure_rate
+        __props__["responseTime"] = response_time
+        __props__["traffic"] = traffic
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/applicationAnomalies:ApplicationAnomalies', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="failureRate")
     def failure_rate(self) -> pulumi.Output[Optional['outputs.ApplicationAnomaliesFailureRate']]:

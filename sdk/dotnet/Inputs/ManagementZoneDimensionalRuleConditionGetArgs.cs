@@ -20,7 +20,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<string> Key { get; set; } = null!;
 
         /// <summary>
-        /// How to compare. Possible values are 
+        /// How to compare. Possible values are
         ///    - `BEGINS_WITH`
         ///    - `EQUALS`
         /// </summary>
@@ -28,7 +28,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<string> Match { get; set; } = null!;
 
         /// <summary>
-        /// The type of the condition. Possible values are 
+        /// The type of the condition. Possible values are
         ///    - `DIMENSION`
         ///    - `LOG_FILE_NAME`
         ///    - `METRIC_KEY`

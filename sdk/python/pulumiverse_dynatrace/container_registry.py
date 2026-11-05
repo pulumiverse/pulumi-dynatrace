@@ -183,6 +183,14 @@ class ContainerRegistry(pulumi.CustomResource):
         __props__.__dict__["container_registry"] = container_registry
         return ContainerRegistry(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            container_registry: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["containerRegistry"] = container_registry
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/containerRegistry:ContainerRegistry', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="containerRegistry")
     def container_registry(self) -> pulumi.Output[Optional[_builtins.str]]:

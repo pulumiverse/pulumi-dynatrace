@@ -124,6 +124,12 @@ func (MobileAppCrashRateState) ElementType() reflect.Type {
 	return reflect.TypeOf((*mobileAppCrashRateState)(nil)).Elem()
 }
 
+// MobileAppCrashRateExists checks whether an existing MobileAppCrashRate resource with the given ID exists.
+func MobileAppCrashRateExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *MobileAppCrashRateState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/mobileAppCrashRate:MobileAppCrashRate", id, state, "", opts...)
+}
+
 type mobileAppCrashRateArgs struct {
 	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
 	ApplicationId *string `pulumi:"applicationId"`

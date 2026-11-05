@@ -96,6 +96,12 @@ func (AttributeMaskingState) ElementType() reflect.Type {
 	return reflect.TypeOf((*attributeMaskingState)(nil)).Elem()
 }
 
+// AttributeMaskingExists checks whether an existing AttributeMasking resource with the given ID exists.
+func AttributeMaskingExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AttributeMaskingState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/attributeMasking:AttributeMasking", id, state, "", opts...)
+}
+
 type attributeMaskingArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`

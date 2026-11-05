@@ -106,6 +106,12 @@ func (PlatformSloState) ElementType() reflect.Type {
 	return reflect.TypeOf((*platformSloState)(nil)).Elem()
 }
 
+// PlatformSloExists checks whether an existing PlatformSlo resource with the given ID exists.
+func PlatformSloExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *PlatformSloState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/platformSlo:PlatformSlo", id, state, "", opts...)
+}
+
 type platformSloArgs struct {
 	// Criteria of the SLO
 	Criteria PlatformSloCriteria `pulumi:"criteria"`

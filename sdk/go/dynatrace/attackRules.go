@@ -125,6 +125,12 @@ func (AttackRulesState) ElementType() reflect.Type {
 	return reflect.TypeOf((*attackRulesState)(nil)).Elem()
 }
 
+// AttackRulesExists checks whether an existing AttackRules resource with the given ID exists.
+func AttackRulesExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AttackRulesState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/attackRules:AttackRules", id, state, "", opts...)
+}
+
 type attackRulesArgs struct {
 	// Step 1: Select attack protection behavior
 	AttackHandling AttackRulesAttackHandling `pulumi:"attackHandling"`

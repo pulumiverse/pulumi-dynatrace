@@ -187,6 +187,12 @@ func (CloudappWorkloaddetectionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*cloudappWorkloaddetectionState)(nil)).Elem()
 }
 
+// CloudappWorkloaddetectionExists checks whether an existing CloudappWorkloaddetection resource with the given ID exists.
+func CloudappWorkloaddetectionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *CloudappWorkloaddetectionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/cloudappWorkloaddetection:CloudappWorkloaddetection", id, state, "", opts...)
+}
+
 type cloudappWorkloaddetectionArgs struct {
 	// Enable this setting to get
 	//  * Processes of Cloud Foundry application instances merged into process groups by Cloud Foundry application.

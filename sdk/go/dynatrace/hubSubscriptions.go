@@ -74,6 +74,12 @@ func (HubSubscriptionsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*hubSubscriptionsState)(nil)).Elem()
 }
 
+// HubSubscriptionsExists checks whether an existing HubSubscriptions resource with the given ID exists.
+func HubSubscriptionsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *HubSubscriptionsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/hubSubscriptions:HubSubscriptions", id, state, "", opts...)
+}
+
 type hubSubscriptionsArgs struct {
 	// Subscriptions
 	TokenSubscriptions *HubSubscriptionsTokenSubscriptions `pulumi:"tokenSubscriptions"`

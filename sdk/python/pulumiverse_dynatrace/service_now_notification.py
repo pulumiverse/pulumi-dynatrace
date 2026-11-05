@@ -647,6 +647,36 @@ class ServiceNowNotification(pulumi.CustomResource):
         __props__.__dict__["username"] = username
         return ServiceNowNotification(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            active: pulumi.Input[Optional[_builtins.bool]] = None,
+            events: pulumi.Input[Optional[_builtins.bool]] = None,
+            format_problem_details_as_text: pulumi.Input[Optional[_builtins.bool]] = None,
+            incidents: pulumi.Input[Optional[_builtins.bool]] = None,
+            instance: pulumi.Input[Optional[_builtins.str]] = None,
+            legacy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            message: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            password: pulumi.Input[Optional[_builtins.str]] = None,
+            profile: pulumi.Input[Optional[_builtins.str]] = None,
+            url: pulumi.Input[Optional[_builtins.str]] = None,
+            username: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["active"] = active
+        __props__["events"] = events
+        __props__["formatProblemDetailsAsText"] = format_problem_details_as_text
+        __props__["incidents"] = incidents
+        __props__["instance"] = instance
+        __props__["legacyId"] = legacy_id
+        __props__["message"] = message
+        __props__["name"] = name
+        __props__["password"] = password
+        __props__["profile"] = profile
+        __props__["url"] = url
+        __props__["username"] = username
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/serviceNowNotification:ServiceNowNotification', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def active(self) -> pulumi.Output[_builtins.bool]:

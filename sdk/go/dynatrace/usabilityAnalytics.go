@@ -120,6 +120,12 @@ func (UsabilityAnalyticsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*usabilityAnalyticsState)(nil)).Elem()
 }
 
+// UsabilityAnalyticsExists checks whether an existing UsabilityAnalytics resource with the given ID exists.
+func UsabilityAnalyticsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *UsabilityAnalyticsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/usabilityAnalytics:UsabilityAnalytics", id, state, "", opts...)
+}
+
 type usabilityAnalyticsArgs struct {
 	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
 	ApplicationId *string `pulumi:"applicationId"`

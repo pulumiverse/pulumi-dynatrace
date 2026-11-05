@@ -76,6 +76,12 @@ func (ResourceAttributesState) ElementType() reflect.Type {
 	return reflect.TypeOf((*resourceAttributesState)(nil)).Elem()
 }
 
+// ResourceAttributesExists checks whether an existing ResourceAttributes resource with the given ID exists.
+func ResourceAttributesExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ResourceAttributesState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/resourceAttributes:ResourceAttributes", id, state, "", opts...)
+}
+
 type resourceAttributesArgs struct {
 	// Attribute key allow-list
 	Keys *ResourceAttributesKeys `pulumi:"keys"`

@@ -120,6 +120,12 @@ func (K8sNamespaceAnomaliesState) ElementType() reflect.Type {
 	return reflect.TypeOf((*k8sNamespaceAnomaliesState)(nil)).Elem()
 }
 
+// K8sNamespaceAnomaliesExists checks whether an existing K8sNamespaceAnomalies resource with the given ID exists.
+func K8sNamespaceAnomaliesExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *K8sNamespaceAnomaliesState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/k8sNamespaceAnomalies:K8sNamespaceAnomalies", id, state, "", opts...)
+}
+
 type k8sNamespaceAnomaliesArgs struct {
 	// Alerts if almost no CPU-limit quota left in namespace
 	CpuLimitsQuotaSaturation K8sNamespaceAnomaliesCpuLimitsQuotaSaturation `pulumi:"cpuLimitsQuotaSaturation"`

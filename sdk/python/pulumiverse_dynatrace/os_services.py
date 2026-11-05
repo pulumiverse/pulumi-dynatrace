@@ -880,6 +880,40 @@ class OsServices(pulumi.CustomResource):
         __props__.__dict__["system"] = system
         return OsServices(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            alert_activation_duration: pulumi.Input[Optional[_builtins.int]] = None,
+            alerting: pulumi.Input[Optional[_builtins.bool]] = None,
+            detection_conditions_linux: pulumi.Input[Optional[Union['OsServicesDetectionConditionsLinuxArgs', 'OsServicesDetectionConditionsLinuxArgsDict', 'outputs.OsServicesDetectionConditionsLinux']]] = None,
+            detection_conditions_windows: pulumi.Input[Optional[Union['OsServicesDetectionConditionsWindowsArgs', 'OsServicesDetectionConditionsWindowsArgsDict', 'outputs.OsServicesDetectionConditionsWindows']]] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+            metadata: pulumi.Input[Optional[Union['OsServicesMetadataArgs', 'OsServicesMetadataArgsDict', 'outputs.OsServicesMetadata']]] = None,
+            monitoring: pulumi.Input[Optional[_builtins.bool]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            not_installed_alerting: pulumi.Input[Optional[_builtins.bool]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None,
+            status_condition_linux: pulumi.Input[Optional[_builtins.str]] = None,
+            status_condition_windows: pulumi.Input[Optional[_builtins.str]] = None,
+            system: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["alertActivationDuration"] = alert_activation_duration
+        __props__["alerting"] = alerting
+        __props__["detectionConditionsLinux"] = detection_conditions_linux
+        __props__["detectionConditionsWindows"] = detection_conditions_windows
+        __props__["enabled"] = enabled
+        __props__["insertAfter"] = insert_after
+        __props__["metadata"] = metadata
+        __props__["monitoring"] = monitoring
+        __props__["name"] = name
+        __props__["notInstalledAlerting"] = not_installed_alerting
+        __props__["scope"] = scope
+        __props__["statusConditionLinux"] = status_condition_linux
+        __props__["statusConditionWindows"] = status_condition_windows
+        __props__["system"] = system
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/osServices:OsServices', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="alertActivationDuration")
     def alert_activation_duration(self) -> pulumi.Output[Optional[_builtins.int]]:

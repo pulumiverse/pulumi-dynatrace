@@ -23,7 +23,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly Outputs.DashboardDashboardMetadataDynamicFiltersGenericTagFilters? GenericTagFilters;
         /// <summary>
-        /// A set of entities applied for tag filter suggestions. You can fetch the list of possible values with the [GET all entity types](https://dt-url.net/dw03s7h)request. 
+        /// A set of entities applied for tag filter suggestions. You can fetch the list of possible values with the [GET all entity types](https://dt-url.net/dw03s7h)request.
         /// 
         /// Only applicable if the **filters** set includes `TAG_KEY:&lt;tagname&gt;`
         /// </summary>

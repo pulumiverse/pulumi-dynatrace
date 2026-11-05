@@ -608,6 +608,36 @@ class SloV2(pulumi.CustomResource):
         __props__.__dict__["target_warning"] = target_warning
         return SloV2(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            custom_description: pulumi.Input[Optional[_builtins.str]] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            error_budget_burn_rate: pulumi.Input[Optional[Union['SloV2ErrorBudgetBurnRateArgs', 'SloV2ErrorBudgetBurnRateArgsDict', 'outputs.SloV2ErrorBudgetBurnRate']]] = None,
+            evaluation_type: pulumi.Input[Optional[_builtins.str]] = None,
+            evaluation_window: pulumi.Input[Optional[_builtins.str]] = None,
+            filter: pulumi.Input[Optional[_builtins.str]] = None,
+            legacy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            metric_expression: pulumi.Input[Optional[_builtins.str]] = None,
+            metric_name: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            target_success: pulumi.Input[Optional[_builtins.float]] = None,
+            target_warning: pulumi.Input[Optional[_builtins.float]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["customDescription"] = custom_description
+        __props__["enabled"] = enabled
+        __props__["errorBudgetBurnRate"] = error_budget_burn_rate
+        __props__["evaluationType"] = evaluation_type
+        __props__["evaluationWindow"] = evaluation_window
+        __props__["filter"] = filter
+        __props__["legacyId"] = legacy_id
+        __props__["metricExpression"] = metric_expression
+        __props__["metricName"] = metric_name
+        __props__["name"] = name
+        __props__["targetSuccess"] = target_success
+        __props__["targetWarning"] = target_warning
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/sloV2:SloV2', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="customDescription")
     def custom_description(self) -> pulumi.Output[Optional[_builtins.str]]:

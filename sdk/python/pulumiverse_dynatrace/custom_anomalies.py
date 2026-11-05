@@ -701,6 +701,40 @@ class CustomAnomalies(pulumi.CustomResource):
         __props__.__dict__["warning_reason"] = warning_reason
         return CustomAnomalies(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            aggregation_type: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            dimensions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CustomAnomaliesDimensionArgs', 'CustomAnomaliesDimensionArgsDict', 'outputs.CustomAnomaliesDimension']]]]] = None,
+            disabled_reason: pulumi.Input[Optional[_builtins.str]] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            metric_id: pulumi.Input[Optional[_builtins.str]] = None,
+            metric_selector: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            primary_dimension_key: pulumi.Input[Optional[_builtins.str]] = None,
+            scopes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CustomAnomaliesScopeArgs', 'CustomAnomaliesScopeArgsDict', 'outputs.CustomAnomaliesScope']]]]] = None,
+            severity: pulumi.Input[Optional[_builtins.str]] = None,
+            strategy: pulumi.Input[Optional[Union['CustomAnomaliesStrategyArgs', 'CustomAnomaliesStrategyArgsDict', 'outputs.CustomAnomaliesStrategy']]] = None,
+            unknowns: pulumi.Input[Optional[_builtins.str]] = None,
+            warning_reason: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["aggregationType"] = aggregation_type
+        __props__["description"] = description
+        __props__["dimensions"] = dimensions
+        __props__["disabledReason"] = disabled_reason
+        __props__["enabled"] = enabled
+        __props__["metricId"] = metric_id
+        __props__["metricSelector"] = metric_selector
+        __props__["name"] = name
+        __props__["primaryDimensionKey"] = primary_dimension_key
+        __props__["scopes"] = scopes
+        __props__["severity"] = severity
+        __props__["strategy"] = strategy
+        __props__["unknowns"] = unknowns
+        __props__["warningReason"] = warning_reason
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/customAnomalies:CustomAnomalies', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="aggregationType")
     def aggregation_type(self) -> pulumi.Output[Optional[_builtins.str]]:

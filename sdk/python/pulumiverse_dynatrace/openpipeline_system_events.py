@@ -343,6 +343,18 @@ class OpenpipelineSystemEvents(pulumi.CustomResource):
         __props__.__dict__["routing"] = routing
         return OpenpipelineSystemEvents(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            endpoints: pulumi.Input[Optional[Union['OpenpipelineSystemEventsEndpointsArgs', 'OpenpipelineSystemEventsEndpointsArgsDict', 'outputs.OpenpipelineSystemEventsEndpoints']]] = None,
+            pipelines: pulumi.Input[Optional[Union['OpenpipelineSystemEventsPipelinesArgs', 'OpenpipelineSystemEventsPipelinesArgsDict', 'outputs.OpenpipelineSystemEventsPipelines']]] = None,
+            routing: pulumi.Input[Optional[Union['OpenpipelineSystemEventsRoutingArgs', 'OpenpipelineSystemEventsRoutingArgsDict', 'outputs.OpenpipelineSystemEventsRouting']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["endpoints"] = endpoints
+        __props__["pipelines"] = pipelines
+        __props__["routing"] = routing
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/openpipelineSystemEvents:OpenpipelineSystemEvents', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def endpoints(self) -> pulumi.Output[Optional['outputs.OpenpipelineSystemEventsEndpoints']]:

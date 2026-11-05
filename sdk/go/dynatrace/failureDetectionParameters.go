@@ -108,6 +108,12 @@ func (FailureDetectionParametersState) ElementType() reflect.Type {
 	return reflect.TypeOf((*failureDetectionParametersState)(nil)).Elem()
 }
 
+// FailureDetectionParametersExists checks whether an existing FailureDetectionParameters resource with the given ID exists.
+func FailureDetectionParametersExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *FailureDetectionParametersState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/failureDetectionParameters:FailureDetectionParameters", id, state, "", opts...)
+}
+
 type failureDetectionParametersArgs struct {
 	// HTTP 404 response codes are thrown when a web server can't find a certain page. 404s are classified as broken links on the client side and therefore aren't considered to be service failures. By enabling this setting, you can have 404s treated as server-side service failures.
 	BrokenLinks FailureDetectionParametersBrokenLinks `pulumi:"brokenLinks"`

@@ -304,6 +304,17 @@ export class OpenpipelineV2EventsSecurityPipelines extends pulumi.CustomResource
         return new OpenpipelineV2EventsSecurityPipelines(name, <any>state, { ...opts, id: id });
     }
 
+    /**
+     * Check whether an existing OpenpipelineV2EventsSecurityPipelines resource with the given ID exists.
+     *
+     * @param id The _unique_ provider ID of the resource to check.
+     * @param state Any extra arguments used during the lookup.
+     * @param opts Optional settings to control the behavior of the CustomResource.
+     */
+    public static exists(id: pulumi.Input<string>, state?: OpenpipelineV2EventsSecurityPipelinesState, opts?: pulumi.CustomResourceOptions): pulumi.Output<boolean> {
+        return pulumi.runtime.existsResource("dynatrace:index/openpipelineV2EventsSecurityPipelines:OpenpipelineV2EventsSecurityPipelines", id, <any>state || {}, { ...opts }, undefined);
+    }
+
     /** @internal */
     public static readonly __pulumiType = 'dynatrace:index/openpipelineV2EventsSecurityPipelines:OpenpipelineV2EventsSecurityPipelines';
 

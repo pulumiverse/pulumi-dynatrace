@@ -1400,6 +1400,30 @@ class HttpMonitor(pulumi.CustomResource):
         __props__.__dict__["tags"] = tags
         return HttpMonitor(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            anomaly_detections: pulumi.Input[Optional[Sequence[pulumi.Input[Union['HttpMonitorAnomalyDetectionArgs', 'HttpMonitorAnomalyDetectionArgsDict', 'outputs.HttpMonitorAnomalyDetection']]]]] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            frequency: pulumi.Input[Optional[_builtins.int]] = None,
+            locations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            manually_assigned_apps: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            no_script: pulumi.Input[Optional[_builtins.bool]] = None,
+            script: pulumi.Input[Optional[Union['HttpMonitorScriptArgs', 'HttpMonitorScriptArgsDict', 'outputs.HttpMonitorScript']]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['HttpMonitorTagArgs', 'HttpMonitorTagArgsDict', 'outputs.HttpMonitorTag']]]]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["anomalyDetections"] = anomaly_detections
+        __props__["enabled"] = enabled
+        __props__["frequency"] = frequency
+        __props__["locations"] = locations
+        __props__["manuallyAssignedApps"] = manually_assigned_apps
+        __props__["name"] = name
+        __props__["noScript"] = no_script
+        __props__["script"] = script
+        __props__["tags"] = tags
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/httpMonitor:HttpMonitor', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="anomalyDetections")
     def anomaly_detections(self) -> pulumi.Output[Optional[Sequence['outputs.HttpMonitorAnomalyDetection']]]:

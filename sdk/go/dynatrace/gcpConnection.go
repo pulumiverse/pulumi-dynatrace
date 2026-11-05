@@ -65,7 +65,7 @@ import (
 //
 //	"fmt"
 //
-//	"github.com/pulumi/pulumi-gcp/sdk/v9/go/gcp/serviceaccount"
+//	"github.com/pulumi/pulumi-gcp/sdk/v10/go/gcp/serviceaccount"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi/config"
 //	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
@@ -186,6 +186,12 @@ type GcpConnectionState struct {
 
 func (GcpConnectionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*gcpConnectionState)(nil)).Elem()
+}
+
+// GcpConnectionExists checks whether an existing GcpConnection resource with the given ID exists.
+func GcpConnectionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *GcpConnectionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/gcpConnection:GcpConnection", id, state, "", opts...)
 }
 
 type gcpConnectionArgs struct {

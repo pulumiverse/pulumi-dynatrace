@@ -176,6 +176,12 @@ func (CustomAnomaliesState) ElementType() reflect.Type {
 	return reflect.TypeOf((*customAnomaliesState)(nil)).Elem()
 }
 
+// CustomAnomaliesExists checks whether an existing CustomAnomalies resource with the given ID exists.
+func CustomAnomaliesExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *CustomAnomaliesState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/customAnomalies:CustomAnomalies", id, state, "", opts...)
+}
+
 type customAnomaliesArgs struct {
 	// How the metric data points are aggregated for the evaluation. The timeseries must support this aggregation
 	AggregationType *string `pulumi:"aggregationType"`

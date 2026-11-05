@@ -341,6 +341,12 @@ func (BrowserMonitorState) ElementType() reflect.Type {
 	return reflect.TypeOf((*browserMonitorState)(nil)).Elem()
 }
 
+// BrowserMonitorExists checks whether an existing BrowserMonitor resource with the given ID exists.
+func BrowserMonitorExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *BrowserMonitorState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/browserMonitor:BrowserMonitor", id, state, "", opts...)
+}
+
 type browserMonitorArgs struct {
 	// The anomaly detection configuration.
 	AnomalyDetection *BrowserMonitorAnomalyDetection `pulumi:"anomalyDetection"`

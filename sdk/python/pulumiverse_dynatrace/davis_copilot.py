@@ -410,6 +410,26 @@ class DavisCopilot(pulumi.CustomResource):
         __props__.__dict__["pii_blocking_types"] = pii_blocking_types
         return DavisCopilot(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            blocklist_entries: pulumi.Input[Optional[Union['DavisCopilotBlocklistEntriesArgs', 'DavisCopilotBlocklistEntriesArgsDict', 'outputs.DavisCopilotBlocklistEntries']]] = None,
+            enable_agentic_ai: pulumi.Input[Optional[_builtins.bool]] = None,
+            enable_copilot: pulumi.Input[Optional[_builtins.bool]] = None,
+            enable_document_suggestion: pulumi.Input[Optional[_builtins.bool]] = None,
+            enable_tenant_aware_data_mining: pulumi.Input[Optional[_builtins.bool]] = None,
+            pii_blocking_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            pii_blocking_types: pulumi.Input[Optional[Union['DavisCopilotPiiBlockingTypesArgs', 'DavisCopilotPiiBlockingTypesArgsDict', 'outputs.DavisCopilotPiiBlockingTypes']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["blocklistEntries"] = blocklist_entries
+        __props__["enableAgenticAi"] = enable_agentic_ai
+        __props__["enableCopilot"] = enable_copilot
+        __props__["enableDocumentSuggestion"] = enable_document_suggestion
+        __props__["enableTenantAwareDataMining"] = enable_tenant_aware_data_mining
+        __props__["piiBlockingEnabled"] = pii_blocking_enabled
+        __props__["piiBlockingTypes"] = pii_blocking_types
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/davisCopilot:DavisCopilot', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="blocklistEntries")
     def blocklist_entries(self) -> pulumi.Output[Optional['outputs.DavisCopilotBlocklistEntries']]:

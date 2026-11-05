@@ -110,6 +110,12 @@ func (ApplicationDataPrivacyState) ElementType() reflect.Type {
 	return reflect.TypeOf((*applicationDataPrivacyState)(nil)).Elem()
 }
 
+// ApplicationDataPrivacyExists checks whether an existing ApplicationDataPrivacy resource with the given ID exists.
+func ApplicationDataPrivacyExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ApplicationDataPrivacyState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/applicationDataPrivacy:ApplicationDataPrivacy", id, state, "", opts...)
+}
+
 type applicationDataPrivacyArgs struct {
 	// (Field has overlap with `DataPrivacy`) Set to `true` to disable data capture and cookies until JavaScriptAPI `dtrum.enable()` is called
 	DataCaptureOptIn *bool `pulumi:"dataCaptureOptIn"`

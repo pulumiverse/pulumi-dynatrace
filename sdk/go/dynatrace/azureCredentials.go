@@ -175,6 +175,12 @@ func (AzureCredentialsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*azureCredentialsState)(nil)).Elem()
 }
 
+// AzureCredentialsExists checks whether an existing AzureCredentials resource with the given ID exists.
+func AzureCredentialsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AzureCredentialsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/azureCredentials:AzureCredentials", id, state, "", opts...)
+}
+
 type azureCredentialsArgs struct {
 	// The monitoring is enabled (`true`) or disabled (`false`).  If not set on creation, the `true` value is used.  If the field is omitted during an update, the old value remains unaffected
 	Active bool `pulumi:"active"`

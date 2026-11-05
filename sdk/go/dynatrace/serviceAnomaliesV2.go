@@ -111,6 +111,12 @@ func (ServiceAnomaliesV2State) ElementType() reflect.Type {
 	return reflect.TypeOf((*serviceAnomaliesV2State)(nil)).Elem()
 }
 
+// ServiceAnomaliesV2Exists checks whether an existing ServiceAnomaliesV2 resource with the given ID exists.
+func ServiceAnomaliesV2Exists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ServiceAnomaliesV2State, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/serviceAnomaliesV2:ServiceAnomaliesV2", id, state, "", opts...)
+}
+
 type serviceAnomaliesV2Args struct {
 	// Failure rate
 	FailureRate ServiceAnomaliesV2FailureRate `pulumi:"failureRate"`

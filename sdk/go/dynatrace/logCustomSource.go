@@ -105,6 +105,12 @@ func (LogCustomSourceState) ElementType() reflect.Type {
 	return reflect.TypeOf((*logCustomSourceState)(nil)).Elem()
 }
 
+// LogCustomSourceExists checks whether an existing LogCustomSource resource with the given ID exists.
+func LogCustomSourceExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *LogCustomSourceState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/logCustomSource:LogCustomSource", id, state, "", opts...)
+}
+
 type logCustomSourceArgs struct {
 	// Define Custom Log Source only within context if provided
 	Context *LogCustomSourceContext `pulumi:"context"`

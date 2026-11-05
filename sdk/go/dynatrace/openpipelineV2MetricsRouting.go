@@ -112,6 +112,12 @@ func (OpenpipelineV2MetricsRoutingState) ElementType() reflect.Type {
 	return reflect.TypeOf((*openpipelineV2MetricsRoutingState)(nil)).Elem()
 }
 
+// OpenpipelineV2MetricsRoutingExists checks whether an existing OpenpipelineV2MetricsRouting resource with the given ID exists.
+func OpenpipelineV2MetricsRoutingExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *OpenpipelineV2MetricsRoutingState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/openpipelineV2MetricsRouting:OpenpipelineV2MetricsRouting", id, state, "", opts...)
+}
+
 type openpipelineV2MetricsRoutingArgs struct {
 	// Routing for pipelines
 	RoutingEntries *OpenpipelineV2MetricsRoutingRoutingEntries `pulumi:"routingEntries"`

@@ -84,6 +84,12 @@ func (LogSecurityContextState) ElementType() reflect.Type {
 	return reflect.TypeOf((*logSecurityContextState)(nil)).Elem()
 }
 
+// LogSecurityContextExists checks whether an existing LogSecurityContext resource with the given ID exists.
+func LogSecurityContextExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *LogSecurityContextState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/logSecurityContext:LogSecurityContext", id, state, "", opts...)
+}
+
 type logSecurityContextArgs struct {
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter *string `pulumi:"insertAfter"`

@@ -331,6 +331,22 @@ class WebAppAnomalies(pulumi.CustomResource):
         __props__.__dict__["traffic_spikes"] = traffic_spikes
         return WebAppAnomalies(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            error_rate: pulumi.Input[Optional[Union['WebAppAnomaliesErrorRateArgs', 'WebAppAnomaliesErrorRateArgsDict', 'outputs.WebAppAnomaliesErrorRate']]] = None,
+            response_time: pulumi.Input[Optional[Union['WebAppAnomaliesResponseTimeArgs', 'WebAppAnomaliesResponseTimeArgsDict', 'outputs.WebAppAnomaliesResponseTime']]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None,
+            traffic_drops: pulumi.Input[Optional[Union['WebAppAnomaliesTrafficDropsArgs', 'WebAppAnomaliesTrafficDropsArgsDict', 'outputs.WebAppAnomaliesTrafficDrops']]] = None,
+            traffic_spikes: pulumi.Input[Optional[Union['WebAppAnomaliesTrafficSpikesArgs', 'WebAppAnomaliesTrafficSpikesArgsDict', 'outputs.WebAppAnomaliesTrafficSpikes']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["errorRate"] = error_rate
+        __props__["responseTime"] = response_time
+        __props__["scope"] = scope
+        __props__["trafficDrops"] = traffic_drops
+        __props__["trafficSpikes"] = traffic_spikes
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/webAppAnomalies:WebAppAnomalies', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="errorRate")
     def error_rate(self) -> pulumi.Output['outputs.WebAppAnomaliesErrorRate']:

@@ -105,6 +105,12 @@ func (WebAppAutoInjectionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*webAppAutoInjectionState)(nil)).Elem()
 }
 
+// WebAppAutoInjectionExists checks whether an existing WebAppAutoInjection resource with the given ID exists.
+func WebAppAutoInjectionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *WebAppAutoInjectionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/webAppAutoInjection:WebAppAutoInjection", id, state, "", opts...)
+}
+
 type webAppAutoInjectionArgs struct {
 	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
 	ApplicationId string `pulumi:"applicationId"`

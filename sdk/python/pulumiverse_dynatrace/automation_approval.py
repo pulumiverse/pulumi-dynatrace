@@ -219,6 +219,16 @@ class AutomationApproval(pulumi.CustomResource):
         __props__.__dict__["workflow_app_access_approval_enabled"] = workflow_app_access_approval_enabled
         return AutomationApproval(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            external_approvals_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            workflow_app_access_approval_enabled: pulumi.Input[Optional[_builtins.bool]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["externalApprovalsEnabled"] = external_approvals_enabled
+        __props__["workflowAppAccessApprovalEnabled"] = workflow_app_access_approval_enabled
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/automationApproval:AutomationApproval', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="externalApprovalsEnabled")
     def external_approvals_enabled(self) -> pulumi.Output[Optional[_builtins.bool]]:

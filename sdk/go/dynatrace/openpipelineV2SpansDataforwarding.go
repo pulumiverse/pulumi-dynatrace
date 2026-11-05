@@ -332,6 +332,12 @@ func (OpenpipelineV2SpansDataforwardingState) ElementType() reflect.Type {
 	return reflect.TypeOf((*openpipelineV2SpansDataforwardingState)(nil)).Elem()
 }
 
+// OpenpipelineV2SpansDataforwardingExists checks whether an existing OpenpipelineV2SpansDataforwarding resource with the given ID exists.
+func OpenpipelineV2SpansDataforwardingExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *OpenpipelineV2SpansDataforwardingState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/openpipelineV2SpansDataforwarding:OpenpipelineV2SpansDataforwarding", id, state, "", opts...)
+}
+
 type openpipelineV2SpansDataforwardingArgs struct {
 	// AWS Connection
 	AwsConnection *OpenpipelineV2SpansDataforwardingAwsConnection `pulumi:"awsConnection"`

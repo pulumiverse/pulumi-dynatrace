@@ -209,6 +209,16 @@ class KubernetesSpm(pulumi.CustomResource):
         __props__.__dict__["scope"] = scope
         return KubernetesSpm(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            configuration_dataset_pipeline_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["configurationDatasetPipelineEnabled"] = configuration_dataset_pipeline_enabled
+        __props__["scope"] = scope
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/kubernetesSpm:KubernetesSpm', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="configurationDatasetPipelineEnabled")
     def configuration_dataset_pipeline_enabled(self) -> pulumi.Output[_builtins.bool]:

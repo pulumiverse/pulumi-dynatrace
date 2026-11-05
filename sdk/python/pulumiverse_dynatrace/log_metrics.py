@@ -368,6 +368,24 @@ class LogMetrics(pulumi.CustomResource):
         __props__.__dict__["query"] = query
         return LogMetrics(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            dimensions: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            key: pulumi.Input[Optional[_builtins.str]] = None,
+            measure: pulumi.Input[Optional[_builtins.str]] = None,
+            measure_attribute: pulumi.Input[Optional[_builtins.str]] = None,
+            query: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["dimensions"] = dimensions
+        __props__["enabled"] = enabled
+        __props__["key"] = key
+        __props__["measure"] = measure
+        __props__["measureAttribute"] = measure_attribute
+        __props__["query"] = query
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/logMetrics:LogMetrics', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def dimensions(self) -> pulumi.Output[Optional[Sequence[_builtins.str]]]:

@@ -112,6 +112,12 @@ func (OpenpipelineV2UsersessionsRoutingState) ElementType() reflect.Type {
 	return reflect.TypeOf((*openpipelineV2UsersessionsRoutingState)(nil)).Elem()
 }
 
+// OpenpipelineV2UsersessionsRoutingExists checks whether an existing OpenpipelineV2UsersessionsRouting resource with the given ID exists.
+func OpenpipelineV2UsersessionsRoutingExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *OpenpipelineV2UsersessionsRoutingState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/openpipelineV2UsersessionsRouting:OpenpipelineV2UsersessionsRouting", id, state, "", opts...)
+}
+
 type openpipelineV2UsersessionsRoutingArgs struct {
 	// Routing for pipelines
 	RoutingEntries *OpenpipelineV2UsersessionsRoutingRoutingEntries `pulumi:"routingEntries"`

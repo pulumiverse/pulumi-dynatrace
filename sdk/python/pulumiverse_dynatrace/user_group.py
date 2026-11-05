@@ -489,6 +489,26 @@ class UserGroup(pulumi.CustomResource):
         __props__.__dict__["sso_groups"] = sso_groups
         return UserGroup(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            access_account: pulumi.Input[Optional[_builtins.bool]] = None,
+            cluster_admin: pulumi.Input[Optional[_builtins.bool]] = None,
+            ldap_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            manage_account: pulumi.Input[Optional[_builtins.bool]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            permissions: pulumi.Input[Optional[Union['UserGroupPermissionsArgs', 'UserGroupPermissionsArgsDict', 'outputs.UserGroupPermissions']]] = None,
+            sso_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["accessAccount"] = access_account
+        __props__["clusterAdmin"] = cluster_admin
+        __props__["ldapGroups"] = ldap_groups
+        __props__["manageAccount"] = manage_account
+        __props__["name"] = name
+        __props__["permissions"] = permissions
+        __props__["ssoGroups"] = sso_groups
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/userGroup:UserGroup', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="accessAccount")
     def access_account(self) -> pulumi.Output[Optional[_builtins.bool]]:

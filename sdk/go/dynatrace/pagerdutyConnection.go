@@ -146,6 +146,12 @@ func (PagerdutyConnectionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*pagerdutyConnectionState)(nil)).Elem()
 }
 
+// PagerdutyConnectionExists checks whether an existing PagerdutyConnection resource with the given ID exists.
+func PagerdutyConnectionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *PagerdutyConnectionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/pagerdutyConnection:PagerdutyConnection", id, state, "", opts...)
+}
+
 type pagerdutyConnectionArgs struct {
 	// The name of the PagerDuty connection
 	Name *string `pulumi:"name"`

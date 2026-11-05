@@ -191,6 +191,12 @@ func (PolicyBindingsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*policyBindingsState)(nil)).Elem()
 }
 
+// PolicyBindingsExists checks whether an existing PolicyBindings resource with the given ID exists.
+func PolicyBindingsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *PolicyBindingsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/policyBindings:PolicyBindings", id, state, "", opts...)
+}
+
 type policyBindingsArgs struct {
 	// The UUID of the cluster. The attribute `policies` must contain ONLY policies defined for that cluster.
 	Cluster *string `pulumi:"cluster"`

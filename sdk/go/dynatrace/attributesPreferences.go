@@ -78,6 +78,12 @@ func (AttributesPreferencesState) ElementType() reflect.Type {
 	return reflect.TypeOf((*attributesPreferencesState)(nil)).Elem()
 }
 
+// AttributesPreferencesExists checks whether an existing AttributesPreferences resource with the given ID exists.
+func AttributesPreferencesExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AttributesPreferencesState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/attributesPreferences:AttributesPreferences", id, state, "", opts...)
+}
+
 type attributesPreferencesArgs struct {
 	// Possible Values: `ALLOW_ALL_ATTRIBUTES`, `BLOCK_ALL_ATTRIBUTES`
 	PersistenceMode string `pulumi:"persistenceMode"`

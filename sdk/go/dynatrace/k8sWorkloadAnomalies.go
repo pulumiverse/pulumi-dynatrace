@@ -201,6 +201,12 @@ func (K8sWorkloadAnomaliesState) ElementType() reflect.Type {
 	return reflect.TypeOf((*k8sWorkloadAnomaliesState)(nil)).Elem()
 }
 
+// K8sWorkloadAnomaliesExists checks whether an existing K8sWorkloadAnomalies resource with the given ID exists.
+func K8sWorkloadAnomaliesExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *K8sWorkloadAnomaliesState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/k8sWorkloadAnomalies:K8sWorkloadAnomalies", id, state, "", opts...)
+}
+
 type k8sWorkloadAnomaliesArgs struct {
 	// No documentation available
 	ContainerRestarts K8sWorkloadAnomaliesContainerRestarts `pulumi:"containerRestarts"`

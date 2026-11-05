@@ -287,6 +287,20 @@ class MonitoredTechnologiesPhp(pulumi.CustomResource):
         __props__.__dict__["host_id"] = host_id
         return MonitoredTechnologiesPhp(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            enable_php_cli_server: pulumi.Input[Optional[_builtins.bool]] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            enabled_fast_cgi: pulumi.Input[Optional[_builtins.bool]] = None,
+            host_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["enablePhpCliServer"] = enable_php_cli_server
+        __props__["enabled"] = enabled
+        __props__["enabledFastCgi"] = enabled_fast_cgi
+        __props__["hostId"] = host_id
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/monitoredTechnologiesPhp:MonitoredTechnologiesPhp', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="enablePhpCliServer")
     def enable_php_cli_server(self) -> pulumi.Output[Optional[_builtins.bool]]:

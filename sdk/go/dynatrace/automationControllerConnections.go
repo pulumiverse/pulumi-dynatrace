@@ -153,6 +153,12 @@ func (AutomationControllerConnectionsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*automationControllerConnectionsState)(nil)).Elem()
 }
 
+// AutomationControllerConnectionsExists checks whether an existing AutomationControllerConnections resource with the given ID exists.
+func AutomationControllerConnectionsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AutomationControllerConnectionsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/automationControllerConnections:AutomationControllerConnections", id, state, "", opts...)
+}
+
 type automationControllerConnectionsArgs struct {
 	// A unique and clearly identifiable connection name.
 	Name *string `pulumi:"name"`

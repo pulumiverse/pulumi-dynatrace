@@ -731,6 +731,42 @@ class K8sWorkloadAnomalies(pulumi.CustomResource):
         __props__.__dict__["workload_without_ready_pods"] = workload_without_ready_pods
         return K8sWorkloadAnomalies(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            container_restarts: pulumi.Input[Optional[Union['K8sWorkloadAnomaliesContainerRestartsArgs', 'K8sWorkloadAnomaliesContainerRestartsArgsDict', 'outputs.K8sWorkloadAnomaliesContainerRestarts']]] = None,
+            deployment_stuck: pulumi.Input[Optional[Union['K8sWorkloadAnomaliesDeploymentStuckArgs', 'K8sWorkloadAnomaliesDeploymentStuckArgsDict', 'outputs.K8sWorkloadAnomaliesDeploymentStuck']]] = None,
+            high_cpu_throttling: pulumi.Input[Optional[Union['K8sWorkloadAnomaliesHighCpuThrottlingArgs', 'K8sWorkloadAnomaliesHighCpuThrottlingArgsDict', 'outputs.K8sWorkloadAnomaliesHighCpuThrottling']]] = None,
+            high_cpu_usage: pulumi.Input[Optional[Union['K8sWorkloadAnomaliesHighCpuUsageArgs', 'K8sWorkloadAnomaliesHighCpuUsageArgsDict', 'outputs.K8sWorkloadAnomaliesHighCpuUsage']]] = None,
+            high_memory_usage: pulumi.Input[Optional[Union['K8sWorkloadAnomaliesHighMemoryUsageArgs', 'K8sWorkloadAnomaliesHighMemoryUsageArgsDict', 'outputs.K8sWorkloadAnomaliesHighMemoryUsage']]] = None,
+            job_failure_events: pulumi.Input[Optional[Union['K8sWorkloadAnomaliesJobFailureEventsArgs', 'K8sWorkloadAnomaliesJobFailureEventsArgsDict', 'outputs.K8sWorkloadAnomaliesJobFailureEvents']]] = None,
+            not_all_pods_ready: pulumi.Input[Optional[Union['K8sWorkloadAnomaliesNotAllPodsReadyArgs', 'K8sWorkloadAnomaliesNotAllPodsReadyArgsDict', 'outputs.K8sWorkloadAnomaliesNotAllPodsReady']]] = None,
+            oom_kills: pulumi.Input[Optional[Union['K8sWorkloadAnomaliesOomKillsArgs', 'K8sWorkloadAnomaliesOomKillsArgsDict', 'outputs.K8sWorkloadAnomaliesOomKills']]] = None,
+            pending_pods: pulumi.Input[Optional[Union['K8sWorkloadAnomaliesPendingPodsArgs', 'K8sWorkloadAnomaliesPendingPodsArgsDict', 'outputs.K8sWorkloadAnomaliesPendingPods']]] = None,
+            pod_backoff_events: pulumi.Input[Optional[Union['K8sWorkloadAnomaliesPodBackoffEventsArgs', 'K8sWorkloadAnomaliesPodBackoffEventsArgsDict', 'outputs.K8sWorkloadAnomaliesPodBackoffEvents']]] = None,
+            pod_eviction_events: pulumi.Input[Optional[Union['K8sWorkloadAnomaliesPodEvictionEventsArgs', 'K8sWorkloadAnomaliesPodEvictionEventsArgsDict', 'outputs.K8sWorkloadAnomaliesPodEvictionEvents']]] = None,
+            pod_preemption_events: pulumi.Input[Optional[Union['K8sWorkloadAnomaliesPodPreemptionEventsArgs', 'K8sWorkloadAnomaliesPodPreemptionEventsArgsDict', 'outputs.K8sWorkloadAnomaliesPodPreemptionEvents']]] = None,
+            pod_stuck_in_terminating: pulumi.Input[Optional[Union['K8sWorkloadAnomaliesPodStuckInTerminatingArgs', 'K8sWorkloadAnomaliesPodStuckInTerminatingArgsDict', 'outputs.K8sWorkloadAnomaliesPodStuckInTerminating']]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None,
+            workload_without_ready_pods: pulumi.Input[Optional[Union['K8sWorkloadAnomaliesWorkloadWithoutReadyPodsArgs', 'K8sWorkloadAnomaliesWorkloadWithoutReadyPodsArgsDict', 'outputs.K8sWorkloadAnomaliesWorkloadWithoutReadyPods']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["containerRestarts"] = container_restarts
+        __props__["deploymentStuck"] = deployment_stuck
+        __props__["highCpuThrottling"] = high_cpu_throttling
+        __props__["highCpuUsage"] = high_cpu_usage
+        __props__["highMemoryUsage"] = high_memory_usage
+        __props__["jobFailureEvents"] = job_failure_events
+        __props__["notAllPodsReady"] = not_all_pods_ready
+        __props__["oomKills"] = oom_kills
+        __props__["pendingPods"] = pending_pods
+        __props__["podBackoffEvents"] = pod_backoff_events
+        __props__["podEvictionEvents"] = pod_eviction_events
+        __props__["podPreemptionEvents"] = pod_preemption_events
+        __props__["podStuckInTerminating"] = pod_stuck_in_terminating
+        __props__["scope"] = scope
+        __props__["workloadWithoutReadyPods"] = workload_without_ready_pods
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/k8sWorkloadAnomalies:K8sWorkloadAnomalies', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="containerRestarts")
     def container_restarts(self) -> pulumi.Output['outputs.K8sWorkloadAnomaliesContainerRestarts']:

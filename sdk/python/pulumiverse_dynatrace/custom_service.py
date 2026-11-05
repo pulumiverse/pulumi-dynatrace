@@ -448,6 +448,28 @@ class CustomService(pulumi.CustomResource):
         __props__.__dict__["unknowns"] = unknowns
         return CustomService(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            process_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            queue_entry_point: pulumi.Input[Optional[_builtins.bool]] = None,
+            queue_entry_point_type: pulumi.Input[Optional[_builtins.str]] = None,
+            rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CustomServiceRuleArgs', 'CustomServiceRuleArgsDict', 'outputs.CustomServiceRule']]]]] = None,
+            technology: pulumi.Input[Optional[_builtins.str]] = None,
+            unknowns: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["enabled"] = enabled
+        __props__["name"] = name
+        __props__["processGroups"] = process_groups
+        __props__["queueEntryPoint"] = queue_entry_point
+        __props__["queueEntryPointType"] = queue_entry_point_type
+        __props__["rules"] = rules
+        __props__["technology"] = technology
+        __props__["unknowns"] = unknowns
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/customService:CustomService', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def enabled(self) -> pulumi.Output[_builtins.bool]:

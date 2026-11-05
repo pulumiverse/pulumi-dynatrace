@@ -141,6 +141,12 @@ func (ProcessMonitoringRuleState) ElementType() reflect.Type {
 	return reflect.TypeOf((*processMonitoringRuleState)(nil)).Elem()
 }
 
+// ProcessMonitoringRuleExists checks whether an existing ProcessMonitoringRule resource with the given ID exists.
+func ProcessMonitoringRuleExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ProcessMonitoringRuleState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/processMonitoringRule:ProcessMonitoringRule", id, state, "", opts...)
+}
+
 type processMonitoringRuleArgs struct {
 	// Condition
 	Condition ProcessMonitoringRuleCondition `pulumi:"condition"`

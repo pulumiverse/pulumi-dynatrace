@@ -319,6 +319,22 @@ class DduPool(pulumi.CustomResource):
         __props__.__dict__["traces"] = traces
         return DduPool(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            events: pulumi.Input[Optional[Union['DduPoolEventsArgs', 'DduPoolEventsArgsDict', 'outputs.DduPoolEvents']]] = None,
+            log_monitoring: pulumi.Input[Optional[Union['DduPoolLogMonitoringArgs', 'DduPoolLogMonitoringArgsDict', 'outputs.DduPoolLogMonitoring']]] = None,
+            metrics: pulumi.Input[Optional[Union['DduPoolMetricsArgs', 'DduPoolMetricsArgsDict', 'outputs.DduPoolMetrics']]] = None,
+            serverless: pulumi.Input[Optional[Union['DduPoolServerlessArgs', 'DduPoolServerlessArgsDict', 'outputs.DduPoolServerless']]] = None,
+            traces: pulumi.Input[Optional[Union['DduPoolTracesArgs', 'DduPoolTracesArgsDict', 'outputs.DduPoolTraces']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["events"] = events
+        __props__["logMonitoring"] = log_monitoring
+        __props__["metrics"] = metrics
+        __props__["serverless"] = serverless
+        __props__["traces"] = traces
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/dduPool:DduPool', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def events(self) -> pulumi.Output[Optional['outputs.DduPoolEvents']]:

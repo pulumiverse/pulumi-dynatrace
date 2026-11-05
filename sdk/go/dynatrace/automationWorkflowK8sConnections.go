@@ -168,6 +168,12 @@ func (AutomationWorkflowK8sConnectionsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*automationWorkflowK8sConnectionsState)(nil)).Elem()
 }
 
+// AutomationWorkflowK8sConnectionsExists checks whether an existing AutomationWorkflowK8sConnections resource with the given ID exists.
+func AutomationWorkflowK8sConnectionsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AutomationWorkflowK8sConnectionsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/automationWorkflowK8sConnections:AutomationWorkflowK8sConnections", id, state, "", opts...)
+}
+
 type automationWorkflowK8sConnectionsArgs struct {
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	//

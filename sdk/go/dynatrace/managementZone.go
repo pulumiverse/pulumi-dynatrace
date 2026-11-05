@@ -106,6 +106,12 @@ func (ManagementZoneState) ElementType() reflect.Type {
 	return reflect.TypeOf((*managementZoneState)(nil)).Elem()
 }
 
+// ManagementZoneExists checks whether an existing ManagementZone resource with the given ID exists.
+func ManagementZoneExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ManagementZoneState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/managementZone:ManagementZone", id, state, "", opts...)
+}
+
 type managementZoneArgs struct {
 	// The description of the management zone
 	Description *string `pulumi:"description"`

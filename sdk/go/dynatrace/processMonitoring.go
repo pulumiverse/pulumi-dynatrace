@@ -114,6 +114,12 @@ func (ProcessMonitoringState) ElementType() reflect.Type {
 	return reflect.TypeOf((*processMonitoringState)(nil)).Elem()
 }
 
+// ProcessMonitoringExists checks whether an existing ProcessMonitoring resource with the given ID exists.
+func ProcessMonitoringExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ProcessMonitoringState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/processMonitoring:ProcessMonitoring", id, state, "", opts...)
+}
+
 type processMonitoringArgs struct {
 	// By disabling automatic deep monitoring the Dynatrace OneAgent will only deep monitor processes that are covered by a respective deep monitoring rule or where monitoring is enabled explicitly.
 	// Disabling only works if all installed Agents have version 1.123 or higher.

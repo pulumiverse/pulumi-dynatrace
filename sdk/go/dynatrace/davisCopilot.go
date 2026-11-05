@@ -116,6 +116,12 @@ func (DavisCopilotState) ElementType() reflect.Type {
 	return reflect.TypeOf((*davisCopilotState)(nil)).Elem()
 }
 
+// DavisCopilotExists checks whether an existing DavisCopilot resource with the given ID exists.
+func DavisCopilotExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DavisCopilotState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/davisCopilot:DavisCopilot", id, state, "", opts...)
+}
+
 type davisCopilotArgs struct {
 	// You can exclude specific data buckets and tables from the semantic index. Learn more about [configuring data access](https://dt-url.net/lc62i1q).
 	BlocklistEntries *DavisCopilotBlocklistEntries `pulumi:"blocklistEntries"`

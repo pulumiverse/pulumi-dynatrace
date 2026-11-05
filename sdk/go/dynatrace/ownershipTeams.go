@@ -129,6 +129,12 @@ func (OwnershipTeamsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*ownershipTeamsState)(nil)).Elem()
 }
 
+// OwnershipTeamsExists checks whether an existing OwnershipTeams resource with the given ID exists.
+func OwnershipTeamsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *OwnershipTeamsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/ownershipTeams:OwnershipTeams", id, state, "", opts...)
+}
+
 type ownershipTeamsArgs struct {
 	// Define key/value pairs that further describe this team — for example, cost center, solution type, or business unit assignments.
 	AdditionalInformation *OwnershipTeamsAdditionalInformation `pulumi:"additionalInformation"`

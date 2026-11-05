@@ -344,6 +344,20 @@ class ActivegateUpdates(pulumi.CustomResource):
         __props__.__dict__["update_windows"] = update_windows
         return ActivegateUpdates(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None,
+            target_version: pulumi.Input[Optional[_builtins.str]] = None,
+            update_mode: pulumi.Input[Optional[_builtins.str]] = None,
+            update_windows: pulumi.Input[Optional[Union['ActivegateUpdatesUpdateWindowsArgs', 'ActivegateUpdatesUpdateWindowsArgsDict', 'outputs.ActivegateUpdatesUpdateWindows']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["scope"] = scope
+        __props__["targetVersion"] = target_version
+        __props__["updateMode"] = update_mode
+        __props__["updateWindows"] = update_windows
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/activegateUpdates:ActivegateUpdates', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def scope(self) -> pulumi.Output[Optional[_builtins.str]]:

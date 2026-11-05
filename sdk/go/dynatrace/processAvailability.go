@@ -120,6 +120,12 @@ func (ProcessAvailabilityState) ElementType() reflect.Type {
 	return reflect.TypeOf((*processAvailabilityState)(nil)).Elem()
 }
 
+// ProcessAvailabilityExists checks whether an existing ProcessAvailability resource with the given ID exists.
+func ProcessAvailabilityExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ProcessAvailabilityState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/processAvailability:ProcessAvailability", id, state, "", opts...)
+}
+
 type processAvailabilityArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`

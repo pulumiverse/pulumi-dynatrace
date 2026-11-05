@@ -495,6 +495,30 @@ class K8sMonitoring(pulumi.CustomResource):
         __props__.__dict__["scope"] = scope
         return K8sMonitoring(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            cloud_application_pipeline_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            event_patterns: pulumi.Input[Optional[Union['K8sMonitoringEventPatternsArgs', 'K8sMonitoringEventPatternsArgsDict', 'outputs.K8sMonitoringEventPatterns']]] = None,
+            event_processing_active: pulumi.Input[Optional[_builtins.bool]] = None,
+            filter_events: pulumi.Input[Optional[_builtins.bool]] = None,
+            include_all_fdi_events: pulumi.Input[Optional[_builtins.bool]] = None,
+            open_metrics_builtin_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            open_metrics_pipeline_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            pvc_monitoring_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["cloudApplicationPipelineEnabled"] = cloud_application_pipeline_enabled
+        __props__["eventPatterns"] = event_patterns
+        __props__["eventProcessingActive"] = event_processing_active
+        __props__["filterEvents"] = filter_events
+        __props__["includeAllFdiEvents"] = include_all_fdi_events
+        __props__["openMetricsBuiltinEnabled"] = open_metrics_builtin_enabled
+        __props__["openMetricsPipelineEnabled"] = open_metrics_pipeline_enabled
+        __props__["pvcMonitoringEnabled"] = pvc_monitoring_enabled
+        __props__["scope"] = scope
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/k8sMonitoring:K8sMonitoring', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="cloudApplicationPipelineEnabled")
     def cloud_application_pipeline_enabled(self) -> pulumi.Output[_builtins.bool]:

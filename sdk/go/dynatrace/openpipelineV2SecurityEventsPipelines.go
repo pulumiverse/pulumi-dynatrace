@@ -451,6 +451,12 @@ func (OpenpipelineV2SecurityEventsPipelinesState) ElementType() reflect.Type {
 	return reflect.TypeOf((*openpipelineV2SecurityEventsPipelinesState)(nil)).Elem()
 }
 
+// OpenpipelineV2SecurityEventsPipelinesExists checks whether an existing OpenpipelineV2SecurityEventsPipelines resource with the given ID exists.
+func OpenpipelineV2SecurityEventsPipelinesExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *OpenpipelineV2SecurityEventsPipelinesState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/openpipelineV2SecurityEventsPipelines:OpenpipelineV2SecurityEventsPipelines", id, state, "", opts...)
+}
+
 type openpipelineV2SecurityEventsPipelinesArgs struct {
 	// Cost allocation stage
 	CostAllocation *OpenpipelineV2SecurityEventsPipelinesCostAllocation `pulumi:"costAllocation"`

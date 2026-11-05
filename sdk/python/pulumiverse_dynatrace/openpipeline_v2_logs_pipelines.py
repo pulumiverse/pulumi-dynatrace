@@ -1319,6 +1319,42 @@ class OpenpipelineV2LogsPipelines(pulumi.CustomResource):
         __props__.__dict__["storage"] = storage
         return OpenpipelineV2LogsPipelines(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            cost_allocation: pulumi.Input[Optional[Union['OpenpipelineV2LogsPipelinesCostAllocationArgs', 'OpenpipelineV2LogsPipelinesCostAllocationArgsDict', 'outputs.OpenpipelineV2LogsPipelinesCostAllocation']]] = None,
+            custom_id: pulumi.Input[Optional[_builtins.str]] = None,
+            data_extraction: pulumi.Input[Optional[Union['OpenpipelineV2LogsPipelinesDataExtractionArgs', 'OpenpipelineV2LogsPipelinesDataExtractionArgsDict', 'outputs.OpenpipelineV2LogsPipelinesDataExtraction']]] = None,
+            davis: pulumi.Input[Optional[Union['OpenpipelineV2LogsPipelinesDavisArgs', 'OpenpipelineV2LogsPipelinesDavisArgsDict', 'outputs.OpenpipelineV2LogsPipelinesDavis']]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            group_role: pulumi.Input[Optional[_builtins.str]] = None,
+            metadata_list: pulumi.Input[Optional[Union['OpenpipelineV2LogsPipelinesMetadataListArgs', 'OpenpipelineV2LogsPipelinesMetadataListArgsDict', 'outputs.OpenpipelineV2LogsPipelinesMetadataList']]] = None,
+            metric_extraction: pulumi.Input[Optional[Union['OpenpipelineV2LogsPipelinesMetricExtractionArgs', 'OpenpipelineV2LogsPipelinesMetricExtractionArgsDict', 'outputs.OpenpipelineV2LogsPipelinesMetricExtraction']]] = None,
+            processing: pulumi.Input[Optional[Union['OpenpipelineV2LogsPipelinesProcessingArgs', 'OpenpipelineV2LogsPipelinesProcessingArgsDict', 'outputs.OpenpipelineV2LogsPipelinesProcessing']]] = None,
+            product_allocation: pulumi.Input[Optional[Union['OpenpipelineV2LogsPipelinesProductAllocationArgs', 'OpenpipelineV2LogsPipelinesProductAllocationArgsDict', 'outputs.OpenpipelineV2LogsPipelinesProductAllocation']]] = None,
+            routing: pulumi.Input[Optional[_builtins.str]] = None,
+            security_context: pulumi.Input[Optional[Union['OpenpipelineV2LogsPipelinesSecurityContextArgs', 'OpenpipelineV2LogsPipelinesSecurityContextArgsDict', 'outputs.OpenpipelineV2LogsPipelinesSecurityContext']]] = None,
+            smartscape_edge_extraction: pulumi.Input[Optional[Union['OpenpipelineV2LogsPipelinesSmartscapeEdgeExtractionArgs', 'OpenpipelineV2LogsPipelinesSmartscapeEdgeExtractionArgsDict', 'outputs.OpenpipelineV2LogsPipelinesSmartscapeEdgeExtraction']]] = None,
+            smartscape_node_extraction: pulumi.Input[Optional[Union['OpenpipelineV2LogsPipelinesSmartscapeNodeExtractionArgs', 'OpenpipelineV2LogsPipelinesSmartscapeNodeExtractionArgsDict', 'outputs.OpenpipelineV2LogsPipelinesSmartscapeNodeExtraction']]] = None,
+            storage: pulumi.Input[Optional[Union['OpenpipelineV2LogsPipelinesStorageArgs', 'OpenpipelineV2LogsPipelinesStorageArgsDict', 'outputs.OpenpipelineV2LogsPipelinesStorage']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["costAllocation"] = cost_allocation
+        __props__["customId"] = custom_id
+        __props__["dataExtraction"] = data_extraction
+        __props__["davis"] = davis
+        __props__["displayName"] = display_name
+        __props__["groupRole"] = group_role
+        __props__["metadataList"] = metadata_list
+        __props__["metricExtraction"] = metric_extraction
+        __props__["processing"] = processing
+        __props__["productAllocation"] = product_allocation
+        __props__["routing"] = routing
+        __props__["securityContext"] = security_context
+        __props__["smartscapeEdgeExtraction"] = smartscape_edge_extraction
+        __props__["smartscapeNodeExtraction"] = smartscape_node_extraction
+        __props__["storage"] = storage
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/openpipelineV2LogsPipelines:OpenpipelineV2LogsPipelines', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="costAllocation")
     def cost_allocation(self) -> pulumi.Output[Optional['outputs.OpenpipelineV2LogsPipelinesCostAllocation']]:

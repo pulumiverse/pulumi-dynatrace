@@ -214,6 +214,16 @@ class LogGrail(pulumi.CustomResource):
         __props__.__dict__["parallel_ingest_period"] = parallel_ingest_period
         return LogGrail(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            activated: pulumi.Input[Optional[_builtins.bool]] = None,
+            parallel_ingest_period: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["activated"] = activated
+        __props__["parallelIngestPeriod"] = parallel_ingest_period
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/logGrail:LogGrail', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def activated(self) -> pulumi.Output[_builtins.bool]:

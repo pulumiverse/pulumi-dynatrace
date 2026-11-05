@@ -111,6 +111,12 @@ func (LogBucketsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*logBucketsState)(nil)).Elem()
 }
 
+// LogBucketsExists checks whether an existing LogBuckets resource with the given ID exists.
+func LogBucketsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *LogBucketsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/logBuckets:LogBuckets", id, state, "", opts...)
+}
+
 type logBucketsArgs struct {
 	// A 'bucket' is the length of time your logs will be stored. Select the bucket that's best for you.
 	BucketName string `pulumi:"bucketName"`

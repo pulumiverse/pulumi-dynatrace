@@ -74,6 +74,12 @@ func (GrailMetricsAllowlistState) ElementType() reflect.Type {
 	return reflect.TypeOf((*grailMetricsAllowlistState)(nil)).Elem()
 }
 
+// GrailMetricsAllowlistExists checks whether an existing GrailMetricsAllowlist resource with the given ID exists.
+func GrailMetricsAllowlistExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *GrailMetricsAllowlistState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/grailMetricsAllowlist:GrailMetricsAllowlist", id, state, "", opts...)
+}
+
 type grailMetricsAllowlistArgs struct {
 	// Specify rules for forwarding metrics
 	AllowRules *GrailMetricsAllowlistAllowRules `pulumi:"allowRules"`
