@@ -26,6 +26,25 @@ namespace Pulumiverse.Dynatrace
     /// - `terraform-provider-dynatrace -export dynatrace.HubPermissions` downloads all existing hub permissions
     /// 
     /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// 
+    /// ## Resource Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var permission = new Dynatrace.HubPermissions("permission", new()
+    ///     {
+    ///         Email = "#name#@dynatrace.com",
+    ///         Description = "This is an example description",
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [DynatraceResourceType("dynatrace:index/hubPermissions:HubPermissions")]
     public partial class HubPermissions : global::Pulumi.CustomResource

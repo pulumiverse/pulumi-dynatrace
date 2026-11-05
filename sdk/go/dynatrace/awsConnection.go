@@ -121,7 +121,7 @@ import (
 //				return err
 //			}
 //			_, err = dynatrace.NewAwsConnectionRoleArn(ctx, "test-aws-connection-arn", &dynatrace.AwsConnectionRoleArnArgs{
-//				AwsConnectionId: test_aws_connection.ID().ToIDOutput().ToStringOutput(),
+//				AwsConnectionId: test_aws_connection.ID(),
 //				RoleArn:         exampleRole.Arn,
 //			})
 //			if err != nil {

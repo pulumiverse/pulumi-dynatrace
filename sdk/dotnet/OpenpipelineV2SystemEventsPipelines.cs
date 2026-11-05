@@ -279,6 +279,12 @@ namespace Pulumiverse.Dynatrace
         public Output<string?> Routing { get; private set; } = null!;
 
         /// <summary>
+        /// Security stage
+        /// </summary>
+        [Output("security")]
+        public Output<Outputs.OpenpipelineV2SystemEventsPipelinesSecurity?> Security { get; private set; } = null!;
+
+        /// <summary>
         /// Security context stage
         /// </summary>
         [Output("securityContext")]
@@ -416,6 +422,12 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? Routing { get; set; }
 
         /// <summary>
+        /// Security stage
+        /// </summary>
+        [Input("security")]
+        public Input<Inputs.OpenpipelineV2SystemEventsPipelinesSecurityArgs>? Security { get; set; }
+
+        /// <summary>
         /// Security context stage
         /// </summary>
         [Input("securityContext")]
@@ -512,6 +524,12 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         [Input("routing")]
         public Input<string>? Routing { get; set; }
+
+        /// <summary>
+        /// Security stage
+        /// </summary>
+        [Input("security")]
+        public Input<Inputs.OpenpipelineV2SystemEventsPipelinesSecurityGetArgs>? Security { get; set; }
 
         /// <summary>
         /// Security context stage

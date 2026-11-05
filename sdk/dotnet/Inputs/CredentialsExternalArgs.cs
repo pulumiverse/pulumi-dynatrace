@@ -62,6 +62,12 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<string>? FolderName { get; set; }
 
         /// <summary>
+        /// Id of a location used by the synchronizing monitor
+        /// </summary>
+        [Input("locationForSynchronizationId")]
+        public Input<string>? LocationForSynchronizationId { get; set; }
+
+        /// <summary>
         /// No documentation available
         /// </summary>
         [Input("passwordSecretName")]

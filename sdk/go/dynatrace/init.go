@@ -523,30 +523,6 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &OneagentSideMasking{}
 	case "dynatrace:index/oneagentUpdates:OneagentUpdates":
 		r = &OneagentUpdates{}
-	case "dynatrace:index/openpipelineBusinessEvents:OpenpipelineBusinessEvents":
-		r = &OpenpipelineBusinessEvents{}
-	case "dynatrace:index/openpipelineDavisEvents:OpenpipelineDavisEvents":
-		r = &OpenpipelineDavisEvents{}
-	case "dynatrace:index/openpipelineDavisProblems:OpenpipelineDavisProblems":
-		r = &OpenpipelineDavisProblems{}
-	case "dynatrace:index/openpipelineEvents:OpenpipelineEvents":
-		r = &OpenpipelineEvents{}
-	case "dynatrace:index/openpipelineLogs:OpenpipelineLogs":
-		r = &OpenpipelineLogs{}
-	case "dynatrace:index/openpipelineMetrics:OpenpipelineMetrics":
-		r = &OpenpipelineMetrics{}
-	case "dynatrace:index/openpipelineSdlcEvents:OpenpipelineSdlcEvents":
-		r = &OpenpipelineSdlcEvents{}
-	case "dynatrace:index/openpipelineSecurityEvents:OpenpipelineSecurityEvents":
-		r = &OpenpipelineSecurityEvents{}
-	case "dynatrace:index/openpipelineSpans:OpenpipelineSpans":
-		r = &OpenpipelineSpans{}
-	case "dynatrace:index/openpipelineSystemEvents:OpenpipelineSystemEvents":
-		r = &OpenpipelineSystemEvents{}
-	case "dynatrace:index/openpipelineUserEvents:OpenpipelineUserEvents":
-		r = &OpenpipelineUserEvents{}
-	case "dynatrace:index/openpipelineUserSessions:OpenpipelineUserSessions":
-		r = &OpenpipelineUserSessions{}
 	case "dynatrace:index/openpipelineV2BizeventsDataforwarding:OpenpipelineV2BizeventsDataforwarding":
 		r = &OpenpipelineV2BizeventsDataforwarding{}
 	case "dynatrace:index/openpipelineV2BizeventsIngestsources:OpenpipelineV2BizeventsIngestsources":
@@ -2203,66 +2179,6 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"dynatrace",
 		"index/oneagentUpdates",
-		&module{version},
-	)
-	pulumi.RegisterResourceModule(
-		"dynatrace",
-		"index/openpipelineBusinessEvents",
-		&module{version},
-	)
-	pulumi.RegisterResourceModule(
-		"dynatrace",
-		"index/openpipelineDavisEvents",
-		&module{version},
-	)
-	pulumi.RegisterResourceModule(
-		"dynatrace",
-		"index/openpipelineDavisProblems",
-		&module{version},
-	)
-	pulumi.RegisterResourceModule(
-		"dynatrace",
-		"index/openpipelineEvents",
-		&module{version},
-	)
-	pulumi.RegisterResourceModule(
-		"dynatrace",
-		"index/openpipelineLogs",
-		&module{version},
-	)
-	pulumi.RegisterResourceModule(
-		"dynatrace",
-		"index/openpipelineMetrics",
-		&module{version},
-	)
-	pulumi.RegisterResourceModule(
-		"dynatrace",
-		"index/openpipelineSdlcEvents",
-		&module{version},
-	)
-	pulumi.RegisterResourceModule(
-		"dynatrace",
-		"index/openpipelineSecurityEvents",
-		&module{version},
-	)
-	pulumi.RegisterResourceModule(
-		"dynatrace",
-		"index/openpipelineSpans",
-		&module{version},
-	)
-	pulumi.RegisterResourceModule(
-		"dynatrace",
-		"index/openpipelineSystemEvents",
-		&module{version},
-	)
-	pulumi.RegisterResourceModule(
-		"dynatrace",
-		"index/openpipelineUserEvents",
-		&module{version},
-	)
-	pulumi.RegisterResourceModule(
-		"dynatrace",
-		"index/openpipelineUserSessions",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

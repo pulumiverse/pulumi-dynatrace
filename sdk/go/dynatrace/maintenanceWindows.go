@@ -48,7 +48,7 @@ import (
 //				Enabled:     pulumi.Bool(true),
 //				ObjectScopes: &dynatrace.MaintenanceWindowsObjectScopesArgs{
 //					SyntheticMonitors: &dynatrace.MaintenanceWindowsObjectScopesSyntheticMonitorsArgs{
-//						DisableSyntheticMonitorFilter: pulumi.String("status == \"OPEN\" AND severity == \"HIGH\""),
+//						DisableSyntheticMonitorFilter: pulumi.String("monitor.name == \"my-monitor\""),
 //						DisableSyntheticMonitors:      pulumi.Bool(true),
 //					},
 //				},

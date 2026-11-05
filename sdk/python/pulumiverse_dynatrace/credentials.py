@@ -635,18 +635,21 @@ class Credentials(pulumi.CustomResource):
 
         ```python
         import pulumi
+        import pulumi_dynatrace as dynatrace
+        import pulumi_std as std
         import pulumiverse_dynatrace as dynatrace
 
         config = pulumi.Config()
-        certificate = config.require_object("certificate")
-        certificate_password = config.require_object("certificatePassword")
+        credentia_l__vaul_t__cert = config.require_object("CREDENTIAL_VAULT_CERT")
+        credentia_l__vaul_t__pwd = config.require_object("CREDENTIAL_VAULT_PWD")
         certificate_credentials = dynatrace.Credentials("certificate_credentials",
             name="#name#",
-            certificate=certificate,
-            format="PKCS12",
+            certificate=std.base64encode(input=credentia_l__vaul_t__cert).result,
+            format="PEM",
             owner_access_only=True,
-            password=certificate_password,
+            password=std.base64encode(input=credentia_l__vaul_t__pwd).result,
             scopes=["SYNTHETIC"])
+        location = dynatrace.get_synthetic_location(name="Location")
         cyberark_allowed_location = dynatrace.Credentials("cyberark_allowed_location",
             name="#name#",
             owner_access_only=True,
@@ -657,6 +660,7 @@ class Credentials(pulumi.CustomResource):
                 "folder_name": "my-folder-name",
                 "account_name": "my-account-name",
                 "certificate": certificate_credentials.id,
+                "location_for_synchronization_id": location.id,
             },
             scopes=["SYNTHETIC"])
         ```
@@ -767,18 +771,21 @@ class Credentials(pulumi.CustomResource):
 
         ```python
         import pulumi
+        import pulumi_dynatrace as dynatrace
+        import pulumi_std as std
         import pulumiverse_dynatrace as dynatrace
 
         config = pulumi.Config()
-        certificate = config.require_object("certificate")
-        certificate_password = config.require_object("certificatePassword")
+        credentia_l__vaul_t__cert = config.require_object("CREDENTIAL_VAULT_CERT")
+        credentia_l__vaul_t__pwd = config.require_object("CREDENTIAL_VAULT_PWD")
         certificate_credentials = dynatrace.Credentials("certificate_credentials",
             name="#name#",
-            certificate=certificate,
-            format="PKCS12",
+            certificate=std.base64encode(input=credentia_l__vaul_t__cert).result,
+            format="PEM",
             owner_access_only=True,
-            password=certificate_password,
+            password=std.base64encode(input=credentia_l__vaul_t__pwd).result,
             scopes=["SYNTHETIC"])
+        location = dynatrace.get_synthetic_location(name="Location")
         cyberark_allowed_location = dynatrace.Credentials("cyberark_allowed_location",
             name="#name#",
             owner_access_only=True,
@@ -789,6 +796,7 @@ class Credentials(pulumi.CustomResource):
                 "folder_name": "my-folder-name",
                 "account_name": "my-account-name",
                 "certificate": certificate_credentials.id,
+                "location_for_synchronization_id": location.id,
             },
             scopes=["SYNTHETIC"])
         ```

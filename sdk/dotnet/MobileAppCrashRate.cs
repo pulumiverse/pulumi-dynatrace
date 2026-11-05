@@ -49,7 +49,7 @@ namespace Pulumiverse.Dynatrace
     ///             DetectionMode = "fixed",
     ///             CrashRateIncreaseFixed = new Dynatrace.Inputs.MobileAppCrashRateCrashRateIncreaseCrashRateIncreaseFixedArgs
     ///             {
-    ///                 AbsoluteCrashRate = 25,
+    ///                 AbsoluteCrashRate = 25.0,
     ///                 ConcurrentUsers = 200,
     ///             },
     ///         },

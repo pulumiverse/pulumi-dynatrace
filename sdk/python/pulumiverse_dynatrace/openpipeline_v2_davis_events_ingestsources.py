@@ -415,6 +415,7 @@ class OpenpipelineV2DavisEventsIngestsources(pulumi.CustomResource):
                                     "fields": [{
                                         "name": "is_error",
                                         "value": "true",
+                                        "value_type": "boolean",
                                     }],
                                 },
                             },
@@ -566,6 +567,7 @@ class OpenpipelineV2DavisEventsIngestsources(pulumi.CustomResource):
                                     "fields": [{
                                         "name": "is_error",
                                         "value": "true",
+                                        "value_type": "boolean",
                                     }],
                                 },
                             },

@@ -83,6 +83,7 @@ import * as utilities from "./utilities";
  *                             fields: [{
  *                                 name: "is_error",
  *                                 value: "true",
+ *                                 valueType: "boolean",
  *                             }],
  *                         },
  *                     },

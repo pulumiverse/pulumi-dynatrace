@@ -80,7 +80,7 @@ import (
 //				return err
 //			}
 //			_, err = dynatrace.NewDashboardSharing(ctx, "sharing", &dynatrace.DashboardSharingArgs{
-//				DashboardId: dashboard.ID().ToIDOutput().ToStringOutput(),
+//				DashboardId: dashboard.ID(),
 //				Permissions: &dynatrace.DashboardSharingPermissionsArgs{
 //					Permissions: dynatrace.DashboardSharingPermissionsPermissionArray{
 //						&dynatrace.DashboardSharingPermissionsPermissionArgs{
@@ -90,12 +90,12 @@ import (
 //						&dynatrace.DashboardSharingPermissionsPermissionArgs{
 //							Level: pulumi.String("EDIT"),
 //							Type:  pulumi.String("GROUP"),
-//							Id:    group.ID().ToIDOutput().ToStringOutput(),
+//							Id:    group.ID(),
 //						},
 //						&dynatrace.DashboardSharingPermissionsPermissionArgs{
 //							Level: pulumi.String("EDIT"),
 //							Type:  pulumi.String("USER"),
-//							Id:    user.ID().ToIDOutput().ToStringOutput(),
+//							Id:    user.ID(),
 //						},
 //					},
 //				},

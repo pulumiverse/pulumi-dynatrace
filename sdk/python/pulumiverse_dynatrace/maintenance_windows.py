@@ -299,7 +299,7 @@ class MaintenanceWindows(pulumi.CustomResource):
             enabled=True,
             object_scopes={
                 "synthetic_monitors": {
-                    "disable_synthetic_monitor_filter": "status == \\"OPEN\\" AND severity == \\"HIGH\\"",
+                    "disable_synthetic_monitor_filter": "monitor.name == \\"my-monitor\\"",
                     "disable_synthetic_monitors": True,
                 },
             },
@@ -379,7 +379,7 @@ class MaintenanceWindows(pulumi.CustomResource):
             enabled=True,
             object_scopes={
                 "synthetic_monitors": {
-                    "disable_synthetic_monitor_filter": "status == \\"OPEN\\" AND severity == \\"HIGH\\"",
+                    "disable_synthetic_monitor_filter": "monitor.name == \\"my-monitor\\"",
                     "disable_synthetic_monitors": True,
                 },
             },

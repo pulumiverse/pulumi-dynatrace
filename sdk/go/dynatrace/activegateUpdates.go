@@ -61,7 +61,7 @@ import (
 //				UpdateWindows: &dynatrace.ActivegateUpdatesUpdateWindowsArgs{
 //					UpdateWindows: dynatrace.ActivegateUpdatesUpdateWindowsUpdateWindowArray{
 //						&dynatrace.ActivegateUpdatesUpdateWindowsUpdateWindowArgs{
-//							UpdateWindow: exampleUpdateWindows.ID().ToIDOutput().ToStringOutput(),
+//							UpdateWindow: exampleUpdateWindows.ID(),
 //						},
 //					},
 //				},

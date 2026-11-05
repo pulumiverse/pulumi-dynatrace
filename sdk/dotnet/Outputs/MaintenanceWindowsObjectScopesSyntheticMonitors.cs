@@ -15,7 +15,7 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class MaintenanceWindowsObjectScopesSyntheticMonitors
     {
         /// <summary>
-        /// DQL filter selecting which synthetic monitors to pause. Required when synthetic monitors are disabled.
+        /// DQL filter selecting which synthetic monitors to pause. Required when synthetic monitors are disabled. Supported fields: monitor.id, monitor.name, pg.tag, security.context.
         /// </summary>
         public readonly string? DisableSyntheticMonitorFilter;
         /// <summary>

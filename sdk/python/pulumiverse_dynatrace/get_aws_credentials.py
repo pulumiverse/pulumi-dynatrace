@@ -66,6 +66,14 @@ def get_aws_credentials(label: Optional[_builtins.str] = None,
     - `label` (String) - The label/name of the AWS credential
 
     ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_dynatrace as dynatrace
+
+    example = dynatrace.get_aws_credentials(name="Terraform Example")
+    pulumi.export("id", example.id)
+    ```
     """
     __args__ = dict()
     __args__['label'] = label
@@ -83,6 +91,14 @@ def get_aws_credentials_output(label: pulumi.Input[Optional[_builtins.str]] = No
     - `label` (String) - The label/name of the AWS credential
 
     ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_dynatrace as dynatrace
+
+    example = dynatrace.get_aws_credentials(name="Terraform Example")
+    pulumi.export("id", example.id)
+    ```
     """
     __args__ = dict()
     __args__['label'] = label

@@ -17,7 +17,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         private InputList<string>? _excludes;
 
         /// <summary>
-        /// exclude stages. Possible values: `costAllocation`, `dataExtraction`, `Davis`, `metricExtraction`, `Processing`, `productAllocation`, `securityContext`, `smartscapeEdgeExtraction`, `smartscapeNodeExtraction`, `Storage`
+        /// exclude stages. Possible values: `costAllocation`, `dataExtraction`, `Davis`, `metricExtraction`, `Processing`, `productAllocation`, `Security`, `securityContext`, `smartscapeEdgeExtraction`, `smartscapeNodeExtraction`, `Storage`
         /// </summary>
         public InputList<string> Excludes
         {
@@ -29,7 +29,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         private InputList<string>? _includes;
 
         /// <summary>
-        /// include stages. Possible values: `costAllocation`, `dataExtraction`, `Davis`, `metricExtraction`, `Processing`, `productAllocation`, `securityContext`, `smartscapeEdgeExtraction`, `smartscapeNodeExtraction`, `Storage`
+        /// include stages. Possible values: `costAllocation`, `dataExtraction`, `Davis`, `metricExtraction`, `Processing`, `productAllocation`, `Security`, `securityContext`, `smartscapeEdgeExtraction`, `smartscapeNodeExtraction`, `Storage`
         /// </summary>
         public InputList<string> Includes
         {

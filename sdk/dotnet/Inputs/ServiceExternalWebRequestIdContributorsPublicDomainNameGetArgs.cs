@@ -20,7 +20,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<bool> EnableIdContributor { get; set; } = null!;
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("serviceIdContributor")]
         public Input<Inputs.ServiceExternalWebRequestIdContributorsPublicDomainNameServiceIdContributorGetArgs>? ServiceIdContributor { get; set; }

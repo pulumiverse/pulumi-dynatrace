@@ -75,6 +75,7 @@ import * as utilities from "./utilities";
  *                             fields: [{
  *                                 name: "is_warning",
  *                                 value: "true",
+ *                                 valueType: "boolean",
  *                             }],
  *                         },
  *                     },
@@ -374,6 +375,10 @@ export class OpenpipelineV2UsersessionsPipelines extends pulumi.CustomResource {
      */
     declare public readonly routing: pulumi.Output<string | undefined>;
     /**
+     * Security stage
+     */
+    declare public readonly security: pulumi.Output<outputs.OpenpipelineV2UsersessionsPipelinesSecurity | undefined>;
+    /**
      * Security context stage
      */
     declare public readonly securityContext: pulumi.Output<outputs.OpenpipelineV2UsersessionsPipelinesSecurityContext | undefined>;
@@ -414,6 +419,7 @@ export class OpenpipelineV2UsersessionsPipelines extends pulumi.CustomResource {
             resourceInputs["processing"] = state?.processing;
             resourceInputs["productAllocation"] = state?.productAllocation;
             resourceInputs["routing"] = state?.routing;
+            resourceInputs["security"] = state?.security;
             resourceInputs["securityContext"] = state?.securityContext;
             resourceInputs["smartscapeEdgeExtraction"] = state?.smartscapeEdgeExtraction;
             resourceInputs["smartscapeNodeExtraction"] = state?.smartscapeNodeExtraction;
@@ -437,6 +443,7 @@ export class OpenpipelineV2UsersessionsPipelines extends pulumi.CustomResource {
             resourceInputs["processing"] = args?.processing;
             resourceInputs["productAllocation"] = args?.productAllocation;
             resourceInputs["routing"] = args?.routing;
+            resourceInputs["security"] = args?.security;
             resourceInputs["securityContext"] = args?.securityContext;
             resourceInputs["smartscapeEdgeExtraction"] = args?.smartscapeEdgeExtraction;
             resourceInputs["smartscapeNodeExtraction"] = args?.smartscapeNodeExtraction;
@@ -495,6 +502,10 @@ export interface OpenpipelineV2UsersessionsPipelinesState {
      * Routing. Possible values: `notRoutable`, `routable`
      */
     routing?: pulumi.Input<string | undefined>;
+    /**
+     * Security stage
+     */
+    security?: pulumi.Input<inputs.OpenpipelineV2UsersessionsPipelinesSecurity | undefined>;
     /**
      * Security context stage
      */
@@ -561,6 +572,10 @@ export interface OpenpipelineV2UsersessionsPipelinesArgs {
      * Routing. Possible values: `notRoutable`, `routable`
      */
     routing?: pulumi.Input<string | undefined>;
+    /**
+     * Security stage
+     */
+    security?: pulumi.Input<inputs.OpenpipelineV2UsersessionsPipelinesSecurity | undefined>;
     /**
      * Security context stage
      */
