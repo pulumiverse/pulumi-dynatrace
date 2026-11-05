@@ -143,6 +143,12 @@ namespace Pulumiverse.Dynatrace
         public Output<string> CloudVendorType { get; private set; } = null!;
 
         /// <summary>
+        /// Compression type. Possible values: `Gzip`, `Zstd`
+        /// </summary>
+        [Output("compressionType")]
+        public Output<string?> CompressionType { get; private set; } = null!;
+
+        /// <summary>
         /// Pipeline Type. Possible values: `Processed`, `Raw`
         /// </summary>
         [Output("dataForwardingType")]
@@ -298,6 +304,12 @@ namespace Pulumiverse.Dynatrace
         public Input<string> CloudVendorType { get; set; } = null!;
 
         /// <summary>
+        /// Compression type. Possible values: `Gzip`, `Zstd`
+        /// </summary>
+        [Input("compressionType")]
+        public Input<string>? CompressionType { get; set; }
+
+        /// <summary>
         /// Pipeline Type. Possible values: `Processed`, `Raw`
         /// </summary>
         [Input("dataForwardingType", required: true)]
@@ -424,6 +436,12 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         [Input("cloudVendorType")]
         public Input<string>? CloudVendorType { get; set; }
+
+        /// <summary>
+        /// Compression type. Possible values: `Gzip`, `Zstd`
+        /// </summary>
+        [Input("compressionType")]
+        public Input<string>? CompressionType { get; set; }
 
         /// <summary>
         /// Pipeline Type. Possible values: `Processed`, `Raw`

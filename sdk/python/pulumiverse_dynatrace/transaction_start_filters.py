@@ -324,6 +324,20 @@ class TransactionStartFilters(pulumi.CustomResource):
         __props__.__dict__["ims_transaction_ids"] = ims_transaction_ids
         return TransactionStartFilters(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            cics_terminal_transaction_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            cics_transaction_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            ims_terminal_transaction_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            ims_transaction_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["cicsTerminalTransactionIds"] = cics_terminal_transaction_ids
+        __props__["cicsTransactionIds"] = cics_transaction_ids
+        __props__["imsTerminalTransactionIds"] = ims_terminal_transaction_ids
+        __props__["imsTransactionIds"] = ims_transaction_ids
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/transactionStartFilters:TransactionStartFilters', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="cicsTerminalTransactionIds")
     def cics_terminal_transaction_ids(self) -> pulumi.Output[Optional[Sequence[_builtins.str]]]:

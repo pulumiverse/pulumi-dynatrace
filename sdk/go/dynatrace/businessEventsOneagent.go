@@ -117,6 +117,12 @@ func (BusinessEventsOneagentState) ElementType() reflect.Type {
 	return reflect.TypeOf((*businessEventsOneagentState)(nil)).Elem()
 }
 
+// BusinessEventsOneagentExists checks whether an existing BusinessEventsOneagent resource with the given ID exists.
+func BusinessEventsOneagentExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *BusinessEventsOneagentState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/businessEventsOneagent:BusinessEventsOneagent", id, state, "", opts...)
+}
+
 type businessEventsOneagentArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`

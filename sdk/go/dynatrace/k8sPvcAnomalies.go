@@ -93,6 +93,12 @@ func (K8sPvcAnomaliesState) ElementType() reflect.Type {
 	return reflect.TypeOf((*k8sPvcAnomaliesState)(nil)).Elem()
 }
 
+// K8sPvcAnomaliesExists checks whether an existing K8sPvcAnomalies resource with the given ID exists.
+func K8sPvcAnomaliesExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *K8sPvcAnomaliesState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/k8sPvcAnomalies:K8sPvcAnomalies", id, state, "", opts...)
+}
+
 type k8sPvcAnomaliesArgs struct {
 	// Alerts on low disk space in megabytes for a persistent volume claim.
 	LowDiskSpaceCritical K8sPvcAnomaliesLowDiskSpaceCritical `pulumi:"lowDiskSpaceCritical"`

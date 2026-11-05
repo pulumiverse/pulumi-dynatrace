@@ -72,6 +72,7 @@ import * as utilities from "./utilities";
  *                             fields: [{
  *                                 name: "is_warning",
  *                                 value: "true",
+ *                                 valueType: "boolean",
  *                             }],
  *                         },
  *                     },
@@ -249,6 +250,17 @@ export class OpenpipelineV2BizeventsPipelinegroups extends pulumi.CustomResource
      */
     public static get(name: string, id: pulumi.Input<pulumi.ID>, state?: OpenpipelineV2BizeventsPipelinegroupsState, opts?: pulumi.CustomResourceOptions): OpenpipelineV2BizeventsPipelinegroups {
         return new OpenpipelineV2BizeventsPipelinegroups(name, <any>state, { ...opts, id: id });
+    }
+
+    /**
+     * Check whether an existing OpenpipelineV2BizeventsPipelinegroups resource with the given ID exists.
+     *
+     * @param id The _unique_ provider ID of the resource to check.
+     * @param state Any extra arguments used during the lookup.
+     * @param opts Optional settings to control the behavior of the CustomResource.
+     */
+    public static exists(id: pulumi.Input<string>, state?: OpenpipelineV2BizeventsPipelinegroupsState, opts?: pulumi.CustomResourceOptions): pulumi.Output<boolean> {
+        return pulumi.runtime.existsResource("dynatrace:index/openpipelineV2BizeventsPipelinegroups:OpenpipelineV2BizeventsPipelinegroups", id, <any>state || {}, { ...opts }, undefined);
     }
 
     /** @internal */

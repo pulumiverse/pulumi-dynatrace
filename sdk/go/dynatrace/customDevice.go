@@ -148,6 +148,12 @@ func (CustomDeviceState) ElementType() reflect.Type {
 	return reflect.TypeOf((*customDeviceState)(nil)).Elem()
 }
 
+// CustomDeviceExists checks whether an existing CustomDevice resource with the given ID exists.
+func CustomDeviceExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *CustomDeviceState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/customDevice:CustomDevice", id, state, "", opts...)
+}
+
 type customDeviceArgs struct {
 	// The URL of a configuration web page for the custom device, such as a login page for a firewall or router.
 	ConfigUrl *string `pulumi:"configUrl"`

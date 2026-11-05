@@ -83,8 +83,8 @@ import (
 //				DashboardPresetsList: &dynatrace.DashboardsPresetsDashboardPresetsListArgs{
 //					DashboardPresets: dynatrace.DashboardsPresetsDashboardPresetsListDashboardPresetArray{
 //						&dynatrace.DashboardsPresetsDashboardPresetsListDashboardPresetArgs{
-//							DashboardPreset: dashboard.ID().ToIDOutput().ToStringOutput(),
-//							UserGroup:       group.ID().ToIDOutput().ToStringOutput(),
+//							DashboardPreset: dashboard.ID(),
+//							UserGroup:       group.ID(),
 //						},
 //					},
 //				},
@@ -154,6 +154,12 @@ type DashboardsPresetsState struct {
 
 func (DashboardsPresetsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*dashboardsPresetsState)(nil)).Elem()
+}
+
+// DashboardsPresetsExists checks whether an existing DashboardsPresets resource with the given ID exists.
+func DashboardsPresetsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DashboardsPresetsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/dashboardsPresets:DashboardsPresets", id, state, "", opts...)
 }
 
 type dashboardsPresetsArgs struct {

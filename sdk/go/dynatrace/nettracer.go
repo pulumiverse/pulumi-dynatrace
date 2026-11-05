@@ -84,6 +84,12 @@ func (NettracerState) ElementType() reflect.Type {
 	return reflect.TypeOf((*nettracerState)(nil)).Elem()
 }
 
+// NettracerExists checks whether an existing Nettracer resource with the given ID exists.
+func NettracerExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *NettracerState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/nettracer:Nettracer", id, state, "", opts...)
+}
+
 type nettracerArgs struct {
 	// When disabled, OneAgent won't use NetTracer to collect network data from containers. Disabled by default. Applies only to Linux hosts. Requires OneAgent 1.231+.
 	NetTracer bool `pulumi:"netTracer"`

@@ -35,7 +35,7 @@ import * as utilities from "./utilities";
  *     enabled: true,
  *     objectScopes: {
  *         syntheticMonitors: {
- *             disableSyntheticMonitorFilter: "status == \"OPEN\" AND severity == \"HIGH\"",
+ *             disableSyntheticMonitorFilter: "monitor.name == \"my-monitor\"",
  *             disableSyntheticMonitors: true,
  *         },
  *     },
@@ -83,6 +83,17 @@ export class MaintenanceWindows extends pulumi.CustomResource {
      */
     public static get(name: string, id: pulumi.Input<pulumi.ID>, state?: MaintenanceWindowsState, opts?: pulumi.CustomResourceOptions): MaintenanceWindows {
         return new MaintenanceWindows(name, <any>state, { ...opts, id: id });
+    }
+
+    /**
+     * Check whether an existing MaintenanceWindows resource with the given ID exists.
+     *
+     * @param id The _unique_ provider ID of the resource to check.
+     * @param state Any extra arguments used during the lookup.
+     * @param opts Optional settings to control the behavior of the CustomResource.
+     */
+    public static exists(id: pulumi.Input<string>, state?: MaintenanceWindowsState, opts?: pulumi.CustomResourceOptions): pulumi.Output<boolean> {
+        return pulumi.runtime.existsResource("dynatrace:index/maintenanceWindows:MaintenanceWindows", id, <any>state || {}, { ...opts }, undefined);
     }
 
     /** @internal */

@@ -88,6 +88,17 @@ export class OpenpipelineV2SystemEventsDataforwarding extends pulumi.CustomResou
         return new OpenpipelineV2SystemEventsDataforwarding(name, <any>state, { ...opts, id: id });
     }
 
+    /**
+     * Check whether an existing OpenpipelineV2SystemEventsDataforwarding resource with the given ID exists.
+     *
+     * @param id The _unique_ provider ID of the resource to check.
+     * @param state Any extra arguments used during the lookup.
+     * @param opts Optional settings to control the behavior of the CustomResource.
+     */
+    public static exists(id: pulumi.Input<string>, state?: OpenpipelineV2SystemEventsDataforwardingState, opts?: pulumi.CustomResourceOptions): pulumi.Output<boolean> {
+        return pulumi.runtime.existsResource("dynatrace:index/openpipelineV2SystemEventsDataforwarding:OpenpipelineV2SystemEventsDataforwarding", id, <any>state || {}, { ...opts }, undefined);
+    }
+
     /** @internal */
     public static readonly __pulumiType = 'dynatrace:index/openpipelineV2SystemEventsDataforwarding:OpenpipelineV2SystemEventsDataforwarding';
 
@@ -130,6 +141,10 @@ export class OpenpipelineV2SystemEventsDataforwarding extends pulumi.CustomResou
      * Cloud Vendor Type. Possible values: `aws`, `azure`, `gcp`, `otlp`
      */
     declare public readonly cloudVendorType: pulumi.Output<string>;
+    /**
+     * Compression type. Possible values: `gzip`, `zstd`
+     */
+    declare public readonly compressionType: pulumi.Output<string | undefined>;
     /**
      * Pipeline Type. Possible values: `processed`, `raw`
      */
@@ -187,6 +202,7 @@ export class OpenpipelineV2SystemEventsDataforwarding extends pulumi.CustomResou
             resourceInputs["bulkPattern"] = state?.bulkPattern;
             resourceInputs["bulkSize"] = state?.bulkSize;
             resourceInputs["cloudVendorType"] = state?.cloudVendorType;
+            resourceInputs["compressionType"] = state?.compressionType;
             resourceInputs["dataForwardingType"] = state?.dataForwardingType;
             resourceInputs["enabled"] = state?.enabled;
             resourceInputs["forwardingName"] = state?.forwardingName;
@@ -220,6 +236,7 @@ export class OpenpipelineV2SystemEventsDataforwarding extends pulumi.CustomResou
             resourceInputs["bulkPattern"] = args?.bulkPattern;
             resourceInputs["bulkSize"] = args?.bulkSize;
             resourceInputs["cloudVendorType"] = args?.cloudVendorType;
+            resourceInputs["compressionType"] = args?.compressionType;
             resourceInputs["dataForwardingType"] = args?.dataForwardingType;
             resourceInputs["enabled"] = args?.enabled;
             resourceInputs["forwardingName"] = args?.forwardingName;
@@ -267,6 +284,10 @@ export interface OpenpipelineV2SystemEventsDataforwardingState {
      * Cloud Vendor Type. Possible values: `aws`, `azure`, `gcp`, `otlp`
      */
     cloudVendorType?: pulumi.Input<string | undefined>;
+    /**
+     * Compression type. Possible values: `gzip`, `zstd`
+     */
+    compressionType?: pulumi.Input<string | undefined>;
     /**
      * Pipeline Type. Possible values: `processed`, `raw`
      */
@@ -337,6 +358,10 @@ export interface OpenpipelineV2SystemEventsDataforwardingArgs {
      * Cloud Vendor Type. Possible values: `aws`, `azure`, `gcp`, `otlp`
      */
     cloudVendorType: pulumi.Input<string>;
+    /**
+     * Compression type. Possible values: `gzip`, `zstd`
+     */
+    compressionType?: pulumi.Input<string | undefined>;
     /**
      * Pipeline Type. Possible values: `processed`, `raw`
      */

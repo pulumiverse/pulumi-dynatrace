@@ -117,6 +117,12 @@ func (GenericTypesState) ElementType() reflect.Type {
 	return reflect.TypeOf((*genericTypesState)(nil)).Elem()
 }
 
+// GenericTypesExists checks whether an existing GenericTypes resource with the given ID exists.
+func GenericTypesExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *GenericTypesState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/genericTypes:GenericTypes", id, state, "", opts...)
+}
+
 type genericTypesArgs struct {
 	// The user or extension that created this type.
 	CreatedBy string `pulumi:"createdBy"`

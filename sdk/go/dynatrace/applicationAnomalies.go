@@ -88,6 +88,12 @@ func (ApplicationAnomaliesState) ElementType() reflect.Type {
 	return reflect.TypeOf((*applicationAnomaliesState)(nil)).Elem()
 }
 
+// ApplicationAnomaliesExists checks whether an existing ApplicationAnomalies resource with the given ID exists.
+func ApplicationAnomaliesExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ApplicationAnomaliesState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/applicationAnomalies:ApplicationAnomalies", id, state, "", opts...)
+}
+
 type applicationAnomaliesArgs struct {
 	// Configuration of failure rate increase detection
 	FailureRate *ApplicationAnomaliesFailureRate `pulumi:"failureRate"`

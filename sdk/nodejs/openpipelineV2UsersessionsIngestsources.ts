@@ -83,6 +83,7 @@ import * as utilities from "./utilities";
  *                             fields: [{
  *                                 name: "is_error",
  *                                 value: "true",
+ *                                 valueType: "boolean",
  *                             }],
  *                         },
  *                     },
@@ -151,6 +152,17 @@ export class OpenpipelineV2UsersessionsIngestsources extends pulumi.CustomResour
      */
     public static get(name: string, id: pulumi.Input<pulumi.ID>, state?: OpenpipelineV2UsersessionsIngestsourcesState, opts?: pulumi.CustomResourceOptions): OpenpipelineV2UsersessionsIngestsources {
         return new OpenpipelineV2UsersessionsIngestsources(name, <any>state, { ...opts, id: id });
+    }
+
+    /**
+     * Check whether an existing OpenpipelineV2UsersessionsIngestsources resource with the given ID exists.
+     *
+     * @param id The _unique_ provider ID of the resource to check.
+     * @param state Any extra arguments used during the lookup.
+     * @param opts Optional settings to control the behavior of the CustomResource.
+     */
+    public static exists(id: pulumi.Input<string>, state?: OpenpipelineV2UsersessionsIngestsourcesState, opts?: pulumi.CustomResourceOptions): pulumi.Output<boolean> {
+        return pulumi.runtime.existsResource("dynatrace:index/openpipelineV2UsersessionsIngestsources:OpenpipelineV2UsersessionsIngestsources", id, <any>state || {}, { ...opts }, undefined);
     }
 
     /** @internal */

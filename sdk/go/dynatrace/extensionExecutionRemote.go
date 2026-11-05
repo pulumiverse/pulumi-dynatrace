@@ -87,6 +87,12 @@ func (ExtensionExecutionRemoteState) ElementType() reflect.Type {
 	return reflect.TypeOf((*extensionExecutionRemoteState)(nil)).Elem()
 }
 
+// ExtensionExecutionRemoteExists checks whether an existing ExtensionExecutionRemote resource with the given ID exists.
+func ExtensionExecutionRemoteExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ExtensionExecutionRemoteState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/extensionExecutionRemote:ExtensionExecutionRemote", id, state, "", opts...)
+}
+
 type extensionExecutionRemoteArgs struct {
 	// Select performance profile for Extension Execution Controller [Documentation](https://www.dynatrace.com/support/help/shortlink/extensions-concepts#resource-consumption). Possible values: `DEDICATED`, `DEFAULT`, `HIGH`
 	PerformanceProfile string `pulumi:"performanceProfile"`

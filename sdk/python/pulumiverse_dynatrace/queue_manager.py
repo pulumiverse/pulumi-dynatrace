@@ -327,6 +327,22 @@ class QueueManager(pulumi.CustomResource):
         __props__.__dict__["remote_queues"] = remote_queues
         return QueueManager(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            alias_queues: pulumi.Input[Optional[Sequence[pulumi.Input[Union['QueueManagerAliasQueueArgs', 'QueueManagerAliasQueueArgsDict', 'outputs.QueueManagerAliasQueue']]]]] = None,
+            cluster_queues: pulumi.Input[Optional[Sequence[pulumi.Input[Union['QueueManagerClusterQueueArgs', 'QueueManagerClusterQueueArgsDict', 'outputs.QueueManagerClusterQueue']]]]] = None,
+            clusters: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            remote_queues: pulumi.Input[Optional[Sequence[pulumi.Input[Union['QueueManagerRemoteQueueArgs', 'QueueManagerRemoteQueueArgsDict', 'outputs.QueueManagerRemoteQueue']]]]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["aliasQueues"] = alias_queues
+        __props__["clusterQueues"] = cluster_queues
+        __props__["clusters"] = clusters
+        __props__["name"] = name
+        __props__["remoteQueues"] = remote_queues
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/queueManager:QueueManager', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="aliasQueues")
     def alias_queues(self) -> pulumi.Output[Optional[Sequence['outputs.QueueManagerAliasQueue']]]:

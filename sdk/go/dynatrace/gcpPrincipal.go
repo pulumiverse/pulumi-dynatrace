@@ -37,7 +37,7 @@ import (
 //
 //	"fmt"
 //
-//	"github.com/pulumi/pulumi-gcp/sdk/v9/go/gcp/serviceaccount"
+//	"github.com/pulumi/pulumi-gcp/sdk/v10/go/gcp/serviceaccount"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi/config"
 //	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
@@ -143,6 +143,12 @@ type GcpPrincipalState struct {
 
 func (GcpPrincipalState) ElementType() reflect.Type {
 	return reflect.TypeOf((*gcpPrincipalState)(nil)).Elem()
+}
+
+// GcpPrincipalExists checks whether an existing GcpPrincipal resource with the given ID exists.
+func GcpPrincipalExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *GcpPrincipalState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/gcpPrincipal:GcpPrincipal", id, state, "", opts...)
 }
 
 type gcpPrincipalArgs struct {

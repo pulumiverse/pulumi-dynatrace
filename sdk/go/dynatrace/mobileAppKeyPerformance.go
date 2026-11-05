@@ -98,6 +98,12 @@ func (MobileAppKeyPerformanceState) ElementType() reflect.Type {
 	return reflect.TypeOf((*mobileAppKeyPerformanceState)(nil)).Elem()
 }
 
+// MobileAppKeyPerformanceExists checks whether an existing MobileAppKeyPerformance resource with the given ID exists.
+func MobileAppKeyPerformanceExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *MobileAppKeyPerformanceState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/mobileAppKeyPerformance:MobileAppKeyPerformance", id, state, "", opts...)
+}
+
 type mobileAppKeyPerformanceArgs struct {
 	// Treat user actions with reported errors or web request errors as erroneous and rate their performance as Frustrating. Turn off this setting if errors should not affect the Apdex rate.
 	FrustratingIfReportedOrWebRequestError bool `pulumi:"frustratingIfReportedOrWebRequestError"`

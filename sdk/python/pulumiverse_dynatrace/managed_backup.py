@@ -588,6 +588,34 @@ class ManagedBackup(pulumi.CustomResource):
         __props__.__dict__["storage_path"] = storage_path
         return ManagedBackup(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            bandwidth_limit_mbits: pulumi.Input[Optional[_builtins.int]] = None,
+            cassandra_scheduled_time: pulumi.Input[Optional[_builtins.int]] = None,
+            current_state: pulumi.Input[Optional[_builtins.str]] = None,
+            datacenter: pulumi.Input[Optional[_builtins.str]] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            include_lm20_data: pulumi.Input[Optional[_builtins.bool]] = None,
+            include_rum_data: pulumi.Input[Optional[_builtins.bool]] = None,
+            include_ts_metric_data: pulumi.Input[Optional[_builtins.bool]] = None,
+            max_es_snapshots_to_clean: pulumi.Input[Optional[_builtins.int]] = None,
+            pause_backups: pulumi.Input[Optional[_builtins.bool]] = None,
+            storage_path: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["bandwidthLimitMbits"] = bandwidth_limit_mbits
+        __props__["cassandraScheduledTime"] = cassandra_scheduled_time
+        __props__["currentState"] = current_state
+        __props__["datacenter"] = datacenter
+        __props__["enabled"] = enabled
+        __props__["includeLm20Data"] = include_lm20_data
+        __props__["includeRumData"] = include_rum_data
+        __props__["includeTsMetricData"] = include_ts_metric_data
+        __props__["maxEsSnapshotsToClean"] = max_es_snapshots_to_clean
+        __props__["pauseBackups"] = pause_backups
+        __props__["storagePath"] = storage_path
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/managedBackup:ManagedBackup', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="bandwidthLimitMbits")
     def bandwidth_limit_mbits(self) -> pulumi.Output[Optional[_builtins.int]]:

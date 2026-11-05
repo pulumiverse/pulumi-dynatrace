@@ -299,7 +299,7 @@ class MaintenanceWindows(pulumi.CustomResource):
             enabled=True,
             object_scopes={
                 "synthetic_monitors": {
-                    "disable_synthetic_monitor_filter": "status == \\"OPEN\\" AND severity == \\"HIGH\\"",
+                    "disable_synthetic_monitor_filter": "monitor.name == \\"my-monitor\\"",
                     "disable_synthetic_monitors": True,
                 },
             },
@@ -379,7 +379,7 @@ class MaintenanceWindows(pulumi.CustomResource):
             enabled=True,
             object_scopes={
                 "synthetic_monitors": {
-                    "disable_synthetic_monitor_filter": "status == \\"OPEN\\" AND severity == \\"HIGH\\"",
+                    "disable_synthetic_monitor_filter": "monitor.name == \\"my-monitor\\"",
                     "disable_synthetic_monitors": True,
                 },
             },
@@ -504,6 +504,26 @@ class MaintenanceWindows(pulumi.CustomResource):
         __props__.__dict__["object_scopes"] = object_scopes
         __props__.__dict__["schedule"] = schedule
         return MaintenanceWindows(resource_name, opts=opts, __props__=__props__)
+
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            auto_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            filter: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            object_scopes: pulumi.Input[Optional[Union['MaintenanceWindowsObjectScopesArgs', 'MaintenanceWindowsObjectScopesArgsDict', 'outputs.MaintenanceWindowsObjectScopes']]] = None,
+            schedule: pulumi.Input[Optional[Union['MaintenanceWindowsScheduleArgs', 'MaintenanceWindowsScheduleArgsDict', 'outputs.MaintenanceWindowsSchedule']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["autoDelete"] = auto_delete
+        __props__["description"] = description
+        __props__["enabled"] = enabled
+        __props__["filter"] = filter
+        __props__["name"] = name
+        __props__["objectScopes"] = object_scopes
+        __props__["schedule"] = schedule
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/maintenanceWindows:MaintenanceWindows', id, __props__, opts or pulumi.ResourceOptions())
 
     @_builtins.property
     @pulumi.getter(name="autoDelete")

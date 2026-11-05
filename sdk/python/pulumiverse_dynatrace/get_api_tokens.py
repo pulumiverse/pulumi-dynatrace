@@ -62,6 +62,7 @@ class AwaitableGetApiTokensResult(GetApiTokensResult):
 def get_api_tokens(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetApiTokensResult:
     """
     > This data source requires the API token scope **Read API tokens** (`apiTokens.read`)
+    or the OAuth scope `api-tokens:tokens:read`
 
     The API tokens data source allows all access tokens to be retrieved, note the token value is not included in the response.
 
@@ -85,6 +86,7 @@ def get_api_tokens(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetA
 def get_api_tokens_output(opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetApiTokensResult]:
     """
     > This data source requires the API token scope **Read API tokens** (`apiTokens.read`)
+    or the OAuth scope `api-tokens:tokens:read`
 
     The API tokens data source allows all access tokens to be retrieved, note the token value is not included in the response.
 

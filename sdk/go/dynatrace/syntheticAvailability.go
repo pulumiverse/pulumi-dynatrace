@@ -76,6 +76,12 @@ func (SyntheticAvailabilityState) ElementType() reflect.Type {
 	return reflect.TypeOf((*syntheticAvailabilityState)(nil)).Elem()
 }
 
+// SyntheticAvailabilityExists checks whether an existing SyntheticAvailability resource with the given ID exists.
+func SyntheticAvailabilityExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SyntheticAvailabilityState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/syntheticAvailability:SyntheticAvailability", id, state, "", opts...)
+}
+
 type syntheticAvailabilityArgs struct {
 	// Exclude periods with maintenance windows from availability calculation
 	ExcludeMaintenanceWindows bool `pulumi:"excludeMaintenanceWindows"`

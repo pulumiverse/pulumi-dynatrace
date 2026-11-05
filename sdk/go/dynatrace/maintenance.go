@@ -113,6 +113,12 @@ func (MaintenanceState) ElementType() reflect.Type {
 	return reflect.TypeOf((*maintenanceState)(nil)).Elem()
 }
 
+// MaintenanceExists checks whether an existing Maintenance resource with the given ID exists.
+func MaintenanceExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *MaintenanceState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/maintenance:Maintenance", id, state, "", opts...)
+}
+
 type maintenanceArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`

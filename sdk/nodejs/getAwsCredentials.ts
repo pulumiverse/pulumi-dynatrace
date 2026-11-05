@@ -10,6 +10,16 @@ import * as utilities from "./utilities";
  * - `label` (String) - The label/name of the AWS credential
  *
  * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ *
+ * const example = dynatrace.getAwsCredentials({
+ *     name: "Terraform Example",
+ * });
+ * export const id = example.then(example => example.id);
+ * ```
  */
 export function getAwsCredentials(args: GetAwsCredentialsArgs, opts?: pulumi.InvokeOptions): Promise<GetAwsCredentialsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -41,6 +51,16 @@ export interface GetAwsCredentialsResult {
  * - `label` (String) - The label/name of the AWS credential
  *
  * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ *
+ * const example = dynatrace.getAwsCredentials({
+ *     name: "Terraform Example",
+ * });
+ * export const id = example.then(example => example.id);
+ * ```
  */
 export function getAwsCredentialsOutput(args: GetAwsCredentialsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAwsCredentialsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

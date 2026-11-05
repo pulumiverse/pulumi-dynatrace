@@ -72,7 +72,7 @@ import (
 //			var tERRAFORMSAMPLEServices []*dynatrace.AzureService
 //			for key0, _ := range supportedServices.Services {
 //				__res, err := dynatrace.NewAzureService(ctx, fmt.Sprintf("TERRAFORM_SAMPLE_services-%v", key0), &dynatrace.AzureServiceArgs{
-//					CredentialsId:         TERRAFORM_SAMPLE.ID().ToIDOutput().ToStringOutput(),
+//					CredentialsId:         TERRAFORM_SAMPLE.ID(),
 //					UseRecommendedMetrics: pulumi.Bool(true),
 //					Name:                  pulumi.String(key0),
 //				})
@@ -116,7 +116,7 @@ import (
 //			}
 //			_, err = dynatrace.NewAzureService(ctx, "ContainerService", &dynatrace.AzureServiceArgs{
 //				Name:          pulumi.String("cloud:azure:containerservice:managedcluster"),
-//				CredentialsId: example.ID().ToIDOutput().ToStringOutput(),
+//				CredentialsId: example.ID(),
 //				Metrics: dynatrace.AzureServiceMetricArray{
 //					&dynatrace.AzureServiceMetricArgs{
 //						Name:       pulumi.String("kube_pod_status_ready"),
@@ -228,6 +228,12 @@ type AzureServiceState struct {
 
 func (AzureServiceState) ElementType() reflect.Type {
 	return reflect.TypeOf((*azureServiceState)(nil)).Elem()
+}
+
+// AzureServiceExists checks whether an existing AzureService resource with the given ID exists.
+func AzureServiceExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AzureServiceState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/azureService:AzureService", id, state, "", opts...)
 }
 
 type azureServiceArgs struct {

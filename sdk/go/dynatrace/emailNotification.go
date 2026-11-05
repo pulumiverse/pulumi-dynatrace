@@ -207,6 +207,12 @@ func (EmailNotificationState) ElementType() reflect.Type {
 	return reflect.TypeOf((*emailNotificationState)(nil)).Elem()
 }
 
+// EmailNotificationExists checks whether an existing EmailNotification resource with the given ID exists.
+func EmailNotificationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *EmailNotificationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/emailNotification:EmailNotification", id, state, "", opts...)
+}
+
 type emailNotificationArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Active *bool `pulumi:"active"`

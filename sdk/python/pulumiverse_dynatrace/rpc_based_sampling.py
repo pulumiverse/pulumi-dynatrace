@@ -880,6 +880,36 @@ class RpcBasedSampling(pulumi.CustomResource):
         __props__.__dict__["wire_protocol_type"] = wire_protocol_type
         return RpcBasedSampling(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            endpoint_name: pulumi.Input[Optional[_builtins.str]] = None,
+            endpoint_name_comparison_type: pulumi.Input[Optional[_builtins.str]] = None,
+            factor: pulumi.Input[Optional[_builtins.str]] = None,
+            ignore: pulumi.Input[Optional[_builtins.bool]] = None,
+            insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+            remote_operation_name: pulumi.Input[Optional[_builtins.str]] = None,
+            remote_operation_name_comparison_type: pulumi.Input[Optional[_builtins.str]] = None,
+            remote_service_name: pulumi.Input[Optional[_builtins.str]] = None,
+            remote_service_name_comparison_type: pulumi.Input[Optional[_builtins.str]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None,
+            wire_protocol_type: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["enabled"] = enabled
+        __props__["endpointName"] = endpoint_name
+        __props__["endpointNameComparisonType"] = endpoint_name_comparison_type
+        __props__["factor"] = factor
+        __props__["ignore"] = ignore
+        __props__["insertAfter"] = insert_after
+        __props__["remoteOperationName"] = remote_operation_name
+        __props__["remoteOperationNameComparisonType"] = remote_operation_name_comparison_type
+        __props__["remoteServiceName"] = remote_service_name
+        __props__["remoteServiceNameComparisonType"] = remote_service_name_comparison_type
+        __props__["scope"] = scope
+        __props__["wireProtocolType"] = wire_protocol_type
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/rpcBasedSampling:RpcBasedSampling', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def enabled(self) -> pulumi.Output[_builtins.bool]:

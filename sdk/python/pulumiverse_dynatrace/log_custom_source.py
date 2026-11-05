@@ -329,6 +329,22 @@ class LogCustomSource(pulumi.CustomResource):
         __props__.__dict__["scope"] = scope
         return LogCustomSource(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            context: pulumi.Input[Optional[Union['LogCustomSourceContextArgs', 'LogCustomSourceContextArgsDict', 'outputs.LogCustomSourceContext']]] = None,
+            custom_log_source: pulumi.Input[Optional[Union['LogCustomSourceCustomLogSourceArgs', 'LogCustomSourceCustomLogSourceArgsDict', 'outputs.LogCustomSourceCustomLogSource']]] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["context"] = context
+        __props__["customLogSource"] = custom_log_source
+        __props__["enabled"] = enabled
+        __props__["name"] = name
+        __props__["scope"] = scope
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/logCustomSource:LogCustomSource', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def context(self) -> pulumi.Output[Optional['outputs.LogCustomSourceContext']]:

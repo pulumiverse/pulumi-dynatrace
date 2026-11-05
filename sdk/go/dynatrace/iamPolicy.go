@@ -172,6 +172,12 @@ func (IamPolicyState) ElementType() reflect.Type {
 	return reflect.TypeOf((*iamPolicyState)(nil)).Elem()
 }
 
+// IamPolicyExists checks whether an existing IamPolicy resource with the given ID exists.
+func IamPolicyExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *IamPolicyState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/iamPolicy:IamPolicy", id, state, "", opts...)
+}
+
 type iamPolicyArgs struct {
 	// The UUID of the account (`urn:dtaccount:<account-uuid>`) in case the policy should be applied to all environments of this account. The prefix `urn:dtaccount:` MUST be omitted here.
 	Account *string `pulumi:"account"`

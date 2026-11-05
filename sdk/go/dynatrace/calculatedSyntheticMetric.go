@@ -105,7 +105,7 @@ import (
 //				Enabled:           pulumi.Bool(true),
 //				Metric:            pulumi.String("ResourceCount"),
 //				MetricKey:         pulumi.String("calc:synthetic.browser.#name#"),
-//				MonitorIdentifier: monitor.ID().ToIDOutput().ToStringOutput(),
+//				MonitorIdentifier: monitor.ID(),
 //			})
 //			if err != nil {
 //				return err
@@ -217,6 +217,12 @@ type CalculatedSyntheticMetricState struct {
 
 func (CalculatedSyntheticMetricState) ElementType() reflect.Type {
 	return reflect.TypeOf((*calculatedSyntheticMetricState)(nil)).Elem()
+}
+
+// CalculatedSyntheticMetricExists checks whether an existing CalculatedSyntheticMetric resource with the given ID exists.
+func CalculatedSyntheticMetricExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *CalculatedSyntheticMetricState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/calculatedSyntheticMetric:CalculatedSyntheticMetric", id, state, "", opts...)
 }
 
 type calculatedSyntheticMetricArgs struct {

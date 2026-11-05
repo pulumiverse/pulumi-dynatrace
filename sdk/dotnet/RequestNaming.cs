@@ -30,7 +30,7 @@ namespace Pulumiverse.Dynatrace
     public partial class RequestNaming : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// The set of conditions for the request naming rule usage. 
+        /// The set of conditions for the request naming rule usage.
         /// 
         ///  You can specify several conditions. The request has to match **all** the specified conditions for the rule to trigger
         /// </summary>
@@ -56,7 +56,7 @@ namespace Pulumiverse.Dynatrace
         public Output<string> NamingPattern { get; private set; } = null!;
 
         /// <summary>
-        /// The list of custom placeholders to be used in the naming pattern. 
+        /// The list of custom placeholders to be used in the naming pattern.
         /// 
         ///  It enables you to extract a request attribute value or other request attribute and use it in the request naming pattern.
         /// </summary>
@@ -117,7 +117,7 @@ namespace Pulumiverse.Dynatrace
     public sealed class RequestNamingArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The set of conditions for the request naming rule usage. 
+        /// The set of conditions for the request naming rule usage.
         /// 
         ///  You can specify several conditions. The request has to match **all** the specified conditions for the rule to trigger
         /// </summary>
@@ -149,7 +149,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string> NamingPattern { get; set; } = null!;
 
         /// <summary>
-        /// The list of custom placeholders to be used in the naming pattern. 
+        /// The list of custom placeholders to be used in the naming pattern.
         /// 
         ///  It enables you to extract a request attribute value or other request attribute and use it in the request naming pattern.
         /// </summary>
@@ -171,7 +171,7 @@ namespace Pulumiverse.Dynatrace
     public sealed class RequestNamingState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The set of conditions for the request naming rule usage. 
+        /// The set of conditions for the request naming rule usage.
         /// 
         ///  You can specify several conditions. The request has to match **all** the specified conditions for the rule to trigger
         /// </summary>
@@ -203,7 +203,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? NamingPattern { get; set; }
 
         /// <summary>
-        /// The list of custom placeholders to be used in the naming pattern. 
+        /// The list of custom placeholders to be used in the naming pattern.
         /// 
         ///  It enables you to extract a request attribute value or other request attribute and use it in the request naming pattern.
         /// </summary>

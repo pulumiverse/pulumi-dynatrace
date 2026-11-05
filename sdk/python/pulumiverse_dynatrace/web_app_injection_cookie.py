@@ -289,6 +289,20 @@ class WebAppInjectionCookie(pulumi.CustomResource):
         __props__.__dict__["use_secure_cookie_attribute"] = use_secure_cookie_attribute
         return WebAppInjectionCookie(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            application_id: pulumi.Input[Optional[_builtins.str]] = None,
+            cookie_placement_domain: pulumi.Input[Optional[_builtins.str]] = None,
+            same_site_cookie_attribute: pulumi.Input[Optional[_builtins.str]] = None,
+            use_secure_cookie_attribute: pulumi.Input[Optional[_builtins.bool]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["applicationId"] = application_id
+        __props__["cookiePlacementDomain"] = cookie_placement_domain
+        __props__["sameSiteCookieAttribute"] = same_site_cookie_attribute
+        __props__["useSecureCookieAttribute"] = use_secure_cookie_attribute
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/webAppInjectionCookie:WebAppInjectionCookie', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="applicationId")
     def application_id(self) -> pulumi.Output[_builtins.str]:

@@ -364,6 +364,24 @@ class IbmMqFilters(pulumi.CustomResource):
         __props__.__dict__["ims_mq_queue_id_includes"] = ims_mq_queue_id_includes
         return IbmMqFilters(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            cics_mq_queue_id_excludes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            cics_mq_queue_id_includes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            ims_cr_trn_id_excludes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            ims_cr_trn_id_includes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            ims_mq_queue_id_excludes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            ims_mq_queue_id_includes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["cicsMqQueueIdExcludes"] = cics_mq_queue_id_excludes
+        __props__["cicsMqQueueIdIncludes"] = cics_mq_queue_id_includes
+        __props__["imsCrTrnIdExcludes"] = ims_cr_trn_id_excludes
+        __props__["imsCrTrnIdIncludes"] = ims_cr_trn_id_includes
+        __props__["imsMqQueueIdExcludes"] = ims_mq_queue_id_excludes
+        __props__["imsMqQueueIdIncludes"] = ims_mq_queue_id_includes
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/ibmMqFilters:IbmMqFilters', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="cicsMqQueueIdExcludes")
     def cics_mq_queue_id_excludes(self) -> pulumi.Output[Optional[Sequence[_builtins.str]]]:

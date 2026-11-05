@@ -172,6 +172,12 @@ func (ManagedSmtpState) ElementType() reflect.Type {
 	return reflect.TypeOf((*managedSmtpState)(nil)).Elem()
 }
 
+// ManagedSmtpExists checks whether an existing ManagedSmtp resource with the given ID exists.
+func ManagedSmtpExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ManagedSmtpState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/managedSmtp:ManagedSmtp", id, state, "", opts...)
+}
+
 type managedSmtpArgs struct {
 	// If true, we will send e-mails via Mission Control in case of problems with SMTP server.
 	AllowFallbackViaMissionControl *bool `pulumi:"allowFallbackViaMissionControl"`

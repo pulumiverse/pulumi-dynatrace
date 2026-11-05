@@ -38,7 +38,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<string>? Unknowns { get; set; }
 
         /// <summary>
-        /// The value of the entity-selector-based auto-tag. If specified, the tag is used in the `name:valueFormat` format. 
+        /// The value of the entity-selector-based auto-tag. If specified, the tag is used in the `name:valueFormat` format.
         /// 
         /// For example, you can extend the `Infrastructure` tag to `Infrastructure:Windows` and `Infrastructure:Linux`
         /// </summary>

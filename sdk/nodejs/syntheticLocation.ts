@@ -7,6 +7,8 @@ import * as utilities from "./utilities";
 /**
  * > This resource requires the API token scope **Create and read synthetic monitors, locations, and nodes** (`ExternalSyntheticIntegration`)
  *
+ * > **Note**: With version 1.106.0 of the Terraform provider, the default value for `useNewKubernetesVersion` changed from `false` to `true`
+ *
  * ## Dynatrace Documentation
  *
  * - Creating Private Synthetic Locations - https://www.dynatrace.com/support/help/how-to-use-dynatrace/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location
@@ -31,6 +33,17 @@ export class SyntheticLocation extends pulumi.CustomResource {
      */
     public static get(name: string, id: pulumi.Input<pulumi.ID>, state?: SyntheticLocationState, opts?: pulumi.CustomResourceOptions): SyntheticLocation {
         return new SyntheticLocation(name, <any>state, { ...opts, id: id });
+    }
+
+    /**
+     * Check whether an existing SyntheticLocation resource with the given ID exists.
+     *
+     * @param id The _unique_ provider ID of the resource to check.
+     * @param state Any extra arguments used during the lookup.
+     * @param opts Optional settings to control the behavior of the CustomResource.
+     */
+    public static exists(id: pulumi.Input<string>, state?: SyntheticLocationState, opts?: pulumi.CustomResourceOptions): pulumi.Output<boolean> {
+        return pulumi.runtime.existsResource("dynatrace:index/syntheticLocation:SyntheticLocation", id, <any>state || {}, { ...opts }, undefined);
     }
 
     /** @internal */
@@ -131,7 +144,7 @@ export class SyntheticLocation extends pulumi.CustomResource {
      */
     declare public readonly regionCode: pulumi.Output<string | undefined>;
     /**
-     * Boolean value describes which kubernetes version will be used
+     * Boolean value describes which Kubernetes version will be used. Set to `false` for version 1.23+ and older than version 1.26. Set to `true` for version 1.26+
      */
     declare public readonly useNewKubernetesVersion: pulumi.Output<boolean | undefined>;
 
@@ -288,7 +301,7 @@ export interface SyntheticLocationState {
      */
     regionCode?: pulumi.Input<string | undefined>;
     /**
-     * Boolean value describes which kubernetes version will be used
+     * Boolean value describes which Kubernetes version will be used. Set to `false` for version 1.23+ and older than version 1.26. Set to `true` for version 1.26+
      */
     useNewKubernetesVersion?: pulumi.Input<boolean | undefined>;
 }
@@ -381,7 +394,7 @@ export interface SyntheticLocationArgs {
      */
     regionCode?: pulumi.Input<string | undefined>;
     /**
-     * Boolean value describes which kubernetes version will be used
+     * Boolean value describes which Kubernetes version will be used. Set to `false` for version 1.23+ and older than version 1.26. Set to `true` for version 1.26+
      */
     useNewKubernetesVersion?: pulumi.Input<boolean | undefined>;
 }

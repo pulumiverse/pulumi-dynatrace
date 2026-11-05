@@ -508,6 +508,26 @@ class HubExtensionConfig(pulumi.CustomResource):
         __props__.__dict__["value"] = value
         return HubExtensionConfig(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            active_gate_group: pulumi.Input[Optional[_builtins.str]] = None,
+            host: pulumi.Input[Optional[_builtins.str]] = None,
+            host_group: pulumi.Input[Optional[_builtins.str]] = None,
+            management_zone: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None,
+            value: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["activeGateGroup"] = active_gate_group
+        __props__["host"] = host
+        __props__["hostGroup"] = host_group
+        __props__["managementZone"] = management_zone
+        __props__["name"] = name
+        __props__["scope"] = scope
+        __props__["value"] = value
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/hubExtensionConfig:HubExtensionConfig', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="activeGateGroup")
     def active_gate_group(self) -> pulumi.Output[Optional[_builtins.str]]:

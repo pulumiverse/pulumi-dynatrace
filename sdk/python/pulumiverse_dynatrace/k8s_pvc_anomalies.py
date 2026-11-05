@@ -251,6 +251,18 @@ class K8sPvcAnomalies(pulumi.CustomResource):
         __props__.__dict__["scope"] = scope
         return K8sPvcAnomalies(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            low_disk_space_critical: pulumi.Input[Optional[Union['K8sPvcAnomaliesLowDiskSpaceCriticalArgs', 'K8sPvcAnomaliesLowDiskSpaceCriticalArgsDict', 'outputs.K8sPvcAnomaliesLowDiskSpaceCritical']]] = None,
+            low_disk_space_critical_percentage: pulumi.Input[Optional[Union['K8sPvcAnomaliesLowDiskSpaceCriticalPercentageArgs', 'K8sPvcAnomaliesLowDiskSpaceCriticalPercentageArgsDict', 'outputs.K8sPvcAnomaliesLowDiskSpaceCriticalPercentage']]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["lowDiskSpaceCritical"] = low_disk_space_critical
+        __props__["lowDiskSpaceCriticalPercentage"] = low_disk_space_critical_percentage
+        __props__["scope"] = scope
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/k8sPvcAnomalies:K8sPvcAnomalies', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="lowDiskSpaceCritical")
     def low_disk_space_critical(self) -> pulumi.Output['outputs.K8sPvcAnomaliesLowDiskSpaceCritical']:

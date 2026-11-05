@@ -105,6 +105,12 @@ func (UserExperienceScoreState) ElementType() reflect.Type {
 	return reflect.TypeOf((*userExperienceScoreState)(nil)).Elem()
 }
 
+// UserExperienceScoreExists checks whether an existing UserExperienceScore resource with the given ID exists.
+func UserExperienceScoreExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *UserExperienceScoreState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/userExperienceScore:UserExperienceScore", id, state, "", opts...)
+}
+
 type userExperienceScoreArgs struct {
 	// If last user action in a session is classified as Frustrating, classify the entire session as Frustrating
 	ConsiderLastAction bool `pulumi:"considerLastAction"`

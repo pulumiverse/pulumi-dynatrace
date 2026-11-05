@@ -123,6 +123,12 @@ func (LogProcessingState) ElementType() reflect.Type {
 	return reflect.TypeOf((*logProcessingState)(nil)).Elem()
 }
 
+// LogProcessingExists checks whether an existing LogProcessing resource with the given ID exists.
+func LogProcessingExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *LogProcessingState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/logProcessing:LogProcessing", id, state, "", opts...)
+}
+
 type logProcessingArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`

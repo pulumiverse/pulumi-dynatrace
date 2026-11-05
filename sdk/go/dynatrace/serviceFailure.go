@@ -93,6 +93,12 @@ func (ServiceFailureState) ElementType() reflect.Type {
 	return reflect.TypeOf((*serviceFailureState)(nil)).Elem()
 }
 
+// ServiceFailureExists checks whether an existing ServiceFailure resource with the given ID exists.
+func ServiceFailureExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ServiceFailureState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/serviceFailure:ServiceFailure", id, state, "", opts...)
+}
+
 type serviceFailureArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`

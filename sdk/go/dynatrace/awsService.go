@@ -63,7 +63,7 @@ import (
 //			var tERRAFORMSAMPLEServices []*dynatrace.AwsService
 //			for key0, _ := range supportedServices.Services {
 //				__res, err := dynatrace.NewAwsService(ctx, fmt.Sprintf("TERRAFORM_SAMPLE_services-%v", key0), &dynatrace.AwsServiceArgs{
-//					CredentialsId:         TERRAFORM_SAMPLE.ID().ToIDOutput().ToStringOutput(),
+//					CredentialsId:         TERRAFORM_SAMPLE.ID(),
 //					UseRecommendedMetrics: pulumi.Bool(true),
 //					Name:                  pulumi.String(key0),
 //				})
@@ -107,7 +107,7 @@ import (
 //			}
 //			_, err = dynatrace.NewAwsService(ctx, "ElastiCache", &dynatrace.AwsServiceArgs{
 //				Name:          pulumi.String("ElastiCache"),
-//				CredentialsId: example.ID().ToIDOutput().ToStringOutput(),
+//				CredentialsId: example.ID(),
 //				Metrics: dynatrace.AwsServiceMetricArray{
 //					&dynatrace.AwsServiceMetricArgs{
 //						Name: pulumi.String("NetworkBandwidthOutAllowanceExceeded"),
@@ -214,6 +214,12 @@ type AwsServiceState struct {
 
 func (AwsServiceState) ElementType() reflect.Type {
 	return reflect.TypeOf((*awsServiceState)(nil)).Elem()
+}
+
+// AwsServiceExists checks whether an existing AwsService resource with the given ID exists.
+func AwsServiceExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AwsServiceState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/awsService:AwsService", id, state, "", opts...)
 }
 
 type awsServiceArgs struct {

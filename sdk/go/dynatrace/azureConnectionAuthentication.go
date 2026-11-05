@@ -101,7 +101,7 @@ import (
 //			}
 //			// Create a federated identity credential
 //			_, err = azuread.NewApplicationFederatedIdentityCredential(ctx, "example", &azuread.ApplicationFederatedIdentityCredentialArgs{
-//				ApplicationId: example.ID().ToIDOutput().ToStringOutput(),
+//				ApplicationId: example.ID(),
 //				DisplayName:   pulumi.String("Example"),
 //				Audiences: pulumi.StringArray{
 //					pulumi.Sprintf("%v/app-id/dynatrace.microsoft.azure.connector", dynatraceEnvironmentUrl),
@@ -116,7 +116,7 @@ import (
 //			}
 //			// Update the Azure connection with authentication details
 //			_, err = dynatrace.NewAzureConnectionAuthentication(ctx, "example", &dynatrace.AzureConnectionAuthenticationArgs{
-//				AzureConnectionId: exampleAzureConnection.ID().ToIDOutput().ToStringOutput(),
+//				AzureConnectionId: exampleAzureConnection.ID(),
 //				ApplicationId:     example.ClientId,
 //				DirectoryId:       pulumi.String(azureTenantId),
 //			})
@@ -197,6 +197,12 @@ type AzureConnectionAuthenticationState struct {
 
 func (AzureConnectionAuthenticationState) ElementType() reflect.Type {
 	return reflect.TypeOf((*azureConnectionAuthenticationState)(nil)).Elem()
+}
+
+// AzureConnectionAuthenticationExists checks whether an existing AzureConnectionAuthentication resource with the given ID exists.
+func AzureConnectionAuthenticationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AzureConnectionAuthenticationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/azureConnectionAuthentication:AzureConnectionAuthentication", id, state, "", opts...)
 }
 
 type azureConnectionAuthenticationArgs struct {

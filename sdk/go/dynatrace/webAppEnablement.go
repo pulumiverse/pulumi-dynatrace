@@ -101,6 +101,12 @@ func (WebAppEnablementState) ElementType() reflect.Type {
 	return reflect.TypeOf((*webAppEnablementState)(nil)).Elem()
 }
 
+// WebAppEnablementExists checks whether an existing WebAppEnablement resource with the given ID exists.
+func WebAppEnablementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *WebAppEnablementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/webAppEnablement:WebAppEnablement", id, state, "", opts...)
+}
+
 type webAppEnablementArgs struct {
 	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
 	ApplicationId *string `pulumi:"applicationId"`

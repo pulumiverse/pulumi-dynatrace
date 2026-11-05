@@ -117,6 +117,12 @@ func (LogMetricsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*logMetricsState)(nil)).Elem()
 }
 
+// LogMetricsExists checks whether an existing LogMetrics resource with the given ID exists.
+func LogMetricsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *LogMetricsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/logMetrics:LogMetrics", id, state, "", opts...)
+}
+
 type logMetricsArgs struct {
 	// To enable splitting on your metric, add desired dimensions.
 	Dimensions []string `pulumi:"dimensions"`

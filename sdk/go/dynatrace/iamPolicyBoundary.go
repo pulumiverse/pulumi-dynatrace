@@ -61,12 +61,12 @@ import (
 //			}
 //			_, err = dynatrace.NewIamPolicyBindingsV2(ctx, "this", &dynatrace.IamPolicyBindingsV2Args{
 //				Environment: pulumi.String("########"),
-//				Group:       thisIamGroup.ID().ToIDOutput().ToStringOutput(),
+//				Group:       thisIamGroup.ID(),
 //				Policies: dynatrace.IamPolicyBindingsV2PolicyArray{
 //					&dynatrace.IamPolicyBindingsV2PolicyArgs{
-//						Id: thisIamPolicy.ID().ToIDOutput().ToStringOutput(),
+//						Id: thisIamPolicy.ID(),
 //						Boundaries: pulumi.StringArray{
-//							this.ID().ToIDOutput().ToStringOutput(),
+//							this.ID(),
 //						},
 //					},
 //				},
@@ -136,6 +136,12 @@ type IamPolicyBoundaryState struct {
 
 func (IamPolicyBoundaryState) ElementType() reflect.Type {
 	return reflect.TypeOf((*iamPolicyBoundaryState)(nil)).Elem()
+}
+
+// IamPolicyBoundaryExists checks whether an existing IamPolicyBoundary resource with the given ID exists.
+func IamPolicyBoundaryExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *IamPolicyBoundaryState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/iamPolicyBoundary:IamPolicyBoundary", id, state, "", opts...)
 }
 
 type iamPolicyBoundaryArgs struct {

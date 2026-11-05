@@ -131,14 +131,14 @@ import (
 //							"thresholds": []map[string]interface{}{
 //								map[string]interface{}{
 //									"axisTarget": "LEFT",
-//									"rules": []map[string]string{
-//										{
+//									"rules": []interface{}{
+//										map[string]string{
 //											"color": "#7dc540",
 //										},
-//										{
+//										map[string]string{
 //											"color": "#f5d30f",
 //										},
-//										{
+//										map[string]string{
 //											"color": "#dc172a",
 //										},
 //									},
@@ -177,7 +177,7 @@ import (
 //						"tileFilter":            map[string]interface{}{},
 //						"isAutoRefreshDisabled": true,
 //						"customName":            "Total calls",
-//						"queries": []map[string]interface{}{
+//						"queries": []interface{}{
 //							map[string]interface{}{
 //								"id":               "A",
 //								"metric":           "builtin:service.errors.total.successCount",
@@ -238,7 +238,7 @@ import (
 //							"global": map[string]bool{
 //								"hideLegend": false,
 //							},
-//							"rules": []map[string]interface{}{
+//							"rules": []interface{}{
 //								map[string]interface{}{
 //									"matcher": "A:",
 //									"properties": map[string]string{
@@ -291,14 +291,14 @@ import (
 //							"thresholds": []map[string]interface{}{
 //								map[string]interface{}{
 //									"axisTarget": "LEFT",
-//									"rules": []map[string]string{
-//										{
+//									"rules": []interface{}{
+//										map[string]string{
 //											"color": "#7dc540",
 //										},
-//										{
+//										map[string]string{
 //											"color": "#f5d30f",
 //										},
-//										{
+//										map[string]string{
 //											"color": "#dc172a",
 //										},
 //									},
@@ -386,14 +386,14 @@ import (
 //							"thresholds": []map[string]interface{}{
 //								map[string]interface{}{
 //									"axisTarget": "LEFT",
-//									"rules": []map[string]string{
-//										{
+//									"rules": []interface{}{
+//										map[string]string{
 //											"color": "#7dc540",
 //										},
-//										{
+//										map[string]string{
 //											"color": "#f5d30f",
 //										},
-//										{
+//										map[string]string{
 //											"color": "#dc172a",
 //										},
 //									},
@@ -480,14 +480,14 @@ import (
 //							"thresholds": []map[string]interface{}{
 //								map[string]interface{}{
 //									"axisTarget": "LEFT",
-//									"rules": []map[string]string{
-//										{
+//									"rules": []interface{}{
+//										map[string]string{
 //											"color": "#7dc540",
 //										},
-//										{
+//										map[string]string{
 //											"color": "#f5d30f",
 //										},
-//										{
+//										map[string]string{
 //											"color": "#dc172a",
 //										},
 //									},
@@ -588,6 +588,12 @@ type JsonDashboardState struct {
 
 func (JsonDashboardState) ElementType() reflect.Type {
 	return reflect.TypeOf((*jsonDashboardState)(nil)).Elem()
+}
+
+// JsonDashboardExists checks whether an existing JsonDashboard resource with the given ID exists.
+func JsonDashboardExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *JsonDashboardState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/jsonDashboard:JsonDashboard", id, state, "", opts...)
 }
 
 type jsonDashboardArgs struct {

@@ -84,6 +84,12 @@ func (MonitoredTechnologiesOpentracingState) ElementType() reflect.Type {
 	return reflect.TypeOf((*monitoredTechnologiesOpentracingState)(nil)).Elem()
 }
 
+// MonitoredTechnologiesOpentracingExists checks whether an existing MonitoredTechnologiesOpentracing resource with the given ID exists.
+func MonitoredTechnologiesOpentracingExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *MonitoredTechnologiesOpentracingState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/monitoredTechnologiesOpentracing:MonitoredTechnologiesOpentracing", id, state, "", opts...)
+}
+
 type monitoredTechnologiesOpentracingArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`

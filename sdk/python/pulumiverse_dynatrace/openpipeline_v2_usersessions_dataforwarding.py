@@ -32,6 +32,7 @@ class OpenpipelineV2UsersessionsDataforwardingArgs:
                  builtin_pipelines: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  bulk_pattern: pulumi.Input[Optional[_builtins.str]] = None,
                  bulk_size: pulumi.Input[Optional[_builtins.int]] = None,
+                 compression_type: pulumi.Input[Optional[_builtins.str]] = None,
                  gcp_connection: pulumi.Input[Optional['OpenpipelineV2UsersessionsDataforwardingGcpConnectionArgs']] = None,
                  ingest_sources: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  otlp_connection: pulumi.Input[Optional['OpenpipelineV2UsersessionsDataforwardingOtlpConnectionArgs']] = None,
@@ -51,6 +52,7 @@ class OpenpipelineV2UsersessionsDataforwardingArgs:
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] builtin_pipelines: Built-in pipelines
         :param pulumi.Input[_builtins.str] bulk_pattern: Segmentation and prefix of the data
         :param pulumi.Input[_builtins.int] bulk_size: Bulk size for transmission
+        :param pulumi.Input[_builtins.str] compression_type: Compression type. Possible values: `gzip`, `zstd`
         :param pulumi.Input['OpenpipelineV2UsersessionsDataforwardingGcpConnectionArgs'] gcp_connection: GCP Connection
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] ingest_sources: List of ingest sources
         :param pulumi.Input['OpenpipelineV2UsersessionsDataforwardingOtlpConnectionArgs'] otlp_connection: [IN_DEVELOPMENT]
@@ -74,6 +76,8 @@ class OpenpipelineV2UsersessionsDataforwardingArgs:
             pulumi.set(__self__, "bulk_pattern", bulk_pattern)
         if bulk_size is not None:
             pulumi.set(__self__, "bulk_size", bulk_size)
+        if compression_type is not None:
+            pulumi.set(__self__, "compression_type", compression_type)
         if gcp_connection is not None:
             pulumi.set(__self__, "gcp_connection", gcp_connection)
         if ingest_sources is not None:
@@ -218,6 +222,18 @@ class OpenpipelineV2UsersessionsDataforwardingArgs:
         pulumi.set(self, "bulk_size", value)
 
     @_builtins.property
+    @pulumi.getter(name="compressionType")
+    def compression_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Compression type. Possible values: `gzip`, `zstd`
+        """
+        return pulumi.get(self, "compression_type")
+
+    @compression_type.setter
+    def compression_type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "compression_type", value)
+
+    @_builtins.property
     @pulumi.getter(name="gcpConnection")
     def gcp_connection(self) -> pulumi.Input[Optional['OpenpipelineV2UsersessionsDataforwardingGcpConnectionArgs']]:
         """
@@ -288,6 +304,7 @@ class _OpenpipelineV2UsersessionsDataforwardingState:
                  bulk_pattern: pulumi.Input[Optional[_builtins.str]] = None,
                  bulk_size: pulumi.Input[Optional[_builtins.int]] = None,
                  cloud_vendor_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 compression_type: pulumi.Input[Optional[_builtins.str]] = None,
                  data_forwarding_type: pulumi.Input[Optional[_builtins.str]] = None,
                  enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  forwarding_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -307,6 +324,7 @@ class _OpenpipelineV2UsersessionsDataforwardingState:
         :param pulumi.Input[_builtins.str] bulk_pattern: Segmentation and prefix of the data
         :param pulumi.Input[_builtins.int] bulk_size: Bulk size for transmission
         :param pulumi.Input[_builtins.str] cloud_vendor_type: Cloud Vendor Type. Possible values: `aws`, `azure`, `gcp`, `otlp`
+        :param pulumi.Input[_builtins.str] compression_type: Compression type. Possible values: `gzip`, `zstd`
         :param pulumi.Input[_builtins.str] data_forwarding_type: Pipeline Type. Possible values: `processed`, `raw`
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] forwarding_name: Forwarding name
@@ -331,6 +349,8 @@ class _OpenpipelineV2UsersessionsDataforwardingState:
             pulumi.set(__self__, "bulk_size", bulk_size)
         if cloud_vendor_type is not None:
             pulumi.set(__self__, "cloud_vendor_type", cloud_vendor_type)
+        if compression_type is not None:
+            pulumi.set(__self__, "compression_type", compression_type)
         if data_forwarding_type is not None:
             pulumi.set(__self__, "data_forwarding_type", data_forwarding_type)
         if enabled is not None:
@@ -433,6 +453,18 @@ class _OpenpipelineV2UsersessionsDataforwardingState:
     @cloud_vendor_type.setter
     def cloud_vendor_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cloud_vendor_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="compressionType")
+    def compression_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Compression type. Possible values: `gzip`, `zstd`
+        """
+        return pulumi.get(self, "compression_type")
+
+    @compression_type.setter
+    def compression_type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "compression_type", value)
 
     @_builtins.property
     @pulumi.getter(name="dataForwardingType")
@@ -556,6 +588,7 @@ class OpenpipelineV2UsersessionsDataforwarding(pulumi.CustomResource):
                  bulk_pattern: pulumi.Input[Optional[_builtins.str]] = None,
                  bulk_size: pulumi.Input[Optional[_builtins.int]] = None,
                  cloud_vendor_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 compression_type: pulumi.Input[Optional[_builtins.str]] = None,
                  data_forwarding_type: pulumi.Input[Optional[_builtins.str]] = None,
                  enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  forwarding_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -641,6 +674,7 @@ class OpenpipelineV2UsersessionsDataforwarding(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] bulk_pattern: Segmentation and prefix of the data
         :param pulumi.Input[_builtins.int] bulk_size: Bulk size for transmission
         :param pulumi.Input[_builtins.str] cloud_vendor_type: Cloud Vendor Type. Possible values: `aws`, `azure`, `gcp`, `otlp`
+        :param pulumi.Input[_builtins.str] compression_type: Compression type. Possible values: `gzip`, `zstd`
         :param pulumi.Input[_builtins.str] data_forwarding_type: Pipeline Type. Possible values: `processed`, `raw`
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] forwarding_name: Forwarding name
@@ -745,6 +779,7 @@ class OpenpipelineV2UsersessionsDataforwarding(pulumi.CustomResource):
                  bulk_pattern: pulumi.Input[Optional[_builtins.str]] = None,
                  bulk_size: pulumi.Input[Optional[_builtins.int]] = None,
                  cloud_vendor_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 compression_type: pulumi.Input[Optional[_builtins.str]] = None,
                  data_forwarding_type: pulumi.Input[Optional[_builtins.str]] = None,
                  enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  forwarding_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -772,6 +807,7 @@ class OpenpipelineV2UsersessionsDataforwarding(pulumi.CustomResource):
             if cloud_vendor_type is None and not opts.urn:
                 raise TypeError("Missing required property 'cloud_vendor_type'")
             __props__.__dict__["cloud_vendor_type"] = cloud_vendor_type
+            __props__.__dict__["compression_type"] = compression_type
             if data_forwarding_type is None and not opts.urn:
                 raise TypeError("Missing required property 'data_forwarding_type'")
             __props__.__dict__["data_forwarding_type"] = data_forwarding_type
@@ -806,6 +842,7 @@ class OpenpipelineV2UsersessionsDataforwarding(pulumi.CustomResource):
             bulk_pattern: pulumi.Input[Optional[_builtins.str]] = None,
             bulk_size: pulumi.Input[Optional[_builtins.int]] = None,
             cloud_vendor_type: pulumi.Input[Optional[_builtins.str]] = None,
+            compression_type: pulumi.Input[Optional[_builtins.str]] = None,
             data_forwarding_type: pulumi.Input[Optional[_builtins.str]] = None,
             enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             forwarding_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -829,6 +866,7 @@ class OpenpipelineV2UsersessionsDataforwarding(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] bulk_pattern: Segmentation and prefix of the data
         :param pulumi.Input[_builtins.int] bulk_size: Bulk size for transmission
         :param pulumi.Input[_builtins.str] cloud_vendor_type: Cloud Vendor Type. Possible values: `aws`, `azure`, `gcp`, `otlp`
+        :param pulumi.Input[_builtins.str] compression_type: Compression type. Possible values: `gzip`, `zstd`
         :param pulumi.Input[_builtins.str] data_forwarding_type: Pipeline Type. Possible values: `processed`, `raw`
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] forwarding_name: Forwarding name
@@ -850,6 +888,7 @@ class OpenpipelineV2UsersessionsDataforwarding(pulumi.CustomResource):
         __props__.__dict__["bulk_pattern"] = bulk_pattern
         __props__.__dict__["bulk_size"] = bulk_size
         __props__.__dict__["cloud_vendor_type"] = cloud_vendor_type
+        __props__.__dict__["compression_type"] = compression_type
         __props__.__dict__["data_forwarding_type"] = data_forwarding_type
         __props__.__dict__["enabled"] = enabled
         __props__.__dict__["forwarding_name"] = forwarding_name
@@ -860,6 +899,46 @@ class OpenpipelineV2UsersessionsDataforwarding(pulumi.CustomResource):
         __props__.__dict__["pipelines"] = pipelines
         __props__.__dict__["processing"] = processing
         return OpenpipelineV2UsersessionsDataforwarding(resource_name, opts=opts, __props__=__props__)
+
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            aws_connection: pulumi.Input[Optional[Union['OpenpipelineV2UsersessionsDataforwardingAwsConnectionArgs', 'OpenpipelineV2UsersessionsDataforwardingAwsConnectionArgsDict', 'outputs.OpenpipelineV2UsersessionsDataforwardingAwsConnection']]] = None,
+            azure_connection: pulumi.Input[Optional[Union['OpenpipelineV2UsersessionsDataforwardingAzureConnectionArgs', 'OpenpipelineV2UsersessionsDataforwardingAzureConnectionArgsDict', 'outputs.OpenpipelineV2UsersessionsDataforwardingAzureConnection']]] = None,
+            builtin_ingest_sources: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            builtin_pipelines: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            bulk_pattern: pulumi.Input[Optional[_builtins.str]] = None,
+            bulk_size: pulumi.Input[Optional[_builtins.int]] = None,
+            cloud_vendor_type: pulumi.Input[Optional[_builtins.str]] = None,
+            compression_type: pulumi.Input[Optional[_builtins.str]] = None,
+            data_forwarding_type: pulumi.Input[Optional[_builtins.str]] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            forwarding_name: pulumi.Input[Optional[_builtins.str]] = None,
+            gcp_connection: pulumi.Input[Optional[Union['OpenpipelineV2UsersessionsDataforwardingGcpConnectionArgs', 'OpenpipelineV2UsersessionsDataforwardingGcpConnectionArgsDict', 'outputs.OpenpipelineV2UsersessionsDataforwardingGcpConnection']]] = None,
+            ingest_sources: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            matcher: pulumi.Input[Optional[_builtins.str]] = None,
+            otlp_connection: pulumi.Input[Optional[Union['OpenpipelineV2UsersessionsDataforwardingOtlpConnectionArgs', 'OpenpipelineV2UsersessionsDataforwardingOtlpConnectionArgsDict', 'outputs.OpenpipelineV2UsersessionsDataforwardingOtlpConnection']]] = None,
+            pipelines: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            processing: pulumi.Input[Optional[Union['OpenpipelineV2UsersessionsDataforwardingProcessingArgs', 'OpenpipelineV2UsersessionsDataforwardingProcessingArgsDict', 'outputs.OpenpipelineV2UsersessionsDataforwardingProcessing']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["awsConnection"] = aws_connection
+        __props__["azureConnection"] = azure_connection
+        __props__["builtinIngestSources"] = builtin_ingest_sources
+        __props__["builtinPipelines"] = builtin_pipelines
+        __props__["bulkPattern"] = bulk_pattern
+        __props__["bulkSize"] = bulk_size
+        __props__["cloudVendorType"] = cloud_vendor_type
+        __props__["compressionType"] = compression_type
+        __props__["dataForwardingType"] = data_forwarding_type
+        __props__["enabled"] = enabled
+        __props__["forwardingName"] = forwarding_name
+        __props__["gcpConnection"] = gcp_connection
+        __props__["ingestSources"] = ingest_sources
+        __props__["matcher"] = matcher
+        __props__["otlpConnection"] = otlp_connection
+        __props__["pipelines"] = pipelines
+        __props__["processing"] = processing
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/openpipelineV2UsersessionsDataforwarding:OpenpipelineV2UsersessionsDataforwarding', id, __props__, opts or pulumi.ResourceOptions())
 
     @_builtins.property
     @pulumi.getter(name="awsConnection")
@@ -916,6 +995,14 @@ class OpenpipelineV2UsersessionsDataforwarding(pulumi.CustomResource):
         Cloud Vendor Type. Possible values: `aws`, `azure`, `gcp`, `otlp`
         """
         return pulumi.get(self, "cloud_vendor_type")
+
+    @_builtins.property
+    @pulumi.getter(name="compressionType")
+    def compression_type(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        Compression type. Possible values: `gzip`, `zstd`
+        """
+        return pulumi.get(self, "compression_type")
 
     @_builtins.property
     @pulumi.getter(name="dataForwardingType")

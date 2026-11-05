@@ -396,6 +396,20 @@ class PolicyBindings(pulumi.CustomResource):
         __props__.__dict__["policies"] = policies
         return PolicyBindings(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            cluster: pulumi.Input[Optional[_builtins.str]] = None,
+            environment: pulumi.Input[Optional[_builtins.str]] = None,
+            group: pulumi.Input[Optional[_builtins.str]] = None,
+            policies: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["cluster"] = cluster
+        __props__["environment"] = environment
+        __props__["group"] = group
+        __props__["policies"] = policies
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/policyBindings:PolicyBindings', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def cluster(self) -> pulumi.Output[Optional[_builtins.str]]:

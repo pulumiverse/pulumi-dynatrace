@@ -87,6 +87,12 @@ func (WebAppKeyPerformanceCustomState) ElementType() reflect.Type {
 	return reflect.TypeOf((*webAppKeyPerformanceCustomState)(nil)).Elem()
 }
 
+// WebAppKeyPerformanceCustomExists checks whether an existing WebAppKeyPerformanceCustom resource with the given ID exists.
+func WebAppKeyPerformanceCustomExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *WebAppKeyPerformanceCustomState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/webAppKeyPerformanceCustom:WebAppKeyPerformanceCustom", id, state, "", opts...)
+}
+
 type webAppKeyPerformanceCustomArgs struct {
 	// The scope of this setting (APPLICATION_METHOD, APPLICATION)
 	Scope string `pulumi:"scope"`

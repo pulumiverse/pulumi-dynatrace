@@ -19,7 +19,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly bool EnableIdContributor;
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         public readonly Outputs.ServiceExternalWebRequestIdContributorsPublicDomainNameServiceIdContributor? ServiceIdContributor;
 

@@ -138,7 +138,7 @@ import (
 //									Url: pulumi.String("https://example.com"),
 //									Authentication: &dynatrace.BrowserMonitorScriptEventsEventNavigateAuthenticationArgs{
 //										Type:  pulumi.String("http_authentication"),
-//										Creds: credentialsVault.ID().ToIDOutput().ToStringOutput(),
+//										Creds: credentialsVault.ID(),
 //									},
 //									Wait: &dynatrace.BrowserMonitorScriptEventsEventNavigateWaitArgs{
 //										WaitFor: pulumi.String("page_complete"),
@@ -151,7 +151,7 @@ import (
 //									Url: pulumi.String("https://example.com"),
 //									Authentication: &dynatrace.BrowserMonitorScriptEventsEventNavigateAuthenticationArgs{
 //										Type:  pulumi.String("http_authentication"),
-//										Creds: credentialsVault.ID().ToIDOutput().ToStringOutput(),
+//										Creds: credentialsVault.ID(),
 //									},
 //									Validate: &dynatrace.BrowserMonitorScriptEventsEventNavigateValidateArgs{
 //										Validations: dynatrace.BrowserMonitorScriptEventsEventNavigateValidateValidationArray{
@@ -339,6 +339,12 @@ type BrowserMonitorState struct {
 
 func (BrowserMonitorState) ElementType() reflect.Type {
 	return reflect.TypeOf((*browserMonitorState)(nil)).Elem()
+}
+
+// BrowserMonitorExists checks whether an existing BrowserMonitor resource with the given ID exists.
+func BrowserMonitorExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *BrowserMonitorState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/browserMonitor:BrowserMonitor", id, state, "", opts...)
 }
 
 type browserMonitorArgs struct {

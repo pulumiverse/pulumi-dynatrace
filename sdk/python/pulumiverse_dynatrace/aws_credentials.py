@@ -586,6 +586,34 @@ class AwsCredentials(pulumi.CustomResource):
         __props__.__dict__["unknowns"] = unknowns
         return AwsCredentials(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            authentication_data: pulumi.Input[Optional[Union['AwsCredentialsAuthenticationDataArgs', 'AwsCredentialsAuthenticationDataArgsDict', 'outputs.AwsCredentialsAuthenticationData']]] = None,
+            credentials_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            label: pulumi.Input[Optional[_builtins.str]] = None,
+            partition_type: pulumi.Input[Optional[_builtins.str]] = None,
+            remove_defaults: pulumi.Input[Optional[_builtins.bool]] = None,
+            running_on_dynatrace_infrastructure: pulumi.Input[Optional[_builtins.bool]] = None,
+            supporting_services_managed_in_dynatrace: pulumi.Input[Optional[_builtins.bool]] = None,
+            supporting_services_to_monitors: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AwsCredentialsSupportingServicesToMonitorArgs', 'AwsCredentialsSupportingServicesToMonitorArgsDict', 'outputs.AwsCredentialsSupportingServicesToMonitor']]]]] = None,
+            tagged_only: pulumi.Input[Optional[_builtins.bool]] = None,
+            tags_to_monitors: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AwsCredentialsTagsToMonitorArgs', 'AwsCredentialsTagsToMonitorArgsDict', 'outputs.AwsCredentialsTagsToMonitor']]]]] = None,
+            unknowns: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["authenticationData"] = authentication_data
+        __props__["credentialsEnabled"] = credentials_enabled
+        __props__["label"] = label
+        __props__["partitionType"] = partition_type
+        __props__["removeDefaults"] = remove_defaults
+        __props__["runningOnDynatraceInfrastructure"] = running_on_dynatrace_infrastructure
+        __props__["supportingServicesManagedInDynatrace"] = supporting_services_managed_in_dynatrace
+        __props__["supportingServicesToMonitors"] = supporting_services_to_monitors
+        __props__["taggedOnly"] = tagged_only
+        __props__["tagsToMonitors"] = tags_to_monitors
+        __props__["unknowns"] = unknowns
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/awsCredentials:AwsCredentials', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="authenticationData")
     def authentication_data(self) -> pulumi.Output['outputs.AwsCredentialsAuthenticationData']:

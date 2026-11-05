@@ -114,6 +114,12 @@ func (AttributeAllowListState) ElementType() reflect.Type {
 	return reflect.TypeOf((*attributeAllowListState)(nil)).Elem()
 }
 
+// AttributeAllowListExists checks whether an existing AttributeAllowList resource with the given ID exists.
+func AttributeAllowListExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AttributeAllowListState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/attributeAllowList:AttributeAllowList", id, state, "", opts...)
+}
+
 type attributeAllowListArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`

@@ -134,6 +134,12 @@ func (InfraopsAppSettingsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*infraopsAppSettingsState)(nil)).Elem()
 }
 
+// InfraopsAppSettingsExists checks whether an existing InfraopsAppSettings resource with the given ID exists.
+func InfraopsAppSettingsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *InfraopsAppSettingsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/infraopsAppSettings:InfraopsAppSettings", id, state, "", opts...)
+}
+
 type infraopsAppSettingsArgs struct {
 	// The threshold at which a network device interface is deemed to be saturated.
 	InterfaceSaturationThreshold float64 `pulumi:"interfaceSaturationThreshold"`

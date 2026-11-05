@@ -635,18 +635,21 @@ class Credentials(pulumi.CustomResource):
 
         ```python
         import pulumi
+        import pulumi_dynatrace as dynatrace
+        import pulumi_std as std
         import pulumiverse_dynatrace as dynatrace
 
         config = pulumi.Config()
-        certificate = config.require_object("certificate")
-        certificate_password = config.require_object("certificatePassword")
+        credentia_l__vaul_t__cert = config.require_object("CREDENTIAL_VAULT_CERT")
+        credentia_l__vaul_t__pwd = config.require_object("CREDENTIAL_VAULT_PWD")
         certificate_credentials = dynatrace.Credentials("certificate_credentials",
             name="#name#",
-            certificate=certificate,
-            format="PKCS12",
+            certificate=std.base64encode(input=credentia_l__vaul_t__cert).result,
+            format="PEM",
             owner_access_only=True,
-            password=certificate_password,
+            password=std.base64encode(input=credentia_l__vaul_t__pwd).result,
             scopes=["SYNTHETIC"])
+        location = dynatrace.get_synthetic_location(name="Location")
         cyberark_allowed_location = dynatrace.Credentials("cyberark_allowed_location",
             name="#name#",
             owner_access_only=True,
@@ -657,6 +660,7 @@ class Credentials(pulumi.CustomResource):
                 "folder_name": "my-folder-name",
                 "account_name": "my-account-name",
                 "certificate": certificate_credentials.id,
+                "location_for_synchronization_id": location.id,
             },
             scopes=["SYNTHETIC"])
         ```
@@ -767,18 +771,21 @@ class Credentials(pulumi.CustomResource):
 
         ```python
         import pulumi
+        import pulumi_dynatrace as dynatrace
+        import pulumi_std as std
         import pulumiverse_dynatrace as dynatrace
 
         config = pulumi.Config()
-        certificate = config.require_object("certificate")
-        certificate_password = config.require_object("certificatePassword")
+        credentia_l__vaul_t__cert = config.require_object("CREDENTIAL_VAULT_CERT")
+        credentia_l__vaul_t__pwd = config.require_object("CREDENTIAL_VAULT_PWD")
         certificate_credentials = dynatrace.Credentials("certificate_credentials",
             name="#name#",
-            certificate=certificate,
-            format="PKCS12",
+            certificate=std.base64encode(input=credentia_l__vaul_t__cert).result,
+            format="PEM",
             owner_access_only=True,
-            password=certificate_password,
+            password=std.base64encode(input=credentia_l__vaul_t__pwd).result,
             scopes=["SYNTHETIC"])
+        location = dynatrace.get_synthetic_location(name="Location")
         cyberark_allowed_location = dynatrace.Credentials("cyberark_allowed_location",
             name="#name#",
             owner_access_only=True,
@@ -789,6 +796,7 @@ class Credentials(pulumi.CustomResource):
                 "folder_name": "my-folder-name",
                 "account_name": "my-account-name",
                 "certificate": certificate_credentials.id,
+                "location_for_synchronization_id": location.id,
             },
             scopes=["SYNTHETIC"])
         ```
@@ -918,6 +926,42 @@ class Credentials(pulumi.CustomResource):
         __props__.__dict__["token"] = token
         __props__.__dict__["username"] = username
         return Credentials(resource_name, opts=opts, __props__=__props__)
+
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            allow_contextless_requests: pulumi.Input[Optional[_builtins.bool]] = None,
+            allowed_entities: pulumi.Input[Optional[Union['CredentialsAllowedEntitiesArgs', 'CredentialsAllowedEntitiesArgsDict', 'outputs.CredentialsAllowedEntities']]] = None,
+            certificate: pulumi.Input[Optional[_builtins.str]] = None,
+            credential_usage_summaries: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CredentialsCredentialUsageSummaryArgs', 'CredentialsCredentialUsageSummaryArgsDict', 'outputs.CredentialsCredentialUsageSummary']]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            external: pulumi.Input[Optional[Union['CredentialsExternalArgs', 'CredentialsExternalArgsDict', 'outputs.CredentialsExternal']]] = None,
+            format: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            owner_access_only: pulumi.Input[Optional[_builtins.bool]] = None,
+            password: pulumi.Input[Optional[_builtins.str]] = None,
+            public: pulumi.Input[Optional[_builtins.bool]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None,
+            scopes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            token: pulumi.Input[Optional[_builtins.str]] = None,
+            username: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["allowContextlessRequests"] = allow_contextless_requests
+        __props__["allowedEntities"] = allowed_entities
+        __props__["certificate"] = certificate
+        __props__["credentialUsageSummaries"] = credential_usage_summaries
+        __props__["description"] = description
+        __props__["external"] = external
+        __props__["format"] = format
+        __props__["name"] = name
+        __props__["ownerAccessOnly"] = owner_access_only
+        __props__["password"] = password
+        __props__["public"] = public
+        __props__["scope"] = scope
+        __props__["scopes"] = scopes
+        __props__["token"] = token
+        __props__["username"] = username
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/credentials:Credentials', id, __props__, opts or pulumi.ResourceOptions())
 
     @_builtins.property
     @pulumi.getter(name="allowContextlessRequests")

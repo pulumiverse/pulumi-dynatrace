@@ -175,6 +175,14 @@ class ResourceAttributes(pulumi.CustomResource):
         __props__.__dict__["keys"] = keys
         return ResourceAttributes(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            keys: pulumi.Input[Optional[Union['ResourceAttributesKeysArgs', 'ResourceAttributesKeysArgsDict', 'outputs.ResourceAttributesKeys']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["keys"] = keys
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/resourceAttributes:ResourceAttributes', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def keys(self) -> pulumi.Output[Optional['outputs.ResourceAttributesKeys']]:

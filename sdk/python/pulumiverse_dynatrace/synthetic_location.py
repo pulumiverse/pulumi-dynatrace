@@ -70,7 +70,7 @@ class SyntheticLocationArgs:
         :param pulumi.Input[_builtins.str] region_code: The region code of the location.
                
                 To fetch the list of available region codes, use the [GET regions of the country](https://dt-url.net/az230x0) request
-        :param pulumi.Input[_builtins.bool] use_new_kubernetes_version: Boolean value describes which kubernetes version will be used
+        :param pulumi.Input[_builtins.bool] use_new_kubernetes_version: Boolean value describes which Kubernetes version will be used. Set to `false` for version 1.23+ and older than version 1.26. Set to `true` for version 1.26+
         """
         pulumi.set(__self__, "latitude", latitude)
         pulumi.set(__self__, "longitude", longitude)
@@ -340,7 +340,7 @@ class SyntheticLocationArgs:
     @pulumi.getter(name="useNewKubernetesVersion")
     def use_new_kubernetes_version(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
-        Boolean value describes which kubernetes version will be used
+        Boolean value describes which Kubernetes version will be used. Set to `false` for version 1.23+ and older than version 1.26. Set to `true` for version 1.26+
         """
         return pulumi.get(self, "use_new_kubernetes_version")
 
@@ -403,7 +403,7 @@ class _SyntheticLocationState:
         :param pulumi.Input[_builtins.str] region_code: The region code of the location.
                
                 To fetch the list of available region codes, use the [GET regions of the country](https://dt-url.net/az230x0) request
-        :param pulumi.Input[_builtins.bool] use_new_kubernetes_version: Boolean value describes which kubernetes version will be used
+        :param pulumi.Input[_builtins.bool] use_new_kubernetes_version: Boolean value describes which Kubernetes version will be used. Set to `false` for version 1.23+ and older than version 1.26. Set to `true` for version 1.26+
         """
         if auto_update_chromium is not None:
             pulumi.set(__self__, "auto_update_chromium", auto_update_chromium)
@@ -675,7 +675,7 @@ class _SyntheticLocationState:
     @pulumi.getter(name="useNewKubernetesVersion")
     def use_new_kubernetes_version(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
-        Boolean value describes which kubernetes version will be used
+        Boolean value describes which Kubernetes version will be used. Set to `false` for version 1.23+ and older than version 1.26. Set to `true` for version 1.26+
         """
         return pulumi.get(self, "use_new_kubernetes_version")
 
@@ -712,6 +712,8 @@ class SyntheticLocation(pulumi.CustomResource):
                  __props__=None):
         """
         > This resource requires the API token scope **Create and read synthetic monitors, locations, and nodes** (`ExternalSyntheticIntegration`)
+
+        > **Note**: With version 1.106.0 of the Terraform provider, the default value for `use_new_kubernetes_version` changed from `false` to `true`
 
         ## Dynatrace Documentation
 
@@ -757,7 +759,7 @@ class SyntheticLocation(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] region_code: The region code of the location.
                
                 To fetch the list of available region codes, use the [GET regions of the country](https://dt-url.net/az230x0) request
-        :param pulumi.Input[_builtins.bool] use_new_kubernetes_version: Boolean value describes which kubernetes version will be used
+        :param pulumi.Input[_builtins.bool] use_new_kubernetes_version: Boolean value describes which Kubernetes version will be used. Set to `false` for version 1.23+ and older than version 1.26. Set to `true` for version 1.26+
         """
         ...
     @overload
@@ -767,6 +769,8 @@ class SyntheticLocation(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         > This resource requires the API token scope **Create and read synthetic monitors, locations, and nodes** (`ExternalSyntheticIntegration`)
+
+        > **Note**: With version 1.106.0 of the Terraform provider, the default value for `use_new_kubernetes_version` changed from `false` to `true`
 
         ## Dynatrace Documentation
 
@@ -912,7 +916,7 @@ class SyntheticLocation(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] region_code: The region code of the location.
                
                 To fetch the list of available region codes, use the [GET regions of the country](https://dt-url.net/az230x0) request
-        :param pulumi.Input[_builtins.bool] use_new_kubernetes_version: Boolean value describes which kubernetes version will be used
+        :param pulumi.Input[_builtins.bool] use_new_kubernetes_version: Boolean value describes which Kubernetes version will be used. Set to `false` for version 1.23+ and older than version 1.26. Set to `true` for version 1.26+
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -938,6 +942,50 @@ class SyntheticLocation(pulumi.CustomResource):
         __props__.__dict__["region_code"] = region_code
         __props__.__dict__["use_new_kubernetes_version"] = use_new_kubernetes_version
         return SyntheticLocation(resource_name, opts=opts, __props__=__props__)
+
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            auto_update_chromium: pulumi.Input[Optional[_builtins.bool]] = None,
+            availability_location_outage: pulumi.Input[Optional[_builtins.bool]] = None,
+            availability_node_outage: pulumi.Input[Optional[_builtins.bool]] = None,
+            availability_notifications_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            city: pulumi.Input[Optional[_builtins.str]] = None,
+            country_code: pulumi.Input[Optional[_builtins.str]] = None,
+            deployment_type: pulumi.Input[Optional[_builtins.str]] = None,
+            fips_mode: pulumi.Input[Optional[_builtins.str]] = None,
+            latitude: pulumi.Input[Optional[_builtins.float]] = None,
+            location_node_outage_delay_in_minutes: pulumi.Input[Optional[_builtins.int]] = None,
+            longitude: pulumi.Input[Optional[_builtins.float]] = None,
+            max_active_gate_count: pulumi.Input[Optional[_builtins.int]] = None,
+            min_active_gate_count: pulumi.Input[Optional[_builtins.int]] = None,
+            nam_execution_supported: pulumi.Input[Optional[_builtins.bool]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            node_size: pulumi.Input[Optional[_builtins.str]] = None,
+            nodes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            region_code: pulumi.Input[Optional[_builtins.str]] = None,
+            use_new_kubernetes_version: pulumi.Input[Optional[_builtins.bool]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["autoUpdateChromium"] = auto_update_chromium
+        __props__["availabilityLocationOutage"] = availability_location_outage
+        __props__["availabilityNodeOutage"] = availability_node_outage
+        __props__["availabilityNotificationsEnabled"] = availability_notifications_enabled
+        __props__["city"] = city
+        __props__["countryCode"] = country_code
+        __props__["deploymentType"] = deployment_type
+        __props__["fipsMode"] = fips_mode
+        __props__["latitude"] = latitude
+        __props__["locationNodeOutageDelayInMinutes"] = location_node_outage_delay_in_minutes
+        __props__["longitude"] = longitude
+        __props__["maxActiveGateCount"] = max_active_gate_count
+        __props__["minActiveGateCount"] = min_active_gate_count
+        __props__["namExecutionSupported"] = nam_execution_supported
+        __props__["name"] = name
+        __props__["nodeSize"] = node_size
+        __props__["nodes"] = nodes
+        __props__["regionCode"] = region_code
+        __props__["useNewKubernetesVersion"] = use_new_kubernetes_version
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/syntheticLocation:SyntheticLocation', id, __props__, opts or pulumi.ResourceOptions())
 
     @_builtins.property
     @pulumi.getter(name="autoUpdateChromium")
@@ -1098,7 +1146,7 @@ class SyntheticLocation(pulumi.CustomResource):
     @pulumi.getter(name="useNewKubernetesVersion")
     def use_new_kubernetes_version(self) -> pulumi.Output[Optional[_builtins.bool]]:
         """
-        Boolean value describes which kubernetes version will be used
+        Boolean value describes which Kubernetes version will be used. Set to `false` for version 1.23+ and older than version 1.26. Set to `true` for version 1.26+
         """
         return pulumi.get(self, "use_new_kubernetes_version")
 

@@ -290,6 +290,20 @@ class SessionReplayWebPrivacy(pulumi.CustomResource):
         __props__.__dict__["url_exclusion_pattern_lists"] = url_exclusion_pattern_lists
         return SessionReplayWebPrivacy(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            application_id: pulumi.Input[Optional[_builtins.str]] = None,
+            enable_opt_in_mode: pulumi.Input[Optional[_builtins.bool]] = None,
+            masking_presets: pulumi.Input[Optional[Union['SessionReplayWebPrivacyMaskingPresetsArgs', 'SessionReplayWebPrivacyMaskingPresetsArgsDict', 'outputs.SessionReplayWebPrivacyMaskingPresets']]] = None,
+            url_exclusion_pattern_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["applicationId"] = application_id
+        __props__["enableOptInMode"] = enable_opt_in_mode
+        __props__["maskingPresets"] = masking_presets
+        __props__["urlExclusionPatternLists"] = url_exclusion_pattern_lists
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/sessionReplayWebPrivacy:SessionReplayWebPrivacy', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="applicationId")
     def application_id(self) -> pulumi.Output[Optional[_builtins.str]]:

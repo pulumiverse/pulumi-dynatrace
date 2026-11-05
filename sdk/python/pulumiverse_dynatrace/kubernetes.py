@@ -903,6 +903,48 @@ class Kubernetes(pulumi.CustomResource):
         __props__.__dict__["scope"] = scope
         return Kubernetes(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            active_gate_group: pulumi.Input[Optional[_builtins.str]] = None,
+            auth_token: pulumi.Input[Optional[_builtins.str]] = None,
+            certificate_check_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            cloud_application_pipeline_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+            cluster_id_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            endpoint_url: pulumi.Input[Optional[_builtins.str]] = None,
+            event_patterns: pulumi.Input[Optional[Union['KubernetesEventPatternsArgs', 'KubernetesEventPatternsArgsDict', 'outputs.KubernetesEventPatterns']]] = None,
+            event_processing_active: pulumi.Input[Optional[_builtins.bool]] = None,
+            filter_events: pulumi.Input[Optional[_builtins.bool]] = None,
+            hostname_verification_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            include_all_fdi_events: pulumi.Input[Optional[_builtins.bool]] = None,
+            label: pulumi.Input[Optional[_builtins.str]] = None,
+            open_metrics_builtin_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            open_metrics_pipeline_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            pvc_monitoring_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["activeGateGroup"] = active_gate_group
+        __props__["authToken"] = auth_token
+        __props__["certificateCheckEnabled"] = certificate_check_enabled
+        __props__["cloudApplicationPipelineEnabled"] = cloud_application_pipeline_enabled
+        __props__["clusterId"] = cluster_id
+        __props__["clusterIdEnabled"] = cluster_id_enabled
+        __props__["enabled"] = enabled
+        __props__["endpointUrl"] = endpoint_url
+        __props__["eventPatterns"] = event_patterns
+        __props__["eventProcessingActive"] = event_processing_active
+        __props__["filterEvents"] = filter_events
+        __props__["hostnameVerificationEnabled"] = hostname_verification_enabled
+        __props__["includeAllFdiEvents"] = include_all_fdi_events
+        __props__["label"] = label
+        __props__["openMetricsBuiltinEnabled"] = open_metrics_builtin_enabled
+        __props__["openMetricsPipelineEnabled"] = open_metrics_pipeline_enabled
+        __props__["pvcMonitoringEnabled"] = pvc_monitoring_enabled
+        __props__["scope"] = scope
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/kubernetes:Kubernetes', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="activeGateGroup")
     def active_gate_group(self) -> pulumi.Output[Optional[_builtins.str]]:

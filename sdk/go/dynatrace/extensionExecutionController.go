@@ -102,6 +102,12 @@ func (ExtensionExecutionControllerState) ElementType() reflect.Type {
 	return reflect.TypeOf((*extensionExecutionControllerState)(nil)).Elem()
 }
 
+// ExtensionExecutionControllerExists checks whether an existing ExtensionExecutionController resource with the given ID exists.
+func ExtensionExecutionControllerExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ExtensionExecutionControllerState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/extensionExecutionController:ExtensionExecutionController", id, state, "", opts...)
+}
+
 type extensionExecutionControllerArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`

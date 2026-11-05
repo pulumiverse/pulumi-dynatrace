@@ -331,6 +331,22 @@ class Autotag(pulumi.CustomResource):
         __props__.__dict__["unknowns"] = unknowns
         return Autotag(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            entity_selector_based_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutotagEntitySelectorBasedRuleArgs', 'AutotagEntitySelectorBasedRuleArgsDict', 'outputs.AutotagEntitySelectorBasedRule']]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutotagRuleArgs', 'AutotagRuleArgsDict', 'outputs.AutotagRule']]]]] = None,
+            unknowns: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["description"] = description
+        __props__["entitySelectorBasedRules"] = entity_selector_based_rules
+        __props__["name"] = name
+        __props__["rules"] = rules
+        __props__["unknowns"] = unknowns
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/autotag:Autotag', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def description(self) -> pulumi.Output[Optional[_builtins.str]]:

@@ -13,6 +13,8 @@ namespace Pulumiverse.Dynatrace
     /// <summary>
     /// &gt; This resource requires the API token scope **Create and read synthetic monitors, locations, and nodes** (`ExternalSyntheticIntegration`)
     /// 
+    /// &gt; **Note**: With version 1.106.0 of the Terraform provider, the default value for `UseNewKubernetesVersion` changed from `False` to `True`
+    /// 
     /// ## Dynatrace Documentation
     /// 
     /// - Creating Private Synthetic Locations - https://www.dynatrace.com/support/help/how-to-use-dynatrace/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location
@@ -59,7 +61,7 @@ namespace Pulumiverse.Dynatrace
         public Output<string?> City { get; private set; } = null!;
 
         /// <summary>
-        /// The country code of the location. 
+        /// The country code of the location.
         /// 
         ///  To fetch the list of available country codes, use the [GET all countries](https://dt-url.net/37030go) request
         /// </summary>
@@ -67,7 +69,7 @@ namespace Pulumiverse.Dynatrace
         public Output<string?> CountryCode { get; private set; } = null!;
 
         /// <summary>
-        /// The deployment type of the location: 
+        /// The deployment type of the location:
         /// 
         /// * `STANDARD`: The location is deployed on Windows or Linux.
         /// * `KUBERNETES`: The location is deployed on Kubernetes
@@ -88,7 +90,7 @@ namespace Pulumiverse.Dynatrace
         public Output<double> Latitude { get; private set; } = null!;
 
         /// <summary>
-        /// Alert if the location or node outage lasts longer than *X* minutes. 
+        /// Alert if the location or node outage lasts longer than *X* minutes.
         /// 
         ///  Only applicable when **availability_location_outage** or **availability_node_outage** is set to `True`
         /// </summary>
@@ -132,7 +134,7 @@ namespace Pulumiverse.Dynatrace
         public Output<string?> NodeSize { get; private set; } = null!;
 
         /// <summary>
-        /// A list of synthetic nodes belonging to the location. 
+        /// A list of synthetic nodes belonging to the location.
         /// 
         ///  You can retrieve the list of available nodes with the [GET all nodes](https://dt-url.net/miy3rpl) call
         /// </summary>
@@ -140,7 +142,7 @@ namespace Pulumiverse.Dynatrace
         public Output<ImmutableArray<string>> Nodes { get; private set; } = null!;
 
         /// <summary>
-        /// The region code of the location. 
+        /// The region code of the location.
         /// 
         ///  To fetch the list of available region codes, use the [GET regions of the country](https://dt-url.net/az230x0) request
         /// </summary>
@@ -148,7 +150,7 @@ namespace Pulumiverse.Dynatrace
         public Output<string?> RegionCode { get; private set; } = null!;
 
         /// <summary>
-        /// Boolean value describes which kubernetes version will be used
+        /// Boolean value describes which Kubernetes version will be used. Set to `False` for version 1.23+ and older than version 1.26. Set to `True` for version 1.26+
         /// </summary>
         [Output("useNewKubernetesVersion")]
         public Output<bool?> UseNewKubernetesVersion { get; private set; } = null!;
@@ -231,7 +233,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? City { get; set; }
 
         /// <summary>
-        /// The country code of the location. 
+        /// The country code of the location.
         /// 
         ///  To fetch the list of available country codes, use the [GET all countries](https://dt-url.net/37030go) request
         /// </summary>
@@ -239,7 +241,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? CountryCode { get; set; }
 
         /// <summary>
-        /// The deployment type of the location: 
+        /// The deployment type of the location:
         /// 
         /// * `STANDARD`: The location is deployed on Windows or Linux.
         /// * `KUBERNETES`: The location is deployed on Kubernetes
@@ -260,7 +262,7 @@ namespace Pulumiverse.Dynatrace
         public Input<double> Latitude { get; set; } = null!;
 
         /// <summary>
-        /// Alert if the location or node outage lasts longer than *X* minutes. 
+        /// Alert if the location or node outage lasts longer than *X* minutes.
         /// 
         ///  Only applicable when **availability_location_outage** or **availability_node_outage** is set to `True`
         /// </summary>
@@ -307,7 +309,7 @@ namespace Pulumiverse.Dynatrace
         private InputList<string>? _nodes;
 
         /// <summary>
-        /// A list of synthetic nodes belonging to the location. 
+        /// A list of synthetic nodes belonging to the location.
         /// 
         ///  You can retrieve the list of available nodes with the [GET all nodes](https://dt-url.net/miy3rpl) call
         /// </summary>
@@ -318,7 +320,7 @@ namespace Pulumiverse.Dynatrace
         }
 
         /// <summary>
-        /// The region code of the location. 
+        /// The region code of the location.
         /// 
         ///  To fetch the list of available region codes, use the [GET regions of the country](https://dt-url.net/az230x0) request
         /// </summary>
@@ -326,7 +328,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? RegionCode { get; set; }
 
         /// <summary>
-        /// Boolean value describes which kubernetes version will be used
+        /// Boolean value describes which Kubernetes version will be used. Set to `False` for version 1.23+ and older than version 1.26. Set to `True` for version 1.26+
         /// </summary>
         [Input("useNewKubernetesVersion")]
         public Input<bool>? UseNewKubernetesVersion { get; set; }
@@ -370,7 +372,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? City { get; set; }
 
         /// <summary>
-        /// The country code of the location. 
+        /// The country code of the location.
         /// 
         ///  To fetch the list of available country codes, use the [GET all countries](https://dt-url.net/37030go) request
         /// </summary>
@@ -378,7 +380,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? CountryCode { get; set; }
 
         /// <summary>
-        /// The deployment type of the location: 
+        /// The deployment type of the location:
         /// 
         /// * `STANDARD`: The location is deployed on Windows or Linux.
         /// * `KUBERNETES`: The location is deployed on Kubernetes
@@ -399,7 +401,7 @@ namespace Pulumiverse.Dynatrace
         public Input<double>? Latitude { get; set; }
 
         /// <summary>
-        /// Alert if the location or node outage lasts longer than *X* minutes. 
+        /// Alert if the location or node outage lasts longer than *X* minutes.
         /// 
         ///  Only applicable when **availability_location_outage** or **availability_node_outage** is set to `True`
         /// </summary>
@@ -446,7 +448,7 @@ namespace Pulumiverse.Dynatrace
         private InputList<string>? _nodes;
 
         /// <summary>
-        /// A list of synthetic nodes belonging to the location. 
+        /// A list of synthetic nodes belonging to the location.
         /// 
         ///  You can retrieve the list of available nodes with the [GET all nodes](https://dt-url.net/miy3rpl) call
         /// </summary>
@@ -457,7 +459,7 @@ namespace Pulumiverse.Dynatrace
         }
 
         /// <summary>
-        /// The region code of the location. 
+        /// The region code of the location.
         /// 
         ///  To fetch the list of available region codes, use the [GET regions of the country](https://dt-url.net/az230x0) request
         /// </summary>
@@ -465,7 +467,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? RegionCode { get; set; }
 
         /// <summary>
-        /// Boolean value describes which kubernetes version will be used
+        /// Boolean value describes which Kubernetes version will be used. Set to `False` for version 1.23+ and older than version 1.26. Set to `True` for version 1.26+
         /// </summary>
         [Input("useNewKubernetesVersion")]
         public Input<bool>? UseNewKubernetesVersion { get; set; }

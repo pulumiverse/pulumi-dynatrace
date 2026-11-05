@@ -328,6 +328,20 @@ class AutotagV2(pulumi.CustomResource):
         __props__.__dict__["rules_maintained_externally"] = rules_maintained_externally
         return AutotagV2(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            rules: pulumi.Input[Optional[Union['AutotagV2RulesArgs', 'AutotagV2RulesArgsDict', 'outputs.AutotagV2Rules']]] = None,
+            rules_maintained_externally: pulumi.Input[Optional[_builtins.bool]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["description"] = description
+        __props__["name"] = name
+        __props__["rules"] = rules
+        __props__["rulesMaintainedExternally"] = rules_maintained_externally
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/autotagV2:AutotagV2', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def description(self) -> pulumi.Output[Optional[_builtins.str]]:

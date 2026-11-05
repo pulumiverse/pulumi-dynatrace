@@ -190,6 +190,12 @@ func (CalculatedWebMetricState) ElementType() reflect.Type {
 	return reflect.TypeOf((*calculatedWebMetricState)(nil)).Elem()
 }
 
+// CalculatedWebMetricExists checks whether an existing CalculatedWebMetric resource with the given ID exists.
+func CalculatedWebMetricExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *CalculatedWebMetricState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/calculatedWebMetric:CalculatedWebMetric", id, state, "", opts...)
+}
+
 type calculatedWebMetricArgs struct {
 	// The Dynatrace entity ID of the application to which the metric belongs.
 	AppIdentifier string `pulumi:"appIdentifier"`

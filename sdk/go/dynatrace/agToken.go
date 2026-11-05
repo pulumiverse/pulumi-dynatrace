@@ -17,7 +17,7 @@ import (
 // > The token value can be retrieved with `dynatrace_ag_token.<#name#>.token` after apply.
 //
 // > This resource requires the API token scopes **Create ActiveGate tokens** (`activeGateTokenManagement.create`), **Read ActiveGate tokens** (`activeGateTokenManagement.read`) and **Write ActiveGate tokens** (`activeGateTokenManagement.write`)
-// or the OAuth scopes `fleet-management:activegate.tokens:create`, `fleet-management:activegate.tokens:read`, `fleet-management:activegate.tokens:write` and `fleet-management:oneagent.connection-info:read` (`environment-api:activegate-tokens:create`, `environment-api:activegate-tokens:read`, `environment-api:activegate-tokens:write`, `environment-api:deployment:download`)
+// or the OAuth scopes `fleet-management:activegate.tokens:create`, `fleet-management:activegate.tokens:read`, `fleet-management:activegate.tokens:write` and `fleet-management:oneagent.connection-info:read`
 //
 // ## Dynatrace Documentation
 //
@@ -146,6 +146,12 @@ type AgTokenState struct {
 
 func (AgTokenState) ElementType() reflect.Type {
 	return reflect.TypeOf((*agTokenState)(nil)).Elem()
+}
+
+// AgTokenExists checks whether an existing AgToken resource with the given ID exists.
+func AgTokenExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AgTokenState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/agToken:AgToken", id, state, "", opts...)
 }
 
 type agTokenArgs struct {

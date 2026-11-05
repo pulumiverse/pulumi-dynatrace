@@ -387,6 +387,20 @@ class SettingsPermissions(pulumi.CustomResource):
         __props__.__dict__["users"] = users
         return SettingsPermissions(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            all_users: pulumi.Input[Optional[_builtins.str]] = None,
+            groups: pulumi.Input[Optional[Union['SettingsPermissionsGroupsArgs', 'SettingsPermissionsGroupsArgsDict', 'outputs.SettingsPermissionsGroups']]] = None,
+            settings_object_id: pulumi.Input[Optional[_builtins.str]] = None,
+            users: pulumi.Input[Optional[Union['SettingsPermissionsUsersArgs', 'SettingsPermissionsUsersArgsDict', 'outputs.SettingsPermissionsUsers']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["allUsers"] = all_users
+        __props__["groups"] = groups
+        __props__["settingsObjectId"] = settings_object_id
+        __props__["users"] = users
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/settingsPermissions:SettingsPermissions', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="allUsers")
     def all_users(self) -> pulumi.Output[Optional[_builtins.str]]:

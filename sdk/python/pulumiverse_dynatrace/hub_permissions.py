@@ -122,6 +122,17 @@ class HubPermissions(pulumi.CustomResource):
 
         The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        permission = dynatrace.HubPermissions("permission",
+            email="#name#@dynatrace.com",
+            description="This is an example description")
+        ```
+
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -150,6 +161,17 @@ class HubPermissions(pulumi.CustomResource):
         - `terraform-provider-dynatrace -export HubPermissions` downloads all existing hub permissions
 
         The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        permission = dynatrace.HubPermissions("permission",
+            email="#name#@dynatrace.com",
+            description="This is an example description")
+        ```
 
 
         :param str resource_name: The name of the resource.
@@ -213,6 +235,16 @@ class HubPermissions(pulumi.CustomResource):
         __props__.__dict__["description"] = description
         __props__.__dict__["email"] = email
         return HubPermissions(resource_name, opts=opts, __props__=__props__)
+
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            email: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["description"] = description
+        __props__["email"] = email
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/hubPermissions:HubPermissions', id, __props__, opts or pulumi.ResourceOptions())
 
     @_builtins.property
     @pulumi.getter

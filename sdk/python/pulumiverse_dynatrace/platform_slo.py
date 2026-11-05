@@ -363,6 +363,24 @@ class PlatformSlo(pulumi.CustomResource):
         __props__.__dict__["tags"] = tags
         return PlatformSlo(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            criteria: pulumi.Input[Optional[Union['PlatformSloCriteriaArgs', 'PlatformSloCriteriaArgsDict', 'outputs.PlatformSloCriteria']]] = None,
+            custom_sli: pulumi.Input[Optional[Union['PlatformSloCustomSliArgs', 'PlatformSloCustomSliArgsDict', 'outputs.PlatformSloCustomSli']]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            sli_reference: pulumi.Input[Optional[Union['PlatformSloSliReferenceArgs', 'PlatformSloSliReferenceArgsDict', 'outputs.PlatformSloSliReference']]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["criteria"] = criteria
+        __props__["customSli"] = custom_sli
+        __props__["description"] = description
+        __props__["name"] = name
+        __props__["sliReference"] = sli_reference
+        __props__["tags"] = tags
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/platformSlo:PlatformSlo', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def criteria(self) -> pulumi.Output['outputs.PlatformSloCriteria']:

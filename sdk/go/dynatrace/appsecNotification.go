@@ -74,7 +74,7 @@ import (
 //				Type:                                pulumi.String("WEBHOOK"),
 //				Enabled:                             pulumi.Bool(true),
 //				DisplayName:                         pulumi.String("Terraform Security Problem Webhook Test"),
-//				SecurityProblemBasedAlertingProfile: alert.ID().ToIDOutput().ToStringOutput(),
+//				SecurityProblemBasedAlertingProfile: alert.ID(),
 //				Trigger:                             pulumi.String("SECURITY_PROBLEM"),
 //				SecurityProblemBasedWebhookPayload: &dynatrace.AppsecNotificationSecurityProblemBasedWebhookPayloadArgs{
 //					Payload: pulumi.String(json0),
@@ -236,6 +236,12 @@ type AppsecNotificationState struct {
 
 func (AppsecNotificationState) ElementType() reflect.Type {
 	return reflect.TypeOf((*appsecNotificationState)(nil)).Elem()
+}
+
+// AppsecNotificationExists checks whether an existing AppsecNotification resource with the given ID exists.
+func AppsecNotificationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AppsecNotificationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/appsecNotification:AppsecNotification", id, state, "", opts...)
 }
 
 type appsecNotificationArgs struct {

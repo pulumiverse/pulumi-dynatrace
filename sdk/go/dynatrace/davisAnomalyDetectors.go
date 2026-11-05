@@ -137,6 +137,12 @@ func (DavisAnomalyDetectorsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*davisAnomalyDetectorsState)(nil)).Elem()
 }
 
+// DavisAnomalyDetectorsExists checks whether an existing DavisAnomalyDetectors resource with the given ID exists.
+func DavisAnomalyDetectorsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DavisAnomalyDetectorsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/davisAnomalyDetectors:DavisAnomalyDetectors", id, state, "", opts...)
+}
+
 type davisAnomalyDetectorsArgs struct {
 	// Analyzer input to initialize the analyzer
 	Analyzer DavisAnomalyDetectorsAnalyzer `pulumi:"analyzer"`

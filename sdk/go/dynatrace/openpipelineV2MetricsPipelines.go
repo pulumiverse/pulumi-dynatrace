@@ -87,8 +87,9 @@ import (
 //									Fields: &dynatrace.OpenpipelineV2MetricsPipelinesProcessingProcessorsProcessorFieldsAddFieldsArgs{
 //										Fields: dynatrace.OpenpipelineV2MetricsPipelinesProcessingProcessorsProcessorFieldsAddFieldsFieldArray{
 //											&dynatrace.OpenpipelineV2MetricsPipelinesProcessingProcessorsProcessorFieldsAddFieldsFieldArgs{
-//												Name:  pulumi.String("is_warning"),
-//												Value: pulumi.String("true"),
+//												Name:      pulumi.String("is_warning"),
+//												Value:     pulumi.String("true"),
+//												ValueType: pulumi.String("boolean"),
 //											},
 //										},
 //									},
@@ -211,6 +212,8 @@ type OpenpipelineV2MetricsPipelines struct {
 	ProductAllocation OpenpipelineV2MetricsPipelinesProductAllocationPtrOutput `pulumi:"productAllocation"`
 	// Routing. Possible values: `notRoutable`, `routable`
 	Routing pulumi.StringPtrOutput `pulumi:"routing"`
+	// Security stage
+	Security OpenpipelineV2MetricsPipelinesSecurityPtrOutput `pulumi:"security"`
 	// Security context stage
 	SecurityContext OpenpipelineV2MetricsPipelinesSecurityContextPtrOutput `pulumi:"securityContext"`
 	// Smartscape edge extraction stage
@@ -279,6 +282,8 @@ type openpipelineV2MetricsPipelinesState struct {
 	ProductAllocation *OpenpipelineV2MetricsPipelinesProductAllocation `pulumi:"productAllocation"`
 	// Routing. Possible values: `notRoutable`, `routable`
 	Routing *string `pulumi:"routing"`
+	// Security stage
+	Security *OpenpipelineV2MetricsPipelinesSecurity `pulumi:"security"`
 	// Security context stage
 	SecurityContext *OpenpipelineV2MetricsPipelinesSecurityContext `pulumi:"securityContext"`
 	// Smartscape edge extraction stage
@@ -312,6 +317,8 @@ type OpenpipelineV2MetricsPipelinesState struct {
 	ProductAllocation OpenpipelineV2MetricsPipelinesProductAllocationPtrInput
 	// Routing. Possible values: `notRoutable`, `routable`
 	Routing pulumi.StringPtrInput
+	// Security stage
+	Security OpenpipelineV2MetricsPipelinesSecurityPtrInput
 	// Security context stage
 	SecurityContext OpenpipelineV2MetricsPipelinesSecurityContextPtrInput
 	// Smartscape edge extraction stage
@@ -324,6 +331,12 @@ type OpenpipelineV2MetricsPipelinesState struct {
 
 func (OpenpipelineV2MetricsPipelinesState) ElementType() reflect.Type {
 	return reflect.TypeOf((*openpipelineV2MetricsPipelinesState)(nil)).Elem()
+}
+
+// OpenpipelineV2MetricsPipelinesExists checks whether an existing OpenpipelineV2MetricsPipelines resource with the given ID exists.
+func OpenpipelineV2MetricsPipelinesExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *OpenpipelineV2MetricsPipelinesState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/openpipelineV2MetricsPipelines:OpenpipelineV2MetricsPipelines", id, state, "", opts...)
 }
 
 type openpipelineV2MetricsPipelinesArgs struct {
@@ -349,6 +362,8 @@ type openpipelineV2MetricsPipelinesArgs struct {
 	ProductAllocation *OpenpipelineV2MetricsPipelinesProductAllocation `pulumi:"productAllocation"`
 	// Routing. Possible values: `notRoutable`, `routable`
 	Routing *string `pulumi:"routing"`
+	// Security stage
+	Security *OpenpipelineV2MetricsPipelinesSecurity `pulumi:"security"`
 	// Security context stage
 	SecurityContext *OpenpipelineV2MetricsPipelinesSecurityContext `pulumi:"securityContext"`
 	// Smartscape edge extraction stage
@@ -383,6 +398,8 @@ type OpenpipelineV2MetricsPipelinesArgs struct {
 	ProductAllocation OpenpipelineV2MetricsPipelinesProductAllocationPtrInput
 	// Routing. Possible values: `notRoutable`, `routable`
 	Routing pulumi.StringPtrInput
+	// Security stage
+	Security OpenpipelineV2MetricsPipelinesSecurityPtrInput
 	// Security context stage
 	SecurityContext OpenpipelineV2MetricsPipelinesSecurityContextPtrInput
 	// Smartscape edge extraction stage
@@ -545,6 +562,13 @@ func (o OpenpipelineV2MetricsPipelinesOutput) ProductAllocation() OpenpipelineV2
 // Routing. Possible values: `notRoutable`, `routable`
 func (o OpenpipelineV2MetricsPipelinesOutput) Routing() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *OpenpipelineV2MetricsPipelines) pulumi.StringPtrOutput { return v.Routing }).(pulumi.StringPtrOutput)
+}
+
+// Security stage
+func (o OpenpipelineV2MetricsPipelinesOutput) Security() OpenpipelineV2MetricsPipelinesSecurityPtrOutput {
+	return o.ApplyT(func(v *OpenpipelineV2MetricsPipelines) OpenpipelineV2MetricsPipelinesSecurityPtrOutput {
+		return v.Security
+	}).(OpenpipelineV2MetricsPipelinesSecurityPtrOutput)
 }
 
 // Security context stage

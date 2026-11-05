@@ -268,6 +268,12 @@ func (CalculatedServiceMetricState) ElementType() reflect.Type {
 	return reflect.TypeOf((*calculatedServiceMetricState)(nil)).Elem()
 }
 
+// CalculatedServiceMetricExists checks whether an existing CalculatedServiceMetric resource with the given ID exists.
+func CalculatedServiceMetricExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *CalculatedServiceMetricState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/calculatedServiceMetric:CalculatedServiceMetric", id, state, "", opts...)
+}
+
 type calculatedServiceMetricArgs struct {
 	// The set of conditions for the metric usage. **All** the specified conditions must be fulfilled to use the metric
 	Conditions []CalculatedServiceMetricCondition `pulumi:"conditions"`

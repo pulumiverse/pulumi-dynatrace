@@ -95,8 +95,9 @@ import (
 //									Fields: &dynatrace.OpenpipelineV2UsersessionsIngestsourcesProcessingProcessorsProcessorFieldsAddFieldsArgs{
 //										Fields: dynatrace.OpenpipelineV2UsersessionsIngestsourcesProcessingProcessorsProcessorFieldsAddFieldsFieldArray{
 //											&dynatrace.OpenpipelineV2UsersessionsIngestsourcesProcessingProcessorsProcessorFieldsAddFieldsFieldArgs{
-//												Name:  pulumi.String("is_error"),
-//												Value: pulumi.String("true"),
+//												Name:      pulumi.String("is_error"),
+//												Value:     pulumi.String("true"),
+//												ValueType: pulumi.String("boolean"),
 //											},
 //										},
 //									},
@@ -258,6 +259,12 @@ type OpenpipelineV2UsersessionsIngestsourcesState struct {
 
 func (OpenpipelineV2UsersessionsIngestsourcesState) ElementType() reflect.Type {
 	return reflect.TypeOf((*openpipelineV2UsersessionsIngestsourcesState)(nil)).Elem()
+}
+
+// OpenpipelineV2UsersessionsIngestsourcesExists checks whether an existing OpenpipelineV2UsersessionsIngestsources resource with the given ID exists.
+func OpenpipelineV2UsersessionsIngestsourcesExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *OpenpipelineV2UsersessionsIngestsourcesState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/openpipelineV2UsersessionsIngestsources:OpenpipelineV2UsersessionsIngestsources", id, state, "", opts...)
 }
 
 type openpipelineV2UsersessionsIngestsourcesArgs struct {

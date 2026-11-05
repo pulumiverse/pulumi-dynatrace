@@ -126,6 +126,12 @@ func (MetricEventsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*metricEventsState)(nil)).Elem()
 }
 
+// MetricEventsExists checks whether an existing MetricEvents resource with the given ID exists.
+func MetricEventsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *MetricEventsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/metricEvents:MetricEvents", id, state, "", opts...)
+}
+
 type metricEventsArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`

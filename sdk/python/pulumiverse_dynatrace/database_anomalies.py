@@ -292,6 +292,20 @@ class DatabaseAnomalies(pulumi.CustomResource):
         __props__.__dict__["response_time"] = response_time
         return DatabaseAnomalies(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            db_connect_failures: pulumi.Input[Optional[Union['DatabaseAnomaliesDbConnectFailuresArgs', 'DatabaseAnomaliesDbConnectFailuresArgsDict', 'outputs.DatabaseAnomaliesDbConnectFailures']]] = None,
+            failure_rate: pulumi.Input[Optional[Union['DatabaseAnomaliesFailureRateArgs', 'DatabaseAnomaliesFailureRateArgsDict', 'outputs.DatabaseAnomaliesFailureRate']]] = None,
+            load: pulumi.Input[Optional[Union['DatabaseAnomaliesLoadArgs', 'DatabaseAnomaliesLoadArgsDict', 'outputs.DatabaseAnomaliesLoad']]] = None,
+            response_time: pulumi.Input[Optional[Union['DatabaseAnomaliesResponseTimeArgs', 'DatabaseAnomaliesResponseTimeArgsDict', 'outputs.DatabaseAnomaliesResponseTime']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["dbConnectFailures"] = db_connect_failures
+        __props__["failureRate"] = failure_rate
+        __props__["load"] = load
+        __props__["responseTime"] = response_time
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/databaseAnomalies:DatabaseAnomalies', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="dbConnectFailures")
     def db_connect_failures(self) -> pulumi.Output[Optional['outputs.DatabaseAnomaliesDbConnectFailures']]:

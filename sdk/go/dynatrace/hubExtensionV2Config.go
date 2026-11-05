@@ -150,6 +150,12 @@ func (HubExtensionV2ConfigState) ElementType() reflect.Type {
 	return reflect.TypeOf((*hubExtensionV2ConfigState)(nil)).Elem()
 }
 
+// HubExtensionV2ConfigExists checks whether an existing HubExtensionV2Config resource with the given ID exists.
+func HubExtensionV2ConfigExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *HubExtensionV2ConfigState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/hubExtensionV2Config:HubExtensionV2Config", id, state, "", opts...)
+}
+
 type hubExtensionV2ConfigArgs struct {
 	// The fully qualified name of the extension, such as `com.dynatrace.extension.jmx-liberty-cp`.
 	Name *string `pulumi:"name"`

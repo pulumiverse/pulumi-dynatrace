@@ -329,6 +329,22 @@ class OneagentSideMasking(pulumi.CustomResource):
         __props__.__dict__["process_group_id"] = process_group_id
         return OneagentSideMasking(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            is_email_masking_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_financial_masking_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_numbers_masking_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_query_masking_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            process_group_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["isEmailMaskingEnabled"] = is_email_masking_enabled
+        __props__["isFinancialMaskingEnabled"] = is_financial_masking_enabled
+        __props__["isNumbersMaskingEnabled"] = is_numbers_masking_enabled
+        __props__["isQueryMaskingEnabled"] = is_query_masking_enabled
+        __props__["processGroupId"] = process_group_id
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/oneagentSideMasking:OneagentSideMasking', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="isEmailMaskingEnabled")
     def is_email_masking_enabled(self) -> pulumi.Output[_builtins.bool]:

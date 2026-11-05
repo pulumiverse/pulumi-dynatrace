@@ -111,6 +111,12 @@ func (HostMonitoringState) ElementType() reflect.Type {
 	return reflect.TypeOf((*hostMonitoringState)(nil)).Elem()
 }
 
+// HostMonitoringExists checks whether an existing HostMonitoring resource with the given ID exists.
+func HostMonitoringExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *HostMonitoringState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/hostMonitoring:HostMonitoring", id, state, "", opts...)
+}
+
 type hostMonitoringArgs struct {
 	// An auto-injection disabled with [oneagentctl](https://dt-url.net/oneagentctl) takes precedence over this setting and cannot be changed from the Dynatrace web UI.
 	//

@@ -21,7 +21,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         ///   * etc.
         /// 
         ///    To group production *(prod)* and development *(dev)* processes together you could use Command line property with:
-        ///   * **Delimiter** from `--env=` to `--id` to extract `prod12 ` and `dev2 `
+        ///   * **Delimiter** from `--env=` to `--id` to extract ` prod12  ` and ` dev2  `
         ///   * Enable **Ignore numbers** to transform `Prod12` to `prod*` and `Dev2` to `dev*`.
         /// </summary>
         public readonly Outputs.ProcessGroupingRulesPgExtractionProcessGroupExtractionPgIdSourceAdvancedSettings? AdvancedSettings;
@@ -40,7 +40,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// <summary>
         /// Valid only for **deep monitored** processes.. If this option is selected, the default Dynatrace behavior is disabled for the detected processes. Only this rule is used to separate the process group.
         /// 
-        ///   If this option is not selected, this rule contributes to the default Dynatrace process group detection. 
+        ///   If this option is not selected, this rule contributes to the default Dynatrace process group detection.
         /// 
         ///   [See our help page for examples.](https://dt-url.net/1722wrz)
         /// </summary>

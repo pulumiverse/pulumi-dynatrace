@@ -159,6 +159,12 @@ func (LogAgentFeatureFlagsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*logAgentFeatureFlagsState)(nil)).Elem()
 }
 
+// LogAgentFeatureFlagsExists checks whether an existing LogAgentFeatureFlags resource with the given ID exists.
+func LogAgentFeatureFlagsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *LogAgentFeatureFlagsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/logAgentFeatureFlags:LogAgentFeatureFlags", id, state, "", opts...)
+}
+
 type logAgentFeatureFlagsArgs struct {
 	// Enable OneAgent to collect logs from Journald on Linux systems.
 	//  This setting enables:

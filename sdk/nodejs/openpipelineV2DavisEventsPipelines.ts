@@ -75,6 +75,7 @@ import * as utilities from "./utilities";
  *                             fields: [{
  *                                 name: "is_warning",
  *                                 value: "true",
+ *                                 valueType: "boolean",
  *                             }],
  *                         },
  *                     },
@@ -202,6 +203,17 @@ export class OpenpipelineV2DavisEventsPipelines extends pulumi.CustomResource {
         return new OpenpipelineV2DavisEventsPipelines(name, <any>state, { ...opts, id: id });
     }
 
+    /**
+     * Check whether an existing OpenpipelineV2DavisEventsPipelines resource with the given ID exists.
+     *
+     * @param id The _unique_ provider ID of the resource to check.
+     * @param state Any extra arguments used during the lookup.
+     * @param opts Optional settings to control the behavior of the CustomResource.
+     */
+    public static exists(id: pulumi.Input<string>, state?: OpenpipelineV2DavisEventsPipelinesState, opts?: pulumi.CustomResourceOptions): pulumi.Output<boolean> {
+        return pulumi.runtime.existsResource("dynatrace:index/openpipelineV2DavisEventsPipelines:OpenpipelineV2DavisEventsPipelines", id, <any>state || {}, { ...opts }, undefined);
+    }
+
     /** @internal */
     public static readonly __pulumiType = 'dynatrace:index/openpipelineV2DavisEventsPipelines:OpenpipelineV2DavisEventsPipelines';
 
@@ -261,6 +273,10 @@ export class OpenpipelineV2DavisEventsPipelines extends pulumi.CustomResource {
      */
     declare public readonly routing: pulumi.Output<string | undefined>;
     /**
+     * Security stage
+     */
+    declare public readonly security: pulumi.Output<outputs.OpenpipelineV2DavisEventsPipelinesSecurity | undefined>;
+    /**
      * Security context stage
      */
     declare public readonly securityContext: pulumi.Output<outputs.OpenpipelineV2DavisEventsPipelinesSecurityContext | undefined>;
@@ -301,6 +317,7 @@ export class OpenpipelineV2DavisEventsPipelines extends pulumi.CustomResource {
             resourceInputs["processing"] = state?.processing;
             resourceInputs["productAllocation"] = state?.productAllocation;
             resourceInputs["routing"] = state?.routing;
+            resourceInputs["security"] = state?.security;
             resourceInputs["securityContext"] = state?.securityContext;
             resourceInputs["smartscapeEdgeExtraction"] = state?.smartscapeEdgeExtraction;
             resourceInputs["smartscapeNodeExtraction"] = state?.smartscapeNodeExtraction;
@@ -324,6 +341,7 @@ export class OpenpipelineV2DavisEventsPipelines extends pulumi.CustomResource {
             resourceInputs["processing"] = args?.processing;
             resourceInputs["productAllocation"] = args?.productAllocation;
             resourceInputs["routing"] = args?.routing;
+            resourceInputs["security"] = args?.security;
             resourceInputs["securityContext"] = args?.securityContext;
             resourceInputs["smartscapeEdgeExtraction"] = args?.smartscapeEdgeExtraction;
             resourceInputs["smartscapeNodeExtraction"] = args?.smartscapeNodeExtraction;
@@ -382,6 +400,10 @@ export interface OpenpipelineV2DavisEventsPipelinesState {
      * Routing. Possible values: `notRoutable`, `routable`
      */
     routing?: pulumi.Input<string | undefined>;
+    /**
+     * Security stage
+     */
+    security?: pulumi.Input<inputs.OpenpipelineV2DavisEventsPipelinesSecurity | undefined>;
     /**
      * Security context stage
      */
@@ -448,6 +470,10 @@ export interface OpenpipelineV2DavisEventsPipelinesArgs {
      * Routing. Possible values: `notRoutable`, `routable`
      */
     routing?: pulumi.Input<string | undefined>;
+    /**
+     * Security stage
+     */
+    security?: pulumi.Input<inputs.OpenpipelineV2DavisEventsPipelinesSecurity | undefined>;
     /**
      * Security context stage
      */

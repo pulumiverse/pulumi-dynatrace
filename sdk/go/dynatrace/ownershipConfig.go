@@ -78,6 +78,12 @@ func (OwnershipConfigState) ElementType() reflect.Type {
 	return reflect.TypeOf((*ownershipConfigState)(nil)).Elem()
 }
 
+// OwnershipConfigExists checks whether an existing OwnershipConfig resource with the given ID exists.
+func OwnershipConfigExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *OwnershipConfigState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/ownershipConfig:OwnershipConfig", id, state, "", opts...)
+}
+
 type ownershipConfigArgs struct {
 	// Tags and metadata are key-value pairs. Define keys for tags and metadata that are considered for ownership. If a tag or any metadata starts with a key defined below, the value of the tag or metadata is considered a team identifier.
 	OwnershipIdentifiers OwnershipConfigOwnershipIdentifiers `pulumi:"ownershipIdentifiers"`

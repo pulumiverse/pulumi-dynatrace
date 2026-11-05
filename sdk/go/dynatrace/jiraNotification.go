@@ -240,6 +240,12 @@ func (JiraNotificationState) ElementType() reflect.Type {
 	return reflect.TypeOf((*jiraNotificationState)(nil)).Elem()
 }
 
+// JiraNotificationExists checks whether an existing JiraNotification resource with the given ID exists.
+func JiraNotificationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *JiraNotificationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/jiraNotification:JiraNotification", id, state, "", opts...)
+}
+
 type jiraNotificationArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Active bool `pulumi:"active"`

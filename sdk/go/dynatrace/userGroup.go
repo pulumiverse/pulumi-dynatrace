@@ -64,7 +64,7 @@ import (
 //				Email:     pulumi.String("me@example.com"),
 //				FirstName: pulumi.String("John"),
 //				Groups: pulumi.StringArray{
-//					terraform.ID().ToIDOutput().ToStringOutput(),
+//					terraform.ID(),
 //				},
 //				LastName: pulumi.String("Doe"),
 //				UserName: pulumi.String("me@example.com"),
@@ -90,9 +90,9 @@ import (
 //			}
 //			_, err = dynatrace.NewPolicyBindings(ctx, "terraform_cluster_binding", &dynatrace.PolicyBindingsArgs{
 //				Cluster: pulumi.String(cluster),
-//				Group:   terraform.ID().ToIDOutput().ToStringOutput(),
+//				Group:   terraform.ID(),
 //				Policies: pulumi.StringArray{
-//					terraformCluster.ID().ToIDOutput().ToStringOutput(),
+//					terraformCluster.ID(),
 //				},
 //			})
 //			if err != nil {
@@ -100,9 +100,9 @@ import (
 //			}
 //			_, err = dynatrace.NewPolicyBindings(ctx, "terraform_env_binding", &dynatrace.PolicyBindingsArgs{
 //				Environment: pulumi.String(environment),
-//				Group:       terraform.ID().ToIDOutput().ToStringOutput(),
+//				Group:       terraform.ID(),
 //				Policies: pulumi.StringArray{
-//					terraformEnv.ID().ToIDOutput().ToStringOutput(),
+//					terraformEnv.ID(),
 //				},
 //			})
 //			if err != nil {
@@ -197,6 +197,12 @@ type UserGroupState struct {
 
 func (UserGroupState) ElementType() reflect.Type {
 	return reflect.TypeOf((*userGroupState)(nil)).Elem()
+}
+
+// UserGroupExists checks whether an existing UserGroup resource with the given ID exists.
+func UserGroupExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *UserGroupState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/userGroup:UserGroup", id, state, "", opts...)
 }
 
 type userGroupArgs struct {

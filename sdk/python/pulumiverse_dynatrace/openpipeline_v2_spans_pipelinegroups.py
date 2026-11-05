@@ -239,6 +239,7 @@ class OpenpipelineV2SpansPipelinegroups(pulumi.CustomResource):
                                     "fields": [{
                                         "name": "is_warning",
                                         "value": "true",
+                                        "value_type": "boolean",
                                     }],
                                 },
                             },
@@ -485,6 +486,7 @@ class OpenpipelineV2SpansPipelinegroups(pulumi.CustomResource):
                                     "fields": [{
                                         "name": "is_warning",
                                         "value": "true",
+                                        "value_type": "boolean",
                                     }],
                                 },
                             },
@@ -723,6 +725,20 @@ class OpenpipelineV2SpansPipelinegroups(pulumi.CustomResource):
         __props__.__dict__["member_pipelines"] = member_pipelines
         __props__.__dict__["member_stages"] = member_stages
         return OpenpipelineV2SpansPipelinegroups(resource_name, opts=opts, __props__=__props__)
+
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            composition: pulumi.Input[Optional[Union['OpenpipelineV2SpansPipelinegroupsCompositionArgs', 'OpenpipelineV2SpansPipelinegroupsCompositionArgsDict', 'outputs.OpenpipelineV2SpansPipelinegroupsComposition']]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            member_pipelines: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            member_stages: pulumi.Input[Optional[Union['OpenpipelineV2SpansPipelinegroupsMemberStagesArgs', 'OpenpipelineV2SpansPipelinegroupsMemberStagesArgsDict', 'outputs.OpenpipelineV2SpansPipelinegroupsMemberStages']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["composition"] = composition
+        __props__["displayName"] = display_name
+        __props__["memberPipelines"] = member_pipelines
+        __props__["memberStages"] = member_stages
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/openpipelineV2SpansPipelinegroups:OpenpipelineV2SpansPipelinegroups', id, __props__, opts or pulumi.ResourceOptions())
 
     @_builtins.property
     @pulumi.getter

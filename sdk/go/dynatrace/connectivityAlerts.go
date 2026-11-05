@@ -120,6 +120,12 @@ func (ConnectivityAlertsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*connectivityAlertsState)(nil)).Elem()
 }
 
+// ConnectivityAlertsExists checks whether an existing ConnectivityAlerts resource with the given ID exists.
+func ConnectivityAlertsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ConnectivityAlertsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/connectivityAlerts:ConnectivityAlerts", id, state, "", opts...)
+}
+
 type connectivityAlertsArgs struct {
 	// TCP connectivity problems
 	ConnectivityAlerts bool `pulumi:"connectivityAlerts"`

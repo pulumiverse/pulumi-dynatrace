@@ -55,10 +55,10 @@ import (
 //				return err
 //			}
 //			_, err = dynatrace.NewPolicyBindings(ctx, "env_bindings", &dynatrace.PolicyBindingsArgs{
-//				Group:       myGroup.ID().ToIDOutput().ToStringOutput(),
+//				Group:       myGroup.ID(),
 //				Environment: pulumi.String("########-####-####-####-############"),
 //				Policies: pulumi.StringArray{
-//					envPolicy.ID().ToIDOutput().ToStringOutput(),
+//					envPolicy.ID(),
 //				},
 //			})
 //			if err != nil {
@@ -73,10 +73,10 @@ import (
 //				return err
 //			}
 //			_, err = dynatrace.NewPolicyBindings(ctx, "cluster_bindings", &dynatrace.PolicyBindingsArgs{
-//				Group:   myGroup.ID().ToIDOutput().ToStringOutput(),
+//				Group:   myGroup.ID(),
 //				Cluster: pulumi.String("########-####-####-####-############"),
 //				Policies: pulumi.StringArray{
-//					clusterPolicy.ID().ToIDOutput().ToStringOutput(),
+//					clusterPolicy.ID(),
 //				},
 //			})
 //			if err != nil {
@@ -189,6 +189,12 @@ type PolicyBindingsState struct {
 
 func (PolicyBindingsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*policyBindingsState)(nil)).Elem()
+}
+
+// PolicyBindingsExists checks whether an existing PolicyBindings resource with the given ID exists.
+func PolicyBindingsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *PolicyBindingsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/policyBindings:PolicyBindings", id, state, "", opts...)
 }
 
 type policyBindingsArgs struct {

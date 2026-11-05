@@ -88,16 +88,16 @@ import (
 //				return err
 //			}
 //			_, err = dynatrace.NewDirectShares(ctx, "this", &dynatrace.DirectSharesArgs{
-//				DocumentId: thisDocument.ID().ToIDOutput().ToStringOutput(),
+//				DocumentId: thisDocument.ID(),
 //				Access:     pulumi.String("read-write"),
 //				Recipients: &dynatrace.DirectSharesRecipientsArgs{
 //					Recipients: dynatrace.DirectSharesRecipientsRecipientArray{
 //						&dynatrace.DirectSharesRecipientsRecipientArgs{
-//							Id:   sampleServiceUser.ID().ToIDOutput().ToStringOutput(),
+//							Id:   sampleServiceUser.ID(),
 //							Type: pulumi.String("user"),
 //						},
 //						&dynatrace.DirectSharesRecipientsRecipientArgs{
-//							Id:   sampleGroup.ID().ToIDOutput().ToStringOutput(),
+//							Id:   sampleGroup.ID(),
 //							Type: pulumi.String("group"),
 //						},
 //					},
@@ -174,6 +174,12 @@ type DirectSharesState struct {
 
 func (DirectSharesState) ElementType() reflect.Type {
 	return reflect.TypeOf((*directSharesState)(nil)).Elem()
+}
+
+// DirectSharesExists checks whether an existing DirectShares resource with the given ID exists.
+func DirectSharesExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DirectSharesState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/directShares:DirectShares", id, state, "", opts...)
 }
 
 type directSharesArgs struct {

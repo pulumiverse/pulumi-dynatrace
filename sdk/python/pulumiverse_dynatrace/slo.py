@@ -694,6 +694,40 @@ class Slo(pulumi.CustomResource):
         __props__.__dict__["warning"] = warning
         return Slo(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            denominator: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            error_budget_burn_rate: pulumi.Input[Optional[Union['SloErrorBudgetBurnRateArgs', 'SloErrorBudgetBurnRateArgsDict', 'outputs.SloErrorBudgetBurnRate']]] = None,
+            evaluation: pulumi.Input[Optional[_builtins.str]] = None,
+            filter: pulumi.Input[Optional[_builtins.str]] = None,
+            metric_expression: pulumi.Input[Optional[_builtins.str]] = None,
+            metric_name: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            numerator: pulumi.Input[Optional[_builtins.str]] = None,
+            rate: pulumi.Input[Optional[_builtins.str]] = None,
+            target: pulumi.Input[Optional[_builtins.float]] = None,
+            timeframe: pulumi.Input[Optional[_builtins.str]] = None,
+            warning: pulumi.Input[Optional[_builtins.float]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["denominator"] = denominator
+        __props__["description"] = description
+        __props__["disabled"] = disabled
+        __props__["errorBudgetBurnRate"] = error_budget_burn_rate
+        __props__["evaluation"] = evaluation
+        __props__["filter"] = filter
+        __props__["metricExpression"] = metric_expression
+        __props__["metricName"] = metric_name
+        __props__["name"] = name
+        __props__["numerator"] = numerator
+        __props__["rate"] = rate
+        __props__["target"] = target
+        __props__["timeframe"] = timeframe
+        __props__["warning"] = warning
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/slo:Slo', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def denominator(self) -> pulumi.Output[Optional[_builtins.str]]:

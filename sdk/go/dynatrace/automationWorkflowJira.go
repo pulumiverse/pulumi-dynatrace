@@ -152,6 +152,12 @@ func (AutomationWorkflowJiraState) ElementType() reflect.Type {
 	return reflect.TypeOf((*automationWorkflowJiraState)(nil)).Elem()
 }
 
+// AutomationWorkflowJiraExists checks whether an existing AutomationWorkflowJira resource with the given ID exists.
+func AutomationWorkflowJiraExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AutomationWorkflowJiraState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/automationWorkflowJira:AutomationWorkflowJira", id, state, "", opts...)
+}
+
 type automationWorkflowJiraArgs struct {
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	//

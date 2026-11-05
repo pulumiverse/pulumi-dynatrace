@@ -46,7 +46,7 @@ namespace Pulumiverse.Dynatrace
     ///         {
     ///             SyntheticMonitors = new Dynatrace.Inputs.MaintenanceWindowsObjectScopesSyntheticMonitorsArgs
     ///             {
-    ///                 DisableSyntheticMonitorFilter = "status == \"OPEN\" AND severity == \"HIGH\"",
+    ///                 DisableSyntheticMonitorFilter = "monitor.name == \"my-monitor\"",
     ///                 DisableSyntheticMonitors = true,
     ///             },
     ///         },

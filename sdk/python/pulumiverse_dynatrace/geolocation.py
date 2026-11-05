@@ -209,6 +209,16 @@ class Geolocation(pulumi.CustomResource):
         __props__.__dict__["scope"] = scope
         return Geolocation(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            display_worldmap: pulumi.Input[Optional[_builtins.bool]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["displayWorldmap"] = display_worldmap
+        __props__["scope"] = scope
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/geolocation:Geolocation', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="displayWorldmap")
     def display_worldmap(self) -> pulumi.Output[_builtins.bool]:

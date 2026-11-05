@@ -171,6 +171,14 @@ class DashboardsAllowlist(pulumi.CustomResource):
         __props__.__dict__["allowlist"] = allowlist
         return DashboardsAllowlist(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            allowlist: pulumi.Input[Optional[Union['DashboardsAllowlistAllowlistArgs', 'DashboardsAllowlistAllowlistArgsDict', 'outputs.DashboardsAllowlistAllowlist']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["allowlist"] = allowlist
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/dashboardsAllowlist:DashboardsAllowlist', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def allowlist(self) -> pulumi.Output[Optional['outputs.DashboardsAllowlistAllowlist']]:

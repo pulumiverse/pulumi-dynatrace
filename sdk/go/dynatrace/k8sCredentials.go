@@ -165,6 +165,12 @@ func (K8sCredentialsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*k8sCredentialsState)(nil)).Elem()
 }
 
+// K8sCredentialsExists checks whether an existing K8sCredentials resource with the given ID exists.
+func K8sCredentialsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *K8sCredentialsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/k8sCredentials:K8sCredentials", id, state, "", opts...)
+}
+
 type k8sCredentialsArgs struct {
 	// Monitoring is enabled (`true`) or disabled (`false`) for given credentials configuration.  If not set on creation, the `true` value is used.  If the field is omitted during an update, the old value remains unaffected.
 	Active *bool `pulumi:"active"`

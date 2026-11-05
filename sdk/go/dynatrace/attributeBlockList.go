@@ -87,6 +87,12 @@ func (AttributeBlockListState) ElementType() reflect.Type {
 	return reflect.TypeOf((*attributeBlockListState)(nil)).Elem()
 }
 
+// AttributeBlockListExists checks whether an existing AttributeBlockList resource with the given ID exists.
+func AttributeBlockListExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AttributeBlockListState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/attributeBlockList:AttributeBlockList", id, state, "", opts...)
+}
+
 type attributeBlockListArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`

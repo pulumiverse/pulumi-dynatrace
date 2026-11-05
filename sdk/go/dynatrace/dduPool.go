@@ -94,6 +94,12 @@ func (DduPoolState) ElementType() reflect.Type {
 	return reflect.TypeOf((*dduPoolState)(nil)).Elem()
 }
 
+// DduPoolExists checks whether an existing DduPool resource with the given ID exists.
+func DduPoolExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DduPoolState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/dduPool:DduPool", id, state, "", opts...)
+}
+
 type dduPoolArgs struct {
 	// DDU pool settings for Events
 	Events *DduPoolEvents `pulumi:"events"`

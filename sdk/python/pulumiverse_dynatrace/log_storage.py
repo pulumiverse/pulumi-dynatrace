@@ -368,6 +368,24 @@ class LogStorage(pulumi.CustomResource):
         __props__.__dict__["send_to_storage"] = send_to_storage
         return LogStorage(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+            matchers: pulumi.Input[Optional[Union['LogStorageMatchersArgs', 'LogStorageMatchersArgsDict', 'outputs.LogStorageMatchers']]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None,
+            send_to_storage: pulumi.Input[Optional[_builtins.bool]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["enabled"] = enabled
+        __props__["insertAfter"] = insert_after
+        __props__["matchers"] = matchers
+        __props__["name"] = name
+        __props__["scope"] = scope
+        __props__["sendToStorage"] = send_to_storage
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/logStorage:LogStorage', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def enabled(self) -> pulumi.Output[_builtins.bool]:

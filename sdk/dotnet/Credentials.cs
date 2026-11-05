@@ -137,23 +137,35 @@ namespace Pulumiverse.Dynatrace
     /// using System.Linq;
     /// using Pulumi;
     /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// using Std = Pulumi.Std;
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var config = new Config();
-    ///     var certificate = config.RequireObject&lt;dynamic&gt;("certificate");
-    ///     var certificatePassword = config.RequireObject&lt;dynamic&gt;("certificatePassword");
+    ///     var CREDENTIAL_VAULT_CERT = config.RequireObject&lt;dynamic&gt;("CREDENTIAL_VAULT_CERT");
+    ///     var CREDENTIAL_VAULT_PWD = config.RequireObject&lt;dynamic&gt;("CREDENTIAL_VAULT_PWD");
     ///     var certificateCredentials = new Dynatrace.Credentials("certificate_credentials", new()
     ///     {
     ///         Name = "#name#",
-    ///         Certificate = certificate,
-    ///         Format = "PKCS12",
+    ///         Certificate = Std.Base64encode.Invoke(new()
+    ///         {
+    ///             Input = CREDENTIAL_VAULT_CERT,
+    ///         }).Apply(invoke =&gt; invoke.Result),
+    ///         Format = "PEM",
     ///         OwnerAccessOnly = true,
-    ///         Password = certificatePassword,
+    ///         Password = Std.Base64encode.Invoke(new()
+    ///         {
+    ///             Input = CREDENTIAL_VAULT_PWD,
+    ///         }).Apply(invoke =&gt; invoke.Result),
     ///         Scopes = new[]
     ///         {
     ///             "SYNTHETIC",
     ///         },
+    ///     });
+    /// 
+    ///     var location = Dynatrace.GetSyntheticLocation.Invoke(new()
+    ///     {
+    ///         Name = "Location",
     ///     });
     /// 
     ///     var cyberarkAllowedLocation = new Dynatrace.Credentials("cyberark_allowed_location", new()
@@ -168,6 +180,7 @@ namespace Pulumiverse.Dynatrace
     ///             FolderName = "my-folder-name",
     ///             AccountName = "my-account-name",
     ///             Certificate = certificateCredentials.Id,
+    ///             LocationForSynchronizationId = location.Apply(getSyntheticLocationResult =&gt; getSyntheticLocationResult.Id),
     ///         },
     ///         Scopes = new[]
     ///         {

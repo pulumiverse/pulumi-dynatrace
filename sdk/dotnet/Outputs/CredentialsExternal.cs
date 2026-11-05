@@ -43,6 +43,10 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly string? FolderName;
         /// <summary>
+        /// Id of a location used by the synchronizing monitor
+        /// </summary>
+        public readonly string? LocationForSynchronizationId;
+        /// <summary>
         /// No documentation available
         /// </summary>
         public readonly string? PasswordSecretName;
@@ -103,6 +107,8 @@ namespace Pulumiverse.Dynatrace.Outputs
 
             string? folderName,
 
+            string? locationForSynchronizationId,
+
             string? passwordSecretName,
 
             string? pathToCredentials,
@@ -132,6 +138,7 @@ namespace Pulumiverse.Dynatrace.Outputs
             Clientid = clientid;
             CredentialsUsedForExternalSynchronizations = credentialsUsedForExternalSynchronizations;
             FolderName = folderName;
+            LocationForSynchronizationId = locationForSynchronizationId;
             PasswordSecretName = passwordSecretName;
             PathToCredentials = pathToCredentials;
             Roleid = roleid;

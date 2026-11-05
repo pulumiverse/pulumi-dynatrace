@@ -415,6 +415,7 @@ class OpenpipelineV2UserEventsIngestsources(pulumi.CustomResource):
                                     "fields": [{
                                         "name": "is_error",
                                         "value": "true",
+                                        "value_type": "boolean",
                                     }],
                                 },
                             },
@@ -566,6 +567,7 @@ class OpenpipelineV2UserEventsIngestsources(pulumi.CustomResource):
                                     "fields": [{
                                         "name": "is_error",
                                         "value": "true",
+                                        "value_type": "boolean",
                                     }],
                                 },
                             },
@@ -718,6 +720,30 @@ class OpenpipelineV2UserEventsIngestsources(pulumi.CustomResource):
         __props__.__dict__["source_type"] = source_type
         __props__.__dict__["static_routing"] = static_routing
         return OpenpipelineV2UserEventsIngestsources(resource_name, opts=opts, __props__=__props__)
+
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            default_bucket: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            metadata_list: pulumi.Input[Optional[Union['OpenpipelineV2UserEventsIngestsourcesMetadataListArgs', 'OpenpipelineV2UserEventsIngestsourcesMetadataListArgsDict', 'outputs.OpenpipelineV2UserEventsIngestsourcesMetadataList']]] = None,
+            path_segment: pulumi.Input[Optional[_builtins.str]] = None,
+            processing: pulumi.Input[Optional[Union['OpenpipelineV2UserEventsIngestsourcesProcessingArgs', 'OpenpipelineV2UserEventsIngestsourcesProcessingArgsDict', 'outputs.OpenpipelineV2UserEventsIngestsourcesProcessing']]] = None,
+            source: pulumi.Input[Optional[_builtins.str]] = None,
+            source_type: pulumi.Input[Optional[_builtins.str]] = None,
+            static_routing: pulumi.Input[Optional[Union['OpenpipelineV2UserEventsIngestsourcesStaticRoutingArgs', 'OpenpipelineV2UserEventsIngestsourcesStaticRoutingArgsDict', 'outputs.OpenpipelineV2UserEventsIngestsourcesStaticRouting']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["defaultBucket"] = default_bucket
+        __props__["displayName"] = display_name
+        __props__["enabled"] = enabled
+        __props__["metadataList"] = metadata_list
+        __props__["pathSegment"] = path_segment
+        __props__["processing"] = processing
+        __props__["source"] = source
+        __props__["sourceType"] = source_type
+        __props__["staticRouting"] = static_routing
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/openpipelineV2UserEventsIngestsources:OpenpipelineV2UserEventsIngestsources', id, __props__, opts or pulumi.ResourceOptions())
 
     @_builtins.property
     @pulumi.getter(name="defaultBucket")

@@ -239,6 +239,7 @@ class OpenpipelineV2DavisEventsPipelinegroups(pulumi.CustomResource):
                                     "fields": [{
                                         "name": "is_warning",
                                         "value": "true",
+                                        "value_type": "boolean",
                                     }],
                                 },
                             },
@@ -444,6 +445,7 @@ class OpenpipelineV2DavisEventsPipelinegroups(pulumi.CustomResource):
                                     "fields": [{
                                         "name": "is_warning",
                                         "value": "true",
+                                        "value_type": "boolean",
                                     }],
                                 },
                             },
@@ -641,6 +643,20 @@ class OpenpipelineV2DavisEventsPipelinegroups(pulumi.CustomResource):
         __props__.__dict__["member_pipelines"] = member_pipelines
         __props__.__dict__["member_stages"] = member_stages
         return OpenpipelineV2DavisEventsPipelinegroups(resource_name, opts=opts, __props__=__props__)
+
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            composition: pulumi.Input[Optional[Union['OpenpipelineV2DavisEventsPipelinegroupsCompositionArgs', 'OpenpipelineV2DavisEventsPipelinegroupsCompositionArgsDict', 'outputs.OpenpipelineV2DavisEventsPipelinegroupsComposition']]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            member_pipelines: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            member_stages: pulumi.Input[Optional[Union['OpenpipelineV2DavisEventsPipelinegroupsMemberStagesArgs', 'OpenpipelineV2DavisEventsPipelinegroupsMemberStagesArgsDict', 'outputs.OpenpipelineV2DavisEventsPipelinegroupsMemberStages']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["composition"] = composition
+        __props__["displayName"] = display_name
+        __props__["memberPipelines"] = member_pipelines
+        __props__["memberStages"] = member_stages
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/openpipelineV2DavisEventsPipelinegroups:OpenpipelineV2DavisEventsPipelinegroups', id, __props__, opts or pulumi.ResourceOptions())
 
     @_builtins.property
     @pulumi.getter

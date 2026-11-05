@@ -124,6 +124,12 @@ func (HostMonitoringModeState) ElementType() reflect.Type {
 	return reflect.TypeOf((*hostMonitoringModeState)(nil)).Elem()
 }
 
+// HostMonitoringModeExists checks whether an existing HostMonitoringMode resource with the given ID exists.
+func HostMonitoringModeExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *HostMonitoringModeState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/hostMonitoringMode:HostMonitoringMode", id, state, "", opts...)
+}
+
 type hostMonitoringModeArgs struct {
 	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
 	HostId string `pulumi:"hostId"`

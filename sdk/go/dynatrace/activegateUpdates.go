@@ -61,7 +61,7 @@ import (
 //				UpdateWindows: &dynatrace.ActivegateUpdatesUpdateWindowsArgs{
 //					UpdateWindows: dynatrace.ActivegateUpdatesUpdateWindowsUpdateWindowArray{
 //						&dynatrace.ActivegateUpdatesUpdateWindowsUpdateWindowArgs{
-//							UpdateWindow: exampleUpdateWindows.ID().ToIDOutput().ToStringOutput(),
+//							UpdateWindow: exampleUpdateWindows.ID(),
 //						},
 //					},
 //				},
@@ -146,6 +146,12 @@ type ActivegateUpdatesState struct {
 
 func (ActivegateUpdatesState) ElementType() reflect.Type {
 	return reflect.TypeOf((*activegateUpdatesState)(nil)).Elem()
+}
+
+// ActivegateUpdatesExists checks whether an existing ActivegateUpdates resource with the given ID exists.
+func ActivegateUpdatesExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ActivegateUpdatesState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/activegateUpdates:ActivegateUpdates", id, state, "", opts...)
 }
 
 type activegateUpdatesArgs struct {

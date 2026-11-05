@@ -67,7 +67,7 @@ namespace Pulumiverse.Dynatrace
     ///                         DealertingSamples = 5,
     ///                         Samples = 5,
     ///                         StepIndex = 0,
-    ///                         Threshold = 100,
+    ///                         Threshold = 100.0,
     ///                         ViolatingSamples = 3,
     ///                     },
     ///                 },

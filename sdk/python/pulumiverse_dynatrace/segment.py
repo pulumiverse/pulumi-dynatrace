@@ -332,6 +332,22 @@ class Segment(pulumi.CustomResource):
         __props__.__dict__["variables"] = variables
         return Segment(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            includes: pulumi.Input[Optional[Union['SegmentIncludesArgs', 'SegmentIncludesArgsDict', 'outputs.SegmentIncludes']]] = None,
+            is_public: pulumi.Input[Optional[_builtins.bool]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            variables: pulumi.Input[Optional[Union['SegmentVariablesArgs', 'SegmentVariablesArgsDict', 'outputs.SegmentVariables']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["description"] = description
+        __props__["includes"] = includes
+        __props__["isPublic"] = is_public
+        __props__["name"] = name
+        __props__["variables"] = variables
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/segment:Segment', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def description(self) -> pulumi.Output[Optional[_builtins.str]]:

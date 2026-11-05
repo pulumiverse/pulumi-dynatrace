@@ -292,6 +292,20 @@ class ServiceAnomalies(pulumi.CustomResource):
         __props__.__dict__["response_times"] = response_times
         return ServiceAnomalies(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            failure_rates: pulumi.Input[Optional[Union['ServiceAnomaliesFailureRatesArgs', 'ServiceAnomaliesFailureRatesArgsDict', 'outputs.ServiceAnomaliesFailureRates']]] = None,
+            load: pulumi.Input[Optional[Union['ServiceAnomaliesLoadArgs', 'ServiceAnomaliesLoadArgsDict', 'outputs.ServiceAnomaliesLoad']]] = None,
+            load_drops: pulumi.Input[Optional[Union['ServiceAnomaliesLoadDropsArgs', 'ServiceAnomaliesLoadDropsArgsDict', 'outputs.ServiceAnomaliesLoadDrops']]] = None,
+            response_times: pulumi.Input[Optional[Union['ServiceAnomaliesResponseTimesArgs', 'ServiceAnomaliesResponseTimesArgsDict', 'outputs.ServiceAnomaliesResponseTimes']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["failureRates"] = failure_rates
+        __props__["load"] = load
+        __props__["loadDrops"] = load_drops
+        __props__["responseTimes"] = response_times
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/serviceAnomalies:ServiceAnomalies', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="failureRates")
     def failure_rates(self) -> pulumi.Output[Optional['outputs.ServiceAnomaliesFailureRates']]:

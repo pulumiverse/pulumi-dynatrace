@@ -84,6 +84,12 @@ func (EbpfServiceDiscoveryState) ElementType() reflect.Type {
 	return reflect.TypeOf((*ebpfServiceDiscoveryState)(nil)).Elem()
 }
 
+// EbpfServiceDiscoveryExists checks whether an existing EbpfServiceDiscovery resource with the given ID exists.
+func EbpfServiceDiscoveryExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *EbpfServiceDiscoveryState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/ebpfServiceDiscovery:EbpfServiceDiscovery", id, state, "", opts...)
+}
+
 type ebpfServiceDiscoveryArgs struct {
 	// When disabled, Dynatrace can only detect services in Full stack mode.
 	Ebpf bool `pulumi:"ebpf"`

@@ -44,7 +44,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<string>? PatternBeforeSearchType { get; set; }
 
         /// <summary>
-        /// The pattern to be replaced. 
+        /// The pattern to be replaced.
         /// 
         ///  Only applicable if the `Type` is `REPLACE_WITH_PATTERN`.
         /// </summary>

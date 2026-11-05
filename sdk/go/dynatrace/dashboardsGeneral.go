@@ -82,8 +82,8 @@ import (
 //				DefaultDashboardList: &dynatrace.DashboardsGeneralDefaultDashboardListArgs{
 //					DefaultDashboards: dynatrace.DashboardsGeneralDefaultDashboardListDefaultDashboardArray{
 //						&dynatrace.DashboardsGeneralDefaultDashboardListDefaultDashboardArgs{
-//							Dashboard: dashboard.ID().ToIDOutput().ToStringOutput(),
-//							UserGroup: group.ID().ToIDOutput().ToStringOutput(),
+//							Dashboard: dashboard.ID(),
+//							UserGroup: group.ID(),
 //						},
 //					},
 //				},
@@ -153,6 +153,12 @@ type DashboardsGeneralState struct {
 
 func (DashboardsGeneralState) ElementType() reflect.Type {
 	return reflect.TypeOf((*dashboardsGeneralState)(nil)).Elem()
+}
+
+// DashboardsGeneralExists checks whether an existing DashboardsGeneral resource with the given ID exists.
+func DashboardsGeneralExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DashboardsGeneralState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/dashboardsGeneral:DashboardsGeneral", id, state, "", opts...)
 }
 
 type dashboardsGeneralArgs struct {

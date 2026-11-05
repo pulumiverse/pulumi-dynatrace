@@ -72,6 +72,12 @@ func (WebAppJavascriptFilenameState) ElementType() reflect.Type {
 	return reflect.TypeOf((*webAppJavascriptFilenameState)(nil)).Elem()
 }
 
+// WebAppJavascriptFilenameExists checks whether an existing WebAppJavascriptFilename resource with the given ID exists.
+func WebAppJavascriptFilenameExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *WebAppJavascriptFilenameState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/webAppJavascriptFilename:WebAppJavascriptFilename", id, state, "", opts...)
+}
+
 type webAppJavascriptFilenameArgs struct {
 	// Custom filename prefix
 	Filename string `pulumi:"filename"`

@@ -475,6 +475,26 @@ class OpsGenieNotification(pulumi.CustomResource):
         __props__.__dict__["profile"] = profile
         return OpsGenieNotification(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            active: pulumi.Input[Optional[_builtins.bool]] = None,
+            api_key: pulumi.Input[Optional[_builtins.str]] = None,
+            domain: pulumi.Input[Optional[_builtins.str]] = None,
+            legacy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            message: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            profile: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["active"] = active
+        __props__["apiKey"] = api_key
+        __props__["domain"] = domain
+        __props__["legacyId"] = legacy_id
+        __props__["message"] = message
+        __props__["name"] = name
+        __props__["profile"] = profile
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/opsGenieNotification:OpsGenieNotification', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def active(self) -> pulumi.Output[_builtins.bool]:

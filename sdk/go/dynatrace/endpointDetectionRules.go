@@ -49,7 +49,7 @@ import (
 //				return err
 //			}
 //			_, err = dynatrace.NewEndpointDetectionRules(ctx, "second-instance", &dynatrace.EndpointDetectionRulesArgs{
-//				InsertAfter: first_instance.ID().ToIDOutput().ToStringOutput(),
+//				InsertAfter: first_instance.ID(),
 //				Enabled:     pulumi.Bool(false),
 //				Scope:       pulumi.String("environment"),
 //				Rule: &dynatrace.EndpointDetectionRulesRuleArgs{
@@ -138,6 +138,12 @@ type EndpointDetectionRulesState struct {
 
 func (EndpointDetectionRulesState) ElementType() reflect.Type {
 	return reflect.TypeOf((*endpointDetectionRulesState)(nil)).Elem()
+}
+
+// EndpointDetectionRulesExists checks whether an existing EndpointDetectionRules resource with the given ID exists.
+func EndpointDetectionRulesExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *EndpointDetectionRulesState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/endpointDetectionRules:EndpointDetectionRules", id, state, "", opts...)
 }
 
 type endpointDetectionRulesArgs struct {

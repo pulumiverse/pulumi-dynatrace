@@ -133,6 +133,12 @@ func (RequestAttributeState) ElementType() reflect.Type {
 	return reflect.TypeOf((*requestAttributeState)(nil)).Elem()
 }
 
+// RequestAttributeExists checks whether an existing RequestAttribute resource with the given ID exists.
+func RequestAttributeExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *RequestAttributeState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/requestAttribute:RequestAttribute", id, state, "", opts...)
+}
+
 type requestAttributeArgs struct {
 	// Aggregation type for the request values
 	Aggregation string `pulumi:"aggregation"`

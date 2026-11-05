@@ -124,6 +124,12 @@ func (CustomServiceState) ElementType() reflect.Type {
 	return reflect.TypeOf((*customServiceState)(nil)).Elem()
 }
 
+// CustomServiceExists checks whether an existing CustomService resource with the given ID exists.
+func CustomServiceExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *CustomServiceState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/customService:CustomService", id, state, "", opts...)
+}
+
 type customServiceArgs struct {
 	// Custom service enabled/disabled
 	Enabled bool `pulumi:"enabled"`

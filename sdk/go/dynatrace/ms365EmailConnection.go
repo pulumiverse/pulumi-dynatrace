@@ -173,6 +173,12 @@ func (Ms365EmailConnectionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*ms365EmailConnectionState)(nil)).Elem()
 }
 
+// Ms365EmailConnectionExists checks whether an existing Ms365EmailConnection resource with the given ID exists.
+func Ms365EmailConnectionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *Ms365EmailConnectionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/ms365EmailConnection:Ms365EmailConnection", id, state, "", opts...)
+}
+
 type ms365EmailConnectionArgs struct {
 	// Application (client) ID of your app registered in Microsoft Azure App registrations
 	ClientId string `pulumi:"clientId"`

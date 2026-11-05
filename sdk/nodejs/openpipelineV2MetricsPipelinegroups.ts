@@ -72,6 +72,7 @@ import * as utilities from "./utilities";
  *                             fields: [{
  *                                 name: "is_warning",
  *                                 value: "true",
+ *                                 valueType: "boolean",
  *                             }],
  *                         },
  *                     },
@@ -212,6 +213,17 @@ export class OpenpipelineV2MetricsPipelinegroups extends pulumi.CustomResource {
      */
     public static get(name: string, id: pulumi.Input<pulumi.ID>, state?: OpenpipelineV2MetricsPipelinegroupsState, opts?: pulumi.CustomResourceOptions): OpenpipelineV2MetricsPipelinegroups {
         return new OpenpipelineV2MetricsPipelinegroups(name, <any>state, { ...opts, id: id });
+    }
+
+    /**
+     * Check whether an existing OpenpipelineV2MetricsPipelinegroups resource with the given ID exists.
+     *
+     * @param id The _unique_ provider ID of the resource to check.
+     * @param state Any extra arguments used during the lookup.
+     * @param opts Optional settings to control the behavior of the CustomResource.
+     */
+    public static exists(id: pulumi.Input<string>, state?: OpenpipelineV2MetricsPipelinegroupsState, opts?: pulumi.CustomResourceOptions): pulumi.Output<boolean> {
+        return pulumi.runtime.existsResource("dynatrace:index/openpipelineV2MetricsPipelinegroups:OpenpipelineV2MetricsPipelinegroups", id, <any>state || {}, { ...opts }, undefined);
     }
 
     /** @internal */

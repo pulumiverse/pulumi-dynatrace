@@ -450,6 +450,28 @@ class GenericRelationships(pulumi.CustomResource):
         __props__.__dict__["type_of_relation"] = type_of_relation
         return GenericRelationships(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            created_by: pulumi.Input[Optional[_builtins.str]] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            from_role: pulumi.Input[Optional[_builtins.str]] = None,
+            from_type: pulumi.Input[Optional[_builtins.str]] = None,
+            sources: pulumi.Input[Optional[Union['GenericRelationshipsSourcesArgs', 'GenericRelationshipsSourcesArgsDict', 'outputs.GenericRelationshipsSources']]] = None,
+            to_role: pulumi.Input[Optional[_builtins.str]] = None,
+            to_type: pulumi.Input[Optional[_builtins.str]] = None,
+            type_of_relation: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["createdBy"] = created_by
+        __props__["enabled"] = enabled
+        __props__["fromRole"] = from_role
+        __props__["fromType"] = from_type
+        __props__["sources"] = sources
+        __props__["toRole"] = to_role
+        __props__["toType"] = to_type
+        __props__["typeOfRelation"] = type_of_relation
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/genericRelationships:GenericRelationships', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="createdBy")
     def created_by(self) -> pulumi.Output[_builtins.str]:

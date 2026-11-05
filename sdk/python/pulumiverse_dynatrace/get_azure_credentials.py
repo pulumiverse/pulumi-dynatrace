@@ -66,6 +66,14 @@ def get_azure_credentials(label: Optional[_builtins.str] = None,
     - `label` (String) - The label/name of the Azure credential
 
     ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_dynatrace as dynatrace
+
+    example = dynatrace.get_azure_credentials(name="Terraform Example")
+    pulumi.export("id", example.id)
+    ```
     """
     __args__ = dict()
     __args__['label'] = label
@@ -83,6 +91,14 @@ def get_azure_credentials_output(label: pulumi.Input[Optional[_builtins.str]] = 
     - `label` (String) - The label/name of the Azure credential
 
     ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_dynatrace as dynatrace
+
+    example = dynatrace.get_azure_credentials(name="Terraform Example")
+    pulumi.export("id", example.id)
+    ```
     """
     __args__ = dict()
     __args__['label'] = label

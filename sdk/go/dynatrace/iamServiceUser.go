@@ -118,6 +118,12 @@ func (IamServiceUserState) ElementType() reflect.Type {
 	return reflect.TypeOf((*iamServiceUserState)(nil)).Elem()
 }
 
+// IamServiceUserExists checks whether an existing IamServiceUser resource with the given ID exists.
+func IamServiceUserExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *IamServiceUserState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/iamServiceUser:IamServiceUser", id, state, "", opts...)
+}
+
 type iamServiceUserArgs struct {
 	// The description of the service user
 	Description *string `pulumi:"description"`

@@ -156,6 +156,12 @@ func (JenkinsConnectionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*jenkinsConnectionState)(nil)).Elem()
 }
 
+// JenkinsConnectionExists checks whether an existing JenkinsConnection resource with the given ID exists.
+func JenkinsConnectionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *JenkinsConnectionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/jenkinsConnection:JenkinsConnection", id, state, "", opts...)
+}
+
 type jenkinsConnectionArgs struct {
 	// The name of the Jenkins connection
 	Name *string `pulumi:"name"`

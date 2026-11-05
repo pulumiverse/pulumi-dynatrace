@@ -212,6 +212,16 @@ class DiscoveryDefaultRules(pulumi.CustomResource):
         __props__.__dict__["settings"] = settings
         return DiscoveryDefaultRules(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            rule: pulumi.Input[Optional[Union['DiscoveryDefaultRulesRuleArgs', 'DiscoveryDefaultRulesRuleArgsDict', 'outputs.DiscoveryDefaultRulesRule']]] = None,
+            settings: pulumi.Input[Optional[Union['DiscoveryDefaultRulesSettingsArgs', 'DiscoveryDefaultRulesSettingsArgsDict', 'outputs.DiscoveryDefaultRulesSettings']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["rule"] = rule
+        __props__["settings"] = settings
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/discoveryDefaultRules:DiscoveryDefaultRules', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def rule(self) -> pulumi.Output['outputs.DiscoveryDefaultRulesRule']:

@@ -135,6 +135,12 @@ func (GenericRelationshipsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*genericRelationshipsState)(nil)).Elem()
 }
 
+// GenericRelationshipsExists checks whether an existing GenericRelationships resource with the given ID exists.
+func GenericRelationshipsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *GenericRelationshipsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/genericRelationships:GenericRelationships", id, state, "", opts...)
+}
+
 type genericRelationshipsArgs struct {
 	// The user or extension that created this relationship.
 	CreatedBy string `pulumi:"createdBy"`

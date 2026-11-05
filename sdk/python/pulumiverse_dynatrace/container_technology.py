@@ -765,6 +765,30 @@ class ContainerTechnology(pulumi.CustomResource):
         __props__.__dict__["winc"] = winc
         return ContainerTechnology(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            bosh_process_manager: pulumi.Input[Optional[_builtins.bool]] = None,
+            containerd: pulumi.Input[Optional[_builtins.bool]] = None,
+            crio: pulumi.Input[Optional[_builtins.bool]] = None,
+            docker: pulumi.Input[Optional[_builtins.bool]] = None,
+            docker_windows: pulumi.Input[Optional[_builtins.bool]] = None,
+            garden: pulumi.Input[Optional[_builtins.bool]] = None,
+            podman: pulumi.Input[Optional[_builtins.bool]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None,
+            winc: pulumi.Input[Optional[_builtins.bool]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["boshProcessManager"] = bosh_process_manager
+        __props__["containerd"] = containerd
+        __props__["crio"] = crio
+        __props__["docker"] = docker
+        __props__["dockerWindows"] = docker_windows
+        __props__["garden"] = garden
+        __props__["podman"] = podman
+        __props__["scope"] = scope
+        __props__["winc"] = winc
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/containerTechnology:ContainerTechnology', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="boshProcessManager")
     def bosh_process_manager(self) -> pulumi.Output[_builtins.bool]:

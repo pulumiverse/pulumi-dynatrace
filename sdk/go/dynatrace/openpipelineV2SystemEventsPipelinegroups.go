@@ -199,7 +199,7 @@ import (
 //									pulumi.String("metricExtraction"),
 //								},
 //							},
-//							PipelineId: example1.ID().ToIDOutput().ToStringOutput(),
+//							PipelineId: example1.ID(),
 //						},
 //					},
 //				},
@@ -211,7 +211,7 @@ import (
 //					Type: pulumi.String("include"),
 //				},
 //				MemberPipelines: pulumi.StringArray{
-//					example2.ID().ToIDOutput().ToStringOutput(),
+//					example2.ID(),
 //				},
 //			})
 //			if err != nil {
@@ -294,6 +294,12 @@ type OpenpipelineV2SystemEventsPipelinegroupsState struct {
 
 func (OpenpipelineV2SystemEventsPipelinegroupsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*openpipelineV2SystemEventsPipelinegroupsState)(nil)).Elem()
+}
+
+// OpenpipelineV2SystemEventsPipelinegroupsExists checks whether an existing OpenpipelineV2SystemEventsPipelinegroups resource with the given ID exists.
+func OpenpipelineV2SystemEventsPipelinegroupsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *OpenpipelineV2SystemEventsPipelinegroupsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/openpipelineV2SystemEventsPipelinegroups:OpenpipelineV2SystemEventsPipelinegroups", id, state, "", opts...)
 }
 
 type openpipelineV2SystemEventsPipelinegroupsArgs struct {

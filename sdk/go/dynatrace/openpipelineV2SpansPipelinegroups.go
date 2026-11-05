@@ -82,8 +82,9 @@ import (
 //									Fields: &dynatrace.OpenpipelineV2SpansPipelinesProcessingProcessorsProcessorFieldsAddFieldsArgs{
 //										Fields: dynatrace.OpenpipelineV2SpansPipelinesProcessingProcessorsProcessorFieldsAddFieldsFieldArray{
 //											&dynatrace.OpenpipelineV2SpansPipelinesProcessingProcessorsProcessorFieldsAddFieldsFieldArgs{
-//												Name:  pulumi.String("is_warning"),
-//												Value: pulumi.String("true"),
+//												Name:      pulumi.String("is_warning"),
+//												Value:     pulumi.String("true"),
+//												ValueType: pulumi.String("boolean"),
 //											},
 //										},
 //									},
@@ -241,7 +242,7 @@ import (
 //									pulumi.String("metricExtraction"),
 //								},
 //							},
-//							PipelineId: example1.ID().ToIDOutput().ToStringOutput(),
+//							PipelineId: example1.ID(),
 //						},
 //					},
 //				},
@@ -253,7 +254,7 @@ import (
 //					Type: pulumi.String("include"),
 //				},
 //				MemberPipelines: pulumi.StringArray{
-//					example2.ID().ToIDOutput().ToStringOutput(),
+//					example2.ID(),
 //				},
 //			})
 //			if err != nil {
@@ -336,6 +337,12 @@ type OpenpipelineV2SpansPipelinegroupsState struct {
 
 func (OpenpipelineV2SpansPipelinegroupsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*openpipelineV2SpansPipelinegroupsState)(nil)).Elem()
+}
+
+// OpenpipelineV2SpansPipelinegroupsExists checks whether an existing OpenpipelineV2SpansPipelinegroups resource with the given ID exists.
+func OpenpipelineV2SpansPipelinegroupsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *OpenpipelineV2SpansPipelinegroupsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/openpipelineV2SpansPipelinegroups:OpenpipelineV2SpansPipelinegroups", id, state, "", opts...)
 }
 
 type openpipelineV2SpansPipelinegroupsArgs struct {

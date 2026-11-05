@@ -121,7 +121,7 @@ import (
 //				return err
 //			}
 //			_, err = dynatrace.NewAwsConnectionRoleArn(ctx, "test-aws-connection-arn", &dynatrace.AwsConnectionRoleArnArgs{
-//				AwsConnectionId: test_aws_connection.ID().ToIDOutput().ToStringOutput(),
+//				AwsConnectionId: test_aws_connection.ID(),
 //				RoleArn:         exampleRole.Arn,
 //			})
 //			if err != nil {
@@ -192,6 +192,12 @@ type AwsConnectionState struct {
 
 func (AwsConnectionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*awsConnectionState)(nil)).Elem()
+}
+
+// AwsConnectionExists checks whether an existing AwsConnection resource with the given ID exists.
+func AwsConnectionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AwsConnectionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/awsConnection:AwsConnection", id, state, "", opts...)
 }
 
 type awsConnectionArgs struct {

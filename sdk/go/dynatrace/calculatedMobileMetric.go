@@ -175,6 +175,12 @@ func (CalculatedMobileMetricState) ElementType() reflect.Type {
 	return reflect.TypeOf((*calculatedMobileMetricState)(nil)).Elem()
 }
 
+// CalculatedMobileMetricExists checks whether an existing CalculatedMobileMetric resource with the given ID exists.
+func CalculatedMobileMetricExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *CalculatedMobileMetricState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/calculatedMobileMetric:CalculatedMobileMetric", id, state, "", opts...)
+}
+
 type calculatedMobileMetricArgs struct {
 	// The Dynatrace entity ID of the application to which the metric belongs.
 	AppIdentifier string `pulumi:"appIdentifier"`

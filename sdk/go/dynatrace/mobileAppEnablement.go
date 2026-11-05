@@ -101,6 +101,12 @@ func (MobileAppEnablementState) ElementType() reflect.Type {
 	return reflect.TypeOf((*mobileAppEnablementState)(nil)).Elem()
 }
 
+// MobileAppEnablementExists checks whether an existing MobileAppEnablement resource with the given ID exists.
+func MobileAppEnablementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *MobileAppEnablementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/mobileAppEnablement:MobileAppEnablement", id, state, "", opts...)
+}
+
 type mobileAppEnablementArgs struct {
 	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
 	ApplicationId *string `pulumi:"applicationId"`

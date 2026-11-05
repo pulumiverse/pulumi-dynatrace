@@ -108,6 +108,12 @@ func (BusinessEventsCapturingVariantsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*businessEventsCapturingVariantsState)(nil)).Elem()
 }
 
+// BusinessEventsCapturingVariantsExists checks whether an existing BusinessEventsCapturingVariants resource with the given ID exists.
+func BusinessEventsCapturingVariantsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *BusinessEventsCapturingVariantsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/businessEventsCapturingVariants:BusinessEventsCapturingVariants", id, state, "", opts...)
+}
+
 type businessEventsCapturingVariantsArgs struct {
 	// Possible Values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
 	ContentTypeMatcher string `pulumi:"contentTypeMatcher"`

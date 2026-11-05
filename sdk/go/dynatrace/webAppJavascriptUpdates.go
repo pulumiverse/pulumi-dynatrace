@@ -84,6 +84,12 @@ func (WebAppJavascriptUpdatesState) ElementType() reflect.Type {
 	return reflect.TypeOf((*webAppJavascriptUpdatesState)(nil)).Elem()
 }
 
+// WebAppJavascriptUpdatesExists checks whether an existing WebAppJavascriptUpdates resource with the given ID exists.
+func WebAppJavascriptUpdatesExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *WebAppJavascriptUpdatesState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/webAppJavascriptUpdates:WebAppJavascriptUpdates", id, state, "", opts...)
+}
+
 type webAppJavascriptUpdatesArgs struct {
 	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
 	ApplicationId *string `pulumi:"applicationId"`

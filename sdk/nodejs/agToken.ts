@@ -10,7 +10,7 @@ import * as utilities from "./utilities";
  * > The token value can be retrieved with `dynatrace_ag_token.<#name#>.token` after apply.
  *
  * > This resource requires the API token scopes **Create ActiveGate tokens** (`activeGateTokenManagement.create`), **Read ActiveGate tokens** (`activeGateTokenManagement.read`) and **Write ActiveGate tokens** (`activeGateTokenManagement.write`)
- * or the OAuth scopes `fleet-management:activegate.tokens:create`, `fleet-management:activegate.tokens:read`, `fleet-management:activegate.tokens:write` and `fleet-management:oneagent.connection-info:read` (`environment-api:activegate-tokens:create`, `environment-api:activegate-tokens:read`, `environment-api:activegate-tokens:write`, `environment-api:deployment:download`)
+ * or the OAuth scopes `fleet-management:activegate.tokens:create`, `fleet-management:activegate.tokens:read`, `fleet-management:activegate.tokens:write` and `fleet-management:oneagent.connection-info:read`
  *
  * ## Dynatrace Documentation
  *
@@ -30,6 +30,17 @@ export class AgToken extends pulumi.CustomResource {
      */
     public static get(name: string, id: pulumi.Input<pulumi.ID>, state?: AgTokenState, opts?: pulumi.CustomResourceOptions): AgToken {
         return new AgToken(name, <any>state, { ...opts, id: id });
+    }
+
+    /**
+     * Check whether an existing AgToken resource with the given ID exists.
+     *
+     * @param id The _unique_ provider ID of the resource to check.
+     * @param state Any extra arguments used during the lookup.
+     * @param opts Optional settings to control the behavior of the CustomResource.
+     */
+    public static exists(id: pulumi.Input<string>, state?: AgTokenState, opts?: pulumi.CustomResourceOptions): pulumi.Output<boolean> {
+        return pulumi.runtime.existsResource("dynatrace:index/agToken:AgToken", id, <any>state || {}, { ...opts }, undefined);
     }
 
     /** @internal */

@@ -141,6 +141,12 @@ func (ManagedNetworkZonesState) ElementType() reflect.Type {
 	return reflect.TypeOf((*managedNetworkZonesState)(nil)).Elem()
 }
 
+// ManagedNetworkZonesExists checks whether an existing ManagedNetworkZones resource with the given ID exists.
+func ManagedNetworkZonesExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ManagedNetworkZonesState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/managedNetworkZones:ManagedNetworkZones", id, state, "", opts...)
+}
+
 type managedNetworkZonesArgs struct {
 	// A list of alternative network zones.
 	AlternativeZones []string `pulumi:"alternativeZones"`

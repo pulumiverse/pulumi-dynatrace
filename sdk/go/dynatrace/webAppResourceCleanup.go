@@ -99,6 +99,12 @@ func (WebAppResourceCleanupState) ElementType() reflect.Type {
 	return reflect.TypeOf((*webAppResourceCleanupState)(nil)).Elem()
 }
 
+// WebAppResourceCleanupExists checks whether an existing WebAppResourceCleanup resource with the given ID exists.
+func WebAppResourceCleanupExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *WebAppResourceCleanupState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/webAppResourceCleanup:WebAppResourceCleanup", id, state, "", opts...)
+}
+
 type webAppResourceCleanupArgs struct {
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter *string `pulumi:"insertAfter"`

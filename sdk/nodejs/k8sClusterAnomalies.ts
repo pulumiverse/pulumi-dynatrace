@@ -35,6 +35,17 @@ export class K8sClusterAnomalies extends pulumi.CustomResource {
         return new K8sClusterAnomalies(name, <any>state, { ...opts, id: id });
     }
 
+    /**
+     * Check whether an existing K8sClusterAnomalies resource with the given ID exists.
+     *
+     * @param id The _unique_ provider ID of the resource to check.
+     * @param state Any extra arguments used during the lookup.
+     * @param opts Optional settings to control the behavior of the CustomResource.
+     */
+    public static exists(id: pulumi.Input<string>, state?: K8sClusterAnomaliesState, opts?: pulumi.CustomResourceOptions): pulumi.Output<boolean> {
+        return pulumi.runtime.existsResource("dynatrace:index/k8sClusterAnomalies:K8sClusterAnomalies", id, <any>state || {}, { ...opts }, undefined);
+    }
+
     /** @internal */
     public static readonly __pulumiType = 'dynatrace:index/k8sClusterAnomalies:K8sClusterAnomalies';
 

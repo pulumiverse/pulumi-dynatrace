@@ -247,6 +247,16 @@ class CustomAppCrashRate(pulumi.CustomResource):
         __props__.__dict__["scope"] = scope
         return CustomAppCrashRate(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            crash_rate_increase: pulumi.Input[Optional[Union['CustomAppCrashRateCrashRateIncreaseArgs', 'CustomAppCrashRateCrashRateIncreaseArgsDict', 'outputs.CustomAppCrashRateCrashRateIncrease']]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["crashRateIncrease"] = crash_rate_increase
+        __props__["scope"] = scope
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/customAppCrashRate:CustomAppCrashRate', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="crashRateIncrease")
     def crash_rate_increase(self) -> pulumi.Output['outputs.CustomAppCrashRateCrashRateIncrease']:

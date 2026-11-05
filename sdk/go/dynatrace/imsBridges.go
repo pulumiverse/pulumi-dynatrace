@@ -80,6 +80,12 @@ func (ImsBridgesState) ElementType() reflect.Type {
 	return reflect.TypeOf((*imsBridgesState)(nil)).Elem()
 }
 
+// ImsBridgesExists checks whether an existing ImsBridges resource with the given ID exists.
+func ImsBridgesExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ImsBridgesState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/imsBridges:ImsBridges", id, state, "", opts...)
+}
+
 type imsBridgesArgs struct {
 	// The name of the IMS bridge
 	Name *string `pulumi:"name"`

@@ -130,6 +130,12 @@ func (HostProcessGroupMonitoringState) ElementType() reflect.Type {
 	return reflect.TypeOf((*hostProcessGroupMonitoringState)(nil)).Elem()
 }
 
+// HostProcessGroupMonitoringExists checks whether an existing HostProcessGroupMonitoring resource with the given ID exists.
+func HostProcessGroupMonitoringExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *HostProcessGroupMonitoringState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/hostProcessGroupMonitoring:HostProcessGroupMonitoring", id, state, "", opts...)
+}
+
 type hostProcessGroupMonitoringArgs struct {
 	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
 	HostId string `pulumi:"hostId"`

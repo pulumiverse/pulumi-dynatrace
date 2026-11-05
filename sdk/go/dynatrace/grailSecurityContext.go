@@ -93,6 +93,12 @@ func (GrailSecurityContextState) ElementType() reflect.Type {
 	return reflect.TypeOf((*grailSecurityContextState)(nil)).Elem()
 }
 
+// GrailSecurityContextExists checks whether an existing GrailSecurityContext resource with the given ID exists.
+func GrailSecurityContextExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *GrailSecurityContextState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/grailSecurityContext:GrailSecurityContext", id, state, "", opts...)
+}
+
 type grailSecurityContextArgs struct {
 	// The case-sensitive name of a property of the destination type.
 	DestinationProperty string `pulumi:"destinationProperty"`

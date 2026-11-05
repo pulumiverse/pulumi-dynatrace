@@ -78,6 +78,12 @@ func (GrailMetricsAllowallState) ElementType() reflect.Type {
 	return reflect.TypeOf((*grailMetricsAllowallState)(nil)).Elem()
 }
 
+// GrailMetricsAllowallExists checks whether an existing GrailMetricsAllowall resource with the given ID exists.
+func GrailMetricsAllowallExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *GrailMetricsAllowallState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/grailMetricsAllowall:GrailMetricsAllowall", id, state, "", opts...)
+}
+
 type grailMetricsAllowallArgs struct {
 	// When enabled every custom metric will be ingested to Grail. Warning: this setting can cause [unexpected billing!](https://docs.dynatrace.com/docs/dynatrace-api/environment-api/metric-v2/best-practices#avoid-high-cardinality-limits)
 	AllowAll bool `pulumi:"allowAll"`

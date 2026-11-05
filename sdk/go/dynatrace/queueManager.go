@@ -98,6 +98,12 @@ func (QueueManagerState) ElementType() reflect.Type {
 	return reflect.TypeOf((*queueManagerState)(nil)).Elem()
 }
 
+// QueueManagerExists checks whether an existing QueueManager resource with the given ID exists.
+func QueueManagerExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *QueueManagerState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/queueManager:QueueManager", id, state, "", opts...)
+}
+
 type queueManagerArgs struct {
 	// The alias queues in the queue manager
 	AliasQueues []QueueManagerAliasQueue `pulumi:"aliasQueues"`

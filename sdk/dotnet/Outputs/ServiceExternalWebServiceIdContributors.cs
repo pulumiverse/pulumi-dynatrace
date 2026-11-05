@@ -16,6 +16,8 @@ namespace Pulumiverse.Dynatrace.Outputs
     {
         /// <summary>
         /// Detect the matching requests as web request services instead of web services.
+        /// 
+        ///   This prevents detecting of matching requests as opaque web services. An opaque web request service is created instead. If you need to further modify the resulting web request service, you need to create a separate Opaque/external web request rule.
         /// </summary>
         public readonly bool DetectAsWebRequestService;
         /// <summary>

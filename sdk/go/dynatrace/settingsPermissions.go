@@ -74,7 +74,7 @@ import (
 //			userIamUser, err := dynatrace.NewIamUser(ctx, "user", &dynatrace.IamUserArgs{
 //				Email: pulumi.String("#name#@example.com"),
 //				Groups: pulumi.StringArray{
-//					group.ID().ToIDOutput().ToStringOutput(),
+//					group.ID(),
 //				},
 //			})
 //			if err != nil {
@@ -82,7 +82,7 @@ import (
 //			}
 //			// because the UID is not returned for the resource, we need data
 //			user := dynatrace.GetIamUserOutput(ctx, dynatrace.GetIamUserOutputArgs{
-//				Email: userIamUser.ID().ToIDOutput().ToStringOutput(),
+//				Email: userIamUser.ID(),
 //			}, nil)
 //			connection, err := dynatrace.NewGithubConnection(ctx, "connection", &dynatrace.GithubConnectionArgs{
 //				Name:  pulumi.String("#name#"),
@@ -93,7 +93,7 @@ import (
 //				return err
 //			}
 //			_, err = dynatrace.NewSettingsPermissions(ctx, "permission", &dynatrace.SettingsPermissionsArgs{
-//				SettingsObjectId: connection.ID().ToIDOutput().ToStringOutput(),
+//				SettingsObjectId: connection.ID(),
 //				AllUsers:         pulumi.String("none"),
 //				Users: &dynatrace.SettingsPermissionsUsersArgs{
 //					Users: dynatrace.SettingsPermissionsUsersUserArray{
@@ -106,7 +106,7 @@ import (
 //				Groups: &dynatrace.SettingsPermissionsGroupsArgs{
 //					Groups: dynatrace.SettingsPermissionsGroupsGroupArray{
 //						&dynatrace.SettingsPermissionsGroupsGroupArgs{
-//							Id:     group.ID().ToIDOutput().ToStringOutput(),
+//							Id:     group.ID(),
 //							Access: pulumi.String("read"),
 //						},
 //					},
@@ -183,6 +183,12 @@ type SettingsPermissionsState struct {
 
 func (SettingsPermissionsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*settingsPermissionsState)(nil)).Elem()
+}
+
+// SettingsPermissionsExists checks whether an existing SettingsPermissions resource with the given ID exists.
+func SettingsPermissionsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SettingsPermissionsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/settingsPermissions:SettingsPermissions", id, state, "", opts...)
 }
 
 type settingsPermissionsArgs struct {

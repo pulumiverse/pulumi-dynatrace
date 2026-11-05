@@ -75,7 +75,7 @@ import (
 //				return err
 //			}
 //			_, err = dynatrace.NewSyntheticPrimaryGrailTags(ctx, "example", &dynatrace.SyntheticPrimaryGrailTagsArgs{
-//				Scope: monitor.ID().ToIDOutput().ToStringOutput(),
+//				Scope: monitor.ID(),
 //				Tags: &dynatrace.SyntheticPrimaryGrailTagsTagsArgs{
 //					Tags: dynatrace.SyntheticPrimaryGrailTagsTagsTagArray{
 //						&dynatrace.SyntheticPrimaryGrailTagsTagsTagArgs{
@@ -154,6 +154,12 @@ type SyntheticPrimaryGrailTagsState struct {
 
 func (SyntheticPrimaryGrailTagsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*syntheticPrimaryGrailTagsState)(nil)).Elem()
+}
+
+// SyntheticPrimaryGrailTagsExists checks whether an existing SyntheticPrimaryGrailTags resource with the given ID exists.
+func SyntheticPrimaryGrailTagsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SyntheticPrimaryGrailTagsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/syntheticPrimaryGrailTags:SyntheticPrimaryGrailTags", id, state, "", opts...)
 }
 
 type syntheticPrimaryGrailTagsArgs struct {

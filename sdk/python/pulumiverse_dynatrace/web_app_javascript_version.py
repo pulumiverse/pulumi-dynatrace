@@ -169,6 +169,14 @@ class WebAppJavascriptVersion(pulumi.CustomResource):
         __props__.__dict__["custom_javascript_version"] = custom_javascript_version
         return WebAppJavascriptVersion(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            custom_javascript_version: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["customJavascriptVersion"] = custom_javascript_version
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/webAppJavascriptVersion:WebAppJavascriptVersion', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="customJavascriptVersion")
     def custom_javascript_version(self) -> pulumi.Output[Optional[_builtins.str]]:

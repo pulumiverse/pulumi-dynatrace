@@ -304,6 +304,20 @@ class HostMonitoring(pulumi.CustomResource):
         __props__.__dict__["host_id"] = host_id
         return HostMonitoring(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            auto_injection: pulumi.Input[Optional[_builtins.bool]] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            full_stack: pulumi.Input[Optional[_builtins.bool]] = None,
+            host_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["autoInjection"] = auto_injection
+        __props__["enabled"] = enabled
+        __props__["fullStack"] = full_stack
+        __props__["hostId"] = host_id
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/hostMonitoring:HostMonitoring', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="autoInjection")
     @_utilities.deprecated("""This field has been moved to a new schema, please utilize the resource `HostMonitoringAdvanced` to configure this field.""")

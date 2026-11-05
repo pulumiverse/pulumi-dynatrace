@@ -84,6 +84,12 @@ func (UnifiedServicesMetricsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*unifiedServicesMetricsState)(nil)).Elem()
 }
 
+// UnifiedServicesMetricsExists checks whether an existing UnifiedServicesMetrics resource with the given ID exists.
+func UnifiedServicesMetricsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *UnifiedServicesMetricsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/unifiedServicesMetrics:UnifiedServicesMetrics", id, state, "", opts...)
+}
+
 type unifiedServicesMetricsArgs struct {
 	// Should metrics be written for endpoints? Please be aware that this setting has billing implications. Check out this [documentation](https://dt-url.net/td23cgh) for further details.
 	EnableEndpointMetrics bool `pulumi:"enableEndpointMetrics"`

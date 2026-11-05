@@ -216,6 +216,16 @@ class TokenSettings(pulumi.CustomResource):
         __props__.__dict__["personal_tokens"] = personal_tokens
         return TokenSettings(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            new_token_format: pulumi.Input[Optional[_builtins.bool]] = None,
+            personal_tokens: pulumi.Input[Optional[_builtins.bool]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["newTokenFormat"] = new_token_format
+        __props__["personalTokens"] = personal_tokens
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/tokenSettings:TokenSettings', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="newTokenFormat")
     def new_token_format(self) -> pulumi.Output[_builtins.bool]:

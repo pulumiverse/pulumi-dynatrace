@@ -123,6 +123,12 @@ func (DiskSpecificAnomaliesV2State) ElementType() reflect.Type {
 	return reflect.TypeOf((*diskSpecificAnomaliesV2State)(nil)).Elem()
 }
 
+// DiskSpecificAnomaliesV2Exists checks whether an existing DiskSpecificAnomaliesV2 resource with the given ID exists.
+func DiskSpecificAnomaliesV2Exists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DiskSpecificAnomaliesV2State, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/diskSpecificAnomaliesV2:DiskSpecificAnomaliesV2", id, state, "", opts...)
+}
+
 type diskSpecificAnomaliesV2Args struct {
 	// The id for the disk anomaly detection
 	DiskId string `pulumi:"diskId"`

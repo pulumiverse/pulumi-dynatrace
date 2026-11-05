@@ -224,6 +224,12 @@ func (WebApplicationState) ElementType() reflect.Type {
 	return reflect.TypeOf((*webApplicationState)(nil)).Elem()
 }
 
+// WebApplicationExists checks whether an existing WebApplication resource with the given ID exists.
+func WebApplicationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *WebApplicationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/webApplication:WebApplication", id, state, "", opts...)
+}
+
 type webApplicationArgs struct {
 	// A list of conversion goals of the application
 	ConversionGoals *WebApplicationConversionGoals `pulumi:"conversionGoals"`

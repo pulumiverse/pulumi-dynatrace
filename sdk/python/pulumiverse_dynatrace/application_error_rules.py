@@ -378,6 +378,24 @@ class ApplicationErrorRules(pulumi.CustomResource):
         __props__.__dict__["web_application_id"] = web_application_id
         return ApplicationErrorRules(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            custom_errors: pulumi.Input[Optional[Union['ApplicationErrorRulesCustomErrorsArgs', 'ApplicationErrorRulesCustomErrorsArgsDict', 'outputs.ApplicationErrorRulesCustomErrors']]] = None,
+            http_errors: pulumi.Input[Optional[Union['ApplicationErrorRulesHttpErrorsArgs', 'ApplicationErrorRulesHttpErrorsArgsDict', 'outputs.ApplicationErrorRulesHttpErrors']]] = None,
+            ignore_custom_errors_apdex: pulumi.Input[Optional[_builtins.bool]] = None,
+            ignore_http_errors_apdex: pulumi.Input[Optional[_builtins.bool]] = None,
+            ignore_js_errors_apdex: pulumi.Input[Optional[_builtins.bool]] = None,
+            web_application_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["customErrors"] = custom_errors
+        __props__["httpErrors"] = http_errors
+        __props__["ignoreCustomErrorsApdex"] = ignore_custom_errors_apdex
+        __props__["ignoreHttpErrorsApdex"] = ignore_http_errors_apdex
+        __props__["ignoreJsErrorsApdex"] = ignore_js_errors_apdex
+        __props__["webApplicationId"] = web_application_id
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/applicationErrorRules:ApplicationErrorRules', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="customErrors")
     def custom_errors(self) -> pulumi.Output[Optional['outputs.ApplicationErrorRulesCustomErrors']]:

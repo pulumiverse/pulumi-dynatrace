@@ -123,6 +123,12 @@ func (DevobsGitOnpremState) ElementType() reflect.Type {
 	return reflect.TypeOf((*devobsGitOnpremState)(nil)).Elem()
 }
 
+// DevobsGitOnpremExists checks whether an existing DevobsGitOnprem resource with the given ID exists.
+func DevobsGitOnpremExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DevobsGitOnpremState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/devobsGitOnprem:DevobsGitOnprem", id, state, "", opts...)
+}
+
 type devobsGitOnpremArgs struct {
 	// The git service provider for this server. Possible values: `AzureOnPrem`, `BitbucketOnPrem`, `GithubOnPrem`, `GitlabOnPrem`
 	GitProvider string `pulumi:"gitProvider"`

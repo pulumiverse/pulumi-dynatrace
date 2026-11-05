@@ -19,9 +19,9 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly bool? ImpactRelevant;
         /// <summary>
-        /// The latency of the metric, in minutes. 
+        /// The latency of the metric, in minutes.
         /// 
-        ///  The latency is the expected reporting delay (for example, caused by constraints of cloud vendors or other third-party data sources) between the observation of a metric data point and its availability in Dynatrace. 
+        ///  The latency is the expected reporting delay (for example, caused by constraints of cloud vendors or other third-party data sources) between the observation of a metric data point and its availability in Dynatrace.
         /// 
         /// The allowed value range is from 1 to 60 minutes.
         /// </summary>

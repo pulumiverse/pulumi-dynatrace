@@ -96,6 +96,12 @@ func (MonitoredTechnologiesPhpState) ElementType() reflect.Type {
 	return reflect.TypeOf((*monitoredTechnologiesPhpState)(nil)).Elem()
 }
 
+// MonitoredTechnologiesPhpExists checks whether an existing MonitoredTechnologiesPhp resource with the given ID exists.
+func MonitoredTechnologiesPhpExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *MonitoredTechnologiesPhpState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/monitoredTechnologiesPhp:MonitoredTechnologiesPhp", id, state, "", opts...)
+}
+
 type monitoredTechnologiesPhpArgs struct {
 	// Requires enabled PHP monitoring and Dynatrace OneAgent version 1.261 or later
 	EnablePhpCliServer *bool `pulumi:"enablePhpCliServer"`
