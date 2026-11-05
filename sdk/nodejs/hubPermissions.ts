@@ -20,6 +20,18 @@ import * as utilities from "./utilities";
  * - `terraform-provider-dynatrace -export dynatrace.HubPermissions` downloads all existing hub permissions
  *
  * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ *
+ * ## Resource Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ *
+ * const permission = new dynatrace.HubPermissions("permission", {
+ *     email: "#name#@dynatrace.com",
+ *     description: "This is an example description",
+ * });
+ * ```
  */
 export class HubPermissions extends pulumi.CustomResource {
     /**

@@ -32,6 +32,7 @@ class OpenpipelineV2SpansPipelinesArgs:
                  processing: pulumi.Input[Optional['OpenpipelineV2SpansPipelinesProcessingArgs']] = None,
                  product_allocation: pulumi.Input[Optional['OpenpipelineV2SpansPipelinesProductAllocationArgs']] = None,
                  routing: pulumi.Input[Optional[_builtins.str]] = None,
+                 security: pulumi.Input[Optional['OpenpipelineV2SpansPipelinesSecurityArgs']] = None,
                  security_context: pulumi.Input[Optional['OpenpipelineV2SpansPipelinesSecurityContextArgs']] = None,
                  smartscape_edge_extraction: pulumi.Input[Optional['OpenpipelineV2SpansPipelinesSmartscapeEdgeExtractionArgs']] = None,
                  smartscape_node_extraction: pulumi.Input[Optional['OpenpipelineV2SpansPipelinesSmartscapeNodeExtractionArgs']] = None,
@@ -50,6 +51,7 @@ class OpenpipelineV2SpansPipelinesArgs:
         :param pulumi.Input['OpenpipelineV2SpansPipelinesProcessingArgs'] processing: Processing stage
         :param pulumi.Input['OpenpipelineV2SpansPipelinesProductAllocationArgs'] product_allocation: Product allocation stage
         :param pulumi.Input[_builtins.str] routing: Routing. Possible values: `notRoutable`, `routable`
+        :param pulumi.Input['OpenpipelineV2SpansPipelinesSecurityArgs'] security: Security stage
         :param pulumi.Input['OpenpipelineV2SpansPipelinesSecurityContextArgs'] security_context: Security context stage
         :param pulumi.Input['OpenpipelineV2SpansPipelinesSmartscapeEdgeExtractionArgs'] smartscape_edge_extraction: Smartscape edge extraction stage
         :param pulumi.Input['OpenpipelineV2SpansPipelinesSmartscapeNodeExtractionArgs'] smartscape_node_extraction: Smartscape node extraction stage
@@ -75,6 +77,8 @@ class OpenpipelineV2SpansPipelinesArgs:
             pulumi.set(__self__, "product_allocation", product_allocation)
         if routing is not None:
             pulumi.set(__self__, "routing", routing)
+        if security is not None:
+            pulumi.set(__self__, "security", security)
         if security_context is not None:
             pulumi.set(__self__, "security_context", security_context)
         if smartscape_edge_extraction is not None:
@@ -217,6 +221,18 @@ class OpenpipelineV2SpansPipelinesArgs:
         pulumi.set(self, "routing", value)
 
     @_builtins.property
+    @pulumi.getter
+    def security(self) -> pulumi.Input[Optional['OpenpipelineV2SpansPipelinesSecurityArgs']]:
+        """
+        Security stage
+        """
+        return pulumi.get(self, "security")
+
+    @security.setter
+    def security(self, value: pulumi.Input[Optional['OpenpipelineV2SpansPipelinesSecurityArgs']]):
+        pulumi.set(self, "security", value)
+
+    @_builtins.property
     @pulumi.getter(name="securityContext")
     def security_context(self) -> pulumi.Input[Optional['OpenpipelineV2SpansPipelinesSecurityContextArgs']]:
         """
@@ -279,6 +295,7 @@ class _OpenpipelineV2SpansPipelinesState:
                  processing: pulumi.Input[Optional['OpenpipelineV2SpansPipelinesProcessingArgs']] = None,
                  product_allocation: pulumi.Input[Optional['OpenpipelineV2SpansPipelinesProductAllocationArgs']] = None,
                  routing: pulumi.Input[Optional[_builtins.str]] = None,
+                 security: pulumi.Input[Optional['OpenpipelineV2SpansPipelinesSecurityArgs']] = None,
                  security_context: pulumi.Input[Optional['OpenpipelineV2SpansPipelinesSecurityContextArgs']] = None,
                  smartscape_edge_extraction: pulumi.Input[Optional['OpenpipelineV2SpansPipelinesSmartscapeEdgeExtractionArgs']] = None,
                  smartscape_node_extraction: pulumi.Input[Optional['OpenpipelineV2SpansPipelinesSmartscapeNodeExtractionArgs']] = None,
@@ -297,6 +314,7 @@ class _OpenpipelineV2SpansPipelinesState:
         :param pulumi.Input['OpenpipelineV2SpansPipelinesProcessingArgs'] processing: Processing stage
         :param pulumi.Input['OpenpipelineV2SpansPipelinesProductAllocationArgs'] product_allocation: Product allocation stage
         :param pulumi.Input[_builtins.str] routing: Routing. Possible values: `notRoutable`, `routable`
+        :param pulumi.Input['OpenpipelineV2SpansPipelinesSecurityArgs'] security: Security stage
         :param pulumi.Input['OpenpipelineV2SpansPipelinesSecurityContextArgs'] security_context: Security context stage
         :param pulumi.Input['OpenpipelineV2SpansPipelinesSmartscapeEdgeExtractionArgs'] smartscape_edge_extraction: Smartscape edge extraction stage
         :param pulumi.Input['OpenpipelineV2SpansPipelinesSmartscapeNodeExtractionArgs'] smartscape_node_extraction: Smartscape node extraction stage
@@ -324,6 +342,8 @@ class _OpenpipelineV2SpansPipelinesState:
             pulumi.set(__self__, "product_allocation", product_allocation)
         if routing is not None:
             pulumi.set(__self__, "routing", routing)
+        if security is not None:
+            pulumi.set(__self__, "security", security)
         if security_context is not None:
             pulumi.set(__self__, "security_context", security_context)
         if smartscape_edge_extraction is not None:
@@ -466,6 +486,18 @@ class _OpenpipelineV2SpansPipelinesState:
         pulumi.set(self, "routing", value)
 
     @_builtins.property
+    @pulumi.getter
+    def security(self) -> pulumi.Input[Optional['OpenpipelineV2SpansPipelinesSecurityArgs']]:
+        """
+        Security stage
+        """
+        return pulumi.get(self, "security")
+
+    @security.setter
+    def security(self, value: pulumi.Input[Optional['OpenpipelineV2SpansPipelinesSecurityArgs']]):
+        pulumi.set(self, "security", value)
+
+    @_builtins.property
     @pulumi.getter(name="securityContext")
     def security_context(self) -> pulumi.Input[Optional['OpenpipelineV2SpansPipelinesSecurityContextArgs']]:
         """
@@ -531,6 +563,7 @@ class OpenpipelineV2SpansPipelines(pulumi.CustomResource):
                  processing: pulumi.Input[Optional[Union['OpenpipelineV2SpansPipelinesProcessingArgs', 'OpenpipelineV2SpansPipelinesProcessingArgsDict', 'outputs.OpenpipelineV2SpansPipelinesProcessing']]] = None,
                  product_allocation: pulumi.Input[Optional[Union['OpenpipelineV2SpansPipelinesProductAllocationArgs', 'OpenpipelineV2SpansPipelinesProductAllocationArgsDict', 'outputs.OpenpipelineV2SpansPipelinesProductAllocation']]] = None,
                  routing: pulumi.Input[Optional[_builtins.str]] = None,
+                 security: pulumi.Input[Optional[Union['OpenpipelineV2SpansPipelinesSecurityArgs', 'OpenpipelineV2SpansPipelinesSecurityArgsDict', 'outputs.OpenpipelineV2SpansPipelinesSecurity']]] = None,
                  security_context: pulumi.Input[Optional[Union['OpenpipelineV2SpansPipelinesSecurityContextArgs', 'OpenpipelineV2SpansPipelinesSecurityContextArgsDict', 'outputs.OpenpipelineV2SpansPipelinesSecurityContext']]] = None,
                  smartscape_edge_extraction: pulumi.Input[Optional[Union['OpenpipelineV2SpansPipelinesSmartscapeEdgeExtractionArgs', 'OpenpipelineV2SpansPipelinesSmartscapeEdgeExtractionArgsDict', 'outputs.OpenpipelineV2SpansPipelinesSmartscapeEdgeExtraction']]] = None,
                  smartscape_node_extraction: pulumi.Input[Optional[Union['OpenpipelineV2SpansPipelinesSmartscapeNodeExtractionArgs', 'OpenpipelineV2SpansPipelinesSmartscapeNodeExtractionArgsDict', 'outputs.OpenpipelineV2SpansPipelinesSmartscapeNodeExtraction']]] = None,
@@ -605,6 +638,7 @@ class OpenpipelineV2SpansPipelines(pulumi.CustomResource):
                                     "fields": [{
                                         "name": "is_warning",
                                         "value": "true",
+                                        "value_type": "boolean",
                                     }],
                                 },
                             },
@@ -833,6 +867,7 @@ class OpenpipelineV2SpansPipelines(pulumi.CustomResource):
         :param pulumi.Input[Union['OpenpipelineV2SpansPipelinesProcessingArgs', 'OpenpipelineV2SpansPipelinesProcessingArgsDict', 'outputs.OpenpipelineV2SpansPipelinesProcessing']] processing: Processing stage
         :param pulumi.Input[Union['OpenpipelineV2SpansPipelinesProductAllocationArgs', 'OpenpipelineV2SpansPipelinesProductAllocationArgsDict', 'outputs.OpenpipelineV2SpansPipelinesProductAllocation']] product_allocation: Product allocation stage
         :param pulumi.Input[_builtins.str] routing: Routing. Possible values: `notRoutable`, `routable`
+        :param pulumi.Input[Union['OpenpipelineV2SpansPipelinesSecurityArgs', 'OpenpipelineV2SpansPipelinesSecurityArgsDict', 'outputs.OpenpipelineV2SpansPipelinesSecurity']] security: Security stage
         :param pulumi.Input[Union['OpenpipelineV2SpansPipelinesSecurityContextArgs', 'OpenpipelineV2SpansPipelinesSecurityContextArgsDict', 'outputs.OpenpipelineV2SpansPipelinesSecurityContext']] security_context: Security context stage
         :param pulumi.Input[Union['OpenpipelineV2SpansPipelinesSmartscapeEdgeExtractionArgs', 'OpenpipelineV2SpansPipelinesSmartscapeEdgeExtractionArgsDict', 'outputs.OpenpipelineV2SpansPipelinesSmartscapeEdgeExtraction']] smartscape_edge_extraction: Smartscape edge extraction stage
         :param pulumi.Input[Union['OpenpipelineV2SpansPipelinesSmartscapeNodeExtractionArgs', 'OpenpipelineV2SpansPipelinesSmartscapeNodeExtractionArgsDict', 'outputs.OpenpipelineV2SpansPipelinesSmartscapeNodeExtraction']] smartscape_node_extraction: Smartscape node extraction stage
@@ -913,6 +948,7 @@ class OpenpipelineV2SpansPipelines(pulumi.CustomResource):
                                     "fields": [{
                                         "name": "is_warning",
                                         "value": "true",
+                                        "value_type": "boolean",
                                     }],
                                 },
                             },
@@ -1154,6 +1190,7 @@ class OpenpipelineV2SpansPipelines(pulumi.CustomResource):
                  processing: pulumi.Input[Optional[Union['OpenpipelineV2SpansPipelinesProcessingArgs', 'OpenpipelineV2SpansPipelinesProcessingArgsDict', 'outputs.OpenpipelineV2SpansPipelinesProcessing']]] = None,
                  product_allocation: pulumi.Input[Optional[Union['OpenpipelineV2SpansPipelinesProductAllocationArgs', 'OpenpipelineV2SpansPipelinesProductAllocationArgsDict', 'outputs.OpenpipelineV2SpansPipelinesProductAllocation']]] = None,
                  routing: pulumi.Input[Optional[_builtins.str]] = None,
+                 security: pulumi.Input[Optional[Union['OpenpipelineV2SpansPipelinesSecurityArgs', 'OpenpipelineV2SpansPipelinesSecurityArgsDict', 'outputs.OpenpipelineV2SpansPipelinesSecurity']]] = None,
                  security_context: pulumi.Input[Optional[Union['OpenpipelineV2SpansPipelinesSecurityContextArgs', 'OpenpipelineV2SpansPipelinesSecurityContextArgsDict', 'outputs.OpenpipelineV2SpansPipelinesSecurityContext']]] = None,
                  smartscape_edge_extraction: pulumi.Input[Optional[Union['OpenpipelineV2SpansPipelinesSmartscapeEdgeExtractionArgs', 'OpenpipelineV2SpansPipelinesSmartscapeEdgeExtractionArgsDict', 'outputs.OpenpipelineV2SpansPipelinesSmartscapeEdgeExtraction']]] = None,
                  smartscape_node_extraction: pulumi.Input[Optional[Union['OpenpipelineV2SpansPipelinesSmartscapeNodeExtractionArgs', 'OpenpipelineV2SpansPipelinesSmartscapeNodeExtractionArgsDict', 'outputs.OpenpipelineV2SpansPipelinesSmartscapeNodeExtraction']]] = None,
@@ -1182,6 +1219,7 @@ class OpenpipelineV2SpansPipelines(pulumi.CustomResource):
             __props__.__dict__["processing"] = processing
             __props__.__dict__["product_allocation"] = product_allocation
             __props__.__dict__["routing"] = routing
+            __props__.__dict__["security"] = security
             __props__.__dict__["security_context"] = security_context
             __props__.__dict__["smartscape_edge_extraction"] = smartscape_edge_extraction
             __props__.__dict__["smartscape_node_extraction"] = smartscape_node_extraction
@@ -1207,6 +1245,7 @@ class OpenpipelineV2SpansPipelines(pulumi.CustomResource):
             processing: pulumi.Input[Optional[Union['OpenpipelineV2SpansPipelinesProcessingArgs', 'OpenpipelineV2SpansPipelinesProcessingArgsDict', 'outputs.OpenpipelineV2SpansPipelinesProcessing']]] = None,
             product_allocation: pulumi.Input[Optional[Union['OpenpipelineV2SpansPipelinesProductAllocationArgs', 'OpenpipelineV2SpansPipelinesProductAllocationArgsDict', 'outputs.OpenpipelineV2SpansPipelinesProductAllocation']]] = None,
             routing: pulumi.Input[Optional[_builtins.str]] = None,
+            security: pulumi.Input[Optional[Union['OpenpipelineV2SpansPipelinesSecurityArgs', 'OpenpipelineV2SpansPipelinesSecurityArgsDict', 'outputs.OpenpipelineV2SpansPipelinesSecurity']]] = None,
             security_context: pulumi.Input[Optional[Union['OpenpipelineV2SpansPipelinesSecurityContextArgs', 'OpenpipelineV2SpansPipelinesSecurityContextArgsDict', 'outputs.OpenpipelineV2SpansPipelinesSecurityContext']]] = None,
             smartscape_edge_extraction: pulumi.Input[Optional[Union['OpenpipelineV2SpansPipelinesSmartscapeEdgeExtractionArgs', 'OpenpipelineV2SpansPipelinesSmartscapeEdgeExtractionArgsDict', 'outputs.OpenpipelineV2SpansPipelinesSmartscapeEdgeExtraction']]] = None,
             smartscape_node_extraction: pulumi.Input[Optional[Union['OpenpipelineV2SpansPipelinesSmartscapeNodeExtractionArgs', 'OpenpipelineV2SpansPipelinesSmartscapeNodeExtractionArgsDict', 'outputs.OpenpipelineV2SpansPipelinesSmartscapeNodeExtraction']]] = None,
@@ -1229,6 +1268,7 @@ class OpenpipelineV2SpansPipelines(pulumi.CustomResource):
         :param pulumi.Input[Union['OpenpipelineV2SpansPipelinesProcessingArgs', 'OpenpipelineV2SpansPipelinesProcessingArgsDict', 'outputs.OpenpipelineV2SpansPipelinesProcessing']] processing: Processing stage
         :param pulumi.Input[Union['OpenpipelineV2SpansPipelinesProductAllocationArgs', 'OpenpipelineV2SpansPipelinesProductAllocationArgsDict', 'outputs.OpenpipelineV2SpansPipelinesProductAllocation']] product_allocation: Product allocation stage
         :param pulumi.Input[_builtins.str] routing: Routing. Possible values: `notRoutable`, `routable`
+        :param pulumi.Input[Union['OpenpipelineV2SpansPipelinesSecurityArgs', 'OpenpipelineV2SpansPipelinesSecurityArgsDict', 'outputs.OpenpipelineV2SpansPipelinesSecurity']] security: Security stage
         :param pulumi.Input[Union['OpenpipelineV2SpansPipelinesSecurityContextArgs', 'OpenpipelineV2SpansPipelinesSecurityContextArgsDict', 'outputs.OpenpipelineV2SpansPipelinesSecurityContext']] security_context: Security context stage
         :param pulumi.Input[Union['OpenpipelineV2SpansPipelinesSmartscapeEdgeExtractionArgs', 'OpenpipelineV2SpansPipelinesSmartscapeEdgeExtractionArgsDict', 'outputs.OpenpipelineV2SpansPipelinesSmartscapeEdgeExtraction']] smartscape_edge_extraction: Smartscape edge extraction stage
         :param pulumi.Input[Union['OpenpipelineV2SpansPipelinesSmartscapeNodeExtractionArgs', 'OpenpipelineV2SpansPipelinesSmartscapeNodeExtractionArgsDict', 'outputs.OpenpipelineV2SpansPipelinesSmartscapeNodeExtraction']] smartscape_node_extraction: Smartscape node extraction stage
@@ -1249,6 +1289,7 @@ class OpenpipelineV2SpansPipelines(pulumi.CustomResource):
         __props__.__dict__["processing"] = processing
         __props__.__dict__["product_allocation"] = product_allocation
         __props__.__dict__["routing"] = routing
+        __props__.__dict__["security"] = security
         __props__.__dict__["security_context"] = security_context
         __props__.__dict__["smartscape_edge_extraction"] = smartscape_edge_extraction
         __props__.__dict__["smartscape_node_extraction"] = smartscape_node_extraction
@@ -1269,6 +1310,7 @@ class OpenpipelineV2SpansPipelines(pulumi.CustomResource):
             processing: pulumi.Input[Optional[Union['OpenpipelineV2SpansPipelinesProcessingArgs', 'OpenpipelineV2SpansPipelinesProcessingArgsDict', 'outputs.OpenpipelineV2SpansPipelinesProcessing']]] = None,
             product_allocation: pulumi.Input[Optional[Union['OpenpipelineV2SpansPipelinesProductAllocationArgs', 'OpenpipelineV2SpansPipelinesProductAllocationArgsDict', 'outputs.OpenpipelineV2SpansPipelinesProductAllocation']]] = None,
             routing: pulumi.Input[Optional[_builtins.str]] = None,
+            security: pulumi.Input[Optional[Union['OpenpipelineV2SpansPipelinesSecurityArgs', 'OpenpipelineV2SpansPipelinesSecurityArgsDict', 'outputs.OpenpipelineV2SpansPipelinesSecurity']]] = None,
             security_context: pulumi.Input[Optional[Union['OpenpipelineV2SpansPipelinesSecurityContextArgs', 'OpenpipelineV2SpansPipelinesSecurityContextArgsDict', 'outputs.OpenpipelineV2SpansPipelinesSecurityContext']]] = None,
             smartscape_edge_extraction: pulumi.Input[Optional[Union['OpenpipelineV2SpansPipelinesSmartscapeEdgeExtractionArgs', 'OpenpipelineV2SpansPipelinesSmartscapeEdgeExtractionArgsDict', 'outputs.OpenpipelineV2SpansPipelinesSmartscapeEdgeExtraction']]] = None,
             smartscape_node_extraction: pulumi.Input[Optional[Union['OpenpipelineV2SpansPipelinesSmartscapeNodeExtractionArgs', 'OpenpipelineV2SpansPipelinesSmartscapeNodeExtractionArgsDict', 'outputs.OpenpipelineV2SpansPipelinesSmartscapeNodeExtraction']]] = None,
@@ -1285,6 +1327,7 @@ class OpenpipelineV2SpansPipelines(pulumi.CustomResource):
         __props__["processing"] = processing
         __props__["productAllocation"] = product_allocation
         __props__["routing"] = routing
+        __props__["security"] = security
         __props__["securityContext"] = security_context
         __props__["smartscapeEdgeExtraction"] = smartscape_edge_extraction
         __props__["smartscapeNodeExtraction"] = smartscape_node_extraction
@@ -1378,6 +1421,14 @@ class OpenpipelineV2SpansPipelines(pulumi.CustomResource):
         Routing. Possible values: `notRoutable`, `routable`
         """
         return pulumi.get(self, "routing")
+
+    @_builtins.property
+    @pulumi.getter
+    def security(self) -> pulumi.Output[Optional['outputs.OpenpipelineV2SpansPipelinesSecurity']]:
+        """
+        Security stage
+        """
+        return pulumi.get(self, "security")
 
     @_builtins.property
     @pulumi.getter(name="securityContext")

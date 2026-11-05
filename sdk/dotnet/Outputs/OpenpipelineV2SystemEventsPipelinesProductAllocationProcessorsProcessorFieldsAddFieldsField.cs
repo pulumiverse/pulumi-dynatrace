@@ -22,15 +22,22 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// Field's value
         /// </summary>
         public readonly string Value;
+        /// <summary>
+        /// Field value type. Possible values: `Boolean`, `Double`, `Long`, `String`
+        /// </summary>
+        public readonly string? ValueType;
 
         [OutputConstructor]
         private OpenpipelineV2SystemEventsPipelinesProductAllocationProcessorsProcessorFieldsAddFieldsField(
             string name,
 
-            string value)
+            string value,
+
+            string? valueType)
         {
             Name = name;
             Value = value;
+            ValueType = valueType;
         }
     }
 }

@@ -91,6 +91,7 @@ namespace Pulumiverse.Dynatrace
     ///                                     {
     ///                                         Name = "is_warning",
     ///                                         Value = "true",
+    ///                                         ValueType = "boolean",
     ///                                     },
     ///                                 },
     ///                             },

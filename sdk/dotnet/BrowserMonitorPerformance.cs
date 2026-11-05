@@ -138,7 +138,7 @@ namespace Pulumiverse.Dynatrace
     ///                 new Dynatrace.Inputs.BrowserMonitorPerformanceThresholdsThresholdArgs
     ///                 {
     ///                     Event = monitor.Id,
-    ///                     Threshold = 10,
+    ///                     Threshold = 10.0,
     ///                 },
     ///             },
     ///         },

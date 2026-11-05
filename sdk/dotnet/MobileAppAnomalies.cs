@@ -50,7 +50,7 @@ namespace Pulumiverse.Dynatrace
     ///             ErrorRateIncreaseFixed = new Dynatrace.Inputs.MobileAppAnomaliesErrorRateIncreaseErrorRateIncreaseFixedArgs
     ///             {
     ///                 Sensitivity = "medium",
-    ///                 ThresholdAbsolute = 6,
+    ///                 ThresholdAbsolute = 6.0,
     ///             },
     ///         },
     ///         SlowUserActions = new Dynatrace.Inputs.MobileAppAnomaliesSlowUserActionsArgs
@@ -66,18 +66,18 @@ namespace Pulumiverse.Dynatrace
     ///                 },
     ///                 DurationThresholdAllFixed = new Dynatrace.Inputs.MobileAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdAllFixedArgs
     ///                 {
-    ///                     DurationThreshold = 200,
+    ///                     DurationThreshold = 200.0,
     ///                 },
     ///                 DurationThresholdSlowest = new Dynatrace.Inputs.MobileAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdSlowestArgs
     ///                 {
-    ///                     DurationThreshold = 900,
+    ///                     DurationThreshold = 900.0,
     ///                 },
     ///             },
     ///         },
     ///         UnexpectedHighLoad = new Dynatrace.Inputs.MobileAppAnomaliesUnexpectedHighLoadArgs
     ///         {
     ///             Enabled = true,
-    ///             ThresholdPercentage = 300,
+    ///             ThresholdPercentage = 300.0,
     ///         },
     ///         UnexpectedLowLoad = new Dynatrace.Inputs.MobileAppAnomaliesUnexpectedLowLoadArgs
     ///         {

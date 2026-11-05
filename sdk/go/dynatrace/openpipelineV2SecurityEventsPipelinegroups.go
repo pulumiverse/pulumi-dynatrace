@@ -82,8 +82,9 @@ import (
 //									Fields: &dynatrace.OpenpipelineV2SecurityEventsPipelinesProcessingProcessorsProcessorFieldsAddFieldsArgs{
 //										Fields: dynatrace.OpenpipelineV2SecurityEventsPipelinesProcessingProcessorsProcessorFieldsAddFieldsFieldArray{
 //											&dynatrace.OpenpipelineV2SecurityEventsPipelinesProcessingProcessorsProcessorFieldsAddFieldsFieldArgs{
-//												Name:  pulumi.String("is_warning"),
-//												Value: pulumi.String("true"),
+//												Name:      pulumi.String("is_warning"),
+//												Value:     pulumi.String("true"),
+//												ValueType: pulumi.String("boolean"),
 //											},
 //										},
 //									},
@@ -241,7 +242,7 @@ import (
 //									pulumi.String("metricExtraction"),
 //								},
 //							},
-//							PipelineId: example1.ID().ToIDOutput().ToStringOutput(),
+//							PipelineId: example1.ID(),
 //						},
 //					},
 //				},
@@ -253,7 +254,7 @@ import (
 //					Type: pulumi.String("include"),
 //				},
 //				MemberPipelines: pulumi.StringArray{
-//					example2.ID().ToIDOutput().ToStringOutput(),
+//					example2.ID(),
 //				},
 //			})
 //			if err != nil {

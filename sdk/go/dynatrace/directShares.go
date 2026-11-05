@@ -88,16 +88,16 @@ import (
 //				return err
 //			}
 //			_, err = dynatrace.NewDirectShares(ctx, "this", &dynatrace.DirectSharesArgs{
-//				DocumentId: thisDocument.ID().ToIDOutput().ToStringOutput(),
+//				DocumentId: thisDocument.ID(),
 //				Access:     pulumi.String("read-write"),
 //				Recipients: &dynatrace.DirectSharesRecipientsArgs{
 //					Recipients: dynatrace.DirectSharesRecipientsRecipientArray{
 //						&dynatrace.DirectSharesRecipientsRecipientArgs{
-//							Id:   sampleServiceUser.ID().ToIDOutput().ToStringOutput(),
+//							Id:   sampleServiceUser.ID(),
 //							Type: pulumi.String("user"),
 //						},
 //						&dynatrace.DirectSharesRecipientsRecipientArgs{
-//							Id:   sampleGroup.ID().ToIDOutput().ToStringOutput(),
+//							Id:   sampleGroup.ID(),
 //							Type: pulumi.String("group"),
 //						},
 //					},

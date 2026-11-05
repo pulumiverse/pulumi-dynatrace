@@ -79,7 +79,7 @@ import (
 //			}
 //			// Create a client secret
 //			exampleApplicationPassword, err := azuread.NewApplicationPassword(ctx, "example", &azuread.ApplicationPasswordArgs{
-//				ApplicationId: example.ID().ToIDOutput().ToStringOutput(),
+//				ApplicationId: example.ID(),
 //			})
 //			if err != nil {
 //				return err
@@ -152,7 +152,7 @@ import (
 //			}
 //			// Create a federated identity credential
 //			_, err = azuread.NewApplicationFederatedIdentityCredential(ctx, "example", &azuread.ApplicationFederatedIdentityCredentialArgs{
-//				ApplicationId: example.ID().ToIDOutput().ToStringOutput(),
+//				ApplicationId: example.ID(),
 //				DisplayName:   pulumi.String("Example"),
 //				Audiences: pulumi.StringArray{
 //					pulumi.Sprintf("%v/app-id/dynatrace.microsoft.azure.connector", dynatraceEnvironmentUrl),
@@ -167,7 +167,7 @@ import (
 //			}
 //			// Update the Azure connection with authentication details
 //			_, err = dynatrace.NewAzureConnectionAuthentication(ctx, "example", &dynatrace.AzureConnectionAuthenticationArgs{
-//				AzureConnectionId: exampleAzureConnection.ID().ToIDOutput().ToStringOutput(),
+//				AzureConnectionId: exampleAzureConnection.ID(),
 //				ApplicationId:     example.ClientId,
 //				DirectoryId:       pulumi.String(azureTenantId),
 //			})

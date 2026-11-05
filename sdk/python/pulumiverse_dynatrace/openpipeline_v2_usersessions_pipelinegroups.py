@@ -239,6 +239,7 @@ class OpenpipelineV2UsersessionsPipelinegroups(pulumi.CustomResource):
                                     "fields": [{
                                         "name": "is_warning",
                                         "value": "true",
+                                        "value_type": "boolean",
                                     }],
                                 },
                             },
@@ -485,6 +486,7 @@ class OpenpipelineV2UsersessionsPipelinegroups(pulumi.CustomResource):
                                     "fields": [{
                                         "name": "is_warning",
                                         "value": "true",
+                                        "value_type": "boolean",
                                     }],
                                 },
                             },

@@ -142,6 +142,10 @@ export class OpenpipelineV2UsersessionsDataforwarding extends pulumi.CustomResou
      */
     declare public readonly cloudVendorType: pulumi.Output<string>;
     /**
+     * Compression type. Possible values: `gzip`, `zstd`
+     */
+    declare public readonly compressionType: pulumi.Output<string | undefined>;
+    /**
      * Pipeline Type. Possible values: `processed`, `raw`
      */
     declare public readonly dataForwardingType: pulumi.Output<string>;
@@ -198,6 +202,7 @@ export class OpenpipelineV2UsersessionsDataforwarding extends pulumi.CustomResou
             resourceInputs["bulkPattern"] = state?.bulkPattern;
             resourceInputs["bulkSize"] = state?.bulkSize;
             resourceInputs["cloudVendorType"] = state?.cloudVendorType;
+            resourceInputs["compressionType"] = state?.compressionType;
             resourceInputs["dataForwardingType"] = state?.dataForwardingType;
             resourceInputs["enabled"] = state?.enabled;
             resourceInputs["forwardingName"] = state?.forwardingName;
@@ -231,6 +236,7 @@ export class OpenpipelineV2UsersessionsDataforwarding extends pulumi.CustomResou
             resourceInputs["bulkPattern"] = args?.bulkPattern;
             resourceInputs["bulkSize"] = args?.bulkSize;
             resourceInputs["cloudVendorType"] = args?.cloudVendorType;
+            resourceInputs["compressionType"] = args?.compressionType;
             resourceInputs["dataForwardingType"] = args?.dataForwardingType;
             resourceInputs["enabled"] = args?.enabled;
             resourceInputs["forwardingName"] = args?.forwardingName;
@@ -278,6 +284,10 @@ export interface OpenpipelineV2UsersessionsDataforwardingState {
      * Cloud Vendor Type. Possible values: `aws`, `azure`, `gcp`, `otlp`
      */
     cloudVendorType?: pulumi.Input<string | undefined>;
+    /**
+     * Compression type. Possible values: `gzip`, `zstd`
+     */
+    compressionType?: pulumi.Input<string | undefined>;
     /**
      * Pipeline Type. Possible values: `processed`, `raw`
      */
@@ -348,6 +358,10 @@ export interface OpenpipelineV2UsersessionsDataforwardingArgs {
      * Cloud Vendor Type. Possible values: `aws`, `azure`, `gcp`, `otlp`
      */
     cloudVendorType: pulumi.Input<string>;
+    /**
+     * Compression type. Possible values: `gzip`, `zstd`
+     */
+    compressionType?: pulumi.Input<string | undefined>;
     /**
      * Pipeline Type. Possible values: `processed`, `raw`
      */

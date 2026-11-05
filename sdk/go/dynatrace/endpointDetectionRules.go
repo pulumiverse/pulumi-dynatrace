@@ -49,7 +49,7 @@ import (
 //				return err
 //			}
 //			_, err = dynatrace.NewEndpointDetectionRules(ctx, "second-instance", &dynatrace.EndpointDetectionRulesArgs{
-//				InsertAfter: first_instance.ID().ToIDOutput().ToStringOutput(),
+//				InsertAfter: first_instance.ID(),
 //				Enabled:     pulumi.Bool(false),
 //				Scope:       pulumi.String("environment"),
 //				Rule: &dynatrace.EndpointDetectionRulesRuleArgs{

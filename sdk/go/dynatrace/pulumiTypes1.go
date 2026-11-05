@@ -68646,7 +68646,7 @@ func (o MaintenanceWindowsObjectScopesPtrOutput) SyntheticMonitors() Maintenance
 }
 
 type MaintenanceWindowsObjectScopesSyntheticMonitors struct {
-	// DQL filter selecting which synthetic monitors to pause. Required when synthetic monitors are disabled.
+	// DQL filter selecting which synthetic monitors to pause. Required when synthetic monitors are disabled. Supported fields: monitor.id, monitor.name, pg.tag, security.context.
 	DisableSyntheticMonitorFilter *string `pulumi:"disableSyntheticMonitorFilter"`
 	// When enabled, synthetic monitors matching the filter are paused during the maintenance window.
 	DisableSyntheticMonitors bool `pulumi:"disableSyntheticMonitors"`
@@ -68664,7 +68664,7 @@ type MaintenanceWindowsObjectScopesSyntheticMonitorsInput interface {
 }
 
 type MaintenanceWindowsObjectScopesSyntheticMonitorsArgs struct {
-	// DQL filter selecting which synthetic monitors to pause. Required when synthetic monitors are disabled.
+	// DQL filter selecting which synthetic monitors to pause. Required when synthetic monitors are disabled. Supported fields: monitor.id, monitor.name, pg.tag, security.context.
 	DisableSyntheticMonitorFilter pulumi.StringPtrInput `pulumi:"disableSyntheticMonitorFilter"`
 	// When enabled, synthetic monitors matching the filter are paused during the maintenance window.
 	DisableSyntheticMonitors pulumi.BoolInput `pulumi:"disableSyntheticMonitors"`
@@ -68747,7 +68747,7 @@ func (o MaintenanceWindowsObjectScopesSyntheticMonitorsOutput) ToMaintenanceWind
 	}).(MaintenanceWindowsObjectScopesSyntheticMonitorsPtrOutput)
 }
 
-// DQL filter selecting which synthetic monitors to pause. Required when synthetic monitors are disabled.
+// DQL filter selecting which synthetic monitors to pause. Required when synthetic monitors are disabled. Supported fields: monitor.id, monitor.name, pg.tag, security.context.
 func (o MaintenanceWindowsObjectScopesSyntheticMonitorsOutput) DisableSyntheticMonitorFilter() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MaintenanceWindowsObjectScopesSyntheticMonitors) *string {
 		return v.DisableSyntheticMonitorFilter
@@ -68783,7 +68783,7 @@ func (o MaintenanceWindowsObjectScopesSyntheticMonitorsPtrOutput) Elem() Mainten
 	}).(MaintenanceWindowsObjectScopesSyntheticMonitorsOutput)
 }
 
-// DQL filter selecting which synthetic monitors to pause. Required when synthetic monitors are disabled.
+// DQL filter selecting which synthetic monitors to pause. Required when synthetic monitors are disabled. Supported fields: monitor.id, monitor.name, pg.tag, security.context.
 func (o MaintenanceWindowsObjectScopesSyntheticMonitorsPtrOutput) DisableSyntheticMonitorFilter() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MaintenanceWindowsObjectScopesSyntheticMonitors) *string {
 		if v == nil {

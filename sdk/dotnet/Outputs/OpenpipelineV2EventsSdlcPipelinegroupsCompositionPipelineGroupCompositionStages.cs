@@ -15,11 +15,11 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class OpenpipelineV2EventsSdlcPipelinegroupsCompositionPipelineGroupCompositionStages
     {
         /// <summary>
-        /// exclude stages. Possible values: `costAllocation`, `dataExtraction`, `Davis`, `metricExtraction`, `Processing`, `productAllocation`, `securityContext`, `smartscapeEdgeExtraction`, `smartscapeNodeExtraction`, `Storage`
+        /// exclude stages. Possible values: `costAllocation`, `dataExtraction`, `Davis`, `metricExtraction`, `Processing`, `productAllocation`, `Security`, `securityContext`, `smartscapeEdgeExtraction`, `smartscapeNodeExtraction`, `Storage`
         /// </summary>
         public readonly ImmutableArray<string> Excludes;
         /// <summary>
-        /// include stages. Possible values: `costAllocation`, `dataExtraction`, `Davis`, `metricExtraction`, `Processing`, `productAllocation`, `securityContext`, `smartscapeEdgeExtraction`, `smartscapeNodeExtraction`, `Storage`
+        /// include stages. Possible values: `costAllocation`, `dataExtraction`, `Davis`, `metricExtraction`, `Processing`, `productAllocation`, `Security`, `securityContext`, `smartscapeEdgeExtraction`, `smartscapeNodeExtraction`, `Storage`
         /// </summary>
         public readonly ImmutableArray<string> Includes;
         /// <summary>

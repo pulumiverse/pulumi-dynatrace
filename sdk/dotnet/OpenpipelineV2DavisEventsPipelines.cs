@@ -99,6 +99,7 @@ namespace Pulumiverse.Dynatrace
     ///                                     {
     ///                                         Name = "is_warning",
     ///                                         Value = "true",
+    ///                                         ValueType = "boolean",
     ///                                     },
     ///                                 },
     ///                             },
@@ -168,8 +169,8 @@ namespace Pulumiverse.Dynatrace
     ///                 },
     ///             },
     ///         },
-    ///         Davis = null,
-    ///         MetricExtraction = null,
+    ///         Davis = new() { },
+    ///         MetricExtraction = new() { },
     ///         SecurityContext = new Dynatrace.Inputs.OpenpipelineV2DavisEventsPipelinesSecurityContextArgs
     ///         {
     ///             Processors = new Dynatrace.Inputs.OpenpipelineV2DavisEventsPipelinesSecurityContextProcessorsArgs
@@ -218,8 +219,8 @@ namespace Pulumiverse.Dynatrace
     ///                 },
     ///             },
     ///         },
-    ///         CostAllocation = null,
-    ///         ProductAllocation = null,
+    ///         CostAllocation = new() { },
+    ///         ProductAllocation = new() { },
     ///         Storage = new Dynatrace.Inputs.OpenpipelineV2DavisEventsPipelinesStorageArgs
     ///         {
     ///             Processors = new Dynatrace.Inputs.OpenpipelineV2DavisEventsPipelinesStorageProcessorsArgs
@@ -241,7 +242,7 @@ namespace Pulumiverse.Dynatrace
     ///                 },
     ///             },
     ///         },
-    ///         DataExtraction = null,
+    ///         DataExtraction = new() { },
     ///     });
     /// 
     /// });
@@ -315,6 +316,12 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         [Output("routing")]
         public Output<string?> Routing { get; private set; } = null!;
+
+        /// <summary>
+        /// Security stage
+        /// </summary>
+        [Output("security")]
+        public Output<Outputs.OpenpipelineV2DavisEventsPipelinesSecurity?> Security { get; private set; } = null!;
 
         /// <summary>
         /// Security context stage
@@ -454,6 +461,12 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? Routing { get; set; }
 
         /// <summary>
+        /// Security stage
+        /// </summary>
+        [Input("security")]
+        public Input<Inputs.OpenpipelineV2DavisEventsPipelinesSecurityArgs>? Security { get; set; }
+
+        /// <summary>
         /// Security context stage
         /// </summary>
         [Input("securityContext")]
@@ -550,6 +563,12 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         [Input("routing")]
         public Input<string>? Routing { get; set; }
+
+        /// <summary>
+        /// Security stage
+        /// </summary>
+        [Input("security")]
+        public Input<Inputs.OpenpipelineV2DavisEventsPipelinesSecurityGetArgs>? Security { get; set; }
 
         /// <summary>
         /// Security context stage

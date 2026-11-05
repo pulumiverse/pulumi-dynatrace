@@ -74,7 +74,7 @@ import (
 //				Type:                                pulumi.String("WEBHOOK"),
 //				Enabled:                             pulumi.Bool(true),
 //				DisplayName:                         pulumi.String("Terraform Security Problem Webhook Test"),
-//				SecurityProblemBasedAlertingProfile: alert.ID().ToIDOutput().ToStringOutput(),
+//				SecurityProblemBasedAlertingProfile: alert.ID(),
 //				Trigger:                             pulumi.String("SECURITY_PROBLEM"),
 //				SecurityProblemBasedWebhookPayload: &dynatrace.AppsecNotificationSecurityProblemBasedWebhookPayloadArgs{
 //					Payload: pulumi.String(json0),

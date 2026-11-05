@@ -141,7 +141,7 @@ import (
 //					SafeName:               pulumi.String("my-safe-name"),
 //					FolderName:             pulumi.String("my-folder-name"),
 //					AccountName:            pulumi.String("my-account-name"),
-//					UsernamePasswordForCpm: usernamePasswordCredentials.ID().ToIDOutput().ToStringOutput(),
+//					UsernamePasswordForCpm: usernamePasswordCredentials.ID(),
 //				},
 //				Scopes: pulumi.StringArray{
 //					pulumi.String("SYNTHETIC"),
@@ -163,6 +163,7 @@ import (
 //
 // import (
 //
+//	"github.com/pulumi/pulumi-std/sdk/v2/go/std"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi/config"
 //	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
@@ -172,16 +173,28 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			cfg := config.New(ctx, "")
-//			var certificate interface{}
-//			cfg.RequireObject("certificate", &certificate)
-//			var certificatePassword interface{}
-//			cfg.RequireObject("certificatePassword", &certificatePassword)
+//			var CREDENTIAL_VAULT_CERT interface{}
+//			cfg.RequireObject("CREDENTIAL_VAULT_CERT", &CREDENTIAL_VAULT_CERT)
+//			var CREDENTIAL_VAULT_PWD interface{}
+//			cfg.RequireObject("CREDENTIAL_VAULT_PWD", &CREDENTIAL_VAULT_PWD)
+//			invokeBase64encode, err := std.Base64encode(ctx, &std.Base64encodeArgs{
+//				Input: CREDENTIAL_VAULT_CERT,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			invokeBase64encode1, err := std.Base64encode(ctx, &std.Base64encodeArgs{
+//				Input: CREDENTIAL_VAULT_PWD,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
 //			certificateCredentials, err := dynatrace.NewCredentials(ctx, "certificate_credentials", &dynatrace.CredentialsArgs{
 //				Name:            pulumi.String("#name#"),
-//				Certificate:     pulumi.Any(certificate),
-//				Format:          pulumi.String("PKCS12"),
+//				Certificate:     pulumi.String(invokeBase64encode.Result),
+//				Format:          pulumi.String("PEM"),
 //				OwnerAccessOnly: pulumi.Bool(true),
-//				Password:        pulumi.Any(certificatePassword),
+//				Password:        pulumi.String(invokeBase64encode1.Result),
 //				Scopes: pulumi.StringArray{
 //					pulumi.String("SYNTHETIC"),
 //				},
@@ -189,16 +202,23 @@ import (
 //			if err != nil {
 //				return err
 //			}
+//			location, err := dynatrace.GetSyntheticLocation(ctx, &dynatrace.LookupSyntheticLocationArgs{
+//				Name: pulumi.StringRef("Location"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
 //			_, err = dynatrace.NewCredentials(ctx, "cyberark_allowed_location", &dynatrace.CredentialsArgs{
 //				Name:            pulumi.String("#name#"),
 //				OwnerAccessOnly: pulumi.Bool(true),
 //				External: &dynatrace.CredentialsExternalArgs{
-//					VaultUrl:      pulumi.String("https://example.com"),
-//					ApplicationId: pulumi.String("my-application-id"),
-//					SafeName:      pulumi.String("my-safe-name"),
-//					FolderName:    pulumi.String("my-folder-name"),
-//					AccountName:   pulumi.String("my-account-name"),
-//					Certificate:   certificateCredentials.ID().ToIDOutput().ToStringOutput(),
+//					VaultUrl:                     pulumi.String("https://example.com"),
+//					ApplicationId:                pulumi.String("my-application-id"),
+//					SafeName:                     pulumi.String("my-safe-name"),
+//					FolderName:                   pulumi.String("my-folder-name"),
+//					AccountName:                  pulumi.String("my-account-name"),
+//					Certificate:                  certificateCredentials.ID(),
+//					LocationForSynchronizationId: pulumi.String(location.Id),
 //				},
 //				Scopes: pulumi.StringArray{
 //					pulumi.String("SYNTHETIC"),

@@ -35,7 +35,7 @@ import * as utilities from "./utilities";
  *     enabled: true,
  *     objectScopes: {
  *         syntheticMonitors: {
- *             disableSyntheticMonitorFilter: "status == \"OPEN\" AND severity == \"HIGH\"",
+ *             disableSyntheticMonitorFilter: "monitor.name == \"my-monitor\"",
  *             disableSyntheticMonitors: true,
  *         },
  *     },

@@ -89,8 +89,8 @@ import (
 //			json3 := string(tmpJSON3)
 //			_, err = dynatrace.NewAutomationWorkflow(ctx, "workflow_with_davis_event_trigger", &dynatrace.AutomationWorkflowArgs{
 //				Description: pulumi.String("Desc"),
-//				Actor:       wfUser.ID().ToIDOutput().ToStringOutput(),
-//				Owner:       wfUser.ID().ToIDOutput().ToStringOutput(),
+//				Actor:       wfUser.ID(),
+//				Owner:       wfUser.ID(),
 //				Private:     pulumi.Bool(false),
 //				Title:       pulumi.String("#name#"),
 //				Tasks: &dynatrace.AutomationWorkflowTasksArgs{

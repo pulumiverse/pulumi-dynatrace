@@ -64634,6 +64634,8 @@ type CredentialsExternal struct {
 	CredentialsUsedForExternalSynchronizations []string `pulumi:"credentialsUsedForExternalSynchronizations"`
 	// The name of the folder where the credentials are stored in CyberArk Vault; the default folder name is `Root`.
 	FolderName *string `pulumi:"folderName"`
+	// Id of a location used by the synchronizing monitor
+	LocationForSynchronizationId *string `pulumi:"locationForSynchronizationId"`
 	// No documentation available
 	PasswordSecretName *string `pulumi:"passwordSecretName"`
 	// Required for Hashicorp App Role or Hashicorp Certificate. No further documentation available
@@ -64684,6 +64686,8 @@ type CredentialsExternalArgs struct {
 	CredentialsUsedForExternalSynchronizations pulumi.StringArrayInput `pulumi:"credentialsUsedForExternalSynchronizations"`
 	// The name of the folder where the credentials are stored in CyberArk Vault; the default folder name is `Root`.
 	FolderName pulumi.StringPtrInput `pulumi:"folderName"`
+	// Id of a location used by the synchronizing monitor
+	LocationForSynchronizationId pulumi.StringPtrInput `pulumi:"locationForSynchronizationId"`
 	// No documentation available
 	PasswordSecretName pulumi.StringPtrInput `pulumi:"passwordSecretName"`
 	// Required for Hashicorp App Role or Hashicorp Certificate. No further documentation available
@@ -64818,6 +64822,11 @@ func (o CredentialsExternalOutput) CredentialsUsedForExternalSynchronizations() 
 // The name of the folder where the credentials are stored in CyberArk Vault; the default folder name is `Root`.
 func (o CredentialsExternalOutput) FolderName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v CredentialsExternal) *string { return v.FolderName }).(pulumi.StringPtrOutput)
+}
+
+// Id of a location used by the synchronizing monitor
+func (o CredentialsExternalOutput) LocationForSynchronizationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CredentialsExternal) *string { return v.LocationForSynchronizationId }).(pulumi.StringPtrOutput)
 }
 
 // No documentation available
@@ -64966,6 +64975,16 @@ func (o CredentialsExternalPtrOutput) FolderName() pulumi.StringPtrOutput {
 			return nil
 		}
 		return v.FolderName
+	}).(pulumi.StringPtrOutput)
+}
+
+// Id of a location used by the synchronizing monitor
+func (o CredentialsExternalPtrOutput) LocationForSynchronizationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CredentialsExternal) *string {
+		if v == nil {
+			return nil
+		}
+		return v.LocationForSynchronizationId
 	}).(pulumi.StringPtrOutput)
 }
 

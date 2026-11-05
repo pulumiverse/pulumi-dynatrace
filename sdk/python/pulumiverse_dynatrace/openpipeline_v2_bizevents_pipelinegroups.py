@@ -239,6 +239,7 @@ class OpenpipelineV2BizeventsPipelinegroups(pulumi.CustomResource):
                                     "fields": [{
                                         "name": "is_warning",
                                         "value": "true",
+                                        "value_type": "boolean",
                                     }],
                                 },
                             },
@@ -481,6 +482,7 @@ class OpenpipelineV2BizeventsPipelinegroups(pulumi.CustomResource):
                                     "fields": [{
                                         "name": "is_warning",
                                         "value": "true",
+                                        "value_type": "boolean",
                                     }],
                                 },
                             },
