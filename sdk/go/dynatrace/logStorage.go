@@ -111,6 +111,12 @@ func (LogStorageState) ElementType() reflect.Type {
 	return reflect.TypeOf((*logStorageState)(nil)).Elem()
 }
 
+// LogStorageExists checks whether an existing LogStorage resource with the given ID exists.
+func LogStorageExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *LogStorageState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/logStorage:LogStorage", id, state, "", opts...)
+}
+
 type logStorageArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`

@@ -140,6 +140,12 @@ func (UrlBasedSamplingState) ElementType() reflect.Type {
 	return reflect.TypeOf((*urlBasedSamplingState)(nil)).Elem()
 }
 
+// UrlBasedSamplingExists checks whether an existing UrlBasedSampling resource with the given ID exists.
+func UrlBasedSamplingExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *UrlBasedSamplingState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/urlBasedSampling:UrlBasedSampling", id, state, "", opts...)
+}
+
 type urlBasedSamplingArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`

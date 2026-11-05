@@ -86,6 +86,12 @@ func (QueueSharingGroupsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*queueSharingGroupsState)(nil)).Elem()
 }
 
+// QueueSharingGroupsExists checks whether an existing QueueSharingGroups resource with the given ID exists.
+func QueueSharingGroupsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *QueueSharingGroupsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/queueSharingGroups:QueueSharingGroups", id, state, "", opts...)
+}
+
 type queueSharingGroupsArgs struct {
 	// Queue sharing group name
 	Name *string `pulumi:"name"`

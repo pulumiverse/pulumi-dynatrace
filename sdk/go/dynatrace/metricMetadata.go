@@ -129,6 +129,12 @@ func (MetricMetadataState) ElementType() reflect.Type {
 	return reflect.TypeOf((*metricMetadataState)(nil)).Elem()
 }
 
+// MetricMetadataExists checks whether an existing MetricMetadata resource with the given ID exists.
+func MetricMetadataExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *MetricMetadataState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/metricMetadata:MetricMetadata", id, state, "", opts...)
+}
+
 type metricMetadataArgs struct {
 	// Description
 	Description *string `pulumi:"description"`

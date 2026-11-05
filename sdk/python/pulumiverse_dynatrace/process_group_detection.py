@@ -392,6 +392,22 @@ class ProcessGroupDetection(pulumi.CustomResource):
         __props__.__dict__["process_detection"] = process_detection
         return ProcessGroupDetection(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            group_extraction: pulumi.Input[Optional[Union['ProcessGroupDetectionGroupExtractionArgs', 'ProcessGroupDetectionGroupExtractionArgsDict', 'outputs.ProcessGroupDetectionGroupExtraction']]] = None,
+            insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+            instance_extraction: pulumi.Input[Optional[Union['ProcessGroupDetectionInstanceExtractionArgs', 'ProcessGroupDetectionInstanceExtractionArgsDict', 'outputs.ProcessGroupDetectionInstanceExtraction']]] = None,
+            process_detection: pulumi.Input[Optional[Union['ProcessGroupDetectionProcessDetectionArgs', 'ProcessGroupDetectionProcessDetectionArgsDict', 'outputs.ProcessGroupDetectionProcessDetection']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["enabled"] = enabled
+        __props__["groupExtraction"] = group_extraction
+        __props__["insertAfter"] = insert_after
+        __props__["instanceExtraction"] = instance_extraction
+        __props__["processDetection"] = process_detection
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/processGroupDetection:ProcessGroupDetection', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def enabled(self) -> pulumi.Output[_builtins.bool]:

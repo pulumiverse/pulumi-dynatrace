@@ -172,6 +172,14 @@ class LimitOutboundConnections(pulumi.CustomResource):
         __props__.__dict__["allowed_outbound_connections"] = allowed_outbound_connections
         return LimitOutboundConnections(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            allowed_outbound_connections: pulumi.Input[Optional[Union['LimitOutboundConnectionsAllowedOutboundConnectionsArgs', 'LimitOutboundConnectionsAllowedOutboundConnectionsArgsDict', 'outputs.LimitOutboundConnectionsAllowedOutboundConnections']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["allowedOutboundConnections"] = allowed_outbound_connections
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/limitOutboundConnections:LimitOutboundConnections', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="allowedOutboundConnections")
     def allowed_outbound_connections(self) -> pulumi.Output['outputs.LimitOutboundConnectionsAllowedOutboundConnections']:

@@ -249,6 +249,18 @@ class AixExtension(pulumi.CustomResource):
         __props__.__dict__["use_global_settings"] = use_global_settings
         return AixExtension(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            host_id: pulumi.Input[Optional[_builtins.str]] = None,
+            use_global_settings: pulumi.Input[Optional[_builtins.bool]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["enabled"] = enabled
+        __props__["hostId"] = host_id
+        __props__["useGlobalSettings"] = use_global_settings
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/aixExtension:AixExtension', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def enabled(self) -> pulumi.Output[Optional[_builtins.bool]]:

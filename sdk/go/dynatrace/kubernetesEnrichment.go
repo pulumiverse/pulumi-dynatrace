@@ -152,6 +152,12 @@ func (KubernetesEnrichmentState) ElementType() reflect.Type {
 	return reflect.TypeOf((*kubernetesEnrichmentState)(nil)).Elem()
 }
 
+// KubernetesEnrichmentExists checks whether an existing KubernetesEnrichment resource with the given ID exists.
+func KubernetesEnrichmentExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *KubernetesEnrichmentState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/kubernetesEnrichment:KubernetesEnrichment", id, state, "", opts...)
+}
+
 type kubernetesEnrichmentArgs struct {
 	// Kubernetes Telemetry Enrichment empowers you to effectively tag your telemetry data using Kubernetes namespace labels and annotations. Additionally, it enables you to tag it for cost allocation and permission purposes.
 	Rules *KubernetesEnrichmentRules `pulumi:"rules"`

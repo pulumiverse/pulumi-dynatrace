@@ -115,6 +115,12 @@ func (GithubConnectionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*githubConnectionState)(nil)).Elem()
 }
 
+// GithubConnectionExists checks whether an existing GithubConnection resource with the given ID exists.
+func GithubConnectionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *GithubConnectionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/githubConnection:GithubConnection", id, state, "", opts...)
+}
+
 type githubConnectionArgs struct {
 	// The name of the GitHub connection
 	Name *string `pulumi:"name"`

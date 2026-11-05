@@ -202,6 +202,12 @@ func (BrowserMonitorPerformanceState) ElementType() reflect.Type {
 	return reflect.TypeOf((*browserMonitorPerformanceState)(nil)).Elem()
 }
 
+// BrowserMonitorPerformanceExists checks whether an existing BrowserMonitorPerformance resource with the given ID exists.
+func BrowserMonitorPerformanceExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *BrowserMonitorPerformanceState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/browserMonitorPerformance:BrowserMonitorPerformance", id, state, "", opts...)
+}
+
 type browserMonitorPerformanceArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`

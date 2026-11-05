@@ -147,6 +147,12 @@ func (CustomTagsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*customTagsState)(nil)).Elem()
 }
 
+// CustomTagsExists checks whether an existing CustomTags resource with the given ID exists.
+func CustomTagsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *CustomTagsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/customTags:CustomTags", id, state, "", opts...)
+}
+
 type customTagsArgs struct {
 	// For internal use: current state of tags in JSON format
 	CurrentState *string `pulumi:"currentState"`

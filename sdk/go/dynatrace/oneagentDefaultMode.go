@@ -78,6 +78,12 @@ func (OneagentDefaultModeState) ElementType() reflect.Type {
 	return reflect.TypeOf((*oneagentDefaultModeState)(nil)).Elem()
 }
 
+// OneagentDefaultModeExists checks whether an existing OneagentDefaultMode resource with the given ID exists.
+func OneagentDefaultModeExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *OneagentDefaultModeState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/oneagentDefaultMode:OneagentDefaultMode", id, state, "", opts...)
+}
+
 type oneagentDefaultModeArgs struct {
 	// OneAgent default monitoring mode. Possible values: `DISCOVERY`, `FULL_STACK`, `INFRASTRUCTURE`
 	DefaultMode string `pulumi:"defaultMode"`

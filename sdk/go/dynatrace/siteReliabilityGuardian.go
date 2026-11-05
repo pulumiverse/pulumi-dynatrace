@@ -110,6 +110,12 @@ func (SiteReliabilityGuardianState) ElementType() reflect.Type {
 	return reflect.TypeOf((*siteReliabilityGuardianState)(nil)).Elem()
 }
 
+// SiteReliabilityGuardianExists checks whether an existing SiteReliabilityGuardian resource with the given ID exists.
+func SiteReliabilityGuardianExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SiteReliabilityGuardianState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/siteReliabilityGuardian:SiteReliabilityGuardian", id, state, "", opts...)
+}
+
 type siteReliabilityGuardianArgs struct {
 	// Optional explanation of this guardian's purpose and scope.
 	Description *string `pulumi:"description"`

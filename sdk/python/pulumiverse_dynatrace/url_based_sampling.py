@@ -529,6 +529,32 @@ class UrlBasedSampling(pulumi.CustomResource):
         __props__.__dict__["scope"] = scope
         return UrlBasedSampling(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            factor: pulumi.Input[Optional[_builtins.str]] = None,
+            http_method_any: pulumi.Input[Optional[_builtins.bool]] = None,
+            http_methods: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            ignore: pulumi.Input[Optional[_builtins.bool]] = None,
+            insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+            path: pulumi.Input[Optional[_builtins.str]] = None,
+            path_comparison_type: pulumi.Input[Optional[_builtins.str]] = None,
+            query_parameters: pulumi.Input[Optional[Union['UrlBasedSamplingQueryParametersArgs', 'UrlBasedSamplingQueryParametersArgsDict', 'outputs.UrlBasedSamplingQueryParameters']]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["enabled"] = enabled
+        __props__["factor"] = factor
+        __props__["httpMethodAny"] = http_method_any
+        __props__["httpMethods"] = http_methods
+        __props__["ignore"] = ignore
+        __props__["insertAfter"] = insert_after
+        __props__["path"] = path
+        __props__["pathComparisonType"] = path_comparison_type
+        __props__["queryParameters"] = query_parameters
+        __props__["scope"] = scope
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/urlBasedSampling:UrlBasedSampling', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def enabled(self) -> pulumi.Output[_builtins.bool]:

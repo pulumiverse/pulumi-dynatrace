@@ -287,6 +287,16 @@ class SyntheticPrimaryGrailTags(pulumi.CustomResource):
         __props__.__dict__["tags"] = tags
         return SyntheticPrimaryGrailTags(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None,
+            tags: pulumi.Input[Optional[Union['SyntheticPrimaryGrailTagsTagsArgs', 'SyntheticPrimaryGrailTagsTagsArgsDict', 'outputs.SyntheticPrimaryGrailTagsTags']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["scope"] = scope
+        __props__["tags"] = tags
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/syntheticPrimaryGrailTags:SyntheticPrimaryGrailTags', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def scope(self) -> pulumi.Output[_builtins.str]:

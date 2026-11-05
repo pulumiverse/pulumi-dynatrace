@@ -131,6 +131,12 @@ func (TransactionStartFiltersState) ElementType() reflect.Type {
 	return reflect.TypeOf((*transactionStartFiltersState)(nil)).Elem()
 }
 
+// TransactionStartFiltersExists checks whether an existing TransactionStartFilters resource with the given ID exists.
+func TransactionStartFiltersExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *TransactionStartFiltersState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/transactionStartFilters:TransactionStartFilters", id, state, "", opts...)
+}
+
 type transactionStartFiltersArgs struct {
 	// You can use * as wildcard. For example use A* to trace all transaction IDs that start with A.
 	CicsTerminalTransactionIds []string `pulumi:"cicsTerminalTransactionIds"`

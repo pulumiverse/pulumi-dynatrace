@@ -260,6 +260,12 @@ func (OpenpipelineV2DavisEventsIngestsourcesState) ElementType() reflect.Type {
 	return reflect.TypeOf((*openpipelineV2DavisEventsIngestsourcesState)(nil)).Elem()
 }
 
+// OpenpipelineV2DavisEventsIngestsourcesExists checks whether an existing OpenpipelineV2DavisEventsIngestsources resource with the given ID exists.
+func OpenpipelineV2DavisEventsIngestsourcesExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *OpenpipelineV2DavisEventsIngestsourcesState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/openpipelineV2DavisEventsIngestsources:OpenpipelineV2DavisEventsIngestsources", id, state, "", opts...)
+}
+
 type openpipelineV2DavisEventsIngestsourcesArgs struct {
 	// Default Bucket
 	DefaultBucket *string `pulumi:"defaultBucket"`

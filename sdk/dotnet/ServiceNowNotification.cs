@@ -53,7 +53,7 @@ namespace Pulumiverse.Dynatrace
         public Output<bool> Incidents { get; private set; } = null!;
 
         /// <summary>
-        /// The ServiceNow instance identifier. It refers to the first part of your own ServiceNow URL. 
+        /// The ServiceNow instance identifier. It refers to the first part of your own ServiceNow URL.
         /// 
         ///  This field is mutually exclusive with the **url** field. You can only use one of them.
         /// </summary>
@@ -92,7 +92,7 @@ namespace Pulumiverse.Dynatrace
         public Output<string> Profile { get; private set; } = null!;
 
         /// <summary>
-        /// The URL of the on-premise ServiceNow installation. 
+        /// The URL of the on-premise ServiceNow installation.
         /// 
         ///  This field is mutually exclusive with the **instanceName** field. You can only use one of them.
         /// </summary>
@@ -100,7 +100,7 @@ namespace Pulumiverse.Dynatrace
         public Output<string?> Url { get; private set; } = null!;
 
         /// <summary>
-        /// The username of the ServiceNow account. 
+        /// The username of the ServiceNow account.
         /// 
         ///  Make sure that your user account has the `WebServiceAdmin` and `x_dynat_ruxit.Integration` roles.
         /// </summary>
@@ -183,7 +183,7 @@ namespace Pulumiverse.Dynatrace
         public Input<bool> Incidents { get; set; } = null!;
 
         /// <summary>
-        /// The ServiceNow instance identifier. It refers to the first part of your own ServiceNow URL. 
+        /// The ServiceNow instance identifier. It refers to the first part of your own ServiceNow URL.
         /// 
         ///  This field is mutually exclusive with the **url** field. You can only use one of them.
         /// </summary>
@@ -232,7 +232,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string> Profile { get; set; } = null!;
 
         /// <summary>
-        /// The URL of the on-premise ServiceNow installation. 
+        /// The URL of the on-premise ServiceNow installation.
         /// 
         ///  This field is mutually exclusive with the **instanceName** field. You can only use one of them.
         /// </summary>
@@ -240,7 +240,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? Url { get; set; }
 
         /// <summary>
-        /// The username of the ServiceNow account. 
+        /// The username of the ServiceNow account.
         /// 
         ///  Make sure that your user account has the `WebServiceAdmin` and `x_dynat_ruxit.Integration` roles.
         /// </summary>
@@ -280,7 +280,7 @@ namespace Pulumiverse.Dynatrace
         public Input<bool>? Incidents { get; set; }
 
         /// <summary>
-        /// The ServiceNow instance identifier. It refers to the first part of your own ServiceNow URL. 
+        /// The ServiceNow instance identifier. It refers to the first part of your own ServiceNow URL.
         /// 
         ///  This field is mutually exclusive with the **url** field. You can only use one of them.
         /// </summary>
@@ -329,7 +329,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? Profile { get; set; }
 
         /// <summary>
-        /// The URL of the on-premise ServiceNow installation. 
+        /// The URL of the on-premise ServiceNow installation.
         /// 
         ///  This field is mutually exclusive with the **instanceName** field. You can only use one of them.
         /// </summary>
@@ -337,7 +337,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? Url { get; set; }
 
         /// <summary>
-        /// The username of the ServiceNow account. 
+        /// The username of the ServiceNow account.
         /// 
         ///  Make sure that your user account has the `WebServiceAdmin` and `x_dynat_ruxit.Integration` roles.
         /// </summary>

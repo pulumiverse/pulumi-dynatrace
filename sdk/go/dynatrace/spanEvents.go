@@ -89,6 +89,12 @@ func (SpanEventsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*spanEventsState)(nil)).Elem()
 }
 
+// SpanEventsExists checks whether an existing SpanEvents resource with the given ID exists.
+func SpanEventsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SpanEventsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/spanEvents:SpanEvents", id, state, "", opts...)
+}
+
 type spanEventsArgs struct {
 	// Key of the span event attribute to store
 	Key string `pulumi:"key"`

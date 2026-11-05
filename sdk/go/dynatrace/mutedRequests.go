@@ -84,6 +84,12 @@ func (MutedRequestsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*mutedRequestsState)(nil)).Elem()
 }
 
+// MutedRequestsExists checks whether an existing MutedRequests resource with the given ID exists.
+func MutedRequestsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *MutedRequestsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/mutedRequests:MutedRequests", id, state, "", opts...)
+}
+
 type mutedRequestsArgs struct {
 	// Muted request names
 	MutedRequestNames []string `pulumi:"mutedRequestNames"`

@@ -371,6 +371,24 @@ class K8sNamespaceAnomalies(pulumi.CustomResource):
         __props__.__dict__["scope"] = scope
         return K8sNamespaceAnomalies(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            cpu_limits_quota_saturation: pulumi.Input[Optional[Union['K8sNamespaceAnomaliesCpuLimitsQuotaSaturationArgs', 'K8sNamespaceAnomaliesCpuLimitsQuotaSaturationArgsDict', 'outputs.K8sNamespaceAnomaliesCpuLimitsQuotaSaturation']]] = None,
+            cpu_requests_quota_saturation: pulumi.Input[Optional[Union['K8sNamespaceAnomaliesCpuRequestsQuotaSaturationArgs', 'K8sNamespaceAnomaliesCpuRequestsQuotaSaturationArgsDict', 'outputs.K8sNamespaceAnomaliesCpuRequestsQuotaSaturation']]] = None,
+            memory_limits_quota_saturation: pulumi.Input[Optional[Union['K8sNamespaceAnomaliesMemoryLimitsQuotaSaturationArgs', 'K8sNamespaceAnomaliesMemoryLimitsQuotaSaturationArgsDict', 'outputs.K8sNamespaceAnomaliesMemoryLimitsQuotaSaturation']]] = None,
+            memory_requests_quota_saturation: pulumi.Input[Optional[Union['K8sNamespaceAnomaliesMemoryRequestsQuotaSaturationArgs', 'K8sNamespaceAnomaliesMemoryRequestsQuotaSaturationArgsDict', 'outputs.K8sNamespaceAnomaliesMemoryRequestsQuotaSaturation']]] = None,
+            pods_quota_saturation: pulumi.Input[Optional[Union['K8sNamespaceAnomaliesPodsQuotaSaturationArgs', 'K8sNamespaceAnomaliesPodsQuotaSaturationArgsDict', 'outputs.K8sNamespaceAnomaliesPodsQuotaSaturation']]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["cpuLimitsQuotaSaturation"] = cpu_limits_quota_saturation
+        __props__["cpuRequestsQuotaSaturation"] = cpu_requests_quota_saturation
+        __props__["memoryLimitsQuotaSaturation"] = memory_limits_quota_saturation
+        __props__["memoryRequestsQuotaSaturation"] = memory_requests_quota_saturation
+        __props__["podsQuotaSaturation"] = pods_quota_saturation
+        __props__["scope"] = scope
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/k8sNamespaceAnomalies:K8sNamespaceAnomalies', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="cpuLimitsQuotaSaturation")
     def cpu_limits_quota_saturation(self) -> pulumi.Output['outputs.K8sNamespaceAnomaliesCpuLimitsQuotaSaturation']:

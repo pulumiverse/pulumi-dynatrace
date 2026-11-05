@@ -354,6 +354,18 @@ class DirectShares(pulumi.CustomResource):
         __props__.__dict__["recipients"] = recipients
         return DirectShares(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            access: pulumi.Input[Optional[_builtins.str]] = None,
+            document_id: pulumi.Input[Optional[_builtins.str]] = None,
+            recipients: pulumi.Input[Optional[Union['DirectSharesRecipientsArgs', 'DirectSharesRecipientsArgsDict', 'outputs.DirectSharesRecipients']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["access"] = access
+        __props__["documentId"] = document_id
+        __props__["recipients"] = recipients
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/directShares:DirectShares', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def access(self) -> pulumi.Output[Optional[_builtins.str]]:

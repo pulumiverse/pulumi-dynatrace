@@ -108,6 +108,12 @@ func (DefaultLaunchpadState) ElementType() reflect.Type {
 	return reflect.TypeOf((*defaultLaunchpadState)(nil)).Elem()
 }
 
+// DefaultLaunchpadExists checks whether an existing DefaultLaunchpad resource with the given ID exists.
+func DefaultLaunchpadExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DefaultLaunchpadState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/defaultLaunchpad:DefaultLaunchpad", id, state, "", opts...)
+}
+
 type defaultLaunchpadArgs struct {
 	// Set default launchpads for user groups. The highest ranked will be shown to the user of a group.
 	GroupLaunchpads *DefaultLaunchpadGroupLaunchpads `pulumi:"groupLaunchpads"`

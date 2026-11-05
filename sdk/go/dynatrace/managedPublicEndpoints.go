@@ -120,6 +120,12 @@ func (ManagedPublicEndpointsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*managedPublicEndpointsState)(nil)).Elem()
 }
 
+// ManagedPublicEndpointsExists checks whether an existing ManagedPublicEndpoints resource with the given ID exists.
+func ManagedPublicEndpointsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ManagedPublicEndpointsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/managedPublicEndpoints:ManagedPublicEndpoints", id, state, "", opts...)
+}
+
 type managedPublicEndpointsArgs struct {
 	// Additional web UI addresses
 	AdditionalWebUiAddresses []string `pulumi:"additionalWebUiAddresses"`

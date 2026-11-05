@@ -209,6 +209,16 @@ class Nettracer(pulumi.CustomResource):
         __props__.__dict__["scope"] = scope
         return Nettracer(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            net_tracer: pulumi.Input[Optional[_builtins.bool]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["netTracer"] = net_tracer
+        __props__["scope"] = scope
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/nettracer:Nettracer', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="netTracer")
     def net_tracer(self) -> pulumi.Output[_builtins.bool]:

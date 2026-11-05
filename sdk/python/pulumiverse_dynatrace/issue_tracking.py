@@ -529,6 +529,32 @@ class IssueTracking(pulumi.CustomResource):
         __props__.__dict__["username"] = username
         return IssueTracking(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+            issuelabel: pulumi.Input[Optional[_builtins.str]] = None,
+            issuequery: pulumi.Input[Optional[_builtins.str]] = None,
+            issuetheme: pulumi.Input[Optional[_builtins.str]] = None,
+            issuetrackersystem: pulumi.Input[Optional[_builtins.str]] = None,
+            password: pulumi.Input[Optional[_builtins.str]] = None,
+            token: pulumi.Input[Optional[_builtins.str]] = None,
+            url: pulumi.Input[Optional[_builtins.str]] = None,
+            username: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["enabled"] = enabled
+        __props__["insertAfter"] = insert_after
+        __props__["issuelabel"] = issuelabel
+        __props__["issuequery"] = issuequery
+        __props__["issuetheme"] = issuetheme
+        __props__["issuetrackersystem"] = issuetrackersystem
+        __props__["password"] = password
+        __props__["token"] = token
+        __props__["url"] = url
+        __props__["username"] = username
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/issueTracking:IssueTracking', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def enabled(self) -> pulumi.Output[_builtins.bool]:

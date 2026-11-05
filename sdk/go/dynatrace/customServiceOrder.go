@@ -99,6 +99,12 @@ func (CustomServiceOrderState) ElementType() reflect.Type {
 	return reflect.TypeOf((*customServiceOrderState)(nil)).Elem()
 }
 
+// CustomServiceOrderExists checks whether an existing CustomServiceOrder resource with the given ID exists.
+func CustomServiceOrderExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *CustomServiceOrderState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/customServiceOrder:CustomServiceOrder", id, state, "", opts...)
+}
+
 type customServiceOrderArgs struct {
 	// The IDs of Custom Services for .Net in the desired order
 	Dotnets []string `pulumi:"dotnets"`

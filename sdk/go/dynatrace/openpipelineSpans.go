@@ -206,6 +206,12 @@ func (OpenpipelineSpansState) ElementType() reflect.Type {
 	return reflect.TypeOf((*openpipelineSpansState)(nil)).Elem()
 }
 
+// OpenpipelineSpansExists checks whether an existing OpenpipelineSpans resource with the given ID exists.
+func OpenpipelineSpansExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *OpenpipelineSpansState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/openpipelineSpans:OpenpipelineSpans", id, state, "", opts...)
+}
+
 type openpipelineSpansArgs struct {
 	// List of all ingest sources of the configuration
 	Endpoints *OpenpipelineSpansEndpoints `pulumi:"endpoints"`

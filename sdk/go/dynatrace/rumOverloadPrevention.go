@@ -78,6 +78,12 @@ func (RumOverloadPreventionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*rumOverloadPreventionState)(nil)).Elem()
 }
 
+// RumOverloadPreventionExists checks whether an existing RumOverloadPrevention resource with the given ID exists.
+func RumOverloadPreventionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *RumOverloadPreventionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/rumOverloadPrevention:RumOverloadPrevention", id, state, "", opts...)
+}
+
 type rumOverloadPreventionArgs struct {
 	// Once this limit is reached, Dynatrace [throttles the number of captured user sessions](https://dt-url.net/fm3v0p7g).
 	OverloadPreventionLimit int `pulumi:"overloadPreventionLimit"`

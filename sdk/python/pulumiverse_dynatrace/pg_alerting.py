@@ -318,6 +318,20 @@ class PgAlerting(pulumi.CustomResource):
         __props__.__dict__["process_group"] = process_group
         return PgAlerting(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            alerting_mode: pulumi.Input[Optional[_builtins.str]] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            minimum_instance_threshold: pulumi.Input[Optional[_builtins.int]] = None,
+            process_group: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["alertingMode"] = alerting_mode
+        __props__["enabled"] = enabled
+        __props__["minimumInstanceThreshold"] = minimum_instance_threshold
+        __props__["processGroup"] = process_group
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/pgAlerting:PgAlerting', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="alertingMode")
     def alerting_mode(self) -> pulumi.Output[Optional[_builtins.str]]:

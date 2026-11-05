@@ -251,6 +251,12 @@ func (MobileApplicationState) ElementType() reflect.Type {
 	return reflect.TypeOf((*mobileApplicationState)(nil)).Elem()
 }
 
+// MobileApplicationExists checks whether an existing MobileApplication resource with the given ID exists.
+func MobileApplicationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *MobileApplicationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/mobileApplication:MobileApplication", id, state, "", opts...)
+}
+
 type mobileApplicationArgs struct {
 	// Apdex configuration of a mobile application. A duration less than the **tolerable** threshold is considered satisfied
 	Apdex MobileApplicationApdex `pulumi:"apdex"`

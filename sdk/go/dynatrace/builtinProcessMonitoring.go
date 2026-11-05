@@ -605,6 +605,12 @@ func (BuiltinProcessMonitoringState) ElementType() reflect.Type {
 	return reflect.TypeOf((*builtinProcessMonitoringState)(nil)).Elem()
 }
 
+// BuiltinProcessMonitoringExists checks whether an existing BuiltinProcessMonitoring resource with the given ID exists.
+func BuiltinProcessMonitoringExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *BuiltinProcessMonitoringState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/builtinProcessMonitoring:BuiltinProcessMonitoring", id, state, "", opts...)
+}
+
 type builtinProcessMonitoringArgs struct {
 	// Rule id: 3 - Do monitor processes if ASP.NET Core application path exists
 	Aspnetcore *bool `pulumi:"aspnetcore"`

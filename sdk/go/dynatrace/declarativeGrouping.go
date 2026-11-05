@@ -108,6 +108,12 @@ func (DeclarativeGroupingState) ElementType() reflect.Type {
 	return reflect.TypeOf((*declarativeGroupingState)(nil)).Elem()
 }
 
+// DeclarativeGroupingExists checks whether an existing DeclarativeGrouping resource with the given ID exists.
+func DeclarativeGroupingExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DeclarativeGroupingState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/declarativeGrouping:DeclarativeGrouping", id, state, "", opts...)
+}
+
 type declarativeGroupingArgs struct {
 	// Enter a descriptive process group display name and a unique identifier that Dynatrace can use to recognize this process group.
 	Detection DeclarativeGroupingDetection `pulumi:"detection"`

@@ -75,6 +75,17 @@ export class AppsecNotification extends pulumi.CustomResource {
         return new AppsecNotification(name, <any>state, { ...opts, id: id });
     }
 
+    /**
+     * Check whether an existing AppsecNotification resource with the given ID exists.
+     *
+     * @param id The _unique_ provider ID of the resource to check.
+     * @param state Any extra arguments used during the lookup.
+     * @param opts Optional settings to control the behavior of the CustomResource.
+     */
+    public static exists(id: pulumi.Input<string>, state?: AppsecNotificationState, opts?: pulumi.CustomResourceOptions): pulumi.Output<boolean> {
+        return pulumi.runtime.existsResource("dynatrace:index/appsecNotification:AppsecNotification", id, <any>state || {}, { ...opts }, undefined);
+    }
+
     /** @internal */
     public static readonly __pulumiType = 'dynatrace:index/appsecNotification:AppsecNotification';
 

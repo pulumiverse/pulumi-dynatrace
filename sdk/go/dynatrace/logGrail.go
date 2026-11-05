@@ -89,6 +89,12 @@ func (LogGrailState) ElementType() reflect.Type {
 	return reflect.TypeOf((*logGrailState)(nil)).Elem()
 }
 
+// LogGrailExists checks whether an existing LogGrail resource with the given ID exists.
+func LogGrailExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *LogGrailState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/logGrail:LogGrail", id, state, "", opts...)
+}
+
 type logGrailArgs struct {
 	// Activate logs powered by Grail.
 	Activated bool `pulumi:"activated"`

@@ -444,6 +444,26 @@ class MainframeTransactionMonitoring(pulumi.CustomResource):
         __props__.__dict__["zos_ims_service_detection_uses_transaction_id"] = zos_ims_service_detection_uses_transaction_id
         return MainframeTransactionMonitoring(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            group_cics_regions: pulumi.Input[Optional[_builtins.bool]] = None,
+            group_ims_regions: pulumi.Input[Optional[_builtins.bool]] = None,
+            monitor_all_ctg_protocols: pulumi.Input[Optional[_builtins.bool]] = None,
+            monitor_all_incoming_web_requests: pulumi.Input[Optional[_builtins.bool]] = None,
+            node_limit: pulumi.Input[Optional[_builtins.int]] = None,
+            zos_cics_service_detection_uses_transaction_id: pulumi.Input[Optional[_builtins.bool]] = None,
+            zos_ims_service_detection_uses_transaction_id: pulumi.Input[Optional[_builtins.bool]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["groupCicsRegions"] = group_cics_regions
+        __props__["groupImsRegions"] = group_ims_regions
+        __props__["monitorAllCtgProtocols"] = monitor_all_ctg_protocols
+        __props__["monitorAllIncomingWebRequests"] = monitor_all_incoming_web_requests
+        __props__["nodeLimit"] = node_limit
+        __props__["zosCicsServiceDetectionUsesTransactionId"] = zos_cics_service_detection_uses_transaction_id
+        __props__["zosImsServiceDetectionUsesTransactionId"] = zos_ims_service_detection_uses_transaction_id
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/mainframeTransactionMonitoring:MainframeTransactionMonitoring', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="groupCicsRegions")
     def group_cics_regions(self) -> pulumi.Output[_builtins.bool]:

@@ -815,6 +815,30 @@ class BrowserMonitor(pulumi.CustomResource):
         __props__.__dict__["tags"] = tags
         return BrowserMonitor(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            anomaly_detection: pulumi.Input[Optional[Union['BrowserMonitorAnomalyDetectionArgs', 'BrowserMonitorAnomalyDetectionArgsDict', 'outputs.BrowserMonitorAnomalyDetection']]] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            frequency: pulumi.Input[Optional[_builtins.int]] = None,
+            key_performance_metrics: pulumi.Input[Optional[Union['BrowserMonitorKeyPerformanceMetricsArgs', 'BrowserMonitorKeyPerformanceMetricsArgsDict', 'outputs.BrowserMonitorKeyPerformanceMetrics']]] = None,
+            locations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            manually_assigned_apps: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            script: pulumi.Input[Optional[Union['BrowserMonitorScriptArgs', 'BrowserMonitorScriptArgsDict', 'outputs.BrowserMonitorScript']]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BrowserMonitorTagArgs', 'BrowserMonitorTagArgsDict', 'outputs.BrowserMonitorTag']]]]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["anomalyDetection"] = anomaly_detection
+        __props__["enabled"] = enabled
+        __props__["frequency"] = frequency
+        __props__["keyPerformanceMetrics"] = key_performance_metrics
+        __props__["locations"] = locations
+        __props__["manuallyAssignedApps"] = manually_assigned_apps
+        __props__["name"] = name
+        __props__["script"] = script
+        __props__["tags"] = tags
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/browserMonitor:BrowserMonitor', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="anomalyDetection")
     def anomaly_detection(self) -> pulumi.Output[Optional['outputs.BrowserMonitorAnomalyDetection']]:

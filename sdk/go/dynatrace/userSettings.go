@@ -138,6 +138,12 @@ func (UserSettingsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*userSettingsState)(nil)).Elem()
 }
 
+// UserSettingsExists checks whether an existing UserSettings resource with the given ID exists.
+func UserSettingsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *UserSettingsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/userSettings:UserSettings", id, state, "", opts...)
+}
+
 type userSettingsArgs struct {
 	// Language - use browser default
 	AutoLanguage bool `pulumi:"autoLanguage"`

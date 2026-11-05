@@ -136,6 +136,12 @@ func (ManagedRemoteAccessState) ElementType() reflect.Type {
 	return reflect.TypeOf((*managedRemoteAccessState)(nil)).Elem()
 }
 
+// ManagedRemoteAccessExists checks whether an existing ManagedRemoteAccess resource with the given ID exists.
+func ManagedRemoteAccessExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ManagedRemoteAccessState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/managedRemoteAccess:ManagedRemoteAccess", id, state, "", opts...)
+}
+
 type managedRemoteAccessArgs struct {
 	// Request reason description, cannot be changed once created
 	Reason string `pulumi:"reason"`

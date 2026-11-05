@@ -100,6 +100,12 @@ func (AutomationSchedulingRuleState) ElementType() reflect.Type {
 	return reflect.TypeOf((*automationSchedulingRuleState)(nil)).Elem()
 }
 
+// AutomationSchedulingRuleExists checks whether an existing AutomationSchedulingRule resource with the given ID exists.
+func AutomationSchedulingRuleExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AutomationSchedulingRuleState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/automationSchedulingRule:AutomationSchedulingRule", id, state, "", opts...)
+}
+
 type automationSchedulingRuleArgs struct {
 	// The ID of the business calendar associated with the scheduling rule
 	BusinessCalendar *string `pulumi:"businessCalendar"`

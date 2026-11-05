@@ -209,6 +209,16 @@ class EbpfServiceDiscovery(pulumi.CustomResource):
         __props__.__dict__["scope"] = scope
         return EbpfServiceDiscovery(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            ebpf: pulumi.Input[Optional[_builtins.bool]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["ebpf"] = ebpf
+        __props__["scope"] = scope
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/ebpfServiceDiscovery:EbpfServiceDiscovery', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def ebpf(self) -> pulumi.Output[_builtins.bool]:

@@ -219,6 +219,12 @@ func (CalculatedSyntheticMetricState) ElementType() reflect.Type {
 	return reflect.TypeOf((*calculatedSyntheticMetricState)(nil)).Elem()
 }
 
+// CalculatedSyntheticMetricExists checks whether an existing CalculatedSyntheticMetric resource with the given ID exists.
+func CalculatedSyntheticMetricExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *CalculatedSyntheticMetricState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/calculatedSyntheticMetric:CalculatedSyntheticMetric", id, state, "", opts...)
+}
+
 type calculatedSyntheticMetricArgs struct {
 	// Descriptor of a calculated synthetic metric.
 	Description *string `pulumi:"description"`

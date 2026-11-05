@@ -184,6 +184,12 @@ func (ServiceNowNotificationState) ElementType() reflect.Type {
 	return reflect.TypeOf((*serviceNowNotificationState)(nil)).Elem()
 }
 
+// ServiceNowNotificationExists checks whether an existing ServiceNowNotification resource with the given ID exists.
+func ServiceNowNotificationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ServiceNowNotificationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/serviceNowNotification:ServiceNowNotification", id, state, "", opts...)
+}
+
 type serviceNowNotificationArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Active bool `pulumi:"active"`

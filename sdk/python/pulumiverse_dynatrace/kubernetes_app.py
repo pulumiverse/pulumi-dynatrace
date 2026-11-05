@@ -211,6 +211,16 @@ class KubernetesApp(pulumi.CustomResource):
         __props__.__dict__["scope"] = scope
         return KubernetesApp(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            kubernetes_app_options: pulumi.Input[Optional[Union['KubernetesAppKubernetesAppOptionsArgs', 'KubernetesAppKubernetesAppOptionsArgsDict', 'outputs.KubernetesAppKubernetesAppOptions']]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["kubernetesAppOptions"] = kubernetes_app_options
+        __props__["scope"] = scope
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/kubernetesApp:KubernetesApp', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="kubernetesAppOptions")
     def kubernetes_app_options(self) -> pulumi.Output['outputs.KubernetesAppKubernetesAppOptions']:

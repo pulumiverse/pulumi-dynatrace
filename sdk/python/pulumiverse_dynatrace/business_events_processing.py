@@ -422,6 +422,26 @@ class BusinessEventsProcessing(pulumi.CustomResource):
         __props__.__dict__["transformation_fields"] = transformation_fields
         return BusinessEventsProcessing(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+            matcher: pulumi.Input[Optional[_builtins.str]] = None,
+            rule_name: pulumi.Input[Optional[_builtins.str]] = None,
+            rule_testing: pulumi.Input[Optional[Union['BusinessEventsProcessingRuleTestingArgs', 'BusinessEventsProcessingRuleTestingArgsDict', 'outputs.BusinessEventsProcessingRuleTesting']]] = None,
+            script: pulumi.Input[Optional[_builtins.str]] = None,
+            transformation_fields: pulumi.Input[Optional[Union['BusinessEventsProcessingTransformationFieldsArgs', 'BusinessEventsProcessingTransformationFieldsArgsDict', 'outputs.BusinessEventsProcessingTransformationFields']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["enabled"] = enabled
+        __props__["insertAfter"] = insert_after
+        __props__["matcher"] = matcher
+        __props__["ruleName"] = rule_name
+        __props__["ruleTesting"] = rule_testing
+        __props__["script"] = script
+        __props__["transformationFields"] = transformation_fields
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/businessEventsProcessing:BusinessEventsProcessing', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def enabled(self) -> pulumi.Output[_builtins.bool]:

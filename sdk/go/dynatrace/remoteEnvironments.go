@@ -138,6 +138,12 @@ func (RemoteEnvironmentsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*remoteEnvironmentsState)(nil)).Elem()
 }
 
+// RemoteEnvironmentsExists checks whether an existing RemoteEnvironments resource with the given ID exists.
+func RemoteEnvironmentsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *RemoteEnvironmentsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/remoteEnvironments:RemoteEnvironments", id, state, "", opts...)
+}
+
 type remoteEnvironmentsArgs struct {
 	// Name
 	Name *string `pulumi:"name"`

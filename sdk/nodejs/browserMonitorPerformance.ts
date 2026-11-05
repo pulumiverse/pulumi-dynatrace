@@ -107,6 +107,17 @@ export class BrowserMonitorPerformance extends pulumi.CustomResource {
         return new BrowserMonitorPerformance(name, <any>state, { ...opts, id: id });
     }
 
+    /**
+     * Check whether an existing BrowserMonitorPerformance resource with the given ID exists.
+     *
+     * @param id The _unique_ provider ID of the resource to check.
+     * @param state Any extra arguments used during the lookup.
+     * @param opts Optional settings to control the behavior of the CustomResource.
+     */
+    public static exists(id: pulumi.Input<string>, state?: BrowserMonitorPerformanceState, opts?: pulumi.CustomResourceOptions): pulumi.Output<boolean> {
+        return pulumi.runtime.existsResource("dynatrace:index/browserMonitorPerformance:BrowserMonitorPerformance", id, <any>state || {}, { ...opts }, undefined);
+    }
+
     /** @internal */
     public static readonly __pulumiType = 'dynatrace:index/browserMonitorPerformance:BrowserMonitorPerformance';
 

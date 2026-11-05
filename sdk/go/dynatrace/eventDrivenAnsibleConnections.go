@@ -160,6 +160,12 @@ func (EventDrivenAnsibleConnectionsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*eventDrivenAnsibleConnectionsState)(nil)).Elem()
 }
 
+// EventDrivenAnsibleConnectionsExists checks whether an existing EventDrivenAnsibleConnections resource with the given ID exists.
+func EventDrivenAnsibleConnectionsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *EventDrivenAnsibleConnectionsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/eventDrivenAnsibleConnections:EventDrivenAnsibleConnections", id, state, "", opts...)
+}
+
 type eventDrivenAnsibleConnectionsArgs struct {
 	// Flag if Red Hat Event Stream is use for Event-Driven Ansible
 	EventStreamEnabled *bool `pulumi:"eventStreamEnabled"`

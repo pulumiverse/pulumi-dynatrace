@@ -135,6 +135,12 @@ func (DevobsDataMaskingState) ElementType() reflect.Type {
 	return reflect.TypeOf((*devobsDataMaskingState)(nil)).Elem()
 }
 
+// DevobsDataMaskingExists checks whether an existing DevobsDataMasking resource with the given ID exists.
+func DevobsDataMaskingExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DevobsDataMaskingState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/devobsDataMasking:DevobsDataMasking", id, state, "", opts...)
+}
+
 type devobsDataMaskingArgs struct {
 	// Select how the variable name should be matched. Possible values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
 	ComparisonType *string `pulumi:"comparisonType"`

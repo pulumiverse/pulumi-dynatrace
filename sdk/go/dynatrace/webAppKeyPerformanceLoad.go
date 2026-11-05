@@ -102,6 +102,12 @@ func (WebAppKeyPerformanceLoadState) ElementType() reflect.Type {
 	return reflect.TypeOf((*webAppKeyPerformanceLoadState)(nil)).Elem()
 }
 
+// WebAppKeyPerformanceLoadExists checks whether an existing WebAppKeyPerformanceLoad resource with the given ID exists.
+func WebAppKeyPerformanceLoadExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *WebAppKeyPerformanceLoadState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/webAppKeyPerformanceLoad:WebAppKeyPerformanceLoad", id, state, "", opts...)
+}
+
 type webAppKeyPerformanceLoadArgs struct {
 	// If the selected key performance metric is not detected, the **User action duration** metric is used instead.
 	FallbackThresholds *WebAppKeyPerformanceLoadFallbackThresholds `pulumi:"fallbackThresholds"`

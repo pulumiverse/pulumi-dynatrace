@@ -74,6 +74,12 @@ func (WebAppJavascriptVersionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*webAppJavascriptVersionState)(nil)).Elem()
 }
 
+// WebAppJavascriptVersionExists checks whether an existing WebAppJavascriptVersion resource with the given ID exists.
+func WebAppJavascriptVersionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *WebAppJavascriptVersionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/webAppJavascriptVersion:WebAppJavascriptVersion", id, state, "", opts...)
+}
+
 type webAppJavascriptVersionArgs struct {
 	// Choose custom version
 	CustomJavascriptVersion *string `pulumi:"customJavascriptVersion"`

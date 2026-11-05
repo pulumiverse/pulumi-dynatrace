@@ -370,6 +370,24 @@ class GenericTypes(pulumi.CustomResource):
         __props__.__dict__["rules"] = rules
         return GenericTypes(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            created_by: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            rules: pulumi.Input[Optional[Union['GenericTypesRulesArgs', 'GenericTypesRulesArgsDict', 'outputs.GenericTypesRules']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["createdBy"] = created_by
+        __props__["displayName"] = display_name
+        __props__["enabled"] = enabled
+        __props__["insertAfter"] = insert_after
+        __props__["name"] = name
+        __props__["rules"] = rules
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/genericTypes:GenericTypes', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="createdBy")
     def created_by(self) -> pulumi.Output[_builtins.str]:

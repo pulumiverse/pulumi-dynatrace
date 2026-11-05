@@ -98,6 +98,12 @@ func (WebAppIpAddressExclusionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*webAppIpAddressExclusionState)(nil)).Elem()
 }
 
+// WebAppIpAddressExclusionExists checks whether an existing WebAppIpAddressExclusion resource with the given ID exists.
+func WebAppIpAddressExclusionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *WebAppIpAddressExclusionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/webAppIpAddressExclusion:WebAppIpAddressExclusion", id, state, "", opts...)
+}
+
 type webAppIpAddressExclusionArgs struct {
 	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
 	ApplicationId string `pulumi:"applicationId"`

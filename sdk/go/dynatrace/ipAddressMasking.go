@@ -90,6 +90,12 @@ func (IpAddressMaskingState) ElementType() reflect.Type {
 	return reflect.TypeOf((*ipAddressMaskingState)(nil)).Elem()
 }
 
+// IpAddressMaskingExists checks whether an existing IpAddressMasking resource with the given ID exists.
+func IpAddressMaskingExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *IpAddressMaskingState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/ipAddressMasking:IpAddressMasking", id, state, "", opts...)
+}
+
 type ipAddressMaskingArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`

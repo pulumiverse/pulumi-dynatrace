@@ -121,6 +121,12 @@ func (MsteamsConnectionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*msteamsConnectionState)(nil)).Elem()
 }
 
+// MsteamsConnectionExists checks whether an existing MsteamsConnection resource with the given ID exists.
+func MsteamsConnectionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *MsteamsConnectionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/msteamsConnection:MsteamsConnection", id, state, "", opts...)
+}
+
 type msteamsConnectionArgs struct {
 	// Optional
 	ChannelName *string `pulumi:"channelName"`

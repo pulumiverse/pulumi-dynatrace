@@ -93,6 +93,12 @@ func (AixExtensionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*aixExtensionState)(nil)).Elem()
 }
 
+// AixExtensionExists checks whether an existing AixExtension resource with the given ID exists.
+func AixExtensionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AixExtensionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/aixExtension:AixExtension", id, state, "", opts...)
+}
+
 type aixExtensionArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled *bool `pulumi:"enabled"`

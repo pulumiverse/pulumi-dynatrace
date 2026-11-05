@@ -114,6 +114,12 @@ func (WebAppBeaconOriginsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*webAppBeaconOriginsState)(nil)).Elem()
 }
 
+// WebAppBeaconOriginsExists checks whether an existing WebAppBeaconOrigins resource with the given ID exists.
+func WebAppBeaconOriginsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *WebAppBeaconOriginsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/webAppBeaconOrigins:WebAppBeaconOrigins", id, state, "", opts...)
+}
+
 type webAppBeaconOriginsArgs struct {
 	// Matcher. Possible values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
 	Matcher string `pulumi:"matcher"`

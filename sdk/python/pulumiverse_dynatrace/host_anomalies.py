@@ -409,6 +409,26 @@ class HostAnomalies(pulumi.CustomResource):
         __props__.__dict__["network"] = network
         return HostAnomalies(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            connections: pulumi.Input[Optional[Union['HostAnomaliesConnectionsArgs', 'HostAnomaliesConnectionsArgsDict', 'outputs.HostAnomaliesConnections']]] = None,
+            cpu: pulumi.Input[Optional[Union['HostAnomaliesCpuArgs', 'HostAnomaliesCpuArgsDict', 'outputs.HostAnomaliesCpu']]] = None,
+            disks: pulumi.Input[Optional[Union['HostAnomaliesDisksArgs', 'HostAnomaliesDisksArgsDict', 'outputs.HostAnomaliesDisks']]] = None,
+            gc: pulumi.Input[Optional[Union['HostAnomaliesGcArgs', 'HostAnomaliesGcArgsDict', 'outputs.HostAnomaliesGc']]] = None,
+            java: pulumi.Input[Optional[Union['HostAnomaliesJavaArgs', 'HostAnomaliesJavaArgsDict', 'outputs.HostAnomaliesJava']]] = None,
+            memory: pulumi.Input[Optional[Union['HostAnomaliesMemoryArgs', 'HostAnomaliesMemoryArgsDict', 'outputs.HostAnomaliesMemory']]] = None,
+            network: pulumi.Input[Optional[Union['HostAnomaliesNetworkArgs', 'HostAnomaliesNetworkArgsDict', 'outputs.HostAnomaliesNetwork']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["connections"] = connections
+        __props__["cpu"] = cpu
+        __props__["disks"] = disks
+        __props__["gc"] = gc
+        __props__["java"] = java
+        __props__["memory"] = memory
+        __props__["network"] = network
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/hostAnomalies:HostAnomalies', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def connections(self) -> pulumi.Output[Optional['outputs.HostAnomaliesConnections']]:

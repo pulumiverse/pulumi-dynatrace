@@ -135,6 +135,12 @@ func (OneagentFeaturesState) ElementType() reflect.Type {
 	return reflect.TypeOf((*oneagentFeaturesState)(nil)).Elem()
 }
 
+// OneagentFeaturesExists checks whether an existing OneagentFeatures resource with the given ID exists.
+func OneagentFeaturesExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *OneagentFeaturesState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/oneagentFeatures:OneagentFeatures", id, state, "", opts...)
+}
+
 type oneagentFeaturesArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`

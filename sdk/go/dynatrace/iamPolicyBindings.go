@@ -97,6 +97,12 @@ func (IamPolicyBindingsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*iamPolicyBindingsState)(nil)).Elem()
 }
 
+// IamPolicyBindingsExists checks whether an existing IamPolicyBindings resource with the given ID exists.
+func IamPolicyBindingsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *IamPolicyBindingsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/iamPolicyBindings:IamPolicyBindings", id, state, "", opts...)
+}
+
 type iamPolicyBindingsArgs struct {
 	// The UUID of the account (`urn:dtaccount:<account-uuid>`). The attribute `policies` must contain ONLY policies defined for that account. The prefix `urn:dtaccount:` MUST be omitted here.
 	Account *string `pulumi:"account"`

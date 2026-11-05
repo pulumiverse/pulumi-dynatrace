@@ -111,6 +111,12 @@ func (DataPrivacyState) ElementType() reflect.Type {
 	return reflect.TypeOf((*dataPrivacyState)(nil)).Elem()
 }
 
+// DataPrivacyExists checks whether an existing DataPrivacy resource with the given ID exists.
+func DataPrivacyExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DataPrivacyState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/dataPrivacy:DataPrivacy", id, state, "", opts...)
+}
+
 type dataPrivacyArgs struct {
 	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
 	ApplicationId *string `pulumi:"applicationId"`

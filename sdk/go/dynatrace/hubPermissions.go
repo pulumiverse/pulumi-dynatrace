@@ -89,6 +89,12 @@ func (HubPermissionsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*hubPermissionsState)(nil)).Elem()
 }
 
+// HubPermissionsExists checks whether an existing HubPermissions resource with the given ID exists.
+func HubPermissionsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *HubPermissionsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/hubPermissions:HubPermissions", id, state, "", opts...)
+}
+
 type hubPermissionsArgs struct {
 	// Name
 	Description string `pulumi:"description"`

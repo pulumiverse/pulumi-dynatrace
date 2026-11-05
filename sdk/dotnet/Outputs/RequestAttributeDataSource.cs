@@ -67,7 +67,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly string? ServerVariableTechnology;
         /// <summary>
-        /// The technology of the session attribute to capture if the **source** value is `SESSION_ATTRIBUTE`. 
+        /// The technology of the session attribute to capture if the **source** value is `SESSION_ATTRIBUTE`.
         /// 
         ///  Not applicable in other cases
         /// </summary>
@@ -81,7 +81,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly string? SpanAttributeKey;
         /// <summary>
-        /// The technology of the method to capture if the **source** value is `METHOD_PARAM`. 
+        /// The technology of the method to capture if the **source** value is `METHOD_PARAM`.
         /// 
         ///  Not applicable in other cases
         /// </summary>

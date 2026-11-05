@@ -289,6 +289,20 @@ class FrequentIssues(pulumi.CustomResource):
         __props__.__dict__["detect_txn"] = detect_txn
         return FrequentIssues(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            detect_apps: pulumi.Input[Optional[_builtins.bool]] = None,
+            detect_env: pulumi.Input[Optional[_builtins.bool]] = None,
+            detect_infra: pulumi.Input[Optional[_builtins.bool]] = None,
+            detect_txn: pulumi.Input[Optional[_builtins.bool]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["detectApps"] = detect_apps
+        __props__["detectEnv"] = detect_env
+        __props__["detectInfra"] = detect_infra
+        __props__["detectTxn"] = detect_txn
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/frequentIssues:FrequentIssues', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="detectApps")
     def detect_apps(self) -> pulumi.Output[_builtins.bool]:

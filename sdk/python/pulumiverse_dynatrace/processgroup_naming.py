@@ -329,6 +329,22 @@ class ProcessgroupNaming(pulumi.CustomResource):
         __props__.__dict__["unknowns"] = unknowns
         return ProcessgroupNaming(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            conditions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProcessgroupNamingConditionArgs', 'ProcessgroupNamingConditionArgsDict', 'outputs.ProcessgroupNamingCondition']]]]] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            format: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            unknowns: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["conditions"] = conditions
+        __props__["enabled"] = enabled
+        __props__["format"] = format
+        __props__["name"] = name
+        __props__["unknowns"] = unknowns
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/processgroupNaming:ProcessgroupNaming', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def conditions(self) -> pulumi.Output[Optional[Sequence['outputs.ProcessgroupNamingCondition']]]:

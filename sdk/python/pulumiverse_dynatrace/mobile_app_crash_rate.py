@@ -251,6 +251,16 @@ class MobileAppCrashRate(pulumi.CustomResource):
         __props__.__dict__["crash_rate_increase"] = crash_rate_increase
         return MobileAppCrashRate(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            application_id: pulumi.Input[Optional[_builtins.str]] = None,
+            crash_rate_increase: pulumi.Input[Optional[Union['MobileAppCrashRateCrashRateIncreaseArgs', 'MobileAppCrashRateCrashRateIncreaseArgsDict', 'outputs.MobileAppCrashRateCrashRateIncrease']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["applicationId"] = application_id
+        __props__["crashRateIncrease"] = crash_rate_increase
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/mobileAppCrashRate:MobileAppCrashRate', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="applicationId")
     def application_id(self) -> pulumi.Output[Optional[_builtins.str]]:

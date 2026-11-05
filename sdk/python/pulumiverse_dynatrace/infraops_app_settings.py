@@ -316,6 +316,20 @@ class InfraopsAppSettings(pulumi.CustomResource):
         __props__.__dict__["show_standalone_hosts"] = show_standalone_hosts
         return InfraopsAppSettings(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            interface_saturation_threshold: pulumi.Input[Optional[_builtins.float]] = None,
+            invex_dql_query_limit: pulumi.Input[Optional[_builtins.int]] = None,
+            show_monitoring_candidates: pulumi.Input[Optional[_builtins.bool]] = None,
+            show_standalone_hosts: pulumi.Input[Optional[_builtins.bool]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["interfaceSaturationThreshold"] = interface_saturation_threshold
+        __props__["invexDqlQueryLimit"] = invex_dql_query_limit
+        __props__["showMonitoringCandidates"] = show_monitoring_candidates
+        __props__["showStandaloneHosts"] = show_standalone_hosts
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/infraopsAppSettings:InfraopsAppSettings', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="interfaceSaturationThreshold")
     def interface_saturation_threshold(self) -> pulumi.Output[_builtins.float]:

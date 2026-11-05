@@ -447,6 +447,24 @@ class AwsService(pulumi.CustomResource):
         __props__.__dict__["use_recommended_metrics"] = use_recommended_metrics
         return AwsService(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            built_in: pulumi.Input[Optional[_builtins.bool]] = None,
+            credentials_id: pulumi.Input[Optional[_builtins.str]] = None,
+            metrics: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AwsServiceMetricArgs', 'AwsServiceMetricArgsDict', 'outputs.AwsServiceMetric']]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            required_metrics: pulumi.Input[Optional[_builtins.str]] = None,
+            use_recommended_metrics: pulumi.Input[Optional[_builtins.bool]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["builtIn"] = built_in
+        __props__["credentialsId"] = credentials_id
+        __props__["metrics"] = metrics
+        __props__["name"] = name
+        __props__["requiredMetrics"] = required_metrics
+        __props__["useRecommendedMetrics"] = use_recommended_metrics
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/awsService:AwsService', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="builtIn")
     def built_in(self) -> pulumi.Output[_builtins.bool]:

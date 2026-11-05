@@ -19,13 +19,13 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly string Key;
         /// <summary>
-        /// How to compare. Possible values are 
+        /// How to compare. Possible values are
         ///    - `BEGINS_WITH`
         ///    - `EQUALS`
         /// </summary>
         public readonly string Match;
         /// <summary>
-        /// The type of the condition. Possible values are 
+        /// The type of the condition. Possible values are
         ///    - `DIMENSION`
         ///    - `LOG_FILE_NAME`
         ///    - `METRIC_KEY`

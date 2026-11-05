@@ -422,6 +422,26 @@ class DavisAnomalyDetectors(pulumi.CustomResource):
         __props__.__dict__["title"] = title
         return DavisAnomalyDetectors(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            analyzer: pulumi.Input[Optional[Union['DavisAnomalyDetectorsAnalyzerArgs', 'DavisAnomalyDetectorsAnalyzerArgsDict', 'outputs.DavisAnomalyDetectorsAnalyzer']]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            event_template: pulumi.Input[Optional[Union['DavisAnomalyDetectorsEventTemplateArgs', 'DavisAnomalyDetectorsEventTemplateArgsDict', 'outputs.DavisAnomalyDetectorsEventTemplate']]] = None,
+            execution_settings: pulumi.Input[Optional[Union['DavisAnomalyDetectorsExecutionSettingsArgs', 'DavisAnomalyDetectorsExecutionSettingsArgsDict', 'outputs.DavisAnomalyDetectorsExecutionSettings']]] = None,
+            source: pulumi.Input[Optional[_builtins.str]] = None,
+            title: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["analyzer"] = analyzer
+        __props__["description"] = description
+        __props__["enabled"] = enabled
+        __props__["eventTemplate"] = event_template
+        __props__["executionSettings"] = execution_settings
+        __props__["source"] = source
+        __props__["title"] = title
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/davisAnomalyDetectors:DavisAnomalyDetectors', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def analyzer(self) -> pulumi.Output['outputs.DavisAnomalyDetectorsAnalyzer']:

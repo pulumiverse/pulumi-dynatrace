@@ -114,6 +114,12 @@ func (ApiDetectionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*apiDetectionState)(nil)).Elem()
 }
 
+// ApiDetectionExists checks whether an existing ApiDetection resource with the given ID exists.
+func ApiDetectionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ApiDetectionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/apiDetection:ApiDetection", id, state, "", opts...)
+}
+
 type apiDetectionArgs struct {
 	// This color will be used to highlight APIs when viewing code level data, such as distributed traces or method hotspots.
 	ApiColor string `pulumi:"apiColor"`

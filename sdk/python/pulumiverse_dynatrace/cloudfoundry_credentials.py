@@ -412,6 +412,26 @@ class CloudfoundryCredentials(pulumi.CustomResource):
         __props__.__dict__["username"] = username
         return CloudfoundryCredentials(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            active: pulumi.Input[Optional[_builtins.bool]] = None,
+            api_url: pulumi.Input[Optional[_builtins.str]] = None,
+            login_url: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            password: pulumi.Input[Optional[_builtins.str]] = None,
+            unknowns: pulumi.Input[Optional[_builtins.str]] = None,
+            username: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["active"] = active
+        __props__["apiUrl"] = api_url
+        __props__["loginUrl"] = login_url
+        __props__["name"] = name
+        __props__["password"] = password
+        __props__["unknowns"] = unknowns
+        __props__["username"] = username
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/cloudfoundryCredentials:CloudfoundryCredentials', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def active(self) -> pulumi.Output[Optional[_builtins.bool]]:

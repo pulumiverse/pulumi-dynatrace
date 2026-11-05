@@ -117,6 +117,12 @@ func (ContainerRuleState) ElementType() reflect.Type {
 	return reflect.TypeOf((*containerRuleState)(nil)).Elem()
 }
 
+// ContainerRuleExists checks whether an existing ContainerRule resource with the given ID exists.
+func ContainerRuleExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ContainerRuleState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/containerRule:ContainerRule", id, state, "", opts...)
+}
+
 type containerRuleArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`

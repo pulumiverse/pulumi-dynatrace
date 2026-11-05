@@ -151,6 +151,12 @@ func (AnsibleTowerNotificationState) ElementType() reflect.Type {
 	return reflect.TypeOf((*ansibleTowerNotificationState)(nil)).Elem()
 }
 
+// AnsibleTowerNotificationExists checks whether an existing AnsibleTowerNotification resource with the given ID exists.
+func AnsibleTowerNotificationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AnsibleTowerNotificationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/ansibleTowerNotification:AnsibleTowerNotification", id, state, "", opts...)
+}
+
 type ansibleTowerNotificationArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Active *bool `pulumi:"active"`

@@ -289,6 +289,16 @@ class DashboardsPresets(pulumi.CustomResource):
         __props__.__dict__["enable_dashboard_presets"] = enable_dashboard_presets
         return DashboardsPresets(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            dashboard_presets_list: pulumi.Input[Optional[Union['DashboardsPresetsDashboardPresetsListArgs', 'DashboardsPresetsDashboardPresetsListArgsDict', 'outputs.DashboardsPresetsDashboardPresetsList']]] = None,
+            enable_dashboard_presets: pulumi.Input[Optional[_builtins.bool]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["dashboardPresetsList"] = dashboard_presets_list
+        __props__["enableDashboardPresets"] = enable_dashboard_presets
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/dashboardsPresets:DashboardsPresets', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="dashboardPresetsList")
     def dashboard_presets_list(self) -> pulumi.Output[Optional['outputs.DashboardsPresetsDashboardPresetsList']]:

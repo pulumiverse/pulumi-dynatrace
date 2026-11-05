@@ -209,6 +209,16 @@ class UnifiedServicesMetrics(pulumi.CustomResource):
         __props__.__dict__["service_id"] = service_id
         return UnifiedServicesMetrics(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            enable_endpoint_metrics: pulumi.Input[Optional[_builtins.bool]] = None,
+            service_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["enableEndpointMetrics"] = enable_endpoint_metrics
+        __props__["serviceId"] = service_id
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/unifiedServicesMetrics:UnifiedServicesMetrics', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="enableEndpointMetrics")
     def enable_endpoint_metrics(self) -> pulumi.Output[_builtins.bool]:

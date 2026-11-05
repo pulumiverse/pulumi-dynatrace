@@ -173,6 +173,12 @@ func (SloState) ElementType() reflect.Type {
 	return reflect.TypeOf((*sloState)(nil)).Elem()
 }
 
+// SloExists checks whether an existing Slo resource with the given ID exists.
+func SloExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SloState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/slo:Slo", id, state, "", opts...)
+}
+
 type sloArgs struct {
 	// The total count metric (the denominator in rate calculation)
 	Denominator *string `pulumi:"denominator"`

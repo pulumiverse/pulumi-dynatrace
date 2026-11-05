@@ -176,6 +176,12 @@ func (ServicenowConnectionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*servicenowConnectionState)(nil)).Elem()
 }
 
+// ServicenowConnectionExists checks whether an existing ServicenowConnection resource with the given ID exists.
+func ServicenowConnectionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ServicenowConnectionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/servicenowConnection:ServicenowConnection", id, state, "", opts...)
+}
+
 type servicenowConnectionArgs struct {
 	// Client ID of the ServiceNow OAuth server
 	ClientId *string `pulumi:"clientId"`

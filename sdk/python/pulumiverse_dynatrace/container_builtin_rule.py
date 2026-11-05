@@ -562,6 +562,32 @@ class ContainerBuiltinRule(pulumi.CustomResource):
         __props__.__dict__["ignore_open_shift_sdn_namespace"] = ignore_open_shift_sdn_namespace
         return ContainerBuiltinRule(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            ignore_docker_pause_container: pulumi.Input[Optional[_builtins.bool]] = None,
+            ignore_kubernetes_pause_container: pulumi.Input[Optional[_builtins.bool]] = None,
+            ignore_open_shift_build_pod_name: pulumi.Input[Optional[_builtins.bool]] = None,
+            ignore_open_shift_etcd_namespace: pulumi.Input[Optional[_builtins.bool]] = None,
+            ignore_open_shift_ingress_canary_namespace: pulumi.Input[Optional[_builtins.bool]] = None,
+            ignore_open_shift_kube_apiserver_namespace: pulumi.Input[Optional[_builtins.bool]] = None,
+            ignore_open_shift_machine_config_operator_namespace: pulumi.Input[Optional[_builtins.bool]] = None,
+            ignore_open_shift_monitoring_namespace: pulumi.Input[Optional[_builtins.bool]] = None,
+            ignore_open_shift_ovn_kubernetes_namespace: pulumi.Input[Optional[_builtins.bool]] = None,
+            ignore_open_shift_sdn_namespace: pulumi.Input[Optional[_builtins.bool]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["ignoreDockerPauseContainer"] = ignore_docker_pause_container
+        __props__["ignoreKubernetesPauseContainer"] = ignore_kubernetes_pause_container
+        __props__["ignoreOpenShiftBuildPodName"] = ignore_open_shift_build_pod_name
+        __props__["ignoreOpenShiftEtcdNamespace"] = ignore_open_shift_etcd_namespace
+        __props__["ignoreOpenShiftIngressCanaryNamespace"] = ignore_open_shift_ingress_canary_namespace
+        __props__["ignoreOpenShiftKubeApiserverNamespace"] = ignore_open_shift_kube_apiserver_namespace
+        __props__["ignoreOpenShiftMachineConfigOperatorNamespace"] = ignore_open_shift_machine_config_operator_namespace
+        __props__["ignoreOpenShiftMonitoringNamespace"] = ignore_open_shift_monitoring_namespace
+        __props__["ignoreOpenShiftOvnKubernetesNamespace"] = ignore_open_shift_ovn_kubernetes_namespace
+        __props__["ignoreOpenShiftSdnNamespace"] = ignore_open_shift_sdn_namespace
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/containerBuiltinRule:ContainerBuiltinRule', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="ignoreDockerPauseContainer")
     def ignore_docker_pause_container(self) -> pulumi.Output[_builtins.bool]:

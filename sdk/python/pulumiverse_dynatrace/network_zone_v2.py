@@ -290,6 +290,20 @@ class NetworkZoneV2(pulumi.CustomResource):
         __props__.__dict__["identifier"] = identifier
         return NetworkZoneV2(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            alternative_zones: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            fallback_mode: pulumi.Input[Optional[_builtins.str]] = None,
+            identifier: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["alternativeZones"] = alternative_zones
+        __props__["description"] = description
+        __props__["fallbackMode"] = fallback_mode
+        __props__["identifier"] = identifier
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/networkZoneV2:NetworkZoneV2', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="alternativeZones")
     def alternative_zones(self) -> pulumi.Output[Optional[Sequence[_builtins.str]]]:

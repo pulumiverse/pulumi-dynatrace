@@ -170,6 +170,14 @@ class RumOverloadPrevention(pulumi.CustomResource):
         __props__.__dict__["overload_prevention_limit"] = overload_prevention_limit
         return RumOverloadPrevention(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            overload_prevention_limit: pulumi.Input[Optional[_builtins.int]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["overloadPreventionLimit"] = overload_prevention_limit
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/rumOverloadPrevention:RumOverloadPrevention', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="overloadPreventionLimit")
     def overload_prevention_limit(self) -> pulumi.Output[_builtins.int]:

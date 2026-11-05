@@ -185,6 +185,12 @@ func (SettingsPermissionsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*settingsPermissionsState)(nil)).Elem()
 }
 
+// SettingsPermissionsExists checks whether an existing SettingsPermissions resource with the given ID exists.
+func SettingsPermissionsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SettingsPermissionsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/settingsPermissions:SettingsPermissions", id, state, "", opts...)
+}
+
 type settingsPermissionsArgs struct {
 	// Defines the default access level granted to all users in this environment. Allowed values are `read`, `write`, or `none`
 	AllUsers *string                    `pulumi:"allUsers"`

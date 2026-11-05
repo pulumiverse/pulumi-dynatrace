@@ -88,6 +88,17 @@ export class OpenpipelineV2UserEventsDataforwarding extends pulumi.CustomResourc
         return new OpenpipelineV2UserEventsDataforwarding(name, <any>state, { ...opts, id: id });
     }
 
+    /**
+     * Check whether an existing OpenpipelineV2UserEventsDataforwarding resource with the given ID exists.
+     *
+     * @param id The _unique_ provider ID of the resource to check.
+     * @param state Any extra arguments used during the lookup.
+     * @param opts Optional settings to control the behavior of the CustomResource.
+     */
+    public static exists(id: pulumi.Input<string>, state?: OpenpipelineV2UserEventsDataforwardingState, opts?: pulumi.CustomResourceOptions): pulumi.Output<boolean> {
+        return pulumi.runtime.existsResource("dynatrace:index/openpipelineV2UserEventsDataforwarding:OpenpipelineV2UserEventsDataforwarding", id, <any>state || {}, { ...opts }, undefined);
+    }
+
     /** @internal */
     public static readonly __pulumiType = 'dynatrace:index/openpipelineV2UserEventsDataforwarding:OpenpipelineV2UserEventsDataforwarding';
 

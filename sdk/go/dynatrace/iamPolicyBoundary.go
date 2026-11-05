@@ -138,6 +138,12 @@ func (IamPolicyBoundaryState) ElementType() reflect.Type {
 	return reflect.TypeOf((*iamPolicyBoundaryState)(nil)).Elem()
 }
 
+// IamPolicyBoundaryExists checks whether an existing IamPolicyBoundary resource with the given ID exists.
+func IamPolicyBoundaryExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *IamPolicyBoundaryState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/iamPolicyBoundary:IamPolicyBoundary", id, state, "", opts...)
+}
+
 type iamPolicyBoundaryArgs struct {
 	// The name of the policy
 	Name *string `pulumi:"name"`

@@ -210,6 +210,16 @@ class ActivegateToken(pulumi.CustomResource):
         __props__.__dict__["expiring_token_notifications_enabled"] = expiring_token_notifications_enabled
         return ActivegateToken(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            auth_token_enforcement_manually_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            expiring_token_notifications_enabled: pulumi.Input[Optional[_builtins.bool]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["authTokenEnforcementManuallyEnabled"] = auth_token_enforcement_manually_enabled
+        __props__["expiringTokenNotificationsEnabled"] = expiring_token_notifications_enabled
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/activegateToken:ActivegateToken', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="authTokenEnforcementManuallyEnabled")
     def auth_token_enforcement_manually_enabled(self) -> pulumi.Output[_builtins.bool]:

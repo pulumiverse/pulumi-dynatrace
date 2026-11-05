@@ -89,6 +89,12 @@ func (AttackSettingsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*attackSettingsState)(nil)).Elem()
 }
 
+// AttackSettingsExists checks whether an existing AttackSettings resource with the given ID exists.
+func AttackSettingsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AttackSettingsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/attackSettings:AttackSettings", id, state, "", opts...)
+}
+
 type attackSettingsArgs struct {
 	// Define global incoming attack control
 	DefaultAttackHandling AttackSettingsDefaultAttackHandling `pulumi:"defaultAttackHandling"`

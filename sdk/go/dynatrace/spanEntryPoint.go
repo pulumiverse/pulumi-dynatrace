@@ -99,6 +99,12 @@ func (SpanEntryPointState) ElementType() reflect.Type {
 	return reflect.TypeOf((*spanEntryPointState)(nil)).Elem()
 }
 
+// SpanEntryPointExists checks whether an existing SpanEntryPoint resource with the given ID exists.
+func SpanEntryPointExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SpanEntryPointState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/spanEntryPoint:SpanEntryPoint", id, state, "", opts...)
+}
+
 type spanEntryPointArgs struct {
 	// Whether to create an entry point or not
 	Action string `pulumi:"action"`

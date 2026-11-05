@@ -256,6 +256,18 @@ class MobileAppKeyPerformance(pulumi.CustomResource):
         __props__.__dict__["thresholds"] = thresholds
         return MobileAppKeyPerformance(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            frustrating_if_reported_or_web_request_error: pulumi.Input[Optional[_builtins.bool]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None,
+            thresholds: pulumi.Input[Optional[Union['MobileAppKeyPerformanceThresholdsArgs', 'MobileAppKeyPerformanceThresholdsArgsDict', 'outputs.MobileAppKeyPerformanceThresholds']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["frustratingIfReportedOrWebRequestError"] = frustrating_if_reported_or_web_request_error
+        __props__["scope"] = scope
+        __props__["thresholds"] = thresholds
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/mobileAppKeyPerformance:MobileAppKeyPerformance', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="frustratingIfReportedOrWebRequestError")
     def frustrating_if_reported_or_web_request_error(self) -> pulumi.Output[_builtins.bool]:

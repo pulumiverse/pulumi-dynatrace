@@ -315,6 +315,18 @@ class OpenpipelineLogs(pulumi.CustomResource):
         __props__.__dict__["routing"] = routing
         return OpenpipelineLogs(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            endpoints: pulumi.Input[Optional[Union['OpenpipelineLogsEndpointsArgs', 'OpenpipelineLogsEndpointsArgsDict', 'outputs.OpenpipelineLogsEndpoints']]] = None,
+            pipelines: pulumi.Input[Optional[Union['OpenpipelineLogsPipelinesArgs', 'OpenpipelineLogsPipelinesArgsDict', 'outputs.OpenpipelineLogsPipelines']]] = None,
+            routing: pulumi.Input[Optional[Union['OpenpipelineLogsRoutingArgs', 'OpenpipelineLogsRoutingArgsDict', 'outputs.OpenpipelineLogsRouting']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["endpoints"] = endpoints
+        __props__["pipelines"] = pipelines
+        __props__["routing"] = routing
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/openpipelineLogs:OpenpipelineLogs', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def endpoints(self) -> pulumi.Output[Optional['outputs.OpenpipelineLogsEndpoints']]:

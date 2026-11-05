@@ -318,6 +318,22 @@ class WebAppManualInsertion(pulumi.CustomResource):
         __props__.__dict__["oneagent_javascript_tag_sri"] = oneagent_javascript_tag_sri
         return WebAppManualInsertion(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            application_id: pulumi.Input[Optional[_builtins.str]] = None,
+            code_snippet: pulumi.Input[Optional[Union['WebAppManualInsertionCodeSnippetArgs', 'WebAppManualInsertionCodeSnippetArgsDict', 'outputs.WebAppManualInsertionCodeSnippet']]] = None,
+            javascript_tag: pulumi.Input[Optional[Union['WebAppManualInsertionJavascriptTagArgs', 'WebAppManualInsertionJavascriptTagArgsDict', 'outputs.WebAppManualInsertionJavascriptTag']]] = None,
+            oneagent_javascript_tag: pulumi.Input[Optional[Union['WebAppManualInsertionOneagentJavascriptTagArgs', 'WebAppManualInsertionOneagentJavascriptTagArgsDict', 'outputs.WebAppManualInsertionOneagentJavascriptTag']]] = None,
+            oneagent_javascript_tag_sri: pulumi.Input[Optional[Union['WebAppManualInsertionOneagentJavascriptTagSriArgs', 'WebAppManualInsertionOneagentJavascriptTagSriArgsDict', 'outputs.WebAppManualInsertionOneagentJavascriptTagSri']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["applicationId"] = application_id
+        __props__["codeSnippet"] = code_snippet
+        __props__["javascriptTag"] = javascript_tag
+        __props__["oneagentJavascriptTag"] = oneagent_javascript_tag
+        __props__["oneagentJavascriptTagSri"] = oneagent_javascript_tag_sri
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/webAppManualInsertion:WebAppManualInsertion', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="applicationId")
     def application_id(self) -> pulumi.Output[_builtins.str]:

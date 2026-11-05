@@ -368,6 +368,24 @@ class LogSensitiveDataMasking(pulumi.CustomResource):
         __props__.__dict__["scope"] = scope
         return LogSensitiveDataMasking(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+            masking: pulumi.Input[Optional[Union['LogSensitiveDataMaskingMaskingArgs', 'LogSensitiveDataMaskingMaskingArgsDict', 'outputs.LogSensitiveDataMaskingMasking']]] = None,
+            matchers: pulumi.Input[Optional[Union['LogSensitiveDataMaskingMatchersArgs', 'LogSensitiveDataMaskingMatchersArgsDict', 'outputs.LogSensitiveDataMaskingMatchers']]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["enabled"] = enabled
+        __props__["insertAfter"] = insert_after
+        __props__["masking"] = masking
+        __props__["matchers"] = matchers
+        __props__["name"] = name
+        __props__["scope"] = scope
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/logSensitiveDataMasking:LogSensitiveDataMasking', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def enabled(self) -> pulumi.Output[_builtins.bool]:

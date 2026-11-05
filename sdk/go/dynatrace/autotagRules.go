@@ -135,6 +135,12 @@ func (AutotagRulesState) ElementType() reflect.Type {
 	return reflect.TypeOf((*autotagRulesState)(nil)).Elem()
 }
 
+// AutotagRulesExists checks whether an existing AutotagRules resource with the given ID exists.
+func AutotagRulesExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AutotagRulesState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/autotagRules:AutotagRules", id, state, "", opts...)
+}
+
 type autotagRulesArgs struct {
 	// Automatically applied tag ID
 	AutoTagId string `pulumi:"autoTagId"`

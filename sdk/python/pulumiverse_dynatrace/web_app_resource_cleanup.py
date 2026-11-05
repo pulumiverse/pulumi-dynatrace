@@ -288,6 +288,20 @@ class WebAppResourceCleanup(pulumi.CustomResource):
         __props__.__dict__["replace_with"] = replace_with
         return WebAppResourceCleanup(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            regular_expression: pulumi.Input[Optional[_builtins.str]] = None,
+            replace_with: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["insertAfter"] = insert_after
+        __props__["name"] = name
+        __props__["regularExpression"] = regular_expression
+        __props__["replaceWith"] = replace_with
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/webAppResourceCleanup:WebAppResourceCleanup', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="insertAfter")
     def insert_after(self) -> pulumi.Output[_builtins.str]:

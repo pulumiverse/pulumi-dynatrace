@@ -87,6 +87,12 @@ func (RumAdvancedCorrelationState) ElementType() reflect.Type {
 	return reflect.TypeOf((*rumAdvancedCorrelationState)(nil)).Elem()
 }
 
+// RumAdvancedCorrelationExists checks whether an existing RumAdvancedCorrelation resource with the given ID exists.
+func RumAdvancedCorrelationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *RumAdvancedCorrelationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/rumAdvancedCorrelation:RumAdvancedCorrelation", id, state, "", opts...)
+}
+
 type rumAdvancedCorrelationArgs struct {
 	// Matcher. Possible values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
 	Matcher string `pulumi:"matcher"`

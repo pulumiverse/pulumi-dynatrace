@@ -87,6 +87,12 @@ func (MetricQueryState) ElementType() reflect.Type {
 	return reflect.TypeOf((*metricQueryState)(nil)).Elem()
 }
 
+// MetricQueryExists checks whether an existing MetricQuery resource with the given ID exists.
+func MetricQueryExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *MetricQueryState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/metricQuery:MetricQuery", id, state, "", opts...)
+}
+
 type metricQueryArgs struct {
 	// The scope of this setting (metric)
 	MetricId string `pulumi:"metricId"`

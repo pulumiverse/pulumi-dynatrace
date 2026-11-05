@@ -349,6 +349,18 @@ class KubernetesEnrichment(pulumi.CustomResource):
         __props__.__dict__["use_ingest_enrichment_config_schema"] = use_ingest_enrichment_config_schema
         return KubernetesEnrichment(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            rules: pulumi.Input[Optional[Union['KubernetesEnrichmentRulesArgs', 'KubernetesEnrichmentRulesArgsDict', 'outputs.KubernetesEnrichmentRules']]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None,
+            use_ingest_enrichment_config_schema: pulumi.Input[Optional[_builtins.bool]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["rules"] = rules
+        __props__["scope"] = scope
+        __props__["useIngestEnrichmentConfigSchema"] = use_ingest_enrichment_config_schema
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/kubernetesEnrichment:KubernetesEnrichment', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def rules(self) -> pulumi.Output[Optional['outputs.KubernetesEnrichmentRules']]:

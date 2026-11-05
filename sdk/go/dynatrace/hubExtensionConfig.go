@@ -224,6 +224,12 @@ func (HubExtensionConfigState) ElementType() reflect.Type {
 	return reflect.TypeOf((*hubExtensionConfigState)(nil)).Elem()
 }
 
+// HubExtensionConfigExists checks whether an existing HubExtensionConfig resource with the given ID exists.
+func HubExtensionConfigExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *HubExtensionConfigState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/hubExtensionConfig:HubExtensionConfig", id, state, "", opts...)
+}
+
 type hubExtensionConfigArgs struct {
 	// The name of the Active Gate Group this monitoring configuration will be defined for
 	ActiveGateGroup *string `pulumi:"activeGateGroup"`

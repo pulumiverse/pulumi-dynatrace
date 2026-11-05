@@ -87,6 +87,12 @@ func (CrashdumpAnalyticsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*crashdumpAnalyticsState)(nil)).Elem()
 }
 
+// CrashdumpAnalyticsExists checks whether an existing CrashdumpAnalytics resource with the given ID exists.
+func CrashdumpAnalyticsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *CrashdumpAnalyticsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/crashdumpAnalytics:CrashdumpAnalytics", id, state, "", opts...)
+}
+
 type crashdumpAnalyticsArgs struct {
 	// Disable the feature to stop receiving information about crash details and potential problems. We recommend keeping the feature enabled.
 	EnableCrashDumpAnalytics bool `pulumi:"enableCrashDumpAnalytics"`

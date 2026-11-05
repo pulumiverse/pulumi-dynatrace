@@ -251,6 +251,18 @@ class AppMonitoring(pulumi.CustomResource):
         __props__.__dict__["default_trace_level"] = default_trace_level
         return AppMonitoring(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            app_monitoring: pulumi.Input[Optional[Union['AppMonitoringAppMonitoringArgs', 'AppMonitoringAppMonitoringArgsDict', 'outputs.AppMonitoringAppMonitoring']]] = None,
+            default_log_level: pulumi.Input[Optional[_builtins.str]] = None,
+            default_trace_level: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["appMonitoring"] = app_monitoring
+        __props__["defaultLogLevel"] = default_log_level
+        __props__["defaultTraceLevel"] = default_trace_level
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/appMonitoring:AppMonitoring', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="appMonitoring")
     def app_monitoring(self) -> pulumi.Output[Optional['outputs.AppMonitoringAppMonitoring']]:

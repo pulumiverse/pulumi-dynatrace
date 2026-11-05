@@ -74,6 +74,12 @@ func (DashboardsAllowlistState) ElementType() reflect.Type {
 	return reflect.TypeOf((*dashboardsAllowlistState)(nil)).Elem()
 }
 
+// DashboardsAllowlistExists checks whether an existing DashboardsAllowlist resource with the given ID exists.
+func DashboardsAllowlistExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DashboardsAllowlistState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/dashboardsAllowlist:DashboardsAllowlist", id, state, "", opts...)
+}
+
 type dashboardsAllowlistArgs struct {
 	// List of URL pattern matchers
 	Allowlist *DashboardsAllowlistAllowlist `pulumi:"allowlist"`

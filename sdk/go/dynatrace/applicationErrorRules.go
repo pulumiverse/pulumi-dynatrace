@@ -110,6 +110,12 @@ func (ApplicationErrorRulesState) ElementType() reflect.Type {
 	return reflect.TypeOf((*applicationErrorRulesState)(nil)).Elem()
 }
 
+// ApplicationErrorRulesExists checks whether an existing ApplicationErrorRules resource with the given ID exists.
+func ApplicationErrorRulesExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ApplicationErrorRulesState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/applicationErrorRules:ApplicationErrorRules", id, state, "", opts...)
+}
+
 type applicationErrorRulesArgs struct {
 	// (Field has overlap with `WebAppCustomErrors`) An ordered list of HTTP errors.
 	CustomErrors *ApplicationErrorRulesCustomErrors `pulumi:"customErrors"`

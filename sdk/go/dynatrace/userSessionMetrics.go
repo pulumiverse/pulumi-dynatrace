@@ -152,6 +152,12 @@ func (UserSessionMetricsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*userSessionMetricsState)(nil)).Elem()
 }
 
+// UserSessionMetricsExists checks whether an existing UserSessionMetrics resource with the given ID exists.
+func UserSessionMetricsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *UserSessionMetricsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/userSessionMetrics:UserSessionMetrics", id, state, "", opts...)
+}
+
 type userSessionMetricsArgs struct {
 	// Defines the fields that are used as dimensions. A dimension is a collection of reference information about a metric data point that is of interest to your business. Dimensions are parameters like "browserFamily", "userType", "country". For example, using "userType" as a dimension allows you to split chart data based on user types.
 	Dimensions []string `pulumi:"dimensions"`

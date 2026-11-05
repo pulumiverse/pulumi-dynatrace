@@ -148,6 +148,12 @@ func (ActivegateUpdatesState) ElementType() reflect.Type {
 	return reflect.TypeOf((*activegateUpdatesState)(nil)).Elem()
 }
 
+// ActivegateUpdatesExists checks whether an existing ActivegateUpdates resource with the given ID exists.
+func ActivegateUpdatesExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ActivegateUpdatesState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/activegateUpdates:ActivegateUpdates", id, state, "", opts...)
+}
+
 type activegateUpdatesArgs struct {
 	// The scope of this setting (ENVIRONMENT*ACTIVE*GATE). Omit this property if you want to cover the whole environment.
 	Scope *string `pulumi:"scope"`

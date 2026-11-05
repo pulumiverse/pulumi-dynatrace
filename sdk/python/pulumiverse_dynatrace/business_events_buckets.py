@@ -335,6 +335,22 @@ class BusinessEventsBuckets(pulumi.CustomResource):
         __props__.__dict__["rule_name"] = rule_name
         return BusinessEventsBuckets(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            bucket_name: pulumi.Input[Optional[_builtins.str]] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+            matcher: pulumi.Input[Optional[_builtins.str]] = None,
+            rule_name: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["bucketName"] = bucket_name
+        __props__["enabled"] = enabled
+        __props__["insertAfter"] = insert_after
+        __props__["matcher"] = matcher
+        __props__["ruleName"] = rule_name
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/businessEventsBuckets:BusinessEventsBuckets', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="bucketName")
     def bucket_name(self) -> pulumi.Output[_builtins.str]:

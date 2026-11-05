@@ -477,6 +477,30 @@ class MaintenanceWindow(pulumi.CustomResource):
         __props__.__dict__["unknowns"] = unknowns
         return MaintenanceWindow(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            schedule: pulumi.Input[Optional[Union['MaintenanceWindowScheduleArgs', 'MaintenanceWindowScheduleArgsDict', 'outputs.MaintenanceWindowSchedule']]] = None,
+            scope: pulumi.Input[Optional[Union['MaintenanceWindowScopeArgs', 'MaintenanceWindowScopeArgsDict', 'outputs.MaintenanceWindowScope']]] = None,
+            suppress_synth_mon_exec: pulumi.Input[Optional[_builtins.bool]] = None,
+            suppression: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None,
+            unknowns: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["description"] = description
+        __props__["enabled"] = enabled
+        __props__["name"] = name
+        __props__["schedule"] = schedule
+        __props__["scope"] = scope
+        __props__["suppressSynthMonExec"] = suppress_synth_mon_exec
+        __props__["suppression"] = suppression
+        __props__["type"] = type
+        __props__["unknowns"] = unknowns
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/maintenanceWindow:MaintenanceWindow', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def description(self) -> pulumi.Output[Optional[_builtins.str]]:

@@ -104,6 +104,12 @@ func (DbAppFeatureFlagsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*dbAppFeatureFlagsState)(nil)).Elem()
 }
 
+// DbAppFeatureFlagsExists checks whether an existing DbAppFeatureFlags resource with the given ID exists.
+func DbAppFeatureFlagsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DbAppFeatureFlagsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/dbAppFeatureFlags:DbAppFeatureFlags", id, state, "", opts...)
+}
+
 type dbAppFeatureFlagsArgs struct {
 	// State of boolean feature flag
 	BooleanValue *bool `pulumi:"booleanValue"`

@@ -454,6 +454,28 @@ class XmattersNotification(pulumi.CustomResource):
         __props__.__dict__["url"] = url
         return XmattersNotification(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            active: pulumi.Input[Optional[_builtins.bool]] = None,
+            headers: pulumi.Input[Optional[Union['XmattersNotificationHeadersArgs', 'XmattersNotificationHeadersArgsDict', 'outputs.XmattersNotificationHeaders']]] = None,
+            insecure: pulumi.Input[Optional[_builtins.bool]] = None,
+            legacy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            payload: pulumi.Input[Optional[_builtins.str]] = None,
+            profile: pulumi.Input[Optional[_builtins.str]] = None,
+            url: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["active"] = active
+        __props__["headers"] = headers
+        __props__["insecure"] = insecure
+        __props__["legacyId"] = legacy_id
+        __props__["name"] = name
+        __props__["payload"] = payload
+        __props__["profile"] = profile
+        __props__["url"] = url
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/xmattersNotification:XmattersNotification', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def active(self) -> pulumi.Output[_builtins.bool]:

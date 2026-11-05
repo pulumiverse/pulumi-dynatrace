@@ -144,6 +144,12 @@ func (ApplicationDetectionRuleV2State) ElementType() reflect.Type {
 	return reflect.TypeOf((*applicationDetectionRuleV2State)(nil)).Elem()
 }
 
+// ApplicationDetectionRuleV2Exists checks whether an existing ApplicationDetectionRuleV2 resource with the given ID exists.
+func ApplicationDetectionRuleV2Exists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ApplicationDetectionRuleV2State, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/applicationDetectionRuleV2:ApplicationDetectionRuleV2", id, state, "", opts...)
+}
+
 type applicationDetectionRuleV2Args struct {
 	// Select an existing application or create a new one.
 	ApplicationId string `pulumi:"applicationId"`

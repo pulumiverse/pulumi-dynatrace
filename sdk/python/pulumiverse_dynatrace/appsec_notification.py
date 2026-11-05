@@ -799,6 +799,42 @@ class AppsecNotification(pulumi.CustomResource):
         __props__.__dict__["webhook_configuration"] = webhook_configuration
         return AppsecNotification(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            attack_candidate_based_alerting_profile: pulumi.Input[Optional[_builtins.str]] = None,
+            attack_candidate_based_email_payload: pulumi.Input[Optional[Union['AppsecNotificationAttackCandidateBasedEmailPayloadArgs', 'AppsecNotificationAttackCandidateBasedEmailPayloadArgsDict', 'outputs.AppsecNotificationAttackCandidateBasedEmailPayload']]] = None,
+            attack_candidate_based_jira_payload: pulumi.Input[Optional[Union['AppsecNotificationAttackCandidateBasedJiraPayloadArgs', 'AppsecNotificationAttackCandidateBasedJiraPayloadArgsDict', 'outputs.AppsecNotificationAttackCandidateBasedJiraPayload']]] = None,
+            attack_candidate_based_webhook_payload: pulumi.Input[Optional[Union['AppsecNotificationAttackCandidateBasedWebhookPayloadArgs', 'AppsecNotificationAttackCandidateBasedWebhookPayloadArgsDict', 'outputs.AppsecNotificationAttackCandidateBasedWebhookPayload']]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            email_configuration: pulumi.Input[Optional[Union['AppsecNotificationEmailConfigurationArgs', 'AppsecNotificationEmailConfigurationArgsDict', 'outputs.AppsecNotificationEmailConfiguration']]] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            jira_configuration: pulumi.Input[Optional[Union['AppsecNotificationJiraConfigurationArgs', 'AppsecNotificationJiraConfigurationArgsDict', 'outputs.AppsecNotificationJiraConfiguration']]] = None,
+            security_problem_based_alerting_profile: pulumi.Input[Optional[_builtins.str]] = None,
+            security_problem_based_email_payload: pulumi.Input[Optional[Union['AppsecNotificationSecurityProblemBasedEmailPayloadArgs', 'AppsecNotificationSecurityProblemBasedEmailPayloadArgsDict', 'outputs.AppsecNotificationSecurityProblemBasedEmailPayload']]] = None,
+            security_problem_based_jira_payload: pulumi.Input[Optional[Union['AppsecNotificationSecurityProblemBasedJiraPayloadArgs', 'AppsecNotificationSecurityProblemBasedJiraPayloadArgsDict', 'outputs.AppsecNotificationSecurityProblemBasedJiraPayload']]] = None,
+            security_problem_based_webhook_payload: pulumi.Input[Optional[Union['AppsecNotificationSecurityProblemBasedWebhookPayloadArgs', 'AppsecNotificationSecurityProblemBasedWebhookPayloadArgsDict', 'outputs.AppsecNotificationSecurityProblemBasedWebhookPayload']]] = None,
+            trigger: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None,
+            webhook_configuration: pulumi.Input[Optional[Union['AppsecNotificationWebhookConfigurationArgs', 'AppsecNotificationWebhookConfigurationArgsDict', 'outputs.AppsecNotificationWebhookConfiguration']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["attackCandidateBasedAlertingProfile"] = attack_candidate_based_alerting_profile
+        __props__["attackCandidateBasedEmailPayload"] = attack_candidate_based_email_payload
+        __props__["attackCandidateBasedJiraPayload"] = attack_candidate_based_jira_payload
+        __props__["attackCandidateBasedWebhookPayload"] = attack_candidate_based_webhook_payload
+        __props__["displayName"] = display_name
+        __props__["emailConfiguration"] = email_configuration
+        __props__["enabled"] = enabled
+        __props__["jiraConfiguration"] = jira_configuration
+        __props__["securityProblemBasedAlertingProfile"] = security_problem_based_alerting_profile
+        __props__["securityProblemBasedEmailPayload"] = security_problem_based_email_payload
+        __props__["securityProblemBasedJiraPayload"] = security_problem_based_jira_payload
+        __props__["securityProblemBasedWebhookPayload"] = security_problem_based_webhook_payload
+        __props__["trigger"] = trigger
+        __props__["type"] = type
+        __props__["webhookConfiguration"] = webhook_configuration
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/appsecNotification:AppsecNotification', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="attackCandidateBasedAlertingProfile")
     def attack_candidate_based_alerting_profile(self) -> pulumi.Output[Optional[_builtins.str]]:

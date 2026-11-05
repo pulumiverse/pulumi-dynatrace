@@ -328,6 +328,22 @@ class BusinessEventsCapturingVariants(pulumi.CustomResource):
         __props__.__dict__["scope"] = scope
         return BusinessEventsCapturingVariants(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            content_type_matcher: pulumi.Input[Optional[_builtins.str]] = None,
+            content_type_value: pulumi.Input[Optional[_builtins.str]] = None,
+            insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+            parser: pulumi.Input[Optional[_builtins.str]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["contentTypeMatcher"] = content_type_matcher
+        __props__["contentTypeValue"] = content_type_value
+        __props__["insertAfter"] = insert_after
+        __props__["parser"] = parser
+        __props__["scope"] = scope
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/businessEventsCapturingVariants:BusinessEventsCapturingVariants', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="contentTypeMatcher")
     def content_type_matcher(self) -> pulumi.Output[_builtins.str]:

@@ -296,6 +296,18 @@ class AutotagRules(pulumi.CustomResource):
         __props__.__dict__["rules"] = rules
         return AutotagRules(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            auto_tag_id: pulumi.Input[Optional[_builtins.str]] = None,
+            current_state: pulumi.Input[Optional[_builtins.str]] = None,
+            rules: pulumi.Input[Optional[Union['AutotagRulesRulesArgs', 'AutotagRulesRulesArgsDict', 'outputs.AutotagRulesRules']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["autoTagId"] = auto_tag_id
+        __props__["currentState"] = current_state
+        __props__["rules"] = rules
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/autotagRules:AutotagRules', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="autoTagId")
     def auto_tag_id(self) -> pulumi.Output[_builtins.str]:

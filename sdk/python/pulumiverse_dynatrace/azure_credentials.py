@@ -660,6 +660,38 @@ class AzureCredentials(pulumi.CustomResource):
         __props__.__dict__["unknowns"] = unknowns
         return AzureCredentials(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            active: pulumi.Input[Optional[_builtins.bool]] = None,
+            app_id: pulumi.Input[Optional[_builtins.str]] = None,
+            auto_tagging: pulumi.Input[Optional[_builtins.bool]] = None,
+            directory_id: pulumi.Input[Optional[_builtins.str]] = None,
+            key: pulumi.Input[Optional[_builtins.str]] = None,
+            label: pulumi.Input[Optional[_builtins.str]] = None,
+            monitor_only_excluding_tag_pairs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AzureCredentialsMonitorOnlyExcludingTagPairArgs', 'AzureCredentialsMonitorOnlyExcludingTagPairArgsDict', 'outputs.AzureCredentialsMonitorOnlyExcludingTagPair']]]]] = None,
+            monitor_only_tag_pairs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AzureCredentialsMonitorOnlyTagPairArgs', 'AzureCredentialsMonitorOnlyTagPairArgsDict', 'outputs.AzureCredentialsMonitorOnlyTagPair']]]]] = None,
+            monitor_only_tagged_entities: pulumi.Input[Optional[_builtins.bool]] = None,
+            remove_defaults: pulumi.Input[Optional[_builtins.bool]] = None,
+            supporting_services: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AzureCredentialsSupportingServiceArgs', 'AzureCredentialsSupportingServiceArgsDict', 'outputs.AzureCredentialsSupportingService']]]]] = None,
+            supporting_services_managed_in_dynatrace: pulumi.Input[Optional[_builtins.bool]] = None,
+            unknowns: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["active"] = active
+        __props__["appId"] = app_id
+        __props__["autoTagging"] = auto_tagging
+        __props__["directoryId"] = directory_id
+        __props__["key"] = key
+        __props__["label"] = label
+        __props__["monitorOnlyExcludingTagPairs"] = monitor_only_excluding_tag_pairs
+        __props__["monitorOnlyTagPairs"] = monitor_only_tag_pairs
+        __props__["monitorOnlyTaggedEntities"] = monitor_only_tagged_entities
+        __props__["removeDefaults"] = remove_defaults
+        __props__["supportingServices"] = supporting_services
+        __props__["supportingServicesManagedInDynatrace"] = supporting_services_managed_in_dynatrace
+        __props__["unknowns"] = unknowns
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/azureCredentials:AzureCredentials', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def active(self) -> pulumi.Output[_builtins.bool]:

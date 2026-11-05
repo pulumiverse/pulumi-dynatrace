@@ -212,6 +212,16 @@ class DiskAnomaliesV2(pulumi.CustomResource):
         __props__.__dict__["scope"] = scope
         return DiskAnomaliesV2(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            disk: pulumi.Input[Optional[Union['DiskAnomaliesV2DiskArgs', 'DiskAnomaliesV2DiskArgsDict', 'outputs.DiskAnomaliesV2Disk']]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["disk"] = disk
+        __props__["scope"] = scope
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/diskAnomaliesV2:DiskAnomaliesV2', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def disk(self) -> pulumi.Output['outputs.DiskAnomaliesV2Disk']:

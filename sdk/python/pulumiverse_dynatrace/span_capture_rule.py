@@ -290,6 +290,20 @@ class SpanCaptureRule(pulumi.CustomResource):
         __props__.__dict__["name"] = name
         return SpanCaptureRule(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            action: pulumi.Input[Optional[_builtins.str]] = None,
+            insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+            matches: pulumi.Input[Optional[Union['SpanCaptureRuleMatchesArgs', 'SpanCaptureRuleMatchesArgsDict', 'outputs.SpanCaptureRuleMatches']]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["action"] = action
+        __props__["insertAfter"] = insert_after
+        __props__["matches"] = matches
+        __props__["name"] = name
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/spanCaptureRule:SpanCaptureRule', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def action(self) -> pulumi.Output[_builtins.str]:

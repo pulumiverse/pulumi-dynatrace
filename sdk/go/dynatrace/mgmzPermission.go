@@ -142,6 +142,12 @@ func (MgmzPermissionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*mgmzPermissionState)(nil)).Elem()
 }
 
+// MgmzPermissionExists checks whether an existing MgmzPermission resource with the given ID exists.
+func MgmzPermissionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *MgmzPermissionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/mgmzPermission:MgmzPermission", id, state, "", opts...)
+}
+
 type mgmzPermissionArgs struct {
 	// The UUID of the environment
 	Environment string `pulumi:"environment"`

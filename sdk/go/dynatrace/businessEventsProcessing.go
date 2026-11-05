@@ -132,6 +132,12 @@ func (BusinessEventsProcessingState) ElementType() reflect.Type {
 	return reflect.TypeOf((*businessEventsProcessingState)(nil)).Elem()
 }
 
+// BusinessEventsProcessingExists checks whether an existing BusinessEventsProcessing resource with the given ID exists.
+func BusinessEventsProcessingExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *BusinessEventsProcessingState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/businessEventsProcessing:BusinessEventsProcessing", id, state, "", opts...)
+}
+
 type businessEventsProcessingArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`

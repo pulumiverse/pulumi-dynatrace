@@ -399,6 +399,24 @@ class AgToken(pulumi.CustomResource):
         __props__.__dict__["type"] = type
         return AgToken(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            expiration_date: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            seed: pulumi.Input[Optional[_builtins.bool]] = None,
+            tenant_token: pulumi.Input[Optional[_builtins.str]] = None,
+            token: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["expirationDate"] = expiration_date
+        __props__["name"] = name
+        __props__["seed"] = seed
+        __props__["tenantToken"] = tenant_token
+        __props__["token"] = token
+        __props__["type"] = type
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/agToken:AgToken', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="expirationDate")
     def expiration_date(self) -> pulumi.Output[Optional[_builtins.str]]:

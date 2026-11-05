@@ -278,6 +278,18 @@ class HostProcessGroupMonitoring(pulumi.CustomResource):
         __props__.__dict__["process_group"] = process_group
         return HostProcessGroupMonitoring(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            host_id: pulumi.Input[Optional[_builtins.str]] = None,
+            monitoring_state: pulumi.Input[Optional[_builtins.str]] = None,
+            process_group: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["hostId"] = host_id
+        __props__["monitoringState"] = monitoring_state
+        __props__["processGroup"] = process_group
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/hostProcessGroupMonitoring:HostProcessGroupMonitoring', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="hostId")
     def host_id(self) -> pulumi.Output[_builtins.str]:

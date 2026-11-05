@@ -222,6 +222,12 @@ func (SyntheticLocationState) ElementType() reflect.Type {
 	return reflect.TypeOf((*syntheticLocationState)(nil)).Elem()
 }
 
+// SyntheticLocationExists checks whether an existing SyntheticLocation resource with the given ID exists.
+func SyntheticLocationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SyntheticLocationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/syntheticLocation:SyntheticLocation", id, state, "", opts...)
+}
+
 type syntheticLocationArgs struct {
 	// Auto upgrade of Chromium is enabled (`true`) or disabled (`false`)
 	AutoUpdateChromium *bool `pulumi:"autoUpdateChromium"`

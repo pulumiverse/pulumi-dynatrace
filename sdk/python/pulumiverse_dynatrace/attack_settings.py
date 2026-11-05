@@ -216,6 +216,16 @@ class AttackSettings(pulumi.CustomResource):
         __props__.__dict__["enabled"] = enabled
         return AttackSettings(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            default_attack_handling: pulumi.Input[Optional[Union['AttackSettingsDefaultAttackHandlingArgs', 'AttackSettingsDefaultAttackHandlingArgsDict', 'outputs.AttackSettingsDefaultAttackHandling']]] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["defaultAttackHandling"] = default_attack_handling
+        __props__["enabled"] = enabled
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/attackSettings:AttackSettings', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="defaultAttackHandling")
     def default_attack_handling(self) -> pulumi.Output['outputs.AttackSettingsDefaultAttackHandling']:

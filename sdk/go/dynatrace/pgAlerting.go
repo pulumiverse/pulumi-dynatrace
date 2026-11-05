@@ -134,6 +134,12 @@ func (PgAlertingState) ElementType() reflect.Type {
 	return reflect.TypeOf((*pgAlertingState)(nil)).Elem()
 }
 
+// PgAlertingExists checks whether an existing PgAlerting resource with the given ID exists.
+func PgAlertingExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *PgAlertingState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/pgAlerting:PgAlerting", id, state, "", opts...)
+}
+
 type pgAlertingArgs struct {
 	// Possible Values: `ON_INSTANCE_COUNT_VIOLATION`, `ON_PGI_UNAVAILABILITY`
 	AlertingMode *string `pulumi:"alertingMode"`

@@ -386,6 +386,22 @@ class UserSessionMetrics(pulumi.CustomResource):
         __props__.__dict__["value"] = value
         return UserSessionMetrics(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            dimensions: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            filters: pulumi.Input[Optional[Union['UserSessionMetricsFiltersArgs', 'UserSessionMetricsFiltersArgsDict', 'outputs.UserSessionMetricsFilters']]] = None,
+            metric_key: pulumi.Input[Optional[_builtins.str]] = None,
+            value: pulumi.Input[Optional[Union['UserSessionMetricsValueArgs', 'UserSessionMetricsValueArgsDict', 'outputs.UserSessionMetricsValue']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["dimensions"] = dimensions
+        __props__["enabled"] = enabled
+        __props__["filters"] = filters
+        __props__["metricKey"] = metric_key
+        __props__["value"] = value
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/userSessionMetrics:UserSessionMetrics', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def dimensions(self) -> pulumi.Output[Optional[Sequence[_builtins.str]]]:

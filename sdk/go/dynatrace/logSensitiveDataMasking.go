@@ -111,6 +111,12 @@ func (LogSensitiveDataMaskingState) ElementType() reflect.Type {
 	return reflect.TypeOf((*logSensitiveDataMaskingState)(nil)).Elem()
 }
 
+// LogSensitiveDataMaskingExists checks whether an existing LogSensitiveDataMasking resource with the given ID exists.
+func LogSensitiveDataMaskingExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *LogSensitiveDataMaskingState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/logSensitiveDataMasking:LogSensitiveDataMasking", id, state, "", opts...)
+}
+
 type logSensitiveDataMaskingArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`

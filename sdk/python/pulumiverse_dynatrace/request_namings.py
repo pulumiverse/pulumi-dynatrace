@@ -159,6 +159,14 @@ class RequestNamings(pulumi.CustomResource):
         __props__.__dict__["ids"] = ids
         return RequestNamings(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["ids"] = ids
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/requestNamings:RequestNamings', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def ids(self) -> pulumi.Output[Optional[Sequence[_builtins.str]]]:

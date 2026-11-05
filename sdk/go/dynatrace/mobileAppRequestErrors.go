@@ -128,6 +128,12 @@ func (MobileAppRequestErrorsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*mobileAppRequestErrorsState)(nil)).Elem()
 }
 
+// MobileAppRequestErrorsExists checks whether an existing MobileAppRequestErrors resource with the given ID exists.
+func MobileAppRequestErrorsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *MobileAppRequestErrorsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/mobileAppRequestErrors:MobileAppRequestErrors", id, state, "", opts...)
+}
+
 type mobileAppRequestErrorsArgs struct {
 	// no documentation available
 	ErrorRules *MobileAppRequestErrorsErrorRules `pulumi:"errorRules"`

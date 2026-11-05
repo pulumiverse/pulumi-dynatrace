@@ -249,6 +249,18 @@ class HostMonitoringAdvanced(pulumi.CustomResource):
         __props__.__dict__["process_agent_injection"] = process_agent_injection
         return HostMonitoringAdvanced(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            code_module_injection: pulumi.Input[Optional[_builtins.bool]] = None,
+            host_id: pulumi.Input[Optional[_builtins.str]] = None,
+            process_agent_injection: pulumi.Input[Optional[_builtins.bool]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["codeModuleInjection"] = code_module_injection
+        __props__["hostId"] = host_id
+        __props__["processAgentInjection"] = process_agent_injection
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/hostMonitoringAdvanced:HostMonitoringAdvanced', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="codeModuleInjection")
     def code_module_injection(self) -> pulumi.Output[Optional[_builtins.bool]]:
