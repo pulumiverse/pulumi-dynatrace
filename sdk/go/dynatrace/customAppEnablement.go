@@ -86,6 +86,12 @@ func (CustomAppEnablementState) ElementType() reflect.Type {
 	return reflect.TypeOf((*customAppEnablementState)(nil)).Elem()
 }
 
+// CustomAppEnablementExists checks whether an existing CustomAppEnablement resource with the given ID exists.
+func CustomAppEnablementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *CustomAppEnablementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/customAppEnablement:CustomAppEnablement", id, state, "", opts...)
+}
+
 type customAppEnablementArgs struct {
 	// Capture and analyze all user actions within your application. Enable [Real User Monitoring (RUM)](https://dt-url.net/1n2b0prq) to monitor and improve your application's performance, identify errors, and gain insight into your user's behavior and experience.
 	Rum CustomAppEnablementRum `pulumi:"rum"`

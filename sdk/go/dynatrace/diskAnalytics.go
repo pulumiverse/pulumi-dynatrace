@@ -87,6 +87,12 @@ func (DiskAnalyticsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*diskAnalyticsState)(nil)).Elem()
 }
 
+// DiskAnalyticsExists checks whether an existing DiskAnalytics resource with the given ID exists.
+func DiskAnalyticsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DiskAnalyticsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/diskAnalytics:DiskAnalytics", id, state, "", opts...)
+}
+
 type diskAnalyticsArgs struct {
 	// The Disk Analytics feature requires an extension to be added to your environment. You can add the Disk Analytics extension to your environment from [Dynatrace Hub](https://www.terraform.io/ui/hub/ext/com.dynatrace.extension.disk-devices#information). The Disk Analytics extension consumes custom metrics and [Davis data units](https://www.dynatrace.com/support/help/shortlink/metric-cost-calculation).
 	Enabled bool `pulumi:"enabled"`

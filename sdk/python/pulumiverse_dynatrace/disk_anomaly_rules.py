@@ -487,6 +487,30 @@ class DiskAnomalyRules(pulumi.CustomResource):
         __props__.__dict__["threshold_percent"] = threshold_percent
         return DiskAnomalyRules(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            disk_name_filter: pulumi.Input[Optional[Union['DiskAnomalyRulesDiskNameFilterArgs', 'DiskAnomalyRulesDiskNameFilterArgsDict', 'outputs.DiskAnomalyRulesDiskNameFilter']]] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            host_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            metric: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            sample_limit: pulumi.Input[Optional[Union['DiskAnomalyRulesSampleLimitArgs', 'DiskAnomalyRulesSampleLimitArgsDict', 'outputs.DiskAnomalyRulesSampleLimit']]] = None,
+            tag_filters: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            threshold_milliseconds: pulumi.Input[Optional[_builtins.float]] = None,
+            threshold_percent: pulumi.Input[Optional[_builtins.float]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["diskNameFilter"] = disk_name_filter
+        __props__["enabled"] = enabled
+        __props__["hostGroupId"] = host_group_id
+        __props__["metric"] = metric
+        __props__["name"] = name
+        __props__["sampleLimit"] = sample_limit
+        __props__["tagFilters"] = tag_filters
+        __props__["thresholdMilliseconds"] = threshold_milliseconds
+        __props__["thresholdPercent"] = threshold_percent
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/diskAnomalyRules:DiskAnomalyRules', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="diskNameFilter")
     def disk_name_filter(self) -> pulumi.Output['outputs.DiskAnomalyRulesDiskNameFilter']:

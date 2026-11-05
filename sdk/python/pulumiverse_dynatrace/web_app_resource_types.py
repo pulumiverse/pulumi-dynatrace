@@ -288,6 +288,20 @@ class WebAppResourceTypes(pulumi.CustomResource):
         __props__.__dict__["secondary_resource_type"] = secondary_resource_type
         return WebAppResourceTypes(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+            primary_resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+            regular_expression: pulumi.Input[Optional[_builtins.str]] = None,
+            secondary_resource_type: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["insertAfter"] = insert_after
+        __props__["primaryResourceType"] = primary_resource_type
+        __props__["regularExpression"] = regular_expression
+        __props__["secondaryResourceType"] = secondary_resource_type
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/webAppResourceTypes:WebAppResourceTypes', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="insertAfter")
     def insert_after(self) -> pulumi.Output[_builtins.str]:

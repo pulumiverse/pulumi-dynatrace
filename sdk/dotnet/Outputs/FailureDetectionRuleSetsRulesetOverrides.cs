@@ -15,7 +15,7 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class FailureDetectionRuleSetsRulesetOverrides
     {
         /// <summary>
-        /// Define escaped exceptions that should force success.. Evaluated expression: `iAny(`span.events`[][`span_event.name`] == "exception" and `span.events`[][`exception.escaped`] != false)`
+        /// Define escaped exceptions that should force success.. Evaluated expression: `iAny(`span.events`[][`span_event.name` ] == "exception" and  `span.events`[][`exception.escaped`] != false)`
         /// 
         /// Failure detection result: `reason="exception"`, `verdict="success"`, `ExceptionIds`
         /// </summary>

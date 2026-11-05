@@ -297,6 +297,12 @@ func (RpcBasedSamplingState) ElementType() reflect.Type {
 	return reflect.TypeOf((*rpcBasedSamplingState)(nil)).Elem()
 }
 
+// RpcBasedSamplingExists checks whether an existing RpcBasedSampling resource with the given ID exists.
+func RpcBasedSamplingExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *RpcBasedSamplingState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/rpcBasedSampling:RpcBasedSampling", id, state, "", opts...)
+}
+
 type rpcBasedSamplingArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`

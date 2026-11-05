@@ -425,6 +425,20 @@ class CloudappWorkloaddetection(pulumi.CustomResource):
         __props__.__dict__["serverless"] = serverless
         return CloudappWorkloaddetection(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            cloud_foundry: pulumi.Input[Optional[Union['CloudappWorkloaddetectionCloudFoundryArgs', 'CloudappWorkloaddetectionCloudFoundryArgsDict', 'outputs.CloudappWorkloaddetectionCloudFoundry']]] = None,
+            docker: pulumi.Input[Optional[Union['CloudappWorkloaddetectionDockerArgs', 'CloudappWorkloaddetectionDockerArgsDict', 'outputs.CloudappWorkloaddetectionDocker']]] = None,
+            kubernetes: pulumi.Input[Optional[Union['CloudappWorkloaddetectionKubernetesArgs', 'CloudappWorkloaddetectionKubernetesArgsDict', 'outputs.CloudappWorkloaddetectionKubernetes']]] = None,
+            serverless: pulumi.Input[Optional[Union['CloudappWorkloaddetectionServerlessArgs', 'CloudappWorkloaddetectionServerlessArgsDict', 'outputs.CloudappWorkloaddetectionServerless']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["cloudFoundry"] = cloud_foundry
+        __props__["docker"] = docker
+        __props__["kubernetes"] = kubernetes
+        __props__["serverless"] = serverless
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/cloudappWorkloaddetection:CloudappWorkloaddetection', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="cloudFoundry")
     def cloud_foundry(self) -> pulumi.Output['outputs.CloudappWorkloaddetectionCloudFoundry']:

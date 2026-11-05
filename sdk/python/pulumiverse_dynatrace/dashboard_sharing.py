@@ -442,6 +442,24 @@ class DashboardSharing(pulumi.CustomResource):
         __props__.__dict__["public"] = public
         return DashboardSharing(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            dashboard_id: pulumi.Input[Optional[_builtins.str]] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            muted: pulumi.Input[Optional[_builtins.bool]] = None,
+            permissions: pulumi.Input[Optional[Union['DashboardSharingPermissionsArgs', 'DashboardSharingPermissionsArgsDict', 'outputs.DashboardSharingPermissions']]] = None,
+            preset: pulumi.Input[Optional[_builtins.bool]] = None,
+            public: pulumi.Input[Optional[Union['DashboardSharingPublicArgs', 'DashboardSharingPublicArgsDict', 'outputs.DashboardSharingPublic']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["dashboardId"] = dashboard_id
+        __props__["enabled"] = enabled
+        __props__["muted"] = muted
+        __props__["permissions"] = permissions
+        __props__["preset"] = preset
+        __props__["public"] = public
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/dashboardSharing:DashboardSharing', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="dashboardId")
     def dashboard_id(self) -> pulumi.Output[_builtins.str]:

@@ -156,6 +156,12 @@ func (DashboardsPresetsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*dashboardsPresetsState)(nil)).Elem()
 }
 
+// DashboardsPresetsExists checks whether an existing DashboardsPresets resource with the given ID exists.
+func DashboardsPresetsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DashboardsPresetsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/dashboardsPresets:DashboardsPresets", id, state, "", opts...)
+}
+
 type dashboardsPresetsArgs struct {
 	// Show selected preset to respective user group only.
 	DashboardPresetsList *DashboardsPresetsDashboardPresetsList `pulumi:"dashboardPresetsList"`

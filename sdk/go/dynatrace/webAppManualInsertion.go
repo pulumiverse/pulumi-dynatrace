@@ -102,6 +102,12 @@ func (WebAppManualInsertionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*webAppManualInsertionState)(nil)).Elem()
 }
 
+// WebAppManualInsertionExists checks whether an existing WebAppManualInsertion resource with the given ID exists.
+func WebAppManualInsertionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *WebAppManualInsertionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/webAppManualInsertion:WebAppManualInsertion", id, state, "", opts...)
+}
+
 type webAppManualInsertionArgs struct {
 	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
 	ApplicationId string `pulumi:"applicationId"`

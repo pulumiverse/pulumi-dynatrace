@@ -330,6 +330,22 @@ class FailureDetectionParameters(pulumi.CustomResource):
         __props__.__dict__["name"] = name
         return FailureDetectionParameters(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            broken_links: pulumi.Input[Optional[Union['FailureDetectionParametersBrokenLinksArgs', 'FailureDetectionParametersBrokenLinksArgsDict', 'outputs.FailureDetectionParametersBrokenLinks']]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            exception_rules: pulumi.Input[Optional[Union['FailureDetectionParametersExceptionRulesArgs', 'FailureDetectionParametersExceptionRulesArgsDict', 'outputs.FailureDetectionParametersExceptionRules']]] = None,
+            http_response_codes: pulumi.Input[Optional[Union['FailureDetectionParametersHttpResponseCodesArgs', 'FailureDetectionParametersHttpResponseCodesArgsDict', 'outputs.FailureDetectionParametersHttpResponseCodes']]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["brokenLinks"] = broken_links
+        __props__["description"] = description
+        __props__["exceptionRules"] = exception_rules
+        __props__["httpResponseCodes"] = http_response_codes
+        __props__["name"] = name
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/failureDetectionParameters:FailureDetectionParameters', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="brokenLinks")
     def broken_links(self) -> pulumi.Output['outputs.FailureDetectionParametersBrokenLinks']:

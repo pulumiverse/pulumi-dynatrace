@@ -374,6 +374,24 @@ class ProcessGroupSimpleDetection(pulumi.CustomResource):
         __props__.__dict__["rule_type"] = rule_type
         return ProcessGroupSimpleDetection(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            group_identifier: pulumi.Input[Optional[_builtins.str]] = None,
+            insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+            instance_identifier: pulumi.Input[Optional[_builtins.str]] = None,
+            process_type: pulumi.Input[Optional[_builtins.str]] = None,
+            rule_type: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["enabled"] = enabled
+        __props__["groupIdentifier"] = group_identifier
+        __props__["insertAfter"] = insert_after
+        __props__["instanceIdentifier"] = instance_identifier
+        __props__["processType"] = process_type
+        __props__["ruleType"] = rule_type
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/processGroupSimpleDetection:ProcessGroupSimpleDetection', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def enabled(self) -> pulumi.Output[_builtins.bool]:

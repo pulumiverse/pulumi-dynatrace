@@ -84,6 +84,12 @@ func (KubernetesSpmState) ElementType() reflect.Type {
 	return reflect.TypeOf((*kubernetesSpmState)(nil)).Elem()
 }
 
+// KubernetesSpmExists checks whether an existing KubernetesSpm resource with the given ID exists.
+func KubernetesSpmExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *KubernetesSpmState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/kubernetesSpm:KubernetesSpm", id, state, "", opts...)
+}
+
 type kubernetesSpmArgs struct {
 	// Follow the [installation instructions](https://dt-url.net/4x23ut5) to deploy the Security Posture Management components.
 	ConfigurationDatasetPipelineEnabled bool `pulumi:"configurationDatasetPipelineEnabled"`

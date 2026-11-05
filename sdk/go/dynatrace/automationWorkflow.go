@@ -332,6 +332,12 @@ func (AutomationWorkflowState) ElementType() reflect.Type {
 	return reflect.TypeOf((*automationWorkflowState)(nil)).Elem()
 }
 
+// AutomationWorkflowExists checks whether an existing AutomationWorkflow resource with the given ID exists.
+func AutomationWorkflowExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AutomationWorkflowState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/automationWorkflow:AutomationWorkflow", id, state, "", opts...)
+}
+
 type automationWorkflowArgs struct {
 	// The user context the executions of the workflow will happen with
 	Actor *string `pulumi:"actor"`

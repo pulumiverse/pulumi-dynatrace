@@ -159,6 +159,12 @@ func (AwsCredentialsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*awsCredentialsState)(nil)).Elem()
 }
 
+// AwsCredentialsExists checks whether an existing AwsCredentials resource with the given ID exists.
+func AwsCredentialsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AwsCredentialsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/awsCredentials:AwsCredentials", id, state, "", opts...)
+}
+
 type awsCredentialsArgs struct {
 	// credentials for the AWS authentication
 	AuthenticationData AwsCredentialsAuthenticationData `pulumi:"authenticationData"`

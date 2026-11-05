@@ -141,6 +141,12 @@ func (VmwareAnomaliesState) ElementType() reflect.Type {
 	return reflect.TypeOf((*vmwareAnomaliesState)(nil)).Elem()
 }
 
+// VmwareAnomaliesExists checks whether an existing VmwareAnomalies resource with the given ID exists.
+func VmwareAnomaliesExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *VmwareAnomaliesState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/vmwareAnomalies:VmwareAnomalies", id, state, "", opts...)
+}
+
 type vmwareAnomaliesArgs struct {
 	// no documentation available
 	DroppedPacketsDetection VmwareAnomaliesDroppedPacketsDetection `pulumi:"droppedPacketsDetection"`

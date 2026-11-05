@@ -102,6 +102,12 @@ func (DiscoveryFeatureFlagsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*discoveryFeatureFlagsState)(nil)).Elem()
 }
 
+// DiscoveryFeatureFlagsExists checks whether an existing DiscoveryFeatureFlags resource with the given ID exists.
+func DiscoveryFeatureFlagsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DiscoveryFeatureFlagsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/discoveryFeatureFlags:DiscoveryFeatureFlags", id, state, "", opts...)
+}
+
 type discoveryFeatureFlagsArgs struct {
 	// State of boolean feature
 	BooleanValue *bool `pulumi:"booleanValue"`

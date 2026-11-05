@@ -125,6 +125,12 @@ func (BrowserMonitorOutageState) ElementType() reflect.Type {
 	return reflect.TypeOf((*browserMonitorOutageState)(nil)).Elem()
 }
 
+// BrowserMonitorOutageExists checks whether an existing BrowserMonitorOutage resource with the given ID exists.
+func BrowserMonitorOutageExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *BrowserMonitorOutageState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/browserMonitorOutage:BrowserMonitorOutage", id, state, "", opts...)
+}
+
 type browserMonitorOutageArgs struct {
 	// (Field has overlap with `BrowserMonitor`) Alert if all locations are unable to access my web application
 	GlobalConsecutiveOutageCountThreshold *int `pulumi:"globalConsecutiveOutageCountThreshold"`

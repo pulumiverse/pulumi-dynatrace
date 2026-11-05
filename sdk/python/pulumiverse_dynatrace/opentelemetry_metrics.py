@@ -489,6 +489,26 @@ class OpentelemetryMetrics(pulumi.CustomResource):
         __props__.__dict__["to_drop_attributes"] = to_drop_attributes
         return OpentelemetryMetrics(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            additional_attributes: pulumi.Input[Optional[Union['OpentelemetryMetricsAdditionalAttributesArgs', 'OpentelemetryMetricsAdditionalAttributesArgsDict', 'outputs.OpentelemetryMetricsAdditionalAttributes']]] = None,
+            additional_attributes_to_dimension_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            enable_mint_v2_ingest: pulumi.Input[Optional[_builtins.bool]] = None,
+            meter_name_to_dimension_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            mode: pulumi.Input[Optional[_builtins.str]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None,
+            to_drop_attributes: pulumi.Input[Optional[Union['OpentelemetryMetricsToDropAttributesArgs', 'OpentelemetryMetricsToDropAttributesArgsDict', 'outputs.OpentelemetryMetricsToDropAttributes']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["additionalAttributes"] = additional_attributes
+        __props__["additionalAttributesToDimensionEnabled"] = additional_attributes_to_dimension_enabled
+        __props__["enableMintV2Ingest"] = enable_mint_v2_ingest
+        __props__["meterNameToDimensionEnabled"] = meter_name_to_dimension_enabled
+        __props__["mode"] = mode
+        __props__["scope"] = scope
+        __props__["toDropAttributes"] = to_drop_attributes
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/opentelemetryMetrics:OpentelemetryMetrics', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="additionalAttributes")
     def additional_attributes(self) -> pulumi.Output[Optional['outputs.OpentelemetryMetricsAdditionalAttributes']]:

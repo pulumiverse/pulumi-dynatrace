@@ -87,6 +87,12 @@ func (DiskAnomaliesV2State) ElementType() reflect.Type {
 	return reflect.TypeOf((*diskAnomaliesV2State)(nil)).Elem()
 }
 
+// DiskAnomaliesV2Exists checks whether an existing DiskAnomaliesV2 resource with the given ID exists.
+func DiskAnomaliesV2Exists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DiskAnomaliesV2State, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/diskAnomaliesV2:DiskAnomaliesV2", id, state, "", opts...)
+}
+
 type diskAnomaliesV2Args struct {
 	// Disk
 	Disk DiskAnomaliesV2Disk `pulumi:"disk"`

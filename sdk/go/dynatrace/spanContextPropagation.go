@@ -99,6 +99,12 @@ func (SpanContextPropagationState) ElementType() reflect.Type {
 	return reflect.TypeOf((*spanContextPropagationState)(nil)).Elem()
 }
 
+// SpanContextPropagationExists checks whether an existing SpanContextPropagation resource with the given ID exists.
+func SpanContextPropagationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SpanContextPropagationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/spanContextPropagation:SpanContextPropagation", id, state, "", opts...)
+}
+
 type spanContextPropagationArgs struct {
 	// Whether to create an entry point or not
 	Action string `pulumi:"action"`

@@ -204,6 +204,12 @@ func (AwsConnectionRoleArnState) ElementType() reflect.Type {
 	return reflect.TypeOf((*awsConnectionRoleArnState)(nil)).Elem()
 }
 
+// AwsConnectionRoleArnExists checks whether an existing AwsConnectionRoleArn resource with the given ID exists.
+func AwsConnectionRoleArnExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AwsConnectionRoleArnState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/awsConnectionRoleArn:AwsConnectionRoleArn", id, state, "", opts...)
+}
+
 type awsConnectionRoleArnArgs struct {
 	// The ID of a `AwsConnection` resource instance for which to define the AWS Role ARN
 	AwsConnectionId string `pulumi:"awsConnectionId"`

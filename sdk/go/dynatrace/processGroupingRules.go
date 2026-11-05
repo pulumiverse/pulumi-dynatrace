@@ -165,6 +165,12 @@ func (ProcessGroupingRulesState) ElementType() reflect.Type {
 	return reflect.TypeOf((*processGroupingRulesState)(nil)).Elem()
 }
 
+// ProcessGroupingRulesExists checks whether an existing ProcessGroupingRules resource with the given ID exists.
+func ProcessGroupingRulesExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ProcessGroupingRulesState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/processGroupingRules:ProcessGroupingRules", id, state, "", opts...)
+}
+
 type processGroupingRulesArgs struct {
 	// Note: Reported only in full-stack, infrastructure and discovery modes.
 	CustomTechnologyName *string `pulumi:"customTechnologyName"`

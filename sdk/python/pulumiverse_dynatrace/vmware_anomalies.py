@@ -452,6 +452,28 @@ class VmwareAnomalies(pulumi.CustomResource):
         __props__.__dict__["undersized_storage_detection"] = undersized_storage_detection
         return VmwareAnomalies(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            dropped_packets_detection: pulumi.Input[Optional[Union['VmwareAnomaliesDroppedPacketsDetectionArgs', 'VmwareAnomaliesDroppedPacketsDetectionArgsDict', 'outputs.VmwareAnomaliesDroppedPacketsDetection']]] = None,
+            esxi_high_cpu_detection: pulumi.Input[Optional[Union['VmwareAnomaliesEsxiHighCpuDetectionArgs', 'VmwareAnomaliesEsxiHighCpuDetectionArgsDict', 'outputs.VmwareAnomaliesEsxiHighCpuDetection']]] = None,
+            esxi_high_memory_detection: pulumi.Input[Optional[Union['VmwareAnomaliesEsxiHighMemoryDetectionArgs', 'VmwareAnomaliesEsxiHighMemoryDetectionArgsDict', 'outputs.VmwareAnomaliesEsxiHighMemoryDetection']]] = None,
+            guest_cpu_limit_detection: pulumi.Input[Optional[Union['VmwareAnomaliesGuestCpuLimitDetectionArgs', 'VmwareAnomaliesGuestCpuLimitDetectionArgsDict', 'outputs.VmwareAnomaliesGuestCpuLimitDetection']]] = None,
+            low_datastore_space_detection: pulumi.Input[Optional[Union['VmwareAnomaliesLowDatastoreSpaceDetectionArgs', 'VmwareAnomaliesLowDatastoreSpaceDetectionArgsDict', 'outputs.VmwareAnomaliesLowDatastoreSpaceDetection']]] = None,
+            overloaded_storage_detection: pulumi.Input[Optional[Union['VmwareAnomaliesOverloadedStorageDetectionArgs', 'VmwareAnomaliesOverloadedStorageDetectionArgsDict', 'outputs.VmwareAnomaliesOverloadedStorageDetection']]] = None,
+            slow_physical_storage_detection: pulumi.Input[Optional[Union['VmwareAnomaliesSlowPhysicalStorageDetectionArgs', 'VmwareAnomaliesSlowPhysicalStorageDetectionArgsDict', 'outputs.VmwareAnomaliesSlowPhysicalStorageDetection']]] = None,
+            undersized_storage_detection: pulumi.Input[Optional[Union['VmwareAnomaliesUndersizedStorageDetectionArgs', 'VmwareAnomaliesUndersizedStorageDetectionArgsDict', 'outputs.VmwareAnomaliesUndersizedStorageDetection']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["droppedPacketsDetection"] = dropped_packets_detection
+        __props__["esxiHighCpuDetection"] = esxi_high_cpu_detection
+        __props__["esxiHighMemoryDetection"] = esxi_high_memory_detection
+        __props__["guestCpuLimitDetection"] = guest_cpu_limit_detection
+        __props__["lowDatastoreSpaceDetection"] = low_datastore_space_detection
+        __props__["overloadedStorageDetection"] = overloaded_storage_detection
+        __props__["slowPhysicalStorageDetection"] = slow_physical_storage_detection
+        __props__["undersizedStorageDetection"] = undersized_storage_detection
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/vmwareAnomalies:VmwareAnomalies', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="droppedPacketsDetection")
     def dropped_packets_detection(self) -> pulumi.Output['outputs.VmwareAnomaliesDroppedPacketsDetection']:

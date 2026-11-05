@@ -370,6 +370,22 @@ class IamPermission(pulumi.CustomResource):
         __props__.__dict__["name"] = name
         return IamPermission(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            account: pulumi.Input[Optional[_builtins.str]] = None,
+            environment: pulumi.Input[Optional[_builtins.str]] = None,
+            group: pulumi.Input[Optional[_builtins.str]] = None,
+            management_zone: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["account"] = account
+        __props__["environment"] = environment
+        __props__["group"] = group
+        __props__["managementZone"] = management_zone
+        __props__["name"] = name
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/iamPermission:IamPermission', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def account(self) -> pulumi.Output[Optional[_builtins.str]]:

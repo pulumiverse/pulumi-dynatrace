@@ -147,6 +147,12 @@ func (LogTimestampState) ElementType() reflect.Type {
 	return reflect.TypeOf((*logTimestampState)(nil)).Elem()
 }
 
+// LogTimestampExists checks whether an existing LogTimestamp resource with the given ID exists.
+func LogTimestampExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *LogTimestampState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/logTimestamp:LogTimestamp", id, state, "", opts...)
+}
+
 type logTimestampArgs struct {
 	// Name
 	ConfigItemTitle string `pulumi:"configItemTitle"`

@@ -82,6 +82,12 @@ func (HistogramMetricsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*histogramMetricsState)(nil)).Elem()
 }
 
+// HistogramMetricsExists checks whether an existing HistogramMetrics resource with the given ID exists.
+func HistogramMetricsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *HistogramMetricsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/histogramMetrics:HistogramMetrics", id, state, "", opts...)
+}
+
 type histogramMetricsArgs struct {
 	// When enabled, you can ingest the `le` dimension, representing explicit histogram buckets.\
 	// Enable this if you are using OpenTelemetry histograms or Prometheus histogram metrics.\

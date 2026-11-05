@@ -146,6 +146,12 @@ func (LogEventsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*logEventsState)(nil)).Elem()
 }
 
+// LogEventsExists checks whether an existing LogEvents resource with the given ID exists.
+func LogEventsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *LogEventsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/logEvents:LogEvents", id, state, "", opts...)
+}
+
 type logEventsArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`

@@ -84,6 +84,12 @@ func (GeolocationState) ElementType() reflect.Type {
 	return reflect.TypeOf((*geolocationState)(nil)).Elem()
 }
 
+// GeolocationExists checks whether an existing Geolocation resource with the given ID exists.
+func GeolocationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *GeolocationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/geolocation:Geolocation", id, state, "", opts...)
+}
+
 type geolocationArgs struct {
 	// Display the world map
 	DisplayWorldmap bool `pulumi:"displayWorldmap"`

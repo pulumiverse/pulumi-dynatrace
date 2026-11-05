@@ -102,6 +102,12 @@ func (WebAppInjectionCookieState) ElementType() reflect.Type {
 	return reflect.TypeOf((*webAppInjectionCookieState)(nil)).Elem()
 }
 
+// WebAppInjectionCookieExists checks whether an existing WebAppInjectionCookie resource with the given ID exists.
+func WebAppInjectionCookieExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *WebAppInjectionCookieState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/webAppInjectionCookie:WebAppInjectionCookie", id, state, "", opts...)
+}
+
 type webAppInjectionCookieArgs struct {
 	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
 	ApplicationId string `pulumi:"applicationId"`

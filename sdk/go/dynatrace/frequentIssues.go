@@ -102,6 +102,12 @@ func (FrequentIssuesState) ElementType() reflect.Type {
 	return reflect.TypeOf((*frequentIssuesState)(nil)).Elem()
 }
 
+// FrequentIssuesExists checks whether an existing FrequentIssues resource with the given ID exists.
+func FrequentIssuesExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *FrequentIssuesState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/frequentIssues:FrequentIssues", id, state, "", opts...)
+}
+
 type frequentIssuesArgs struct {
 	// Detect frequent issues within applications, enabled (`true`) or disabled (`false`)
 	DetectApps bool `pulumi:"detectApps"`

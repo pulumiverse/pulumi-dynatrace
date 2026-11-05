@@ -178,6 +178,14 @@ class HistogramMetrics(pulumi.CustomResource):
         __props__.__dict__["enable_histogram_bucket_ingest"] = enable_histogram_bucket_ingest
         return HistogramMetrics(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            enable_histogram_bucket_ingest: pulumi.Input[Optional[_builtins.bool]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["enableHistogramBucketIngest"] = enable_histogram_bucket_ingest
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/histogramMetrics:HistogramMetrics', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="enableHistogramBucketIngest")
     def enable_histogram_bucket_ingest(self) -> pulumi.Output[_builtins.bool]:

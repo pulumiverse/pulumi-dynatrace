@@ -327,6 +327,22 @@ class DiskOptions(pulumi.CustomResource):
         __props__.__dict__["scope"] = scope
         return DiskOptions(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            disable_nfs_disk_monitoring: pulumi.Input[Optional[_builtins.bool]] = None,
+            exclusions: pulumi.Input[Optional[Union['DiskOptionsExclusionsArgs', 'DiskOptionsExclusionsArgsDict', 'outputs.DiskOptionsExclusions']]] = None,
+            monitor_tmpfs: pulumi.Input[Optional[_builtins.bool]] = None,
+            nfs_show_all: pulumi.Input[Optional[_builtins.bool]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["disableNfsDiskMonitoring"] = disable_nfs_disk_monitoring
+        __props__["exclusions"] = exclusions
+        __props__["monitorTmpfs"] = monitor_tmpfs
+        __props__["nfsShowAll"] = nfs_show_all
+        __props__["scope"] = scope
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/diskOptions:DiskOptions', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="disableNfsDiskMonitoring")
     def disable_nfs_disk_monitoring(self) -> pulumi.Output[Optional[_builtins.bool]]:

@@ -66,6 +66,12 @@ func (UnifiedServicesOpentelState) ElementType() reflect.Type {
 	return reflect.TypeOf((*unifiedServicesOpentelState)(nil)).Elem()
 }
 
+// UnifiedServicesOpentelExists checks whether an existing UnifiedServicesOpentel resource with the given ID exists.
+func UnifiedServicesOpentelExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *UnifiedServicesOpentelState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/unifiedServicesOpentel:UnifiedServicesOpentel", id, state, "", opts...)
+}
+
 type unifiedServicesOpentelArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`

@@ -72,6 +72,12 @@ func (OneagentDefaultVersionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*oneagentDefaultVersionState)(nil)).Elem()
 }
 
+// OneagentDefaultVersionExists checks whether an existing OneagentDefaultVersion resource with the given ID exists.
+func OneagentDefaultVersionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *OneagentDefaultVersionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/oneagentDefaultVersion:OneagentDefaultVersion", id, state, "", opts...)
+}
+
 type oneagentDefaultVersionArgs struct {
 	// Default version
 	DefaultVersion string `pulumi:"defaultVersion"`

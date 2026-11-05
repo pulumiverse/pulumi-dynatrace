@@ -250,6 +250,18 @@ class NetworkTraffic(pulumi.CustomResource):
         __props__.__dict__["host_id"] = host_id
         return NetworkTraffic(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            exclude_ip: pulumi.Input[Optional[Union['NetworkTrafficExcludeIpArgs', 'NetworkTrafficExcludeIpArgsDict', 'outputs.NetworkTrafficExcludeIp']]] = None,
+            exclude_nic: pulumi.Input[Optional[Union['NetworkTrafficExcludeNicArgs', 'NetworkTrafficExcludeNicArgsDict', 'outputs.NetworkTrafficExcludeNic']]] = None,
+            host_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["excludeIp"] = exclude_ip
+        __props__["excludeNic"] = exclude_nic
+        __props__["hostId"] = host_id
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/networkTraffic:NetworkTraffic', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="excludeIp")
     def exclude_ip(self) -> pulumi.Output[Optional['outputs.NetworkTrafficExcludeIp']]:

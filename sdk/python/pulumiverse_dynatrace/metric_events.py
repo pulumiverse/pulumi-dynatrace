@@ -410,6 +410,26 @@ class MetricEvents(pulumi.CustomResource):
         __props__.__dict__["summary"] = summary
         return MetricEvents(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            event_entity_dimension_key: pulumi.Input[Optional[_builtins.str]] = None,
+            event_template: pulumi.Input[Optional[Union['MetricEventsEventTemplateArgs', 'MetricEventsEventTemplateArgsDict', 'outputs.MetricEventsEventTemplate']]] = None,
+            legacy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            model_properties: pulumi.Input[Optional[Union['MetricEventsModelPropertiesArgs', 'MetricEventsModelPropertiesArgsDict', 'outputs.MetricEventsModelProperties']]] = None,
+            query_definition: pulumi.Input[Optional[Union['MetricEventsQueryDefinitionArgs', 'MetricEventsQueryDefinitionArgsDict', 'outputs.MetricEventsQueryDefinition']]] = None,
+            summary: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["enabled"] = enabled
+        __props__["eventEntityDimensionKey"] = event_entity_dimension_key
+        __props__["eventTemplate"] = event_template
+        __props__["legacyId"] = legacy_id
+        __props__["modelProperties"] = model_properties
+        __props__["queryDefinition"] = query_definition
+        __props__["summary"] = summary
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/metricEvents:MetricEvents', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def enabled(self) -> pulumi.Output[_builtins.bool]:

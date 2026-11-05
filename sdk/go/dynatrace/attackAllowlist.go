@@ -137,6 +137,12 @@ func (AttackAllowlistState) ElementType() reflect.Type {
 	return reflect.TypeOf((*attackAllowlistState)(nil)).Elem()
 }
 
+// AttackAllowlistExists checks whether an existing AttackAllowlist resource with the given ID exists.
+func AttackAllowlistExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AttackAllowlistState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/attackAllowlist:AttackAllowlist", id, state, "", opts...)
+}
+
 type attackAllowlistArgs struct {
 	// Step 1: Define attack control for chosen criteria
 	AttackHandling AttackAllowlistAttackHandling `pulumi:"attackHandling"`

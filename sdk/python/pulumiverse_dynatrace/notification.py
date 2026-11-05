@@ -606,6 +606,36 @@ class Notification(pulumi.CustomResource):
         __props__.__dict__["xmatters"] = xmatters
         return Notification(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            ansible_tower: pulumi.Input[Optional[Union['NotificationAnsibleTowerArgs', 'NotificationAnsibleTowerArgsDict', 'outputs.NotificationAnsibleTower']]] = None,
+            config: pulumi.Input[Optional[Union['NotificationConfigArgs', 'NotificationConfigArgsDict', 'outputs.NotificationConfig']]] = None,
+            email: pulumi.Input[Optional[Union['NotificationEmailArgs', 'NotificationEmailArgsDict', 'outputs.NotificationEmail']]] = None,
+            jira: pulumi.Input[Optional[Union['NotificationJiraArgs', 'NotificationJiraArgsDict', 'outputs.NotificationJira']]] = None,
+            ops_genie: pulumi.Input[Optional[Union['NotificationOpsGenieArgs', 'NotificationOpsGenieArgsDict', 'outputs.NotificationOpsGenie']]] = None,
+            pager_duty: pulumi.Input[Optional[Union['NotificationPagerDutyArgs', 'NotificationPagerDutyArgsDict', 'outputs.NotificationPagerDuty']]] = None,
+            service_now: pulumi.Input[Optional[Union['NotificationServiceNowArgs', 'NotificationServiceNowArgsDict', 'outputs.NotificationServiceNow']]] = None,
+            slack: pulumi.Input[Optional[Union['NotificationSlackArgs', 'NotificationSlackArgsDict', 'outputs.NotificationSlack']]] = None,
+            trello: pulumi.Input[Optional[Union['NotificationTrelloArgs', 'NotificationTrelloArgsDict', 'outputs.NotificationTrello']]] = None,
+            victor_ops: pulumi.Input[Optional[Union['NotificationVictorOpsArgs', 'NotificationVictorOpsArgsDict', 'outputs.NotificationVictorOps']]] = None,
+            web_hook: pulumi.Input[Optional[Union['NotificationWebHookArgs', 'NotificationWebHookArgsDict', 'outputs.NotificationWebHook']]] = None,
+            xmatters: pulumi.Input[Optional[Union['NotificationXmattersArgs', 'NotificationXmattersArgsDict', 'outputs.NotificationXmatters']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["ansibleTower"] = ansible_tower
+        __props__["config"] = config
+        __props__["email"] = email
+        __props__["jira"] = jira
+        __props__["opsGenie"] = ops_genie
+        __props__["pagerDuty"] = pager_duty
+        __props__["serviceNow"] = service_now
+        __props__["slack"] = slack
+        __props__["trello"] = trello
+        __props__["victorOps"] = victor_ops
+        __props__["webHook"] = web_hook
+        __props__["xmatters"] = xmatters
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/notification:Notification', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="ansibleTower")
     def ansible_tower(self) -> pulumi.Output[Optional['outputs.NotificationAnsibleTower']]:

@@ -41,7 +41,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         private InputList<Inputs.HttpMonitorAnomalyDetectionOutageHandlingLocalOutagePolicyArgs>? _localOutagePolicies;
 
         /// <summary>
-        /// (Field has overlap with `dynatrace.BrowserMonitorOutage` and `dynatrace.HttpMonitorOutage`) Local outage handling configuration. 
+        /// (Field has overlap with `dynatrace.BrowserMonitorOutage` and `dynatrace.HttpMonitorOutage`) Local outage handling configuration.
         /// 
         ///  Alert if **affectedLocations** of locations are unable to access the web application **consecutiveRuns** times consecutively
         /// </summary>

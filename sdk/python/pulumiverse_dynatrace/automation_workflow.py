@@ -973,6 +973,44 @@ class AutomationWorkflow(pulumi.CustomResource):
         __props__.__dict__["unacknowledged_skipped_schedule_at"] = unacknowledged_skipped_schedule_at
         return AutomationWorkflow(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            actor: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            guide: pulumi.Input[Optional[_builtins.str]] = None,
+            hourly_execution_limit: pulumi.Input[Optional[_builtins.int]] = None,
+            input: pulumi.Input[Optional[_builtins.str]] = None,
+            is_deployed: pulumi.Input[Optional[_builtins.bool]] = None,
+            owner: pulumi.Input[Optional[_builtins.str]] = None,
+            owner_type: pulumi.Input[Optional[_builtins.str]] = None,
+            private: pulumi.Input[Optional[_builtins.bool]] = None,
+            result: pulumi.Input[Optional[_builtins.str]] = None,
+            tasks: pulumi.Input[Optional[Union['AutomationWorkflowTasksArgs', 'AutomationWorkflowTasksArgsDict', 'outputs.AutomationWorkflowTasks']]] = None,
+            throttle: pulumi.Input[Optional[Union['AutomationWorkflowThrottleArgs', 'AutomationWorkflowThrottleArgsDict', 'outputs.AutomationWorkflowThrottle']]] = None,
+            title: pulumi.Input[Optional[_builtins.str]] = None,
+            trigger: pulumi.Input[Optional[Union['AutomationWorkflowTriggerArgs', 'AutomationWorkflowTriggerArgsDict', 'outputs.AutomationWorkflowTrigger']]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None,
+            unacknowledged_skipped_schedule_at: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["actor"] = actor
+        __props__["description"] = description
+        __props__["guide"] = guide
+        __props__["hourlyExecutionLimit"] = hourly_execution_limit
+        __props__["input"] = input
+        __props__["isDeployed"] = is_deployed
+        __props__["owner"] = owner
+        __props__["ownerType"] = owner_type
+        __props__["private"] = private
+        __props__["result"] = result
+        __props__["tasks"] = tasks
+        __props__["throttle"] = throttle
+        __props__["title"] = title
+        __props__["trigger"] = trigger
+        __props__["type"] = type
+        __props__["unacknowledgedSkippedScheduleAt"] = unacknowledged_skipped_schedule_at
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/automationWorkflow:AutomationWorkflow', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def actor(self) -> pulumi.Output[Optional[_builtins.str]]:

@@ -120,6 +120,12 @@ func (BusinessEventsMetricsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*businessEventsMetricsState)(nil)).Elem()
 }
 
+// BusinessEventsMetricsExists checks whether an existing BusinessEventsMetrics resource with the given ID exists.
+func BusinessEventsMetricsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *BusinessEventsMetricsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/businessEventsMetrics:BusinessEventsMetrics", id, state, "", opts...)
+}
+
 type businessEventsMetricsArgs struct {
 	// no documentation available
 	Dimensions []string `pulumi:"dimensions"`

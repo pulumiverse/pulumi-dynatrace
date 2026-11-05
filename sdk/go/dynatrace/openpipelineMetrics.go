@@ -136,6 +136,12 @@ func (OpenpipelineMetricsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*openpipelineMetricsState)(nil)).Elem()
 }
 
+// OpenpipelineMetricsExists checks whether an existing OpenpipelineMetrics resource with the given ID exists.
+func OpenpipelineMetricsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *OpenpipelineMetricsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/openpipelineMetrics:OpenpipelineMetrics", id, state, "", opts...)
+}
+
 type openpipelineMetricsArgs struct {
 	// List of all ingest sources of the configuration
 	Endpoints *OpenpipelineMetricsEndpoints `pulumi:"endpoints"`

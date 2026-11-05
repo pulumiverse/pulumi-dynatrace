@@ -74,6 +74,12 @@ func (ServiceNamingOrderState) ElementType() reflect.Type {
 	return reflect.TypeOf((*serviceNamingOrderState)(nil)).Elem()
 }
 
+// ServiceNamingOrderExists checks whether an existing ServiceNamingOrder resource with the given ID exists.
+func ServiceNamingOrderExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ServiceNamingOrderState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/serviceNamingOrder:ServiceNamingOrder", id, state, "", opts...)
+}
+
 type serviceNamingOrderArgs struct {
 	// The IDs of the naming rules to define the order for
 	NamingRuleIds []string `pulumi:"namingRuleIds"`

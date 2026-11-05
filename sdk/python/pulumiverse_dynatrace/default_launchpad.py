@@ -201,6 +201,14 @@ class DefaultLaunchpad(pulumi.CustomResource):
         __props__.__dict__["group_launchpads"] = group_launchpads
         return DefaultLaunchpad(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            group_launchpads: pulumi.Input[Optional[Union['DefaultLaunchpadGroupLaunchpadsArgs', 'DefaultLaunchpadGroupLaunchpadsArgsDict', 'outputs.DefaultLaunchpadGroupLaunchpads']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["groupLaunchpads"] = group_launchpads
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/defaultLaunchpad:DefaultLaunchpad', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="groupLaunchpads")
     def group_launchpads(self) -> pulumi.Output[Optional['outputs.DefaultLaunchpadGroupLaunchpads']]:

@@ -373,6 +373,12 @@ func (CredentialsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*credentialsState)(nil)).Elem()
 }
 
+// CredentialsExists checks whether an existing Credentials resource with the given ID exists.
+func CredentialsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *CredentialsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/credentials:Credentials", id, state, "", opts...)
+}
+
 type credentialsArgs struct {
 	// Allow ad-hoc functions to access the credential details (requires the APP_ENGINE scope).
 	AllowContextlessRequests *bool `pulumi:"allowContextlessRequests"`

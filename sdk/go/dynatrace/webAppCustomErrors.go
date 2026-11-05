@@ -95,6 +95,12 @@ func (WebAppCustomErrorsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*webAppCustomErrorsState)(nil)).Elem()
 }
 
+// WebAppCustomErrorsExists checks whether an existing WebAppCustomErrors resource with the given ID exists.
+func WebAppCustomErrorsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *WebAppCustomErrorsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/webAppCustomErrors:WebAppCustomErrors", id, state, "", opts...)
+}
+
 type webAppCustomErrorsArgs struct {
 	// (Field has overlap with `ApplicationErrorRules`)
 	ErrorRules *WebAppCustomErrorsErrorRules `pulumi:"errorRules"`

@@ -307,6 +307,12 @@ func (DocumentState) ElementType() reflect.Type {
 	return reflect.TypeOf((*documentState)(nil)).Elem()
 }
 
+// DocumentExists checks whether an existing Document resource with the given ID exists.
+func DocumentExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DocumentState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/document:Document", id, state, "", opts...)
+}
+
 type documentArgs struct {
 	// Document content as JSON
 	Content string `pulumi:"content"`

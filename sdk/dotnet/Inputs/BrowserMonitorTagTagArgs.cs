@@ -21,7 +21,7 @@ namespace Pulumiverse.Dynatrace.Inputs
 
         /// <summary>
         /// The key of the tag.
-        ///   
+        /// 
         ///   Custom tags have the tag value here.
         /// </summary>
         [Input("key", required: true)]
@@ -35,7 +35,7 @@ namespace Pulumiverse.Dynatrace.Inputs
 
         /// <summary>
         /// The value of the tag.
-        ///   
+        /// 
         ///   Not applicable to custom tags.
         /// </summary>
         [Input("value")]

@@ -78,6 +78,12 @@ func (LimitOutboundConnectionsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*limitOutboundConnectionsState)(nil)).Elem()
 }
 
+// LimitOutboundConnectionsExists checks whether an existing LimitOutboundConnections resource with the given ID exists.
+func LimitOutboundConnectionsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *LimitOutboundConnectionsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/limitOutboundConnections:LimitOutboundConnections", id, state, "", opts...)
+}
+
 type limitOutboundConnectionsArgs struct {
 	// No documentation available
 	AllowedOutboundConnections LimitOutboundConnectionsAllowedOutboundConnections `pulumi:"allowedOutboundConnections"`

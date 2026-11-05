@@ -331,6 +331,22 @@ class DataPrivacy(pulumi.CustomResource):
         __props__.__dict__["user_tracking"] = user_tracking
         return DataPrivacy(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            application_id: pulumi.Input[Optional[_builtins.str]] = None,
+            data_collection: pulumi.Input[Optional[Union['DataPrivacyDataCollectionArgs', 'DataPrivacyDataCollectionArgsDict', 'outputs.DataPrivacyDataCollection']]] = None,
+            do_not_track: pulumi.Input[Optional[Union['DataPrivacyDoNotTrackArgs', 'DataPrivacyDoNotTrackArgsDict', 'outputs.DataPrivacyDoNotTrack']]] = None,
+            masking: pulumi.Input[Optional[Union['DataPrivacyMaskingArgs', 'DataPrivacyMaskingArgsDict', 'outputs.DataPrivacyMasking']]] = None,
+            user_tracking: pulumi.Input[Optional[Union['DataPrivacyUserTrackingArgs', 'DataPrivacyUserTrackingArgsDict', 'outputs.DataPrivacyUserTracking']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["applicationId"] = application_id
+        __props__["dataCollection"] = data_collection
+        __props__["doNotTrack"] = do_not_track
+        __props__["masking"] = masking
+        __props__["userTracking"] = user_tracking
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/dataPrivacy:DataPrivacy', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="applicationId")
     def application_id(self) -> pulumi.Output[Optional[_builtins.str]]:

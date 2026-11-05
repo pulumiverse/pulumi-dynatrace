@@ -142,6 +142,12 @@ func (OpenpipelineLogsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*openpipelineLogsState)(nil)).Elem()
 }
 
+// OpenpipelineLogsExists checks whether an existing OpenpipelineLogs resource with the given ID exists.
+func OpenpipelineLogsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *OpenpipelineLogsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/openpipelineLogs:OpenpipelineLogs", id, state, "", opts...)
+}
+
 type openpipelineLogsArgs struct {
 	// List of all ingest sources of the configuration
 	Endpoints *OpenpipelineLogsEndpoints `pulumi:"endpoints"`

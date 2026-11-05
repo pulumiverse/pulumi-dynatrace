@@ -90,6 +90,12 @@ func (TokenSettingsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*tokenSettingsState)(nil)).Elem()
 }
 
+// TokenSettingsExists checks whether an existing TokenSettings resource with the given ID exists.
+func TokenSettingsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *TokenSettingsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/tokenSettings:TokenSettings", id, state, "", opts...)
+}
+
 type tokenSettingsArgs struct {
 	// Check out this [blog post](http://www.dynatrace.com/blog/further-increased-security-of-your-api-tokens-by-automating-token-protection/) to find out more about the new Dynatrace API token format.
 	NewTokenFormat bool `pulumi:"newTokenFormat"`

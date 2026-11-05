@@ -132,6 +132,12 @@ func (XmattersNotificationState) ElementType() reflect.Type {
 	return reflect.TypeOf((*xmattersNotificationState)(nil)).Elem()
 }
 
+// XmattersNotificationExists checks whether an existing XmattersNotification resource with the given ID exists.
+func XmattersNotificationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *XmattersNotificationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/xmattersNotification:XmattersNotification", id, state, "", opts...)
+}
+
 type xmattersNotificationArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Active bool `pulumi:"active"`

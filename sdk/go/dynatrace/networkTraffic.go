@@ -90,6 +90,12 @@ func (NetworkTrafficState) ElementType() reflect.Type {
 	return reflect.TypeOf((*networkTrafficState)(nil)).Elem()
 }
 
+// NetworkTrafficExists checks whether an existing NetworkTraffic resource with the given ID exists.
+func NetworkTrafficExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *NetworkTrafficState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/networkTraffic:NetworkTraffic", id, state, "", opts...)
+}
+
 type networkTrafficArgs struct {
 	// Providing a host IP address, you will exclude network traffic only in calculating connectivity (other metrics will still be calculated).
 	ExcludeIp *NetworkTrafficExcludeIp `pulumi:"excludeIp"`

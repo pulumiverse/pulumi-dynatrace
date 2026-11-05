@@ -148,6 +148,12 @@ func (ApiTokenState) ElementType() reflect.Type {
 	return reflect.TypeOf((*apiTokenState)(nil)).Elem()
 }
 
+// ApiTokenExists checks whether an existing ApiToken resource with the given ID exists.
+func ApiTokenExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ApiTokenState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/apiToken:ApiToken", id, state, "", opts...)
+}
+
 type apiTokenArgs struct {
 	// Token creation date in ISO 8601 format (yyyy-MM-dd'T'HH:mm:ss.SSS'Z')
 	CreationDate *string `pulumi:"creationDate"`

@@ -216,6 +216,12 @@ func (AwsServiceState) ElementType() reflect.Type {
 	return reflect.TypeOf((*awsServiceState)(nil)).Elem()
 }
 
+// AwsServiceExists checks whether an existing AwsService resource with the given ID exists.
+func AwsServiceExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AwsServiceState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/awsService:AwsService", id, state, "", opts...)
+}
+
 type awsServiceArgs struct {
 	// the ID of the AWS credentials this supported service belongs to
 	CredentialsId string `pulumi:"credentialsId"`

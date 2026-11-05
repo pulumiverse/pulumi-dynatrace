@@ -78,6 +78,12 @@ func (AuditLogState) ElementType() reflect.Type {
 	return reflect.TypeOf((*auditLogState)(nil)).Elem()
 }
 
+// AuditLogExists checks whether an existing AuditLog resource with the given ID exists.
+func AuditLogExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AuditLogState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/auditLog:AuditLog", id, state, "", opts...)
+}
+
 type auditLogArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`

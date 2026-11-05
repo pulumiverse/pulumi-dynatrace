@@ -191,6 +191,12 @@ func (MaintenanceWindowsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*maintenanceWindowsState)(nil)).Elem()
 }
 
+// MaintenanceWindowsExists checks whether an existing MaintenanceWindows resource with the given ID exists.
+func MaintenanceWindowsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *MaintenanceWindowsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/maintenanceWindows:MaintenanceWindows", id, state, "", opts...)
+}
+
 type maintenanceWindowsArgs struct {
 	// When enabled, this maintenance window configuration will be automatically deleted 30 days after the end of its last execution.
 	AutoDelete bool `pulumi:"autoDelete"`

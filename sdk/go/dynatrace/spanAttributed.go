@@ -95,6 +95,12 @@ func (SpanAttributedState) ElementType() reflect.Type {
 	return reflect.TypeOf((*spanAttributedState)(nil)).Elem()
 }
 
+// SpanAttributedExists checks whether an existing SpanAttributed resource with the given ID exists.
+func SpanAttributedExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SpanAttributedState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/spanAttributed:SpanAttributed", id, state, "", opts...)
+}
+
 type spanAttributedArgs struct {
 	// Key of the span attribute to store
 	Key string `pulumi:"key"`

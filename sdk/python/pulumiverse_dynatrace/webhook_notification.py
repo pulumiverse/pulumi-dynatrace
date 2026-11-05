@@ -701,6 +701,40 @@ class WebhookNotification(pulumi.CustomResource):
         __props__.__dict__["use_oauth2"] = use_oauth2
         return WebhookNotification(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            active: pulumi.Input[Optional[_builtins.bool]] = None,
+            headers: pulumi.Input[Optional[Union['WebhookNotificationHeadersArgs', 'WebhookNotificationHeadersArgsDict', 'outputs.WebhookNotificationHeaders']]] = None,
+            insecure: pulumi.Input[Optional[_builtins.bool]] = None,
+            legacy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            notify_closed_problems: pulumi.Input[Optional[_builtins.bool]] = None,
+            notify_event_merges: pulumi.Input[Optional[_builtins.bool]] = None,
+            oauth2_credentials: pulumi.Input[Optional[Union['WebhookNotificationOauth2CredentialsArgs', 'WebhookNotificationOauth2CredentialsArgsDict', 'outputs.WebhookNotificationOauth2Credentials']]] = None,
+            payload: pulumi.Input[Optional[_builtins.str]] = None,
+            profile: pulumi.Input[Optional[_builtins.str]] = None,
+            secret_url: pulumi.Input[Optional[_builtins.str]] = None,
+            url: pulumi.Input[Optional[_builtins.str]] = None,
+            url_contains_secret: pulumi.Input[Optional[_builtins.bool]] = None,
+            use_oauth2: pulumi.Input[Optional[_builtins.bool]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["active"] = active
+        __props__["headers"] = headers
+        __props__["insecure"] = insecure
+        __props__["legacyId"] = legacy_id
+        __props__["name"] = name
+        __props__["notifyClosedProblems"] = notify_closed_problems
+        __props__["notifyEventMerges"] = notify_event_merges
+        __props__["oauth2Credentials"] = oauth2_credentials
+        __props__["payload"] = payload
+        __props__["profile"] = profile
+        __props__["secretUrl"] = secret_url
+        __props__["url"] = url
+        __props__["urlContainsSecret"] = url_contains_secret
+        __props__["useOauth2"] = use_oauth2
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/webhookNotification:WebhookNotification', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def active(self) -> pulumi.Output[_builtins.bool]:

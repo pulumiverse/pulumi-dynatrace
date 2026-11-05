@@ -292,6 +292,20 @@ class WebAppAutoInjection(pulumi.CustomResource):
         __props__.__dict__["snippet_format"] = snippet_format
         return WebAppAutoInjection(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            application_id: pulumi.Input[Optional[_builtins.str]] = None,
+            cache_control_headers: pulumi.Input[Optional[Union['WebAppAutoInjectionCacheControlHeadersArgs', 'WebAppAutoInjectionCacheControlHeadersArgsDict', 'outputs.WebAppAutoInjectionCacheControlHeaders']]] = None,
+            monitoring_code_source_section: pulumi.Input[Optional[Union['WebAppAutoInjectionMonitoringCodeSourceSectionArgs', 'WebAppAutoInjectionMonitoringCodeSourceSectionArgsDict', 'outputs.WebAppAutoInjectionMonitoringCodeSourceSection']]] = None,
+            snippet_format: pulumi.Input[Optional[Union['WebAppAutoInjectionSnippetFormatArgs', 'WebAppAutoInjectionSnippetFormatArgsDict', 'outputs.WebAppAutoInjectionSnippetFormat']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["applicationId"] = application_id
+        __props__["cacheControlHeaders"] = cache_control_headers
+        __props__["monitoringCodeSourceSection"] = monitoring_code_source_section
+        __props__["snippetFormat"] = snippet_format
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/webAppAutoInjection:WebAppAutoInjection', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="applicationId")
     def application_id(self) -> pulumi.Output[_builtins.str]:

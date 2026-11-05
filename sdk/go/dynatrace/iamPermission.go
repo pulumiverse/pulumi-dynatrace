@@ -157,6 +157,12 @@ func (IamPermissionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*iamPermissionState)(nil)).Elem()
 }
 
+// IamPermissionExists checks whether an existing IamPermission resource with the given ID exists.
+func IamPermissionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *IamPermissionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/iamPermission:IamPermission", id, state, "", opts...)
+}
+
 type iamPermissionArgs struct {
 	// The UUID of the account this permission is valid for
 	Account *string `pulumi:"account"`

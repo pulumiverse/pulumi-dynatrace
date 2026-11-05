@@ -105,6 +105,12 @@ func (ProcessgroupNamingState) ElementType() reflect.Type {
 	return reflect.TypeOf((*processgroupNamingState)(nil)).Elem()
 }
 
+// ProcessgroupNamingExists checks whether an existing ProcessgroupNaming resource with the given ID exists.
+func ProcessgroupNamingExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ProcessgroupNamingState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/processgroupNaming:ProcessgroupNaming", id, state, "", opts...)
+}
+
 type processgroupNamingArgs struct {
 	// A list of matching conditions of the rule.  The rule applies only if **all** conditions are fulfilled
 	Conditions []ProcessgroupNamingCondition `pulumi:"conditions"`

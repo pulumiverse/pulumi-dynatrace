@@ -919,6 +919,42 @@ class Credentials(pulumi.CustomResource):
         __props__.__dict__["username"] = username
         return Credentials(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            allow_contextless_requests: pulumi.Input[Optional[_builtins.bool]] = None,
+            allowed_entities: pulumi.Input[Optional[Union['CredentialsAllowedEntitiesArgs', 'CredentialsAllowedEntitiesArgsDict', 'outputs.CredentialsAllowedEntities']]] = None,
+            certificate: pulumi.Input[Optional[_builtins.str]] = None,
+            credential_usage_summaries: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CredentialsCredentialUsageSummaryArgs', 'CredentialsCredentialUsageSummaryArgsDict', 'outputs.CredentialsCredentialUsageSummary']]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            external: pulumi.Input[Optional[Union['CredentialsExternalArgs', 'CredentialsExternalArgsDict', 'outputs.CredentialsExternal']]] = None,
+            format: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            owner_access_only: pulumi.Input[Optional[_builtins.bool]] = None,
+            password: pulumi.Input[Optional[_builtins.str]] = None,
+            public: pulumi.Input[Optional[_builtins.bool]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None,
+            scopes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            token: pulumi.Input[Optional[_builtins.str]] = None,
+            username: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["allowContextlessRequests"] = allow_contextless_requests
+        __props__["allowedEntities"] = allowed_entities
+        __props__["certificate"] = certificate
+        __props__["credentialUsageSummaries"] = credential_usage_summaries
+        __props__["description"] = description
+        __props__["external"] = external
+        __props__["format"] = format
+        __props__["name"] = name
+        __props__["ownerAccessOnly"] = owner_access_only
+        __props__["password"] = password
+        __props__["public"] = public
+        __props__["scope"] = scope
+        __props__["scopes"] = scopes
+        __props__["token"] = token
+        __props__["username"] = username
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/credentials:Credentials', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="allowContextlessRequests")
     def allow_contextless_requests(self) -> pulumi.Output[Optional[_builtins.bool]]:

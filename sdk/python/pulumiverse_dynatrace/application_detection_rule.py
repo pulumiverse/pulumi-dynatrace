@@ -298,6 +298,20 @@ class ApplicationDetectionRule(pulumi.CustomResource):
         __props__.__dict__["order"] = order
         return ApplicationDetectionRule(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            application_identifier: pulumi.Input[Optional[_builtins.str]] = None,
+            filter_config: pulumi.Input[Optional[Union['ApplicationDetectionRuleFilterConfigArgs', 'ApplicationDetectionRuleFilterConfigArgsDict', 'outputs.ApplicationDetectionRuleFilterConfig']]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            order: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["applicationIdentifier"] = application_identifier
+        __props__["filterConfig"] = filter_config
+        __props__["name"] = name
+        __props__["order"] = order
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/applicationDetectionRule:ApplicationDetectionRule', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="applicationIdentifier")
     def application_identifier(self) -> pulumi.Output[_builtins.str]:

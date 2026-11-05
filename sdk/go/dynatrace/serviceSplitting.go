@@ -93,6 +93,12 @@ func (ServiceSplittingState) ElementType() reflect.Type {
 	return reflect.TypeOf((*serviceSplittingState)(nil)).Elem()
 }
 
+// ServiceSplittingExists checks whether an existing ServiceSplitting resource with the given ID exists.
+func ServiceSplittingExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ServiceSplittingState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/serviceSplitting:ServiceSplitting", id, state, "", opts...)
+}
+
 type serviceSplittingArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`

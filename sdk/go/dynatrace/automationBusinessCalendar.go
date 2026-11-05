@@ -110,6 +110,12 @@ func (AutomationBusinessCalendarState) ElementType() reflect.Type {
 	return reflect.TypeOf((*automationBusinessCalendarState)(nil)).Elem()
 }
 
+// AutomationBusinessCalendarExists checks whether an existing AutomationBusinessCalendar resource with the given ID exists.
+func AutomationBusinessCalendarExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AutomationBusinessCalendarState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/automationBusinessCalendar:AutomationBusinessCalendar", id, state, "", opts...)
+}
+
 type automationBusinessCalendarArgs struct {
 	// An optional description for the Business Calendar
 	Description *string `pulumi:"description"`

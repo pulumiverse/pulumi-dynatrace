@@ -93,6 +93,12 @@ func (ReportState) ElementType() reflect.Type {
 	return reflect.TypeOf((*reportState)(nil)).Elem()
 }
 
+// ReportExists checks whether an existing Report resource with the given ID exists.
+func ReportExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ReportState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/report:Report", id, state, "", opts...)
+}
+
 type reportArgs struct {
 	// The ID of the associated dashboard
 	DashboardId string `pulumi:"dashboardId"`

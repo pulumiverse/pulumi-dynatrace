@@ -90,6 +90,12 @@ func (OpenpipelineSdlcEventsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*openpipelineSdlcEventsState)(nil)).Elem()
 }
 
+// OpenpipelineSdlcEventsExists checks whether an existing OpenpipelineSdlcEvents resource with the given ID exists.
+func OpenpipelineSdlcEventsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *OpenpipelineSdlcEventsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/openpipelineSdlcEvents:OpenpipelineSdlcEvents", id, state, "", opts...)
+}
+
 type openpipelineSdlcEventsArgs struct {
 	// List of all ingest sources of the configuration
 	Endpoints *OpenpipelineSdlcEventsEndpoints `pulumi:"endpoints"`

@@ -169,6 +169,14 @@ class ServiceNamingOrder(pulumi.CustomResource):
         __props__.__dict__["naming_rule_ids"] = naming_rule_ids
         return ServiceNamingOrder(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            naming_rule_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["namingRuleIds"] = naming_rule_ids
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/serviceNamingOrder:ServiceNamingOrder', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="namingRuleIds")
     def naming_rule_ids(self) -> pulumi.Output[Optional[Sequence[_builtins.str]]]:

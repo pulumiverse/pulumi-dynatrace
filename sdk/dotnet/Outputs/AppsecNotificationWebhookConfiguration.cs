@@ -19,8 +19,8 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly bool AcceptAnyCertificate;
         /// <summary>
-        /// Use additional HTTP headers to attach any additional information, for example, configuration, authorization, or metadata.  
-        ///   
+        /// Use additional HTTP headers to attach any additional information, for example, configuration, authorization, or metadata.
+        /// 
         /// Note that JSON-based webhook endpoints require the addition of the **Content-Type: application/json** header to enable escaping of special characters and to avoid malformed JSON content.
         /// </summary>
         public readonly Outputs.AppsecNotificationWebhookConfigurationHeaders? Headers;

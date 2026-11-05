@@ -87,6 +87,12 @@ func (DiscoveryDefaultRulesState) ElementType() reflect.Type {
 	return reflect.TypeOf((*discoveryDefaultRulesState)(nil)).Elem()
 }
 
+// DiscoveryDefaultRulesExists checks whether an existing DiscoveryDefaultRules resource with the given ID exists.
+func DiscoveryDefaultRulesExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DiscoveryDefaultRulesState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/discoveryDefaultRules:DiscoveryDefaultRules", id, state, "", opts...)
+}
+
 type discoveryDefaultRulesArgs struct {
 	// Rule:
 	Rule DiscoveryDefaultRulesRule `pulumi:"rule"`

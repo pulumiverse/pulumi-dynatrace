@@ -96,6 +96,12 @@ func (HostAnomaliesV2State) ElementType() reflect.Type {
 	return reflect.TypeOf((*hostAnomaliesV2State)(nil)).Elem()
 }
 
+// HostAnomaliesV2Exists checks whether an existing HostAnomaliesV2 resource with the given ID exists.
+func HostAnomaliesV2Exists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *HostAnomaliesV2State, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/hostAnomaliesV2:HostAnomaliesV2", id, state, "", opts...)
+}
+
 type hostAnomaliesV2Args struct {
 	// Hosts
 	Host HostAnomaliesV2Host `pulumi:"host"`

@@ -113,6 +113,12 @@ func (NetworkMonitorOutageState) ElementType() reflect.Type {
 	return reflect.TypeOf((*networkMonitorOutageState)(nil)).Elem()
 }
 
+// NetworkMonitorOutageExists checks whether an existing NetworkMonitorOutage resource with the given ID exists.
+func NetworkMonitorOutageExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *NetworkMonitorOutageState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/networkMonitorOutage:NetworkMonitorOutage", id, state, "", opts...)
+}
+
 type networkMonitorOutageArgs struct {
 	// Alert if all locations are unable to access my target address
 	GlobalConsecutiveOutageCountThreshold *int `pulumi:"globalConsecutiveOutageCountThreshold"`

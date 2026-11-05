@@ -110,6 +110,12 @@ func (AlertingProfileState) ElementType() reflect.Type {
 	return reflect.TypeOf((*alertingProfileState)(nil)).Elem()
 }
 
+// AlertingProfileExists checks whether an existing AlertingProfile resource with the given ID exists.
+func AlertingProfileExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AlertingProfileState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/alertingProfile:AlertingProfile", id, state, "", opts...)
+}
+
 type alertingProfileArgs struct {
 	// The name of the alerting profile, displayed in the UI
 	DisplayName string `pulumi:"displayName"`

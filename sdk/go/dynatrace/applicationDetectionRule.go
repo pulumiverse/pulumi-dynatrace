@@ -105,6 +105,12 @@ func (ApplicationDetectionRuleState) ElementType() reflect.Type {
 	return reflect.TypeOf((*applicationDetectionRuleState)(nil)).Elem()
 }
 
+// ApplicationDetectionRuleExists checks whether an existing ApplicationDetectionRule resource with the given ID exists.
+func ApplicationDetectionRuleExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ApplicationDetectionRuleState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/applicationDetectionRule:ApplicationDetectionRule", id, state, "", opts...)
+}
+
 type applicationDetectionRuleArgs struct {
 	// The Dynatrace entity ID of the application, for example APPLICATION-4A3B43
 	ApplicationIdentifier string `pulumi:"applicationIdentifier"`

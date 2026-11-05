@@ -84,6 +84,12 @@ func (MonitoredTechnologiesWsmbState) ElementType() reflect.Type {
 	return reflect.TypeOf((*monitoredTechnologiesWsmbState)(nil)).Elem()
 }
 
+// MonitoredTechnologiesWsmbExists checks whether an existing MonitoredTechnologiesWsmb resource with the given ID exists.
+func MonitoredTechnologiesWsmbExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *MonitoredTechnologiesWsmbState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/monitoredTechnologiesWsmb:MonitoredTechnologiesWsmb", id, state, "", opts...)
+}
+
 type monitoredTechnologiesWsmbArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`

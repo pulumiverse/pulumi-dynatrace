@@ -169,6 +169,12 @@ func (HttpMonitorScriptState) ElementType() reflect.Type {
 	return reflect.TypeOf((*httpMonitorScriptState)(nil)).Elem()
 }
 
+// HttpMonitorScriptExists checks whether an existing HttpMonitorScript resource with the given ID exists.
+func HttpMonitorScriptExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *HttpMonitorScriptState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/httpMonitorScript:HttpMonitorScript", id, state, "", opts...)
+}
+
 type httpMonitorScriptArgs struct {
 	// The ID of the HTTP monitor
 	HttpId string `pulumi:"httpId"`

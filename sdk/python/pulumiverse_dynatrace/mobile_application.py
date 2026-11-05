@@ -805,6 +805,38 @@ class MobileApplication(pulumi.CustomResource):
         __props__.__dict__["user_session_percentage"] = user_session_percentage
         return MobileApplication(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            apdex: pulumi.Input[Optional[Union['MobileApplicationApdexArgs', 'MobileApplicationApdexArgsDict', 'outputs.MobileApplicationApdex']]] = None,
+            application_id: pulumi.Input[Optional[_builtins.str]] = None,
+            application_type: pulumi.Input[Optional[_builtins.str]] = None,
+            beacon_endpoint_type: pulumi.Input[Optional[_builtins.str]] = None,
+            beacon_endpoint_url: pulumi.Input[Optional[_builtins.str]] = None,
+            icon_type: pulumi.Input[Optional[_builtins.str]] = None,
+            key_user_actions: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            opt_in_mode: pulumi.Input[Optional[_builtins.bool]] = None,
+            properties: pulumi.Input[Optional[Union['MobileApplicationPropertiesArgs', 'MobileApplicationPropertiesArgsDict', 'outputs.MobileApplicationProperties']]] = None,
+            session_replay: pulumi.Input[Optional[_builtins.bool]] = None,
+            session_replay_on_crash: pulumi.Input[Optional[_builtins.bool]] = None,
+            user_session_percentage: pulumi.Input[Optional[_builtins.int]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["apdex"] = apdex
+        __props__["applicationId"] = application_id
+        __props__["applicationType"] = application_type
+        __props__["beaconEndpointType"] = beacon_endpoint_type
+        __props__["beaconEndpointUrl"] = beacon_endpoint_url
+        __props__["iconType"] = icon_type
+        __props__["keyUserActions"] = key_user_actions
+        __props__["name"] = name
+        __props__["optInMode"] = opt_in_mode
+        __props__["properties"] = properties
+        __props__["sessionReplay"] = session_replay
+        __props__["sessionReplayOnCrash"] = session_replay_on_crash
+        __props__["userSessionPercentage"] = user_session_percentage
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/mobileApplication:MobileApplication', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def apdex(self) -> pulumi.Output['outputs.MobileApplicationApdex']:

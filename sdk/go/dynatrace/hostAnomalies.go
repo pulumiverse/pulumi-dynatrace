@@ -112,6 +112,12 @@ func (HostAnomaliesState) ElementType() reflect.Type {
 	return reflect.TypeOf((*hostAnomaliesState)(nil)).Elem()
 }
 
+// HostAnomaliesExists checks whether an existing HostAnomalies resource with the given ID exists.
+func HostAnomaliesExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *HostAnomaliesState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/hostAnomalies:HostAnomalies", id, state, "", opts...)
+}
+
 type hostAnomaliesArgs struct {
 	// Configuration of lost connection detection
 	Connections *HostAnomaliesConnections `pulumi:"connections"`

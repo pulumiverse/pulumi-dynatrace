@@ -96,6 +96,12 @@ func (ProblemFieldsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*problemFieldsState)(nil)).Elem()
 }
 
+// ProblemFieldsExists checks whether an existing ProblemFields resource with the given ID exists.
+func ProblemFieldsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ProblemFieldsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/problemFields:ProblemFields", id, state, "", opts...)
+}
+
 type problemFieldsArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`

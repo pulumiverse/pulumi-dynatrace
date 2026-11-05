@@ -96,6 +96,12 @@ func (ProblemRecordPropagationRulesState) ElementType() reflect.Type {
 	return reflect.TypeOf((*problemRecordPropagationRulesState)(nil)).Elem()
 }
 
+// ProblemRecordPropagationRulesExists checks whether an existing ProblemRecordPropagationRules resource with the given ID exists.
+func ProblemRecordPropagationRulesExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ProblemRecordPropagationRulesState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/problemRecordPropagationRules:ProblemRecordPropagationRules", id, state, "", opts...)
+}
+
 type problemRecordPropagationRulesArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`

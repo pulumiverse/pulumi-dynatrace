@@ -136,6 +136,12 @@ func (CloudFoundryState) ElementType() reflect.Type {
 	return reflect.TypeOf((*cloudFoundryState)(nil)).Elem()
 }
 
+// CloudFoundryExists checks whether an existing CloudFoundry resource with the given ID exists.
+func CloudFoundryExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *CloudFoundryState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/cloudFoundry:CloudFoundry", id, state, "", opts...)
+}
+
 type cloudFoundryArgs struct {
 	// ActiveGate group
 	ActiveGateGroup *string `pulumi:"activeGateGroup"`

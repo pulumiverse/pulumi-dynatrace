@@ -270,6 +270,18 @@ class KeyRequests(pulumi.CustomResource):
         __props__.__dict__["service"] = service
         return KeyRequests(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            key_request_ids: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            service: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["keyRequestIds"] = key_request_ids
+        __props__["names"] = names
+        __props__["service"] = service
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/keyRequests:KeyRequests', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="keyRequestIds")
     def key_request_ids(self) -> pulumi.Output[Mapping[str, _builtins.str]]:

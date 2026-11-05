@@ -114,6 +114,12 @@ func (BusinessEventsBucketsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*businessEventsBucketsState)(nil)).Elem()
 }
 
+// BusinessEventsBucketsExists checks whether an existing BusinessEventsBuckets resource with the given ID exists.
+func BusinessEventsBucketsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *BusinessEventsBucketsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/businessEventsBuckets:BusinessEventsBuckets", id, state, "", opts...)
+}
+
 type businessEventsBucketsArgs struct {
 	// Events will be stored in the selected bucket. Analyze bucket contents in the [log & event viewer.](https://www.terraform.io/ui/logs-events?advancedQueryMode=true&query=fetch+bizevents)
 	BucketName string `pulumi:"bucketName"`

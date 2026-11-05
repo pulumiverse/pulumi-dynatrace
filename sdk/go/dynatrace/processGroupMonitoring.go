@@ -120,6 +120,12 @@ func (ProcessGroupMonitoringState) ElementType() reflect.Type {
 	return reflect.TypeOf((*processGroupMonitoringState)(nil)).Elem()
 }
 
+// ProcessGroupMonitoringExists checks whether an existing ProcessGroupMonitoring resource with the given ID exists.
+func ProcessGroupMonitoringExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ProcessGroupMonitoringState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/processGroupMonitoring:ProcessGroupMonitoring", id, state, "", opts...)
+}
+
 type processGroupMonitoringArgs struct {
 	// Possible Values: `DEFAULT`, `MONITORING_OFF`, `MONITORING_ON`
 	MonitoringState string `pulumi:"monitoringState"`

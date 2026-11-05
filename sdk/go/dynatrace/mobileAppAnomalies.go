@@ -174,6 +174,12 @@ func (MobileAppAnomaliesState) ElementType() reflect.Type {
 	return reflect.TypeOf((*mobileAppAnomaliesState)(nil)).Elem()
 }
 
+// MobileAppAnomaliesExists checks whether an existing MobileAppAnomalies resource with the given ID exists.
+func MobileAppAnomaliesExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *MobileAppAnomaliesState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/mobileAppAnomalies:MobileAppAnomalies", id, state, "", opts...)
+}
+
 type mobileAppAnomaliesArgs struct {
 	// Error rate increase
 	ErrorRateIncrease MobileAppAnomaliesErrorRateIncrease `pulumi:"errorRateIncrease"`

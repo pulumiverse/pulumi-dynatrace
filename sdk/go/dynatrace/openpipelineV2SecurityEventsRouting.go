@@ -112,6 +112,12 @@ func (OpenpipelineV2SecurityEventsRoutingState) ElementType() reflect.Type {
 	return reflect.TypeOf((*openpipelineV2SecurityEventsRoutingState)(nil)).Elem()
 }
 
+// OpenpipelineV2SecurityEventsRoutingExists checks whether an existing OpenpipelineV2SecurityEventsRouting resource with the given ID exists.
+func OpenpipelineV2SecurityEventsRoutingExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *OpenpipelineV2SecurityEventsRoutingState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/openpipelineV2SecurityEventsRouting:OpenpipelineV2SecurityEventsRouting", id, state, "", opts...)
+}
+
 type openpipelineV2SecurityEventsRoutingArgs struct {
 	// Routing for pipelines
 	RoutingEntries *OpenpipelineV2SecurityEventsRoutingRoutingEntries `pulumi:"routingEntries"`

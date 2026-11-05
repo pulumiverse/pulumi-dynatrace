@@ -555,6 +555,34 @@ class ApiToken(pulumi.CustomResource):
         __props__.__dict__["token"] = token
         return ApiToken(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            creation_date: pulumi.Input[Optional[_builtins.str]] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            expiration_date: pulumi.Input[Optional[_builtins.str]] = None,
+            last_used_date: pulumi.Input[Optional[_builtins.str]] = None,
+            last_used_ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+            modified_date: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            owner: pulumi.Input[Optional[_builtins.str]] = None,
+            personal_access_token: pulumi.Input[Optional[_builtins.bool]] = None,
+            scopes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            token: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["creationDate"] = creation_date
+        __props__["enabled"] = enabled
+        __props__["expirationDate"] = expiration_date
+        __props__["lastUsedDate"] = last_used_date
+        __props__["lastUsedIpAddress"] = last_used_ip_address
+        __props__["modifiedDate"] = modified_date
+        __props__["name"] = name
+        __props__["owner"] = owner
+        __props__["personalAccessToken"] = personal_access_token
+        __props__["scopes"] = scopes
+        __props__["token"] = token
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/apiToken:ApiToken', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="creationDate")
     def creation_date(self) -> pulumi.Output[_builtins.str]:

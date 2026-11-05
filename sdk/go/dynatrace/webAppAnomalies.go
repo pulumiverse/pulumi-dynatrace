@@ -111,6 +111,12 @@ func (WebAppAnomaliesState) ElementType() reflect.Type {
 	return reflect.TypeOf((*webAppAnomaliesState)(nil)).Elem()
 }
 
+// WebAppAnomaliesExists checks whether an existing WebAppAnomalies resource with the given ID exists.
+func WebAppAnomaliesExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *WebAppAnomaliesState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/webAppAnomalies:WebAppAnomalies", id, state, "", opts...)
+}
+
 type webAppAnomaliesArgs struct {
 	// Error rate
 	ErrorRate WebAppAnomaliesErrorRate `pulumi:"errorRate"`

@@ -251,6 +251,18 @@ class ServiceFailure(pulumi.CustomResource):
         __props__.__dict__["service_id"] = service_id
         return ServiceFailure(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            exception_rules: pulumi.Input[Optional[Union['ServiceFailureExceptionRulesArgs', 'ServiceFailureExceptionRulesArgsDict', 'outputs.ServiceFailureExceptionRules']]] = None,
+            service_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["enabled"] = enabled
+        __props__["exceptionRules"] = exception_rules
+        __props__["serviceId"] = service_id
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/serviceFailure:ServiceFailure', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def enabled(self) -> pulumi.Output[_builtins.bool]:

@@ -485,6 +485,30 @@ class OwnershipTeams(pulumi.CustomResource):
         __props__.__dict__["supplementary_identifiers"] = supplementary_identifiers
         return OwnershipTeams(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            additional_information: pulumi.Input[Optional[Union['OwnershipTeamsAdditionalInformationArgs', 'OwnershipTeamsAdditionalInformationArgsDict', 'outputs.OwnershipTeamsAdditionalInformation']]] = None,
+            contact_details: pulumi.Input[Optional[Union['OwnershipTeamsContactDetailsArgs', 'OwnershipTeamsContactDetailsArgsDict', 'outputs.OwnershipTeamsContactDetails']]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            external_id: pulumi.Input[Optional[_builtins.str]] = None,
+            identifier: pulumi.Input[Optional[_builtins.str]] = None,
+            links: pulumi.Input[Optional[Union['OwnershipTeamsLinksArgs', 'OwnershipTeamsLinksArgsDict', 'outputs.OwnershipTeamsLinks']]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            responsibilities: pulumi.Input[Optional[Union['OwnershipTeamsResponsibilitiesArgs', 'OwnershipTeamsResponsibilitiesArgsDict', 'outputs.OwnershipTeamsResponsibilities']]] = None,
+            supplementary_identifiers: pulumi.Input[Optional[Union['OwnershipTeamsSupplementaryIdentifiersArgs', 'OwnershipTeamsSupplementaryIdentifiersArgsDict', 'outputs.OwnershipTeamsSupplementaryIdentifiers']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["additionalInformation"] = additional_information
+        __props__["contactDetails"] = contact_details
+        __props__["description"] = description
+        __props__["externalId"] = external_id
+        __props__["identifier"] = identifier
+        __props__["links"] = links
+        __props__["name"] = name
+        __props__["responsibilities"] = responsibilities
+        __props__["supplementaryIdentifiers"] = supplementary_identifiers
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/ownershipTeams:OwnershipTeams', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="additionalInformation")
     def additional_information(self) -> pulumi.Output[Optional['outputs.OwnershipTeamsAdditionalInformation']]:

@@ -371,6 +371,24 @@ class K8sClusterAnomalies(pulumi.CustomResource):
         __props__.__dict__["scope"] = scope
         return K8sClusterAnomalies(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            cpu_requests_saturation: pulumi.Input[Optional[Union['K8sClusterAnomaliesCpuRequestsSaturationArgs', 'K8sClusterAnomaliesCpuRequestsSaturationArgsDict', 'outputs.K8sClusterAnomaliesCpuRequestsSaturation']]] = None,
+            memory_requests_saturation: pulumi.Input[Optional[Union['K8sClusterAnomaliesMemoryRequestsSaturationArgs', 'K8sClusterAnomaliesMemoryRequestsSaturationArgsDict', 'outputs.K8sClusterAnomaliesMemoryRequestsSaturation']]] = None,
+            monitoring_issues: pulumi.Input[Optional[Union['K8sClusterAnomaliesMonitoringIssuesArgs', 'K8sClusterAnomaliesMonitoringIssuesArgsDict', 'outputs.K8sClusterAnomaliesMonitoringIssues']]] = None,
+            pods_saturation: pulumi.Input[Optional[Union['K8sClusterAnomaliesPodsSaturationArgs', 'K8sClusterAnomaliesPodsSaturationArgsDict', 'outputs.K8sClusterAnomaliesPodsSaturation']]] = None,
+            readiness_issues: pulumi.Input[Optional[Union['K8sClusterAnomaliesReadinessIssuesArgs', 'K8sClusterAnomaliesReadinessIssuesArgsDict', 'outputs.K8sClusterAnomaliesReadinessIssues']]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["cpuRequestsSaturation"] = cpu_requests_saturation
+        __props__["memoryRequestsSaturation"] = memory_requests_saturation
+        __props__["monitoringIssues"] = monitoring_issues
+        __props__["podsSaturation"] = pods_saturation
+        __props__["readinessIssues"] = readiness_issues
+        __props__["scope"] = scope
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/k8sClusterAnomalies:K8sClusterAnomalies', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="cpuRequestsSaturation")
     def cpu_requests_saturation(self) -> pulumi.Output['outputs.K8sClusterAnomaliesCpuRequestsSaturation']:

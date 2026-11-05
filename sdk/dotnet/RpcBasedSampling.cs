@@ -41,7 +41,7 @@ namespace Pulumiverse.Dynatrace
         public Output<string> EndpointNameComparisonType { get; private set; } = null!;
 
         /// <summary>
-        /// Possible Values: `0`, `1`, `2`, `3`, `4`, `5`, `6`, `8`, `9`, `10`, `11`, `12`, `13`, `14` 
+        /// Possible Values: `0`, `1`, `2`, `3`, `4`, `5`, `6`, `8`, `9`, `10`, `11`, `12`, `13`, `14`
         /// 
         ///   - `0`: Increase capturing 128 times
         /// 
@@ -117,7 +117,7 @@ namespace Pulumiverse.Dynatrace
         public Output<string?> Scope { get; private set; } = null!;
 
         /// <summary>
-        /// Possible Values: `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10` 
+        /// Possible Values: `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`
         /// 
         ///   - `1`: ADK
         /// 
@@ -208,7 +208,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string> EndpointNameComparisonType { get; set; } = null!;
 
         /// <summary>
-        /// Possible Values: `0`, `1`, `2`, `3`, `4`, `5`, `6`, `8`, `9`, `10`, `11`, `12`, `13`, `14` 
+        /// Possible Values: `0`, `1`, `2`, `3`, `4`, `5`, `6`, `8`, `9`, `10`, `11`, `12`, `13`, `14`
         /// 
         ///   - `0`: Increase capturing 128 times
         /// 
@@ -284,7 +284,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? Scope { get; set; }
 
         /// <summary>
-        /// Possible Values: `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10` 
+        /// Possible Values: `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`
         /// 
         ///   - `1`: ADK
         /// 
@@ -336,7 +336,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? EndpointNameComparisonType { get; set; }
 
         /// <summary>
-        /// Possible Values: `0`, `1`, `2`, `3`, `4`, `5`, `6`, `8`, `9`, `10`, `11`, `12`, `13`, `14` 
+        /// Possible Values: `0`, `1`, `2`, `3`, `4`, `5`, `6`, `8`, `9`, `10`, `11`, `12`, `13`, `14`
         /// 
         ///   - `0`: Increase capturing 128 times
         /// 
@@ -412,7 +412,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? Scope { get; set; }
 
         /// <summary>
-        /// Possible Values: `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10` 
+        /// Possible Values: `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`
         /// 
         ///   - `1`: ADK
         /// 

@@ -370,6 +370,24 @@ class RumProviderBreakdown(pulumi.CustomResource):
         __props__.__dict__["resource_type"] = resource_type
         return RumProviderBreakdown(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            domain_name_pattern_list: pulumi.Input[Optional[Union['RumProviderBreakdownDomainNamePatternListArgs', 'RumProviderBreakdownDomainNamePatternListArgsDict', 'outputs.RumProviderBreakdownDomainNamePatternList']]] = None,
+            icon_url: pulumi.Input[Optional[_builtins.str]] = None,
+            insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+            report_public_improvement: pulumi.Input[Optional[_builtins.bool]] = None,
+            resource_name_: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_type: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["domainNamePatternList"] = domain_name_pattern_list
+        __props__["iconUrl"] = icon_url
+        __props__["insertAfter"] = insert_after
+        __props__["reportPublicImprovement"] = report_public_improvement
+        __props__["resourceName"] = resource_name_
+        __props__["resourceType"] = resource_type
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/rumProviderBreakdown:RumProviderBreakdown', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="domainNamePatternList")
     def domain_name_pattern_list(self) -> pulumi.Output['outputs.RumProviderBreakdownDomainNamePatternList']:

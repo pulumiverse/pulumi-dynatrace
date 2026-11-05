@@ -84,6 +84,12 @@ func (WebAppCustomPropRestrictionsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*webAppCustomPropRestrictionsState)(nil)).Elem()
 }
 
+// WebAppCustomPropRestrictionsExists checks whether an existing WebAppCustomPropRestrictions resource with the given ID exists.
+func WebAppCustomPropRestrictionsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *WebAppCustomPropRestrictionsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/webAppCustomPropRestrictions:WebAppCustomPropRestrictions", id, state, "", opts...)
+}
+
 type webAppCustomPropRestrictionsArgs struct {
 	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
 	ApplicationId string `pulumi:"applicationId"`

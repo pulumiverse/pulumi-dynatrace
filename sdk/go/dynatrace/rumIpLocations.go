@@ -129,6 +129,12 @@ func (RumIpLocationsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*rumIpLocationsState)(nil)).Elem()
 }
 
+// RumIpLocationsExists checks whether an existing RumIpLocations resource with the given ID exists.
+func RumIpLocationsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *RumIpLocationsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/rumIpLocations:RumIpLocations", id, state, "", opts...)
+}
+
 type rumIpLocationsArgs struct {
 	// The city name of the location.
 	City *string `pulumi:"city"`

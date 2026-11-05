@@ -80,6 +80,12 @@ func (MobileNotificationsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*mobileNotificationsState)(nil)).Elem()
 }
 
+// MobileNotificationsExists checks whether an existing MobileNotifications resource with the given ID exists.
+func MobileNotificationsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *MobileNotificationsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/mobileNotifications:MobileNotifications", id, state, "", opts...)
+}
+
 type mobileNotificationsArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`

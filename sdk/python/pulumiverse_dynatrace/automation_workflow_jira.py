@@ -451,6 +451,26 @@ class AutomationWorkflowJira(pulumi.CustomResource):
         __props__.__dict__["user"] = user
         return AutomationWorkflowJira(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            password: pulumi.Input[Optional[_builtins.str]] = None,
+            token: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None,
+            url: pulumi.Input[Optional[_builtins.str]] = None,
+            user: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["insertAfter"] = insert_after
+        __props__["name"] = name
+        __props__["password"] = password
+        __props__["token"] = token
+        __props__["type"] = type
+        __props__["url"] = url
+        __props__["user"] = user
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/automationWorkflowJira:AutomationWorkflowJira', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="insertAfter")
     @_utilities.deprecated("""This resource is no longer ordered, please remove this attribute from the configuration""")

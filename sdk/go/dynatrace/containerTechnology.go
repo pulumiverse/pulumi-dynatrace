@@ -301,6 +301,12 @@ func (ContainerTechnologyState) ElementType() reflect.Type {
 	return reflect.TypeOf((*containerTechnologyState)(nil)).Elem()
 }
 
+// ContainerTechnologyExists checks whether an existing ContainerTechnology resource with the given ID exists.
+func ContainerTechnologyExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ContainerTechnologyState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/containerTechnology:ContainerTechnology", id, state, "", opts...)
+}
+
 type containerTechnologyArgs struct {
 	// Platform: Cloud Foundry
 	BoshProcessManager bool `pulumi:"boshProcessManager"`

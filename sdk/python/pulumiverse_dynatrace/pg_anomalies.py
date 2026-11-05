@@ -247,6 +247,16 @@ class PgAnomalies(pulumi.CustomResource):
         __props__.__dict__["pg_id"] = pg_id
         return PgAnomalies(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            availability: pulumi.Input[Optional[Union['PgAnomaliesAvailabilityArgs', 'PgAnomaliesAvailabilityArgsDict', 'outputs.PgAnomaliesAvailability']]] = None,
+            pg_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["availability"] = availability
+        __props__["pgId"] = pg_id
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/pgAnomalies:PgAnomalies', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def availability(self) -> pulumi.Output[Optional['outputs.PgAnomaliesAvailability']]:

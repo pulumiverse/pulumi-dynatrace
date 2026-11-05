@@ -16,7 +16,7 @@ namespace Pulumiverse.Dynatrace
         /// The synthetic location data source allows the location ID to be retrieved based off of provided parameters.
         /// 
         /// &gt; For Provider versions earlier than v1.80.0: This data source requires the API token scope **Read synthetic monitors, locations, and nodes** (`ReadSyntheticData`)
-        /// &gt; For Provider versions v1.80.0 and newer: This data source requires the API token scope **Read synthetic locations** (`syntheticLocations.read`)
+        /// For Provider versions v1.80.0 and newer: This data source requires the API token scope **Read synthetic locations** (`syntheticLocations.read`)
         /// </summary>
         public static Task<GetSyntheticLocationResult> InvokeAsync(GetSyntheticLocationArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetSyntheticLocationResult>("dynatrace:index/getSyntheticLocation:getSyntheticLocation", args ?? new GetSyntheticLocationArgs(), options.WithDefaults());
@@ -25,7 +25,7 @@ namespace Pulumiverse.Dynatrace
         /// The synthetic location data source allows the location ID to be retrieved based off of provided parameters.
         /// 
         /// &gt; For Provider versions earlier than v1.80.0: This data source requires the API token scope **Read synthetic monitors, locations, and nodes** (`ReadSyntheticData`)
-        /// &gt; For Provider versions v1.80.0 and newer: This data source requires the API token scope **Read synthetic locations** (`syntheticLocations.read`)
+        /// For Provider versions v1.80.0 and newer: This data source requires the API token scope **Read synthetic locations** (`syntheticLocations.read`)
         /// </summary>
         public static Output<GetSyntheticLocationResult> Invoke(GetSyntheticLocationInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSyntheticLocationResult>("dynatrace:index/getSyntheticLocation:getSyntheticLocation", args ?? new GetSyntheticLocationInvokeArgs(), options.WithDefaults());
@@ -34,7 +34,7 @@ namespace Pulumiverse.Dynatrace
         /// The synthetic location data source allows the location ID to be retrieved based off of provided parameters.
         /// 
         /// &gt; For Provider versions earlier than v1.80.0: This data source requires the API token scope **Read synthetic monitors, locations, and nodes** (`ReadSyntheticData`)
-        /// &gt; For Provider versions v1.80.0 and newer: This data source requires the API token scope **Read synthetic locations** (`syntheticLocations.read`)
+        /// For Provider versions v1.80.0 and newer: This data source requires the API token scope **Read synthetic locations** (`syntheticLocations.read`)
         /// </summary>
         public static Output<GetSyntheticLocationResult> Invoke(GetSyntheticLocationInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetSyntheticLocationResult>("dynatrace:index/getSyntheticLocation:getSyntheticLocation", args ?? new GetSyntheticLocationInvokeArgs(), options.WithDefaults());

@@ -369,6 +369,24 @@ class ApiDetection(pulumi.CustomResource):
         __props__.__dict__["third_party_api"] = third_party_api
         return ApiDetection(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            api_color: pulumi.Input[Optional[_builtins.str]] = None,
+            api_name: pulumi.Input[Optional[_builtins.str]] = None,
+            conditions: pulumi.Input[Optional[Union['ApiDetectionConditionsArgs', 'ApiDetectionConditionsArgsDict', 'outputs.ApiDetectionConditions']]] = None,
+            insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+            technology: pulumi.Input[Optional[_builtins.str]] = None,
+            third_party_api: pulumi.Input[Optional[_builtins.bool]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["apiColor"] = api_color
+        __props__["apiName"] = api_name
+        __props__["conditions"] = conditions
+        __props__["insertAfter"] = insert_after
+        __props__["technology"] = technology
+        __props__["thirdPartyApi"] = third_party_api
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/apiDetection:ApiDetection', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="apiColor")
     def api_color(self) -> pulumi.Output[_builtins.str]:

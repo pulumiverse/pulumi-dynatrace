@@ -100,6 +100,12 @@ func (AutotagState) ElementType() reflect.Type {
 	return reflect.TypeOf((*autotagState)(nil)).Elem()
 }
 
+// AutotagExists checks whether an existing Autotag resource with the given ID exists.
+func AutotagExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AutotagState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/autotag:Autotag", id, state, "", opts...)
+}
+
 type autotagArgs struct {
 	// The description of the auto-tag.
 	Description *string `pulumi:"description"`

@@ -114,6 +114,12 @@ func (PlatformBucketState) ElementType() reflect.Type {
 	return reflect.TypeOf((*platformBucketState)(nil)).Elem()
 }
 
+// PlatformBucketExists checks whether an existing PlatformBucket resource with the given ID exists.
+func PlatformBucketExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *PlatformBucketState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/platformBucket:PlatformBucket", id, state, "", opts...)
+}
+
 type platformBucketArgs struct {
 	// The name of the bucket definition when visualized within the UI
 	DisplayName *string `pulumi:"displayName"`

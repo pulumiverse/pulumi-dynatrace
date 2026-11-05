@@ -129,6 +129,12 @@ func (CloudfoundryCredentialsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*cloudfoundryCredentialsState)(nil)).Elem()
 }
 
+// CloudfoundryCredentialsExists checks whether an existing CloudfoundryCredentials resource with the given ID exists.
+func CloudfoundryCredentialsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *CloudfoundryCredentialsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/cloudfoundryCredentials:CloudfoundryCredentials", id, state, "", opts...)
+}
+
 type cloudfoundryCredentialsArgs struct {
 	// The monitoring is enabled (`true`) or disabled (`false`) for given credentials configuration.  If not set on creation, the `true` value is used.  If the field is omitted during an update, the old value remains unaffected.
 	Active *bool `pulumi:"active"`

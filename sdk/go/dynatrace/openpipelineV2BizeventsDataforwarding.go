@@ -332,6 +332,12 @@ func (OpenpipelineV2BizeventsDataforwardingState) ElementType() reflect.Type {
 	return reflect.TypeOf((*openpipelineV2BizeventsDataforwardingState)(nil)).Elem()
 }
 
+// OpenpipelineV2BizeventsDataforwardingExists checks whether an existing OpenpipelineV2BizeventsDataforwarding resource with the given ID exists.
+func OpenpipelineV2BizeventsDataforwardingExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *OpenpipelineV2BizeventsDataforwardingState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/openpipelineV2BizeventsDataforwarding:OpenpipelineV2BizeventsDataforwarding", id, state, "", opts...)
+}
+
 type openpipelineV2BizeventsDataforwardingArgs struct {
 	// AWS Connection
 	AwsConnection *OpenpipelineV2BizeventsDataforwardingAwsConnection `pulumi:"awsConnection"`

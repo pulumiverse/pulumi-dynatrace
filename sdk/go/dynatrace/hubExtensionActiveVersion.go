@@ -141,6 +141,12 @@ func (HubExtensionActiveVersionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*hubExtensionActiveVersionState)(nil)).Elem()
 }
 
+// HubExtensionActiveVersionExists checks whether an existing HubExtensionActiveVersion resource with the given ID exists.
+func HubExtensionActiveVersionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *HubExtensionActiveVersionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/hubExtensionActiveVersion:HubExtensionActiveVersion", id, state, "", opts...)
+}
+
 type hubExtensionActiveVersionArgs struct {
 	// The fully qualified name of the extension, such as `com.dynatrace.extension.jmx-liberty-cp`. You can query for these names using the data source `getHubItems`
 	Name *string `pulumi:"name"`

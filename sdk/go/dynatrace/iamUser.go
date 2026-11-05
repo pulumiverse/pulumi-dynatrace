@@ -108,6 +108,12 @@ func (IamUserState) ElementType() reflect.Type {
 	return reflect.TypeOf((*iamUserState)(nil)).Elem()
 }
 
+// IamUserExists checks whether an existing IamUser resource with the given ID exists.
+func IamUserExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *IamUserState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/iamUser:IamUser", id, state, "", opts...)
+}
+
 type iamUserArgs struct {
 	Email  string   `pulumi:"email"`
 	Groups []string `pulumi:"groups"`

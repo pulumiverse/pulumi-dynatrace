@@ -84,6 +84,12 @@ func (MonitoredTechnologiesApacheState) ElementType() reflect.Type {
 	return reflect.TypeOf((*monitoredTechnologiesApacheState)(nil)).Elem()
 }
 
+// MonitoredTechnologiesApacheExists checks whether an existing MonitoredTechnologiesApache resource with the given ID exists.
+func MonitoredTechnologiesApacheExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *MonitoredTechnologiesApacheState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/monitoredTechnologiesApache:MonitoredTechnologiesApache", id, state, "", opts...)
+}
+
 type monitoredTechnologiesApacheArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`

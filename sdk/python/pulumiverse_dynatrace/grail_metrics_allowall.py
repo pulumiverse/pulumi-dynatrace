@@ -170,6 +170,14 @@ class GrailMetricsAllowall(pulumi.CustomResource):
         __props__.__dict__["allow_all"] = allow_all
         return GrailMetricsAllowall(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            allow_all: pulumi.Input[Optional[_builtins.bool]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["allowAll"] = allow_all
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/grailMetricsAllowall:GrailMetricsAllowall', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="allowAll")
     def allow_all(self) -> pulumi.Output[_builtins.bool]:

@@ -411,6 +411,26 @@ class CloudFoundry(pulumi.CustomResource):
         __props__.__dict__["username"] = username
         return CloudFoundry(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            active_gate_group: pulumi.Input[Optional[_builtins.str]] = None,
+            api_url: pulumi.Input[Optional[_builtins.str]] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            label: pulumi.Input[Optional[_builtins.str]] = None,
+            login_url: pulumi.Input[Optional[_builtins.str]] = None,
+            password: pulumi.Input[Optional[_builtins.str]] = None,
+            username: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["activeGateGroup"] = active_gate_group
+        __props__["apiUrl"] = api_url
+        __props__["enabled"] = enabled
+        __props__["label"] = label
+        __props__["loginUrl"] = login_url
+        __props__["password"] = password
+        __props__["username"] = username
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/cloudFoundry:CloudFoundry', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="activeGateGroup")
     def active_gate_group(self) -> pulumi.Output[Optional[_builtins.str]]:

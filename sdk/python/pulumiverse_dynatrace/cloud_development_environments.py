@@ -169,6 +169,14 @@ class CloudDevelopmentEnvironments(pulumi.CustomResource):
         __props__.__dict__["cloud_development_environments"] = cloud_development_environments
         return CloudDevelopmentEnvironments(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            cloud_development_environments: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["cloudDevelopmentEnvironments"] = cloud_development_environments
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/cloudDevelopmentEnvironments:CloudDevelopmentEnvironments', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="cloudDevelopmentEnvironments")
     def cloud_development_environments(self) -> pulumi.Output[Optional[Sequence[_builtins.str]]]:

@@ -1255,6 +1255,42 @@ class OpenpipelineV2SecurityEventsPipelines(pulumi.CustomResource):
         __props__.__dict__["storage"] = storage
         return OpenpipelineV2SecurityEventsPipelines(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            cost_allocation: pulumi.Input[Optional[Union['OpenpipelineV2SecurityEventsPipelinesCostAllocationArgs', 'OpenpipelineV2SecurityEventsPipelinesCostAllocationArgsDict', 'outputs.OpenpipelineV2SecurityEventsPipelinesCostAllocation']]] = None,
+            custom_id: pulumi.Input[Optional[_builtins.str]] = None,
+            data_extraction: pulumi.Input[Optional[Union['OpenpipelineV2SecurityEventsPipelinesDataExtractionArgs', 'OpenpipelineV2SecurityEventsPipelinesDataExtractionArgsDict', 'outputs.OpenpipelineV2SecurityEventsPipelinesDataExtraction']]] = None,
+            davis: pulumi.Input[Optional[Union['OpenpipelineV2SecurityEventsPipelinesDavisArgs', 'OpenpipelineV2SecurityEventsPipelinesDavisArgsDict', 'outputs.OpenpipelineV2SecurityEventsPipelinesDavis']]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            group_role: pulumi.Input[Optional[_builtins.str]] = None,
+            metadata_list: pulumi.Input[Optional[Union['OpenpipelineV2SecurityEventsPipelinesMetadataListArgs', 'OpenpipelineV2SecurityEventsPipelinesMetadataListArgsDict', 'outputs.OpenpipelineV2SecurityEventsPipelinesMetadataList']]] = None,
+            metric_extraction: pulumi.Input[Optional[Union['OpenpipelineV2SecurityEventsPipelinesMetricExtractionArgs', 'OpenpipelineV2SecurityEventsPipelinesMetricExtractionArgsDict', 'outputs.OpenpipelineV2SecurityEventsPipelinesMetricExtraction']]] = None,
+            processing: pulumi.Input[Optional[Union['OpenpipelineV2SecurityEventsPipelinesProcessingArgs', 'OpenpipelineV2SecurityEventsPipelinesProcessingArgsDict', 'outputs.OpenpipelineV2SecurityEventsPipelinesProcessing']]] = None,
+            product_allocation: pulumi.Input[Optional[Union['OpenpipelineV2SecurityEventsPipelinesProductAllocationArgs', 'OpenpipelineV2SecurityEventsPipelinesProductAllocationArgsDict', 'outputs.OpenpipelineV2SecurityEventsPipelinesProductAllocation']]] = None,
+            routing: pulumi.Input[Optional[_builtins.str]] = None,
+            security_context: pulumi.Input[Optional[Union['OpenpipelineV2SecurityEventsPipelinesSecurityContextArgs', 'OpenpipelineV2SecurityEventsPipelinesSecurityContextArgsDict', 'outputs.OpenpipelineV2SecurityEventsPipelinesSecurityContext']]] = None,
+            smartscape_edge_extraction: pulumi.Input[Optional[Union['OpenpipelineV2SecurityEventsPipelinesSmartscapeEdgeExtractionArgs', 'OpenpipelineV2SecurityEventsPipelinesSmartscapeEdgeExtractionArgsDict', 'outputs.OpenpipelineV2SecurityEventsPipelinesSmartscapeEdgeExtraction']]] = None,
+            smartscape_node_extraction: pulumi.Input[Optional[Union['OpenpipelineV2SecurityEventsPipelinesSmartscapeNodeExtractionArgs', 'OpenpipelineV2SecurityEventsPipelinesSmartscapeNodeExtractionArgsDict', 'outputs.OpenpipelineV2SecurityEventsPipelinesSmartscapeNodeExtraction']]] = None,
+            storage: pulumi.Input[Optional[Union['OpenpipelineV2SecurityEventsPipelinesStorageArgs', 'OpenpipelineV2SecurityEventsPipelinesStorageArgsDict', 'outputs.OpenpipelineV2SecurityEventsPipelinesStorage']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["costAllocation"] = cost_allocation
+        __props__["customId"] = custom_id
+        __props__["dataExtraction"] = data_extraction
+        __props__["davis"] = davis
+        __props__["displayName"] = display_name
+        __props__["groupRole"] = group_role
+        __props__["metadataList"] = metadata_list
+        __props__["metricExtraction"] = metric_extraction
+        __props__["processing"] = processing
+        __props__["productAllocation"] = product_allocation
+        __props__["routing"] = routing
+        __props__["securityContext"] = security_context
+        __props__["smartscapeEdgeExtraction"] = smartscape_edge_extraction
+        __props__["smartscapeNodeExtraction"] = smartscape_node_extraction
+        __props__["storage"] = storage
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/openpipelineV2SecurityEventsPipelines:OpenpipelineV2SecurityEventsPipelines', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="costAllocation")
     def cost_allocation(self) -> pulumi.Output[Optional['outputs.OpenpipelineV2SecurityEventsPipelinesCostAllocation']]:

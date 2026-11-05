@@ -184,7 +184,7 @@ namespace Pulumiverse.Dynatrace
         public Output<bool?> SessionReplay { get; private set; } = null!;
 
         /// <summary>
-        /// The session replay on crash is enabled (`True`) or disabled (`False`). 
+        /// The session replay on crash is enabled (`True`) or disabled (`False`).
         /// 
         /// Enabling requires both **sessionReplayEnabled** and **optInModeEnabled** values set to `True`.
         /// </summary>
@@ -319,7 +319,7 @@ namespace Pulumiverse.Dynatrace
         public Input<bool>? SessionReplay { get; set; }
 
         /// <summary>
-        /// The session replay on crash is enabled (`True`) or disabled (`False`). 
+        /// The session replay on crash is enabled (`True`) or disabled (`False`).
         /// 
         /// Enabling requires both **sessionReplayEnabled** and **optInModeEnabled** values set to `True`.
         /// </summary>
@@ -415,7 +415,7 @@ namespace Pulumiverse.Dynatrace
         public Input<bool>? SessionReplay { get; set; }
 
         /// <summary>
-        /// The session replay on crash is enabled (`True`) or disabled (`False`). 
+        /// The session replay on crash is enabled (`True`) or disabled (`False`).
         /// 
         /// Enabling requires both **sessionReplayEnabled** and **optInModeEnabled** values set to `True`.
         /// </summary>

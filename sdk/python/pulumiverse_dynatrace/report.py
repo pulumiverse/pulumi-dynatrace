@@ -278,6 +278,20 @@ class Report(pulumi.CustomResource):
         __props__.__dict__["type"] = type
         return Report(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            dashboard_id: pulumi.Input[Optional[_builtins.str]] = None,
+            email_notifications: pulumi.Input[Optional[_builtins.bool]] = None,
+            subscriptions: pulumi.Input[Optional[Union['ReportSubscriptionsArgs', 'ReportSubscriptionsArgsDict', 'outputs.ReportSubscriptions']]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["dashboardId"] = dashboard_id
+        __props__["emailNotifications"] = email_notifications
+        __props__["subscriptions"] = subscriptions
+        __props__["type"] = type
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/report:Report', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="dashboardId")
     def dashboard_id(self) -> pulumi.Output[_builtins.str]:
