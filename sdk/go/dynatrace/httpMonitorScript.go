@@ -77,7 +77,7 @@ import (
 //				return err
 //			}
 //			_, err = dynatrace.NewHttpMonitorScript(ctx, "script", &dynatrace.HttpMonitorScriptArgs{
-//				HttpId: monitor.ID().ToIDOutput().ToStringOutput(),
+//				HttpId: monitor.ID(),
 //				Script: &dynatrace.HttpMonitorScriptScriptArgs{
 //					Requests: dynatrace.HttpMonitorScriptScriptRequestArray{
 //						&dynatrace.HttpMonitorScriptScriptRequestArgs{

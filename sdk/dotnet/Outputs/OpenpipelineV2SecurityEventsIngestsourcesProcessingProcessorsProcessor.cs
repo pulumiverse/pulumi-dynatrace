@@ -35,6 +35,10 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly Outputs.OpenpipelineV2SecurityEventsIngestsourcesProcessingProcessorsProcessorCounterMetric? CounterMetric;
         /// <summary>
+        /// Data masking processor attributes
+        /// </summary>
+        public readonly Outputs.OpenpipelineV2SecurityEventsIngestsourcesProcessingProcessorsProcessorDataMasking? DataMasking;
+        /// <summary>
         /// Davis event extraction processor attributes
         /// </summary>
         public readonly Outputs.OpenpipelineV2SecurityEventsIngestsourcesProcessingProcessorsProcessorDavis? Davis;
@@ -115,6 +119,10 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly Outputs.OpenpipelineV2SecurityEventsIngestsourcesProcessingProcessorsProcessorSecurityEvent? SecurityEvent;
         /// <summary>
+        /// Security problem extraction processor attributes
+        /// </summary>
+        public readonly Outputs.OpenpipelineV2SecurityEventsIngestsourcesProcessingProcessorsProcessorSecurityProblemExtraction? SecurityProblemExtraction;
+        /// <summary>
         /// Smartscape edge extraction processor attributes
         /// </summary>
         public readonly Outputs.OpenpipelineV2SecurityEventsIngestsourcesProcessingProcessorsProcessorSmartscapeEdge? SmartscapeEdge;
@@ -127,7 +135,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly Outputs.OpenpipelineV2SecurityEventsIngestsourcesProcessingProcessorsProcessorTechnology? Technology;
         /// <summary>
-        /// Processor type. Possible values: `azureLogForwarding`, `Bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `Davis`, `Dql`, `Drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `Technology`, `valueMetric`
+        /// Processor type. Possible values: `azureLogForwarding`, `Bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `dataMasking`, `Davis`, `Dql`, `Drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `securityProblemExtraction`, `smartscapeEdge`, `smartscapeNode`, `Technology`, `valueMetric`
         /// </summary>
         public readonly string Type;
         /// <summary>
@@ -146,6 +154,8 @@ namespace Pulumiverse.Dynatrace.Outputs
             Outputs.OpenpipelineV2SecurityEventsIngestsourcesProcessingProcessorsProcessorCostAllocation? costAllocation,
 
             Outputs.OpenpipelineV2SecurityEventsIngestsourcesProcessingProcessorsProcessorCounterMetric? counterMetric,
+
+            Outputs.OpenpipelineV2SecurityEventsIngestsourcesProcessingProcessorsProcessorDataMasking? dataMasking,
 
             Outputs.OpenpipelineV2SecurityEventsIngestsourcesProcessingProcessorsProcessorDavis? davis,
 
@@ -187,6 +197,8 @@ namespace Pulumiverse.Dynatrace.Outputs
 
             Outputs.OpenpipelineV2SecurityEventsIngestsourcesProcessingProcessorsProcessorSecurityEvent? securityEvent,
 
+            Outputs.OpenpipelineV2SecurityEventsIngestsourcesProcessingProcessorsProcessorSecurityProblemExtraction? securityProblemExtraction,
+
             Outputs.OpenpipelineV2SecurityEventsIngestsourcesProcessingProcessorsProcessorSmartscapeEdge? smartscapeEdge,
 
             Outputs.OpenpipelineV2SecurityEventsIngestsourcesProcessingProcessorsProcessorSmartscapeNode? smartscapeNode,
@@ -202,6 +214,7 @@ namespace Pulumiverse.Dynatrace.Outputs
             BucketAssignment = bucketAssignment;
             CostAllocation = costAllocation;
             CounterMetric = counterMetric;
+            DataMasking = dataMasking;
             Davis = davis;
             Description = description;
             Dql = dql;
@@ -222,6 +235,7 @@ namespace Pulumiverse.Dynatrace.Outputs
             SdlcEvent = sdlcEvent;
             SecurityContext = securityContext;
             SecurityEvent = securityEvent;
+            SecurityProblemExtraction = securityProblemExtraction;
             SmartscapeEdge = smartscapeEdge;
             SmartscapeNode = smartscapeNode;
             Technology = technology;

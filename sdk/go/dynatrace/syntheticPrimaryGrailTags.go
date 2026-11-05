@@ -75,7 +75,7 @@ import (
 //				return err
 //			}
 //			_, err = dynatrace.NewSyntheticPrimaryGrailTags(ctx, "example", &dynatrace.SyntheticPrimaryGrailTagsArgs{
-//				Scope: monitor.ID().ToIDOutput().ToStringOutput(),
+//				Scope: monitor.ID(),
 //				Tags: &dynatrace.SyntheticPrimaryGrailTagsTagsArgs{
 //					Tags: dynatrace.SyntheticPrimaryGrailTagsTagsTagArray{
 //						&dynatrace.SyntheticPrimaryGrailTagsTagsTagArgs{

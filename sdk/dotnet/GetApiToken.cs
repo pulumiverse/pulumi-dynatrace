@@ -14,6 +14,7 @@ namespace Pulumiverse.Dynatrace
     {
         /// <summary>
         /// &gt; This data source requires the API token scope **Read API tokens** (`apiTokens.read`)
+        /// or the OAuth scope `api-tokens:tokens:read`
         /// 
         /// The API token data source allows a single access token to be retrieved by its name, note the token value is not included in the response.
         /// 
@@ -46,6 +47,7 @@ namespace Pulumiverse.Dynatrace
 
         /// <summary>
         /// &gt; This data source requires the API token scope **Read API tokens** (`apiTokens.read`)
+        /// or the OAuth scope `api-tokens:tokens:read`
         /// 
         /// The API token data source allows a single access token to be retrieved by its name, note the token value is not included in the response.
         /// 
@@ -78,6 +80,7 @@ namespace Pulumiverse.Dynatrace
 
         /// <summary>
         /// &gt; This data source requires the API token scope **Read API tokens** (`apiTokens.read`)
+        /// or the OAuth scope `api-tokens:tokens:read`
         /// 
         /// The API token data source allows a single access token to be retrieved by its name, note the token value is not included in the response.
         /// 

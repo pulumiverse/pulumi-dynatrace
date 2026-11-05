@@ -10,6 +10,16 @@ import * as utilities from "./utilities";
  * - `label` (String) - The label/name of the Azure credential
  *
  * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ *
+ * const example = dynatrace.getAzureCredentials({
+ *     name: "Terraform Example",
+ * });
+ * export const id = example.then(example => example.id);
+ * ```
  */
 export function getAzureCredentials(args: GetAzureCredentialsArgs, opts?: pulumi.InvokeOptions): Promise<GetAzureCredentialsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -41,6 +51,16 @@ export interface GetAzureCredentialsResult {
  * - `label` (String) - The label/name of the Azure credential
  *
  * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ *
+ * const example = dynatrace.getAzureCredentials({
+ *     name: "Terraform Example",
+ * });
+ * export const id = example.then(example => example.id);
+ * ```
  */
 export function getAzureCredentialsOutput(args: GetAzureCredentialsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAzureCredentialsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

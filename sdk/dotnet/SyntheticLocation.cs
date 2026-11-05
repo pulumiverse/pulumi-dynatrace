@@ -13,6 +13,8 @@ namespace Pulumiverse.Dynatrace
     /// <summary>
     /// &gt; This resource requires the API token scope **Create and read synthetic monitors, locations, and nodes** (`ExternalSyntheticIntegration`)
     /// 
+    /// &gt; **Note**: With version 1.106.0 of the Terraform provider, the default value for `UseNewKubernetesVersion` changed from `False` to `True`
+    /// 
     /// ## Dynatrace Documentation
     /// 
     /// - Creating Private Synthetic Locations - https://www.dynatrace.com/support/help/how-to-use-dynatrace/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location
@@ -148,7 +150,7 @@ namespace Pulumiverse.Dynatrace
         public Output<string?> RegionCode { get; private set; } = null!;
 
         /// <summary>
-        /// Boolean value describes which kubernetes version will be used
+        /// Boolean value describes which Kubernetes version will be used. Set to `False` for version 1.23+ and older than version 1.26. Set to `True` for version 1.26+
         /// </summary>
         [Output("useNewKubernetesVersion")]
         public Output<bool?> UseNewKubernetesVersion { get; private set; } = null!;
@@ -326,7 +328,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? RegionCode { get; set; }
 
         /// <summary>
-        /// Boolean value describes which kubernetes version will be used
+        /// Boolean value describes which Kubernetes version will be used. Set to `False` for version 1.23+ and older than version 1.26. Set to `True` for version 1.26+
         /// </summary>
         [Input("useNewKubernetesVersion")]
         public Input<bool>? UseNewKubernetesVersion { get; set; }
@@ -465,7 +467,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? RegionCode { get; set; }
 
         /// <summary>
-        /// Boolean value describes which kubernetes version will be used
+        /// Boolean value describes which Kubernetes version will be used. Set to `False` for version 1.23+ and older than version 1.26. Set to `True` for version 1.26+
         /// </summary>
         [Input("useNewKubernetesVersion")]
         public Input<bool>? UseNewKubernetesVersion { get; set; }

@@ -35,6 +35,10 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly Outputs.OpenpipelineV2LogsPipelinesStorageProcessorsProcessorCounterMetric? CounterMetric;
         /// <summary>
+        /// Data masking processor attributes
+        /// </summary>
+        public readonly Outputs.OpenpipelineV2LogsPipelinesStorageProcessorsProcessorDataMasking? DataMasking;
+        /// <summary>
         /// Davis event extraction processor attributes
         /// </summary>
         public readonly Outputs.OpenpipelineV2LogsPipelinesStorageProcessorsProcessorDavis? Davis;
@@ -115,6 +119,10 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly Outputs.OpenpipelineV2LogsPipelinesStorageProcessorsProcessorSecurityEvent? SecurityEvent;
         /// <summary>
+        /// Security problem extraction processor attributes
+        /// </summary>
+        public readonly Outputs.OpenpipelineV2LogsPipelinesStorageProcessorsProcessorSecurityProblemExtraction? SecurityProblemExtraction;
+        /// <summary>
         /// Smartscape edge extraction processor attributes
         /// </summary>
         public readonly Outputs.OpenpipelineV2LogsPipelinesStorageProcessorsProcessorSmartscapeEdge? SmartscapeEdge;
@@ -127,7 +135,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly Outputs.OpenpipelineV2LogsPipelinesStorageProcessorsProcessorTechnology? Technology;
         /// <summary>
-        /// Processor type. Possible values: `azureLogForwarding`, `Bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `Davis`, `Dql`, `Drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `Technology`, `valueMetric`
+        /// Processor type. Possible values: `azureLogForwarding`, `Bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `dataMasking`, `Davis`, `Dql`, `Drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `securityProblemExtraction`, `smartscapeEdge`, `smartscapeNode`, `Technology`, `valueMetric`
         /// </summary>
         public readonly string Type;
         /// <summary>
@@ -146,6 +154,8 @@ namespace Pulumiverse.Dynatrace.Outputs
             Outputs.OpenpipelineV2LogsPipelinesStorageProcessorsProcessorCostAllocation? costAllocation,
 
             Outputs.OpenpipelineV2LogsPipelinesStorageProcessorsProcessorCounterMetric? counterMetric,
+
+            Outputs.OpenpipelineV2LogsPipelinesStorageProcessorsProcessorDataMasking? dataMasking,
 
             Outputs.OpenpipelineV2LogsPipelinesStorageProcessorsProcessorDavis? davis,
 
@@ -187,6 +197,8 @@ namespace Pulumiverse.Dynatrace.Outputs
 
             Outputs.OpenpipelineV2LogsPipelinesStorageProcessorsProcessorSecurityEvent? securityEvent,
 
+            Outputs.OpenpipelineV2LogsPipelinesStorageProcessorsProcessorSecurityProblemExtraction? securityProblemExtraction,
+
             Outputs.OpenpipelineV2LogsPipelinesStorageProcessorsProcessorSmartscapeEdge? smartscapeEdge,
 
             Outputs.OpenpipelineV2LogsPipelinesStorageProcessorsProcessorSmartscapeNode? smartscapeNode,
@@ -202,6 +214,7 @@ namespace Pulumiverse.Dynatrace.Outputs
             BucketAssignment = bucketAssignment;
             CostAllocation = costAllocation;
             CounterMetric = counterMetric;
+            DataMasking = dataMasking;
             Davis = davis;
             Description = description;
             Dql = dql;
@@ -222,6 +235,7 @@ namespace Pulumiverse.Dynatrace.Outputs
             SdlcEvent = sdlcEvent;
             SecurityContext = securityContext;
             SecurityEvent = securityEvent;
+            SecurityProblemExtraction = securityProblemExtraction;
             SmartscapeEdge = smartscapeEdge;
             SmartscapeNode = smartscapeNode;
             Technology = technology;

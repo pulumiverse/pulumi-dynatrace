@@ -44,6 +44,12 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<Inputs.OpenpipelineV2SecurityEventsPipelinesProcessingProcessorsProcessorCounterMetricGetArgs>? CounterMetric { get; set; }
 
         /// <summary>
+        /// Data masking processor attributes
+        /// </summary>
+        [Input("dataMasking")]
+        public Input<Inputs.OpenpipelineV2SecurityEventsPipelinesProcessingProcessorsProcessorDataMaskingGetArgs>? DataMasking { get; set; }
+
+        /// <summary>
         /// Davis event extraction processor attributes
         /// </summary>
         [Input("davis")]
@@ -164,6 +170,12 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<Inputs.OpenpipelineV2SecurityEventsPipelinesProcessingProcessorsProcessorSecurityEventGetArgs>? SecurityEvent { get; set; }
 
         /// <summary>
+        /// Security problem extraction processor attributes
+        /// </summary>
+        [Input("securityProblemExtraction")]
+        public Input<Inputs.OpenpipelineV2SecurityEventsPipelinesProcessingProcessorsProcessorSecurityProblemExtractionGetArgs>? SecurityProblemExtraction { get; set; }
+
+        /// <summary>
         /// Smartscape edge extraction processor attributes
         /// </summary>
         [Input("smartscapeEdge")]
@@ -182,7 +194,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<Inputs.OpenpipelineV2SecurityEventsPipelinesProcessingProcessorsProcessorTechnologyGetArgs>? Technology { get; set; }
 
         /// <summary>
-        /// Processor type. Possible values: `azureLogForwarding`, `Bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `Davis`, `Dql`, `Drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `Technology`, `valueMetric`
+        /// Processor type. Possible values: `azureLogForwarding`, `Bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `dataMasking`, `Davis`, `Dql`, `Drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `securityProblemExtraction`, `smartscapeEdge`, `smartscapeNode`, `Technology`, `valueMetric`
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;

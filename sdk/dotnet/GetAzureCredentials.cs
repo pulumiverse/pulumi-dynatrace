@@ -18,6 +18,26 @@ namespace Pulumiverse.Dynatrace
         /// - `Label` (String) - The label/name of the Azure credential
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Dynatrace = Pulumiverse.Dynatrace;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var example = Dynatrace.GetAzureCredentials.Invoke(new()
+        ///     {
+        ///         Name = "Terraform Example",
+        ///     });
+        /// 
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["id"] = example.Apply(getAzureCredentialsResult =&gt; getAzureCredentialsResult.Id),
+        ///     };
+        /// });
+        /// ```
         /// </summary>
         public static Task<GetAzureCredentialsResult> InvokeAsync(GetAzureCredentialsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAzureCredentialsResult>("dynatrace:index/getAzureCredentials:getAzureCredentials", args ?? new GetAzureCredentialsArgs(), options.WithDefaults());
@@ -28,6 +48,26 @@ namespace Pulumiverse.Dynatrace
         /// - `Label` (String) - The label/name of the Azure credential
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Dynatrace = Pulumiverse.Dynatrace;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var example = Dynatrace.GetAzureCredentials.Invoke(new()
+        ///     {
+        ///         Name = "Terraform Example",
+        ///     });
+        /// 
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["id"] = example.Apply(getAzureCredentialsResult =&gt; getAzureCredentialsResult.Id),
+        ///     };
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetAzureCredentialsResult> Invoke(GetAzureCredentialsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAzureCredentialsResult>("dynatrace:index/getAzureCredentials:getAzureCredentials", args ?? new GetAzureCredentialsInvokeArgs(), options.WithDefaults());
@@ -38,6 +78,26 @@ namespace Pulumiverse.Dynatrace
         /// - `Label` (String) - The label/name of the Azure credential
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Dynatrace = Pulumiverse.Dynatrace;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var example = Dynatrace.GetAzureCredentials.Invoke(new()
+        ///     {
+        ///         Name = "Terraform Example",
+        ///     });
+        /// 
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["id"] = example.Apply(getAzureCredentialsResult =&gt; getAzureCredentialsResult.Id),
+        ///     };
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetAzureCredentialsResult> Invoke(GetAzureCredentialsInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetAzureCredentialsResult>("dynatrace:index/getAzureCredentials:getAzureCredentials", args ?? new GetAzureCredentialsInvokeArgs(), options.WithDefaults());

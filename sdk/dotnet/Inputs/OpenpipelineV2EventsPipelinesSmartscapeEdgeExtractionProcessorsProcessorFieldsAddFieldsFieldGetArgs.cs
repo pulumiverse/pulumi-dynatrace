@@ -25,6 +25,12 @@ namespace Pulumiverse.Dynatrace.Inputs
         [Input("value", required: true)]
         public Input<string> Value { get; set; } = null!;
 
+        /// <summary>
+        /// Field value type. Possible values: `Boolean`, `Double`, `Long`, `String`
+        /// </summary>
+        [Input("valueType")]
+        public Input<string>? ValueType { get; set; }
+
         public OpenpipelineV2EventsPipelinesSmartscapeEdgeExtractionProcessorsProcessorFieldsAddFieldsFieldGetArgs()
         {
         }

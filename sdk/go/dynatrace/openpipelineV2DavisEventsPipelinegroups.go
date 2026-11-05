@@ -82,8 +82,9 @@ import (
 //									Fields: &dynatrace.OpenpipelineV2DavisEventsPipelinesProcessingProcessorsProcessorFieldsAddFieldsArgs{
 //										Fields: dynatrace.OpenpipelineV2DavisEventsPipelinesProcessingProcessorsProcessorFieldsAddFieldsFieldArray{
 //											&dynatrace.OpenpipelineV2DavisEventsPipelinesProcessingProcessorsProcessorFieldsAddFieldsFieldArgs{
-//												Name:  pulumi.String("is_warning"),
-//												Value: pulumi.String("true"),
+//												Name:      pulumi.String("is_warning"),
+//												Value:     pulumi.String("true"),
+//												ValueType: pulumi.String("boolean"),
 //											},
 //										},
 //									},
@@ -200,7 +201,7 @@ import (
 //									pulumi.String("securityContext"),
 //								},
 //							},
-//							PipelineId: example1.ID().ToIDOutput().ToStringOutput(),
+//							PipelineId: example1.ID(),
 //						},
 //					},
 //				},
@@ -212,7 +213,7 @@ import (
 //					Type: pulumi.String("include"),
 //				},
 //				MemberPipelines: pulumi.StringArray{
-//					example2.ID().ToIDOutput().ToStringOutput(),
+//					example2.ID(),
 //				},
 //			})
 //			if err != nil {

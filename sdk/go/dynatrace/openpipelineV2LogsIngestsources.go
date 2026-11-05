@@ -95,8 +95,9 @@ import (
 //									Fields: &dynatrace.OpenpipelineV2LogsIngestsourcesProcessingProcessorsProcessorFieldsAddFieldsArgs{
 //										Fields: dynatrace.OpenpipelineV2LogsIngestsourcesProcessingProcessorsProcessorFieldsAddFieldsFieldArray{
 //											&dynatrace.OpenpipelineV2LogsIngestsourcesProcessingProcessorsProcessorFieldsAddFieldsFieldArgs{
-//												Name:  pulumi.String("is_error"),
-//												Value: pulumi.String("true"),
+//												Name:      pulumi.String("is_error"),
+//												Value:     pulumi.String("true"),
+//												ValueType: pulumi.String("boolean"),
 //											},
 //										},
 //									},

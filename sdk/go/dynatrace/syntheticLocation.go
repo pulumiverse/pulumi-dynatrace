@@ -14,6 +14,8 @@ import (
 
 // > This resource requires the API token scope **Create and read synthetic monitors, locations, and nodes** (`ExternalSyntheticIntegration`)
 //
+// > **Note**: With version 1.106.0 of the Terraform provider, the default value for `useNewKubernetesVersion` changed from `false` to `true`
+//
 // ## Dynatrace Documentation
 //
 // - Creating Private Synthetic Locations - https://www.dynatrace.com/support/help/how-to-use-dynatrace/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location
@@ -75,7 +77,7 @@ type SyntheticLocation struct {
 	//
 	//  To fetch the list of available region codes, use the [GET regions of the country](https://dt-url.net/az230x0) request
 	RegionCode pulumi.StringPtrOutput `pulumi:"regionCode"`
-	// Boolean value describes which kubernetes version will be used
+	// Boolean value describes which Kubernetes version will be used. Set to `false` for version 1.23+ and older than version 1.26. Set to `true` for version 1.26+
 	UseNewKubernetesVersion pulumi.BoolPtrOutput `pulumi:"useNewKubernetesVersion"`
 }
 
@@ -162,7 +164,7 @@ type syntheticLocationState struct {
 	//
 	//  To fetch the list of available region codes, use the [GET regions of the country](https://dt-url.net/az230x0) request
 	RegionCode *string `pulumi:"regionCode"`
-	// Boolean value describes which kubernetes version will be used
+	// Boolean value describes which Kubernetes version will be used. Set to `false` for version 1.23+ and older than version 1.26. Set to `true` for version 1.26+
 	UseNewKubernetesVersion *bool `pulumi:"useNewKubernetesVersion"`
 }
 
@@ -214,7 +216,7 @@ type SyntheticLocationState struct {
 	//
 	//  To fetch the list of available region codes, use the [GET regions of the country](https://dt-url.net/az230x0) request
 	RegionCode pulumi.StringPtrInput
-	// Boolean value describes which kubernetes version will be used
+	// Boolean value describes which Kubernetes version will be used. Set to `false` for version 1.23+ and older than version 1.26. Set to `true` for version 1.26+
 	UseNewKubernetesVersion pulumi.BoolPtrInput
 }
 
@@ -276,7 +278,7 @@ type syntheticLocationArgs struct {
 	//
 	//  To fetch the list of available region codes, use the [GET regions of the country](https://dt-url.net/az230x0) request
 	RegionCode *string `pulumi:"regionCode"`
-	// Boolean value describes which kubernetes version will be used
+	// Boolean value describes which Kubernetes version will be used. Set to `false` for version 1.23+ and older than version 1.26. Set to `true` for version 1.26+
 	UseNewKubernetesVersion *bool `pulumi:"useNewKubernetesVersion"`
 }
 
@@ -329,7 +331,7 @@ type SyntheticLocationArgs struct {
 	//
 	//  To fetch the list of available region codes, use the [GET regions of the country](https://dt-url.net/az230x0) request
 	RegionCode pulumi.StringPtrInput
-	// Boolean value describes which kubernetes version will be used
+	// Boolean value describes which Kubernetes version will be used. Set to `false` for version 1.23+ and older than version 1.26. Set to `true` for version 1.26+
 	UseNewKubernetesVersion pulumi.BoolPtrInput
 }
 
@@ -521,7 +523,7 @@ func (o SyntheticLocationOutput) RegionCode() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *SyntheticLocation) pulumi.StringPtrOutput { return v.RegionCode }).(pulumi.StringPtrOutput)
 }
 
-// Boolean value describes which kubernetes version will be used
+// Boolean value describes which Kubernetes version will be used. Set to `false` for version 1.23+ and older than version 1.26. Set to `true` for version 1.26+
 func (o SyntheticLocationOutput) UseNewKubernetesVersion() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *SyntheticLocation) pulumi.BoolPtrOutput { return v.UseNewKubernetesVersion }).(pulumi.BoolPtrOutput)
 }

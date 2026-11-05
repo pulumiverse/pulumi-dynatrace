@@ -82,8 +82,8 @@ import (
 //				DefaultDashboardList: &dynatrace.DashboardsGeneralDefaultDashboardListArgs{
 //					DefaultDashboards: dynatrace.DashboardsGeneralDefaultDashboardListDefaultDashboardArray{
 //						&dynatrace.DashboardsGeneralDefaultDashboardListDefaultDashboardArgs{
-//							Dashboard: dashboard.ID().ToIDOutput().ToStringOutput(),
-//							UserGroup: group.ID().ToIDOutput().ToStringOutput(),
+//							Dashboard: dashboard.ID(),
+//							UserGroup: group.ID(),
 //						},
 //					},
 //				},

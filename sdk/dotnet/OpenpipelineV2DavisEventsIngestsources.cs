@@ -108,6 +108,7 @@ namespace Pulumiverse.Dynatrace
     ///                                     {
     ///                                         Name = "is_error",
     ///                                         Value = "true",
+    ///                                         ValueType = "boolean",
     ///                                     },
     ///                                 },
     ///                             },

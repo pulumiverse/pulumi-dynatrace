@@ -134,6 +134,7 @@ def get_api_token(name: Optional[_builtins.str] = None,
                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetApiTokenResult:
     """
     > This data source requires the API token scope **Read API tokens** (`apiTokens.read`)
+    or the OAuth scope `api-tokens:tokens:read`
 
     The API token data source allows a single access token to be retrieved by its name, note the token value is not included in the response.
 
@@ -167,6 +168,7 @@ def get_api_token_output(name: pulumi.Input[Optional[_builtins.str]] = None,
                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetApiTokenResult]:
     """
     > This data source requires the API token scope **Read API tokens** (`apiTokens.read`)
+    or the OAuth scope `api-tokens:tokens:read`
 
     The API token data source allows a single access token to be retrieved by its name, note the token value is not included in the response.
 

@@ -72,6 +72,7 @@ import * as utilities from "./utilities";
  *                             fields: [{
  *                                 name: "is_warning",
  *                                 value: "true",
+ *                                 valueType: "boolean",
  *                             }],
  *                         },
  *                     },

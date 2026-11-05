@@ -88,11 +88,11 @@ import (
 //				CloudVendorType: pulumi.String("gcp"),
 //				GcpConnection: &dynatrace.OpenpipelineV2SystemEventsDataforwardingGcpConnectionArgs{
 //					BucketName:   pulumi.String("my-bucket"),
-//					ConnectionId: connection.ID().ToIDOutput().ToStringOutput(),
+//					ConnectionId: connection.ID(),
 //				},
 //				DataForwardingType: pulumi.String("processed"),
 //				Pipelines: pulumi.StringArray{
-//					pipeline.ID().ToIDOutput().ToStringOutput(),
+//					pipeline.ID(),
 //				},
 //				BulkPattern: pulumi.String("<YYYYMMDD>/<HH>/<HHmmss.SSSS>_<bulk-id>.json.gz"),
 //			})
@@ -121,6 +121,8 @@ type OpenpipelineV2SystemEventsDataforwarding struct {
 	BulkSize pulumi.IntPtrOutput `pulumi:"bulkSize"`
 	// Cloud Vendor Type. Possible values: `aws`, `azure`, `gcp`, `otlp`
 	CloudVendorType pulumi.StringOutput `pulumi:"cloudVendorType"`
+	// Compression type. Possible values: `gzip`, `zstd`
+	CompressionType pulumi.StringPtrOutput `pulumi:"compressionType"`
 	// Pipeline Type. Possible values: `processed`, `raw`
 	DataForwardingType pulumi.StringOutput `pulumi:"dataForwardingType"`
 	// This setting is enabled (`true`) or disabled (`false`)
@@ -200,6 +202,8 @@ type openpipelineV2SystemEventsDataforwardingState struct {
 	BulkSize *int `pulumi:"bulkSize"`
 	// Cloud Vendor Type. Possible values: `aws`, `azure`, `gcp`, `otlp`
 	CloudVendorType *string `pulumi:"cloudVendorType"`
+	// Compression type. Possible values: `gzip`, `zstd`
+	CompressionType *string `pulumi:"compressionType"`
 	// Pipeline Type. Possible values: `processed`, `raw`
 	DataForwardingType *string `pulumi:"dataForwardingType"`
 	// This setting is enabled (`true`) or disabled (`false`)
@@ -235,6 +239,8 @@ type OpenpipelineV2SystemEventsDataforwardingState struct {
 	BulkSize pulumi.IntPtrInput
 	// Cloud Vendor Type. Possible values: `aws`, `azure`, `gcp`, `otlp`
 	CloudVendorType pulumi.StringPtrInput
+	// Compression type. Possible values: `gzip`, `zstd`
+	CompressionType pulumi.StringPtrInput
 	// Pipeline Type. Possible values: `processed`, `raw`
 	DataForwardingType pulumi.StringPtrInput
 	// This setting is enabled (`true`) or disabled (`false`)
@@ -280,6 +286,8 @@ type openpipelineV2SystemEventsDataforwardingArgs struct {
 	BulkSize *int `pulumi:"bulkSize"`
 	// Cloud Vendor Type. Possible values: `aws`, `azure`, `gcp`, `otlp`
 	CloudVendorType string `pulumi:"cloudVendorType"`
+	// Compression type. Possible values: `gzip`, `zstd`
+	CompressionType *string `pulumi:"compressionType"`
 	// Pipeline Type. Possible values: `processed`, `raw`
 	DataForwardingType string `pulumi:"dataForwardingType"`
 	// This setting is enabled (`true`) or disabled (`false`)
@@ -316,6 +324,8 @@ type OpenpipelineV2SystemEventsDataforwardingArgs struct {
 	BulkSize pulumi.IntPtrInput
 	// Cloud Vendor Type. Possible values: `aws`, `azure`, `gcp`, `otlp`
 	CloudVendorType pulumi.StringInput
+	// Compression type. Possible values: `gzip`, `zstd`
+	CompressionType pulumi.StringPtrInput
 	// Pipeline Type. Possible values: `processed`, `raw`
 	DataForwardingType pulumi.StringInput
 	// This setting is enabled (`true`) or disabled (`false`)
@@ -462,6 +472,11 @@ func (o OpenpipelineV2SystemEventsDataforwardingOutput) BulkSize() pulumi.IntPtr
 // Cloud Vendor Type. Possible values: `aws`, `azure`, `gcp`, `otlp`
 func (o OpenpipelineV2SystemEventsDataforwardingOutput) CloudVendorType() pulumi.StringOutput {
 	return o.ApplyT(func(v *OpenpipelineV2SystemEventsDataforwarding) pulumi.StringOutput { return v.CloudVendorType }).(pulumi.StringOutput)
+}
+
+// Compression type. Possible values: `gzip`, `zstd`
+func (o OpenpipelineV2SystemEventsDataforwardingOutput) CompressionType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OpenpipelineV2SystemEventsDataforwarding) pulumi.StringPtrOutput { return v.CompressionType }).(pulumi.StringPtrOutput)
 }
 
 // Pipeline Type. Possible values: `processed`, `raw`

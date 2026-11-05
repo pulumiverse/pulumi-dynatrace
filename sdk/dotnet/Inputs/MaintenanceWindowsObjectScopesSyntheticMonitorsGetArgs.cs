@@ -14,7 +14,7 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class MaintenanceWindowsObjectScopesSyntheticMonitorsGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// DQL filter selecting which synthetic monitors to pause. Required when synthetic monitors are disabled.
+        /// DQL filter selecting which synthetic monitors to pause. Required when synthetic monitors are disabled. Supported fields: monitor.id, monitor.name, pg.tag, security.context.
         /// </summary>
         [Input("disableSyntheticMonitorFilter")]
         public Input<string>? DisableSyntheticMonitorFilter { get; set; }

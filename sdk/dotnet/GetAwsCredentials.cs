@@ -18,6 +18,26 @@ namespace Pulumiverse.Dynatrace
         /// - `Label` (String) - The label/name of the AWS credential
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Dynatrace = Pulumiverse.Dynatrace;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var example = Dynatrace.GetAwsCredentials.Invoke(new()
+        ///     {
+        ///         Name = "Terraform Example",
+        ///     });
+        /// 
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["id"] = example.Apply(getAwsCredentialsResult =&gt; getAwsCredentialsResult.Id),
+        ///     };
+        /// });
+        /// ```
         /// </summary>
         public static Task<GetAwsCredentialsResult> InvokeAsync(GetAwsCredentialsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAwsCredentialsResult>("dynatrace:index/getAwsCredentials:getAwsCredentials", args ?? new GetAwsCredentialsArgs(), options.WithDefaults());
@@ -28,6 +48,26 @@ namespace Pulumiverse.Dynatrace
         /// - `Label` (String) - The label/name of the AWS credential
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Dynatrace = Pulumiverse.Dynatrace;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var example = Dynatrace.GetAwsCredentials.Invoke(new()
+        ///     {
+        ///         Name = "Terraform Example",
+        ///     });
+        /// 
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["id"] = example.Apply(getAwsCredentialsResult =&gt; getAwsCredentialsResult.Id),
+        ///     };
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetAwsCredentialsResult> Invoke(GetAwsCredentialsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAwsCredentialsResult>("dynatrace:index/getAwsCredentials:getAwsCredentials", args ?? new GetAwsCredentialsInvokeArgs(), options.WithDefaults());
@@ -38,6 +78,26 @@ namespace Pulumiverse.Dynatrace
         /// - `Label` (String) - The label/name of the AWS credential
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Dynatrace = Pulumiverse.Dynatrace;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var example = Dynatrace.GetAwsCredentials.Invoke(new()
+        ///     {
+        ///         Name = "Terraform Example",
+        ///     });
+        /// 
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["id"] = example.Apply(getAwsCredentialsResult =&gt; getAwsCredentialsResult.Id),
+        ///     };
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetAwsCredentialsResult> Invoke(GetAwsCredentialsInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetAwsCredentialsResult>("dynatrace:index/getAwsCredentials:getAwsCredentials", args ?? new GetAwsCredentialsInvokeArgs(), options.WithDefaults());

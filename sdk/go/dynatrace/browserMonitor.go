@@ -138,7 +138,7 @@ import (
 //									Url: pulumi.String("https://example.com"),
 //									Authentication: &dynatrace.BrowserMonitorScriptEventsEventNavigateAuthenticationArgs{
 //										Type:  pulumi.String("http_authentication"),
-//										Creds: credentialsVault.ID().ToIDOutput().ToStringOutput(),
+//										Creds: credentialsVault.ID(),
 //									},
 //									Wait: &dynatrace.BrowserMonitorScriptEventsEventNavigateWaitArgs{
 //										WaitFor: pulumi.String("page_complete"),
@@ -151,7 +151,7 @@ import (
 //									Url: pulumi.String("https://example.com"),
 //									Authentication: &dynatrace.BrowserMonitorScriptEventsEventNavigateAuthenticationArgs{
 //										Type:  pulumi.String("http_authentication"),
-//										Creds: credentialsVault.ID().ToIDOutput().ToStringOutput(),
+//										Creds: credentialsVault.ID(),
 //									},
 //									Validate: &dynatrace.BrowserMonitorScriptEventsEventNavigateValidateArgs{
 //										Validations: dynatrace.BrowserMonitorScriptEventsEventNavigateValidateValidationArray{

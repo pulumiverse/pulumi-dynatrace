@@ -16,6 +16,31 @@ import (
 // - `label` (String) - The label/name of the AWS credential
 //
 // ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			example, err := dynatrace.GetAwsCredentials(ctx, &dynatrace.LookupAwsCredentialsArgs{
+//				Name: "Terraform Example",
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			ctx.Export("id", example.Id)
+//			return nil
+//		})
+//	}
+//
+// ```
 func LookupAwsCredentials(ctx *pulumi.Context, args *LookupAwsCredentialsArgs, opts ...pulumi.InvokeOption) (*LookupAwsCredentialsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupAwsCredentialsResult

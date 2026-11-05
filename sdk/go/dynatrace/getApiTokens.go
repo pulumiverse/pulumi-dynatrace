@@ -12,6 +12,7 @@ import (
 )
 
 // > This data source requires the API token scope **Read API tokens** (`apiTokens.read`)
+// or the OAuth scope `api-tokens:tokens:read`
 //
 // The API tokens data source allows all access tokens to be retrieved, note the token value is not included in the response.
 //
