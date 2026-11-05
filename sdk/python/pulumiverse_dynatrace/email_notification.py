@@ -656,6 +656,32 @@ class EmailNotification(pulumi.CustomResource):
         __props__.__dict__["tos"] = tos
         return EmailNotification(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            active: pulumi.Input[Optional[_builtins.bool]] = None,
+            bccs: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            body: pulumi.Input[Optional[_builtins.str]] = None,
+            ccs: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            legacy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            notify_closed_problems: pulumi.Input[Optional[_builtins.bool]] = None,
+            profile: pulumi.Input[Optional[_builtins.str]] = None,
+            subject: pulumi.Input[Optional[_builtins.str]] = None,
+            tos: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["active"] = active
+        __props__["bccs"] = bccs
+        __props__["body"] = body
+        __props__["ccs"] = ccs
+        __props__["legacyId"] = legacy_id
+        __props__["name"] = name
+        __props__["notifyClosedProblems"] = notify_closed_problems
+        __props__["profile"] = profile
+        __props__["subject"] = subject
+        __props__["tos"] = tos
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/emailNotification:EmailNotification', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def active(self) -> pulumi.Output[Optional[_builtins.bool]]:

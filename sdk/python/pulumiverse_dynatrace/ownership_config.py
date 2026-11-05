@@ -172,6 +172,14 @@ class OwnershipConfig(pulumi.CustomResource):
         __props__.__dict__["ownership_identifiers"] = ownership_identifiers
         return OwnershipConfig(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            ownership_identifiers: pulumi.Input[Optional[Union['OwnershipConfigOwnershipIdentifiersArgs', 'OwnershipConfigOwnershipIdentifiersArgsDict', 'outputs.OwnershipConfigOwnershipIdentifiers']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["ownershipIdentifiers"] = ownership_identifiers
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/ownershipConfig:OwnershipConfig', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="ownershipIdentifiers")
     def ownership_identifiers(self) -> pulumi.Output['outputs.OwnershipConfigOwnershipIdentifiers']:

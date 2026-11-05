@@ -35,7 +35,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly string? PatternBeforeSearchType;
         /// <summary>
-        /// The pattern to be replaced. 
+        /// The pattern to be replaced.
         /// 
         ///  Only applicable if the `Type` is `REPLACE_WITH_PATTERN`.
         /// </summary>

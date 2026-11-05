@@ -298,7 +298,7 @@ namespace Pulumiverse.Dynatrace
 
         /// <summary>
         /// A list of locations from which the monitor is executed.
-        ///   
+        /// 
         ///   To specify a location, use its entity ID.
         /// </summary>
         [Output("locations")]
@@ -324,7 +324,7 @@ namespace Pulumiverse.Dynatrace
 
         /// <summary>
         /// A set of tags assigned to the monitor.
-        ///   
+        /// 
         ///   You can specify only the value of the tag here and the `CONTEXTLESS` context and source 'USER' will be added automatically.
         /// </summary>
         [Output("tags")]
@@ -406,7 +406,7 @@ namespace Pulumiverse.Dynatrace
 
         /// <summary>
         /// A list of locations from which the monitor is executed.
-        ///   
+        /// 
         ///   To specify a location, use its entity ID.
         /// </summary>
         public InputList<string> Locations
@@ -444,7 +444,7 @@ namespace Pulumiverse.Dynatrace
 
         /// <summary>
         /// A set of tags assigned to the monitor.
-        ///   
+        /// 
         ///   You can specify only the value of the tag here and the `CONTEXTLESS` context and source 'USER' will be added automatically.
         /// </summary>
         public InputList<Inputs.BrowserMonitorTagArgs> Tags
@@ -490,7 +490,7 @@ namespace Pulumiverse.Dynatrace
 
         /// <summary>
         /// A list of locations from which the monitor is executed.
-        ///   
+        /// 
         ///   To specify a location, use its entity ID.
         /// </summary>
         public InputList<string> Locations
@@ -528,7 +528,7 @@ namespace Pulumiverse.Dynatrace
 
         /// <summary>
         /// A set of tags assigned to the monitor.
-        ///   
+        /// 
         ///   You can specify only the value of the tag here and the `CONTEXTLESS` context and source 'USER' will be added automatically.
         /// </summary>
         public InputList<Inputs.BrowserMonitorTagGetArgs> Tags

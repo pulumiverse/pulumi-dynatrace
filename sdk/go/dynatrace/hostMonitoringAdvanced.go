@@ -93,6 +93,12 @@ func (HostMonitoringAdvancedState) ElementType() reflect.Type {
 	return reflect.TypeOf((*hostMonitoringAdvancedState)(nil)).Elem()
 }
 
+// HostMonitoringAdvancedExists checks whether an existing HostMonitoringAdvanced resource with the given ID exists.
+func HostMonitoringAdvancedExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *HostMonitoringAdvancedState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/hostMonitoringAdvanced:HostMonitoringAdvanced", id, state, "", opts...)
+}
+
 type hostMonitoringAdvancedArgs struct {
 	// Inject CodeModules in Discovery mode.
 	CodeModuleInjection *bool `pulumi:"codeModuleInjection"`

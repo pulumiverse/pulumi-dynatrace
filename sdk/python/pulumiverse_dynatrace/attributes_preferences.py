@@ -170,6 +170,14 @@ class AttributesPreferences(pulumi.CustomResource):
         __props__.__dict__["persistence_mode"] = persistence_mode
         return AttributesPreferences(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            persistence_mode: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["persistenceMode"] = persistence_mode
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/attributesPreferences:AttributesPreferences', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="persistenceMode")
     def persistence_mode(self) -> pulumi.Output[_builtins.str]:

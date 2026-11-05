@@ -90,6 +90,12 @@ func (MonitoredTechnologiesGoState) ElementType() reflect.Type {
 	return reflect.TypeOf((*monitoredTechnologiesGoState)(nil)).Elem()
 }
 
+// MonitoredTechnologiesGoExists checks whether an existing MonitoredTechnologiesGo resource with the given ID exists.
+func MonitoredTechnologiesGoExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *MonitoredTechnologiesGoState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/monitoredTechnologiesGo:MonitoredTechnologiesGo", id, state, "", opts...)
+}
+
 type monitoredTechnologiesGoArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`

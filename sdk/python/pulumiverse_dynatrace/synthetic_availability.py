@@ -166,6 +166,14 @@ class SyntheticAvailability(pulumi.CustomResource):
         __props__.__dict__["exclude_maintenance_windows"] = exclude_maintenance_windows
         return SyntheticAvailability(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            exclude_maintenance_windows: pulumi.Input[Optional[_builtins.bool]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["excludeMaintenanceWindows"] = exclude_maintenance_windows
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/syntheticAvailability:SyntheticAvailability', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="excludeMaintenanceWindows")
     def exclude_maintenance_windows(self) -> pulumi.Output[_builtins.bool]:

@@ -63,6 +63,12 @@ func (JsonDashboardBaseState) ElementType() reflect.Type {
 	return reflect.TypeOf((*jsonDashboardBaseState)(nil)).Elem()
 }
 
+// JsonDashboardBaseExists checks whether an existing JsonDashboardBase resource with the given ID exists.
+func JsonDashboardBaseExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *JsonDashboardBaseState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/jsonDashboardBase:JsonDashboardBase", id, state, "", opts...)
+}
+
 type jsonDashboardBaseArgs struct {
 	// This attribute exists for backwards compatibility. You do not have to define it.
 	Contents *string `pulumi:"contents"`

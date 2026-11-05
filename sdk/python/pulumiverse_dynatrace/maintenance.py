@@ -340,6 +340,22 @@ class Maintenance(pulumi.CustomResource):
         __props__.__dict__["schedule"] = schedule
         return Maintenance(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            filters: pulumi.Input[Optional[Union['MaintenanceFiltersArgs', 'MaintenanceFiltersArgsDict', 'outputs.MaintenanceFilters']]] = None,
+            general_properties: pulumi.Input[Optional[Union['MaintenanceGeneralPropertiesArgs', 'MaintenanceGeneralPropertiesArgsDict', 'outputs.MaintenanceGeneralProperties']]] = None,
+            legacy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            schedule: pulumi.Input[Optional[Union['MaintenanceScheduleArgs', 'MaintenanceScheduleArgsDict', 'outputs.MaintenanceSchedule']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["enabled"] = enabled
+        __props__["filters"] = filters
+        __props__["generalProperties"] = general_properties
+        __props__["legacyId"] = legacy_id
+        __props__["schedule"] = schedule
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/maintenance:Maintenance', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def enabled(self) -> pulumi.Output[_builtins.bool]:

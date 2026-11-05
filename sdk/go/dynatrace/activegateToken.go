@@ -87,6 +87,12 @@ func (ActivegateTokenState) ElementType() reflect.Type {
 	return reflect.TypeOf((*activegateTokenState)(nil)).Elem()
 }
 
+// ActivegateTokenExists checks whether an existing ActivegateToken resource with the given ID exists.
+func ActivegateTokenExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ActivegateTokenState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/activegateToken:ActivegateToken", id, state, "", opts...)
+}
+
 type activegateTokenArgs struct {
 	// Manually enforce ActiveGate token authentication
 	AuthTokenEnforcementManuallyEnabled bool `pulumi:"authTokenEnforcementManuallyEnabled"`

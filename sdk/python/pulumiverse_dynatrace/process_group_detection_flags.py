@@ -847,6 +847,48 @@ class ProcessGroupDetectionFlags(pulumi.CustomResource):
         __props__.__dict__["use_docker_container_name"] = use_docker_container_name
         return ProcessGroupDetectionFlags(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            add_node_js_script_name: pulumi.Input[Optional[_builtins.bool]] = None,
+            auto_detect_cassandra_clusters: pulumi.Input[Optional[_builtins.bool]] = None,
+            auto_detect_spring_boot: pulumi.Input[Optional[_builtins.bool]] = None,
+            auto_detect_tibco_container_edition_engines: pulumi.Input[Optional[_builtins.bool]] = None,
+            auto_detect_tibco_engines: pulumi.Input[Optional[_builtins.bool]] = None,
+            auto_detect_web_methods_integration_server: pulumi.Input[Optional[_builtins.bool]] = None,
+            auto_detect_web_sphere_liberty_application: pulumi.Input[Optional[_builtins.bool]] = None,
+            group_ibmmqby_instance_name: pulumi.Input[Optional[_builtins.bool]] = None,
+            identify_jboss_server_by_system_property: pulumi.Input[Optional[_builtins.bool]] = None,
+            ignore_unique_identifiers: pulumi.Input[Optional[_builtins.bool]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None,
+            security_software_detection_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            short_lived_processes_monitoring: pulumi.Input[Optional[_builtins.bool]] = None,
+            split_db2_grouping_by_instances: pulumi.Input[Optional[_builtins.bool]] = None,
+            split_oracle_database_pg: pulumi.Input[Optional[_builtins.bool]] = None,
+            split_oracle_listener_pg: pulumi.Input[Optional[_builtins.bool]] = None,
+            use_catalina_base: pulumi.Input[Optional[_builtins.bool]] = None,
+            use_docker_container_name: pulumi.Input[Optional[_builtins.bool]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["addNodeJsScriptName"] = add_node_js_script_name
+        __props__["autoDetectCassandraClusters"] = auto_detect_cassandra_clusters
+        __props__["autoDetectSpringBoot"] = auto_detect_spring_boot
+        __props__["autoDetectTibcoContainerEditionEngines"] = auto_detect_tibco_container_edition_engines
+        __props__["autoDetectTibcoEngines"] = auto_detect_tibco_engines
+        __props__["autoDetectWebMethodsIntegrationServer"] = auto_detect_web_methods_integration_server
+        __props__["autoDetectWebSphereLibertyApplication"] = auto_detect_web_sphere_liberty_application
+        __props__["groupIbmmqbyInstanceName"] = group_ibmmqby_instance_name
+        __props__["identifyJbossServerBySystemProperty"] = identify_jboss_server_by_system_property
+        __props__["ignoreUniqueIdentifiers"] = ignore_unique_identifiers
+        __props__["scope"] = scope
+        __props__["securitySoftwareDetectionEnabled"] = security_software_detection_enabled
+        __props__["shortLivedProcessesMonitoring"] = short_lived_processes_monitoring
+        __props__["splitDb2GroupingByInstances"] = split_db2_grouping_by_instances
+        __props__["splitOracleDatabasePg"] = split_oracle_database_pg
+        __props__["splitOracleListenerPg"] = split_oracle_listener_pg
+        __props__["useCatalinaBase"] = use_catalina_base
+        __props__["useDockerContainerName"] = use_docker_container_name
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/processGroupDetectionFlags:ProcessGroupDetectionFlags', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="addNodeJsScriptName")
     def add_node_js_script_name(self) -> pulumi.Output[_builtins.bool]:

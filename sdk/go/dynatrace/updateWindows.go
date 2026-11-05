@@ -117,6 +117,12 @@ func (UpdateWindowsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*updateWindowsState)(nil)).Elem()
 }
 
+// UpdateWindowsExists checks whether an existing UpdateWindows resource with the given ID exists.
+func UpdateWindowsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *UpdateWindowsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/updateWindows:UpdateWindows", id, state, "", opts...)
+}
+
 type updateWindowsArgs struct {
 	// No documentation available
 	DailyRecurrence *UpdateWindowsDailyRecurrence `pulumi:"dailyRecurrence"`

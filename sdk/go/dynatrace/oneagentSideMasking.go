@@ -111,6 +111,12 @@ func (OneagentSideMaskingState) ElementType() reflect.Type {
 	return reflect.TypeOf((*oneagentSideMaskingState)(nil)).Elem()
 }
 
+// OneagentSideMaskingExists checks whether an existing OneagentSideMasking resource with the given ID exists.
+func OneagentSideMaskingExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *OneagentSideMaskingState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/oneagentSideMasking:OneagentSideMasking", id, state, "", opts...)
+}
+
 type oneagentSideMaskingArgs struct {
 	// Exclude email addresses from URLs and exceptions
 	IsEmailMaskingEnabled bool `pulumi:"isEmailMaskingEnabled"`

@@ -326,6 +326,12 @@ func (OpenpipelineV2MetricsPipelinesState) ElementType() reflect.Type {
 	return reflect.TypeOf((*openpipelineV2MetricsPipelinesState)(nil)).Elem()
 }
 
+// OpenpipelineV2MetricsPipelinesExists checks whether an existing OpenpipelineV2MetricsPipelines resource with the given ID exists.
+func OpenpipelineV2MetricsPipelinesExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *OpenpipelineV2MetricsPipelinesState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/openpipelineV2MetricsPipelines:OpenpipelineV2MetricsPipelines", id, state, "", opts...)
+}
+
 type openpipelineV2MetricsPipelinesArgs struct {
 	// Cost allocation stage
 	CostAllocation *OpenpipelineV2MetricsPipelinesCostAllocation `pulumi:"costAllocation"`

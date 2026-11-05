@@ -94,6 +94,12 @@ func (DatabaseAnomaliesState) ElementType() reflect.Type {
 	return reflect.TypeOf((*databaseAnomaliesState)(nil)).Elem()
 }
 
+// DatabaseAnomaliesExists checks whether an existing DatabaseAnomalies resource with the given ID exists.
+func DatabaseAnomaliesExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DatabaseAnomaliesState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/databaseAnomalies:DatabaseAnomalies", id, state, "", opts...)
+}
+
 type databaseAnomaliesArgs struct {
 	// Parameters of the failed database connections detection.  The alert is triggered when failed connections number exceeds **connectionFailsCount** during any **timePeriodMinutes** minutes period
 	DbConnectFailures *DatabaseAnomaliesDbConnectFailures `pulumi:"dbConnectFailures"`

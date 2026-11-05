@@ -152,6 +152,12 @@ func (OpentelemetryMetricsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*opentelemetryMetricsState)(nil)).Elem()
 }
 
+// OpentelemetryMetricsExists checks whether an existing OpentelemetryMetrics resource with the given ID exists.
+func OpentelemetryMetricsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *OpentelemetryMetricsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/opentelemetryMetrics:OpentelemetryMetrics", id, state, "", opts...)
+}
+
 type opentelemetryMetricsArgs struct {
 	// When enabled, the attributes defined in the list below will be added as dimensions to ingested OTLP metrics if they are present in the OpenTelemetry resource or in the instrumentation scope.
 	AdditionalAttributes *OpentelemetryMetricsAdditionalAttributes `pulumi:"additionalAttributes"`

@@ -162,6 +162,12 @@ func (PolicyState) ElementType() reflect.Type {
 	return reflect.TypeOf((*policyState)(nil)).Elem()
 }
 
+// PolicyExists checks whether an existing Policy resource with the given ID exists.
+func PolicyExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *PolicyState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/policy:Policy", id, state, "", opts...)
+}
+
 type policyArgs struct {
 	// The UUID of the cluster in case the policy should be applied to all environments of this cluster.
 	Cluster *string `pulumi:"cluster"`

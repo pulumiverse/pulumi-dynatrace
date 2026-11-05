@@ -99,6 +99,12 @@ func (WebAppBeaconEndpointState) ElementType() reflect.Type {
 	return reflect.TypeOf((*webAppBeaconEndpointState)(nil)).Elem()
 }
 
+// WebAppBeaconEndpointExists checks whether an existing WebAppBeaconEndpoint resource with the given ID exists.
+func WebAppBeaconEndpointExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *WebAppBeaconEndpointState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/webAppBeaconEndpoint:WebAppBeaconEndpoint", id, state, "", opts...)
+}
+
 type webAppBeaconEndpointArgs struct {
 	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
 	ApplicationId string `pulumi:"applicationId"`

@@ -331,6 +331,22 @@ class CustomAppAnomalies(pulumi.CustomResource):
         __props__.__dict__["unexpected_low_load"] = unexpected_low_load
         return CustomAppAnomalies(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            error_rate_increase: pulumi.Input[Optional[Union['CustomAppAnomaliesErrorRateIncreaseArgs', 'CustomAppAnomaliesErrorRateIncreaseArgsDict', 'outputs.CustomAppAnomaliesErrorRateIncrease']]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None,
+            slow_user_actions: pulumi.Input[Optional[Union['CustomAppAnomaliesSlowUserActionsArgs', 'CustomAppAnomaliesSlowUserActionsArgsDict', 'outputs.CustomAppAnomaliesSlowUserActions']]] = None,
+            unexpected_high_load: pulumi.Input[Optional[Union['CustomAppAnomaliesUnexpectedHighLoadArgs', 'CustomAppAnomaliesUnexpectedHighLoadArgsDict', 'outputs.CustomAppAnomaliesUnexpectedHighLoad']]] = None,
+            unexpected_low_load: pulumi.Input[Optional[Union['CustomAppAnomaliesUnexpectedLowLoadArgs', 'CustomAppAnomaliesUnexpectedLowLoadArgsDict', 'outputs.CustomAppAnomaliesUnexpectedLowLoad']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["errorRateIncrease"] = error_rate_increase
+        __props__["scope"] = scope
+        __props__["slowUserActions"] = slow_user_actions
+        __props__["unexpectedHighLoad"] = unexpected_high_load
+        __props__["unexpectedLowLoad"] = unexpected_low_load
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/customAppAnomalies:CustomAppAnomalies', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="errorRateIncrease")
     def error_rate_increase(self) -> pulumi.Output['outputs.CustomAppAnomaliesErrorRateIncrease']:

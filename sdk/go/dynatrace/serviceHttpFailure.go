@@ -99,6 +99,12 @@ func (ServiceHttpFailureState) ElementType() reflect.Type {
 	return reflect.TypeOf((*serviceHttpFailureState)(nil)).Elem()
 }
 
+// ServiceHttpFailureExists checks whether an existing ServiceHttpFailure resource with the given ID exists.
+func ServiceHttpFailureExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ServiceHttpFailureState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/serviceHttpFailure:ServiceHttpFailure", id, state, "", opts...)
+}
+
 type serviceHttpFailureArgs struct {
 	// HTTP 404 response codes are thrown when a web server can't find a certain page. 404s are classified as broken links on the client side and therefore aren't considered to be service failures. By enabling this setting, you can have 404s treated as server-side service failures.
 	BrokenLinks *ServiceHttpFailureBrokenLinks `pulumi:"brokenLinks"`

@@ -163,6 +163,12 @@ func (OpsGenieNotificationState) ElementType() reflect.Type {
 	return reflect.TypeOf((*opsGenieNotificationState)(nil)).Elem()
 }
 
+// OpsGenieNotificationExists checks whether an existing OpsGenieNotification resource with the given ID exists.
+func OpsGenieNotificationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *OpsGenieNotificationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/opsGenieNotification:OpsGenieNotification", id, state, "", opts...)
+}
+
 type opsGenieNotificationArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Active bool `pulumi:"active"`

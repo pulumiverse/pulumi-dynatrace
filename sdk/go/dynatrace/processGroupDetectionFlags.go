@@ -222,6 +222,12 @@ func (ProcessGroupDetectionFlagsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*processGroupDetectionFlagsState)(nil)).Elem()
 }
 
+// ProcessGroupDetectionFlagsExists checks whether an existing ProcessGroupDetectionFlags resource with the given ID exists.
+func ProcessGroupDetectionFlagsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ProcessGroupDetectionFlagsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/processGroupDetectionFlags:ProcessGroupDetectionFlags", id, state, "", opts...)
+}
+
 type processGroupDetectionFlagsArgs struct {
 	// In older versions, Node.js applications were distinguished based on their directory name, omitting the script name. Changing this setting may change the general handling of Node.js process groups. Leave unchanged if in doubt.
 	AddNodeJsScriptName bool `pulumi:"addNodeJsScriptName"`

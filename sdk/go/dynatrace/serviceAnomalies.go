@@ -94,6 +94,12 @@ func (ServiceAnomaliesState) ElementType() reflect.Type {
 	return reflect.TypeOf((*serviceAnomaliesState)(nil)).Elem()
 }
 
+// ServiceAnomaliesExists checks whether an existing ServiceAnomalies resource with the given ID exists.
+func ServiceAnomaliesExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ServiceAnomaliesState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/serviceAnomalies:ServiceAnomalies", id, state, "", opts...)
+}
+
 type serviceAnomaliesArgs struct {
 	// Configuration of failure rate increase detection. Detecting failure rate increases will be disabled if this block is omitted.
 	FailureRates *ServiceAnomaliesFailureRates `pulumi:"failureRates"`

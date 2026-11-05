@@ -199,6 +199,12 @@ func (AzureConnectionAuthenticationState) ElementType() reflect.Type {
 	return reflect.TypeOf((*azureConnectionAuthenticationState)(nil)).Elem()
 }
 
+// AzureConnectionAuthenticationExists checks whether an existing AzureConnectionAuthentication resource with the given ID exists.
+func AzureConnectionAuthenticationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AzureConnectionAuthenticationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/azureConnectionAuthentication:AzureConnectionAuthentication", id, state, "", opts...)
+}
+
 type azureConnectionAuthenticationArgs struct {
 	// Application (client) ID of your app registered in Microsoft Azure App registrations
 	ApplicationId string `pulumi:"applicationId"`

@@ -199,6 +199,12 @@ func (UserGroupState) ElementType() reflect.Type {
 	return reflect.TypeOf((*userGroupState)(nil)).Elem()
 }
 
+// UserGroupExists checks whether an existing UserGroup resource with the given ID exists.
+func UserGroupExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *UserGroupState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/userGroup:UserGroup", id, state, "", opts...)
+}
+
 type userGroupArgs struct {
 	// If `true`, then the group has the access account rights
 	AccessAccount *bool `pulumi:"accessAccount"`

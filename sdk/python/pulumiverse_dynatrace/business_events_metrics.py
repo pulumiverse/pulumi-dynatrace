@@ -374,6 +374,24 @@ class BusinessEventsMetrics(pulumi.CustomResource):
         __props__.__dict__["measure_attribute"] = measure_attribute
         return BusinessEventsMetrics(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            dimensions: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            key: pulumi.Input[Optional[_builtins.str]] = None,
+            matcher: pulumi.Input[Optional[_builtins.str]] = None,
+            measure: pulumi.Input[Optional[_builtins.str]] = None,
+            measure_attribute: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["dimensions"] = dimensions
+        __props__["enabled"] = enabled
+        __props__["key"] = key
+        __props__["matcher"] = matcher
+        __props__["measure"] = measure
+        __props__["measureAttribute"] = measure_attribute
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/businessEventsMetrics:BusinessEventsMetrics', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def dimensions(self) -> pulumi.Output[Optional[Sequence[_builtins.str]]]:

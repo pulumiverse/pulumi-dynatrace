@@ -65,9 +65,9 @@ namespace Pulumiverse.Dynatrace
         public Output<double?> Longitude { get; private set; } = null!;
 
         /// <summary>
-        /// The region code of the location. 
+        /// The region code of the location.
         /// 
-        ///    For the [USA](https://dt-url.net/iso3166us) or [Canada](https://dt-url.net/iso3166ca) use ISO 3166-2 state codes without `US-` or `CA-` prefix. 
+        ///    For the [USA](https://dt-url.net/iso3166us) or [Canada](https://dt-url.net/iso3166ca) use ISO 3166-2 state codes without `US-` or `CA-` prefix.
         /// 
         ///    For the rest of the world use [FIPS 10-4 codes](https://dt-url.net/fipscodes) without country prefix.
         /// </summary>
@@ -158,9 +158,9 @@ namespace Pulumiverse.Dynatrace
         public Input<double>? Longitude { get; set; }
 
         /// <summary>
-        /// The region code of the location. 
+        /// The region code of the location.
         /// 
-        ///    For the [USA](https://dt-url.net/iso3166us) or [Canada](https://dt-url.net/iso3166ca) use ISO 3166-2 state codes without `US-` or `CA-` prefix. 
+        ///    For the [USA](https://dt-url.net/iso3166us) or [Canada](https://dt-url.net/iso3166ca) use ISO 3166-2 state codes without `US-` or `CA-` prefix.
         /// 
         ///    For the rest of the world use [FIPS 10-4 codes](https://dt-url.net/fipscodes) without country prefix.
         /// </summary>
@@ -212,9 +212,9 @@ namespace Pulumiverse.Dynatrace
         public Input<double>? Longitude { get; set; }
 
         /// <summary>
-        /// The region code of the location. 
+        /// The region code of the location.
         /// 
-        ///    For the [USA](https://dt-url.net/iso3166us) or [Canada](https://dt-url.net/iso3166ca) use ISO 3166-2 state codes without `US-` or `CA-` prefix. 
+        ///    For the [USA](https://dt-url.net/iso3166us) or [Canada](https://dt-url.net/iso3166ca) use ISO 3166-2 state codes without `US-` or `CA-` prefix.
         /// 
         ///    For the rest of the world use [FIPS 10-4 codes](https://dt-url.net/fipscodes) without country prefix.
         /// </summary>

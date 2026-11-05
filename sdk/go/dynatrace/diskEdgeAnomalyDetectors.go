@@ -129,6 +129,12 @@ func (DiskEdgeAnomalyDetectorsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*diskEdgeAnomalyDetectorsState)(nil)).Elem()
 }
 
+// DiskEdgeAnomalyDetectorsExists checks whether an existing DiskEdgeAnomalyDetectors resource with the given ID exists.
+func DiskEdgeAnomalyDetectorsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DiskEdgeAnomalyDetectorsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/diskEdgeAnomalyDetectors:DiskEdgeAnomalyDetectors", id, state, "", opts...)
+}
+
 type diskEdgeAnomalyDetectorsArgs struct {
 	// Alerts
 	Alerts *DiskEdgeAnomalyDetectorsAlerts `pulumi:"alerts"`

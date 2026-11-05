@@ -191,6 +191,12 @@ func (DashboardSharingState) ElementType() reflect.Type {
 	return reflect.TypeOf((*dashboardSharingState)(nil)).Elem()
 }
 
+// DashboardSharingExists checks whether an existing DashboardSharing resource with the given ID exists.
+func DashboardSharingExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DashboardSharingState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/dashboardSharing:DashboardSharing", id, state, "", opts...)
+}
+
 type dashboardSharingArgs struct {
 	// The Dynatrace entity ID of the dashboard
 	DashboardId string `pulumi:"dashboardId"`

@@ -84,6 +84,12 @@ func (MonitoredTechnologiesVarnishState) ElementType() reflect.Type {
 	return reflect.TypeOf((*monitoredTechnologiesVarnishState)(nil)).Elem()
 }
 
+// MonitoredTechnologiesVarnishExists checks whether an existing MonitoredTechnologiesVarnish resource with the given ID exists.
+func MonitoredTechnologiesVarnishExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *MonitoredTechnologiesVarnishState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/monitoredTechnologiesVarnish:MonitoredTechnologiesVarnish", id, state, "", opts...)
+}
+
 type monitoredTechnologiesVarnishArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`

@@ -148,6 +148,12 @@ func (ManagedInternetProxyState) ElementType() reflect.Type {
 	return reflect.TypeOf((*managedInternetProxyState)(nil)).Elem()
 }
 
+// ManagedInternetProxyExists checks whether an existing ManagedInternetProxy resource with the given ID exists.
+func ManagedInternetProxyExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ManagedInternetProxyState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/managedInternetProxy:ManagedInternetProxy", id, state, "", opts...)
+}
+
 type managedInternetProxyArgs struct {
 	// Definition of hosts for which proxy won't be used. You can define multiple hosts. Each host can start or end with wildcard '*' for instance to match whole domain.
 	NonProxyHosts []string `pulumi:"nonProxyHosts"`

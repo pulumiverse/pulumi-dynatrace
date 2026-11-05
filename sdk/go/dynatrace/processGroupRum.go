@@ -132,6 +132,12 @@ func (ProcessGroupRumState) ElementType() reflect.Type {
 	return reflect.TypeOf((*processGroupRumState)(nil)).Elem()
 }
 
+// ProcessGroupRumExists checks whether an existing ProcessGroupRum resource with the given ID exists.
+func ProcessGroupRumExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ProcessGroupRumState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/processGroupRum:ProcessGroupRum", id, state, "", opts...)
+}
+
 type processGroupRumArgs struct {
 	// Allows OneAgent to:
 	//  * automatically inject the RUM JavaScript tag into each page delivered by this process group

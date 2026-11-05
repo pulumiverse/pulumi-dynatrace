@@ -165,6 +165,12 @@ func (SloV2State) ElementType() reflect.Type {
 	return reflect.TypeOf((*sloV2State)(nil)).Elem()
 }
 
+// SloV2Exists checks whether an existing SloV2 resource with the given ID exists.
+func SloV2Exists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SloV2State, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/sloV2:SloV2", id, state, "", opts...)
+}
+
 type sloV2Args struct {
 	// The description of the SLO
 	CustomDescription *string `pulumi:"customDescription"`

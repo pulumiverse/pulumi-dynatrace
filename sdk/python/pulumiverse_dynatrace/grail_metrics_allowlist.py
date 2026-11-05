@@ -171,6 +171,14 @@ class GrailMetricsAllowlist(pulumi.CustomResource):
         __props__.__dict__["allow_rules"] = allow_rules
         return GrailMetricsAllowlist(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            allow_rules: pulumi.Input[Optional[Union['GrailMetricsAllowlistAllowRulesArgs', 'GrailMetricsAllowlistAllowRulesArgsDict', 'outputs.GrailMetricsAllowlistAllowRules']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["allowRules"] = allow_rules
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/grailMetricsAllowlist:GrailMetricsAllowlist', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="allowRules")
     def allow_rules(self) -> pulumi.Output[Optional['outputs.GrailMetricsAllowlistAllowRules']]:

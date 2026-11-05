@@ -413,6 +413,26 @@ class AttackRules(pulumi.CustomResource):
         __props__.__dict__["rule_name"] = rule_name
         return AttackRules(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            attack_handling: pulumi.Input[Optional[Union['AttackRulesAttackHandlingArgs', 'AttackRulesAttackHandlingArgsDict', 'outputs.AttackRulesAttackHandling']]] = None,
+            criteria: pulumi.Input[Optional[Union['AttackRulesCriteriaArgs', 'AttackRulesCriteriaArgsDict', 'outputs.AttackRulesCriteria']]] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+            metadata: pulumi.Input[Optional[Union['AttackRulesMetadataArgs', 'AttackRulesMetadataArgsDict', 'outputs.AttackRulesMetadata']]] = None,
+            resource_attribute_conditions: pulumi.Input[Optional[Union['AttackRulesResourceAttributeConditionsArgs', 'AttackRulesResourceAttributeConditionsArgsDict', 'outputs.AttackRulesResourceAttributeConditions']]] = None,
+            rule_name: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["attackHandling"] = attack_handling
+        __props__["criteria"] = criteria
+        __props__["enabled"] = enabled
+        __props__["insertAfter"] = insert_after
+        __props__["metadata"] = metadata
+        __props__["resourceAttributeConditions"] = resource_attribute_conditions
+        __props__["ruleName"] = rule_name
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/attackRules:AttackRules', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="attackHandling")
     def attack_handling(self) -> pulumi.Output['outputs.AttackRulesAttackHandling']:

@@ -136,6 +136,12 @@ func (SlackNotificationState) ElementType() reflect.Type {
 	return reflect.TypeOf((*slackNotificationState)(nil)).Elem()
 }
 
+// SlackNotificationExists checks whether an existing SlackNotification resource with the given ID exists.
+func SlackNotificationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SlackNotificationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/slackNotification:SlackNotification", id, state, "", opts...)
+}
+
 type slackNotificationArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Active bool `pulumi:"active"`

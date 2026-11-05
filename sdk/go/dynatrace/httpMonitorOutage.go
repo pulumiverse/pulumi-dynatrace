@@ -113,6 +113,12 @@ func (HttpMonitorOutageState) ElementType() reflect.Type {
 	return reflect.TypeOf((*httpMonitorOutageState)(nil)).Elem()
 }
 
+// HttpMonitorOutageExists checks whether an existing HttpMonitorOutage resource with the given ID exists.
+func HttpMonitorOutageExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *HttpMonitorOutageState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/httpMonitorOutage:HttpMonitorOutage", id, state, "", opts...)
+}
+
 type httpMonitorOutageArgs struct {
 	// (Field has overlap with `HttpMonitor`) Alert if all locations are unable to access my web application
 	GlobalConsecutiveOutageCountThreshold *int `pulumi:"globalConsecutiveOutageCountThreshold"`

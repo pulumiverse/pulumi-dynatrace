@@ -93,6 +93,12 @@ func (ServiceDetectionRulesState) ElementType() reflect.Type {
 	return reflect.TypeOf((*serviceDetectionRulesState)(nil)).Elem()
 }
 
+// ServiceDetectionRulesExists checks whether an existing ServiceDetectionRules resource with the given ID exists.
+func ServiceDetectionRulesExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ServiceDetectionRulesState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/serviceDetectionRules:ServiceDetectionRules", id, state, "", opts...)
+}
+
 type serviceDetectionRulesArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`

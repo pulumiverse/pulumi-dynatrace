@@ -370,6 +370,24 @@ class HttpMonitorOutage(pulumi.CustomResource):
         __props__.__dict__["scope"] = scope
         return HttpMonitorOutage(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            global_consecutive_outage_count_threshold: pulumi.Input[Optional[_builtins.int]] = None,
+            global_outages: pulumi.Input[Optional[_builtins.bool]] = None,
+            local_consecutive_outage_count_threshold: pulumi.Input[Optional[_builtins.int]] = None,
+            local_location_outage_count_threshold: pulumi.Input[Optional[_builtins.int]] = None,
+            local_outages: pulumi.Input[Optional[_builtins.bool]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["globalConsecutiveOutageCountThreshold"] = global_consecutive_outage_count_threshold
+        __props__["globalOutages"] = global_outages
+        __props__["localConsecutiveOutageCountThreshold"] = local_consecutive_outage_count_threshold
+        __props__["localLocationOutageCountThreshold"] = local_location_outage_count_threshold
+        __props__["localOutages"] = local_outages
+        __props__["scope"] = scope
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/httpMonitorOutage:HttpMonitorOutage', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="globalConsecutiveOutageCountThreshold")
     def global_consecutive_outage_count_threshold(self) -> pulumi.Output[Optional[_builtins.int]]:

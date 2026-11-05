@@ -141,6 +141,12 @@ func (AwsAnomaliesState) ElementType() reflect.Type {
 	return reflect.TypeOf((*awsAnomaliesState)(nil)).Elem()
 }
 
+// AwsAnomaliesExists checks whether an existing AwsAnomalies resource with the given ID exists.
+func AwsAnomaliesExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AwsAnomaliesState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/awsAnomalies:AwsAnomalies", id, state, "", opts...)
+}
+
 type awsAnomaliesArgs struct {
 	// no documentation available
 	Ec2CandidateHighCpuDetection AwsAnomaliesEc2CandidateHighCpuDetection `pulumi:"ec2CandidateHighCpuDetection"`

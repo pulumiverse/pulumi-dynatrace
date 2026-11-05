@@ -300,6 +300,20 @@ class Dashboard(pulumi.CustomResource):
         __props__.__dict__["unknowns"] = unknowns
         return Dashboard(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            dashboard_metadata: pulumi.Input[Optional[Union['DashboardDashboardMetadataArgs', 'DashboardDashboardMetadataArgsDict', 'outputs.DashboardDashboardMetadata']]] = None,
+            metadata: pulumi.Input[Optional[Union['DashboardMetadataArgs', 'DashboardMetadataArgsDict', 'outputs.DashboardMetadata']]] = None,
+            tiles: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DashboardTileArgs', 'DashboardTileArgsDict', 'outputs.DashboardTile']]]]] = None,
+            unknowns: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["dashboardMetadata"] = dashboard_metadata
+        __props__["metadata"] = metadata
+        __props__["tiles"] = tiles
+        __props__["unknowns"] = unknowns
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/dashboard:Dashboard', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="dashboardMetadata")
     def dashboard_metadata(self) -> pulumi.Output[Optional['outputs.DashboardDashboardMetadata']]:

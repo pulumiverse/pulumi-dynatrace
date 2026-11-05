@@ -1015,6 +1015,44 @@ class OpenpipelineV2DavisEventsDataforwarding(pulumi.CustomResource):
         __props__.__dict__["processing"] = processing
         return OpenpipelineV2DavisEventsDataforwarding(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            aws_connection: pulumi.Input[Optional[Union['OpenpipelineV2DavisEventsDataforwardingAwsConnectionArgs', 'OpenpipelineV2DavisEventsDataforwardingAwsConnectionArgsDict', 'outputs.OpenpipelineV2DavisEventsDataforwardingAwsConnection']]] = None,
+            azure_connection: pulumi.Input[Optional[Union['OpenpipelineV2DavisEventsDataforwardingAzureConnectionArgs', 'OpenpipelineV2DavisEventsDataforwardingAzureConnectionArgsDict', 'outputs.OpenpipelineV2DavisEventsDataforwardingAzureConnection']]] = None,
+            builtin_ingest_sources: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            builtin_pipelines: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            bulk_pattern: pulumi.Input[Optional[_builtins.str]] = None,
+            bulk_size: pulumi.Input[Optional[_builtins.int]] = None,
+            cloud_vendor_type: pulumi.Input[Optional[_builtins.str]] = None,
+            data_forwarding_type: pulumi.Input[Optional[_builtins.str]] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            forwarding_name: pulumi.Input[Optional[_builtins.str]] = None,
+            gcp_connection: pulumi.Input[Optional[Union['OpenpipelineV2DavisEventsDataforwardingGcpConnectionArgs', 'OpenpipelineV2DavisEventsDataforwardingGcpConnectionArgsDict', 'outputs.OpenpipelineV2DavisEventsDataforwardingGcpConnection']]] = None,
+            ingest_sources: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            matcher: pulumi.Input[Optional[_builtins.str]] = None,
+            otlp_connection: pulumi.Input[Optional[Union['OpenpipelineV2DavisEventsDataforwardingOtlpConnectionArgs', 'OpenpipelineV2DavisEventsDataforwardingOtlpConnectionArgsDict', 'outputs.OpenpipelineV2DavisEventsDataforwardingOtlpConnection']]] = None,
+            pipelines: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            processing: pulumi.Input[Optional[Union['OpenpipelineV2DavisEventsDataforwardingProcessingArgs', 'OpenpipelineV2DavisEventsDataforwardingProcessingArgsDict', 'outputs.OpenpipelineV2DavisEventsDataforwardingProcessing']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["awsConnection"] = aws_connection
+        __props__["azureConnection"] = azure_connection
+        __props__["builtinIngestSources"] = builtin_ingest_sources
+        __props__["builtinPipelines"] = builtin_pipelines
+        __props__["bulkPattern"] = bulk_pattern
+        __props__["bulkSize"] = bulk_size
+        __props__["cloudVendorType"] = cloud_vendor_type
+        __props__["dataForwardingType"] = data_forwarding_type
+        __props__["enabled"] = enabled
+        __props__["forwardingName"] = forwarding_name
+        __props__["gcpConnection"] = gcp_connection
+        __props__["ingestSources"] = ingest_sources
+        __props__["matcher"] = matcher
+        __props__["otlpConnection"] = otlp_connection
+        __props__["pipelines"] = pipelines
+        __props__["processing"] = processing
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/openpipelineV2DavisEventsDataforwarding:OpenpipelineV2DavisEventsDataforwarding', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="awsConnection")
     def aws_connection(self) -> pulumi.Output[Optional['outputs.OpenpipelineV2DavisEventsDataforwardingAwsConnection']]:

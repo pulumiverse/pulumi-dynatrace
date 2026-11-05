@@ -122,6 +122,12 @@ func (PgAnomaliesState) ElementType() reflect.Type {
 	return reflect.TypeOf((*pgAnomaliesState)(nil)).Elem()
 }
 
+// PgAnomaliesExists checks whether an existing PgAnomalies resource with the given ID exists.
+func PgAnomaliesExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *PgAnomaliesState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/pgAnomalies:PgAnomalies", id, state, "", opts...)
+}
+
 type pgAnomaliesArgs struct {
 	// Configuration of the availability monitoring for the process group.
 	Availability *PgAnomaliesAvailability `pulumi:"availability"`

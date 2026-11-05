@@ -685,6 +685,40 @@ class K8sCredentials(pulumi.CustomResource):
         __props__.__dict__["workload_integration_enabled"] = workload_integration_enabled
         return K8sCredentials(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            active: pulumi.Input[Optional[_builtins.bool]] = None,
+            active_gate_group: pulumi.Input[Optional[_builtins.str]] = None,
+            auth_token: pulumi.Input[Optional[_builtins.str]] = None,
+            certificate_check_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            davis_events_integration_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            endpoint_url: pulumi.Input[Optional[_builtins.str]] = None,
+            event_analysis_and_alerting_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            events_field_selectors: pulumi.Input[Optional[Sequence[pulumi.Input[Union['K8sCredentialsEventsFieldSelectorArgs', 'K8sCredentialsEventsFieldSelectorArgsDict', 'outputs.K8sCredentialsEventsFieldSelector']]]]] = None,
+            events_integration_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            hostname_verification: pulumi.Input[Optional[_builtins.bool]] = None,
+            label: pulumi.Input[Optional[_builtins.str]] = None,
+            prometheus_exporters: pulumi.Input[Optional[_builtins.bool]] = None,
+            unknowns: pulumi.Input[Optional[_builtins.str]] = None,
+            workload_integration_enabled: pulumi.Input[Optional[_builtins.bool]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["active"] = active
+        __props__["activeGateGroup"] = active_gate_group
+        __props__["authToken"] = auth_token
+        __props__["certificateCheckEnabled"] = certificate_check_enabled
+        __props__["davisEventsIntegrationEnabled"] = davis_events_integration_enabled
+        __props__["endpointUrl"] = endpoint_url
+        __props__["eventAnalysisAndAlertingEnabled"] = event_analysis_and_alerting_enabled
+        __props__["eventsFieldSelectors"] = events_field_selectors
+        __props__["eventsIntegrationEnabled"] = events_integration_enabled
+        __props__["hostnameVerification"] = hostname_verification
+        __props__["label"] = label
+        __props__["prometheusExporters"] = prometheus_exporters
+        __props__["unknowns"] = unknowns
+        __props__["workloadIntegrationEnabled"] = workload_integration_enabled
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/k8sCredentials:K8sCredentials', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def active(self) -> pulumi.Output[Optional[_builtins.bool]]:

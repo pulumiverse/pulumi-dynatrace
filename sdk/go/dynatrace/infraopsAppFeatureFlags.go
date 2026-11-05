@@ -104,6 +104,12 @@ func (InfraopsAppFeatureFlagsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*infraopsAppFeatureFlagsState)(nil)).Elem()
 }
 
+// InfraopsAppFeatureFlagsExists checks whether an existing InfraopsAppFeatureFlags resource with the given ID exists.
+func InfraopsAppFeatureFlagsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *InfraopsAppFeatureFlagsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/infraopsAppFeatureFlags:InfraopsAppFeatureFlags", id, state, "", opts...)
+}
+
 type infraopsAppFeatureFlagsArgs struct {
 	// State of boolean feature
 	BooleanValue *bool `pulumi:"booleanValue"`

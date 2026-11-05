@@ -87,6 +87,12 @@ func (LogCustomAttributeState) ElementType() reflect.Type {
 	return reflect.TypeOf((*logCustomAttributeState)(nil)).Elem()
 }
 
+// LogCustomAttributeExists checks whether an existing LogCustomAttribute resource with the given ID exists.
+func LogCustomAttributeExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *LogCustomAttributeState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/logCustomAttribute:LogCustomAttribute", id, state, "", opts...)
+}
+
 type logCustomAttributeArgs struct {
 	// The attribute key is case sensitive in log data ingestion.
 	Key string `pulumi:"key"`

@@ -486,6 +486,30 @@ class UserSettings(pulumi.CustomResource):
         __props__.__dict__["timezone"] = timezone
         return UserSettings(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            auto_language: pulumi.Input[Optional[_builtins.bool]] = None,
+            auto_region: pulumi.Input[Optional[_builtins.bool]] = None,
+            auto_theme: pulumi.Input[Optional[_builtins.bool]] = None,
+            auto_timezone: pulumi.Input[Optional[_builtins.bool]] = None,
+            language: pulumi.Input[Optional[_builtins.str]] = None,
+            region: pulumi.Input[Optional[_builtins.str]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None,
+            theme: pulumi.Input[Optional[_builtins.str]] = None,
+            timezone: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["autoLanguage"] = auto_language
+        __props__["autoRegion"] = auto_region
+        __props__["autoTheme"] = auto_theme
+        __props__["autoTimezone"] = auto_timezone
+        __props__["language"] = language
+        __props__["region"] = region
+        __props__["scope"] = scope
+        __props__["theme"] = theme
+        __props__["timezone"] = timezone
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/userSettings:UserSettings', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="autoLanguage")
     def auto_language(self) -> pulumi.Output[_builtins.bool]:

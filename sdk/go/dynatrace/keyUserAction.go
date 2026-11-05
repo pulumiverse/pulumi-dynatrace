@@ -137,6 +137,12 @@ func (KeyUserActionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*keyUserActionState)(nil)).Elem()
 }
 
+// KeyUserActionExists checks whether an existing KeyUserAction resource with the given ID exists.
+func KeyUserActionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *KeyUserActionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/keyUserAction:KeyUserAction", id, state, "", opts...)
+}
+
 type keyUserActionArgs struct {
 	// The ID of the WebApplication
 	ApplicationId string `pulumi:"applicationId"`

@@ -84,6 +84,12 @@ func (KubernetesAppState) ElementType() reflect.Type {
 	return reflect.TypeOf((*kubernetesAppState)(nil)).Elem()
 }
 
+// KubernetesAppExists checks whether an existing KubernetesApp resource with the given ID exists.
+func KubernetesAppExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *KubernetesAppState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/kubernetesApp:KubernetesApp", id, state, "", opts...)
+}
+
 type kubernetesAppArgs struct {
 	// no documentation available
 	KubernetesAppOptions KubernetesAppKubernetesAppOptions `pulumi:"kubernetesAppOptions"`

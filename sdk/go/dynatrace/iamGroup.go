@@ -145,6 +145,12 @@ func (IamGroupState) ElementType() reflect.Type {
 	return reflect.TypeOf((*iamGroupState)(nil)).Elem()
 }
 
+// IamGroupExists checks whether an existing IamGroup resource with the given ID exists.
+func IamGroupExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *IamGroupState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/iamGroup:IamGroup", id, state, "", opts...)
+}
+
 type iamGroupArgs struct {
 	Description              *string  `pulumi:"description"`
 	FederatedAttributeValues []string `pulumi:"federatedAttributeValues"`

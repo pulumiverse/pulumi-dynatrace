@@ -84,6 +84,12 @@ func (EulaSettingsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*eulaSettingsState)(nil)).Elem()
 }
 
+// EulaSettingsExists checks whether an existing EulaSettings resource with the given ID exists.
+func EulaSettingsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *EulaSettingsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/eulaSettings:EulaSettings", id, state, "", opts...)
+}
+
 type eulaSettingsArgs struct {
 	// Display end user terms to new users logging in to the environment
 	EnableEula bool `pulumi:"enableEula"`

@@ -129,6 +129,12 @@ func (CustomUnitsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*customUnitsState)(nil)).Elem()
 }
 
+// CustomUnitsExists checks whether an existing CustomUnits resource with the given ID exists.
+func CustomUnitsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *CustomUnitsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/customUnits:CustomUnits", id, state, "", opts...)
+}
+
 type customUnitsArgs struct {
 	// Unit description should provide additional information about the new unit
 	Description string `pulumi:"description"`

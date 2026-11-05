@@ -247,6 +247,18 @@ class QueueSharingGroups(pulumi.CustomResource):
         __props__.__dict__["shared_queues"] = shared_queues
         return QueueSharingGroups(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            queue_managers: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            shared_queues: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["name"] = name
+        __props__["queueManagers"] = queue_managers
+        __props__["sharedQueues"] = shared_queues
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/queueSharingGroups:QueueSharingGroups', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def name(self) -> pulumi.Output[_builtins.str]:

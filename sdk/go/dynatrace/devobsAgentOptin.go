@@ -117,6 +117,12 @@ func (DevobsAgentOptinState) ElementType() reflect.Type {
 	return reflect.TypeOf((*devobsAgentOptinState)(nil)).Elem()
 }
 
+// DevobsAgentOptinExists checks whether an existing DevobsAgentOptin resource with the given ID exists.
+func DevobsAgentOptinExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DevobsAgentOptinState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/devobsAgentOptin:DevobsAgentOptin", id, state, "", opts...)
+}
+
 type devobsAgentOptinArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`

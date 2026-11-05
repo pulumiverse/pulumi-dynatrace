@@ -389,6 +389,18 @@ class BrowserMonitorPerformance(pulumi.CustomResource):
         __props__.__dict__["thresholds"] = thresholds
         return BrowserMonitorPerformance(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None,
+            thresholds: pulumi.Input[Optional[Union['BrowserMonitorPerformanceThresholdsArgs', 'BrowserMonitorPerformanceThresholdsArgsDict', 'outputs.BrowserMonitorPerformanceThresholds']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["enabled"] = enabled
+        __props__["scope"] = scope
+        __props__["thresholds"] = thresholds
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/browserMonitorPerformance:BrowserMonitorPerformance', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def enabled(self) -> pulumi.Output[_builtins.bool]:

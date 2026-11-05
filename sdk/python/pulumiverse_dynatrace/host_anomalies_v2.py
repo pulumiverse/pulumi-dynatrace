@@ -252,6 +252,18 @@ class HostAnomaliesV2(pulumi.CustomResource):
         __props__.__dict__["scope"] = scope
         return HostAnomaliesV2(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            host: pulumi.Input[Optional[Union['HostAnomaliesV2HostArgs', 'HostAnomaliesV2HostArgsDict', 'outputs.HostAnomaliesV2Host']]] = None,
+            network: pulumi.Input[Optional[Union['HostAnomaliesV2NetworkArgs', 'HostAnomaliesV2NetworkArgsDict', 'outputs.HostAnomaliesV2Network']]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["host"] = host
+        __props__["network"] = network
+        __props__["scope"] = scope
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/hostAnomaliesV2:HostAnomaliesV2', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def host(self) -> pulumi.Output['outputs.HostAnomaliesV2Host']:

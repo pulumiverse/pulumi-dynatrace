@@ -259,6 +259,16 @@ class MobileAppRequestErrors(pulumi.CustomResource):
         __props__.__dict__["scope"] = scope
         return MobileAppRequestErrors(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            error_rules: pulumi.Input[Optional[Union['MobileAppRequestErrorsErrorRulesArgs', 'MobileAppRequestErrorsErrorRulesArgsDict', 'outputs.MobileAppRequestErrorsErrorRules']]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["errorRules"] = error_rules
+        __props__["scope"] = scope
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/mobileAppRequestErrors:MobileAppRequestErrors', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="errorRules")
     def error_rules(self) -> pulumi.Output[Optional['outputs.MobileAppRequestErrorsErrorRules']]:

@@ -22,7 +22,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// * btrfs
         /// * ext*
         /// 
-        /// ⚠️ Starting from **OneAgent 1.299+** file system types are not case sensitive! 
+        /// ⚠️ Starting from **OneAgent 1.299+** file system types are not case sensitive!
         /// 
         /// The wildcard in the last example means to exclude matching file systems such as types ext4 and ext3
         /// </summary>
@@ -36,7 +36,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// * /staff/*
         /// * /disk*
         /// 
-        ///  ⚠️ Mount point paths are case sensitive! 
+        ///  ⚠️ Mount point paths are case sensitive!
         /// 
         /// The wildcard in **/staff/*** means to exclude every child folder of /staff.
         /// 

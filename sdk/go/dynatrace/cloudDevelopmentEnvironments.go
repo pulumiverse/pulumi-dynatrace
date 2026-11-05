@@ -74,6 +74,12 @@ func (CloudDevelopmentEnvironmentsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*cloudDevelopmentEnvironmentsState)(nil)).Elem()
 }
 
+// CloudDevelopmentEnvironmentsExists checks whether an existing CloudDevelopmentEnvironments resource with the given ID exists.
+func CloudDevelopmentEnvironmentsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *CloudDevelopmentEnvironmentsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/cloudDevelopmentEnvironments:CloudDevelopmentEnvironments", id, state, "", opts...)
+}
+
 type cloudDevelopmentEnvironmentsArgs struct {
 	// The URL to allow app development from. E.g. `https://*.my-company.my-cde-provider.com`.
 	CloudDevelopmentEnvironments []string `pulumi:"cloudDevelopmentEnvironments"`

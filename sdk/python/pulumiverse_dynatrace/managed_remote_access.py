@@ -347,6 +347,22 @@ class ManagedRemoteAccess(pulumi.CustomResource):
         __props__.__dict__["user_id"] = user_id
         return ManagedRemoteAccess(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            reason: pulumi.Input[Optional[_builtins.str]] = None,
+            requested_days: pulumi.Input[Optional[_builtins.int]] = None,
+            role: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            user_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["reason"] = reason
+        __props__["requestedDays"] = requested_days
+        __props__["role"] = role
+        __props__["state"] = state
+        __props__["userId"] = user_id
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/managedRemoteAccess:ManagedRemoteAccess', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def reason(self) -> pulumi.Output[_builtins.str]:

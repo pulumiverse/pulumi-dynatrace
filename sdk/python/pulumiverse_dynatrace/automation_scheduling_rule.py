@@ -362,6 +362,26 @@ class AutomationSchedulingRule(pulumi.CustomResource):
         __props__.__dict__["title"] = title
         return AutomationSchedulingRule(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            business_calendar: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            fixed_offset: pulumi.Input[Optional[Union['AutomationSchedulingRuleFixedOffsetArgs', 'AutomationSchedulingRuleFixedOffsetArgsDict', 'outputs.AutomationSchedulingRuleFixedOffset']]] = None,
+            grouping: pulumi.Input[Optional[Union['AutomationSchedulingRuleGroupingArgs', 'AutomationSchedulingRuleGroupingArgsDict', 'outputs.AutomationSchedulingRuleGrouping']]] = None,
+            recurrence: pulumi.Input[Optional[Union['AutomationSchedulingRuleRecurrenceArgs', 'AutomationSchedulingRuleRecurrenceArgsDict', 'outputs.AutomationSchedulingRuleRecurrence']]] = None,
+            relative_offset: pulumi.Input[Optional[Union['AutomationSchedulingRuleRelativeOffsetArgs', 'AutomationSchedulingRuleRelativeOffsetArgsDict', 'outputs.AutomationSchedulingRuleRelativeOffset']]] = None,
+            title: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["businessCalendar"] = business_calendar
+        __props__["description"] = description
+        __props__["fixedOffset"] = fixed_offset
+        __props__["grouping"] = grouping
+        __props__["recurrence"] = recurrence
+        __props__["relativeOffset"] = relative_offset
+        __props__["title"] = title
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/automationSchedulingRule:AutomationSchedulingRule', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="businessCalendar")
     def business_calendar(self) -> pulumi.Output[Optional[_builtins.str]]:

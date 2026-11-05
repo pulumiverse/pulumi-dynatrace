@@ -95,6 +95,12 @@ func (HttpMonitorPerformanceState) ElementType() reflect.Type {
 	return reflect.TypeOf((*httpMonitorPerformanceState)(nil)).Elem()
 }
 
+// HttpMonitorPerformanceExists checks whether an existing HttpMonitorPerformance resource with the given ID exists.
+func HttpMonitorPerformanceExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *HttpMonitorPerformanceState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/httpMonitorPerformance:HttpMonitorPerformance", id, state, "", opts...)
+}
+
 type httpMonitorPerformanceArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`

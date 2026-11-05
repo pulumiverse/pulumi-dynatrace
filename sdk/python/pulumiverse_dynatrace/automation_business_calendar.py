@@ -398,6 +398,26 @@ class AutomationBusinessCalendar(pulumi.CustomResource):
         __props__.__dict__["week_start"] = week_start
         return AutomationBusinessCalendar(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            holidays: pulumi.Input[Optional[Union['AutomationBusinessCalendarHolidaysArgs', 'AutomationBusinessCalendarHolidaysArgsDict', 'outputs.AutomationBusinessCalendarHolidays']]] = None,
+            title: pulumi.Input[Optional[_builtins.str]] = None,
+            valid_from: pulumi.Input[Optional[_builtins.str]] = None,
+            valid_to: pulumi.Input[Optional[_builtins.str]] = None,
+            week_days: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+            week_start: pulumi.Input[Optional[_builtins.int]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["description"] = description
+        __props__["holidays"] = holidays
+        __props__["title"] = title
+        __props__["validFrom"] = valid_from
+        __props__["validTo"] = valid_to
+        __props__["weekDays"] = week_days
+        __props__["weekStart"] = week_start
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/automationBusinessCalendar:AutomationBusinessCalendar', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def description(self) -> pulumi.Output[Optional[_builtins.str]]:

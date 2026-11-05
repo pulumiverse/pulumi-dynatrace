@@ -78,6 +78,12 @@ func (SloNormalizationState) ElementType() reflect.Type {
 	return reflect.TypeOf((*sloNormalizationState)(nil)).Elem()
 }
 
+// SloNormalizationExists checks whether an existing SloNormalization resource with the given ID exists.
+func SloNormalizationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SloNormalizationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/sloNormalization:SloNormalization", id, state, "", opts...)
+}
+
 type sloNormalizationArgs struct {
 	// When set to true, the error budget left will be shown in percent of the total error budget. For more details see [SLO normalization help](https://dt-url.net/slo-normalize-error-budget).
 	Normalize bool `pulumi:"normalize"`

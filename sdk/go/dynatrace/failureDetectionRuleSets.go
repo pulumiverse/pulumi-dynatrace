@@ -93,6 +93,12 @@ func (FailureDetectionRuleSetsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*failureDetectionRuleSetsState)(nil)).Elem()
 }
 
+// FailureDetectionRuleSetsExists checks whether an existing FailureDetectionRuleSets resource with the given ID exists.
+func FailureDetectionRuleSetsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *FailureDetectionRuleSetsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/failureDetectionRuleSets:FailureDetectionRuleSets", id, state, "", opts...)
+}
+
 type failureDetectionRuleSetsArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`

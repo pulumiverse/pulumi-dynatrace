@@ -176,6 +176,12 @@ func (DirectSharesState) ElementType() reflect.Type {
 	return reflect.TypeOf((*directSharesState)(nil)).Elem()
 }
 
+// DirectSharesExists checks whether an existing DirectShares resource with the given ID exists.
+func DirectSharesExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DirectSharesState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/directShares:DirectShares", id, state, "", opts...)
+}
+
 type directSharesArgs struct {
 	// Access grants. Possible values are `read` and `read-write`
 	Access *string `pulumi:"access"`

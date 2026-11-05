@@ -130,6 +130,12 @@ func (PagerDutyNotificationState) ElementType() reflect.Type {
 	return reflect.TypeOf((*pagerDutyNotificationState)(nil)).Elem()
 }
 
+// PagerDutyNotificationExists checks whether an existing PagerDutyNotification resource with the given ID exists.
+func PagerDutyNotificationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *PagerDutyNotificationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/pagerDutyNotification:PagerDutyNotification", id, state, "", opts...)
+}
+
 type pagerDutyNotificationArgs struct {
 	// The name of the PagerDuty account.
 	Account string `pulumi:"account"`

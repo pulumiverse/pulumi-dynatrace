@@ -105,6 +105,12 @@ func (HostNamingState) ElementType() reflect.Type {
 	return reflect.TypeOf((*hostNamingState)(nil)).Elem()
 }
 
+// HostNamingExists checks whether an existing HostNaming resource with the given ID exists.
+func HostNamingExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *HostNamingState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/hostNaming:HostNaming", id, state, "", opts...)
+}
+
 type hostNamingArgs struct {
 	// A list of matching conditions of the rule.  The rule applies only if **all** conditions are fulfilled
 	Conditions []HostNamingCondition `pulumi:"conditions"`

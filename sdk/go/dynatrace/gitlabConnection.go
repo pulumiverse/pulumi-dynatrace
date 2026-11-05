@@ -146,6 +146,12 @@ func (GitlabConnectionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*gitlabConnectionState)(nil)).Elem()
 }
 
+// GitlabConnectionExists checks whether an existing GitlabConnection resource with the given ID exists.
+func GitlabConnectionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *GitlabConnectionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/gitlabConnection:GitlabConnection", id, state, "", opts...)
+}
+
 type gitlabConnectionArgs struct {
 	// A unique and clearly identifiable connection name to your GitLab instance.
 	Name *string `pulumi:"name"`

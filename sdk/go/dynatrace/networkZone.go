@@ -118,6 +118,12 @@ func (NetworkZoneState) ElementType() reflect.Type {
 	return reflect.TypeOf((*networkZoneState)(nil)).Elem()
 }
 
+// NetworkZoneExists checks whether an existing NetworkZone resource with the given ID exists.
+func NetworkZoneExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *NetworkZoneState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/networkZone:NetworkZone", id, state, "", opts...)
+}
+
 type networkZoneArgs struct {
 	// A list of alternative network zones.
 	AlternativeZones []string `pulumi:"alternativeZones"`

@@ -156,6 +156,12 @@ func (SyntheticPrimaryGrailTagsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*syntheticPrimaryGrailTagsState)(nil)).Elem()
 }
 
+// SyntheticPrimaryGrailTagsExists checks whether an existing SyntheticPrimaryGrailTags resource with the given ID exists.
+func SyntheticPrimaryGrailTagsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SyntheticPrimaryGrailTagsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/syntheticPrimaryGrailTags:SyntheticPrimaryGrailTags", id, state, "", opts...)
+}
+
 type syntheticPrimaryGrailTagsArgs struct {
 	// The scope of this setting (SYNTHETIC*TEST, HTTP*CHECK, MULTIPROTOCOL_MONITOR)
 	Scope string `pulumi:"scope"`

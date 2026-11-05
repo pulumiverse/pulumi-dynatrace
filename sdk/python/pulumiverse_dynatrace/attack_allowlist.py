@@ -460,6 +460,28 @@ class AttackAllowlist(pulumi.CustomResource):
         __props__.__dict__["rules"] = rules
         return AttackAllowlist(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            attack_handling: pulumi.Input[Optional[Union['AttackAllowlistAttackHandlingArgs', 'AttackAllowlistAttackHandlingArgsDict', 'outputs.AttackAllowlistAttackHandling']]] = None,
+            criteria: pulumi.Input[Optional[Union['AttackAllowlistCriteriaArgs', 'AttackAllowlistCriteriaArgsDict', 'outputs.AttackAllowlistCriteria']]] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+            metadata: pulumi.Input[Optional[Union['AttackAllowlistMetadataArgs', 'AttackAllowlistMetadataArgsDict', 'outputs.AttackAllowlistMetadata']]] = None,
+            resource_attribute_conditions: pulumi.Input[Optional[Union['AttackAllowlistResourceAttributeConditionsArgs', 'AttackAllowlistResourceAttributeConditionsArgsDict', 'outputs.AttackAllowlistResourceAttributeConditions']]] = None,
+            rule_name: pulumi.Input[Optional[_builtins.str]] = None,
+            rules: pulumi.Input[Optional[Union['AttackAllowlistRulesArgs', 'AttackAllowlistRulesArgsDict', 'outputs.AttackAllowlistRules']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["attackHandling"] = attack_handling
+        __props__["criteria"] = criteria
+        __props__["enabled"] = enabled
+        __props__["insertAfter"] = insert_after
+        __props__["metadata"] = metadata
+        __props__["resourceAttributeConditions"] = resource_attribute_conditions
+        __props__["ruleName"] = rule_name
+        __props__["rules"] = rules
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/attackAllowlist:AttackAllowlist', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="attackHandling")
     def attack_handling(self) -> pulumi.Output['outputs.AttackAllowlistAttackHandling']:

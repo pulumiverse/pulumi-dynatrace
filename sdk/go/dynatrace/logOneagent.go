@@ -207,6 +207,12 @@ func (LogOneagentState) ElementType() reflect.Type {
 	return reflect.TypeOf((*logOneagentState)(nil)).Elem()
 }
 
+// LogOneagentExists checks whether an existing LogOneagent resource with the given ID exists.
+func LogOneagentExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *LogOneagentState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/logOneagent:LogOneagent", id, state, "", opts...)
+}
+
 type logOneagentArgs struct {
 	// Specifies the granularity at which binary log files are detected. 'Per log source' applies binary detection at the log source level, 'Per log file' evaluates each log file individually. Possible values: `BinaryPerLogFile`, `BinaryPerLogSource`
 	BinaryDetectionMode *string `pulumi:"binaryDetectionMode"`

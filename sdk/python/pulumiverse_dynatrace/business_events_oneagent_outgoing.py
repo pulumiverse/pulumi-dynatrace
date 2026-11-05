@@ -370,6 +370,24 @@ class BusinessEventsOneagentOutgoing(pulumi.CustomResource):
         __props__.__dict__["triggers"] = triggers
         return BusinessEventsOneagentOutgoing(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            event: pulumi.Input[Optional[Union['BusinessEventsOneagentOutgoingEventArgs', 'BusinessEventsOneagentOutgoingEventArgsDict', 'outputs.BusinessEventsOneagentOutgoingEvent']]] = None,
+            insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+            rule_name: pulumi.Input[Optional[_builtins.str]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None,
+            triggers: pulumi.Input[Optional[Union['BusinessEventsOneagentOutgoingTriggersArgs', 'BusinessEventsOneagentOutgoingTriggersArgsDict', 'outputs.BusinessEventsOneagentOutgoingTriggers']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["enabled"] = enabled
+        __props__["event"] = event
+        __props__["insertAfter"] = insert_after
+        __props__["ruleName"] = rule_name
+        __props__["scope"] = scope
+        __props__["triggers"] = triggers
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/businessEventsOneagentOutgoing:BusinessEventsOneagentOutgoing', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def enabled(self) -> pulumi.Output[_builtins.bool]:

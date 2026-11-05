@@ -251,6 +251,18 @@ class HttpMonitorCookies(pulumi.CustomResource):
         __props__.__dict__["scope"] = scope
         return HttpMonitorCookies(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            cookies: pulumi.Input[Optional[Union['HttpMonitorCookiesCookiesArgs', 'HttpMonitorCookiesCookiesArgsDict', 'outputs.HttpMonitorCookiesCookies']]] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["cookies"] = cookies
+        __props__["enabled"] = enabled
+        __props__["scope"] = scope
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/httpMonitorCookies:HttpMonitorCookies', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def cookies(self) -> pulumi.Output[Optional['outputs.HttpMonitorCookiesCookies']]:

@@ -294,6 +294,20 @@ class WebAppEnablement(pulumi.CustomResource):
         __props__.__dict__["session_replay"] = session_replay
         return WebAppEnablement(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            application_id: pulumi.Input[Optional[_builtins.str]] = None,
+            experience_analytics: pulumi.Input[Optional[Union['WebAppEnablementExperienceAnalyticsArgs', 'WebAppEnablementExperienceAnalyticsArgsDict', 'outputs.WebAppEnablementExperienceAnalytics']]] = None,
+            rum: pulumi.Input[Optional[Union['WebAppEnablementRumArgs', 'WebAppEnablementRumArgsDict', 'outputs.WebAppEnablementRum']]] = None,
+            session_replay: pulumi.Input[Optional[Union['WebAppEnablementSessionReplayArgs', 'WebAppEnablementSessionReplayArgsDict', 'outputs.WebAppEnablementSessionReplay']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["applicationId"] = application_id
+        __props__["experienceAnalytics"] = experience_analytics
+        __props__["rum"] = rum
+        __props__["sessionReplay"] = session_replay
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/webAppEnablement:WebAppEnablement', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="applicationId")
     def application_id(self) -> pulumi.Output[Optional[_builtins.str]]:

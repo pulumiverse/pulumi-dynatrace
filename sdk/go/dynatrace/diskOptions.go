@@ -98,6 +98,12 @@ func (DiskOptionsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*diskOptionsState)(nil)).Elem()
 }
 
+// DiskOptionsExists checks whether an existing DiskOptions resource with the given ID exists.
+func DiskOptionsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DiskOptionsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/diskOptions:DiskOptions", id, state, "", opts...)
+}
+
 type diskOptionsArgs struct {
 	// Deactivate NFS monitoring on all supported systems
 	DisableNfsDiskMonitoring *bool `pulumi:"disableNfsDiskMonitoring"`

@@ -258,6 +258,12 @@ func (NetworkMonitorState) ElementType() reflect.Type {
 	return reflect.TypeOf((*networkMonitorState)(nil)).Elem()
 }
 
+// NetworkMonitorExists checks whether an existing NetworkMonitor resource with the given ID exists.
+func NetworkMonitorExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *NetworkMonitorState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/networkMonitor:NetworkMonitor", id, state, "", opts...)
+}
+
 type networkMonitorArgs struct {
 	// Description of the monitor
 	Description *string `pulumi:"description"`

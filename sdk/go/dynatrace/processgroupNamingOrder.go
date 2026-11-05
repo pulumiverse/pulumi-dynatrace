@@ -74,6 +74,12 @@ func (ProcessgroupNamingOrderState) ElementType() reflect.Type {
 	return reflect.TypeOf((*processgroupNamingOrderState)(nil)).Elem()
 }
 
+// ProcessgroupNamingOrderExists checks whether an existing ProcessgroupNamingOrder resource with the given ID exists.
+func ProcessgroupNamingOrderExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ProcessgroupNamingOrderState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/processgroupNamingOrder:ProcessgroupNamingOrder", id, state, "", opts...)
+}
+
 type processgroupNamingOrderArgs struct {
 	// The IDs of the naming rules to define the order for
 	NamingRuleIds []string `pulumi:"namingRuleIds"`

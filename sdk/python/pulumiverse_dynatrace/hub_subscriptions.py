@@ -171,6 +171,14 @@ class HubSubscriptions(pulumi.CustomResource):
         __props__.__dict__["token_subscriptions"] = token_subscriptions
         return HubSubscriptions(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            token_subscriptions: pulumi.Input[Optional[Union['HubSubscriptionsTokenSubscriptionsArgs', 'HubSubscriptionsTokenSubscriptionsArgsDict', 'outputs.HubSubscriptionsTokenSubscriptions']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["tokenSubscriptions"] = token_subscriptions
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/hubSubscriptions:HubSubscriptions', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="tokenSubscriptions")
     def token_subscriptions(self) -> pulumi.Output[Optional['outputs.HubSubscriptionsTokenSubscriptions']]:

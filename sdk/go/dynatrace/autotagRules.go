@@ -45,9 +45,9 @@ import (
 //			if err != nil {
 //				return err
 //			}
-//			// Be careful when maintaining `dynatrace_autotag_rules` in separate modules.
-//			// Do not execute `pulumi up` in parallel when several modules contain
-//			// `dynatrace_autotag_rules` referring to the same `dynatrace_autotag_v2`.
+//			//Be careful when maintaining `dynatrace_autotag_rules` in separate modules.
+//			//Do not execute `pulumi up` in parallel when several modules contain
+//			//`dynatrace_autotag_rules` referring to the same `dynatrace_autotag_v2`.
 //			_, err = dynatrace.NewAutotagRules(ctx, "sample", &dynatrace.AutotagRulesArgs{
 //				AutoTagId: sample.ID().ToIDOutput().ToStringOutput(),
 //				Rules: &dynatrace.AutotagRulesRulesArgs{
@@ -133,6 +133,12 @@ type AutotagRulesState struct {
 
 func (AutotagRulesState) ElementType() reflect.Type {
 	return reflect.TypeOf((*autotagRulesState)(nil)).Elem()
+}
+
+// AutotagRulesExists checks whether an existing AutotagRules resource with the given ID exists.
+func AutotagRulesExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AutotagRulesState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/autotagRules:AutotagRules", id, state, "", opts...)
 }
 
 type autotagRulesArgs struct {

@@ -372,6 +372,24 @@ class DatabaseAnomaliesV2(pulumi.CustomResource):
         __props__.__dict__["scope"] = scope
         return DatabaseAnomaliesV2(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            database_connections: pulumi.Input[Optional[Union['DatabaseAnomaliesV2DatabaseConnectionsArgs', 'DatabaseAnomaliesV2DatabaseConnectionsArgsDict', 'outputs.DatabaseAnomaliesV2DatabaseConnections']]] = None,
+            failure_rate: pulumi.Input[Optional[Union['DatabaseAnomaliesV2FailureRateArgs', 'DatabaseAnomaliesV2FailureRateArgsDict', 'outputs.DatabaseAnomaliesV2FailureRate']]] = None,
+            load_drops: pulumi.Input[Optional[Union['DatabaseAnomaliesV2LoadDropsArgs', 'DatabaseAnomaliesV2LoadDropsArgsDict', 'outputs.DatabaseAnomaliesV2LoadDrops']]] = None,
+            load_spikes: pulumi.Input[Optional[Union['DatabaseAnomaliesV2LoadSpikesArgs', 'DatabaseAnomaliesV2LoadSpikesArgsDict', 'outputs.DatabaseAnomaliesV2LoadSpikes']]] = None,
+            response_time: pulumi.Input[Optional[Union['DatabaseAnomaliesV2ResponseTimeArgs', 'DatabaseAnomaliesV2ResponseTimeArgsDict', 'outputs.DatabaseAnomaliesV2ResponseTime']]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["databaseConnections"] = database_connections
+        __props__["failureRate"] = failure_rate
+        __props__["loadDrops"] = load_drops
+        __props__["loadSpikes"] = load_spikes
+        __props__["responseTime"] = response_time
+        __props__["scope"] = scope
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/databaseAnomaliesV2:DatabaseAnomaliesV2', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="databaseConnections")
     def database_connections(self) -> pulumi.Output['outputs.DatabaseAnomaliesV2DatabaseConnections']:

@@ -99,6 +99,12 @@ func (SessionReplayWebPrivacyState) ElementType() reflect.Type {
 	return reflect.TypeOf((*sessionReplayWebPrivacyState)(nil)).Elem()
 }
 
+// SessionReplayWebPrivacyExists checks whether an existing SessionReplayWebPrivacy resource with the given ID exists.
+func SessionReplayWebPrivacyExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SessionReplayWebPrivacyState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/sessionReplayWebPrivacy:SessionReplayWebPrivacy", id, state, "", opts...)
+}
+
 type sessionReplayWebPrivacyArgs struct {
 	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
 	ApplicationId *string `pulumi:"applicationId"`

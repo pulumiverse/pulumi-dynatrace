@@ -409,6 +409,26 @@ class DiskSpecificAnomaliesV2(pulumi.CustomResource):
         __props__.__dict__["override_slow_writes_and_reads_detection"] = override_slow_writes_and_reads_detection
         return DiskSpecificAnomaliesV2(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            disk_id: pulumi.Input[Optional[_builtins.str]] = None,
+            disk_low_inodes_detection: pulumi.Input[Optional[Union['DiskSpecificAnomaliesV2DiskLowInodesDetectionArgs', 'DiskSpecificAnomaliesV2DiskLowInodesDetectionArgsDict', 'outputs.DiskSpecificAnomaliesV2DiskLowInodesDetection']]] = None,
+            disk_low_space_detection: pulumi.Input[Optional[Union['DiskSpecificAnomaliesV2DiskLowSpaceDetectionArgs', 'DiskSpecificAnomaliesV2DiskLowSpaceDetectionArgsDict', 'outputs.DiskSpecificAnomaliesV2DiskLowSpaceDetection']]] = None,
+            disk_slow_writes_and_reads_detection: pulumi.Input[Optional[Union['DiskSpecificAnomaliesV2DiskSlowWritesAndReadsDetectionArgs', 'DiskSpecificAnomaliesV2DiskSlowWritesAndReadsDetectionArgsDict', 'outputs.DiskSpecificAnomaliesV2DiskSlowWritesAndReadsDetection']]] = None,
+            override_disk_low_space_detection: pulumi.Input[Optional[_builtins.bool]] = None,
+            override_low_inodes_detection: pulumi.Input[Optional[_builtins.bool]] = None,
+            override_slow_writes_and_reads_detection: pulumi.Input[Optional[_builtins.bool]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["diskId"] = disk_id
+        __props__["diskLowInodesDetection"] = disk_low_inodes_detection
+        __props__["diskLowSpaceDetection"] = disk_low_space_detection
+        __props__["diskSlowWritesAndReadsDetection"] = disk_slow_writes_and_reads_detection
+        __props__["overrideDiskLowSpaceDetection"] = override_disk_low_space_detection
+        __props__["overrideLowInodesDetection"] = override_low_inodes_detection
+        __props__["overrideSlowWritesAndReadsDetection"] = override_slow_writes_and_reads_detection
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/diskSpecificAnomaliesV2:DiskSpecificAnomaliesV2', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="diskId")
     def disk_id(self) -> pulumi.Output[_builtins.str]:

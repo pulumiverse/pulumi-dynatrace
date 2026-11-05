@@ -296,6 +296,12 @@ func (OpenpipelineV2SystemEventsPipelinegroupsState) ElementType() reflect.Type 
 	return reflect.TypeOf((*openpipelineV2SystemEventsPipelinegroupsState)(nil)).Elem()
 }
 
+// OpenpipelineV2SystemEventsPipelinegroupsExists checks whether an existing OpenpipelineV2SystemEventsPipelinegroups resource with the given ID exists.
+func OpenpipelineV2SystemEventsPipelinegroupsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *OpenpipelineV2SystemEventsPipelinegroupsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/openpipelineV2SystemEventsPipelinegroups:OpenpipelineV2SystemEventsPipelinegroups", id, state, "", opts...)
+}
+
 type openpipelineV2SystemEventsPipelinegroupsArgs struct {
 	// Composition
 	Composition *OpenpipelineV2SystemEventsPipelinegroupsComposition `pulumi:"composition"`

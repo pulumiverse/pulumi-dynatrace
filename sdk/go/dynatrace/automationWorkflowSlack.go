@@ -163,6 +163,12 @@ func (AutomationWorkflowSlackState) ElementType() reflect.Type {
 	return reflect.TypeOf((*automationWorkflowSlackState)(nil)).Elem()
 }
 
+// AutomationWorkflowSlackExists checks whether an existing AutomationWorkflowSlack resource with the given ID exists.
+func AutomationWorkflowSlackExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AutomationWorkflowSlackState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/automationWorkflowSlack:AutomationWorkflowSlack", id, state, "", opts...)
+}
+
 type automationWorkflowSlackArgs struct {
 	// Accept external approvals can enable Slack users to directly respond to approval request.
 	ExternalApproval *bool `pulumi:"externalApproval"`

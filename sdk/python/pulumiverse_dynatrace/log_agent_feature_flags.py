@@ -408,6 +408,22 @@ class LogAgentFeatureFlags(pulumi.CustomResource):
         __props__.__dict__["user_and_event_data"] = user_and_event_data
         return LogAgentFeatureFlags(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            journald_log_detector: pulumi.Input[Optional[_builtins.bool]] = None,
+            new_container_log_detector: pulumi.Input[Optional[_builtins.bool]] = None,
+            plain_iisconfiguration_detector: pulumi.Input[Optional[_builtins.bool]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None,
+            user_and_event_data: pulumi.Input[Optional[_builtins.bool]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["journaldLogDetector"] = journald_log_detector
+        __props__["newContainerLogDetector"] = new_container_log_detector
+        __props__["plainIisconfigurationDetector"] = plain_iisconfiguration_detector
+        __props__["scope"] = scope
+        __props__["userAndEventData"] = user_and_event_data
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/logAgentFeatureFlags:LogAgentFeatureFlags', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="journaldLogDetector")
     def journald_log_detector(self) -> pulumi.Output[Optional[_builtins.bool]]:

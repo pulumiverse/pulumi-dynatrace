@@ -170,6 +170,12 @@ func (MsentraidConnectionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*msentraidConnectionState)(nil)).Elem()
 }
 
+// MsentraidConnectionExists checks whether an existing MsentraidConnection resource with the given ID exists.
+func MsentraidConnectionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *MsentraidConnectionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/msentraidConnection:MsentraidConnection", id, state, "", opts...)
+}
+
 type msentraidConnectionArgs struct {
 	// Application (client) ID of your app registered in Microsoft Azure App registrations
 	ApplicationId string `pulumi:"applicationId"`

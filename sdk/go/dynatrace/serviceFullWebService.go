@@ -117,6 +117,12 @@ func (ServiceFullWebServiceState) ElementType() reflect.Type {
 	return reflect.TypeOf((*serviceFullWebServiceState)(nil)).Elem()
 }
 
+// ServiceFullWebServiceExists checks whether an existing ServiceFullWebService resource with the given ID exists.
+func ServiceFullWebServiceExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ServiceFullWebServiceState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/serviceFullWebService:ServiceFullWebService", id, state, "", opts...)
+}
+
 type serviceFullWebServiceArgs struct {
 	// A list of conditions necessary for the rule to take effect. If multiple conditions are specified, they must **all** match a Request for the rule to apply. If there is no condition at all, the rule is always applied. Conditions are evaluated against attributes, but do not modify them.
 	Conditions *ServiceFullWebServiceConditions `pulumi:"conditions"`

@@ -301,6 +301,12 @@ func (TrelloNotificationState) ElementType() reflect.Type {
 	return reflect.TypeOf((*trelloNotificationState)(nil)).Elem()
 }
 
+// TrelloNotificationExists checks whether an existing TrelloNotification resource with the given ID exists.
+func TrelloNotificationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *TrelloNotificationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/trelloNotification:TrelloNotification", id, state, "", opts...)
+}
+
 type trelloNotificationArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Active bool `pulumi:"active"`

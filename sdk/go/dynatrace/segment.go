@@ -104,6 +104,12 @@ func (SegmentState) ElementType() reflect.Type {
 	return reflect.TypeOf((*segmentState)(nil)).Elem()
 }
 
+// SegmentExists checks whether an existing Segment resource with the given ID exists.
+func SegmentExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SegmentState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/segment:Segment", id, state, "", opts...)
+}
+
 type segmentArgs struct {
 	// Description of the filter-segment
 	Description *string `pulumi:"description"`

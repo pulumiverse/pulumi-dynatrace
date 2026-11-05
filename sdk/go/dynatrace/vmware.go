@@ -139,6 +139,12 @@ func (VmwareState) ElementType() reflect.Type {
 	return reflect.TypeOf((*vmwareState)(nil)).Elem()
 }
 
+// VmwareExists checks whether an existing Vmware resource with the given ID exists.
+func VmwareExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *VmwareState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/vmware:Vmware", id, state, "", opts...)
+}
+
 type vmwareArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`

@@ -111,6 +111,12 @@ func (AutomationWorkflowAwsConnectionsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*automationWorkflowAwsConnectionsState)(nil)).Elem()
 }
 
+// AutomationWorkflowAwsConnectionsExists checks whether an existing AutomationWorkflowAwsConnections resource with the given ID exists.
+func AutomationWorkflowAwsConnectionsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AutomationWorkflowAwsConnectionsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/automationWorkflowAwsConnections:AutomationWorkflowAwsConnections", id, state, "", opts...)
+}
+
 type automationWorkflowAwsConnectionsArgs struct {
 	// Name
 	Name *string `pulumi:"name"`

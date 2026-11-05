@@ -74,6 +74,12 @@ func (HostNamingOrderState) ElementType() reflect.Type {
 	return reflect.TypeOf((*hostNamingOrderState)(nil)).Elem()
 }
 
+// HostNamingOrderExists checks whether an existing HostNamingOrder resource with the given ID exists.
+func HostNamingOrderExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *HostNamingOrderState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/hostNamingOrder:HostNamingOrder", id, state, "", opts...)
+}
+
 type hostNamingOrderArgs struct {
 	// The IDs of the naming rules to define the order for
 	NamingRuleIds []string `pulumi:"namingRuleIds"`

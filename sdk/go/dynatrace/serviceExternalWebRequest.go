@@ -117,6 +117,12 @@ func (ServiceExternalWebRequestState) ElementType() reflect.Type {
 	return reflect.TypeOf((*serviceExternalWebRequestState)(nil)).Elem()
 }
 
+// ServiceExternalWebRequestExists checks whether an existing ServiceExternalWebRequest resource with the given ID exists.
+func ServiceExternalWebRequestExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ServiceExternalWebRequestState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/serviceExternalWebRequest:ServiceExternalWebRequest", id, state, "", opts...)
+}
+
 type serviceExternalWebRequestArgs struct {
 	// A list of conditions necessary for the rule to take effect. If multiple conditions are specified, they must **all** match a Request for the rule to apply. If there is no condition at all, the rule is always applied. Conditions are evaluated against attributes, but do not modify them.
 	Conditions *ServiceExternalWebRequestConditions `pulumi:"conditions"`

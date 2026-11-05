@@ -93,6 +93,12 @@ func (AppMonitoringState) ElementType() reflect.Type {
 	return reflect.TypeOf((*appMonitoringState)(nil)).Elem()
 }
 
+// AppMonitoringExists checks whether an existing AppMonitoring resource with the given ID exists.
+func AppMonitoringExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AppMonitoringState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/appMonitoring:AppMonitoring", id, state, "", opts...)
+}
+
 type appMonitoringArgs struct {
 	// You can override the default monitoring setting for each app separately
 	AppMonitoring *AppMonitoringAppMonitoring `pulumi:"appMonitoring"`

@@ -330,6 +330,22 @@ class DbAppFeatureFlags(pulumi.CustomResource):
         __props__.__dict__["type"] = type
         return DbAppFeatureFlags(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            boolean_value: pulumi.Input[Optional[_builtins.bool]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            number_value: pulumi.Input[Optional[_builtins.int]] = None,
+            string_value: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["booleanValue"] = boolean_value
+        __props__["name"] = name
+        __props__["numberValue"] = number_value
+        __props__["stringValue"] = string_value
+        __props__["type"] = type
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/dbAppFeatureFlags:DbAppFeatureFlags', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="booleanValue")
     def boolean_value(self) -> pulumi.Output[Optional[_builtins.bool]]:

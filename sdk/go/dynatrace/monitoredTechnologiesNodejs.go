@@ -84,6 +84,12 @@ func (MonitoredTechnologiesNodejsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*monitoredTechnologiesNodejsState)(nil)).Elem()
 }
 
+// MonitoredTechnologiesNodejsExists checks whether an existing MonitoredTechnologiesNodejs resource with the given ID exists.
+func MonitoredTechnologiesNodejsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *MonitoredTechnologiesNodejsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/monitoredTechnologiesNodejs:MonitoredTechnologiesNodejs", id, state, "", opts...)
+}
+
 type monitoredTechnologiesNodejsArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`

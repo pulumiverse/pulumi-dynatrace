@@ -165,6 +165,12 @@ func (MainframeTransactionMonitoringState) ElementType() reflect.Type {
 	return reflect.TypeOf((*mainframeTransactionMonitoringState)(nil)).Elem()
 }
 
+// MainframeTransactionMonitoringExists checks whether an existing MainframeTransactionMonitoring resource with the given ID exists.
+func MainframeTransactionMonitoringExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *MainframeTransactionMonitoringState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/mainframeTransactionMonitoring:MainframeTransactionMonitoring", id, state, "", opts...)
+}
+
 type mainframeTransactionMonitoringArgs struct {
 	// If enabled, CICS regions belonging to the same CICSPlex will be grouped into a single process group. If disabled, a process group will be created for each CICS region.
 	GroupCicsRegions bool `pulumi:"groupCicsRegions"`

@@ -118,6 +118,12 @@ func (CustomAppCrashRateState) ElementType() reflect.Type {
 	return reflect.TypeOf((*customAppCrashRateState)(nil)).Elem()
 }
 
+// CustomAppCrashRateExists checks whether an existing CustomAppCrashRate resource with the given ID exists.
+func CustomAppCrashRateExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *CustomAppCrashRateState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/customAppCrashRate:CustomAppCrashRate", id, state, "", opts...)
+}
+
 type customAppCrashRateArgs struct {
 	// Crash rate increase
 	CrashRateIncrease CustomAppCrashRateCrashRateIncrease `pulumi:"crashRateIncrease"`

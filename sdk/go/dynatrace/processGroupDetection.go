@@ -155,6 +155,12 @@ func (ProcessGroupDetectionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*processGroupDetectionState)(nil)).Elem()
 }
 
+// ProcessGroupDetectionExists checks whether an existing ProcessGroupDetection resource with the given ID exists.
+func ProcessGroupDetectionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ProcessGroupDetectionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/processGroupDetection:ProcessGroupDetection", id, state, "", opts...)
+}
+
 type processGroupDetectionArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`

@@ -84,6 +84,12 @@ func (RumHostHeadersState) ElementType() reflect.Type {
 	return reflect.TypeOf((*rumHostHeadersState)(nil)).Elem()
 }
 
+// RumHostHeadersExists checks whether an existing RumHostHeaders resource with the given ID exists.
+func RumHostHeadersExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *RumHostHeadersState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/rumHostHeaders:RumHostHeaders", id, state, "", opts...)
+}
+
 type rumHostHeadersArgs struct {
 	// HTTP header format
 	HeaderName string `pulumi:"headerName"`

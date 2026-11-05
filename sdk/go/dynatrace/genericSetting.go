@@ -157,6 +157,12 @@ func (GenericSettingState) ElementType() reflect.Type {
 	return reflect.TypeOf((*genericSettingState)(nil)).Elem()
 }
 
+// GenericSettingExists checks whether an existing GenericSetting resource with the given ID exists.
+func GenericSettingExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *GenericSettingState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/genericSetting:GenericSetting", id, state, "", opts...)
+}
+
 type genericSettingArgs struct {
 	Schema string  `pulumi:"schema"`
 	Scope  *string `pulumi:"scope"`

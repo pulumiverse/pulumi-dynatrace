@@ -238,6 +238,12 @@ func (AppsecNotificationState) ElementType() reflect.Type {
 	return reflect.TypeOf((*appsecNotificationState)(nil)).Elem()
 }
 
+// AppsecNotificationExists checks whether an existing AppsecNotification resource with the given ID exists.
+func AppsecNotificationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AppsecNotificationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/appsecNotification:AppsecNotification", id, state, "", opts...)
+}
+
 type appsecNotificationArgs struct {
 	// For attack candidate alerts, select an [alerting profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-attack-alerting-profile) to control the delivery of security notifications related to this integration.
 	AttackCandidateBasedAlertingProfile *string `pulumi:"attackCandidateBasedAlertingProfile"`

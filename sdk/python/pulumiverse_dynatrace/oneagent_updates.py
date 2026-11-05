@@ -328,6 +328,22 @@ class OneagentUpdates(pulumi.CustomResource):
         __props__.__dict__["update_mode"] = update_mode
         return OneagentUpdates(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            maintenance_windows: pulumi.Input[Optional[Union['OneagentUpdatesMaintenanceWindowsArgs', 'OneagentUpdatesMaintenanceWindowsArgsDict', 'outputs.OneagentUpdatesMaintenanceWindows']]] = None,
+            revision: pulumi.Input[Optional[_builtins.str]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None,
+            target_version: pulumi.Input[Optional[_builtins.str]] = None,
+            update_mode: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["maintenanceWindows"] = maintenance_windows
+        __props__["revision"] = revision
+        __props__["scope"] = scope
+        __props__["targetVersion"] = target_version
+        __props__["updateMode"] = update_mode
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/oneagentUpdates:OneagentUpdates', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="maintenanceWindows")
     def maintenance_windows(self) -> pulumi.Output[Optional['outputs.OneagentUpdatesMaintenanceWindows']]:

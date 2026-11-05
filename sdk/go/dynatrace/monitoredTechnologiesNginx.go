@@ -84,6 +84,12 @@ func (MonitoredTechnologiesNginxState) ElementType() reflect.Type {
 	return reflect.TypeOf((*monitoredTechnologiesNginxState)(nil)).Elem()
 }
 
+// MonitoredTechnologiesNginxExists checks whether an existing MonitoredTechnologiesNginx resource with the given ID exists.
+func MonitoredTechnologiesNginxExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *MonitoredTechnologiesNginxState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/monitoredTechnologiesNginx:MonitoredTechnologiesNginx", id, state, "", opts...)
+}
+
 type monitoredTechnologiesNginxArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`

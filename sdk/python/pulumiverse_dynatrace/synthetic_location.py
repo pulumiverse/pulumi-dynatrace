@@ -939,6 +939,50 @@ class SyntheticLocation(pulumi.CustomResource):
         __props__.__dict__["use_new_kubernetes_version"] = use_new_kubernetes_version
         return SyntheticLocation(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            auto_update_chromium: pulumi.Input[Optional[_builtins.bool]] = None,
+            availability_location_outage: pulumi.Input[Optional[_builtins.bool]] = None,
+            availability_node_outage: pulumi.Input[Optional[_builtins.bool]] = None,
+            availability_notifications_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            city: pulumi.Input[Optional[_builtins.str]] = None,
+            country_code: pulumi.Input[Optional[_builtins.str]] = None,
+            deployment_type: pulumi.Input[Optional[_builtins.str]] = None,
+            fips_mode: pulumi.Input[Optional[_builtins.str]] = None,
+            latitude: pulumi.Input[Optional[_builtins.float]] = None,
+            location_node_outage_delay_in_minutes: pulumi.Input[Optional[_builtins.int]] = None,
+            longitude: pulumi.Input[Optional[_builtins.float]] = None,
+            max_active_gate_count: pulumi.Input[Optional[_builtins.int]] = None,
+            min_active_gate_count: pulumi.Input[Optional[_builtins.int]] = None,
+            nam_execution_supported: pulumi.Input[Optional[_builtins.bool]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            node_size: pulumi.Input[Optional[_builtins.str]] = None,
+            nodes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            region_code: pulumi.Input[Optional[_builtins.str]] = None,
+            use_new_kubernetes_version: pulumi.Input[Optional[_builtins.bool]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["autoUpdateChromium"] = auto_update_chromium
+        __props__["availabilityLocationOutage"] = availability_location_outage
+        __props__["availabilityNodeOutage"] = availability_node_outage
+        __props__["availabilityNotificationsEnabled"] = availability_notifications_enabled
+        __props__["city"] = city
+        __props__["countryCode"] = country_code
+        __props__["deploymentType"] = deployment_type
+        __props__["fipsMode"] = fips_mode
+        __props__["latitude"] = latitude
+        __props__["locationNodeOutageDelayInMinutes"] = location_node_outage_delay_in_minutes
+        __props__["longitude"] = longitude
+        __props__["maxActiveGateCount"] = max_active_gate_count
+        __props__["minActiveGateCount"] = min_active_gate_count
+        __props__["namExecutionSupported"] = nam_execution_supported
+        __props__["name"] = name
+        __props__["nodeSize"] = node_size
+        __props__["nodes"] = nodes
+        __props__["regionCode"] = region_code
+        __props__["useNewKubernetesVersion"] = use_new_kubernetes_version
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/syntheticLocation:SyntheticLocation', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="autoUpdateChromium")
     def auto_update_chromium(self) -> pulumi.Output[Optional[_builtins.bool]]:

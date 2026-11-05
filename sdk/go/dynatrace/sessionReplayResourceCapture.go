@@ -92,6 +92,12 @@ func (SessionReplayResourceCaptureState) ElementType() reflect.Type {
 	return reflect.TypeOf((*sessionReplayResourceCaptureState)(nil)).Elem()
 }
 
+// SessionReplayResourceCaptureExists checks whether an existing SessionReplayResourceCapture resource with the given ID exists.
+func SessionReplayResourceCaptureExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SessionReplayResourceCaptureState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/sessionReplayResourceCapture:SessionReplayResourceCapture", id, state, "", opts...)
+}
+
 type sessionReplayResourceCaptureArgs struct {
 	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
 	ApplicationId *string `pulumi:"applicationId"`

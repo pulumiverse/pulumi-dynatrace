@@ -515,6 +515,30 @@ class ManagedSmtp(pulumi.CustomResource):
         __props__.__dict__["user_name"] = user_name
         return ManagedSmtp(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            allow_fallback_via_mission_control: pulumi.Input[Optional[_builtins.bool]] = None,
+            connection_security: pulumi.Input[Optional[_builtins.str]] = None,
+            host_name: pulumi.Input[Optional[_builtins.str]] = None,
+            is_password_configured: pulumi.Input[Optional[_builtins.bool]] = None,
+            password: pulumi.Input[Optional[_builtins.str]] = None,
+            port: pulumi.Input[Optional[_builtins.int]] = None,
+            sender_email_address: pulumi.Input[Optional[_builtins.str]] = None,
+            use_smtp_server: pulumi.Input[Optional[_builtins.bool]] = None,
+            user_name: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["allowFallbackViaMissionControl"] = allow_fallback_via_mission_control
+        __props__["connectionSecurity"] = connection_security
+        __props__["hostName"] = host_name
+        __props__["isPasswordConfigured"] = is_password_configured
+        __props__["password"] = password
+        __props__["port"] = port
+        __props__["senderEmailAddress"] = sender_email_address
+        __props__["useSmtpServer"] = use_smtp_server
+        __props__["userName"] = user_name
+        return pulumi.runtime.exists_resource(None, 'dynatrace:index/managedSmtp:ManagedSmtp', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="allowFallbackViaMissionControl")
     def allow_fallback_via_mission_control(self) -> pulumi.Output[Optional[_builtins.bool]]:

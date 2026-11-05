@@ -105,6 +105,12 @@ func (AutomationApprovalState) ElementType() reflect.Type {
 	return reflect.TypeOf((*automationApprovalState)(nil)).Elem()
 }
 
+// AutomationApprovalExists checks whether an existing AutomationApproval resource with the given ID exists.
+func AutomationApprovalExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AutomationApprovalState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/automationApproval:AutomationApproval", id, state, "", opts...)
+}
+
 type automationApprovalArgs struct {
 	// Allow external systems to trigger approval responses via webhook handlers.
 	ExternalApprovalsEnabled *bool `pulumi:"externalApprovalsEnabled"`

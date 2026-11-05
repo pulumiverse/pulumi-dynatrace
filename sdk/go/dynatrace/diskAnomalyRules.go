@@ -135,6 +135,12 @@ func (DiskAnomalyRulesState) ElementType() reflect.Type {
 	return reflect.TypeOf((*diskAnomalyRulesState)(nil)).Elem()
 }
 
+// DiskAnomalyRulesExists checks whether an existing DiskAnomalyRules resource with the given ID exists.
+func DiskAnomalyRulesExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DiskAnomalyRulesState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/diskAnomalyRules:DiskAnomalyRules", id, state, "", opts...)
+}
+
 type diskAnomalyRulesArgs struct {
 	// Only apply to disks whose name matches
 	DiskNameFilter DiskAnomalyRulesDiskNameFilter `pulumi:"diskNameFilter"`

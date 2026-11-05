@@ -105,6 +105,12 @@ func (ServiceNamingState) ElementType() reflect.Type {
 	return reflect.TypeOf((*serviceNamingState)(nil)).Elem()
 }
 
+// ServiceNamingExists checks whether an existing ServiceNaming resource with the given ID exists.
+func ServiceNamingExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ServiceNamingState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("dynatrace:index/serviceNaming:ServiceNaming", id, state, "", opts...)
+}
+
 type serviceNamingArgs struct {
 	// A list of matching conditions of the rule.  The rule applies only if **all** conditions are fulfilled
 	Conditions []ServiceNamingCondition `pulumi:"conditions"`
