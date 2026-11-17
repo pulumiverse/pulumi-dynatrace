@@ -21,6 +21,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// <summary>
         /// Process group
         /// </summary>
+        [Obsolete(@"This field has been deprecated")]
         public readonly string? ProcessGroup;
 
         [OutputConstructor]
@@ -30,7 +31,9 @@ namespace Pulumiverse.Dynatrace.Outputs
             string? processGroup)
         {
             AttackType = attackType;
+#pragma warning disable CS0618
             ProcessGroup = processGroup;
+#pragma warning restore CS0618
         }
     }
 }

@@ -53,12 +53,14 @@ namespace Pulumiverse.Dynatrace.Inputs
         /// the dashboard is shared (`True`) or private (`False`)
         /// </summary>
         [Input("shared")]
+        [Obsolete(@"Please use the resource `dynatrace.DashboardSharing` to configure share settings")]
         public Input<bool>? Shared { get; set; }
 
         /// <summary>
         /// represents sharing configuration of a dashboard
         /// </summary>
         [Input("sharingDetails")]
+        [Obsolete(@"Please use the resource `dynatrace.DashboardSharing` to configure share settings")]
         public Input<Inputs.DashboardDashboardMetadataSharingDetailsArgs>? SharingDetails { get; set; }
 
         [Input("tags")]

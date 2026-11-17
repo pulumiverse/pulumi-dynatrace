@@ -40,6 +40,7 @@ namespace Pulumiverse.Dynatrace
         /// Step 1: Define criteria. Please specify at least one of source IP or attack pattern.
         /// </summary>
         [Output("criteria")]
+        [Obsolete(@"The `Criteria` attribute has been deprecated, please use the `Rules` and `ResourceAttributeConditions` attributes instead.")]
         public Output<Outputs.AttackAllowlistCriteria?> Criteria { get; private set; } = null!;
 
         /// <summary>
@@ -135,6 +136,7 @@ namespace Pulumiverse.Dynatrace
         /// Step 1: Define criteria. Please specify at least one of source IP or attack pattern.
         /// </summary>
         [Input("criteria")]
+        [Obsolete(@"The `Criteria` attribute has been deprecated, please use the `Rules` and `ResourceAttributeConditions` attributes instead.")]
         public Input<Inputs.AttackAllowlistCriteriaArgs>? Criteria { get; set; }
 
         /// <summary>
@@ -191,6 +193,7 @@ namespace Pulumiverse.Dynatrace
         /// Step 1: Define criteria. Please specify at least one of source IP or attack pattern.
         /// </summary>
         [Input("criteria")]
+        [Obsolete(@"The `Criteria` attribute has been deprecated, please use the `Rules` and `ResourceAttributeConditions` attributes instead.")]
         public Input<Inputs.AttackAllowlistCriteriaGetArgs>? Criteria { get; set; }
 
         /// <summary>

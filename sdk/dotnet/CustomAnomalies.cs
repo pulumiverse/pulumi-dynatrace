@@ -52,6 +52,7 @@ namespace Pulumiverse.Dynatrace
         /// The reason of automatic disabling.  The `NONE` means config was not disabled automatically. Possible values are `METRIC_DEFINITION_INCONSISTENCY`, `NONE`, `TOO_MANY_DIMS` and `TOPX_FORCIBLY_DEACTIVATED`
         /// </summary>
         [Output("disabledReason")]
+        [Obsolete(@"This property is not meant to be configured from the outside. It will get removed completely in future versions")]
         public Output<string?> DisabledReason { get; private set; } = null!;
 
         /// <summary>
@@ -112,6 +113,7 @@ namespace Pulumiverse.Dynatrace
         /// The reason of a warning set on the config. The `NONE` means config has no warnings. The other supported value is `TOO_MANY_DIMS`
         /// </summary>
         [Output("warningReason")]
+        [Obsolete(@"This property is not meant to be configured from the outside. It will get removed completely in future versions")]
         public Output<string?> WarningReason { get; private set; } = null!;
 
 
@@ -189,6 +191,7 @@ namespace Pulumiverse.Dynatrace
         /// The reason of automatic disabling.  The `NONE` means config was not disabled automatically. Possible values are `METRIC_DEFINITION_INCONSISTENCY`, `NONE`, `TOO_MANY_DIMS` and `TOPX_FORCIBLY_DEACTIVATED`
         /// </summary>
         [Input("disabledReason")]
+        [Obsolete(@"This property is not meant to be configured from the outside. It will get removed completely in future versions")]
         public Input<string>? DisabledReason { get; set; }
 
         /// <summary>
@@ -255,6 +258,7 @@ namespace Pulumiverse.Dynatrace
         /// The reason of a warning set on the config. The `NONE` means config has no warnings. The other supported value is `TOO_MANY_DIMS`
         /// </summary>
         [Input("warningReason")]
+        [Obsolete(@"This property is not meant to be configured from the outside. It will get removed completely in future versions")]
         public Input<string>? WarningReason { get; set; }
 
         public CustomAnomaliesArgs()
@@ -293,6 +297,7 @@ namespace Pulumiverse.Dynatrace
         /// The reason of automatic disabling.  The `NONE` means config was not disabled automatically. Possible values are `METRIC_DEFINITION_INCONSISTENCY`, `NONE`, `TOO_MANY_DIMS` and `TOPX_FORCIBLY_DEACTIVATED`
         /// </summary>
         [Input("disabledReason")]
+        [Obsolete(@"This property is not meant to be configured from the outside. It will get removed completely in future versions")]
         public Input<string>? DisabledReason { get; set; }
 
         /// <summary>
@@ -359,6 +364,7 @@ namespace Pulumiverse.Dynatrace
         /// The reason of a warning set on the config. The `NONE` means config has no warnings. The other supported value is `TOO_MANY_DIMS`
         /// </summary>
         [Input("warningReason")]
+        [Obsolete(@"This property is not meant to be configured from the outside. It will get removed completely in future versions")]
         public Input<string>? WarningReason { get; set; }
 
         public CustomAnomaliesState()

@@ -29,6 +29,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         /// no documentation available
         /// </summary>
         [Input("threshold")]
+        [Obsolete(@"The attribute `Threshold` no longer exists in the API schema, please use `ToleratedThreshold`, `FrustratingThreshold`, `ToleratedFallbackThreshold`, and `FrustratingFallbackThreshold` instead")]
         public Input<int>? Threshold { get; set; }
 
         /// <summary>

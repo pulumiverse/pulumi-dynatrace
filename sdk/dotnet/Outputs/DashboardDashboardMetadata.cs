@@ -41,10 +41,12 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// <summary>
         /// the dashboard is shared (`True`) or private (`False`)
         /// </summary>
+        [Obsolete(@"Please use the resource `dynatrace.DashboardSharing` to configure share settings")]
         public readonly bool? Shared;
         /// <summary>
         /// represents sharing configuration of a dashboard
         /// </summary>
+        [Obsolete(@"Please use the resource `dynatrace.DashboardSharing` to configure share settings")]
         public readonly Outputs.DashboardDashboardMetadataSharingDetails? SharingDetails;
         /// <summary>
         /// a set of tags assigned to the dashboard
@@ -95,8 +97,12 @@ namespace Pulumiverse.Dynatrace.Outputs
             Name = name;
             Owner = owner;
             Preset = preset;
+#pragma warning disable CS0618
             Shared = shared;
+#pragma warning restore CS0618
+#pragma warning disable CS0618
             SharingDetails = sharingDetails;
+#pragma warning restore CS0618
             Tags = tags;
             TilesNameSize = tilesNameSize;
             Unknowns = unknowns;

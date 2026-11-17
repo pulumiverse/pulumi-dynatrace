@@ -88,6 +88,7 @@ namespace Pulumiverse.Dynatrace
         /// The metric for the count of successes (the numerator in rate calculation)
         /// </summary>
         [Output("numerator")]
+        [Obsolete(@"`Numerator` and `Denominator` have been replaced by `MetricExpression`")]
         public Output<string?> Numerator { get; private set; } = null!;
 
         /// <summary>
@@ -219,6 +220,7 @@ namespace Pulumiverse.Dynatrace
         /// The metric for the count of successes (the numerator in rate calculation)
         /// </summary>
         [Input("numerator")]
+        [Obsolete(@"`Numerator` and `Denominator` have been replaced by `MetricExpression`")]
         public Input<string>? Numerator { get; set; }
 
         /// <summary>
@@ -311,6 +313,7 @@ namespace Pulumiverse.Dynatrace
         /// The metric for the count of successes (the numerator in rate calculation)
         /// </summary>
         [Input("numerator")]
+        [Obsolete(@"`Numerator` and `Denominator` have been replaced by `MetricExpression`")]
         public Input<string>? Numerator { get; set; }
 
         /// <summary>

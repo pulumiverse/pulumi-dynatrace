@@ -25,6 +25,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// <summary>
         /// no documentation available
         /// </summary>
+        [Obsolete(@"The attribute `Threshold` no longer exists in the API schema, please use `ToleratedThreshold`, `FrustratingThreshold`, `ToleratedFallbackThreshold`, and `FrustratingFallbackThreshold` instead")]
         public readonly int? Threshold;
         /// <summary>
         /// Fallback threshold of an XHR action, defining a satisfied user experience, when the configured KPM is not available. Values between 0 and 60000 are allowed.
@@ -49,7 +50,9 @@ namespace Pulumiverse.Dynatrace.Outputs
         {
             FrustratingFallbackThreshold = frustratingFallbackThreshold;
             FrustratingThreshold = frustratingThreshold;
+#pragma warning disable CS0618
             Threshold = threshold;
+#pragma warning restore CS0618
             ToleratedFallbackThreshold = toleratedFallbackThreshold;
             ToleratedThreshold = toleratedThreshold;
         }

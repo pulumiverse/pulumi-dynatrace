@@ -40,6 +40,7 @@ namespace Pulumiverse.Dynatrace
         /// `Metadata` exists for backwards compatibility but shouldn't get specified anymore
         /// </summary>
         [Output("metadata")]
+        [Obsolete(@"`Metadata` exists for backwards compatibility but shouldn't get specified anymore")]
         public Output<Outputs.AlertingProfileMetadata?> Metadata { get; private set; } = null!;
 
         /// <summary>
@@ -129,6 +130,7 @@ namespace Pulumiverse.Dynatrace
         /// `Metadata` exists for backwards compatibility but shouldn't get specified anymore
         /// </summary>
         [Input("metadata")]
+        [Obsolete(@"`Metadata` exists for backwards compatibility but shouldn't get specified anymore")]
         public Input<Inputs.AlertingProfileMetadataArgs>? Metadata { get; set; }
 
         /// <summary>
@@ -185,6 +187,7 @@ namespace Pulumiverse.Dynatrace
         /// `Metadata` exists for backwards compatibility but shouldn't get specified anymore
         /// </summary>
         [Input("metadata")]
+        [Obsolete(@"`Metadata` exists for backwards compatibility but shouldn't get specified anymore")]
         public Input<Inputs.AlertingProfileMetadataGetArgs>? Metadata { get; set; }
 
         /// <summary>

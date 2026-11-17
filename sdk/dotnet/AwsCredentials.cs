@@ -69,12 +69,14 @@ namespace Pulumiverse.Dynatrace
         /// If enabled (`True`) the attribute `SupportingServices` will not get synchronized with Dynatrace. You will be able to manage them via WebUI without interference by Terraform.
         /// </summary>
         [Output("supportingServicesManagedInDynatrace")]
+        [Obsolete(@"Supporting Services are no longer getting managed via this resource. Regardless of the value set here, this resource won't affect the supporting services during updates")]
         public Output<bool?> SupportingServicesManagedInDynatrace { get; private set; } = null!;
 
         /// <summary>
         /// supporting services to be monitored
         /// </summary>
         [Output("supportingServicesToMonitors")]
+        [Obsolete(@"Managing supporting services directly within AWS Credentials has been deprecated within the REST API. This attribute just exists for backwards compatibility. It no longer has an effect. For managing services use the resource `dynatrace.AwsService`")]
         public Output<ImmutableArray<Outputs.AwsCredentialsSupportingServicesToMonitor>> SupportingServicesToMonitors { get; private set; } = null!;
 
         /// <summary>
@@ -183,6 +185,7 @@ namespace Pulumiverse.Dynatrace
         /// If enabled (`True`) the attribute `SupportingServices` will not get synchronized with Dynatrace. You will be able to manage them via WebUI without interference by Terraform.
         /// </summary>
         [Input("supportingServicesManagedInDynatrace")]
+        [Obsolete(@"Supporting Services are no longer getting managed via this resource. Regardless of the value set here, this resource won't affect the supporting services during updates")]
         public Input<bool>? SupportingServicesManagedInDynatrace { get; set; }
 
         [Input("supportingServicesToMonitors")]
@@ -271,6 +274,7 @@ namespace Pulumiverse.Dynatrace
         /// If enabled (`True`) the attribute `SupportingServices` will not get synchronized with Dynatrace. You will be able to manage them via WebUI without interference by Terraform.
         /// </summary>
         [Input("supportingServicesManagedInDynatrace")]
+        [Obsolete(@"Supporting Services are no longer getting managed via this resource. Regardless of the value set here, this resource won't affect the supporting services during updates")]
         public Input<bool>? SupportingServicesManagedInDynatrace { get; set; }
 
         [Input("supportingServicesToMonitors")]

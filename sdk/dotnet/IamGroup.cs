@@ -87,6 +87,7 @@ namespace Pulumiverse.Dynatrace
         public Output<string> Name { get; private set; } = null!;
 
         [Output("permissions")]
+        [Obsolete(@"Assigning permissions directly when creating a group is deprecated. Use the resource `dynatrace.IamPermission` instead.")]
         public Output<Outputs.IamGroupPermissions?> Permissions { get; private set; } = null!;
 
 
@@ -151,6 +152,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? Name { get; set; }
 
         [Input("permissions")]
+        [Obsolete(@"Assigning permissions directly when creating a group is deprecated. Use the resource `dynatrace.IamPermission` instead.")]
         public Input<Inputs.IamGroupPermissionsArgs>? Permissions { get; set; }
 
         public IamGroupArgs()
@@ -176,6 +178,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? Name { get; set; }
 
         [Input("permissions")]
+        [Obsolete(@"Assigning permissions directly when creating a group is deprecated. Use the resource `dynatrace.IamPermission` instead.")]
         public Input<Inputs.IamGroupPermissionsGetArgs>? Permissions { get; set; }
 
         public IamGroupState()

@@ -216,6 +216,7 @@ namespace Pulumiverse.Dynatrace
         /// The list contains summary data related to the use of credentials
         /// </summary>
         [Output("credentialUsageSummaries")]
+        [Obsolete(@"`CredentialUsageSummary` will be removed in future versions. It's not getting filled anymore, because it's runtime data")]
         public Output<ImmutableArray<Outputs.CredentialsCredentialUsageSummary>> CredentialUsageSummaries { get; private set; } = null!;
 
         /// <summary>
@@ -264,6 +265,7 @@ namespace Pulumiverse.Dynatrace
         /// The scope of the credentials set. Possible values are `ALL`, `APP_ENGINE`, `EXTENSION` and `SYNTHETIC`
         /// </summary>
         [Output("scope")]
+        [Obsolete(@"Deprecated(v279), please use `Scopes` instead.")]
         public Output<string?> Scope { get; private set; } = null!;
 
         /// <summary>
@@ -424,6 +426,7 @@ namespace Pulumiverse.Dynatrace
         /// The scope of the credentials set. Possible values are `ALL`, `APP_ENGINE`, `EXTENSION` and `SYNTHETIC`
         /// </summary>
         [Input("scope")]
+        [Obsolete(@"Deprecated(v279), please use `Scopes` instead.")]
         public Input<string>? Scope { get; set; }
 
         [Input("scopes")]
@@ -565,6 +568,7 @@ namespace Pulumiverse.Dynatrace
         /// The scope of the credentials set. Possible values are `ALL`, `APP_ENGINE`, `EXTENSION` and `SYNTHETIC`
         /// </summary>
         [Input("scope")]
+        [Obsolete(@"Deprecated(v279), please use `Scopes` instead.")]
         public Input<string>? Scope { get; set; }
 
         [Input("scopes")]
