@@ -489,8 +489,8 @@ class CalculatedServiceMetric(pulumi.CustomResource):
 
         ```python
         import pulumi
+        import pulumi_time as time
         import pulumiverse_dynatrace as dynatrace
-        import pulumiverse_time as time
 
         attribute = dynatrace.RequestAttribute("attribute",
             name="#name#",
@@ -526,7 +526,7 @@ class CalculatedServiceMetric(pulumi.CustomResource):
                     },
                 }],
             })
-        wait_for_creation = time.Sleep("wait_for_creation", create_duration="15s",
+        wait_for_creation = time.Sleep("wait_for_creation", create_duration=15s,
         opts = pulumi.ResourceOptions(depends_on=[
                 attribute,
                 mzone,
@@ -601,8 +601,8 @@ class CalculatedServiceMetric(pulumi.CustomResource):
 
         ```python
         import pulumi
+        import pulumi_time as time
         import pulumiverse_dynatrace as dynatrace
-        import pulumiverse_time as time
 
         attribute = dynatrace.RequestAttribute("attribute",
             name="#name#",
@@ -638,7 +638,7 @@ class CalculatedServiceMetric(pulumi.CustomResource):
                     },
                 }],
             })
-        wait_for_creation = time.Sleep("wait_for_creation", create_duration="15s",
+        wait_for_creation = time.Sleep("wait_for_creation", create_duration=15s,
         opts = pulumi.ResourceOptions(depends_on=[
                 attribute,
                 mzone,

@@ -32,7 +32,7 @@ namespace Pulumiverse.Dynatrace
     /// using System.Linq;
     /// using Pulumi;
     /// using Dynatrace = Pulumiverse.Dynatrace;
-    /// using Time = Pulumiverse.Time;
+    /// using Time = Pulumi.Time;
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {

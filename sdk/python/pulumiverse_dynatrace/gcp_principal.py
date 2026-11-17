@@ -79,30 +79,30 @@ class GcpPrincipal(pulumi.CustomResource):
 
         ```python
         import pulumi
-        import pulumi_gcp as gcp
+        import pulumi_google as google
         import pulumiverse_dynatrace as dynatrace
 
         config = pulumi.Config()
         # The Google Cloud Platform project ID
         gcp_project_id = config.require("gcpProjectId")
         # Create a Service Account in GCP
-        impersonable_service_account = gcp.serviceaccount.Account("impersonable_service_account",
-            account_id="test-service-account",
-            display_name="Test Service Account")
+        impersonable_service_account = google.ServiceAccount("impersonable_service_account",
+            account_id=test-service-account,
+            display_name=Test Service Account)
         # Provision the DT GCP Principal. This resource takes no input; it triggers creation of the
         # Dynatrace-managed principal (a singleton) and exposes it via the `principal` attribute.
         principal = dynatrace.GcpPrincipal("principal")
         # Grant DT GCP Principal access to the service account
-        wif_binding = gcp.serviceaccount.IAMMember("wif_binding",
+        wif_binding = google.ServiceAccountIamMember("wif_binding",
             service_account_id=impersonable_service_account.name,
-            member=principal.principal.apply(lambda principal: f"serviceAccount:{principal}"),
-            role="roles/iam.serviceAccountTokenCreator")
+            member=fserviceAccount:{principal.principal},
+            role=roles/iam.serviceAccountTokenCreator)
         # Create GCP connection
         my_gcp_connection = dynatrace.GcpConnection("my_gcp_connection",
             name="My Gcp Connection",
             type="serviceAccountImpersonation",
             service_account_impersonation={
-                "service_account_id": impersonable_service_account.email,
+                "service_account_id": impersonable_service_account["email"],
                 "consumers": ["SVC:com.dynatrace.openpipeline"],
             },
             opts = pulumi.ResourceOptions(depends_on=[wif_binding]))
@@ -140,30 +140,30 @@ class GcpPrincipal(pulumi.CustomResource):
 
         ```python
         import pulumi
-        import pulumi_gcp as gcp
+        import pulumi_google as google
         import pulumiverse_dynatrace as dynatrace
 
         config = pulumi.Config()
         # The Google Cloud Platform project ID
         gcp_project_id = config.require("gcpProjectId")
         # Create a Service Account in GCP
-        impersonable_service_account = gcp.serviceaccount.Account("impersonable_service_account",
-            account_id="test-service-account",
-            display_name="Test Service Account")
+        impersonable_service_account = google.ServiceAccount("impersonable_service_account",
+            account_id=test-service-account,
+            display_name=Test Service Account)
         # Provision the DT GCP Principal. This resource takes no input; it triggers creation of the
         # Dynatrace-managed principal (a singleton) and exposes it via the `principal` attribute.
         principal = dynatrace.GcpPrincipal("principal")
         # Grant DT GCP Principal access to the service account
-        wif_binding = gcp.serviceaccount.IAMMember("wif_binding",
+        wif_binding = google.ServiceAccountIamMember("wif_binding",
             service_account_id=impersonable_service_account.name,
-            member=principal.principal.apply(lambda principal: f"serviceAccount:{principal}"),
-            role="roles/iam.serviceAccountTokenCreator")
+            member=fserviceAccount:{principal.principal},
+            role=roles/iam.serviceAccountTokenCreator)
         # Create GCP connection
         my_gcp_connection = dynatrace.GcpConnection("my_gcp_connection",
             name="My Gcp Connection",
             type="serviceAccountImpersonation",
             service_account_impersonation={
-                "service_account_id": impersonable_service_account.email,
+                "service_account_id": impersonable_service_account["email"],
                 "consumers": ["SVC:com.dynatrace.openpipeline"],
             },
             opts = pulumi.ResourceOptions(depends_on=[wif_binding]))

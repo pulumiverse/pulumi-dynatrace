@@ -25,6 +25,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// <summary>
         /// if specified, needs to be DATABASE_TOPOLOGY
         /// </summary>
+        [Obsolete(@"The value of the attribute type is implicit, therefore shouldn't get specified")]
         public readonly string? Type;
         /// <summary>
         /// Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
@@ -49,7 +50,9 @@ namespace Pulumiverse.Dynatrace.Outputs
         {
             Negate = negate;
             Operator = @operator;
+#pragma warning disable CS0618
             Type = type;
+#pragma warning restore CS0618
             Unknowns = unknowns;
             Value = value;
         }

@@ -29,6 +29,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// <summary>
         /// if specified, needs to be IP_ADDRESS
         /// </summary>
+        [Obsolete(@"The value of the attribute type is implicit, therefore shouldn't get specified")]
         public readonly string? Type;
         /// <summary>
         /// Any attributes that aren't yet supported by this provider
@@ -56,7 +57,9 @@ namespace Pulumiverse.Dynatrace.Outputs
             CaseSensitive = caseSensitive;
             Negate = negate;
             Operator = @operator;
+#pragma warning disable CS0618
             Type = type;
+#pragma warning restore CS0618
             Unknowns = unknowns;
             Value = value;
         }

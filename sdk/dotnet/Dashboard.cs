@@ -40,6 +40,7 @@ namespace Pulumiverse.Dynatrace
         /// `Metadata` exists for backwards compatibility but shouldn't get specified anymore
         /// </summary>
         [Output("metadata")]
+        [Obsolete(@"`Metadata` exists for backwards compatibility but shouldn't get specified anymore")]
         public Output<Outputs.DashboardMetadata?> Metadata { get; private set; } = null!;
 
         /// <summary>
@@ -111,6 +112,7 @@ namespace Pulumiverse.Dynatrace
         /// `Metadata` exists for backwards compatibility but shouldn't get specified anymore
         /// </summary>
         [Input("metadata")]
+        [Obsolete(@"`Metadata` exists for backwards compatibility but shouldn't get specified anymore")]
         public Input<Inputs.DashboardMetadataArgs>? Metadata { get; set; }
 
         [Input("tiles")]
@@ -149,6 +151,7 @@ namespace Pulumiverse.Dynatrace
         /// `Metadata` exists for backwards compatibility but shouldn't get specified anymore
         /// </summary>
         [Input("metadata")]
+        [Obsolete(@"`Metadata` exists for backwards compatibility but shouldn't get specified anymore")]
         public Input<Inputs.DashboardMetadataGetArgs>? Metadata { get; set; }
 
         [Input("tiles")]

@@ -74,6 +74,7 @@ namespace Pulumiverse.Dynatrace
         /// To enable dashboards and alerts, add the Kubernetes persistent volume claims extension to your environment.
         /// </summary>
         [Output("pvcMonitoringEnabled")]
+        [Obsolete(@"This attribute is deprecated, see [this community guide](https://dt-url.net/v2200u4m) for details.")]
         public Output<bool?> PvcMonitoringEnabled { get; private set; } = null!;
 
         /// <summary>
@@ -175,6 +176,7 @@ namespace Pulumiverse.Dynatrace
         /// To enable dashboards and alerts, add the Kubernetes persistent volume claims extension to your environment.
         /// </summary>
         [Input("pvcMonitoringEnabled")]
+        [Obsolete(@"This attribute is deprecated, see [this community guide](https://dt-url.net/v2200u4m) for details.")]
         public Input<bool>? PvcMonitoringEnabled { get; set; }
 
         /// <summary>
@@ -237,6 +239,7 @@ namespace Pulumiverse.Dynatrace
         /// To enable dashboards and alerts, add the Kubernetes persistent volume claims extension to your environment.
         /// </summary>
         [Input("pvcMonitoringEnabled")]
+        [Obsolete(@"This attribute is deprecated, see [this community guide](https://dt-url.net/v2200u4m) for details.")]
         public Input<bool>? PvcMonitoringEnabled { get; set; }
 
         /// <summary>
