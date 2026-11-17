@@ -375,8 +375,8 @@ class HttpMonitor(pulumi.CustomResource):
         ```python
         import pulumi
         import pulumi_dynatrace as dynatrace
-        import pulumi_time as time
         import pulumiverse_dynatrace as dynatrace
+        import pulumiverse_time as time
 
         location = dynatrace.get_synthetic_location(name="Location")
         credentials_vault = dynatrace.Credentials("credentials_vault",
@@ -812,7 +812,7 @@ class HttpMonitor(pulumi.CustomResource):
                     },
                 ],
             })
-        wait_to_be_consistent = time.Sleep("wait_to_be_consistent", create_duration=10s,
+        wait_to_be_consistent = time.Sleep("wait_to_be_consistent", create_duration="10s",
         opts = pulumi.ResourceOptions(depends_on=[monitor]))
         ```
 
@@ -859,8 +859,8 @@ class HttpMonitor(pulumi.CustomResource):
         ```python
         import pulumi
         import pulumi_dynatrace as dynatrace
-        import pulumi_time as time
         import pulumiverse_dynatrace as dynatrace
+        import pulumiverse_time as time
 
         location = dynatrace.get_synthetic_location(name="Location")
         credentials_vault = dynatrace.Credentials("credentials_vault",
@@ -1296,7 +1296,7 @@ class HttpMonitor(pulumi.CustomResource):
                     },
                 ],
             })
-        wait_to_be_consistent = time.Sleep("wait_to_be_consistent", create_duration=10s,
+        wait_to_be_consistent = time.Sleep("wait_to_be_consistent", create_duration="10s",
         opts = pulumi.ResourceOptions(depends_on=[monitor]))
         ```
 

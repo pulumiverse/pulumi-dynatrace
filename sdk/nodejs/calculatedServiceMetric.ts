@@ -26,7 +26,7 @@ import * as utilities from "./utilities";
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as dynatrace from "@pulumiverse/dynatrace";
- * import * as time from "@pulumi/time";
+ * import * as time from "@pulumiverse/time";
  *
  * const attribute = new dynatrace.RequestAttribute("attribute", {
  *     name: "#name#",
@@ -64,7 +64,7 @@ import * as utilities from "./utilities";
  *         }],
  *     },
  * });
- * const waitForCreation = new time.index.Sleep("wait_for_creation", {createDuration: "15s"}, {
+ * const waitForCreation = new time.Sleep("wait_for_creation", {createDuration: "15s"}, {
  *     dependsOn: [
  *         attribute,
  *         mzone,

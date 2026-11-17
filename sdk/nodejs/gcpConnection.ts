@@ -56,13 +56,13 @@ import * as utilities from "./utilities";
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as dynatrace from "@pulumiverse/dynatrace";
- * import * as google from "@pulumi/google";
+ * import * as gcp from "@pulumi/gcp";
  *
  * const config = new pulumi.Config();
  * // The Google Cloud Platform project ID
  * const gcpProjectId = config.require("gcpProjectId");
  * // Create a Service Account in GCP
- * const impersonableServiceAccount = new google.index.ServiceAccount("impersonable_service_account", {
+ * const impersonableServiceAccount = new gcp.serviceaccount.Account("impersonable_service_account", {
  *     accountId: "test-service-account",
  *     displayName: "Test Service Account",
  * });
@@ -70,9 +70,9 @@ import * as utilities from "./utilities";
  * // Dynatrace-managed principal (a singleton) and exposes it via the `principal` attribute.
  * const principal = new dynatrace.GcpPrincipal("principal", {});
  * // Grant DT GCP Principal access to the service account
- * const wifBinding = new google.index.ServiceAccountIamMember("wif_binding", {
+ * const wifBinding = new gcp.serviceaccount.IAMMember("wif_binding", {
  *     serviceAccountId: impersonableServiceAccount.name,
- *     member: `serviceAccount:${principal.principal}`,
+ *     member: pulumi.interpolate`serviceAccount:${principal.principal}`,
  *     role: "roles/iam.serviceAccountTokenCreator",
  * });
  * // Create GCP connection

@@ -33,9 +33,9 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-time/sdk/go/time"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//	"github.com/pulumiverse/pulumi-time/sdk/go/time"
 //
 // )
 //
@@ -90,7 +90,7 @@ import (
 //				return err
 //			}
 //			waitForCreation, err := time.NewSleep(ctx, "wait_for_creation", &time.SleepArgs{
-//				CreateDuration: "15s",
+//				CreateDuration: pulumi.String("15s"),
 //			}, pulumi.DependsOn([]pulumi.Resource{
 //				attribute,
 //				mzone,

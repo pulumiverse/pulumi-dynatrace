@@ -62,7 +62,7 @@ import * as utilities from "./utilities";
  * // The Dynatrace token issuer URL
  * const dynatraceTokenIssuer = config.require("dynatraceTokenIssuer");
  * // Create an application
- * const example = new azuread.index.ApplicationRegistration("example", {displayName: "ExampleApp"});
+ * const example = new azuread.ApplicationRegistration("example", {displayName: "ExampleApp"});
  * // Create basic Azure connection
  * const exampleAzureConnection = new dynatrace.AzureConnection("example", {
  *     name: "#name#",
@@ -72,12 +72,12 @@ import * as utilities from "./utilities";
  *     },
  * });
  * // Create a federated identity credential
- * const exampleApplicationFederatedIdentityCredential = new azuread.index.ApplicationFederatedIdentityCredential("example", {
+ * const exampleApplicationFederatedIdentityCredential = new azuread.ApplicationFederatedIdentityCredential("example", {
  *     applicationId: example.id,
  *     displayName: "Example",
  *     audiences: [`${dynatraceEnvironmentUrl}/app-id/dynatrace.microsoft.azure.connector`],
  *     issuer: dynatraceTokenIssuer,
- *     subject: `dt:connection-id/${exampleAzureConnection.id}`,
+ *     subject: pulumi.interpolate`dt:connection-id/${exampleAzureConnection.id}`,
  * });
  * // Update the Azure connection with authentication details
  * const exampleAzureConnectionAuthentication = new dynatrace.AzureConnectionAuthentication("example", {
