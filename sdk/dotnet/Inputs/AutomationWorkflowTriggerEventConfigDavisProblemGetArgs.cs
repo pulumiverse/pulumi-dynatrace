@@ -55,6 +55,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         /// If set to `True` closing a problem also is considered an event that triggers the execution.
         /// </summary>
         [Input("onProblemClose")]
+        [Obsolete(@"Use `TriggerOn` instead")]
         public Input<bool>? OnProblemClose { get; set; }
 
         /// <summary>

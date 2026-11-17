@@ -32,6 +32,7 @@ namespace Pulumiverse.Dynatrace
         /// An auto-injection disabled with [oneagentctl](https://dt-url.net/oneagentctl) takes precedence over this setting and cannot be changed from the Dynatrace web UI.
         /// </summary>
         [Output("autoInjection")]
+        [Obsolete(@"This field has been moved to a new schema, please utilize the resource `dynatrace.HostMonitoringAdvanced` to configure this field.")]
         public Output<bool?> AutoInjection { get; private set; } = null!;
 
         /// <summary>
@@ -44,6 +45,7 @@ namespace Pulumiverse.Dynatrace
         /// Dynatrace uses full-stack monitoring by default, to monitor every aspect of your environment, including all processes, services, and applications detected on your hosts.
         /// </summary>
         [Output("fullStack")]
+        [Obsolete(@"This attribute is not supported anymore by the Dynatrace API")]
         public Output<bool?> FullStack { get; private set; } = null!;
 
         /// <summary>
@@ -103,6 +105,7 @@ namespace Pulumiverse.Dynatrace
         /// An auto-injection disabled with [oneagentctl](https://dt-url.net/oneagentctl) takes precedence over this setting and cannot be changed from the Dynatrace web UI.
         /// </summary>
         [Input("autoInjection")]
+        [Obsolete(@"This field has been moved to a new schema, please utilize the resource `dynatrace.HostMonitoringAdvanced` to configure this field.")]
         public Input<bool>? AutoInjection { get; set; }
 
         /// <summary>
@@ -115,6 +118,7 @@ namespace Pulumiverse.Dynatrace
         /// Dynatrace uses full-stack monitoring by default, to monitor every aspect of your environment, including all processes, services, and applications detected on your hosts.
         /// </summary>
         [Input("fullStack")]
+        [Obsolete(@"This attribute is not supported anymore by the Dynatrace API")]
         public Input<bool>? FullStack { get; set; }
 
         /// <summary>
@@ -135,6 +139,7 @@ namespace Pulumiverse.Dynatrace
         /// An auto-injection disabled with [oneagentctl](https://dt-url.net/oneagentctl) takes precedence over this setting and cannot be changed from the Dynatrace web UI.
         /// </summary>
         [Input("autoInjection")]
+        [Obsolete(@"This field has been moved to a new schema, please utilize the resource `dynatrace.HostMonitoringAdvanced` to configure this field.")]
         public Input<bool>? AutoInjection { get; set; }
 
         /// <summary>
@@ -147,6 +152,7 @@ namespace Pulumiverse.Dynatrace
         /// Dynatrace uses full-stack monitoring by default, to monitor every aspect of your environment, including all processes, services, and applications detected on your hosts.
         /// </summary>
         [Input("fullStack")]
+        [Obsolete(@"This attribute is not supported anymore by the Dynatrace API")]
         public Input<bool>? FullStack { get; set; }
 
         /// <summary>

@@ -50,6 +50,7 @@ namespace Pulumiverse.Dynatrace
         /// Monitor Kubernetes namespaces, services, workloads, and pods
         /// </summary>
         [Output("cloudApplicationPipelineEnabled")]
+        [Obsolete(@"This field has been moved to a new schema, please utilize the resource `dynatrace.K8sMonitoring` to configure this field.")]
         public Output<bool?> CloudApplicationPipelineEnabled { get; private set; } = null!;
 
         /// <summary>
@@ -80,18 +81,21 @@ namespace Pulumiverse.Dynatrace
         /// Define Kubernetes event filters to ingest events into your environment. For more details, see the [documentation](https://dt-url.net/2201p0u).
         /// </summary>
         [Output("eventPatterns")]
+        [Obsolete(@"This field has been moved to a new schema, please utilize the resource `dynatrace.K8sMonitoring` to configure this field.")]
         public Output<Outputs.KubernetesEventPatterns?> EventPatterns { get; private set; } = null!;
 
         /// <summary>
         /// All events are monitored by default unless event filters are specified.
         /// </summary>
         [Output("eventProcessingActive")]
+        [Obsolete(@"This field has been moved to a new schema, please utilize the resource `dynatrace.K8sMonitoring` to configure this field.")]
         public Output<bool?> EventProcessingActive { get; private set; } = null!;
 
         /// <summary>
         /// Include only events specified by Events Field Selectors
         /// </summary>
         [Output("filterEvents")]
+        [Obsolete(@"This field has been moved to a new schema, please utilize the resource `dynatrace.K8sMonitoring` to configure this field.")]
         public Output<bool?> FilterEvents { get; private set; } = null!;
 
         /// <summary>
@@ -104,6 +108,7 @@ namespace Pulumiverse.Dynatrace
         /// For a list of included events, see the [documentation](https://dt-url.net/l61d02no).
         /// </summary>
         [Output("includeAllFdiEvents")]
+        [Obsolete(@"This field has been moved to a new schema, please utilize the resource `dynatrace.K8sMonitoring` to configure this field.")]
         public Output<bool?> IncludeAllFdiEvents { get; private set; } = null!;
 
         /// <summary>
@@ -116,18 +121,21 @@ namespace Pulumiverse.Dynatrace
         /// The workload resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this may increase the CPU/memory resource consumption of your ActiveGate.
         /// </summary>
         [Output("openMetricsBuiltinEnabled")]
+        [Obsolete(@"This field has been moved to a new schema, please utilize the resource `dynatrace.K8sMonitoring` to configure this field.")]
         public Output<bool?> OpenMetricsBuiltinEnabled { get; private set; } = null!;
 
         /// <summary>
         /// For annotation guidance, see the [documentation](https://dt-url.net/g42i0ppw).
         /// </summary>
         [Output("openMetricsPipelineEnabled")]
+        [Obsolete(@"This field has been moved to a new schema, please utilize the resource `dynatrace.K8sMonitoring` to configure this field.")]
         public Output<bool?> OpenMetricsPipelineEnabled { get; private set; } = null!;
 
         /// <summary>
         /// To enable dashboards and alerts, add the Kubernetes persistent volume claims extension to your environment.
         /// </summary>
         [Output("pvcMonitoringEnabled")]
+        [Obsolete(@"This field has been moved to a new schema, please utilize the resource `dynatrace.K8sMonitoring` to configure this field.")]
         public Output<bool?> PvcMonitoringEnabled { get; private set; } = null!;
 
         /// <summary>
@@ -219,6 +227,7 @@ namespace Pulumiverse.Dynatrace
         /// Monitor Kubernetes namespaces, services, workloads, and pods
         /// </summary>
         [Input("cloudApplicationPipelineEnabled")]
+        [Obsolete(@"This field has been moved to a new schema, please utilize the resource `dynatrace.K8sMonitoring` to configure this field.")]
         public Input<bool>? CloudApplicationPipelineEnabled { get; set; }
 
         /// <summary>
@@ -249,18 +258,21 @@ namespace Pulumiverse.Dynatrace
         /// Define Kubernetes event filters to ingest events into your environment. For more details, see the [documentation](https://dt-url.net/2201p0u).
         /// </summary>
         [Input("eventPatterns")]
+        [Obsolete(@"This field has been moved to a new schema, please utilize the resource `dynatrace.K8sMonitoring` to configure this field.")]
         public Input<Inputs.KubernetesEventPatternsArgs>? EventPatterns { get; set; }
 
         /// <summary>
         /// All events are monitored by default unless event filters are specified.
         /// </summary>
         [Input("eventProcessingActive")]
+        [Obsolete(@"This field has been moved to a new schema, please utilize the resource `dynatrace.K8sMonitoring` to configure this field.")]
         public Input<bool>? EventProcessingActive { get; set; }
 
         /// <summary>
         /// Include only events specified by Events Field Selectors
         /// </summary>
         [Input("filterEvents")]
+        [Obsolete(@"This field has been moved to a new schema, please utilize the resource `dynatrace.K8sMonitoring` to configure this field.")]
         public Input<bool>? FilterEvents { get; set; }
 
         /// <summary>
@@ -273,6 +285,7 @@ namespace Pulumiverse.Dynatrace
         /// For a list of included events, see the [documentation](https://dt-url.net/l61d02no).
         /// </summary>
         [Input("includeAllFdiEvents")]
+        [Obsolete(@"This field has been moved to a new schema, please utilize the resource `dynatrace.K8sMonitoring` to configure this field.")]
         public Input<bool>? IncludeAllFdiEvents { get; set; }
 
         /// <summary>
@@ -285,18 +298,21 @@ namespace Pulumiverse.Dynatrace
         /// The workload resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this may increase the CPU/memory resource consumption of your ActiveGate.
         /// </summary>
         [Input("openMetricsBuiltinEnabled")]
+        [Obsolete(@"This field has been moved to a new schema, please utilize the resource `dynatrace.K8sMonitoring` to configure this field.")]
         public Input<bool>? OpenMetricsBuiltinEnabled { get; set; }
 
         /// <summary>
         /// For annotation guidance, see the [documentation](https://dt-url.net/g42i0ppw).
         /// </summary>
         [Input("openMetricsPipelineEnabled")]
+        [Obsolete(@"This field has been moved to a new schema, please utilize the resource `dynatrace.K8sMonitoring` to configure this field.")]
         public Input<bool>? OpenMetricsPipelineEnabled { get; set; }
 
         /// <summary>
         /// To enable dashboards and alerts, add the Kubernetes persistent volume claims extension to your environment.
         /// </summary>
         [Input("pvcMonitoringEnabled")]
+        [Obsolete(@"This field has been moved to a new schema, please utilize the resource `dynatrace.K8sMonitoring` to configure this field.")]
         public Input<bool>? PvcMonitoringEnabled { get; set; }
 
         /// <summary>
@@ -345,6 +361,7 @@ namespace Pulumiverse.Dynatrace
         /// Monitor Kubernetes namespaces, services, workloads, and pods
         /// </summary>
         [Input("cloudApplicationPipelineEnabled")]
+        [Obsolete(@"This field has been moved to a new schema, please utilize the resource `dynatrace.K8sMonitoring` to configure this field.")]
         public Input<bool>? CloudApplicationPipelineEnabled { get; set; }
 
         /// <summary>
@@ -375,18 +392,21 @@ namespace Pulumiverse.Dynatrace
         /// Define Kubernetes event filters to ingest events into your environment. For more details, see the [documentation](https://dt-url.net/2201p0u).
         /// </summary>
         [Input("eventPatterns")]
+        [Obsolete(@"This field has been moved to a new schema, please utilize the resource `dynatrace.K8sMonitoring` to configure this field.")]
         public Input<Inputs.KubernetesEventPatternsGetArgs>? EventPatterns { get; set; }
 
         /// <summary>
         /// All events are monitored by default unless event filters are specified.
         /// </summary>
         [Input("eventProcessingActive")]
+        [Obsolete(@"This field has been moved to a new schema, please utilize the resource `dynatrace.K8sMonitoring` to configure this field.")]
         public Input<bool>? EventProcessingActive { get; set; }
 
         /// <summary>
         /// Include only events specified by Events Field Selectors
         /// </summary>
         [Input("filterEvents")]
+        [Obsolete(@"This field has been moved to a new schema, please utilize the resource `dynatrace.K8sMonitoring` to configure this field.")]
         public Input<bool>? FilterEvents { get; set; }
 
         /// <summary>
@@ -399,6 +419,7 @@ namespace Pulumiverse.Dynatrace
         /// For a list of included events, see the [documentation](https://dt-url.net/l61d02no).
         /// </summary>
         [Input("includeAllFdiEvents")]
+        [Obsolete(@"This field has been moved to a new schema, please utilize the resource `dynatrace.K8sMonitoring` to configure this field.")]
         public Input<bool>? IncludeAllFdiEvents { get; set; }
 
         /// <summary>
@@ -411,18 +432,21 @@ namespace Pulumiverse.Dynatrace
         /// The workload resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this may increase the CPU/memory resource consumption of your ActiveGate.
         /// </summary>
         [Input("openMetricsBuiltinEnabled")]
+        [Obsolete(@"This field has been moved to a new schema, please utilize the resource `dynatrace.K8sMonitoring` to configure this field.")]
         public Input<bool>? OpenMetricsBuiltinEnabled { get; set; }
 
         /// <summary>
         /// For annotation guidance, see the [documentation](https://dt-url.net/g42i0ppw).
         /// </summary>
         [Input("openMetricsPipelineEnabled")]
+        [Obsolete(@"This field has been moved to a new schema, please utilize the resource `dynatrace.K8sMonitoring` to configure this field.")]
         public Input<bool>? OpenMetricsPipelineEnabled { get; set; }
 
         /// <summary>
         /// To enable dashboards and alerts, add the Kubernetes persistent volume claims extension to your environment.
         /// </summary>
         [Input("pvcMonitoringEnabled")]
+        [Obsolete(@"This field has been moved to a new schema, please utilize the resource `dynatrace.K8sMonitoring` to configure this field.")]
         public Input<bool>? PvcMonitoringEnabled { get; set; }
 
         /// <summary>

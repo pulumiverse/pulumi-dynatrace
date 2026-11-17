@@ -35,6 +35,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         /// if specified, needs to be IP_ADDRESS
         /// </summary>
         [Input("type")]
+        [Obsolete(@"The value of the attribute type is implicit, therefore shouldn't get specified")]
         public Input<string>? Type { get; set; }
 
         /// <summary>

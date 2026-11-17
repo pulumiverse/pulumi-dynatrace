@@ -17,6 +17,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// <summary>
         /// Comparison for `APPLICATION_TYPE` attributes
         /// </summary>
+        [Obsolete(@"You should use 'application_type' instead of 'application_type_comparison'. This attribute still exists for backwards compatibility.")]
         public readonly ImmutableArray<Outputs.AutotagRuleConditionApplicationTypeComparison> ApplicationTypeComparisons;
         /// <summary>
         /// Comparison for `APPLICATION_TYPE` attributes
@@ -29,10 +30,12 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// <summary>
         /// Comparison for `AZURE_COMPUTE_MODE` attributes
         /// </summary>
+        [Obsolete(@"You should use 'azure_compute_mode' instead of 'azure_compute_mode_comparison'. This attribute still exists for backwards compatibility.")]
         public readonly ImmutableArray<Outputs.AutotagRuleConditionAzureComputeMode> AzureComputeModes;
         /// <summary>
         /// Comparison for `AZURE_SKU` attributes
         /// </summary>
+        [Obsolete(@"You should use 'azure_sku' instead of 'azure_sku_comparision'. This attribute still exists for backwards compatibility.")]
         public readonly ImmutableArray<Outputs.AutotagRuleConditionAzureSkuComparision> AzureSkuComparisions;
         /// <summary>
         /// Comparison for `AZURE_SKU` attributes
@@ -41,14 +44,17 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// <summary>
         /// A comparison that's yet unknown to the provider. Operator and Value need to be encoded using the 'unknowns' property.
         /// </summary>
+        [Obsolete(@"You should use 'comparison' instead of 'base_comparison_basic'. This attribute still exists for backwards compatibility.")]
         public readonly ImmutableArray<Outputs.AutotagRuleConditionBaseComparisonBasic> BaseComparisonBasics;
         /// <summary>
         /// Fallback for not yet known type
         /// </summary>
+        [Obsolete(@"'base_condition_key' is deprecated. You should use 'key'")]
         public readonly ImmutableArray<Outputs.AutotagRuleConditionBaseConditionKey> BaseConditionKeys;
         /// <summary>
         /// Comparison for `BITNESS` attributes
         /// </summary>
+        [Obsolete(@"You should use 'bitness' instead of 'bitness_comparision'. This attribute still exists for backwards compatibility.")]
         public readonly ImmutableArray<Outputs.AutotagRuleConditionBitnessComparision> BitnessComparisions;
         /// <summary>
         /// Comparison for `BITNESS` attributes
@@ -57,6 +63,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// <summary>
         /// Comparison for `CLOUD_TYPE` attributes
         /// </summary>
+        [Obsolete(@"You should use 'cloud_type' instead of 'cloud_type_comparison'. This attribute still exists for backwards compatibility.")]
         public readonly ImmutableArray<Outputs.AutotagRuleConditionCloudTypeComparison> CloudTypeComparisons;
         /// <summary>
         /// Comparison for `CLOUD_TYPE` attributes
@@ -69,6 +76,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// <summary>
         /// Comparison for `CUSTOM_APPLICATION_TYPE` attributes
         /// </summary>
+        [Obsolete(@"You should use 'custom_application_type' instead of 'custom_application_type_comparison'. This attribute still exists for backwards compatibility.")]
         public readonly ImmutableArray<Outputs.AutotagRuleConditionCustomApplicationTypeComparison> CustomApplicationTypeComparisons;
         /// <summary>
         /// Comparison for `CUSTOM_APPLICATION_TYPE` attributes
@@ -77,6 +85,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// <summary>
         /// Key for Custom Host Metadata
         /// </summary>
+        [Obsolete(@"'custom_host_metadata_condition_key' is deprecated. You should use 'custom_host_metadata'")]
         public readonly ImmutableArray<Outputs.AutotagRuleConditionCustomHostMetadataConditionKey> CustomHostMetadataConditionKeys;
         /// <summary>
         /// Key for Custom Host Metadata
@@ -85,6 +94,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// <summary>
         /// Key for Custom Process Metadata
         /// </summary>
+        [Obsolete(@"'custom_process_metadata_condition_key' is deprecated. You should use 'custom_process_metadata'")]
         public readonly ImmutableArray<Outputs.AutotagRuleConditionCustomProcessMetadataConditionKey> CustomProcessMetadataConditionKeys;
         /// <summary>
         /// Key for Custom Process Metadata
@@ -97,10 +107,12 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// <summary>
         /// Comparison for `DATABASE_TOPOLOGY` attributes
         /// </summary>
+        [Obsolete(@"You should use 'database_topology' instead of 'database_topology_comparison'. This attribute still exists for backwards compatibility.")]
         public readonly ImmutableArray<Outputs.AutotagRuleConditionDatabaseTopologyComparison> DatabaseTopologyComparisons;
         /// <summary>
         /// Comparison for `DCRUM_DECODER_TYPE` attributes
         /// </summary>
+        [Obsolete(@"You should use 'dcrum_decoder' instead of 'dcrum_decoder_comparison'. This attribute still exists for backwards compatibility.")]
         public readonly ImmutableArray<Outputs.AutotagRuleConditionDcrumDecoderComparison> DcrumDecoderComparisons;
         /// <summary>
         /// Comparison for `DCRUM_DECODER_TYPE` attributes
@@ -113,6 +125,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// <summary>
         /// Comparison for `ENTITY_ID` attributes
         /// </summary>
+        [Obsolete(@"You should use 'entity' instead of 'entity_id_comparison'. This attribute still exists for backwards compatibility.")]
         public readonly ImmutableArray<Outputs.AutotagRuleConditionEntityIdComparison> EntityIdComparisons;
         /// <summary>
         /// Comparison for `SIMPLE_HOST_TECH` attributes
@@ -121,6 +134,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// <summary>
         /// `HypervisorTypeComparision` is deprecated. Use `Hypervisor` instead
         /// </summary>
+        [Obsolete(@"`HypervisorTypeComparision` is deprecated. Use `Hypervisor` instead")]
         public readonly ImmutableArray<Outputs.AutotagRuleConditionHypervisorTypeComparision> HypervisorTypeComparisions;
         /// <summary>
         /// Comparison for `HYPERVISOR_TYPE` attributes
@@ -129,6 +143,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// <summary>
         /// Comparison for `INDEXED_NAME` attributes
         /// </summary>
+        [Obsolete(@"You should use 'indexed_name' instead of 'indexed_name_comparison'. This attribute still exists for backwards compatibility.")]
         public readonly ImmutableArray<Outputs.AutotagRuleConditionIndexedNameComparison> IndexedNameComparisons;
         /// <summary>
         /// Comparison for `INDEXED_NAME` attributes
@@ -137,6 +152,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// <summary>
         /// Comparison for `INDEXED_STRING` attributes
         /// </summary>
+        [Obsolete(@"You should use 'indexed_string' instead of 'indexed_string_comparison'. This attribute still exists for backwards compatibility.")]
         public readonly ImmutableArray<Outputs.AutotagRuleConditionIndexedStringComparison> IndexedStringComparisons;
         /// <summary>
         /// Comparison for `INDEXED_STRING` attributes
@@ -145,6 +161,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// <summary>
         /// Comparison for `INDEXED_TAG` attributes
         /// </summary>
+        [Obsolete(@"You should use 'indexed_tag' instead of 'indexed_tag_comparison'. This attribute still exists for backwards compatibility.")]
         public readonly ImmutableArray<Outputs.AutotagRuleConditionIndexedTagComparison> IndexedTagComparisons;
         /// <summary>
         /// Comparison for `INDEXED_TAG` attributes
@@ -153,6 +170,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// <summary>
         /// Comparison for `INTEGER` attributes
         /// </summary>
+        [Obsolete(@"You should use 'integer' instead of 'integer_comparison'. This attribute still exists for backwards compatibility.")]
         public readonly ImmutableArray<Outputs.AutotagRuleConditionIntegerComparison> IntegerComparisons;
         /// <summary>
         /// Comparison for `INTEGER` attributes
@@ -161,6 +179,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// <summary>
         /// Comparison for `IP_ADDRESS` attributes
         /// </summary>
+        [Obsolete(@"You should use 'ipaddress' instead of 'ipaddress_comparison'. This attribute still exists for backwards compatibility.")]
         public readonly ImmutableArray<Outputs.AutotagRuleConditionIpaddressComparison> IpaddressComparisons;
         /// <summary>
         /// Comparison for `IP_ADDRESS` attributes
@@ -173,6 +192,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// <summary>
         /// Comparison for `MOBILE_PLATFORM` attributes
         /// </summary>
+        [Obsolete(@"You should use 'mobile_platform' instead of 'mobile_platform_comparison'. This attribute still exists for backwards compatibility.")]
         public readonly ImmutableArray<Outputs.AutotagRuleConditionMobilePlatformComparison> MobilePlatformComparisons;
         /// <summary>
         /// Comparison for `MOBILE_PLATFORM` attributes
@@ -189,14 +209,17 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// <summary>
         /// Comparison for `OS_ARCHITECTURE` attributes
         /// </summary>
+        [Obsolete(@"You should use 'os_arch' instead of 'osarchitecture_comparison'. This attribute still exists for backwards compatibility.")]
         public readonly ImmutableArray<Outputs.AutotagRuleConditionOsarchitectureComparison> OsarchitectureComparisons;
         /// <summary>
         /// Comparison for `OS_TYPE` attributes
         /// </summary>
+        [Obsolete(@"You should use 'os_type' instead of 'ostype_comparison'. This attribute still exists for backwards compatibility.")]
         public readonly ImmutableArray<Outputs.AutotagRuleConditionOstypeComparison> OstypeComparisons;
         /// <summary>
         /// Comparison for `PAAS_TYPE` attributes
         /// </summary>
+        [Obsolete(@"You should use 'paas_type' instead of 'paas_type_comparison'. This attribute still exists for backwards compatibility.")]
         public readonly ImmutableArray<Outputs.AutotagRuleConditionPaasTypeComparison> PaasTypeComparisons;
         /// <summary>
         /// Comparison for `PAAS_TYPE` attributes
@@ -205,6 +228,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// <summary>
         /// The key for dynamic attributes of the `PROCESS_PREDEFINED_METADATA_KEY` type
         /// </summary>
+        [Obsolete(@"'process_metadata_condition_key' is deprecated. You should use 'process_metadata'")]
         public readonly ImmutableArray<Outputs.AutotagRuleConditionProcessMetadataConditionKey> ProcessMetadataConditionKeys;
         /// <summary>
         /// The key for dynamic attributes of the `PROCESS_PREDEFINED_METADATA_KEY` type
@@ -217,10 +241,12 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// <summary>
         /// Comparison for `SERVICE_TOPOLOGY` attributes
         /// </summary>
+        [Obsolete(@"You should use 'service_topology' instead of 'service_topology_comparison'. This attribute still exists for backwards compatibility.")]
         public readonly ImmutableArray<Outputs.AutotagRuleConditionServiceTopologyComparison> ServiceTopologyComparisons;
         /// <summary>
         /// Comparison for `SERVICE_TYPE` attributes
         /// </summary>
+        [Obsolete(@"You should use 'service_type' instead of 'service_type_comparison'. This attribute still exists for backwards compatibility.")]
         public readonly ImmutableArray<Outputs.AutotagRuleConditionServiceTypeComparison> ServiceTypeComparisons;
         /// <summary>
         /// Comparison for `SERVICE_TYPE` attributes
@@ -229,18 +255,22 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// <summary>
         /// Comparison for `SIMPLE_HOST_TECH` attributes
         /// </summary>
+        [Obsolete(@"You should use 'host_tech' instead of 'simple_host_tech_comparison'. This attribute still exists for backwards compatibility.")]
         public readonly ImmutableArray<Outputs.AutotagRuleConditionSimpleHostTechComparison> SimpleHostTechComparisons;
         /// <summary>
         /// Comparison for `SIMPLE_TECH` attributes
         /// </summary>
+        [Obsolete(@"You should use 'tech' instead of 'simple_tech_comparison'. This attribute still exists for backwards compatibility.")]
         public readonly ImmutableArray<Outputs.AutotagRuleConditionSimpleTechComparison> SimpleTechComparisons;
         /// <summary>
         /// Comparison for `STRING` attributes
         /// </summary>
+        [Obsolete(@"You should use 'string' instead of 'string_comparison'. This attribute still exists for backwards compatibility.")]
         public readonly ImmutableArray<Outputs.AutotagRuleConditionStringComparison> StringComparisons;
         /// <summary>
         /// The key for dynamic attributes of the `STRING` type
         /// </summary>
+        [Obsolete(@"'string_condition_key' is deprecated. You should use 'string_key'")]
         public readonly ImmutableArray<Outputs.AutotagRuleConditionStringConditionKey> StringConditionKeys;
         /// <summary>
         /// The key for dynamic attributes of the `STRING` type
@@ -253,6 +283,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// <summary>
         /// Comparison for `SYNTHETIC_ENGINE_TYPE` attributes
         /// </summary>
+        [Obsolete(@"You should use 'synthetic_engine' instead of 'synthetic_engine_type_comparison'. This attribute still exists for backwards compatibility.")]
         public readonly ImmutableArray<Outputs.AutotagRuleConditionSyntheticEngineTypeComparison> SyntheticEngineTypeComparisons;
         /// <summary>
         /// Comparison for `SYNTHETIC_ENGINE_TYPE` attributes
@@ -261,6 +292,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// <summary>
         /// Comparison for `TAG` attributes
         /// </summary>
+        [Obsolete(@"You should use 'tag' instead of 'tag_comparison'. This attribute still exists for backwards compatibility.")]
         public readonly ImmutableArray<Outputs.AutotagRuleConditionTagComparison> TagComparisons;
         /// <summary>
         /// Comparison for `TAG` attributes
@@ -407,68 +439,132 @@ namespace Pulumiverse.Dynatrace.Outputs
 
             string? unknowns)
         {
+#pragma warning disable CS0618
             ApplicationTypeComparisons = applicationTypeComparisons;
+#pragma warning restore CS0618
             ApplicationTypes = applicationTypes;
             AzureComputeModeComparisons = azureComputeModeComparisons;
+#pragma warning disable CS0618
             AzureComputeModes = azureComputeModes;
+#pragma warning restore CS0618
+#pragma warning disable CS0618
             AzureSkuComparisions = azureSkuComparisions;
+#pragma warning restore CS0618
             AzureSkus = azureSkus;
+#pragma warning disable CS0618
             BaseComparisonBasics = baseComparisonBasics;
+#pragma warning restore CS0618
+#pragma warning disable CS0618
             BaseConditionKeys = baseConditionKeys;
+#pragma warning restore CS0618
+#pragma warning disable CS0618
             BitnessComparisions = bitnessComparisions;
+#pragma warning restore CS0618
             Bitnesses = bitnesses;
+#pragma warning disable CS0618
             CloudTypeComparisons = cloudTypeComparisons;
+#pragma warning restore CS0618
             CloudTypes = cloudTypes;
             Comparisons = comparisons;
+#pragma warning disable CS0618
             CustomApplicationTypeComparisons = customApplicationTypeComparisons;
+#pragma warning restore CS0618
             CustomApplicationTypes = customApplicationTypes;
+#pragma warning disable CS0618
             CustomHostMetadataConditionKeys = customHostMetadataConditionKeys;
+#pragma warning restore CS0618
             CustomHostMetadatas = customHostMetadatas;
+#pragma warning disable CS0618
             CustomProcessMetadataConditionKeys = customProcessMetadataConditionKeys;
+#pragma warning restore CS0618
             CustomProcessMetadatas = customProcessMetadatas;
             DatabaseTopologies = databaseTopologies;
+#pragma warning disable CS0618
             DatabaseTopologyComparisons = databaseTopologyComparisons;
+#pragma warning restore CS0618
+#pragma warning disable CS0618
             DcrumDecoderComparisons = dcrumDecoderComparisons;
+#pragma warning restore CS0618
             DcrumDecoders = dcrumDecoders;
             Entities = entities;
+#pragma warning disable CS0618
             EntityIdComparisons = entityIdComparisons;
+#pragma warning restore CS0618
             HostTeches = hostTeches;
+#pragma warning disable CS0618
             HypervisorTypeComparisions = hypervisorTypeComparisions;
+#pragma warning restore CS0618
             Hypervisors = hypervisors;
+#pragma warning disable CS0618
             IndexedNameComparisons = indexedNameComparisons;
+#pragma warning restore CS0618
             IndexedNames = indexedNames;
+#pragma warning disable CS0618
             IndexedStringComparisons = indexedStringComparisons;
+#pragma warning restore CS0618
             IndexedStrings = indexedStrings;
+#pragma warning disable CS0618
             IndexedTagComparisons = indexedTagComparisons;
+#pragma warning restore CS0618
             IndexedTags = indexedTags;
+#pragma warning disable CS0618
             IntegerComparisons = integerComparisons;
+#pragma warning restore CS0618
             Integers = integers;
+#pragma warning disable CS0618
             IpaddressComparisons = ipaddressComparisons;
+#pragma warning restore CS0618
             Ipaddresses = ipaddresses;
             Keys = keys;
+#pragma warning disable CS0618
             MobilePlatformComparisons = mobilePlatformComparisons;
+#pragma warning restore CS0618
             MobilePlatforms = mobilePlatforms;
             OsArches = osArches;
             OsTypes = osTypes;
+#pragma warning disable CS0618
             OsarchitectureComparisons = osarchitectureComparisons;
+#pragma warning restore CS0618
+#pragma warning disable CS0618
             OstypeComparisons = ostypeComparisons;
+#pragma warning restore CS0618
+#pragma warning disable CS0618
             PaasTypeComparisons = paasTypeComparisons;
+#pragma warning restore CS0618
             PaasTypes = paasTypes;
+#pragma warning disable CS0618
             ProcessMetadataConditionKeys = processMetadataConditionKeys;
+#pragma warning restore CS0618
             ProcessMetadatas = processMetadatas;
             ServiceTopologies = serviceTopologies;
+#pragma warning disable CS0618
             ServiceTopologyComparisons = serviceTopologyComparisons;
+#pragma warning restore CS0618
+#pragma warning disable CS0618
             ServiceTypeComparisons = serviceTypeComparisons;
+#pragma warning restore CS0618
             ServiceTypes = serviceTypes;
+#pragma warning disable CS0618
             SimpleHostTechComparisons = simpleHostTechComparisons;
+#pragma warning restore CS0618
+#pragma warning disable CS0618
             SimpleTechComparisons = simpleTechComparisons;
+#pragma warning restore CS0618
+#pragma warning disable CS0618
             StringComparisons = stringComparisons;
+#pragma warning restore CS0618
+#pragma warning disable CS0618
             StringConditionKeys = stringConditionKeys;
+#pragma warning restore CS0618
             StringKeys = stringKeys;
             Strings = strings;
+#pragma warning disable CS0618
             SyntheticEngineTypeComparisons = syntheticEngineTypeComparisons;
+#pragma warning restore CS0618
             SyntheticEngines = syntheticEngines;
+#pragma warning disable CS0618
             TagComparisons = tagComparisons;
+#pragma warning restore CS0618
             Tags = tags;
             Teches = teches;
             Unknowns = unknowns;

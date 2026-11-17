@@ -58,6 +58,7 @@ namespace Pulumiverse.Dynatrace
         /// User Action names to be flagged as Key User Actions
         /// </summary>
         [Output("keyUserActions")]
+        [Obsolete(@"Configuring Key User Actions within `dynatrace.WebApplication` is discouraged. Use the dedicated resource `dynatrace.KeyUserAction` instead.")]
         public Output<ImmutableArray<Outputs.WebApplicationKeyUserAction>> KeyUserActions { get; private set; } = null!;
 
         /// <summary>

@@ -80,6 +80,7 @@ namespace Pulumiverse.Dynatrace
         /// The ID of the environment (https://\n\n.live.dynatrace.com) if the policy should be applied to a specific environment
         /// </summary>
         [Output("environment")]
+        [Obsolete(@"Configuring policies on environment level has been deprecated by Dynatrace. Please consider creating an account wide policy instead")]
         public Output<string?> Environment { get; private set; } = null!;
 
         /// <summary>
@@ -169,6 +170,7 @@ namespace Pulumiverse.Dynatrace
         /// The ID of the environment (https://\n\n.live.dynatrace.com) if the policy should be applied to a specific environment
         /// </summary>
         [Input("environment")]
+        [Obsolete(@"Configuring policies on environment level has been deprecated by Dynatrace. Please consider creating an account wide policy instead")]
         public Input<string>? Environment { get; set; }
 
         /// <summary>
@@ -219,6 +221,7 @@ namespace Pulumiverse.Dynatrace
         /// The ID of the environment (https://\n\n.live.dynatrace.com) if the policy should be applied to a specific environment
         /// </summary>
         [Input("environment")]
+        [Obsolete(@"Configuring policies on environment level has been deprecated by Dynatrace. Please consider creating an account wide policy instead")]
         public Input<string>? Environment { get; set; }
 
         /// <summary>

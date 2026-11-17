@@ -17,6 +17,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         /// Possible Values: `All`, `Public`
         /// </summary>
         [Input("ipAddressMasking")]
+        [Obsolete(@"This property is not supported anymore by the Dynatrace REST API (since schema version 4)")]
         public Input<string>? IpAddressMasking { get; set; }
 
         /// <summary>
@@ -25,6 +26,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         /// Once enabled, IP address masking sets the last octet of monitored IPv4 addresses and the last 80 bits of IPv6 addresses to zeroes. GPS coordinates are rounded up to 1 decimal place (~10 km). This masking occurs in memory. Full IP addresses are never written to disk. Location lookups are made using anonymized IP addresses and GPS coordinates.
         /// </summary>
         [Input("ipAddressMaskingEnabled")]
+        [Obsolete(@"This property is not supported anymore by the Dynatrace REST API (since schema version 4)")]
         public Input<bool>? IpAddressMaskingEnabled { get; set; }
 
         /// <summary>

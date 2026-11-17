@@ -35,9 +35,9 @@ import (
 //
 //	"fmt"
 //
+//	"github.com/pulumi/pulumi-time/sdk/go/time"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
-//	"github.com/pulumiverse/pulumi-time/sdk/go/time"
 //
 // )
 //
@@ -565,7 +565,7 @@ import (
 //				return err
 //			}
 //			_, err = time.NewSleep(ctx, "wait_to_be_consistent", &time.SleepArgs{
-//				CreateDuration: pulumi.String("10s"),
+//				CreateDuration: "10s",
 //			}, pulumi.DependsOn([]pulumi.Resource{
 //				monitor,
 //			}))

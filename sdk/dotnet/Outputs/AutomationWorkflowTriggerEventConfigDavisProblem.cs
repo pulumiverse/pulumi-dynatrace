@@ -34,6 +34,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// <summary>
         /// If set to `True` closing a problem also is considered an event that triggers the execution.
         /// </summary>
+        [Obsolete(@"Use `TriggerOn` instead")]
         public readonly bool? OnProblemClose;
         /// <summary>
         /// Minimum problem duration in minutes before the trigger fires. Possible values: `5`, `10`, `15`, `30`, `60`, `120`, `240`, `1440`, `10080`
@@ -79,7 +80,9 @@ namespace Pulumiverse.Dynatrace.Outputs
             CustomFilter = customFilter;
             EntityTags = entityTags;
             EntityTagsMatch = entityTagsMatch;
+#pragma warning disable CS0618
             OnProblemClose = onProblemClose;
+#pragma warning restore CS0618
             ProblemOpenDuration = problemOpenDuration;
             SeverityThreshold = severityThreshold;
             TriggerOn = triggerOn;

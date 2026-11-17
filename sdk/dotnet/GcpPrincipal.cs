@@ -35,7 +35,7 @@ namespace Pulumiverse.Dynatrace
     /// using System.Linq;
     /// using Pulumi;
     /// using Dynatrace = Pulumiverse.Dynatrace;
-    /// using Gcp = Pulumi.Gcp;
+    /// using Google = Pulumi.Google;
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
@@ -43,7 +43,7 @@ namespace Pulumiverse.Dynatrace
     ///     // The Google Cloud Platform project ID
     ///     var gcpProjectId = config.Require("gcpProjectId");
     ///     // Create a Service Account in GCP
-    ///     var impersonableServiceAccount = new Gcp.ServiceAccount.Account("impersonable_service_account", new()
+    ///     var impersonableServiceAccount = new Google.ServiceAccount("impersonable_service_account", new()
     ///     {
     ///         AccountId = "test-service-account",
     ///         DisplayName = "Test Service Account",
@@ -54,10 +54,10 @@ namespace Pulumiverse.Dynatrace
     ///     var principal = new Dynatrace.GcpPrincipal("principal");
     /// 
     ///     // Grant DT GCP Principal access to the service account
-    ///     var wifBinding = new Gcp.ServiceAccount.IAMMember("wif_binding", new()
+    ///     var wifBinding = new Google.ServiceAccountIamMember("wif_binding", new()
     ///     {
     ///         ServiceAccountId = impersonableServiceAccount.Name,
-    ///         Member = principal.Principal.Apply(principal =&gt; $"serviceAccount:{principal}"),
+    ///         Member = $"serviceAccount:{principal.Principal}",
     ///         Role = "roles/iam.serviceAccountTokenCreator",
     ///     });
     /// 

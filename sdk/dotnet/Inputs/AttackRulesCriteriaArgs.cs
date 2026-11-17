@@ -23,6 +23,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         /// Process group
         /// </summary>
         [Input("processGroup")]
+        [Obsolete(@"This field has been deprecated")]
         public Input<string>? ProcessGroup { get; set; }
 
         public AttackRulesCriteriaArgs()

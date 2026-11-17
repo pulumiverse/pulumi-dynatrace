@@ -58,7 +58,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-azuread/sdk/v6/go/azuread"
+//	"github.com/pulumi/pulumi-azuread/sdk/go/azuread"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi/config"
 //	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
@@ -72,14 +72,14 @@ import (
 //			azureTenantId := cfg.Require("azureTenantId")
 //			// Create an application
 //			example, err := azuread.NewApplicationRegistration(ctx, "example", &azuread.ApplicationRegistrationArgs{
-//				DisplayName: pulumi.String("ExampleApp"),
+//				DisplayName: "ExampleApp",
 //			})
 //			if err != nil {
 //				return err
 //			}
 //			// Create a client secret
 //			exampleApplicationPassword, err := azuread.NewApplicationPassword(ctx, "example", &azuread.ApplicationPasswordArgs{
-//				ApplicationId: example.ID(),
+//				ApplicationId: example.Id,
 //			})
 //			if err != nil {
 //				return err
@@ -114,7 +114,7 @@ import (
 //
 //	"fmt"
 //
-//	"github.com/pulumi/pulumi-azuread/sdk/v6/go/azuread"
+//	"github.com/pulumi/pulumi-azuread/sdk/go/azuread"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi/config"
 //	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
@@ -132,7 +132,7 @@ import (
 //			dynatraceTokenIssuer := cfg.Require("dynatraceTokenIssuer")
 //			// Create an application
 //			example, err := azuread.NewApplicationRegistration(ctx, "example", &azuread.ApplicationRegistrationArgs{
-//				DisplayName: pulumi.String("ExampleApp"),
+//				DisplayName: "ExampleApp",
 //			})
 //			if err != nil {
 //				return err
@@ -152,15 +152,13 @@ import (
 //			}
 //			// Create a federated identity credential
 //			_, err = azuread.NewApplicationFederatedIdentityCredential(ctx, "example", &azuread.ApplicationFederatedIdentityCredentialArgs{
-//				ApplicationId: example.ID(),
-//				DisplayName:   pulumi.String("Example"),
-//				Audiences: pulumi.StringArray{
-//					pulumi.Sprintf("%v/app-id/dynatrace.microsoft.azure.connector", dynatraceEnvironmentUrl),
+//				ApplicationId: example.Id,
+//				DisplayName:   "Example",
+//				Audiences: []string{
+//					fmt.Sprintf("%v/app-id/dynatrace.microsoft.azure.connector", dynatraceEnvironmentUrl),
 //				},
-//				Issuer: pulumi.String(dynatraceTokenIssuer),
-//				Subject: exampleAzureConnection.ID().ApplyT(func(id pulumi.ID) (string, error) {
-//					return fmt.Sprintf("dt:connection-id/%v", id), nil
-//				}).(pulumi.StringOutput),
+//				Issuer:  dynatraceTokenIssuer,
+//				Subject: pulumi.Sprintf("dt:connection-id/%v", exampleAzureConnection.ID()),
 //			})
 //			if err != nil {
 //				return err

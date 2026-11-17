@@ -44,6 +44,7 @@ namespace Pulumiverse.Dynatrace
         /// The unique name of the Application detection rule
         /// </summary>
         [Output("name")]
+        [Obsolete(@"Dynatrace computes that value automatically. Any attempts to specify that value will are getting ignored.")]
         public Output<string> Name { get; private set; } = null!;
 
         /// <summary>
@@ -115,6 +116,7 @@ namespace Pulumiverse.Dynatrace
         /// The unique name of the Application detection rule
         /// </summary>
         [Input("name")]
+        [Obsolete(@"Dynatrace computes that value automatically. Any attempts to specify that value will are getting ignored.")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
@@ -147,6 +149,7 @@ namespace Pulumiverse.Dynatrace
         /// The unique name of the Application detection rule
         /// </summary>
         [Input("name")]
+        [Obsolete(@"Dynatrace computes that value automatically. Any attempts to specify that value will are getting ignored.")]
         public Input<string>? Name { get; set; }
 
         /// <summary>

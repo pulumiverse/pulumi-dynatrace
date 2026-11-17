@@ -78,6 +78,7 @@ namespace Pulumiverse.Dynatrace
         /// The list of key-value pair properties that will be shown beneath the infographics of your custom device.
         /// </summary>
         [Output("properties")]
+        [Obsolete(@"Please use the attribute `Props` instead")]
         public Output<ImmutableDictionary<string, string>?> Properties { get; private set; } = null!;
 
         /// <summary>
