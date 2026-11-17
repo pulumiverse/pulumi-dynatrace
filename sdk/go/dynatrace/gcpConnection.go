@@ -63,7 +63,9 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-google/sdk/go/google"
+//	"fmt"
+//
+//	"github.com/pulumi/pulumi-gcp/sdk/v10/go/gcp/serviceaccount"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi/config"
 //	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
@@ -76,9 +78,9 @@ import (
 //			// The Google Cloud Platform project ID
 //			gcpProjectId := cfg.Require("gcpProjectId")
 //			// Create a Service Account in GCP
-//			impersonableServiceAccount, err := google.NewServiceAccount(ctx, "impersonable_service_account", &google.ServiceAccountArgs{
-//				AccountId:   "test-service-account",
-//				DisplayName: "Test Service Account",
+//			impersonableServiceAccount, err := serviceaccount.NewAccount(ctx, "impersonable_service_account", &serviceaccount.AccountArgs{
+//				AccountId:   pulumi.String("test-service-account"),
+//				DisplayName: pulumi.String("Test Service Account"),
 //			})
 //			if err != nil {
 //				return err
@@ -90,10 +92,12 @@ import (
 //				return err
 //			}
 //			// Grant DT GCP Principal access to the service account
-//			wifBinding, err := google.NewServiceAccountIamMember(ctx, "wif_binding", &google.ServiceAccountIamMemberArgs{
+//			wifBinding, err := serviceaccount.NewIAMMember(ctx, "wif_binding", &serviceaccount.IAMMemberArgs{
 //				ServiceAccountId: impersonableServiceAccount.Name,
-//				Member:           pulumi.Sprintf("serviceAccount:%v", principal.Principal),
-//				Role:             "roles/iam.serviceAccountTokenCreator",
+//				Member: principal.Principal.ApplyT(func(principal string) (string, error) {
+//					return fmt.Sprintf("serviceAccount:%v", principal), nil
+//				}).(pulumi.StringOutput),
+//				Role: pulumi.String("roles/iam.serviceAccountTokenCreator"),
 //			})
 //			if err != nil {
 //				return err

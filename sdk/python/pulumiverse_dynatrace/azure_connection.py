@@ -225,7 +225,7 @@ class AzureConnection(pulumi.CustomResource):
         # The Azure Active Directory tenant ID.
         azure_tenant_id = config.require("azureTenantId")
         # Create an application
-        example = azuread.ApplicationRegistration("example", display_name=ExampleApp)
+        example = azuread.ApplicationRegistration("example", display_name="ExampleApp")
         # Create a client secret
         example_application_password = azuread.ApplicationPassword("example", application_id=example.id)
         # Create Azure connection
@@ -233,8 +233,8 @@ class AzureConnection(pulumi.CustomResource):
             name="#name#",
             type="clientSecret",
             client_secret={
-                "client_secret": example_application_password["value"],
-                "application_id": example["clientId"],
+                "client_secret": example_application_password.value,
+                "application_id": example.client_id,
                 "directory_id": azure_tenant_id,
                 "consumers": ["SVC:com.dynatrace.da"],
             })
@@ -254,7 +254,7 @@ class AzureConnection(pulumi.CustomResource):
         # The Dynatrace token issuer URL
         dynatrace_token_issuer = config.require("dynatraceTokenIssuer")
         # Create an application
-        example = azuread.ApplicationRegistration("example", display_name=ExampleApp)
+        example = azuread.ApplicationRegistration("example", display_name="ExampleApp")
         # Create basic Azure connection
         example_azure_connection = dynatrace.AzureConnection("example",
             name="#name#",
@@ -265,14 +265,14 @@ class AzureConnection(pulumi.CustomResource):
         # Create a federated identity credential
         example_application_federated_identity_credential = azuread.ApplicationFederatedIdentityCredential("example",
             application_id=example.id,
-            display_name=Example,
-            audiences=[f{dynatrace_environment_url}/app-id/dynatrace.microsoft.azure.connector],
+            display_name="Example",
+            audiences=[f"{dynatrace_environment_url}/app-id/dynatrace.microsoft.azure.connector"],
             issuer=dynatrace_token_issuer,
-            subject=fdt:connection-id/{example_azure_connection.id})
+            subject=example_azure_connection.id.apply(lambda id: f"dt:connection-id/{id}"))
         # Update the Azure connection with authentication details
         example_azure_connection_authentication = dynatrace.AzureConnectionAuthentication("example",
             azure_connection_id=example_azure_connection.id,
-            application_id=example["clientId"],
+            application_id=example.client_id,
             directory_id=azure_tenant_id)
         ```
 
@@ -341,7 +341,7 @@ class AzureConnection(pulumi.CustomResource):
         # The Azure Active Directory tenant ID.
         azure_tenant_id = config.require("azureTenantId")
         # Create an application
-        example = azuread.ApplicationRegistration("example", display_name=ExampleApp)
+        example = azuread.ApplicationRegistration("example", display_name="ExampleApp")
         # Create a client secret
         example_application_password = azuread.ApplicationPassword("example", application_id=example.id)
         # Create Azure connection
@@ -349,8 +349,8 @@ class AzureConnection(pulumi.CustomResource):
             name="#name#",
             type="clientSecret",
             client_secret={
-                "client_secret": example_application_password["value"],
-                "application_id": example["clientId"],
+                "client_secret": example_application_password.value,
+                "application_id": example.client_id,
                 "directory_id": azure_tenant_id,
                 "consumers": ["SVC:com.dynatrace.da"],
             })
@@ -370,7 +370,7 @@ class AzureConnection(pulumi.CustomResource):
         # The Dynatrace token issuer URL
         dynatrace_token_issuer = config.require("dynatraceTokenIssuer")
         # Create an application
-        example = azuread.ApplicationRegistration("example", display_name=ExampleApp)
+        example = azuread.ApplicationRegistration("example", display_name="ExampleApp")
         # Create basic Azure connection
         example_azure_connection = dynatrace.AzureConnection("example",
             name="#name#",
@@ -381,14 +381,14 @@ class AzureConnection(pulumi.CustomResource):
         # Create a federated identity credential
         example_application_federated_identity_credential = azuread.ApplicationFederatedIdentityCredential("example",
             application_id=example.id,
-            display_name=Example,
-            audiences=[f{dynatrace_environment_url}/app-id/dynatrace.microsoft.azure.connector],
+            display_name="Example",
+            audiences=[f"{dynatrace_environment_url}/app-id/dynatrace.microsoft.azure.connector"],
             issuer=dynatrace_token_issuer,
-            subject=fdt:connection-id/{example_azure_connection.id})
+            subject=example_azure_connection.id.apply(lambda id: f"dt:connection-id/{id}"))
         # Update the Azure connection with authentication details
         example_azure_connection_authentication = dynatrace.AzureConnectionAuthentication("example",
             azure_connection_id=example_azure_connection.id,
-            application_id=example["clientId"],
+            application_id=example.client_id,
             directory_id=azure_tenant_id)
         ```
 

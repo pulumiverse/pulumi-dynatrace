@@ -26,7 +26,7 @@ import * as utilities from "./utilities";
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as dynatrace from "@pulumiverse/dynatrace";
- * import * as time from "@pulumi/time";
+ * import * as time from "@pulumiverse/time";
  *
  * const location = dynatrace.getSyntheticLocation({
  *     name: "Location",
@@ -466,7 +466,7 @@ import * as utilities from "./utilities";
  *         ],
  *     },
  * });
- * const waitToBeConsistent = new time.index.Sleep("wait_to_be_consistent", {createDuration: "10s"}, {
+ * const waitToBeConsistent = new time.Sleep("wait_to_be_consistent", {createDuration: "10s"}, {
  *     dependsOn: [monitor],
  * });
  * ```

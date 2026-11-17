@@ -59,7 +59,7 @@ namespace Pulumiverse.Dynatrace
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
-    /// using Azuread = Pulumi.Azuread;
+    /// using AzureAD = Pulumi.AzureAD;
     /// using Dynatrace = Pulumiverse.Dynatrace;
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
@@ -72,7 +72,7 @@ namespace Pulumiverse.Dynatrace
     ///     // The Dynatrace token issuer URL
     ///     var dynatraceTokenIssuer = config.Require("dynatraceTokenIssuer");
     ///     // Create an application
-    ///     var example = new Azuread.ApplicationRegistration("example", new()
+    ///     var example = new AzureAD.ApplicationRegistration("example", new()
     ///     {
     ///         DisplayName = "ExampleApp",
     ///     });
@@ -92,7 +92,7 @@ namespace Pulumiverse.Dynatrace
     ///     });
     /// 
     ///     // Create a federated identity credential
-    ///     var exampleApplicationFederatedIdentityCredential = new Azuread.ApplicationFederatedIdentityCredential("example", new()
+    ///     var exampleApplicationFederatedIdentityCredential = new AzureAD.ApplicationFederatedIdentityCredential("example", new()
     ///     {
     ///         ApplicationId = example.Id,
     ///         DisplayName = "Example",
@@ -101,7 +101,7 @@ namespace Pulumiverse.Dynatrace
     ///             $"{dynatraceEnvironmentUrl}/app-id/dynatrace.microsoft.azure.connector",
     ///         },
     ///         Issuer = dynatraceTokenIssuer,
-    ///         Subject = $"dt:connection-id/{exampleAzureConnection.Id}",
+    ///         Subject = exampleAzureConnection.Id.Apply(id =&gt; $"dt:connection-id/{id}"),
     ///     });
     /// 
     ///     // Update the Azure connection with authentication details
